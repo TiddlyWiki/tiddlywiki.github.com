@@ -4,16 +4,17 @@ This repository contains the files that will be published as <a href="http://tid
 
 ## Issues
 
-Before going live, the following issues need to be addressed
+Before going live, the following inter-related issues need to be addressed:
 
-* The current server uses `.htaccess` files which won't work on GitHub pages:
- * Listing content of the `/archive` folder - instead we could have an automatically generated `index.html` file
+* The current server uses an `.htaccess` file to allow Apache to generate an index listing the content of the `/archive` folder - instead we could have an automatically generated `index.html` file
 * Use of PHP to force a download of `empty.html` in the `empty.download` file - instead we can use a download link directly to the tiddlywiki repo
 * We need to formally tie each of the various release folders (`/`, `/beta/`, `/alpha`, `/upgrade` to specified Git labels)
 
+It would be desirable for all the download links to migrate to `https://github.com/*` URLs so that users could be confident that the TiddlyWiki source files they download haven't been tampered with in transit. 
+
 ## Notes on existing content
 
-Here we attempt to reconstruct the purpose of each file and folder on the existing server.
+Here we attempt to reconstruct the purpose of each file and folder on the existing server. Please shout if you have any corrections or additions.
 
 ### http://tiddlywiki.com/ - **keep**
 
