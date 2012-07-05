@@ -1,0 +1,3 @@
+grant codeBase "file:${user.home}/My Documents/tiddlywiki-folder/*" {
+  permission java.io.FilePermission "${user.home}${/}My Documents${/}tiddlywiki-folder${/}*", "read,write";
+};

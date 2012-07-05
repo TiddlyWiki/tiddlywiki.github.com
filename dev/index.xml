@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<rss version="2.0">
+<channel>
+<title>TiddlyWiki/Dev</title>
+<link>http://www.tiddlywiki.com/dev/</link>
+<description>a hackers guide to inside TiddlyWiki</description>
+<language>en-us</language>
+<copyright>Copyright 2006 JeremyRuston</copyright>
+<pubDate>Fri, 22 Sep 2006 10:13:10 GMT</pubDate>
+<lastBuildDate>Fri, 22 Sep 2006 10:13:10 GMT</lastBuildDate>
+<docs>http://blogs.law.harvard.edu/tech/rss</docs>
+<generator>TiddlyWiki 2.1.0</generator>
+<item>
+<title>tiddlywiki.org</title>
+<description>The tiddlywiki/dev site has been replaced by &lt;a href=&quot;http://www.tiddlywiki.org&quot;&gt;http://www.tiddlywiki.org/&lt;/a&gt;.</description>
+<category></category>
+<link>http://www.tiddlywiki.org/</link>
+<pubDate>Fri, 22 Sep 2006 10:11:23 GMT</pubDate>
+</item>
+</channel>
+</rss>

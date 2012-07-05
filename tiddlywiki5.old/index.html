@@ -1,0 +1,3001 @@
+<!doctype html>
+<!--
+Content-Type: multipart/related; boundary="_tw_mhtml_tiddler"
+
+--_tw_mhtml_tiddler
+Content-Location:LocoImage
+Content-Type: image/png
+Content-Transfer-Encoding:base64
+
+iVBORw0KGgoAAAANSUhEUgAAAAQAAAADCAIAAAA7ljmRAAAAGElEQVQIW2P4DwcMDAxAfBvMAhEQMYgcACEHG8ELxtbPAAAAAElFTkSuQmCC
+
+--_tw_mhtml_tiddler
+Content-Location:ArrowImage
+Content-Type: image/png
+Content-Transfer-Encoding:base64
+
+iVBORw0KGgoAAAANSUhEUgAAABkAAAAUBAMAAACKWYuOAAAAMFBMVEX///92dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnYvD4PNAAAAD3RSTlMAACTkfhvbh3iEewTtxBIFliR3AAAAUklEQVQY02NgIBMwijgKCgrAef5fkHnz/y9E4kn+/4XEE6z/34jEE///A4knev7zAwQv7L8RQk40/7MiggeUQpjJff+zIpINykbIbhFSROIRDQAWUhW2oXLWAQAAAABJRU5ErkJggg==
+
+--_tw_mhtml_tiddler--
+
+-->
+<html>
+<head>
+<script type="text/javascript">
+/*tiddlywiki-plugin*
+title: $tw.perf.startup
+description: Startup timing
+*/
+
+var $tw_startupTime = new Date();
+
+</script>
+<script type="text/x-tiddler">
+title: CopyrightNotice
+revision: 1
+modifier: JeremyRuston
+modified: 2010-01-03T20:12:34Z
+type: text/x-markdown
+tags: copyright
+tags: credits
+
+TiddlyWiki5 created by Jeremy Ruston, (jeremy [at] osmosoft [dot] com)
+
+Version 5.0.1, release Alpha One, 21 Apr 2010
+
+Copyright (c) UnaMesa Association 2004-2010
+
+Redistribution and use in source and binary forms, with or without modification,
+are permitted provided that the following conditions are met:
+
+Redistributions of source code must retain the above copyright notice, this
+list of conditions and the following disclaimer.
+
+Redistributions in binary form must reproduce the above copyright notice, this
+list of conditions and the following disclaimer in the documentation and/or other
+materials provided with the distribution.
+
+Neither the name of the UnaMesa Association nor the names of its contributors may be
+used to endorse or promote products derived from this software without specific
+prior written permission.
+
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS 'AS IS' AND ANY
+EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES
+OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT
+SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT,
+INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED
+TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR
+BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
+CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN
+ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH
+DAMAGE.
+</script>
+<script type="text/x-tiddler">
+title: Credits
+revision: 1
+modifier: JeremyRuston
+modified: 2010-01-03T20:12:34Z
+type: text/x-markdown
+tags: copyright
+tags: credits
+
+TiddlyWiki5 incorporates these awesome components:
+
+- [jQuery (c) 2009 by John Resig](http://jquery.com/)
+- [jQuery UI (c) 2009 by various authors](http://jqueryui.com/about)
+- [Showdown (c) 2007 by John Fraser](http://www.attacklab.net/)
+- [Markdown (c) 2004 by John Gruber](http://daringfireball.net/projects/markdown/)
+
+TiddlyWiki5 wouldn't have been possible without the TiddlyWiki community. Over the
+last five years this inventive and helpful group of individuals have shaped TiddlyWiki,
+and in turn their feedback has driven the development of TiddlyWiki5.
+</script>
+<script type="text/x-tiddler">
+title: SiteTitle
+revision: 0
+modifier: JeremyRuston
+modified: 2010-04-16T19:51:34Z
+type: text/plain
+
+TiddlyWiki5
+</script>
+<script type="text/x-tiddler">
+title: SiteSubtitle
+revision: 0
+modifier: JeremyRuston
+modified: 2010-04-16T19:51:34Z
+type: text/plain
+
+a modernised non-linear inter-personal web notebook
+</script>
+<title>TiddlyWiki5 - a modernised non-linear inter-personal web notebook</title>
+<script type="text/x-tiddler">
+title: ToDo
+revision: 1
+modifier: JeremyRuston
+modified: 2009-12-06T19:39:34Z
+type: text/x-markdown
+tags: notes
+tags: documentation
+
+## Things to do
+- Replace switch(mimetype) with hashmaps
+- Add single page mode support & breadcrumbs
+- Eeek: the way we're detecting macroOutput is dodgy as we could pick up the macroOutput markers of nested macros
+- Links from macros in the DOM to tiddler objects should  be jQuery data() links to the original Tiddler() object. Then checking whether the tiddler has changed would be a case of checking whether the forward link to the next revision has been filled in on the Tiddler object.
+- Hungarian notation for variables and parameters? t,n,i = indexes, tidFoo = Tiddler object, twFooFoo = TiddlyWiki object, elBar = DOM element, nodeFoo = DOM node, jBar = jQuery object
+- Sucking in the content of external <sc**pt> tags via ajax so that it is available for saving as a single file
+- Bring in TiddlyWiki wikifier
+- Document loading process needs to include text fragments as literal text in the recipe
+- Add special comment markers that are picked up by the recipe and used as the insertion points for including tiddlers not in the original file, with filters for which tiddlers should be stored there (eg systemConfig as <sc**pt> tag), and a cascade down to a default storage marker for tiddlers that don't match the specialisations
+- Process all but the $tw.styles.static CSS block, normalising CSS3 syntax to browser specific syntax, and  processing of CSS variables for eg grid positions and named colours. (Therefore encode the stylesheets so that they are not processed by the browser)
+- Render CSS with a special converter function which creates an HTML rendition, and companion for going back after editting. The HTML rendition includes eg colour swatches which are editable in editMode
+- Add support for tiddler focussing and selecting, usable with keyboard
+- Add support for a 'more...' link that truncates long tiddlers
+- Add support for escaping special characters in tiddler/tag titles (eg #, :, @)
+
+## Things to think about
+- Should macro mechanism tie in with jQuery plugins, so what we actually end up with is a declarative syntax for expressing jQuery.fn calls
+- Consider whether it is excessive to have $tw as both JavaScript root and namespace for titles of system tiddlers
+- Add width and height fields for image tiddlers?
+- Note that file saving code can inject VBScript with `vReturn = object.execScript(sExpression, sLanguage)`
+- Figure out theme handling and how it relates to the CSS features
+</script>
+<style type="text/css">
+/*tiddlywiki-styles*
+title: $tw.styles.static
+description: Styles needed for display of static page content (ie when JavaScript is disabled)
+*/
+
+body {
+	font-family: Helvetica, sans-serif;
+	padding: 1em;
+	margin: 0;
+	background: #555;
+}
+
+.tw_tiddler {
+	border: 1px solid #000;
+	margin: 0.4em;
+}
+
+h1, .tw_title {
+	background: #000;
+	color: #fff;
+	font-size: 2em;
+	padding: 0.2em;
+	margin: 0;
+}
+
+.tw_body {
+	background: #fff;
+	padding: 0.4em;
+}
+
+</style>
+</head>
+<body>
+	<div class="tw_tiddler" id="TiddlyWiki5">
+		<h1 class="tw_title">TiddlyWiki5</h1>
+		<div class="tw_body">
+		<p>
+			Copied from the announcement on <a href="http://groups.google.com/group/tiddlywikidev/browse_thread/thread/b26b451915255db6">the TiddlyWikiDev group</a>:
+		</p>
+		<p>
+			For the last couple of years, I've been quietly working in the background planning for a proper overhaul of TiddlyWiki itself, doing some little proof-of-concept experiments, and tracking browser developments. I was hoping that we'd get to the point where the advantages of completely rebuilding TiddlyWiki from the ground up would outweigh the disadvantages of losing backwards compatibility. I think that we've now reached that point, thanks mainly to the accelerated development of the major browsers.
+			</p>
+			<p>
+			Over Christmas and New Year, when the office shut down, I finally had the chance to spend some sustained time in coding-space, and stitch some of these thoughts and experiments into a proper prototype. I've kept it completely to myself up until now, partly for fear of distracting efforts away from other things.
+			</p>
+			<p>
+			It's status is that it's just a prototype, and it's not in a fit state to be used in anger; I've focussed on the things missing or broken in the original TiddlyWiki, and not paid too much attention to areas that don't need to change much. So, it's not currently structured as a single file, nor is it capable of saving changes. However, it does demonstrate some key new features and capabilities. There are three areas I'd like to focus on:
+			</p>
+			<p>
+			<strong>Embracing HTML</strong>
+			By default, tiddlers are stored and edited as HTML. This means that you get a proper WYSIWYG editor, and that when Google looks at a TiddlyWiki5 file it will also see the content properly. It's been clear for a long time that wikitext is both a strength and a weakness of classic TW, it gives users great power, but it's incredibly off-putting for people who expect to type ctrl-B for bold. My goal in bringing WYSIWYG to TiddlyWiki is to maintain the ability to type macros and formatting directly, without going into weird sub-dialogs. This is because I believe that the real power of wikis is the way that they elevate linking to becoming part of the punctuation, and hence the writing process, instead of an operation performed afterwards. Anyhow, it's not all implemented yet, but in edit mode macros are represented as special "proxy" visual objects that can have custom interactions, but can be selected/copied/pasted just as if they were a single character of text.
+			</p>
+			<p>
+			<strong>Graphics as First Class Citizen</strong>
+			Both bitmap and vector graphics are now a first class citizen, with image tiddlers embedded directly in the TiddlyWiki file, even in IE6. There's support for SVG vector graphics (with a plan to cross-render to VML for IE support). The idea is to be able to associate icons with tiddlers (and hence tags), and use the icons to represent those tiddlers in the UI. My mum is busy creating a library of a few hundred little conceptual graphics to ship with the thing.
+			</p>
+			<p>
+			<strong>Cleaning up</strong>
+			But the real benefit is that the design is now much smoother top to bottom. TiddlyWiki originally evolved in fits and starts, and bears the scar tissues of me learning JavaScript as I went. In TiddlyWiki5, for instance, almost everything is a macro, including tiddler containers (aka a TiddlyWiki "story"), and tiddler frames. It uses jQuery and jQuery UI properly, leading to much more concise and clear code. It properly matches the capabilities of TiddlyWeb, with revision history retained for each tiddler and support for different MIME-types.
+			</p>
+			<p>
+			I should say that although TiddlyWiki5 will break backwards compatibility, there will be a migration path for existing TiddlyWiki content. Firstly, it will support the existing TiddlyWiki wikifier, so people can continue to use and edit tiddlers in wikitext if they want to. Secondly, you will be able to perform a one-way upgrade of your tiddlers from wikitext to html format. There'll be no going back at that point, but in exchange you'll be able to use the WYSIWYG editor.
+			</p>
+		</div>
+	</div>
+	<div class="tw_tiddler" id="HelloThere">
+		<h1 class="tw_title">HelloThere</h1>
+		<abbr class="tw_created published" title="2009-12-07T11:32:43">7th December 2009</abbr>
+		<abbr class="tw_modified updated" title="2009-12-01T09:45:56">1st December 2009</abbr>
+		<div class="tw_tags">
+			<a href="#greetings" rel="tag">greetings</a>
+			<a href="#introduction" rel="tag">introduction</a>
+		</div>
+		<div class="tw_body">
+			<p>
+				Welcome to a pre-prototype of
+				<a href="#TiddlyWiki5" class="tw_macro" data-tw-macro="link" data-tw-params="TiddlyWiki5">TiddlyWiki5</a>, which will eventually become a modernised non-linear inter-personal web notebook. Right now this is not in a remotely usable state, it's here to help us build and improve it.
+			</p>
+			<p>
+				If you want to actually use TiddlyWiki, stick with the latest current version at <a href="http://www.tiddlywiki.com/">http://www.tiddlywiki.com/</a>. If you'd like to get involved in the development of TiddlyWiki5, join the Google group at <a href="http://groups.google.com/group/TiddlyWikiDev">http://groups.google.com/group/TiddlyWikiDev</a> and follow development on GitHub at <a href="http://github.com/Jermolene/TiddlyWiki5">http://github.com/Jermolene/TiddlyWiki5</a>.
+			</p>
+			<p>
+				This is a very early sketch that's been tested on the latest versions of Safari, Chrome, Firefox, Opera, IE8 (although a bunch of stuff doesn't work there, obviously), and more recently IE9
+			</p>
+			<p>
+				<br>
+				<a href="#TechnicalDocumentation" class="tw_macro" data-tw-macro="link" data-tw-params="TechnicalDocumentation">TechnicalDocumentation</a>
+				<br>
+				<a href="#Improvements" class="tw_macro" data-tw-macro="link" data-tw-params="Improvements">Improvements</a>
+				<br>
+				<a href="#ToDo" class="tw_macro" data-tw-macro="link" data-tw-params="ToDo">ToDo</a>
+				<br>
+				<a href="#Contents" class="tw_macro" data-tw-macro="link" data-tw-params="Contents">Contents</a>
+				<br>
+				<a href="#MacroPlayground" class="tw_macro" data-tw-macro="link" data-tw-params="MacroPlayground">MacroPlayground</a>
+				<br>
+				<a href="#Clock" class="tw_macro" data-tw-macro="link" data-tw-params="Clock">Clock</a>
+				<br>
+				<a href="#$tw.templates.tiddler.default" class="tw_macro" data-tw-macro="link" data-tw-params="$tw.templates.tiddler.default">$tw.templates.tiddler.default</a>
+				<br>
+			<p>
+		</div>
+	</div>	
+	<div class="tw_tiddler" id="Contents">
+		<h1 class="tw_title">Contents</h1>
+		<div class="tw_body">
+			<div class="tw_macro" data-tw-macro="list" data-tw-params="">
+			</div>
+		</div>
+	</div>
+	<div class="tw_tiddler" id="MacroPlayground">
+		<h1 class="tw_title">MacroPlayground</h1>
+		<abbr class="tw_created published" title="2009-12-07T11:32:43">7th December 2009</abbr>
+		<abbr class="tw_modified updated" title="2009-12-01T09:45:56">1st December 2009</abbr>
+		<div class="tw_tags">
+			<a href="#greetings" rel="tag">greetings</a>
+			<a href="#introduction" rel="tag">introduction</a>
+		</div>
+		<div class="tw_body">
+			There are also some examples of other macros like this transclusion here:
+			<div class="tw_macro tw_macroOutput" data-tw-macro="displayTiddler" data-tw-params="TiddlyWiki5 edit $tw.templates.tiddler.default">
+				(This should be the transcluded text from TiddlyWiki5)
+			</div>. Here's another complicated looking macro that works as a container for other content. Here we go
+			<span class="tw_macro" data-tw-macro="css" data-tw-params="font-size: 36pt;">
+				<span class="tw_macroContent">
+					and this is the <strong>macro</strong>
+				</span>
+				<span class="tw_macroOutput" style="font-size: 36pt;">
+					and this is the <strong>macro</strong>
+				</span>
+			</span>.
+			Here are some examples of images, too:
+				<span class="tw_macro tw_macroOutput" data-tw-macro="image" data-tw-params="$tw.images.edit"></span>
+				<span class="tw_macro tw_macroOutput" data-tw-macro="image" data-tw-params="$tw.images.number_list"></span>
+				<span class="tw_macro tw_macroOutput" data-tw-macro="image" data-tw-params="$tw.images.plus"></span>.
+				And here's today's date as a macro:
+			<span class="tw_macro tw_macroOutput" data-tw-macro="date" data-tw-params="today DD/MM/YYYY">
+				21st November 2009
+			</span>.
+			And here's yet another example of a macro, this time for viewing the value of a field: 
+			<span class="tw_macro tw_macroOutput" data-tw-macro="field" data-tw-params="modifier uppercase">
+				JOE BLOGS
+			</span>.
+			<a href="#[type[text/html]]" class="tw_macro" data-tw-macro="link" data-tw-params="[type[text/html]]">Open all tiddlers written in HTML</a>
+			<br>
+			<a href="#[type[text/x-markdown]]" class="tw_macro" data-tw-macro="link" data-tw-params="[type[text/x-markdown]]">Open all tiddlers written in Markdown</a>
+			<br>
+			<a href="#[type[text/javascript]]" class="tw_macro" data-tw-macro="link" data-tw-params="[type[text/javascript]]">Open all JavaScript tiddlers</a>.
+			<br>
+		</div>
+	</div>
+	<div class="tw_tiddler" id="NavToolbar">
+		<h1 class="tw_title">NavToolbar</h1>
+		<div class="tw_tags">
+			<a href="#$tw.toolbar.nav" rel="tag">$tw.toolbar.nav</a>
+		</div>
+		<div class="tw_body">
+			<div class="tw_macro" data-tw-macro="navigator" data-tw-params="">
+			</div>
+		</div>
+	</div>
+	<div class="tw_tiddler">
+		<div class="tw_revision">1</div>
+		<h1 class="tw_title">MainToolbar</h1>
+		<div class="tw_tags">
+			<a href="#$tw.toolbar.main" rel="tag">$tw.toolbar.main</a>
+		</div>
+		<div class="tw_body">
+			This is a previous revision of the toolbar
+		</div>
+	</div>
+	<div class="tw_tiddler" id="MainToolbar">
+		<div class="tw_revision">2</div>
+		<h1 class="tw_title">MainToolbar</h1>
+		<div class="tw_tags">
+			<a href="#$tw.toolbar.main" rel="tag">$tw.toolbar.main</a>
+		</div>
+		<div class="tw_body">
+			<a href="#" class="tw_macro" data-tw-macro="command" data-tw-params="closeTiddler"><span class='tw_macro' data-tw-macro="image" data-tw-params="$tw.images.close"></span>Close all tiddlers</a>
+			<a href="#" class="tw_macro" data-tw-macro="command" data-tw-params="detailsTiddler"><span class='tw_macro' data-tw-macro="image" data-tw-params="$tw.images.info"></span>Details of all tiddlers</a>
+			<a href="#" class="tw_macro" data-tw-macro="command" data-tw-params="editTiddler"><span class='tw_macro' data-tw-macro="image" data-tw-params="$tw.images.edit"></span>Edit all tiddlers</a>
+			<a href="#" class="tw_macro" data-tw-macro="command" data-tw-params="home"><span class="tw_macro tw_macroOutput" data-tw-macro="image" data-tw-params="HomeImage"></span></a>
+			<a href="#" class="tw_macro" data-tw-macro="command" data-tw-params="close_tiddler"><span class="tw_macro tw_macroOutput" data-tw-macro="image" data-tw-params="$tw.images.plus"></span></a>
+			<a href="#" class="tw_macro" data-tw-macro="command" data-tw-params="close_tiddler"><span class="tw_macro tw_macroOutput" data-tw-macro="image" data-tw-params="$tw.images.search"></span></a>
+			search <input class="txtOptionInput searchField" type="search" results="5" size="15" accesskey="F" autocomplete="off" lastsearchtext="">
+		</div>
+	</div>
+	<div class="tw_tiddler" id="EditToolbar">
+		<h1 class="tw_title">EditToolbar</h1>
+		<div class="tw_tags">
+			<a href="#$tw.toolbar.edit" rel="tag">$tw.toolbar.edit</a>
+		</div>
+		<div class="tw_body">
+			<a href="#" class="tw_macro" data-tw-macro="editCommand" data-tw-params="bold"><span class="tw_macro tw_macroOutput" data-tw-macro="image" data-tw-params="$tw.images.bold"></span></a>
+			<a href="#" class="tw_macro" data-tw-macro="editCommand" data-tw-params="italic"><span class="tw_macro tw_macroOutput" data-tw-macro="image" data-tw-params="$tw.images.italic"></span></a>
+			<a href="#" class="tw_macro" data-tw-macro="editCommand" data-tw-params="underline"><span class="tw_macro tw_macroOutput" data-tw-macro="image" data-tw-params="$tw.images.underline"></span></a>
+			<a href="#" class="tw_macro" data-tw-macro="editCommand" data-tw-params="strikeThrough"><span class="tw_macro tw_macroOutput" data-tw-macro="image" data-tw-params="$tw.images.strike"></span></a>
+			<a href="#" class="tw_macro" data-tw-macro="editCommand" data-tw-params="decreaseFontSize"><span class="tw_macro tw_macroOutput" data-tw-macro="image" data-tw-params="$tw.images.smaller"></span></a>
+			<a href="#" class="tw_macro" data-tw-macro="editCommand" data-tw-params="increaseFontSize"><span class="tw_macro tw_macroOutput" data-tw-macro="image" data-tw-params="$tw.images.bigger"></span></a>
+			<a href="#" class="tw_macro" data-tw-macro="editCommand" data-tw-params="indent"><span class="tw_macro tw_macroOutput" data-tw-macro="image" data-tw-params="$tw.images.indent"></span></a>
+			<a href="#" class="tw_macro" data-tw-macro="editCommand" data-tw-params="outdent"><span class="tw_macro tw_macroOutput" data-tw-macro="image" data-tw-params="$tw.images.outdent"></span></a>
+			<a href="#" class="tw_macro" data-tw-macro="editCommand" data-tw-params="insertHorizontalRule"><span class="tw_macro tw_macroOutput" data-tw-macro="image" data-tw-params="$tw.images.rule"></span></a>
+			<a href="#" class="tw_macro" data-tw-macro="editCommand" data-tw-params="insertOrderedList"><span class="tw_macro tw_macroOutput" data-tw-macro="image" data-tw-params="$tw.images.number_list"></span></a>
+			<a href="#" class="tw_macro" data-tw-macro="editCommand" data-tw-params="insertUnorderedList"><span class="tw_macro tw_macroOutput" data-tw-macro="image" data-tw-params="$tw.images.bullet_list"></span></a>
+			<a href="#" class="tw_macro" data-tw-macro="editCommand" data-tw-params="justifyLeft"><span class="tw_macro tw_macroOutput" data-tw-macro="image" data-tw-params="$tw.images.justify_left"></span></a>
+			<a href="#" class="tw_macro" data-tw-macro="editCommand" data-tw-params="justifyCenter"><span class="tw_macro tw_macroOutput" data-tw-macro="image" data-tw-params="$tw.images.justify_centre"></span></a>
+			<a href="#" class="tw_macro" data-tw-macro="editCommand" data-tw-params="justifyRight"><span class="tw_macro tw_macroOutput" data-tw-macro="image" data-tw-params="$tw.images.justify_right"></span></a>
+			<a href="#" class="tw_macro" data-tw-macro="editCommand" data-tw-params="subscript"><span class="tw_macro tw_macroOutput" data-tw-macro="image" data-tw-params="$tw.images.subscript"></span></a>
+			<a href="#" class="tw_macro" data-tw-macro="editCommand" data-tw-params="superscript"><span class="tw_macro tw_macroOutput" data-tw-macro="image" data-tw-params="$tw.images.superscript"></span></a>
+			<a href="#" class="tw_macro" data-tw-macro="editCommand" data-tw-params="delete"><span class="tw_macro tw_macroOutput" data-tw-macro="image" data-tw-params="$tw.images.close"></span></a>
+		</div>
+	</div>
+</body>
+<script type="text/x-tiddler">
+title: $tw.templates.page.default
+revision: 0
+modifier: JeremyRuston
+modified: 2004-06-26T19:51:34Z
+type: text/html
+
+<div class="tw_header">
+<span class='tw_macro' data-tw-macro="image" data-tw-params="MascotImage 48 48"></span>
+<span class='tw_macro tw_siteTitle' data-tw-macro="displayTiddler" data-tw-params="SiteTitle"></span><span class='tw_macro tw_siteSubtitle' data-tw-macro="displayTiddler" data-tw-params="SiteSubtitle"></span>
+</div>
+<div class='tw_macro tw_column' data-tw-macro="story" data-tw-params="#documentation bottom">
+	<div class='tw_tiddlerContainerHeader'>
+		<a href="#" class="tw_macro" data-tw-macro="command" data-tw-params="closeTiddler"><span class='tw_macro' data-tw-macro="image" data-tw-params="$tw.images.close"></span>Close all tiddlers</a>
+		<a href="#" class="tw_macro" data-tw-macro="command" data-tw-params="detailsTiddler"><span class='tw_macro' data-tw-macro="image" data-tw-params="$tw.images.info"></span>Details of all tiddlers</a>
+		<a href="#" class="tw_macro" data-tw-macro="command" data-tw-params="editTiddler"><span class='tw_macro' data-tw-macro="image" data-tw-params="$tw.images.edit"></span>Edit all tiddlers</a>
+	</div>
+	<div class='tw_tiddlerContainerContent'></div>
+</div>
+<div class='tw_macro tw_column' data-tw-macro="story" data-tw-params="* top">
+	<div class='tw_tiddlerContainerHeader'>
+		<a href="#" class="tw_macro" data-tw-macro="command" data-tw-params="closeTiddler"><span class='tw_macro' data-tw-macro="image" data-tw-params="$tw.images.close"></span>Close all tiddlers</a>
+		<a href="#" class="tw_macro" data-tw-macro="command" data-tw-params="detailsTiddler"><span class='tw_macro' data-tw-macro="image" data-tw-params="$tw.images.info"></span>Details of all tiddlers</a>
+		<a href="#" class="tw_macro" data-tw-macro="command" data-tw-params="editTiddler"><span class='tw_macro' data-tw-macro="image" data-tw-params="$tw.images.edit"></span>Edit all tiddlers</a>
+	</div>
+	<div class='tw_tiddlerContainerContent'></div>
+</div>
+
+</script>
+<script type="text/x-tiddler">
+title: $tw.templates.tiddler.default
+revision: 0
+modifier: JeremyRuston
+modified: 2004-06-26T19:51:34Z
+type: text/html
+
+<h1 class="tw_title">
+<a href="#" class="tw_macro" data-tw-macro="command" data-tw-params="closeTiddler"><span class='tw_macro' data-tw-macro="image" data-tw-params="$tw.images.close"></span></a>
+<span class='tw_macro' data-tw-macro="field" data-tw-params="title text"></span>
+<a href="#" class="tw_macro" data-tw-macro="command" data-tw-params="detailsTiddler"><span class='tw_macro' data-tw-macro="image" data-tw-params="$tw.images.info"></span></a>
+<a href="#" class="tw_macro" data-tw-macro="command" data-tw-params="editTiddler"><span class='tw_macro' data-tw-macro="image" data-tw-params="$tw.images.edit"></span></a>
+</h1>
+<div class='tw_macro tw_tiddlerDetail' data-tw-macro="fields"></div>
+<div class='tw_macro' data-tw-macro="field" data-tw-params="text html tw_body"></div>
+</script>
+<script type="text/x-tiddler">
+title: $tw.images.bigger
+modifier: JeremyRuston
+modified: 2010-01-10T17:14:34Z
+type: image/svg+xml
+
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xl="http://www.w3.org/1999/xlink" version="1.1" viewBox="296 292 55 64" width="55pt" height="64pt"><metadata xmlns:dc="http://purl.org/dc/elements/1.1/"><dc:date>2010-01-10 17:09Z</dc:date><!-- Produced by OmniGraffle Professional 5.2.1 --></metadata><defs></defs><g stroke="none" stroke-opacity="1" stroke-dasharray="none" fill="none" fill-opacity="1"><title>Canvas 1</title><g><title>Layer 1</title><path d="M 334.86066 338.82248 C 332.36044 340.94748 329.95389 342.44733 327.64096 343.32193 C 325.328 344.19794 322.84668 344.63522 320.19562 344.63522 C 315.8205 344.63522 312.45831 343.56644 310.10696 341.4288 C 307.75696 339.29053 306.58127 336.55981 306.58197 333.23328 C 306.58127 331.28287 307.02487 329.50156 307.91345 327.88855 C 308.79993 326.27695 309.96301 324.98251 311.4007 324.00732 C 312.83905 323.03214 314.45828 322.29517 316.25848 321.79495 C 317.583 321.445 319.58368 321.1069 322.25919 320.78137 C 327.71082 320.13171 331.72266 319.35696 334.2983 318.45654 C 334.32272 317.53168 334.33533 316.94415 334.33533 316.69339 C 334.33533 313.94312 333.69754 312.00458 332.42267 310.88058 C 330.69788 309.35492 328.13483 308.59283 324.73422 308.59283 C 321.55923 308.59283 319.21555 309.1489 317.70175 310.26166 C 316.19006 311.37448 315.07095 313.34372 314.34515 316.1687 L 307.74368 315.26828 C 308.34375 312.4419 309.33151 310.16107 310.7077 308.42307 C 312.08249 306.68643 314.07129 305.3487 316.67136 304.4112 C 319.27213 303.47305 322.28433 303.0043 325.70941 303.0043 C 329.11005 303.0043 331.87357 303.40393 333.9986 304.20444 C 336.12363 305.0043 337.68564 306.0116 338.686 307.22293 C 339.68564 308.43634 340.38632 309.96686 340.78656 311.81812 C 341.01154 312.96793 341.124 315.04404 341.124 318.04367 L 341.124 327.04468 C 341.124 333.32056 341.26788 337.29053 341.5557 338.9538 C 341.8428 340.61572 342.41144 342.2098 343.2616 343.7348 L 336.21097 343.7348 C 335.51102 342.33417 335.06113 340.69672 334.86066 338.82248 Z M 334.2983 323.74536 C 331.84775 324.74503 328.17258 325.59515 323.27142 326.2944 C 320.4967 326.6961 318.53372 327.146 317.38391 327.64545 C 316.23267 328.1456 315.34476 328.87628 314.71957 329.83963 C 314.09436 330.80228 313.7821 331.87106 313.7835 333.04535 C 313.7821 334.84625 314.4639 336.34604 315.82751 337.54617 C 317.18973 338.7463 319.18341 339.3471 321.80862 339.3471 C 324.4101 339.3471 326.72235 338.77847 328.74747 337.64053 C 330.77261 336.50323 332.26056 334.94684 333.21133 332.97061 C 333.93643 331.44635 334.2983 329.19556 334.2983 326.2204 L 334.2983 323.74536 Z" fill="black"/><path d="M 335.76642 298.53723 L 349.45264 308.58368 L 350.78778 292.70386 Z" class="tw_glyphForeground"/><path d="M 311.30258 350.10672 L 297.61633 340.06027 L 296.28116 355.9401 Z" class="tw_glyphForeground"/></g></g></svg>
+</script>
+<script type="text/x-tiddler">
+title: $tw.images.bold
+modifier: JeremyRuston
+modified: 2010-01-10T17:14:34Z
+type: image/svg+xml
+
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xl="http://www.w3.org/1999/xlink" version="1.1" viewBox="5 292 64 65" width="64pt" height="65pt" overflow="hidden"><metadata xmlns:dc="http://purl.org/dc/elements/1.1/"><dc:date>2010-01-10 17:06Z</dc:date><!-- Produced by OmniGraffle Professional 5.2.1 --></metadata><defs></defs><g stroke="none" stroke-opacity="1" stroke-dasharray="none" fill="none" fill-opacity="1"><title>Canvas 1</title><g><title>Layer 1</title><path d="M 62.020245 326.9737 C 63.935875 328.29132 65.494057 329.94638 66.692894 331.9389 C 67.89023 333.93146 68.489647 336.27505 68.489647 338.97018 C 68.489647 342.20486 67.80694 344.9385 66.44503 347.17014 C 65.082558 349.40128 63.128513 351.16104 60.582832 352.4494 C 57.886196 353.82697 54.77913 354.7999 51.259563 355.36954 C 47.74006 355.9383 43.598164 356.22314 38.836006 356.22314 L 5.7231903 356.22314 L 5.7231903 352.71924 C 6.65226 352.62958 7.820406 352.49423 9.227127 352.31406 C 10.6358585 352.13388 11.623802 351.92407 12.1925926 351.68542 C 13.300358 351.2355 14.057007 350.64487 14.462164 349.91156 C 14.865814 349.17773 15.067923 348.2258 15.067923 347.05762 L 15.067923 302.12799 C 15.067923 301.04944 14.902847 300.1496 14.574642 299.4313 C 14.244991 298.71216 13.451309 298.083 12.1925926 297.54498 C 11.2644634 297.15543 10.1859493 296.83359 8.957861 296.57889 C 7.729332 296.32324 6.65226 296.12164 5.7231903 295.9722 L 5.7231903 292.46777 L 40.363503 292.46777 C 49.080563 292.46777 55.370766 293.66656 59.234543 296.0628 C 63.098824 298.45898 65.03002 301.99261 65.03002 306.6662 C 65.03002 308.8223 64.59662 310.7175 63.727936 312.34964 C 62.858803 313.98285 61.61515 315.39783 59.99854 316.59521 C 58.52993 317.70297 56.777992 318.66174 54.740654 319.47055 C 52.70476 320.27982 50.518478 320.95325 48.18068 321.49228 L 48.18068 322.34634 C 50.518478 322.58643 52.94384 323.10257 55.460335 323.89627 C 57.975323 324.68997 60.16211 325.7164 62.020245 326.9737 Z M 47.552074 307.78952 C 47.55352 304.25491 46.556286 301.49936 44.564266 299.52243 C 42.57174 297.54498 39.584896 296.556 35.601318 296.556 C 35.032578 296.556 34.290497 296.57889 33.37653 296.62372 C 32.462547 296.66855 31.676643 296.7055 31.0188 296.73618 L 31.0188 320.36893 L 33.35461 320.36893 C 38.207375 320.36893 41.785828 319.23923 44.092453 316.97745 C 46.399494 314.71661 47.55352 311.65283 47.552074 307.78952 Z M 50.697178 338.38638 C 50.697178 333.95435 49.37952 330.55359 46.743267 328.18661 C 44.108017 325.81964 40.318707 324.63736 35.37635 324.63736 C 34.808098 324.63736 34.05141 324.65927 33.108227 324.70554 C 32.163578 324.74985 31.46726 324.78833 31.0188 324.81754 L 31.0188 348.13623 C 31.287102 349.2445 32.126572 350.17984 33.534775 350.94382 C 34.943466 351.70831 36.64968 352.0906 38.655842 352.0906 C 42.220173 352.0906 45.11887 350.89175 47.35003 348.49554 C 49.581627 346.09888 50.697178 342.73029 50.697178 338.38638 Z" class="tw_glyphForeground"/></g></g></svg>
+</script>
+<script type="text/x-tiddler">
+title: $tw.images.bullet_list
+modifier: JeremyRuston
+modified: 2010-01-10T17:14:34Z
+type: image/svg+xml
+
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xl="http://www.w3.org/1999/xlink" version="1.1" viewBox="292 369 62 54" width="62pt" height="54pt"><metadata xmlns:dc="http://purl.org/dc/elements/1.1/"><dc:date>2010-01-10 17:11Z</dc:date><!-- Produced by OmniGraffle Professional 5.2.1 --></metadata><defs></defs><g stroke="none" stroke-opacity="1" stroke-dasharray="none" fill="none" fill-opacity="1"><title>Canvas 1</title><g><title>Layer 1</title><path d="M 310.50003 373.49997 L 310.50003 378.00003 L 353.25 378.00003 L 353.25 373.49997 Z M 310.50003 393.74997 L 310.50003 398.25 L 353.25 398.25 L 353.25 393.74997 Z M 310.50003 413.99997 L 310.50003 418.50003 L 353.25 418.50003 L 353.25 413.99997 Z M 304.02301 370.97705 C 301.38693 368.34097 297.11304 368.34097 294.47705 370.97705 C 291.84097 373.61307 291.84097 377.88693 294.47705 380.52295 C 297.11304 383.15903 301.38693 383.15903 304.02301 380.52295 C 306.659 377.88693 306.659 373.61307 304.02301 370.97705 M 304.02301 391.22702 C 301.38693 388.59097 297.11304 388.59097 294.47705 391.22702 C 291.84097 393.86307 291.84097 398.13693 294.47705 400.77298 C 297.11304 403.40903 301.38693 403.40903 304.02301 400.77298 C 306.659 398.13693 306.659 393.86307 304.02301 391.22702 M 304.02301 411.47705 C 301.38693 408.84097 297.11304 408.84097 294.47705 411.47705 C 291.84097 414.11307 291.84097 418.38693 294.47705 421.02295 C 297.11304 423.65903 301.38693 423.65903 304.02301 421.02295 C 306.659 418.38693 306.659 414.11307 304.02301 411.47705" class="tw_glyphForeground"/></g></g></svg>
+</script>
+<script type="text/x-tiddler">
+title: $tw.images.close
+modifier: JeremyRuston
+modified: 2010-01-10T17:14:34Z
+type: image/svg+xml
+
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xl="http://www.w3.org/1999/xlink" version="1.1" viewBox="78 222 60 60" width="5pc" height="5pc"><metadata xmlns:dc="http://purl.org/dc/elements/1.1/"><dc:date>2010-01-10 17:06Z</dc:date><!-- Produced by OmniGraffle Professional 5.2.1 --></metadata><defs></defs><g stroke="none" stroke-opacity="1" stroke-dasharray="none" fill="none" fill-opacity="1"><title>Canvas 1</title><g><title>Layer 1</title><path d="M 107.92718 244.14815 L 86.651474 222.89253 L 78.85206 230.69925 L 100.120415 251.9476 L 78.774 273.27396 L 86.57342 281.08075 L 107.927216 259.74707 L 129.39981 281.19946 L 137.19922 273.39267 L 115.73397 251.94763 L 137.121155 230.58054 L 129.32175 222.77374 Z" class="tw_glyphForeground" /></g></g></svg>
+</script>
+<script type="text/x-tiddler">
+title: $tw.images.edit
+modifier: JeremyRuston
+modified: 2010-01-10T17:14:34Z
+type: image/svg+xml
+
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xl="http://www.w3.org/1999/xlink" version="1.1" viewBox="301 225 48 52" width="4pc" height="52pt"><metadata xmlns:dc="http://purl.org/dc/elements/1.1/"><dc:date>2010-01-10 17:06Z</dc:date><!-- Produced by OmniGraffle Professional 5.2.1 --></metadata><defs></defs><g stroke="none" stroke-opacity="1" stroke-dasharray="none" fill="none" fill-opacity="1"><title>Canvas 1</title><g><title>Layer 1</title><path d="M 333.00003 234 L 306 258.75003 L 301.5 270 L 312.75 265.50003 L 339.75 240.74998 Z M 337.5 229.50002 L 335.24988 231.75008 L 341.99997 238.50003 L 344.24997 236.24995 Z M 342 225.00003 L 339.74988 227.25009 L 346.5 234.00005 L 348.75 231.75003 Z M 301.5 273.9719 C 301.5 273.9719 309.59888 277.99927 317.70013 273.97183 C 325.80066 269.94437 341.99997 276.65686 341.99997 276.65686 L 341.99997 273.97195 C 341.99997 273.97195 325.80014 267.2594 317.70013 271.28687 C 309.6 275.31451 301.5 271.28683 301.5 271.28683 Z" class="tw_glyphForeground"/></g></g></svg>
+</script>
+<script type="text/x-tiddler">
+title: $tw.images.house
+modifier: JeremyRuston
+modified: 2010-01-10T17:14:34Z
+type: image/svg+xml
+
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xl="http://www.w3.org/1999/xlink" version="1.1" viewBox="4 225 64 54" width="64pt" height="54pt"><metadata xmlns:dc="http://purl.org/dc/elements/1.1/"><dc:date>2010-01-10 17:06Z</dc:date><!-- Produced by OmniGraffle Professional 5.2.1 --></metadata><defs></defs><g stroke="none" stroke-opacity="1" stroke-dasharray="none" fill="none" fill-opacity="1"><title>Canvas 1</title><g><title>Layer 1</title><path d="M 20.545353 234.62091 L 4.8646793 243.49074 L 11.3586235 243.49074 L 11.3586235 278.96997 L 30.999008 278.96997 L 30.999008 264.9927 L 41.45267 264.9927 L 41.45267 278.96997 L 61.093048 278.96997 L 61.093048 243.49074 L 67.58687 243.49074 L 36.225899 225.75108 L 30.999008 228.70766 L 30.999008 225.75108 L 20.545353 225.75108 Z M 18.169436 246.17851 L 26.722485 246.17851 L 26.722485 257.19861 L 18.169436 257.19861 Z M 31.949257 246.17851 L 40.502422 246.17851 L 40.502422 257.19861 L 31.949257 257.19861 Z M 45.887562 246.17851 L 54.440483 246.17851 L 54.440483 257.19861 L 45.887562 257.19861 Z" class="tw_glyphForeground"/></g></g></svg>
+</script>
+<script type="text/x-tiddler">
+title: $tw.images.indent
+modifier: JeremyRuston
+modified: 2010-01-10T17:14:34Z
+type: image/svg+xml
+
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xl="http://www.w3.org/1999/xlink" version="1.1" viewBox="4 366 64 62" width="64pt" height="62pt"><metadata xmlns:dc="http://purl.org/dc/elements/1.1/"><dc:date>2010-01-10 17:11Z</dc:date><!-- Produced by OmniGraffle Professional 5.2.1 --></metadata><defs></defs><g stroke="none" stroke-opacity="1" stroke-dasharray="none" fill="none" fill-opacity="1"><title>Canvas 1</title><g><title>Layer 1</title><path d="M 4.499998 366.75 L 4.499998 371.25 L 67.5 371.25 L 67.5 366.75 Z M 29.24999 378 L 29.24999 382.5 L 67.5 382.5 L 67.5 378 Z M 29.24999 389.24997 L 29.24999 393.75 L 67.5 393.75 L 67.5 389.24997 Z M 29.24999 400.49997 L 29.24999 405.00003 L 67.5 405.00003 L 67.5 400.49997 Z M 29.24999 411.75 L 29.24999 416.25 L 67.5 416.25 L 67.5 411.75 Z M 4.499998 423 L 4.499998 427.5 L 67.5 427.5 L 67.5 423 Z M 4.499998 380.25 L 4.499998 414 L 24.750027 397.125 Z" class="tw_glyphForeground"/></g></g></svg>
+</script>
+<script type="text/x-tiddler">
+title: $tw.images.outdent
+modifier: JeremyRuston
+modified: 2010-01-10T17:14:34Z
+type: image/svg+xml
+
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xl="http://www.w3.org/1999/xlink" version="1.1" viewBox="76 366 64 62" width="64pt" height="62pt"><metadata xmlns:dc="http://purl.org/dc/elements/1.1/"><dc:date>2010-01-10 17:11Z</dc:date><!-- Produced by OmniGraffle Professional 5.2.1 --></metadata><defs></defs><g stroke="none" stroke-opacity="1" stroke-dasharray="none" fill="none" fill-opacity="1"><title>Canvas 1</title><g><title>Layer 1</title><path d="M 76.5 366.75 L 76.5 371.25 L 139.5 371.25 L 139.5 366.75 Z M 101.24999 378 L 101.24999 382.5 L 139.5 382.5 L 139.5 378 Z M 101.24999 389.24997 L 101.24999 393.75 L 139.5 393.75 L 139.5 389.24997 Z M 101.24999 400.49997 L 101.24999 405.00003 L 139.5 405.00003 L 139.5 400.49997 Z M 101.24999 411.75 L 101.24999 416.25 L 139.5 416.25 L 139.5 411.75 Z M 76.5 423 L 76.5 427.5 L 139.5 427.5 L 139.5 423 Z M 96.75003 414 L 96.75003 380.25 L 76.5 397.125 Z" class="tw_glyphForeground"/></g></g></svg>
+</script>
+<script type="text/x-tiddler">
+title: $tw.images.info
+modifier: JeremyRuston
+modified: 2010-01-10T17:14:34Z
+type: image/svg+xml
+
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xl="http://www.w3.org/1999/xlink" version="1.1" viewBox="382 220 26 64" width="26pt" height="64pt"><metadata xmlns:dc="http://purl.org/dc/elements/1.1/"><dc:date>2010-01-10 17:06Z</dc:date><!-- Produced by OmniGraffle Professional 5.2.1 --></metadata><defs></defs><g stroke="none" stroke-opacity="1" stroke-dasharray="none" fill="none" fill-opacity="1"><title>Canvas 1</title><g><title>Layer 1</title><path d="M 401.2942 220.5 C 403.14795 220.5 404.70966 221.14285 405.98166 222.4289 C 407.25247 223.71498 407.8877 225.27025 407.8877 227.09352 C 407.8877 228.91794 407.24484 230.47162 405.95877 231.7577 C 404.6727 233.04375 403.11862 233.68704 401.2942 233.68704 C 399.50067 233.68704 397.96066 233.04375 396.6746 231.7577 C 395.38852 230.47162 394.74567 228.91794 394.74567 227.09352 C 394.74567 225.27025 395.38086 223.71498 396.65167 222.4289 C 397.9237 221.14285 399.47134 220.5 401.2942 220.5 Z M 404.07565 241.13268 L 394.88065 273.02304 C 394.37161 274.84753 394.1177 276.04282 394.1177 276.61212 C 394.1177 276.93997 394.2519 277.2461 394.52109 277.53055 C 394.79025 277.815 395.07474 277.95804 395.37323 277.95685 C 395.8823 277.95804 396.39014 277.73343 396.89917 277.2843 C 398.24393 276.1782 399.85904 274.17493 401.74216 271.27371 L 403.2681 272.17087 C 398.75174 280.03482 393.95337 283.96698 388.87051 283.96698 C 386.92715 283.96698 385.37952 283.42096 384.22763 282.33017 C 383.07697 281.23816 382.5 279.85522 382.5 278.181 C 382.5 277.07498 382.75513 275.67038 383.26297 273.96603 L 389.4981 252.52577 C 390.09634 250.46146 390.39487 248.90741 390.39487 247.86119 C 390.39487 247.20308 390.11041 246.61848 389.5427 246.11066 C 388.97379 245.60323 388.19678 245.34929 387.21042 245.34929 C 386.7612 245.34929 386.22284 245.3646 385.59528 245.3939 L 386.17825 243.59995 L 401.38376 241.13268 L 404.07565 241.13268 Z" class="tw_glyphForeground"/></g></g></svg>
+</script>
+<script type="text/x-tiddler">
+title: $tw.images.italic
+modifier: JeremyRuston
+modified: 2010-01-10T17:14:34Z
+type: image/svg+xml
+
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xl="http://www.w3.org/1999/xlink" version="1.1" viewBox="81 293 50 64" width="50pt" height="64pt"><metadata xmlns:dc="http://purl.org/dc/elements/1.1/"><dc:date>2010-01-10 17:06Z</dc:date><!-- Produced by OmniGraffle Professional 5.2.1 --></metadata><defs></defs><g stroke="none" stroke-opacity="1" stroke-dasharray="none" fill="none" fill-opacity="1"><title>Canvas 1</title><g><title>Layer 1</title><path d="M 81.11371 356.22314 L 81.869743 352.97836 C 82.7284 352.94897 83.899796 352.85162 85.381943 352.68878 C 86.86409 352.52545 88.00611 352.31049 88.806473 352.04358 C 89.96241 351.65808 90.843704 351.0736 91.45085 350.2882 C 92.059425 349.5028 92.48153 348.5911 92.71813 347.5542 L 102.9001 303.44897 C 103.04802 302.82544 103.151634 302.30698 103.21089 301.89215 C 103.270645 301.4772 103.301 301.16599 103.29955 300.9588 C 103.301 299.71417 102.61148 298.7432 101.23337 298.0465 C 99.85481 297.34924 97.742844 296.79416 94.897026 296.37927 L 95.65355 293.13306 L 130.64409 293.13306 L 129.88806 296.37927 C 128.9393 296.43903 127.724075 296.57928 126.241875 296.80185 C 124.76117 297.02444 123.64955 297.25433 122.907 297.49088 C 121.69276 297.87686 120.79651 298.47626 120.21685 299.29059 C 119.640564 300.10638 119.233376 301.01804 118.99533 302.02603 L 108.81338 346.17563 C 108.69484 346.68008 108.598465 347.1542 108.52377 347.59848 C 108.45054 348.0437 108.412476 348.38391 108.412476 348.62006 C 108.412476 350.10223 109.102005 351.13287 110.480576 351.7111 C 111.85865 352.28879 113.98603 352.71143 116.86077 352.97836 L 116.10425 356.22314 L 81.11371 356.22314 Z" class="tw_glyphForeground"/></g></g></svg>
+</script>
+<script type="text/x-tiddler">
+title: $tw.images.justify_centre
+modifier: JeremyRuston
+modified: 2010-01-10T17:14:34Z
+type: image/svg+xml
+
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xl="http://www.w3.org/1999/xlink" version="1.1" viewBox="81 438 54 62" width="54pt" height="62pt"><metadata xmlns:dc="http://purl.org/dc/elements/1.1/"><dc:date>2010-01-10 17:11Z</dc:date><!-- Produced by OmniGraffle Professional 5.2.1 --></metadata><defs></defs><g stroke="none" stroke-opacity="1" stroke-dasharray="none" fill="none" fill-opacity="1"><title>Canvas 1</title><g><title>Layer 1</title><path d="M 81 438.75 L 81 443.25 L 135 443.25 L 135 438.75 Z M 96.750015 450 L 96.750015 454.5 L 119.249985 454.5 L 119.249985 450 Z M 85.499985 461.24997 L 85.499985 465.75003 L 130.500015 465.75003 L 130.500015 461.24997 Z M 81 472.5 L 81 477.00003 L 135 477.00003 L 135 472.5 Z M 92.249985 483.75 L 92.249985 488.25 L 123.750015 488.25 L 123.750015 483.75 Z M 81 495 L 81 499.5 L 135 499.5 L 135 495 Z" class="tw_glyphForeground"/></g></g></svg>
+</script>
+<script type="text/x-tiddler">
+title: $tw.images.justify_left
+modifier: JeremyRuston
+modified: 2010-01-10T17:14:34Z
+type: image/svg+xml
+
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xl="http://www.w3.org/1999/xlink" version="1.1" viewBox="4 438 57 62" width="57pt" height="62pt"><metadata xmlns:dc="http://purl.org/dc/elements/1.1/"><dc:date>2010-01-10 17:11Z</dc:date><!-- Produced by OmniGraffle Professional 5.2.1 --></metadata><defs></defs><g stroke="none" stroke-opacity="1" stroke-dasharray="none" fill="none" fill-opacity="1"><title>Canvas 1</title><g><title>Layer 1</title><path d="M 4.5 438.75 L 4.5 443.25 L 58.5 443.25 L 58.5 438.75 Z M 4.5 450 L 4.5 454.5 L 27 454.5 L 27 450 Z M 4.5 461.24997 L 4.5 465.75003 L 51.75 465.75003 L 51.75 461.24997 Z M 4.5 472.5 L 4.5 477.00003 L 60.75 477.00003 L 60.75 472.5 Z M 4.5 483.75 L 4.5 488.25 L 35.999996 488.25 L 35.999996 483.75 Z M 4.5 495 L 4.5 499.5 L 58.5 499.5 L 58.5 495 Z" class="tw_glyphForeground"/></g></g></svg>
+</script>
+<script type="text/x-tiddler">
+title: $tw.images.justify_right
+modifier: JeremyRuston
+modified: 2010-01-10T17:14:34Z
+type: image/svg+xml
+
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xl="http://www.w3.org/1999/xlink" version="1.1" viewBox="155 438 57 62" width="57pt" height="62pt"><metadata xmlns:dc="http://purl.org/dc/elements/1.1/"><dc:date>2010-01-10 17:11Z</dc:date><!-- Produced by OmniGraffle Professional 5.2.1 --></metadata><defs></defs><g stroke="none" stroke-opacity="1" stroke-dasharray="none" fill="none" fill-opacity="1"><title>Canvas 1</title><g><title>Layer 1</title><path d="M 157.5 438.75 L 157.5 443.25 L 211.5 443.25 L 211.5 438.75 Z M 189 450 L 189 454.5 L 211.5 454.5 L 211.5 450 Z M 164.25 461.24997 L 164.25 465.75003 L 211.5 465.75003 L 211.5 461.24997 Z M 155.25 472.5 L 155.25 477.00003 L 211.5 477.00003 L 211.5 472.5 Z M 180 483.75 L 180 488.25 L 211.5 488.25 L 211.5 483.75 Z M 157.5 495 L 157.5 499.5 L 211.5 499.5 L 211.5 495 Z" class="tw_glyphForeground"/></g></g></svg>
+</script>
+<script type="text/x-tiddler">
+title: $tw.images.number_list
+modifier: JeremyRuston
+modified: 2010-01-10T17:14:34Z
+type: image/svg+xml
+
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xl="http://www.w3.org/1999/xlink" version="1.1" viewBox="220 368 62 58" width="62pt" height="58pt"><metadata xmlns:dc="http://purl.org/dc/elements/1.1/"><dc:date>2010-01-10 17:11Z</dc:date><!-- Produced by OmniGraffle Professional 5.2.1 --></metadata><defs></defs><g stroke="none" stroke-opacity="1" stroke-dasharray="none" fill="none" fill-opacity="1"><title>Canvas 1</title><g><title>Layer 1</title><path d="M 227.78958 384.75003 L 227.78958 384.75003 L 227.78958 368.08862 L 225.2088 368.08862 C 224.8466 369.09995 224.1789 369.98468 223.20557 370.7428 C 222.23186 371.5014 221.33009 372.01648 220.5 372.28806 L 220.5 375.1744 C 222.07695 374.65369 223.44662 373.85004 224.60901 372.76346 L 224.60901 384.75003 Z M 231.74998 402.0459 L 231.74998 402.0459 L 225.4343 402.0459 C 225.60033 401.75894 225.81708 401.46472 226.08487 401.163 C 226.35284 400.86105 226.98859 400.2499 227.99223 399.3294 C 228.99571 398.40863 229.68996 397.70288 230.075 397.21252 C 230.65576 396.473 231.08046 395.76556 231.34837 395.09055 C 231.61609 394.41489 231.74998 393.70386 231.74998 392.95685 C 231.74998 391.64359 231.28227 390.54572 230.34673 389.6628 C 229.41106 388.78006 228.12413 388.33862 226.48666 388.33862 C 224.99246 388.33862 223.74751 388.71982 222.75157 389.48203 C 221.7554 390.24399 221.16309 391.50021 220.9744 393.2511 L 224.14372 393.56796 C 224.20435 392.63977 224.43065 391.9759 224.82278 391.57584 C 225.2153 391.17603 225.74327 390.97583 226.4074 390.97583 C 227.07898 390.97583 227.60562 391.16635 227.9864 391.54758 C 228.36761 391.92853 228.55824 392.47394 228.55824 393.18317 C 228.55824 393.82458 228.33923 394.47333 227.90166 395.12997 C 227.57707 395.60522 226.6982 396.51099 225.26425 397.84647 C 223.48343 399.49908 222.29134 400.82526 221.68748 401.82526 C 221.0838 402.82486 220.72168 403.8833 220.6009 405 L 231.74998 405 Z M 220.5 420.56384 L 220.5 420.56384 C 220.65849 421.95978 221.23222 423.09003 222.22057 423.95413 C 223.20944 424.81784 224.45435 425.25 225.95566 425.25 C 227.54025 425.25 228.86467 424.73672 229.92877 423.71063 C 230.99268 422.68436 231.52473 421.44308 231.52473 419.9867 C 231.52473 418.98297 231.23999 418.12659 230.67015 417.4174 C 230.10069 416.708 229.3401 416.25153 228.38942 416.0477 C 229.98155 415.18 230.77768 414.0178 230.77768 412.56152 C 230.77768 411.53503 230.38901 410.6145 229.61189 409.79974 C 228.6685 408.8036 227.41573 408.30554 225.8539 408.30554 C 224.94089 408.30554 224.11664 408.47723 223.38071 408.82056 C 222.64502 409.1639 222.07149 409.63556 221.66039 410.23535 C 221.24924 410.83514 220.94147 411.63678 220.7376 412.6406 L 223.66945 413.1387 C 223.75255 412.41428 223.98615 411.8635 224.37099 411.48611 C 224.75603 411.10873 225.22034 410.9201 225.76357 410.9201 C 226.31438 410.9201 226.75586 411.0863 227.08768 411.41815 C 227.41997 411.75043 227.58575 412.19547 227.58575 412.75366 C 227.58575 413.41028 227.35947 413.93668 226.90651 414.3328 C 226.45374 414.72897 225.79727 414.91568 224.93706 414.89322 L 224.58598 417.4853 C 225.15199 417.32678 225.63896 417.24774 226.04648 417.24734 C 226.66522 417.24774 227.18942 417.48123 227.61954 417.94922 C 228.04965 418.41702 228.26488 419.05096 228.26488 419.85077 C 228.26488 420.6959 228.0404 421.3674 227.59123 421.86557 C 227.14247 422.36362 226.58958 422.61255 225.93318 422.61255 C 225.32167 422.61255 224.80116 422.40506 224.37099 421.99014 C 223.94089 421.57513 223.67674 420.97534 223.57887 420.19028 Z M 238.49998 373.5 L 238.49998 378.00003 L 281.25 378.00003 L 281.25 373.5 Z M 238.49998 393.75 L 238.49998 398.25 L 281.25 398.25 L 281.25 393.75 Z M 238.49998 414 L 238.49998 418.50003 L 281.25 418.50003 L 281.25 414 Z" class="tw_glyphForeground"/></g></g></svg>
+</script>
+<script type="text/x-tiddler">
+title: $tw.images.plus
+modifier: JeremyRuston
+modified: 2010-01-10T17:14:34Z
+type: image/svg+xml
+
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xl="http://www.w3.org/1999/xlink" version="1.1" viewBox="153 225 54 54" width="54pt" height="54pt"><metadata xmlns:dc="http://purl.org/dc/elements/1.1/"><dc:date>2010-01-10 17:06Z</dc:date><!-- Produced by OmniGraffle Professional 5.2.1 --></metadata><defs></defs><g stroke="none" stroke-opacity="1" stroke-dasharray="none" fill="none" fill-opacity="1"><title>Canvas 1</title><g><title>Layer 1</title><path d="M 173.46471 245.25 L 153 245.25 L 153 258.75 L 173.46471 258.75 L 173.46471 279 L 186.75 279 L 186.75 258.75 L 207 258.75 L 207 245.25 L 186.75 245.25 L 186.75 225 L 173.46471 225 Z" class="tw_glyphForeground"/></g></g></svg>
+</script>
+<script type="text/x-tiddler">
+title: $tw.images.rule
+modifier: JeremyRuston
+modified: 2010-01-10T17:14:34Z
+type: image/svg+xml
+
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xl="http://www.w3.org/1999/xlink" version="1.1" viewBox="148 390 64 12" width="64pt" height="1pc"><metadata xmlns:dc="http://purl.org/dc/elements/1.1/"><dc:date>2010-01-10 17:11Z</dc:date><!-- Produced by OmniGraffle Professional 5.2.1 --></metadata><defs></defs><g stroke="none" stroke-opacity="1" stroke-dasharray="none" fill="none" fill-opacity="1"><title>Canvas 1</title><g><title>Layer 1</title><rect x="148.5" y="393.75" width="63" height="4.5" class="tw_glyphForeground"/></g></g></svg>
+</script>
+<script type="text/x-tiddler">
+title: $tw.images.search
+modifier: JeremyRuston
+modified: 2010-01-10T17:14:34Z
+type: image/svg+xml
+
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xl="http://www.w3.org/1999/xlink" version="1.1" viewBox="220 220 64 64" width="64pt" height="64pt"><metadata xmlns:dc="http://purl.org/dc/elements/1.1/"><dc:date>2010-01-10 17:06Z</dc:date><!-- Produced by OmniGraffle Professional 5.2.1 --></metadata><defs></defs><g stroke="none" stroke-opacity="1" stroke-dasharray="none" fill="none" fill-opacity="1"><title>Canvas 1</title><g><title>Layer 1</title><path d="M 256.01859 250.05588 C 260.76382 242.61758 259.88812 232.62836 253.39134 226.13167 C 245.88245 218.6227 233.7081 218.6227 226.19919 226.13167 C 218.69026 233.64058 218.69026 245.81494 226.19919 253.32388 C 232.67006 259.79474 242.60551 260.68927 250.03436 256.00754 L 277.52682 283.5 L 283.49478 277.53207 Z M 251.03088 230.46902 L 251.03088 230.46902 C 245.28798 225.84747 236.86485 226.20229 231.53358 231.5336 C 226.20227 236.86485 225.84741 245.28815 230.46912 251.031 C 230.05959 250.70146 229.66371 250.34657 229.28357 249.96645 C 223.57216 244.25502 223.57216 234.99501 229.28357 229.28355 C 234.99496 223.57217 244.25497 223.57217 249.96642 229.28355 C 250.34654 229.6637 250.70137 230.05952 251.03088 230.46902 Z" class="tw_glyphForeground"/></g></g></svg>
+</script>
+<script type="text/x-tiddler">
+title: $tw.images.smaller
+modifier: JeremyRuston
+modified: 2010-01-10T17:14:34Z
+type: image/svg+xml
+
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xl="http://www.w3.org/1999/xlink" version="1.1" viewBox="370 296 50 55" width="50pt" height="55pt"><metadata xmlns:dc="http://purl.org/dc/elements/1.1/"><dc:date>2010-01-10 17:09Z</dc:date><!-- Produced by OmniGraffle Professional 5.2.1 --></metadata><defs></defs><g stroke="none" stroke-opacity="1" stroke-dasharray="none" fill="none" fill-opacity="1"><title>Canvas 1</title><g><title>Layer 1</title><path d="M 401.05142 332.76532 C 399.45337 334.12357 397.91516 335.08221 396.4368 335.64127 C 394.9584 336.20117 393.3724 336.48068 391.67792 336.48068 C 388.88147 336.48068 386.73242 335.79755 385.2295 334.43121 C 383.72745 333.06448 382.97598 331.3191 382.9764 329.19284 C 382.97598 327.9462 383.25952 326.80762 383.82745 325.77664 C 384.39407 324.74655 385.13751 323.91916 386.05643 323.29584 C 386.97577 322.67252 388.01077 322.20148 389.1614 321.88177 C 390.008 321.65808 391.28677 321.44199 392.99689 321.23389 C 396.48145 320.81866 399.04572 320.32346 400.69199 319.74792 C 400.7076 319.15677 400.71564 318.78125 400.71564 318.62097 C 400.71564 316.86307 400.30798 315.624 399.49313 314.90558 C 398.39069 313.93042 396.75247 313.4433 394.57889 313.4433 C 392.5495 313.4433 391.05148 313.7987 390.08392 314.50995 C 389.11765 315.22125 388.40237 316.47995 387.93845 318.28561 L 383.71896 317.71005 C 384.1025 315.90353 384.73386 314.44568 385.61346 313.33478 C 386.49222 312.22476 387.7634 311.36972 389.4253 310.77048 C 391.08765 310.17087 393.01297 309.87125 395.2022 309.87125 C 397.3758 309.87125 399.14215 310.12668 400.50043 310.63834 C 401.8587 311.1496 402.85709 311.79343 403.4965 312.56769 C 404.13544 313.34326 404.58331 314.32153 404.83914 315.50482 C 404.9829 316.23975 405.0548 317.56674 405.0548 319.48404 L 405.0548 325.23724 C 405.0548 329.24863 405.14676 331.78613 405.33075 332.84927 C 405.51425 333.9115 405.87772 334.93042 406.4211 335.90515 L 401.91452 335.90515 C 401.46713 335.00989 401.17957 333.96329 401.05142 332.76532 Z M 400.69199 323.12842 C 399.12567 323.76736 396.77658 324.31076 393.6439 324.7577 C 391.87036 325.01443 390.6157 325.302 389.88074 325.62125 C 389.1449 325.94092 388.57736 326.40796 388.17776 327.02371 C 387.77814 327.639 387.57855 328.32214 387.57947 329.07272 C 387.57855 330.22382 388.01434 331.18246 388.88593 331.94955 C 389.75662 332.71664 391.03094 333.10065 392.7089 333.10065 C 394.3717 333.10065 395.84964 332.73718 397.14404 332.00986 C 398.43848 331.28293 399.38953 330.28812 399.99722 329.02496 C 400.4607 328.05069 400.69199 326.61203 400.69199 324.71039 L 400.69199 323.12842 Z" fill="black"/><path d="M 370.95926 342.86768 L 381.16745 350.36102 L 382.1633 338.51672 Z" fill="black"/><path d="M 419.50235 304.21509 L 409.29416 296.72174 L 408.2983 308.56604 Z" class="tw_glyphForeground"/></g></g></svg>
+</script>
+<script type="text/x-tiddler">
+title: $tw.images.strike
+modifier: JeremyRuston
+modified: 2010-01-10T17:14:34Z
+type: image/svg+xml
+
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xl="http://www.w3.org/1999/xlink" version="1.1" viewBox="218 302 67 34" width="67pt" height="34pt"><metadata xmlns:dc="http://purl.org/dc/elements/1.1/"><dc:date>2010-01-10 17:09Z</dc:date><!-- Produced by OmniGraffle Professional 5.2.1 --></metadata><defs></defs><g stroke="none" stroke-opacity="1" stroke-dasharray="none" fill="none" fill-opacity="1"><title>Canvas 1</title><g><title>Layer 1</title><path d="M 230.85696 324.02814 C 230.46758 324.44003 230.12798 324.9094 229.83827 325.436 C 229.31279 326.38983 229.0505 327.44324 229.0509 328.59662 C 229.0505 330.56384 229.74573 332.17868 231.13542 333.44318 C 232.52596 334.7073 234.51419 335.33932 237.10146 335.33932 C 238.66919 335.33932 240.13652 335.08072 241.50435 334.56271 C 242.87212 334.0455 244.29526 333.15854 245.77377 331.90186 C 245.89233 333.01025 246.15836 333.97855 246.5723 334.80682 L 250.74176 334.80682 C 250.23901 333.90506 249.90274 332.96234 249.73297 331.97958 C 249.56276 330.99594 249.47766 328.64828 249.47766 324.93695 L 249.47766 324.02814 L 255.64383 324.02814 L 255.64383 334.8068 L 259.34772 334.8068 L 259.34772 331.85681 C 260.9299 334.17847 263.11072 335.33926 265.89047 335.33926 C 268.68466 335.33926 271.08029 334.23798 273.07681 332.03448 C 274.84393 330.08414 275.82886 327.41531 276.03159 324.02814 L 284.25192 324.02814 L 284.25192 320.965 L 275.9878 320.965 C 275.88123 319.89331 275.67236 318.86652 275.3613 317.8844 C 274.88788 316.39102 274.23395 315.11536 273.39862 314.05826 C 272.56253 313.0007 271.49835 312.17984 270.2045 311.59656 C 268.91107 311.01239 267.53958 310.72034 266.0904 310.72034 C 263.47299 310.72034 261.32153 311.77753 259.63611 313.89218 L 259.63611 302.2922 L 255.64383 302.2922 L 255.64383 320.965 L 249.47766 320.965 L 249.47766 319.61414 C 249.47766 317.84021 249.41116 316.61249 249.27812 315.93253 C 249.04144 314.8378 248.62708 313.93268 248.03593 313.21512 C 247.44437 312.49878 246.52066 311.90314 245.26399 311.43008 C 244.00732 310.9567 242.37309 310.72037 240.36209 310.72037 C 238.33669 310.72037 236.55536 310.99762 235.01735 311.55234 C 233.47978 312.10681 232.30368 312.89789 231.49071 313.92487 C 230.67683 314.95258 230.09277 316.30142 229.73793 317.97284 L 233.64172 318.50534 C 234.07092 316.83472 234.73274 315.6702 235.62668 315.01212 C 236.52191 314.35406 237.90788 314.02527 239.78542 314.02527 C 241.79642 314.02527 243.31206 314.4759 244.33205 315.37814 C 245.08595 316.04282 245.46312 317.18918 245.46312 318.81561 C 245.46312 318.9639 245.45567 319.31134 245.44124 319.85825 C 244.25783 320.27197 242.56166 320.64084 240.3518 320.965 L 218.79599 320.965 L 218.79599 324.02814 Z M 241.68822 324.02814 L 245.44124 324.02814 L 245.44124 324.4495 C 245.44124 326.2089 245.22723 327.53992 244.79843 328.44131 C 244.23616 329.61002 243.35629 330.53036 242.15872 331.20291 C 240.96107 331.87585 239.59377 332.21213 238.05534 332.21213 C 236.50287 332.21213 235.32388 331.85684 234.51831 331.14713 C 233.71196 330.4374 233.30875 329.5505 233.3096 328.4855 C 233.30875 327.7911 233.49341 327.15903 233.86316 326.58981 C 234.23285 326.02008 234.75795 325.58798 235.43875 325.2922 C 236.11871 324.99686 237.2795 324.7308 238.92035 324.49329 C 239.93112 324.34903 240.85379 324.194 241.68822 324.02814 Z M 259.3276 324.02814 L 271.96402 324.02814 C 271.83282 326.52628 271.20544 328.44464 270.08267 329.78348 C 268.81067 331.2991 267.30289 332.05716 265.55789 332.05716 C 263.41437 332.05716 261.71362 331.02933 260.45691 328.97379 C 259.79889 327.8988 259.42267 326.2503 259.3276 324.02814 Z M 271.88803 320.965 L 259.40616 320.965 C 259.63278 319.00296 260.23431 317.43988 261.21085 316.27618 C 262.48239 314.76093 263.99023 314.00333 265.73517 314.00247 C 267.46521 314.00333 268.94 314.73492 270.16037 316.19855 C 271.09201 317.31677 271.66809 318.9057 271.88803 320.965 Z" class="tw_glyphForeground"/></g></g></svg>
+</script>
+<script type="text/x-tiddler">
+title: $tw.images.subscript
+modifier: JeremyRuston
+modified: 2010-01-10T17:14:34Z
+type: image/svg+xml
+
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xl="http://www.w3.org/1999/xlink" version="1.1" viewBox="303 455 51 44" width="51pt" height="44pt"><metadata xmlns:dc="http://purl.org/dc/elements/1.1/"><dc:date>2010-01-10 17:11Z</dc:date><!-- Produced by OmniGraffle Professional 5.2.1 --></metadata><defs></defs><g stroke="none" stroke-opacity="1" stroke-dasharray="none" fill="none" fill-opacity="1"><title>Canvas 1</title><g><title>Layer 1</title><path d="M 316.56284 478.7738 L 316.56284 478.7738 C 316.6569 479.6528 316.86789 480.42072 317.19614 481.07755 L 320.50269 481.07755 C 320.10397 480.36237 319.83731 479.61478 319.7027 478.83542 C 319.56769 478.05536 319.50018 476.19357 319.50018 473.25034 L 319.50018 469.0291 C 319.50018 467.62234 319.44745 466.64868 319.34195 466.10947 C 319.15424 465.24124 318.82562 464.52353 318.35681 463.95444 C 317.8877 463.38638 317.15518 462.91394 316.1586 462.53885 C 315.16196 462.16345 313.86594 461.976 312.27115 461.976 C 310.66489 461.976 309.25223 462.19586 308.03253 462.6358 C 306.81317 463.07544 305.88046 463.70288 305.23572 464.5173 C 304.59033 465.33234 304.1271 466.402 303.8457 467.7275 L 306.94159 468.1498 C 307.28198 466.82492 307.80682 465.9014 308.51575 465.37955 C 309.2257 464.8577 310.32483 464.59686 311.81384 464.59686 C 313.4086 464.59686 314.61063 464.95428 315.4195 465.66977 C 316.0174 466.1969 316.3165 467.10602 316.3165 468.39587 C 316.3165 468.51346 316.3106 468.78894 316.2991 469.22275 C 315.09119 469.64496 313.20975 470.00836 310.6531 470.313 C 309.39838 470.46567 308.46008 470.62424 307.83893 470.78833 C 306.99469 471.02292 306.23526 471.36853 305.56076 471.82587 C 304.88654 472.28323 304.34103 472.89032 303.92532 473.6461 C 303.5086 474.40256 303.30057 475.23792 303.3009 476.1526 C 303.30057 477.71268 303.85193 478.99332 304.95401 479.9961 C 306.0567 480.9986 307.63348 481.49982 309.68533 481.49982 C 310.92859 481.49982 312.09229 481.29477 313.177 480.8839 C 314.26172 480.47379 315.39032 479.7704 316.56284 478.7738 Z M 316.2991 471.70303 L 316.2991 471.70303 L 316.2991 472.86374 C 316.2991 474.25903 316.12943 475.31458 315.78937 476.02942 C 315.34348 476.9562 314.6457 477.68613 313.69595 478.2195 C 312.74619 478.75314 311.66177 479.01984 310.44177 479.01984 C 309.21063 479.01984 308.2757 478.73807 307.63678 478.17523 C 306.99728 477.61243 306.67755 476.90906 306.67822 476.06445 C 306.67755 475.51376 306.824 475.0125 307.11722 474.5611 C 307.4104 474.10928 307.82678 473.7666 308.3667 473.53204 C 308.906 473.29782 309.8265 473.08688 311.12778 472.89847 C 313.42633 472.57053 315.14987 472.17184 316.2991 471.70303 Z M 327.32724 481.07755 L 327.32724 481.07755 L 327.32724 478.73807 C 328.58197 480.57922 330.3114 481.49982 332.5159 481.49982 C 334.73181 481.49982 336.63162 480.62643 338.21497 478.87894 C 339.79797 477.1318 340.58945 474.65768 340.58945 471.45657 C 340.58945 470.10788 340.40173 468.84164 340.02661 467.65732 C 339.65121 466.47302 339.13263 465.46133 338.47015 464.62302 C 337.8071 463.7843 336.9632 463.13336 335.9371 462.67075 C 334.91138 462.20755 333.8237 461.9759 332.67447 461.9759 C 330.59872 461.9759 328.89255 462.81427 327.5559 464.4913 L 327.5559 455.292 L 324.38986 455.292 L 324.38986 481.07755 Z M 327.29218 471.59714 L 327.29218 471.59714 C 327.29218 469.32224 327.79633 467.5836 328.80475 466.38196 C 329.81308 465.18024 331.00888 464.57938 332.39273 464.5788 C 333.76477 464.57938 334.93427 465.15964 335.90207 466.32034 C 336.86914 467.48105 337.35306 469.2813 337.35306 471.72037 C 337.35306 474.10074 336.84851 475.89182 335.84045 477.09378 C 334.83173 478.29578 333.63599 478.89694 332.25217 478.89694 C 330.55219 478.89694 329.20346 478.08185 328.20685 476.45166 C 327.59683 475.45508 327.29218 473.837 327.29218 471.59714 Z M 353.25 495.20728 L 353.25 495.20728 L 346.9343 495.20728 C 347.10031 494.92032 347.3171 494.62607 347.58484 494.32434 C 347.85281 494.02243 348.48862 493.41132 349.49222 492.49075 C 350.4957 491.57004 351.18991 490.86423 351.57495 490.37384 C 352.15576 489.63437 352.58044 488.92697 352.84836 488.25195 C 353.11615 487.5763 353.25 486.86526 353.25 486.1182 C 353.25 484.80496 352.78223 483.7071 351.84674 482.82416 C 350.91107 481.94144 349.62408 481.49997 347.98666 481.49997 C 346.49243 481.49997 345.2475 481.88116 344.25156 482.6434 C 343.25537 483.40533 342.66309 484.6616 342.47443 486.4125 L 345.64365 486.72937 C 345.70435 485.80115 345.9306 485.13724 346.32275 484.7372 C 346.71527 484.3374 347.24329 484.1372 347.9074 484.1372 C 348.57895 484.1372 349.10556 484.3277 349.48633 484.7089 C 349.86755 485.0899 350.05826 485.63528 350.05826 486.3445 C 350.05826 486.98596 349.83923 487.6347 349.40161 488.29135 C 349.07706 488.76654 348.19821 489.67233 346.76422 491.00784 C 344.98343 492.66043 343.7913 493.98663 343.1874 494.98663 C 342.58377 495.98627 342.22159 497.04468 342.10092 498.16138 L 353.25 498.16138 Z" class="tw_glyphForeground"/></g></g></svg>
+</script>
+<script type="text/x-tiddler">
+title: $tw.images.superscript
+modifier: JeremyRuston
+modified: 2010-01-10T17:14:34Z
+type: image/svg+xml
+
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xl="http://www.w3.org/1999/xlink" version="1.1" viewBox="231 443 51 39" width="51pt" height="39pt"><metadata xmlns:dc="http://purl.org/dc/elements/1.1/"><dc:date>2010-01-10 17:11Z</dc:date><!-- Produced by OmniGraffle Professional 5.2.1 --></metadata><defs></defs><g stroke="none" stroke-opacity="1" stroke-dasharray="none" fill="none" fill-opacity="1"><title>Canvas 1</title><g><title>Layer 1</title><path d="M 244.56288 478.7738 L 244.56288 478.7738 C 244.65689 479.6528 244.86787 480.42072 245.19614 481.07751 L 248.50272 481.07751 C 248.10397 480.3624 247.83734 479.61478 247.70268 478.8354 C 247.56767 478.0554 247.50024 476.19354 247.50024 473.25037 L 247.50024 469.0291 C 247.50024 467.62231 247.4475 466.6487 247.34195 466.10944 C 247.15425 465.2413 246.82568 464.52353 246.35686 463.95447 C 245.88774 463.38635 245.15518 462.91397 244.1586 462.53882 C 243.16202 462.1634 241.86598 461.976 240.27115 461.976 C 238.66489 461.976 237.25223 462.19586 236.03258 462.63577 C 234.81317 463.0755 233.88046 463.70285 233.23572 464.51724 C 232.59033 465.33234 232.1271 466.402 231.84569 467.7275 L 234.94164 468.14975 C 235.28198 466.82492 235.80685 465.9014 236.51578 465.37952 C 237.22571 464.8577 238.32484 464.59686 239.81383 464.59686 C 241.40865 464.59686 242.61063 464.95428 243.4195 465.66977 C 244.0174 466.1969 244.31648 467.10602 244.31648 468.3958 C 244.31648 468.51343 244.31059 468.789 244.29915 469.22272 C 243.09123 469.645 241.2098 470.00833 238.6531 470.313 C 237.39838 470.46564 236.46008 470.62424 235.83893 470.78833 C 234.99469 471.02292 234.2353 471.36856 233.56075 471.8259 C 232.88654 472.2832 232.34103 472.89032 231.92531 473.6461 C 231.50858 474.40253 231.30055 475.23795 231.3009 476.15265 C 231.30055 477.7127 231.85193 478.99332 232.95401 479.99615 C 234.05673 480.99863 235.63353 481.49985 237.68533 481.49985 C 238.92862 481.49985 240.09229 481.2948 241.17703 480.88394 C 242.26173 480.47375 243.39034 479.77042 244.56288 478.7738 Z M 244.29915 471.70306 L 244.29915 471.70306 L 244.29915 472.86377 C 244.29915 474.25903 244.12943 475.3146 243.78937 476.02942 C 243.34348 476.95624 242.64569 477.68616 241.69595 478.2195 C 240.74622 478.7532 239.66183 479.01987 238.44182 479.01987 C 237.21063 479.01987 236.27568 478.73813 235.63683 478.17526 C 234.99733 477.61243 234.67755 476.90906 234.67825 476.0645 C 234.67755 475.51376 234.824 475.01257 235.1172 474.5611 C 235.4104 474.10934 235.82684 473.76666 236.36668 473.5321 C 236.90599 473.29785 237.82655 473.08682 239.12782 472.8985 C 241.42633 472.57053 243.14987 472.17184 244.29915 471.70306 Z M 255.32768 481.07773 L 255.32768 481.07773 L 255.32768 478.73822 C 256.58243 480.5794 258.31186 481.5 260.51636 481.5 C 262.73233 481.5 264.63214 480.6266 266.21548 478.87912 C 267.79846 477.13196 268.58997 474.65787 268.58997 471.4568 C 268.58997 470.108 268.40225 468.84183 268.02713 467.65753 C 267.65167 466.47318 267.13309 465.46152 266.47067 464.62323 C 265.80759 463.78452 264.96365 463.13358 263.93759 462.671 C 262.91183 462.2077 261.82416 461.97607 260.67493 461.97607 C 258.59918 461.97607 256.893 462.81445 255.55635 464.49149 L 255.55635 455.2922 L 252.39032 455.2922 L 252.39032 481.07773 Z M 255.29262 471.59735 L 255.29262 471.59735 C 255.29262 469.32242 255.79678 467.58377 256.8052 466.3821 C 257.81357 465.18045 259.00934 464.57962 260.39319 464.57898 C 261.7652 464.57962 262.93475 465.15982 263.90253 466.32053 C 264.86966 467.48123 265.35352 469.28146 265.35352 471.72055 C 265.35352 474.10095 264.84903 475.89197 263.84094 477.09393 C 262.83221 478.29596 261.63644 478.89716 260.25262 478.89716 C 258.55267 478.89716 257.20389 478.08203 256.2073 476.45184 C 255.59732 475.45526 255.29262 473.8372 255.29262 471.59735 Z M 281.25 456.95724 L 281.25 456.95724 L 274.9343 456.95724 C 275.10031 456.67032 275.3171 456.37604 275.58484 456.07434 C 275.85281 455.7724 276.48862 455.16129 277.49225 454.24072 C 278.49573 453.32 279.18991 452.61426 279.57495 452.1239 C 280.15576 451.3843 280.58044 450.67694 280.84836 450.0019 C 281.11615 449.32623 281.25 448.6152 281.25 447.8682 C 281.25 446.55496 280.78223 445.45706 279.84674 444.57413 C 278.9111 443.6914 277.62411 443.25 275.98666 443.25 C 274.49243 443.25 273.2475 443.63116 272.25159 444.39337 C 271.2554 445.15533 270.66309 446.4116 270.47443 448.16245 L 273.64365 448.4793 C 273.70435 447.55109 273.93066 446.8872 274.32275 446.4872 C 274.71527 446.08737 275.24329 445.88718 275.90741 445.88718 C 276.57898 445.88718 277.10559 446.07767 277.48633 446.45886 C 277.86755 446.83984 278.05826 447.38525 278.05826 448.0945 C 278.05826 448.73593 277.83923 449.38467 277.40164 450.0413 C 277.07706 450.51657 276.19821 451.4223 274.76422 452.7578 C 272.98343 454.41043 271.79129 455.7366 271.18741 456.73663 C 270.58377 457.73624 270.22165 458.79465 270.10092 459.91135 L 281.25 459.91135 Z" class="tw_glyphForeground"/></g></g></svg>
+</script>
+<script type="text/x-tiddler">
+title: $tw.images.underline
+modifier: JeremyRuston
+modified: 2010-01-10T17:14:34Z
+type: image/svg+xml
+
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xl="http://www.w3.org/1999/xlink" version="1.1" viewBox="147 293 65 63" width="65pt" height="63pt"><metadata xmlns:dc="http://purl.org/dc/elements/1.1/"><dc:date>2010-01-10 17:06Z</dc:date><!-- Produced by OmniGraffle Professional 5.2.1 --></metadata><defs></defs><g stroke="none" stroke-opacity="1" stroke-dasharray="none" fill="none" fill-opacity="1"><title>Canvas 1</title><g><title>Layer 1</title><path d="M 211.20116 296.2442 C 210.48282 296.31912 209.44952 296.48615 208.10028 296.7461 C 206.75156 297.00604 205.61786 297.45789 204.70201 298.10129 C 203.76074 298.72061 203.09839 299.83487 202.71495 301.44403 C 202.33017 303.05417 202.13914 305.46814 202.13914 308.68695 L 202.13914 328.29623 C 202.13914 334.06546 200.18257 338.7084 196.27045 342.22418 C 192.35872 345.73993 187.18436 347.49802 180.74629 347.49802 C 173.2448 347.49802 167.43858 345.8024 163.328 342.4101 C 159.21838 339.01785 157.16287 334.2884 157.16287 328.2222 L 157.16287 301.25906 C 157.16287 300.39182 156.995865 299.64899 156.660965 299.03006 C 156.32703 298.41116 155.690155 297.85431 154.74889 297.35895 C 154.10547 297.03748 153.31316 296.77795 152.37189 296.5791 C 151.43062 296.3816 150.66232 296.24515 150.06892 296.1702 L 150.06892 293.34781 L 177.70045 293.34781 L 177.70045 296.1702 C 176.90814 296.22015 176.10332 296.31308 175.28694 296.4491 C 174.47011 296.58557 173.64076 296.78955 172.79895 297.06195 C 171.85768 297.35895 171.22589 297.85431 170.90485 298.54718 C 170.58247 299.24146 170.42195 300.02081 170.42195 300.88715 L 170.42195 327.47983 C 170.42195 332.70465 171.57324 336.50491 173.87527 338.8819 C 176.17825 341.25882 179.52101 342.44711 183.90309 342.44711 C 188.21211 342.44711 191.59138 341.13489 194.04234 338.50998 C 196.49338 335.88556 197.71909 332.02335 197.71909 326.92294 L 197.71909 309.05786 C 197.71909 305.88861 197.5022 303.5176 197.06924 301.94592 C 196.63585 300.37378 195.9735 299.24146 195.08218 298.54718 C 194.43875 298.00323 193.31898 297.50787 191.7214 297.06195 C 190.12425 296.61612 189.00346 296.34363 188.36011 296.2442 L 188.36011 293.34781 L 211.20116 293.34781 L 211.20116 296.2442 Z M 147.88251 351.69373 L 147.88251 355.6868 L 211.43011 355.6868 L 211.43011 351.69373 L 147.88251 351.69373 Z" class="tw_glyphForeground"/></g></g></svg>
+</script>
+<script type="text/x-tiddler">
+title: HomeImage
+modifier: JeremyRuston
+modified: 2004-06-26T19:51:34Z
+type: image/svg+xml
+
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xl="http://www.w3.org/1999/xlink" version="1.1" viewBox="147 80 28 28" width="28pt" height="28pt" overflow="visible"><metadata xmlns:dc="http://purl.org/dc/elements/1.1/"><dc:date>2009-12-12 17:12Z</dc:date><!-- Produced by OmniGraffle Professional 5.2.1 --></metadata><defs><radialGradient cx="0" cy="0" r="1" id="Gradient" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="white"/><stop offset="1" stop-color="#c8c8c8"/></radialGradient><radialGradient id="Obj_Gradient" xl:href="#Gradient" gradientTransform="translate(155.97142 87.59999) scale(21.016771)"/><radialGradient cx="0" cy="0" r="1" id="Gradient_2" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#c7d6eb"/><stop offset="1" stop-color="#1238ff"/></radialGradient><radialGradient id="Obj_Gradient_2" xl:href="#Gradient_2" gradientTransform="translate(156.88571 88.38961) scale(17.331293)"/></defs><g stroke="none" stroke-opacity="1" stroke-dasharray="none" fill="none" fill-opacity="1"><title>Canvas 1</title><g><title>Layer 1</title><circle cx="161" cy="94" r="12.000017" fill="url(#Obj_Gradient)"/><circle cx="161" cy="94" r="12.000017" stroke="#696969" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/><path d="M 167.9425 87.057495 C 164.10826 83.223236 157.89174 83.223236 154.057495 87.057495 C 150.22324 90.89174 150.22324 97.10826 154.057495 100.942505 C 157.89174 104.776764 164.10826 104.776764 167.9425 100.942505 C 171.77676 97.10826 171.77676 90.89174 167.9425 87.057495 M 157.55357 89.61616 L 157.55357 87.666656 L 159.8512 87.666656 L 159.8512 88.31648 L 161 87.666656 L 167.89287 91.56566 L 166.46558 91.56566 L 166.46558 99.36364 L 162.1488 99.36364 L 162.1488 96.29159 L 159.8512 96.29159 L 159.8512 99.36364 L 155.53445 99.36364 L 155.53445 91.56566 L 154.10713 91.56566 Z M 157.03139 92.15641 L 157.03139 94.578514 L 158.911255 94.578514 L 158.911255 92.15641 Z M 160.06007 92.15641 L 160.06007 94.578514 L 161.93994 94.578514 L 161.93994 92.15641 Z M 163.12355 92.15641 L 163.12355 94.578514 L 165.00343 94.578514 L 165.00343 92.15641 Z" fill="url(#Obj_Gradient_2)"/><path d="M 152.49797 102.46846 C 152.503555 102.47408 152.509125 102.479675 152.51474 102.48526 C 157.20102 107.171585 164.79898 107.171585 169.48528 102.48526 C 172.26668 99.70387 173.39728 95.89678 172.87703 92.28154 C 172.87144 92.27593 172.86586 92.270325 172.86026 92.26474 C 168.17398 87.57843 160.57602 87.57843 155.889725 92.26474 C 153.10832 95.04613 151.97772 98.853226 152.49797 102.46846 Z" fill="black" fill-opacity=".17"/></g></g></svg>
+</script>
+<script type="text/x-tiddler">
+title: MascotImage
+modifier: JeremyRuston
+modified: 2010-04-16T19:51:34Z
+type: image/svg+xml
+
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xl="http://www.w3.org/1999/xlink" version="1.1" viewBox="89 95 205 222" width="205pt" height="222pt"><metadata xmlns:dc="http://purl.org/dc/elements/1.1/"><dc:date>2010-04-17 10:41Z</dc:date><!-- Produced by OmniGraffle Professional 5.2.2 --></metadata><defs><radialGradient cx="0" cy="0" r="1" id="Gradient" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#dfdcf3"/><stop offset="1" stop-color="#8fa1d3"/></radialGradient><radialGradient id="Obj_Gradient" xl:href="#Gradient" gradientTransform="translate(141.17947 164.12448) scale(182.90913)"/></defs><g stroke="none" stroke-opacity="1" stroke-dasharray="none" fill="none" fill-opacity="1"><title>Canvas 1</title><g><title>Layer 1</title><path d="M 225.38586 306.755 L 209.57884 299.59497 C 207.10786 299.53998 203.95885 299.36896 201.84984 298.02698 C 199.30588 296.42694 198.20187 293.17096 196.12982 290.61096 C 196.73785 295.37097 196.92186 297.21094 199.76186 299.38696 C 201.56984 300.75494 204.28986 301.47498 206.71387 303.57898 C 203.28183 301.891 198.36984 300.98694 196.52184 299.53894 C 193.20985 296.95496 193.88985 296.47498 192.68983 292.92297 C 190.88185 297.29095 191.21783 299.09894 196.13785 304.37897 C 191.45784 303.92297 190.31386 302.41098 190.15385 299.771 C 189.82585 294.53094 187.47386 294.23499 186.30585 290.18695 L 180.15385 280.68298 C 187.11385 282.995 184.77783 285.18695 189.08185 286.12299 L 196.75386 272.17896 C 194.83385 270.323 191.35385 269.771 187.19386 269.78699 C 189.20985 265.69098 196.10587 266.61096 199.15385 267.85095 L 203.42986 262.57697 C 201.00484 259.18896 199.08684 255.81 197.59486 252.44298 C 197.29784 256.80896 197.30984 261.56995 197.59384 267.18695 C 195.65585 260.00397 194.40488 253.922 193.86986 248.12994 C 193.08586 247.51599 192.38483 246.84698 191.76085 246.12895 C 191.95184 250.40196 192.15787 254.85095 191.80984 259.85095 C 189.36284 253.693 188.19086 247.719 187.94884 241.89294 C 186.16084 240.52293 184.76186 239.05096 183.69785 237.495 C 182.28183 236.51794 181.07285 235.508 180.04984 234.46796 C 180.45883 237.16296 181.33286 239.96295 182.77783 242.88298 C 179.28885 239.76495 177.36485 236.378 176.60684 232.83098 C 176.54785 232.80896 176.48985 232.78796 176.44887 232.77098 C 176.18985 234.78398 176.81485 238.62195 178.47385 242.73096 C 175.62985 239.76294 173.98985 236.64897 173.28786 233.45496 C 173.04886 233.00798 172.83485 232.56197 172.64185 232.11694 C 171.39584 231.71797 170.29486 231.17596 169.33185 230.51599 C 169.33385 230.57196 169.33487 230.628 169.33685 230.68398 C 169.40286 230.73297 169.46985 230.77997 169.53784 230.82697 C 169.46985 230.79395 169.40385 230.75897 169.33784 230.72498 C 169.38083 232.11597 169.52985 233.56299 169.79785 235.07794 C 170.14386 236.45293 170.61084 237.87697 171.20984 239.34698 C 168.40486 236.43895 166.78285 233.48 166.08185 230.50299 C 165.91583 230.40698 165.75485 230.30695 165.59587 230.20601 C 165.57185 231.64697 165.65585 233.15094 165.85783 234.72296 C 164.96584 233.10895 164.31384 231.52899 163.87585 229.98596 C 163.81586 232.469 164.11385 235.11894 164.84184 237.96295 C 162.27785 234.43597 161.07584 230.97394 160.90784 227.594 C 160.78384 227.43195 160.66185 227.26898 160.54483 227.10498 C 160.03986 230.073 160.03685 233.31195 160.66586 236.87492 C 158.50085 233.35895 157.54283 229.96199 157.51485 226.68695 C 156.86983 225.71997 156.33786 224.71295 156.16486 224.15399 C 155.23386 222.30396 155.81584 224.09998 156.72984 225.84296 C 155.90485 224.66701 155.24686 223.44495 154.74284 222.19196 C 154.90883 225.12 155.75784 227.98694 157.457855 230.62695 C 153.86087 226.37799 152.76485 221.17096 153.452835 215.97896 C 153.33984 212.51099 154.15285 208.99696 155.65085 205.70998 C 151.89783 211.92796 150.58086 219.31194 154.04985 225.92297 C 147.541855 216.66199 151.42386 204.55298 159.24585 196.91998 C 147.021835 203.01897 137.08585 213.467 136.41383 224.23894 C 136.60083 227.18597 137.51486 230.13397 139.29785 233.003 C 138.33383 231.86098 137.521835 230.69196 136.850845 229.50299 C 137.30884 231.45898 138.11084 233.40498 139.29785 235.31494 C 135.559845 230.88397 134.09186 226.05194 134.37787 221.23395 C 134.17685 217.90796 134.85385 214.55598 136.23785 211.31396 C 134.42285 214.50197 133.30286 217.84297 133.09085 221.217 C 133.278854 224.16295 134.192856 227.11098 135.977844 229.97894 C 135.01085 228.83398 134.19685 227.66199 133.52585 226.46996 C 133.98386 228.42896 134.786865 230.37799 135.977844 232.29095 C 133.67284 229.55797 132.23285 226.672 131.533844 223.732 C 130.15985 220.61298 129.62485 217.49896 129.79085 214.469 C 129.533844 210.67896 130.380844 207.00096 132.03183 203.60797 C 129.68884 207.00397 128.23584 210.72797 128.01184 214.65092 C 128.15985 216.70294 128.643845 218.81195 129.52185 220.94696 C 128.99686 220.05695 128.54385 219.16595 128.15985 218.27899 C 128.38484 219.91199 128.83185 221.57397 129.52185 223.25096 C 127.74385 220.23499 126.78584 217.20293 126.52184 214.24597 C 126.45884 214.04895 126.39784 213.85197 126.33885 213.65594 C 126.38784 214.84697 126.54185 216.11394 126.817856 217.41095 C 125.68884 214.29594 125.257835 211.29395 125.41785 208.44493 C 125.15085 203.63098 126.55584 199.20398 129.15785 195.34496 C 125.608856 199.10796 123.34284 203.62994 123.046844 208.76396 C 123.10885 209.84894 123.25685 210.95795 123.49784 212.09093 C 123.324844 211.61395 123.16784 211.13899 123.02784 210.66795 C 123.07284 211.88197 123.226845 213.12799 123.49784 214.40295 C 122.369835 211.28697 121.93985 208.284 122.099846 205.43896 C 121.713844 198.48395 124.81484 192.33899 129.96384 187.54999 C 124.838844 191.93097 121.14384 197.72096 119.929855 204.90698 C 119.98485 203.46996 120.13685 202.07494 120.36485 200.87099 C 120.56384 199.58698 120.18985 201.06299 119.929855 202.60297 C 120.06684 199.03796 120.80286 195.73096 122.02984 192.70197 C 118.92685 196.44597 116.73285 200.93193 115.849854 206.15497 C 115.92085 204.29596 116.15585 202.50696 116.535835 200.79497 C 116.256844 201.78197 116.026855 202.80194 115.849854 203.85094 C 115.93385 201.66998 116.241844 199.58595 116.74984 197.60197 C 116.88185 196.32697 117.09184 195.08592 117.05184 195.96698 L 117.68385 192.68799 C 117.935844 191.71698 118.23385 190.77197 118.574844 189.85394 C 118.48884 189.95996 118.40285 190.06598 118.31885 190.172 C 117.770836 191.46399 117.307846 192.82098 116.93784 194.243 C 117.06484 193.24396 117.237854 192.26794 117.45284 191.31799 C 115.013855 194.71399 113.28786 198.659 112.529846 203.14697 C 112.60185 201.26996 112.839844 199.46497 113.22885 197.73393 C 112.94385 198.73694 112.70885 199.771 112.529846 200.83496 C 112.886856 191.54297 117.319855 184.008 123.882835 178.56799 C 124.46886 177.88599 125.08485 177.22894 125.727844 176.59894 C 119.95684 180.55194 115.533836 186.16998 113.617836 193.547 C 114.24384 188.65094 115.94185 184.34998 117.27185 182.896 C 116.88284 182.89496 114.784843 186.73499 113.617836 191.22699 C 115.50885 176.44397 127.181854 167.07697 140.79385 163.77295 C 116.98585 160.12299 93.782845 168.22498 90.77784 192.39496 C 90.770844 191.41699 90.79585 190.45898 90.848846 189.52295 C 90.823845 189.70293 90.799843 189.88495 90.77784 190.06696 C 90.695847 177.18298 95.89485 167.81696 104.06384 161.85095 C 96.479843 166.62799 91.16184 174.19598 89.825844 184.93097 C 89.81885 183.94696 89.843857 182.98297 89.89784 182.04199 C 89.87285 182.22296 89.84884 182.409 89.825844 182.59497 C 89.78884 176.58293 90.90085 171.33698 92.92884 166.84399 C 96.502846 153.06096 106.226845 145.23297 119.87285 142.99194 C 106.41685 144.39996 95.235855 151.56696 91.04985 166.35498 C 91.396843 163.98999 91.90484 161.77295 92.55984 159.70294 C 91.98484 161.06494 91.479836 162.50598 91.04985 164.02698 C 91.964844 157.78699 94.002853 152.58099 96.90185 148.35199 C 97.25384 147.74194 97.62084 147.15094 98.001846 146.57794 C 96.321854 148.62494 94.82385 150.98096 93.53785 153.66699 C 97.070847 142.83899 103.655853 136.00397 111.79984 132.54895 C 103.12485 134.60498 96.752853 139.836975 92.593857 148.52293 C 93.73285 145.034 95.18884 141.95996 96.90985 139.280945 C 95.29185 141.280945 93.84284 143.57898 92.593857 146.18695 C 101.793846 118.01599 131.64986 116.87695 155.837845 131.971985 C 153.225845 130.083984 150.51785 128.35895 147.74185 126.82397 C 130.65683 119.323 111.877853 119.31896 97.59385 132.59497 C 101.03285 128.42499 104.88185 125.16393 109.009834 122.72796 C 104.989845 124.47595 101.151855 126.95995 97.59385 130.26697 C 101.28285 125.79498 105.44185 122.36798 109.91286 119.88299 C 103.39784 121.37897 97.19885 124.52899 91.673843 129.66699 C 93.865837 127.007996 96.224854 124.718994 98.71684 122.77698 C 99.261856 122.198 99.81684 121.63794 100.379845 121.09893 C 97.339844 122.711975 94.423843 124.77594 91.673843 127.330986 C 93.87285 124.66498 96.238846 122.370964 98.738846 120.425964 C 101.882835 117.08996 105.32084 114.43694 108.96584 112.40795 C 108.60984 112.48999 108.25485 112.576965 107.899857 112.668945 C 105.945847 113.71997 104.028847 114.96093 102.16185 116.402946 C 103.226845 115.32696 104.31884 114.32397 105.433853 113.393974 C 100.212845 115.11896 95.24584 117.98998 90.729836 122.18694 C 94.167847 118.01898 98.01484 114.758965 102.14184 112.323 C 98.12284 114.070976 94.28685 116.553955 90.729836 119.85895 C 94.436844 115.36499 98.618843 111.925964 103.115845 109.43695 C 106.517845 106.362976 110.15284 103.994995 113.94185 102.268974 C 109.54084 103.62298 105.264847 105.80597 101.21784 108.93096 C 129.817856 80.05097 176.93785 104.77099 191.32985 141.52295 C 195.37585 151.84296 197.81985 165.20294 199.50882 176.92595 C 200.34584 180.28497 201.10585 183.56396 201.79884 186.65796 C 203.01685 185.96796 204.38884 185.58795 205.92184 185.57898 C 207.30585 185.00299 212.08986 184.14697 215.28185 185.11499 C 216.20985 186.02698 216.67384 186.94696 216.16983 187.86694 L 214.92284 187.77496 C 215.84888 188.06696 216.76688 188.41797 217.67188 188.84094 C 219.46182 186.85895 221.36984 185.14496 223.42586 183.77899 C 223.63986 183.62494 223.85587 183.47394 224.07384 183.32794 C 223.36783 183.28595 222.63686 183.21796 221.88187 183.12299 C 224.49086 182.50696 226.73486 181.68396 228.67084 180.685 L 229.50084 179.12695 C 228.46985 178.97699 227.38686 178.76099 226.25186 178.47296 C 225.63383 178.55597 224.98984 178.60699 224.32185 178.62598 C 220.95087 179.30798 216.91083 178.83899 211.99385 176.81097 C 214.75983 176.91199 217.20584 176.70099 219.37888 176.22394 C 218.80986 176.02399 218.22786 175.80096 217.63383 175.55499 C 219.24486 175.61694 220.74585 175.56995 222.14784 175.42596 C 222.52986 175.28796 222.90184 175.13995 223.26485 174.98199 C 221.96884 174.922 220.60786 174.72498 219.17783 174.37897 C 220.03386 174.23999 220.85883 174.07098 221.65385 173.87299 C 220.19183 173.98499 218.62885 173.87897 216.95282 173.51996 C 215.54185 173.35498 214.04585 172.99896 212.45686 172.42798 C 211.97484 172.28296 211.48386 172.12494 210.98586 171.95496 C 211.07085 171.95599 211.15585 171.95697 211.24088 171.95697 C 210.18488 171.51996 209.08987 170.98999 207.95384 170.36298 C 212.13684 171.00598 215.64684 170.83398 218.65585 170.04199 C 219.04085 169.87598 219.45284 169.69299 219.90582 169.49097 C 222.85786 168.18396 225.51585 166.20197 227.96786 163.79199 C 227.83086 163.76196 227.69286 163.73096 227.55383 163.69897 C 227.74384 163.68195 227.93184 163.66296 228.11885 163.64294 C 229.69585 162.07697 231.18884 160.33496 232.61986 158.48395 C 234.78284 155.11194 236.70688 151.35797 238.77286 147.64496 C 238.01187 140.49597 240.23286 133.918945 243.64185 128.50696 C 243.92986 128.30499 244.32784 128.17297 244.77884 128.099976 C 237.65685 126.22699 231.15182 120.15197 234.76984 115.61896 C 235.83385 111.547 234.63383 108.62695 232.63383 106.12298 C 237.60986 103.09894 241.87384 110.67498 243.68983 116.85095 C 243.82584 117.314934 244.63383 116.68298 245.10585 116.306946 C 247.79385 114.146965 239.93787 104.72296 243.68983 99.42694 C 244.34584 100.898987 245.23383 102.36297 246.48985 103.82696 C 247.48186 105.00298 248.71387 106.17895 250.24182 107.346985 C 252.72684 108.25695 252.44986 113.54095 253.40184 117.87597 C 253.10587 114.24993 254.62486 109.32495 254.45784 107.00299 C 256.72186 100.490967 257.62582 96.78698 262.11386 95.642944 L 259.84985 99.13898 L 260.69788 107.00299 C 264.48785 110.504944 265.21387 114.005974 264.71985 117.49695 C 266.41284 110.195976 270.14487 111.991943 275.72986 107.57897 C 272.97787 111.56298 270.90585 115.370964 274.17786 118.435 C 276.97485 121.05694 276.26184 124.768974 274.49084 128.770996 C 275.72986 128.80798 276.96985 129.109985 278.20984 129.642944 L 283.66583 135.69098 C 282.54187 135.67096 281.37283 135.43695 280.21088 135.22296 C 280.29187 135.26099 280.37488 135.29999 280.45786 135.33899 C 276.77182 139.550964 273.09186 140.530945 269.41284 138.61896 C 269.29382 138.86896 269.17783 139.11798 269.06686 139.36395 C 274.32187 144.23395 281.88184 157.99896 278.27386 159.08295 C 275.28387 161.66595 272.28888 162.12799 269.29382 160.961975 C 269.16287 161.096985 269.02686 161.20496 268.88483 161.28296 C 273.07083 172.74597 279.27185 183.10199 293.30585 184.97894 C 287.90585 186.45996 283.39084 185.72699 279.55884 183.50397 C 281.81586 184.92596 284.42584 186.05499 287.45782 186.81897 C 282.62387 187.56 278.64185 186.70099 275.32684 184.70496 C 275.37082 184.92894 275.41287 185.15399 275.65488 188.26599 C 273.90887 187.48999 275.78583 188.65399 277.94583 189.66699 C 276.76886 189.61798 275.65985 189.48798 275.73486 189.41394 L 275.86584 191.27197 C 273.29083 190.185 275.32587 191.31494 277.65787 192.25098 C 277.19086 192.25897 276.73288 192.25299 276.28583 192.23499 C 282.09583 203.51398 272.76886 218.83295 265.42584 217.27496 C 266.80988 224.66701 262.57785 235.93896 253.24184 236.68297 C 251.73784 241.29094 249.72186 246.23499 242.32184 248.675 C 241.29784 249.01898 240.08984 249.05096 238.92186 249.53894 C 237.65787 250.07098 236.43886 259.685 232.67885 262.15698 L 230.30585 278.33899 L 230.96986 300.75494 C 237.74583 302.36298 241.87384 301.07495 247.56183 305.95496 C 242.47386 303.36298 239.43385 305.44296 233.78583 304.52298 C 243.13788 307.29901 247.90584 308.33096 253.38585 314.42697 C 245.12184 308.84296 239.14584 309.24298 232.19386 307.77097 C 240.84984 311.89096 239.04984 312.44296 240.75386 316.89096 C 234.48186 312.06696 233.14587 311.18698 225.38586 306.755 Z M 225.46584 301.93097 L 224.20186 285.89099 C 221.59386 284.53894 218.39384 284.93896 214.94583 286.09094 C 214.37787 281.443 220.60986 280.49097 223.82585 280.89899 L 225.24387 267.10797 C 222.57086 263.935 220.24086 260.66797 218.21783 257.32794 C 218.15985 257.39197 218.10085 257.45398 218.04285 257.51697 C 219.29286 260.49994 220.78084 263.65796 222.56186 267.13898 C 221.23688 265.52997 219.99786 263.97797 218.83784 262.46399 C 219.65686 264.61298 220.35785 266.72394 220.88185 268.78699 C 218.77185 266.22095 216.91484 263.34094 215.28584 260.22394 C 215.01485 260.46399 214.74884 260.69098 214.48883 260.90399 C 214.87582 261.95898 215.26384 263.01294 215.64987 264.06696 C 214.99684 263.20996 214.37184 262.35199 213.77182 261.49298 C 213.95984 261.97595 214.14587 262.46497 214.32986 262.96295 C 213.95084 262.60095 213.58086 262.23499 213.21785 261.86798 C 212.48784 262.37396 211.80487 262.75995 211.16882 263.02197 C 211.82286 265.51794 212.61186 268.16797 213.54585 271.03497 C 212.17886 268.76398 210.92984 266.60095 209.79187 264.51898 L 207.20984 267.45898 L 195.35382 286.64294 C 198.30586 289.48297 200.00986 293.53894 203.00984 296.05096 C 204.65385 297.43 206.99684 298.10999 208.91386 298.78998 C 215.08783 297.87097 220.53786 299.13397 225.46584 301.93097 Z M 225.53485 264.28296 L 225.92885 260.45697 C 224.69185 259.43799 223.44482 258.172 222.21785 256.86499 C 223.39384 259.35596 224.52586 261.82898 225.53485 264.28296 Z M 204.23087 261.58899 L 205.76483 259.69598 C 205.46684 258.61798 205.26286 257.29999 205.15283 255.73894 C 202.56985 251.06993 200.57686 246.44896 199.04884 241.84796 C 198.97185 242.20995 198.89883 242.57196 198.82784 242.93396 C 200.32486 248.92896 202.68088 254.71198 204.23087 261.58899 Z M 193.57686 242.64197 C 193.47084 242.58295 193.36682 242.52197 193.26382 242.46094 C 193.36682 242.66394 193.47388 242.86499 193.58385 243.06598 C 193.58087 242.92499 193.57784 242.784 193.57686 242.64197 Z M 187.92186 238.02899 C 187.83685 237.633 187.76184 237.232 187.69484 236.82695 C 187.28886 236.11894 186.93385 235.37695 186.62785 234.60596 C 185.98883 233.99994 185.41286 233.38794 184.89584 232.76996 C 185.40385 235.33295 186.37183 237.95695 187.91185 240.64996 C 187.89484 239.77295 187.89786 238.89899 187.92186 238.02899 Z M 193.64284 238.62097 C 193.36784 236.68896 193.19885 234.76099 193.11986 232.83897 C 192.72583 232.36694 192.36987 231.87993 192.04886 231.37994 C 191.78984 233.23096 191.65184 235.03497 191.59285 236.81995 C 192.17186 237.80396 192.83786 238.76898 193.60185 239.71294 C 193.61186 239.34998 193.62584 238.98596 193.64284 238.62097 Z M 176.33784 231.17096 L 176.39987 232.071 C 175.71886 231.66699 176.08884 231.93297 176.48087 232.17694 C 176.42285 231.84296 176.37585 231.508 176.33784 231.17096 Z M 172.01585 230.42896 C 170.98985 229.72295 170.11984 228.87993 169.39684 227.92693 C 169.35684 228.45898 169.33385 228.99896 169.32683 229.54895 C 170.21486 230.52592 171.30083 231.36096 172.59985 232.01698 C 172.37386 231.48695 172.17986 230.95795 172.01585 230.42896 Z M 181.21886 224.54199 C 181.14384 223.90495 181.10785 223.26599 181.10983 222.62494 C 180.59984 224.198 180.21886 225.80597 179.99686 227.45294 C 180.25784 228.68797 180.64384 229.93695 181.16985 231.20398 C 180.80887 229.06496 180.85684 226.83295 181.21886 224.54199 Z M 165.73386 228.18994 C 166.059845 225.11693 165.66885 227.42596 165.60185 229.92596 C 165.74184 230.05298 165.88585 230.17894 166.03484 230.30095 C 165.86084 229.51495 165.75084 228.72894 165.73386 228.18994 Z M 160.96884 225.10498 C 160.82684 225.65898 160.70384 226.22296 160.59883 226.79701 C 160.69484 226.98395 160.79486 227.16895 160.89784 227.35394 C 160.87184 226.59999 160.89583 225.85094 160.96884 225.10498 Z M 171.55286 222.89696 C 171.38383 222.07599 171.26387 221.22392 171.19185 220.34998 C 171.05884 220.67299 170.93185 220.99992 170.81085 221.32996 C 170.90485 222.46796 171.08185 223.56598 171.34586 224.607 C 171.38585 224.03699 171.45586 223.46698 171.55286 222.89696 Z M 158.06686 222.13397 C 157.79684 221.26396 157.59485 220.37695 157.457855 219.47894 C 157.33685 221.06494 157.39885 222.64795 157.67087 224.20099 C 157.763855 223.50598 157.89684 222.81697 158.06686 222.13397 Z M 154.94185 220.48894 C 155.16385 221.57397 155.48483 222.63994 156.16486 224.15399 L 154.94185 220.48894 Z M 159.753845 217.61595 C 160.19185 210.58696 164.53687 202.76794 170.43785 198.40594 C 168.12784 199.41895 164.29684 203.232 161.56285 207.64101 C 159.56186 211.56897 158.45984 215.83795 158.73285 219.98096 C 159.02585 219.185 159.36784 218.396 159.753845 217.61595 Z M 190.36385 209.81798 C 190.15184 210.19798 189.94286 210.57794 189.73782 210.95898 C 189.15984 213.83698 188.67186 216.71399 188.42284 219.56195 C 188.98187 216.27594 189.67883 212.99098 190.36385 209.81798 Z M 176.31786 212.20695 C 175.34586 213.34094 174.44685 214.51994 173.63885 215.75194 C 173.58784 216.16394 173.54585 216.57495 173.51283 216.98296 C 174.28583 215.37494 175.23586 213.78198 176.31786 212.20695 Z M 126.481834 211.36798 C 126.46785 211.12195 126.457855 210.87695 126.45384 210.63196 C 126.40284 211.02995 126.366844 211.44493 126.34484 211.87598 C 126.37186 212.19696 126.406845 212.53595 126.44984 212.88695 C 126.43984 212.37799 126.450844 211.87097 126.481834 211.36798 Z M 163.66286 211.59296 C 163.82484 211.12 164.00185 210.649 164.19385 210.17894 C 163.92384 210.73897 163.67384 211.303 163.44385 211.87 C 163.51584 211.77794 163.58885 211.685 163.66286 211.59296 Z M 172.29985 196.951 C 171.84285 197.26196 171.40385 197.57495 170.98586 197.89099 L 170.43785 198.40594 L 172.29985 196.951 Z M 179.26785 197.32298 L 179.67284 197.01495 L 179.89285 196.73296 C 179.71284 196.88896 179.53584 197.04594 179.35985 197.20398 L 179.26785 197.32298 Z M 117.03184 196.22392 L 117.05184 195.96698 C 117.35885 193.93596 117.10785 195.22795 116.93784 196.563 C 117.03584 196.18597 117.13985 195.81395 117.03184 196.22392 Z M 117.02486 196.30998 C 117.626846 194.29097 117.49686 194.59398 117.03184 196.22392 C 117.09884 195.51697 117.078835 195.79797 117.02486 196.30998 Z M 278.78683 182.96698 L 277.72882 182.13995 C 276.16183 180.98297 277.29086 181.94995 278.78683 182.96698 Z M 230.02986 177.72894 C 230.02486 177.64899 230.01984 177.56799 230.01686 177.48596 C 229.44884 177.71899 228.85384 177.91895 228.23286 178.08295 C 228.85185 177.97998 229.44986 177.86194 230.02986 177.72894 Z M 253.40184 117.87597 C 253.64885 119.001945 253.97787 120.06 254.45784 120.962944 C 253.80986 120.18298 253.50284 119.10498 253.40184 117.87597 Z M 264.71985 117.49695 C 264.63684 118.077934 264.52286 118.64899 264.38586 119.21899 C 264.48584 118.597954 264.59686 118.02899 264.71985 117.49695 Z M 125.27485 104.291985 C 128.47983 103.77996 131.73984 103.64398 135.01085 103.84997 C 125.33285 101.840935 115.49984 102.774956 106.502853 107.764954 C 112.423843 105.179985 118.791855 104.096985 125.27485 104.291985 Z" fill="url(#Obj_Gradient)"/></g></g></svg>
+</script>
+<script type="text/x-tiddler">
+title: SampleFilters
+modifier: JeremyRuston
+modified: 2010-04-17T19:51:34Z
+type: image/svg+xml
+tags: $tw.svg.definition
+tags: dummy
+
+<svg width="100%" height="100%" version="1.1" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<filter id="tw_filter_gaussian_blur">
+<feGaussianBlur in="SourceGraphic" stdDeviation="3" />
+</filter>
+<filter id="tw_filter_emboss">
+   <feGaussianBlur in="SourceAlpha" stdDeviation="2" result="blur"/>
+   <feSpecularLighting in="blur" surfaceScale="-3" style="lighting-color:white"
+	   specularConstant="1" specularExponent="16" result="spec" kernelUnitLength="1" >
+	<feDistantLight azimuth="45" elevation="45" />
+   </feSpecularLighting>
+   <feComposite in="spec" in2="SourceGraphic" operator="in" result="specOut"/>
+ </filter>
+<filter id="tw_filter_drop_shadow" height="150%" y="-25%">
+    <feFlood flood-color="#fff" />
+    <feComposite in2="SourceAlpha" operator="in" />
+    <feGaussianBlur stdDeviation="3" />
+	<feOffset dx="1" dy="1"/>
+    <feComponentTransfer>
+        <feFuncA type="linear" slope="3" intercept="0" />
+    </feComponentTransfer>
+    <feMerge>
+        <feMergeNode />
+
+        <feMergeNode in="SourceGraphic" />
+    </feMerge>
+</filter>
+</defs>
+</svg>
+</script>
+<script type="text/x-tiddler">
+title: Improvements
+modifier: JeremyRuston
+modified: 2009-12-28T12:51:34Z
+type: text/x-markdown
+tags: notes
+tags: introduction
+
+Planned improvements over the original TiddlyWiki
+
+- Rich text editing, with toolbars and shortcuts (and hence native html and not wikitext)
+- Graphics (SVG and image) as a first class citizen
+- Richer tiddler model with revisions, mime types and integrated skinny tiddlers
+- [Social features](SocialTiddlyWiki) that federate between servers and static files:
+ - #tag
+ - @user for referencing other users
+ - activity streams based on following users and tags
+ - impossibility of spam
+- Microkernel architecture with integrated source code browsing and editing, with syntax colouring and hyperlinks
+- Wide screen hungry, but concertinas to an iPhone
+- Optimised for HTML5 browsers like Firefox 3, Safari 4, Chrome 2, Opera 10
+- Degrades to IE6+
+- Support for content stored in multiple locations/formats within the HTML file, including script tags, title tag, special comments (for MHTML), `<div>'s` like classic TiddlyWiki
+- New architecture for encoding options as cookies or tiddlers or via custom handlers
+</script>
+<script type="text/x-tiddler">
+title: TechnicalDocumentation
+modifier: JeremyRuston
+modified: 2010-01-03T18:55:34Z
+type: text/x-markdown
+tags: notes
+tags: documentation
+
+Key TiddlyWiki principles
+- [SocialTiddlyWiki](SocialTiddlyWiki)
+- [Tiddlers](Tiddlers)
+- [TiddlerRevisions](TiddlerRevisions)
+- [FileLayout](FileLayout)
+- [ExecutionModel](ExecutionModel)
+- [MacroProcessing](MacroProcessing)
+- [TiddlerDisplay](TiddlerDisplay)
+- [TiddlyChaining](TiddlyChaining)
+- [CodingConventions](CodingConventions)
+</script>
+<script type="text/x-tiddler">
+title: SocialTiddlyWiki
+modifier: JeremyRuston
+modified: 2010-01-09T21:39:34Z
+type: text/x-markdown
+tags: notes
+tags: documentation
+
+The goal is to support a form of intellectual discourse where each writer seeks to build their own universe of understanding, with loose, one-way links to those of other individuals. This allows each individual to be the king of their own domain, in the sense that they can publish whatever they like, with no need to consult or worry about anyone else. And yet, they can make their contribution to the greater understanding of the group as a whole through the network of aggregated knowledge. Garrett Lisi's Deferential Geometry is a great example of what an individual TiddlyWiki might look like.
+</script>
+<script type="text/x-tiddler">
+title: CodingConventions
+revision: 1
+modifier: JeremyRuston
+modified: 2009-12-24T19:39:34Z
+type: text/x-markdown
+tags: notes
+tags: documentation
+
+- Usually terms in $tw namespace are singular, and collections of things are plural
+ - eg $tw.macro.* for macro methods and $tw.macros.* for collection of individual macros
+- Be consistent in terminology of node vs. element
+</script>
+<script type="text/javascript" src="json2.js">
+/*tiddlywiki-plugin*
+title: $tw.externals.json2
+*/
+</script>
+<script type="text/javascript" src="jquery-1.4.2.js">
+/*tiddlywiki-plugin*
+title: $tw.externals.jQuery
+*/
+</script>
+<script type="text/javascript" src="jquery-ui-1.7.2.custom.min.js">
+/*tiddlywiki-plugin*
+title: $tw.externals.jQuery.ui
+*/
+</script>
+<script type="text/javascript" src="showdown.js">
+/*tiddlywiki-plugin*
+title: $tw.externals.showdown
+*/
+</script>
+<style type="text/css">
+/*tiddlywiki-styles*
+title: $tw.styles.basic
+description: CSS declarations for basic TiddlyWiki UI elements
+*/
+
+body {
+	font-family: Helvetica, sans-serif;
+	background: #888;
+	margin: 0.5em;
+	-jeremy-style: "Something or other";
+}
+
+a.tw_missingLink {
+	font-style: italic;
+}
+
+.tw_siteTitle {
+	font-size: 32pt;
+	font-weight: bold;
+	color: #eee;
+	text-shadow: 2px 2px 4px #000;
+	padding-right: 10pt;
+}
+
+.tw_siteSubtitle {
+	font-size: 12pt;
+	color: #000;
+	text-shadow: 1px 1px 1px #ccc;
+}
+
+.tw_column {
+	width: 550px;
+	border: 1px solid #444;
+	margin: 0.4em;
+	-webkit-border-radius: 3px;
+	display: inline-block;
+	vertical-align: top;
+}
+
+.tw_tiddlerContainer {
+	background: #888;
+	margin: 0.5em;
+	-webkit-border-radius: 3px;
+	border-top: 2px solid #555;
+	border-right: 2px solid #999;
+	border-bottom: 2px solid #999;
+	border-left: 2px solid #555;
+}
+
+.tw_tiddlerContainerHeader {
+	background: #777;
+	color: #222;
+	padding: 0.25em;
+	font-size: 10pt;
+}
+
+.tw_tiddlerContainerHeader .tw_dataName {
+	color: #444;
+}
+
+.tw_tiddlerContainerHeader .tw_dataValue {
+	font-weight: bold;
+}
+
+.tw_tiddlerFrame {
+	background: #f4f4ff;
+	border: 1px solid #000;
+	margin: 0.5em;
+	-webkit-border-radius: 2px;
+	-webkit-box-shadow: 2px 2px 4px #444;
+	-moz-box-shadow: 2px 2px 4px #444;
+/*
+	height: expression(this.scrollHeight > 200 ? "200px" : "auto" );
+    max-height: 200px;
+	overflow: hidden;
+*/
+}
+
+.tw_tiddlerFrame.tw_editMode {
+	background: #fff;
+}
+
+.tw_tiddlerFrame.tw_missingTiddler {
+	opacity: 0.5;
+}
+
+.tw_tiddlerFrame pre {
+	padding: 1em;
+	white-space: pre-wrap; // CSS3
+	word-wrap: break-word; // IE
+	white-space: -moz-pre-wrap; // Mozilla
+	white-space: -pre-wrap; // Opera old
+	white-space: -o-pre-wrap; // Opera new
+}
+
+.tw_tiddlerFrame.tw_missingTiddler .tw_title {
+	font-style: italic;
+}
+
+.tw_title {
+	background: #aaa;
+	background: -webkit-gradient(linear, left top, left bottom, from(#fff), color-stop(0.2, #ddd), to(#888));
+	background: -moz-linear-gradient(top, #fff 0%, #ddd 20%, #888 100%);
+	color: #000;
+	text-shadow: 1px 1px 1px #ddd;
+	font-size: 16pt;
+	margin: 0em;
+	padding: 0.5em 0.2em 0.2em 0.2em;
+	border-bottom: 1px solid #000;
+}
+
+.tw_tiddlerFrame.tw_editMode .tw_title {
+	background: #22a;
+	background: -webkit-gradient(linear, left top, left bottom, from(#ccf), color-stop(0.2, #aae), to(#44a));
+	background: -moz-linear-gradient(top, #ccf 0%, #aae 20%, #44a 100%);
+}
+
+.tw_tiddlerDetail {
+	background: #ccc;
+	padding: 0.5em 0.5em 0.5em 0.5em;
+	font-size: 8pt;
+}
+
+.tw_tiddlerDetail .tw_dataName {
+	padding-right: 0.5em;
+	color: #777;
+}
+
+.tw_tiddlerDetail .tw_dataValue {
+	font-weight: bold;
+}
+
+.tw_body {
+	margin: 0.5em;
+}
+
+.tw_body p {
+	margin: 0.5em;
+	padding: 0em;
+}
+
+.tw_editProxy {
+	background-color: #ff0;
+	background: -webkit-gradient(linear, left top, left bottom, from(#ffff00), to(#aaaa44), color-stop(0.5, #ffff80));
+	background: -moz-linear-gradient(top, #ffff00 0%, #ffff80 50%, #aaaa44 100%);
+	-webkit-background-origin: padding-box;
+	text-shadow: 1px 1px 1px #fff;
+	border: 1px solid #880;
+	color: #009;
+	display: inline-block;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	padding: 0.1em 0.25em 0.1em 0.25em;
+	position: relative;
+	-webkit-user-select: none;
+}
+
+.tw_editProxy .tw_proxyName {
+	margin: 0 0.25em 0 0.25em;
+	padding: 0 0.25em 0 0.25em;
+	background: #880;
+	color: #fff;
+	text-shadow: none;
+	-webkit-user-select: auto;
+}
+
+.tw_editProxy .tw_proxyParams {
+	background: #ddf;
+	margin: 0 0.25em 0 0.25em;
+	padding: 0 0.25em 0 0.25em;
+	text-shadow: none;
+	-webkit-user-select: auto;
+}
+
+.tw_editProxy .tw_proxyContent {
+	background: #fff;
+	border: 1px solid #880;
+	margin: 0 0.25em 0 0.25em;
+	padding: 0.25em;
+	text-shadow: none;
+	-webkit-user-select: auto;
+}
+
+.tw_popupWrapper {
+	display: inline-block;
+	position: relative;
+}
+
+.tw_popup {
+	font-size: 8pt;
+	background: #555;
+	border: 1px solid #000;
+	color: #fff;
+	position: absolute;
+	padding: 0.5em 0.5em 0.5em 0.5em;
+	-webkit-box-shadow: 1px 6px 10px #888;
+	-moz-box-shadow: 1px 6px 10px #888;
+}
+
+.tw_popup .tw_dataName {
+	padding-right: 0.5em;
+	color: #ddd;
+}
+
+.tw_popup .tw_dataValue {
+	font-weight: bold;
+}
+
+.ui-effects-transfer {
+	border: 1px solid #333;
+}
+
+.tw_macroError {
+	background-color: #f44;
+	-webkit-background-origin: padding-box;
+	border: 1px solid #800;
+	color: #fff;
+	display: inline-block;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	padding: 0.1em 0.25em 0.1em 0.25em;
+	margin: 0.1em 0.25em 0.1em 0.25em;
+	position: relative;
+	-webkit-user-select: none;
+}
+
+</style>
+<style type="text/css">
+/*tiddlywiki-styles*
+title: $tw.styles.toolbar
+description: CSS declarations for toolbars and buttons
+*/
+
+.tw_button {
+	display: inline-block;
+	text-decoration: none;
+	padding: 0.4em;
+	color: #000;
+	font-size: 8pt;
+	-webkit-border-radius: 6px;
+	-moz-border-radius: 6px;
+	-webkit-user-select: none;
+}
+
+.tw_button svg {
+	width: 16px;
+	height: 16px;
+}
+
+.tw_title svg .tw_glyphForeground {
+	failter: url(#tw_filter_gaussian_blur);
+	filter: url(#tw_filter_drop_shadow);
+	failter: url(#tw_filter_emboss);
+}
+
+.tw_title:hover svg .tw_glyphForeground {
+	filter: inherit;
+}
+
+.tw_button svg .tw_glyphForeground {
+	fill: #222;
+}
+
+.tw_button:hover {
+	background: #ffe;
+	background: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#ffa));
+	-webkit-box-shadow: 0px 0px 5px #444;
+	-moz-box-shadow: 0px 0px 5px #444;
+}
+
+.tw_button:hover svg .tw_glyphForeground {
+	fill: #000;
+}
+
+.tw_button:active {
+}
+
+.tw_buttonSelected {
+	background-color: #222;
+	color: #fff;
+}
+
+.tw_buttonSelected svg .tw_glyphForeground {
+	fill: #ddd;
+}
+
+.tw_bar {
+	background: #666;
+	background: -webkit-gradient(linear, left top, left bottom, from(#aaa), to(#444));
+	background: -moz-linear-gradient(top, #aaa 0%, #444 100%);
+	color: #000000;
+	margin: 0;
+	padding: 0.3em 0.4em 0.3em 0.4em;
+}
+
+.tw_barLeft {
+	z-index: 1000; /* Without this macros in edit mode show through the toolbar */
+	border-left: 1px solid #666;
+	border-bottom: 1px solid #666;
+	border-right: 1px solid #666;
+	position: fixed;
+	left: 0;
+	top: 2em;
+	bottom: 2em;
+	overflow: hidden;
+	-webkit-border-top-right-radius: 3px;
+	-webkit-border-bottom-right-radius: 3px;
+}
+
+.tw_barBottom {
+	z-index: 1000; /* Without this macros in edit mode show through the toolbar */
+	border-left: 1px solid #666;
+	border-top: 1px solid #666;
+	border-right: 1px solid #666;
+	position: fixed;
+	bottom: 0;
+	left: 2em;
+	right: 2em;
+	-webkit-border-top-left-radius: 3px;
+	-webkit-border-top-right-radius: 3px;
+}
+
+.tw_barTop {
+	z-index: 1000; /* Without this macros in edit mode show through the toolbar */
+	border-left: 1px solid #666;
+	border-bottom: 1px solid #666;
+	border-right: 1px solid #666;
+	position: fixed;
+	top: 0;
+	left: 2em;
+	right: 2em;
+	-webkit-border-bottom-left-radius: 3px;
+	-webkit-border-bottom-right-radius: 3px;
+}
+
+</style>
+<script type="text/x-tiddler">
+title: TiddlyChaining
+modifier: JeremyRuston
+modified: 2009-12-28T12:39:34Z
+type: text/x-markdown
+tags: notes
+tags: documentation
+tags: programming
+
+The `$tw()` function is modelled on the jQuery `$()` function. It allows tiddlers to be selected by a variety of criteria, and then traversed and manipulated using an intuitive chaining syntax.
+
+`$tw(selector)` returns the collection of tiddlers matching a selector. Some examples are:
+
+- `$tw("name")` - selects the tiddler with the given name (will need to escape spaces and special characters)
+- `$tw("HelloThere:8")` - selects a particular revision of the named tiddler
+- `$tw("HelloThere:2009-12-07T11:32:43")` - selects the revision of a named tiddler that was active at a particular time
+- `$tw("[[name with spaces]]")` - selects the tiddler with the given long name, and only ]] needing escaping
+- `$tw("*")` - selects all available tiddlers
+- `$tw("#tag")` - selects all tiddlers with the specified tag
+- `$tw("@name")` - selects all tiddlers from the specified users
+- `$tw("[type[tiddlertype]]")` - selects all tiddlers that match the specified type
+- Selectors are cumulative when concatenated with whitespace:
+ - `$tw("one two three four")` - four tiddlers named one, two, three and four
+ - `$tw("@JoeBloggs @MaryBloggs")` - all tiddlers from the users JoeBloggs and MaryBloggs
+- Selectors are unioned when concatenated without whitespace:
+ - `$tw("HelloThere@JoeBloggs")` - the tiddler named HelloThere from user JoeBloggs
+ - `$tw("@JoeBloggs#notes")` - everything tagged notes by JoeBloggs
+ - `$tw("@JoeBloggs[type[text/javascript]]")` - all JavaScript tiddlers from user JoeBloggs
+
+Methods can be applied to the tiddler collection to traverse and manipulate the tiddlers. For example:
+
+- `$tw("#myStuff").sortUp("modified")` - selects and sorts all tiddlers with a particular tag
+- `$tw("@JoeBloggs").sortDown("created")`
+- `$tw("#MyTag").filter("[created[today]]").lazyLoad()` - triggers lazy loading on all of todays tiddlers with a particular tag
+- `$tw("#stuff@JoeBloggs").remove("#notes")` - Remove all tiddlers from JoeBloggs that are tagged "stuff" and "notes"
+- `$tw(somefilter).tags()` - all the tags on the selected tiddlers
+- `$tw(somefilter).taggedBy()` - all the tiddlers tagged by the selected tiddlers
+
+</script>
+<script type="text/javascript">
+/*tiddlywiki-plugin*
+title: $tw
+description: Core framework for tiddler chaining
+*/
+
+// Many thanks to John Resig and the rest of the jQuery team. The TiddlyWiki5 core steals many of their finely executed ideas
+
+(function() {
+
+window.$tw = function(selector) {
+	return new $tw.fn.init(selector);
+};
+
+$tw.fn = $tw.prototype = {
+	init: function(selector) {
+		this.tiddlers = [];
+		if($.isArray(selector)) {
+			this.tiddlers = selector;
+		} else if(selector instanceof $tw.Tiddler) {
+			this.tiddlers = [selector];
+		} else if(typeof selector == "string") {
+			switch(selector.charAt(0)) {
+				case "*": // all available tiddlers
+					this.tiddlers = $tw.store.getAllTiddlers();
+					break;
+				case "#": // #tagname
+					this.tiddlers = $tw.store.getTiddlersByTag(selector.substr(1));
+					break;
+				case "@": // @username
+					break;
+				case "[": // [field[value]]
+					var endOfFieldPos = selector.indexOf("[",1);
+					var endOfValuePos = selector.lastIndexOf("]]");
+					if(endOfFieldPos != -1 && endOfValuePos != -1 && endOfValuePos > endOfFieldPos) {
+						this.tiddlers = $tw.store.getTiddlersByField(selector.substring(1,endOfFieldPos),
+																	 selector.substring(endOfFieldPos+1,endOfValuePos));
+					}
+					break;
+				default: // tiddlername
+					tiddler = $tw.store.getTiddler(selector);
+					this.tiddlers = tiddler ? [tiddler] : [];
+					break;
+			}
+		}
+		return this;
+	},
+	length: function() {
+		return this.tiddlers.length;
+	},
+	eq: function(index) {
+		return this.tiddlers[index] || null;
+	},
+	each: function(callback) {
+		for(var t=0; t<this.tiddlers.length; t++) {
+			callback.call(this.tiddlers[t],t);
+		}
+		return this;
+	},
+	filter: function(selector) {
+		var filtered = [];
+		if(typeof selector == "string") {
+			switch(selector.charAt(0)) {
+				case "*": // all available tiddlers
+					filtered = this.tiddlers.slice();
+					break;
+				case "#": // #tagname	
+					for(t = 0; t<this.tiddlers.length; t++) {
+						if(this.tiddlers[t].tags && $.inArray(selector.substr(1),this.tiddlers[t].tags) !== -1) {
+							filtered.push(this.tiddlers[t]);
+						}
+					}
+					break;
+				case "@": // @username
+					break;
+				case "[": // [field[value]]
+					var endOfFieldPos = selector.indexOf("[",1);
+					var endOfValuePos = selector.lastIndexOf("]]");
+					if(endOfFieldPos != -1 && endOfValuePos != -1 && endOfValuePos > endOfFieldPos) {
+						for(t = 0; t<this.tiddlers.length; t++) {
+							if(this.tiddlers[t][selector.substring(1,endOfFieldPos)] === selector.substring(endOfFieldPos+1,endOfValuePos)) {
+								filtered.push(this.tiddlers[t])
+							}
+						}
+					}
+					break;
+				default: // tiddlername
+					break;
+			}
+		}
+		return $tw(filtered);
+	},
+	sort: function(field) {
+		var sorted = this.tiddlers.slice();
+		sorted.sort(function(a,b) {
+			var fieldA = a[field].toLowerCase();
+			var fieldB = b[field].toLowerCase();
+			if(fieldA < fieldB)
+				return -1;
+			if(fieldA > fieldB)
+				return 1;
+			return 0;
+		});
+		return $tw(sorted);
+	}
+};
+
+$tw.fn.init.prototype = $tw.fn;
+
+})();
+
+</script>
+<script type="text/javascript">
+/*tiddlywiki-plugin*
+title: $tw.fn.render
+description: Chained tiddler command to display a raw tiddler (without a tiddler frame)
+*/
+
+$tw.fn.render = function(options) {
+	var defaults = {
+		displayPoint: "body"
+	};
+	options = $.extend({},defaults,options);
+	this.each(function(i) {
+		$tw.display.renderTiddler(this).appendTo($(options.displayPoint));
+	});
+};
+
+</script>
+<script type="text/javascript">
+/*tiddlywiki-plugin*
+title: $tw.fn.navigate
+description: Chained tiddler command to navigate to a tiddler, usually by opening it if required
+*/
+
+// Options are:
+//	editMode - true to open the tiddler in edit mode
+//	templateTitle - title of tiddler containing template
+//  template - template text (if present, overrides templateTitle)
+//	title - the title of the tiddler being opened (see below))
+//  jOrigin - jQuery element that was the origin of opening the tiddler (used for animations)
+
+$tw.fn.navigate = function(options) {
+	var defaults = {
+		editMode: false,
+		templateTitle: "$tw.templates.tiddler.default",
+	    template: undefined
+	};
+	options = $.extend({},defaults,options);
+	options.template = options.template ? options.template : $tw.store.getTiddler(options.templateTitle);
+	this.each(function(i) {
+		$tw.display.navigateTiddler(this,options);
+	});
+};
+
+</script>
+<script type="text/javascript">
+/*tiddlywiki-plugin*
+title: $tw.log
+description: Support for logging debugging and performance messages
+*/
+
+$tw.log = {};
+
+(function() {
+
+	// Thanks to Paul Irish, http://paulirish.com/2009/log-a-lightweight-wrapper-for-consolelog/
+	$tw.log = function(/* arguments */) {
+		var now = new Date();
+		var args = Array.prototype.slice.call(arguments);
+		args.push("time:",(now - $tw_startupTime)/1000);
+		var method = console.firebug ? 'apply' : 'call';
+		if(window.console && window.console.log && window.console.log[method])
+			window.console.log[method](window.console,args);
+	};
+	
+	$tw.logHex = function(string) {
+		var hex = "";
+		for(var c=0; c<string.length; c+=16) {
+			hex += string.substr(c,16) + " ";
+			for(var b=0; b<16; b++) {
+				hex += string.charCodeAt(c+b).toString(16) + " ";
+			}
+			hex += "\n"
+		}
+		$tw.log(hex);
+	}
+
+})();
+
+$tw.log("Logging enabled");
+
+</script>
+<script type="text/javascript">
+/*tiddlywiki-plugin*
+title: $tw.utils
+description: Various tiny utility functions
+*/
+
+$tw.utils = {};
+
+(function() {
+	
+	$tw.utils.arrayRemove = function(array,from,to) {
+		// Thanks to John Resig (MIT Licensed) - http://ejohn.org/blog/javascript-array-remove/
+		var rest = array.slice((to || from) + 1 || array.length);
+		array.length = from < 0 ? array.length + from : from;
+		return array.push.apply(array, rest);
+	};
+
+	$tw.utils.addField = function(fields,name,value) {
+		if($.isArray(fields[name])) {
+			fields[name].push(value);
+		} else if(name in fields) {
+			fields[name] = [fields[name],value];
+		} else {
+			fields[name] = value;
+		}
+	};
+	
+	// Parse a string consisting of newline delimited "name:value" strings into a hashmap
+	$tw.utils.parseFields = function(text) {
+		var fields = {};
+		var lines = text.split("\n");
+		for(var t=0; t<lines.length; t++) {
+			var c = lines[t].indexOf(":");
+			if(c != -1)
+				$tw.utils.addField(fields,$.trim(lines[t].substring(0,c)),$.trim(lines[t].substring(c+1)));
+		}
+		return fields;
+	};
+
+	// Render an array of {name:,value:} objects using standard classes, with an optional array of names to exclude
+	$tw.utils.renderObject = function(object,excludeNames) {
+		var j = $([]);
+		for(var n in object) {
+			if(!excludeNames || $.inArray(n,excludeNames) == -1) {
+				var wrapper = $("<div/>").addClass("tw_dataRow");
+				$("<span/>").addClass("tw_dataName").text(n).appendTo(wrapper);
+				$("<span/>").addClass("tw_dataValue").text(object[n].toString()).appendTo(wrapper);
+				j = j.add(wrapper);
+			}
+		}
+		return j;
+	}
+
+	// Render an array of {name:,value:} objects using standard classes, with an optional array of names to exclude
+	$tw.utils.renderArray = function(array,excludeNames) {
+		var j = $([]);
+		for(var t=0; t<array.length; t++) {
+			if(!excludeNames || $.inArray(array[t].name,excludeNames) == -1) {
+				var wrapper = $("<div/>").addClass("tw_dataRow");
+				$("<span/>").addClass("tw_dataName").text(array[t].name).appendTo(wrapper);
+				$("<span/>").addClass("tw_dataValue").text(array[t].value).appendTo(wrapper);
+				j = j.add(wrapper);
+			}
+		}
+		return j;
+	}
+	
+})();
+
+</script>
+<script type="text/javascript">
+/*tiddlywiki-plugin*
+title: $tw.compatibility.internetExplorer.xml
+description: Shim for standard XML apis on Internet Explorer
+*/
+
+(function() {
+
+	// Add a DOMParser object if it doesn't already exist
+	if(window.DOMParser === undefined && window.ActiveXObject) {
+		window.DOMParser = function() {};
+		window.DOMParser.prototype.parseFromString = function(xml) {
+			var doc = new ActiveXObject('MSXML.DomDocument');
+	        doc.async = false;
+	        doc.loadXML(xml);
+			return doc;
+		};
+	}
+	
+})();
+
+</script>
+<script type="text/x-tiddler">
+title: TiddlerRevisions
+modifier: JeremyRuston
+modified: 2009-12-28T12:39:34Z
+type: text/x-markdown
+tags: notes
+tags: documentation
+
+A TiddlerRevision object is an immutable collection of fields representing a particular revision
+of a particular tiddler. TiddlerRevision objects cannot be modified, instead a new
+revision of the same tiddler is created in storage. (There are subtle exceptions to support lazy loading which are discussed below)
+
+TiddlerRevision objects are created during parsing of the TiddlyWiki source file, in response to user edits, and asychronously to track changes on a server.
+
+TiddlerRevisions can contain arbitrary fields, but TiddlyWiki has special conventions for certain fields:
+
+title - string
+type - MIME type of the content
+tags - array of strings
+text - string or function, see below
+_* - any field starting with an underscore is not serialised (and therefore won't get saved or synced to a server)
+
+To support lazy loading, the text field supports a convention whereby it can be specified as a function instead of a string. The first time the text of the tiddler needs to be accessed, the function is invoked and the return value is used as the value of the text field. This mechanism allows synchronous lazy loading, which is used to defer loading of HTML tiddlers until they are needed.
+
+To support dynamically updated tiddlers, the return value of the text() function can also be an object {returnValue:,newValue:} which allows the handler to return the value that should be used for reading the text property, as well as a new value for the property to be used next time.
+
+To support asynchronous lazy loading, where a server must be consulted to retrieve the text of the tiddler, the text() function should trigger the loading of the tiddler from the remote server, and return text indicating that the tiddler is being retrieved from the server. When the remote request returns, the update to the tiddler must be delivered through $tw.store to ensure that updates are triggered.
+
+The global function $tw.TiddlerRevision.getText() retrieves the text of the tiddler revision, handling the situation where the text field has been specified as a function. It also stores the resulting string directly in the TiddlerRevision's text field for subsequent access.
+
+Note that more than one revision of a tiddler object may point to the same TiddlerRevision, for instance if the user opts to revert to an earlier revision of a tiddler.
+
+</script>
+<script type="text/javascript">
+/*tiddlywiki-plugin*
+title: $tw.TiddlerRevision
+description: Object representing an immutable revision of a tiddler
+*/
+
+/*
+TODO: Although the immutability of TiddlerRevision objects can't be enforced on all browsers, it
+may be worth adding property setters that do so for HTML5 browsers
+*/
+
+$tw.TiddlerRevision = function(fields) {
+	$.extend(true,this,fields);
+};
+
+$tw.TiddlerRevision.getText = function(tiddlerRevision) {
+	var v = tiddlerRevision.text;
+	if(typeof v === "function") {
+		var v = tiddlerRevision.text();
+		if(typeof v === "string") {
+			tiddlerRevision.text = v;
+		} else if(("returnValue" in v) && ("newValue" in v)) {
+			tiddlerRevision.text = v.newValue;
+			v = v.returnValue;
+		}
+	}
+	return v;
+};
+
+</script>
+<script type="text/x-tiddler">
+title: Tiddlers
+modifier: JeremyRuston
+modified: 2009-02-28T12:39:34Z
+type: text/x-markdown
+tags: notes
+tags: documentation
+
+A Tiddler object is an indexed collection of tiddler revisions
+
+Tiddler objects allow for direct access to the following fields of the most recent revision:
+- title - eg myTiddler.title
+- tags - eg myTiddler.tags.length
+- type
+
+To access the text of the most recent revision of a tiddler, use the myTiddler.getText() method. To obtain all of the fields of a tiddler, use the myTiddler.getFields() method (the text field will only be included if it has previously been requested with myTiddler.getText())
+
+</script>
+<script type="text/javascript">
+/*tiddlywiki-plugin*
+title: $tw.Tiddler
+description: Object representing a Tiddler
+*/
+
+// Create a Tiddler object:
+// new Tiddler([index],fields | TiddlerRevision,[index],fields | TiddlerRevision,..)
+// - See $tw.Tiddler.addRevision for argument details
+$tw.Tiddler = function(/* arguments */) {
+	this.revisions = {}; // Hashmap treated as an integer-indexed sparse array of TiddlerRevisions
+	this.currentRevision = -1; // Keeping track of maximum revision index
+	this.addRevision.apply(this,arguments);
+};
+
+// Add a new revision to a tiddler:
+// myTiddler.addRevision([index],fields | TiddlerRevision,[index],fields | TiddlerRevision,...)
+//   - create a tiddler with multiple revisions, optionally specifying a base revision index
+// Fields are copied by value into a new TiddlerRevision object. Existing TiddlerRevision objects are assigned
+// directly, without being copied. Any existing revision with the same index is overwritten
+$tw.Tiddler.prototype.addRevision = function(/* arguments */) {
+	var argIndex = 0; // For stepping through the arguments
+	var baseIndex = this.currentRevision > 0 ? this.currentRevision + 1 : 1; // Default revision index
+	while(argIndex < arguments.length) {
+		// Check for a base index
+		if(typeof arguments[argIndex] === "number") {
+			baseIndex = arguments[argIndex++];
+		}
+		var revision;
+		// Check for fields or a TiddlerRevision
+		if(arguments[argIndex] instanceof $tw.TiddlerRevision) {
+			revision = arguments[argIndex++];
+		} else if(typeof arguments[argIndex] === "object") {
+			revision = new $tw.TiddlerRevision(arguments[argIndex++]);
+		}
+		// Insert the new revision
+		if(revision) {
+			this.currentRevision = baseIndex > this.currentRevision ? baseIndex : this.currentRevision;
+			this.revisions[baseIndex++] = revision;
+		}
+	}
+	// Cache the title of the current revision
+	revision = this.currentRevision > 0 ? this.revisions[this.currentRevision] : undefined;
+	if(revision) {
+		this.title = revision.title;
+		this.tags = revision.tags;
+		this.type = revision.type;
+	}
+	return this.currentRevision;
+};
+
+$tw.Tiddler.prototype.currentRevision = function() {
+	return this.currentRevision;
+};
+
+$tw.Tiddler.prototype.getText = function() {
+	var revision = this.currentRevision > 0 ? this.revisions[this.currentRevision] : undefined;
+	return revision ? $tw.TiddlerRevision.getText(revision) : undefined;
+}
+
+$tw.Tiddler.prototype.getFields = function() {
+	var revision = this.currentRevision > 0 ? this.revisions[this.currentRevision] : undefined;
+	return revision;
+};
+
+$tw.Tiddler.prototype.toHtml = function() {
+	var html;
+	var text = this.getText();
+	if(text !== undefined && $.trim(text) !== "") {
+		switch(this.type) {
+			case "text/html":
+				// If we just did $(text) then tiddlers containing just text nodes would fail
+				html = $("<div/>").html(text).contents();
+				break;
+			case "text/x-markdown":
+				html = $tw.converters.markdown.toHtml(text);
+				break;
+			case "text/css":
+			case "text/json":
+			case "text/javascript":
+				html = $("<pre/>").text(text);
+				break;
+			case "image/png":
+			case "image/svg+xml":
+				html = $tw.image.render(this);
+				break;
+			default:
+				html = $("<div/>").text(text).contents();
+				break;
+		}
+	}
+	return html;
+};
+	
+</script>
+<script type="text/javascript">
+/*tiddlywiki-plugin*
+title: $tw.clock
+*/
+
+$tw.clock = {};
+
+(function() {
+
+	var tickCount = 1; // Current clock value, always postive and incremented on each read
+
+	$tw.clock.now = function() {
+		return tickCount++;
+	};
+	
+})();
+
+</script>
+<script type="text/x-tiddler">
+title: TiddlerStorage
+modifier: JeremyRuston
+modified: 2009-02-28T12:39:34Z
+type: text/x-markdown
+tags: notes
+tags: documentation
+
+Tiddlers are stored in a series of hashmaps by title, user and tag. The indexes are maintained over insertions and deletions.
+
+Notification handlers can be registered which are automatically called after tiddlers matching a given selector have been created, modified or deleted. Notifications are issued asynchronously (using setTimeout(0,fn)). This means that if multiple tiddlers are modified then the notifications are deferred until all the modifications are completed.
+
+One of the default notification handlers is the refresh mechanism which handles updates to macros by traversing the DOM.
+</script>
+<script type="text/javascript">
+/*tiddlywiki-plugin*
+title: $tw.store
+*/
+
+$tw.store = {};
+
+(function() {
+	
+	var tiddlers = {}; // Map of tiddlers by title
+	// TODO: Other maps, indexed on other properties (including a map of deleted tiddlers)
+	
+	var notificationCallbacks = []; // Array of {callback: function(), selector: selector}
+	var triggeredNotifications = []; // Subarray of notifications that have already been tripped
+	var untriggeredNotifications = []; // Subarray of notifications that have not yet been tripped
+	
+	var notificationTimer = null;
+	
+	var locked = false; // Store is locked while notification callbacks are processed
+	
+	// Add a new notification handler {callback: function, selector: selector}
+	$tw.store.addNotification = function(notification) {
+		notificationCallbacks.push(notification);
+	}
+	
+	// Queues up any notifications triggered by a particular tiddler
+	$tw.store.registerModification = function(tiddler) {
+		// Set up the timeout to actually send the notifications
+		if(!notificationTimer) {
+			triggeredNotifications = [];
+			untriggeredNotifications = notificationCallbacks.slice(); // Make a shallow copy of the notifications
+			notificationTimer = window.setTimeout($tw.store.sendNotifications,0);
+		}
+		for(var t=untriggeredNotifications.length-1; t>=0; t--) {
+			var n = untriggeredNotifications[t];
+			if($tw(tiddler).filter(n.selector).length() == 1) {
+				triggeredNotifications.push(n);
+				untriggeredNotifications = $tw.utils.arrayRemove(untriggeredNotifications,t,t+1)
+			}
+		}
+	};
+	
+	$tw.store.sendNotifications = function() {
+		notificationTimer = null;
+		// TODO: Rather than locking the entire store, we should handle updates during notification processing
+		locked = true;
+		for(var t=triggeredNotifications.length-1; t>=0; t--) {
+			var n = triggeredNotifications[t];
+			n.callback();
+		}
+		locked = false;
+	};
+	
+	// Put a tiddler to the store. It will be added as a new revision if the tiddler already exists. If a
+	// revision number is specified then the tiddler is added at that revision.
+	// Returns the $tw.Tiddler object if successful, or null if it failed
+	$tw.store.storeTiddler = function(fields) {
+		// Get the title and revision
+		if(!"title" in fields)
+			return null;
+		var title = fields.title;
+		if(title === "")
+			return null;
+		var revision = Number(fields.revision);
+		// Check if the tiddler exists
+		var tiddler = tiddlers[title];
+		if(tiddler) {
+			// Add a new revision to the existing tiddler
+			if(revision > 0) {
+			 	tiddler.addRevision(revision,fields);
+			} else {
+				tiddler.addRevision(fields);
+			}
+		} else {
+			// Create a new tiddler
+			if(revision > 0) {
+			 	tiddler = new $tw.Tiddler(revision,fields);
+			} else {
+				 tiddler = new $tw.Tiddler(fields);
+			}
+			tiddlers[title] = tiddler;
+		}	
+		$tw.store.registerModification(tiddler);
+		return tiddler;
+	};
+	
+	$tw.store.getAllTiddlers = function() {
+		var result = [];
+		for(var t in tiddlers) {
+			result.push(tiddlers[t]);
+		}
+		return result;
+	};
+	
+	$tw.store.getTiddlersByTag = function(tag) {
+		var result = [];
+		for(var t in tiddlers) {
+			if(tiddlers[t].tags && $.inArray(tag,tiddlers[t].tags) != -1)
+				result.push(tiddlers[t]);
+		}
+		return result;
+	};
+	
+	$tw.store.getTiddlersByField = function(field,value) {
+		var result = [];
+		for(var t in tiddlers) {
+			var f = tiddlers[t].getFields();
+			if(field in f && f[field] === value)
+				result.push(tiddlers[t]);
+		}
+		return result;
+	};
+	
+	$tw.store.getTiddler = function(title,revision,user,source) {
+		if(title in tiddlers)
+			return tiddlers[title];
+		else
+			return null;
+	};
+	
+	$tw.store.debug = function() {
+		$tw.log("Tiddlers:",tiddlers);
+	};
+	
+})();
+	
+</script>
+<script type="text/x-tiddler">
+title: FileLayout
+modifier: JeremyRuston
+modified: 2009-12-28T12:39:34Z
+type: text/x-markdown
+tags: notes
+tags: documentation
+
+TiddlyWiki5 is delivered as a single HTML file that contains both the tiddlers (text and other data) of the document, and the JavaScript code needed to provide the TiddlyWiki user interface.
+
+A TiddlyWiki5 file contains content designed to be processed in two ways:
+
+- Ordinary processing of HTML, CSS and JavaScript by the browser when the file is opened
+- Special processing by the TiddlyWiki5 core code to extract the tiddlers
+
+Tiddlers are encoded within the HTML file in a number of different formats:
+
+- HTML text in `<div>` tags ($tw.serialisers.html). This is the default format for content in TiddlyWiki5, and ensures that it is visible to search engines and other robots.
+- Text in `<sc**pt>` tags ($tw.serialisers.scriptTiddler). Tiddlers in this format are a bit easier than HTML to type in a text editor because you don't have to escape HTML characters like < and > (although `</sc**pt>` does need escaping). It also means that search engines won't look at the content, which can be helpful.
+- JavaScript code in `<sc**pt>` tags ($tw.serialisers.javascript)
+- CSS definitions in `<st*le>` tags ($tw.serialisers.stylesheet)
+- Special MHTML comments that can be used by Internet Explorer to render base64 encode images ($tw.serialisers.mhtml)
+
+</script>
+<script type="text/javascript">
+/*tiddlywiki-plugin*
+title: $tw.storage
+*/
+
+$tw.storage = {};
+$tw.serialisers = {};
+
+(function() {
+	
+	$tw.storage.loadContent = function() {
+		var recipe = {
+			url: document.location.href,
+			steps: []
+		};
+		$tw.storage.loadContentFromChildren(null,recipe.steps);
+		$tw.store.storeTiddler({
+			title: "$tw.recipes.default",
+			type: "text/json",
+			text: JSON.stringify(recipe,null,4)
+		});
+	};
+		
+	$tw.storage.loadContentFromChildren = function(childNodes,recipeSteps) {
+		// Iterate using the DOM directly; jQuery methods seem to bypass comment nodes
+		childNodes = childNodes ? childNodes : document.childNodes;
+		for(var t=0; t<childNodes.length; t++) {
+			var node = childNodes[t];
+			var nodeName = node.nodeName.toUpperCase();
+			var nodeType = node.nodeType;
+			var loaded = false;
+			for(var loaderName in $tw.serialisers) {
+				var loader = $tw.serialisers[loaderName]
+				var result = false;
+				if(!loaded) {
+					if((loader.nodeType ? loader.nodeType === nodeType : true) &&
+					   (loader.nodeName ? loader.nodeName === nodeName : true) &&
+					   (loader.className ?  $(node).hasClass(loader.className) : true)) {
+						result = loader.loadTiddler(node);
+					}
+				}
+				if(result !== false) {
+					loaded = true;
+					if(!$.isArray(result))
+					 	result = [result];
+					for(var i=0; i<result.length; i++) {
+						var tiddler = result[i];
+						recipeSteps.push({
+							block: "tiddler",
+							title: tiddler.title,
+							format: tiddler.format,
+							type: tiddler.type
+						});
+						$tw.store.storeTiddler(tiddler);
+					}
+				}
+			}
+			if((loaded == false) && (childNodes[t].childNodes.length > 0))
+				$tw.storage.loadContentFromChildren(childNodes[t].childNodes,recipeSteps);
+		}
+	};
+
+	})();
+
+</script>
+<script type="text/javascript">
+/*tiddlywiki-plugin*
+title: $tw.serialisers.html
+*/
+
+$tw.serialisers.html = {
+	nodeName: "DIV",
+	className: "tw_tiddler"
+};
+
+(function() {
+	
+	$tw.serialisers.html.loadTiddler = function(elem) {
+		var revision = $(elem).children(".tw_revision").text();
+		var title = $(elem).children(".tw_title").text();
+		var created = $(elem).children(".tw_created").eq(0).attr("title");
+		var modified = $(elem).children(".tw_modified").eq(0).attr("title");
+		var html = $(elem).children(".tw_body").clone();
+		var text = function() {return html.html()};
+		var tags = [];
+		$(elem).find(".tw_tags a[rel='tag']").each(function(i) {
+			tags.push($(this).text());
+		});
+		$(elem).remove();
+		return {
+			title: title,
+			revision: revision,
+			text: text,
+			tags: tags,
+			type: "text/html",
+			format: "html"
+		}; 
+	};
+
+})();
+
+</script>
+
+<script type="text/javascript">
+/*tiddlywiki-plugin*
+title: $tw.serialisers.mhtml
+*/
+
+$tw.serialisers.mhtml = {
+	nodeType: 8 /* Node.COMMENT_NODE */
+};
+
+(function() {
+	
+	var startMarker = "Content-Type: multipart/related; boundary=\"_tw_mhtml_tiddler\"";
+	var boundaryMarker = "--_tw_mhtml_tiddler";
+	var boundaryMarker_SGML = "_tw_mhtml_tiddler"; // SGMLesque browsers like Opera drop the "--" out of comment nodes (see opening paras of http://www.howtocreate.co.uk/SGMLComments.html)
+
+	$tw.serialisers.mhtml.loadTiddler = function(elem) {
+		var comment = elem.data; // TODO: allow for >64K by reading chunks with elem.substringData(offset,length)
+		var startPos = comment.indexOf(startMarker);
+		if(startPos == -1)
+		 	return false;
+		comment = comment.substring(startPos + startMarker.length);
+		var files = comment.split(boundaryMarker);
+		if(files.length == 1)
+			files = comment.split(boundaryMarker_SGML);
+		var result = [];
+		for(var f=0; f<files.length; f++) {
+			var fileFields = $tw.serialisers.mhtml.readFile(files[f]);
+			if(fileFields !== false)
+				result.push(fileFields);
+		}
+		return result;
+	};
+	
+	$tw.serialisers.mhtml.readFile = function(commentFragment) {
+		var parts = commentFragment.split("\n\n");
+		if(parts.length < 2)
+		 	return false;
+		var fields = $tw.utils.parseFields(parts[0]);
+		if(!("Content-Location" in fields))
+			return false;
+		fields.title = fields["Content-Location"];
+		fields.text = $.trim(parts[1]);
+		fields.type = fields["Content-Type"] ? fields["Content-Type"] : "image/png";
+		$.extend(fields,{format: "mhtml"});
+		return fields;
+	};
+
+})();
+
+</script>
+<script type="text/javascript">
+/*tiddlywiki-plugin*
+title: $tw.serialisers.scriptTiddler
+*/
+
+// TODO: Escape closing </sc**pt> tags within content
+
+$tw.serialisers.script = {
+	nodeName: "SCRIPT"
+};
+
+(function() {
+	
+	$tw.serialisers.script.loadTiddler = function(elem) {
+		if($(elem).attr("type") !== "text/x-tiddler")
+			return false;
+		var text = $.trim($(elem).html());
+		var endFields = text.indexOf("\n\n");
+		endFields = endFields == -1 ? text.length : endFields;
+		var fields = $tw.utils.parseFields(text.substring(0,endFields));
+		fields.text = text.substring(endFields+2);
+		$.extend(fields,{format: "script"});
+		return fields;
+	};
+
+})();
+
+</script>
+<script type="text/javascript">
+/*tiddlywiki-plugin*
+title: $tw.serialisers.javascript
+*/
+
+$tw.serialisers.javascript = {
+	nodeName: "SCRIPT"
+};
+
+(function() {
+	
+	$tw.serialisers.javascript.loadTiddler = function(elem) {
+		if($(elem).attr("type") !== "text/javascript")
+			return false;
+		var startMarker = "/*tiddlywiki-plugin*";
+		var text = $(elem).text();
+		if(text.indexOf(startMarker) == -1)
+		 	return false;
+		var endFields = text.indexOf("*/");
+		endFields = endFields == -1 ? text.length : endFields;
+		var fields = $tw.utils.parseFields(text.substring(startMarker.length,endFields-1));
+		fields.text = text.substring(endFields+2);
+		$.extend(fields,{type: "text/javascript", format: "javascript"});
+		return fields;
+	};
+
+})();
+
+</script>
+<script type="text/javascript">
+/*tiddlywiki-plugin*
+title: $tw.serialisers.stylesheet
+*/
+
+$tw.serialisers.stylesheet = {
+	nodeName: "STYLE"
+};
+
+(function() {
+	
+	$tw.serialisers.stylesheet.loadTiddler = function(elem) {
+		if($(elem).attr("type") !== "text/css")
+			return false;
+		var startMarker = "/*tiddlywiki-styles*";
+		var text = $(elem).html();
+		if(text.indexOf(startMarker) == -1)
+		 	return false;
+		var endFields = text.indexOf("*/");
+		endFields = endFields == -1 ? text.length : endFields;
+		var fields = $tw.utils.parseFields(text.substring(startMarker.length,endFields-1));
+		fields.text = text.substring(endFields+2);
+		$.extend(fields,{type: "text/css", format: "stylesheet", _storage: $(elem)});
+		return fields;
+	};
+
+})();
+
+</script>
+<script type="text/javascript">
+/*tiddlywiki-plugin*
+title: $tw.toolbar
+*/
+
+$tw.toolbar = {};
+
+(function() {
+
+	$tw.toolbar.create = function(selector,className) {
+		var toolbarWrapper = $("<div/>").addClass(className);
+		var toolbar = $("<div/>").addClass("tw_bar").appendTo(toolbarWrapper);
+		$tw(selector).render({
+			displayPoint: toolbar
+			});
+		return toolbarWrapper;
+	};
+	
+	$tw.toolbar.updateToolbarButtonStates = function() {
+		$(".tw_dynamicButton").each(function(i) {
+			var type = $(this).data("tw_dynamicButtonQuery");
+			if(!type)
+				return;
+			var status = false;
+			try {
+				status = document.queryCommandState(type);
+			} catch(e) {
+			}
+			if(status)
+				$(this).addClass("tw_buttonSelected");
+			else
+				$(this).removeClass("tw_buttonSelected");
+		});
+	};
+	
+
+})();
+	
+</script>
+<script type="text/javascript">
+/*tiddlywiki-plugin*
+title: $tw.render
+*/
+
+$tw.display = {};
+
+(function() {
+
+	// Render a tiddler to HTML and process any macros
+	$tw.display.renderTiddler = function(tiddler) {
+		var html = $(tiddler.toHtml());
+		$tw.macro.createMacrosViewMode(html,tiddler);
+		return html;
+	};
+
+	// Open a tiddler through a given template, optionally in edit mode. If the tiddler is already displayed,
+	// it is only re-rendered if the template or editMode do not match
+	$tw.display.navigateTiddler = function(tiddler,options) {
+		var defaults = {
+			templateTitle: "$tw.templates.tiddler.default",
+			template: null,
+			editMode: false,
+			jOrigin: null
+		};
+		options = $.extend({},defaults,options);
+		options.template = options.template ? options.template : $tw.store.getTiddler(options.templateTitle);
+		// See if the tiddler is already open TODO: What if the tiddler title contains a single quote?
+		var elemTiddler = $("[data-tw-tiddler-title='" + tiddler.title + "'].tw_tiddlerFrame");
+		if(elemTiddler.length === 0) {
+			elemTiddler = $tw.display.chooseDisplayPoint(tiddler,options);
+		} else {
+			elemTiddler = elemTiddler.eq(0);
+		}
+		// Create the displayTiddler macro
+		elemTiddler.addClass("tw_macro");
+		elemTiddler.attr("data-tw-macro","displayTiddler");
+		elemTiddler.attr("data-tw-params",tiddler.title + " " + (options.editMode ? "edit" : "view") + " " + options.template.title);
+		$tw.macro.createMacrosViewMode(elemTiddler,tiddler);
+		// Animate
+		if(options.jOrigin) {
+			$(options.jOrigin).effect("transfer",{to: elemTiddler},500);
+		}
+	};
+	
+	// Choose the point in the DOM to create a new tiddler frame
+	$tw.display.chooseDisplayPoint = function(tiddler,options) {
+		var elemTiddler = null;
+		// Use the specified displayPoint if there was one
+		if(elemTiddler === null && options.displayPoint) {
+			elemTiddler = $("<div>");
+			elemTiddler.appendTo(options.displayPoint);
+		}
+		// Look for a tiddlerContainer that will accept this tiddler
+		if(elemTiddler === null) {
+			var containers = $(".tw_macro.tw_tiddlerContainer");
+			containers.each(function(i) {
+				if(elemTiddler === null) {
+					elemTiddler = $tw.display.createTiddlerFrameInContainer($(this),tiddler,options);
+				}
+			});
+		}
+		if(elemTiddler === null) {
+			elemTiddler = $("<div>");
+			elemTiddler.appendTo("body");
+		}
+		return elemTiddler;
+	};
+	
+	$tw.display.createTiddlerFrameInContainer = function(elemContainer,tiddler,options) {
+		return $tw.macro.callMacro("insertTiddlerFrameInContainer",elemContainer,tiddler,options);
+	};
+	
+	$tw.display.refresh = function() {
+		$tw.macro.refreshMacros($(document).children());
+	};
+
+})();
+	
+</script>
+<script type="text/x-tiddler">
+title: MacroProcessing
+modifier: JeremyRuston
+modified: 2009-12-28T12:39:34Z
+type: text/x-markdown
+tags: notes
+tags: documentation
+
+A macro is a piece of special markup that introduces dynamic content into TiddlyWiki. A single macro can be applied to a DOM element by adding the class 'tw_macro' and the custom attribute 'data-tw-macro' containing the name of the macro. Most macros require additional information in custom attributes (notably 'data-tw-params') or in sub-elements of the macro element.
+
+The macro dynamically modifies the appearance or content of the element. When necessary macros are automatically updated if any part of the underlying tiddlers change. Macros can also be displayed in edit mode which replaces the macro element with a visible proxy element, containing an interactive form that allows the parameters of the macro to be modified. When a tiddler has been editted and needs to be resaved, each edit mode macro is invoked and requested to provide itself in storage mode.
+
+Macros can therefore be found in the DOM in several different forms:
+
+- Storage: this is the format used for tiddler storage and transmission on the wire
+- View mode: this is the format used when tiddlers are rendered to the DOM and any macros within them are executed
+- Edit mode: this is the format used when tiddlers are rendered in edit mode. Macros are rendered as interactive proxy elements
+
+The $tw.macro.createMacros() function iterates through DOM elements and their children, instantiating all the macros it finds. A similar function $tw.macro.refreshMacros() is used to refresh macros in response to changes in the tiddler store. Both functions look for the class "macro" to identify elements with macros attached, and also for the class "ignoreMacros" which causes it to ignore any macros attached to an element or its children. Macros are responsible for creating or refreshing any macros amongst their children.
+
+Macros are implemented as JavaScript objects in the $tw.macros.* namespace. An instance of a macro object is tied to a particular DOM element that is the root of its visual representation. The macro object is referenced by the jQuery data("tw_macro") member. Care needs to be taken in maintaining this reference if the DOM element is replaced with a different one, as happens when a macro is rendered in edit mode
+
+Methods required on macro objects:
+
+new Macro(options) - Constructs a blank instance that will need one of the initialisation calls to be useful
+
+macro.createViewMode(options) - Initialises the macro in view mode with these options:
+containingTiddler - The $tw.Tiddler object of the tiddler immediately containing the macro instance. This can be missing or null
+macroElement - The DOM element to which the macro is attached
+params - A map of the macro parameters unpacked into several convenient forms:
+  params.string - the original unprocessed parameter string
+  params.byName - a hashmap by name of arrays of parameter values (eg params.byName["srcTiddler"][0]) 
+  params.byPosition - an array of a hashmap about each parameter value {name:, value:}
+The return value is an object with the following fields:
+macroElement - The DOM element to whicht the macro is attached (only needs to be specified if it has been changed)
+
+macro.createEditMode(options) - Initialises the macro in edit mode with these options:
+containingTiddler - The $tw.Tiddler object of the tiddler immediately containing the macro instance. This can be missing or null
+macroElement - The DOM element to which the macro is attached
+params - A map of the macro parameters unpacked into several convenient forms:
+  params.string - the original unprocessed parameter string
+  params.byName - a hashmap by name of arrays of parameter values (eg params.byName["srcTiddler"][0]) 
+  params.byPosition - an array of a hashmap about each parameter value {name:, value:}
+The return value is an object with the following fields:
+macroElement - The DOM element to whicht the macro is attached (only needs to be specified if it has been changed)
+
+macro.createNew(options) - Creates a new blank template for the macro in edit mode, with these options:
+containingTiddler - The $tw.Tiddler object of the tiddler immediately containing the macro instance. This can be missing or null
+macroElement - The DOM element which should be replaced by the newly created macro
+params - A map of the macro parameters unpacked into several convenient forms:
+  params.string - the original unprocessed parameter string
+  params.byName - a hashmap by name of arrays of parameter values (eg params.byName["srcTiddler"][0]) 
+  params.byPosition - an array of a hashmap about each parameter value {name:, value:}
+The return value is an object with the following fields:
+macroElement - The new DOM element to whicht the macro is attached
+
+macro.getRefreshTrigger() - Returns a selector identifying the tiddlers that should cause the macro to be refreshed if they are changed
+
+macro.refresh(options) - Update an instance of a macro in response to a potential change in one of the underlying tiddlers
+
+macro.serialise(options) - Serialise a macro displayed in edit mode back to static HTML
+
+</script>
+<script type="text/javascript">
+/*tiddlywiki-plugin*
+title: $tw.macro
+*/
+
+$tw.macro = {};
+$tw.macros = {};
+
+(function() {
+
+	$tw.macro.createMacrosViewMode = function(elements,tiddler) {
+		$tw.macro.processMacros("createViewMode",elements,tiddler);
+	};
+
+	$tw.macro.createMacrosEditMode = function(elements,tiddler) {
+		$tw.macro.processMacros("createEditMode",elements,tiddler);
+	};
+
+	$tw.macro.refreshMacros = function(elements,tiddler) {
+		$tw.macro.processMacros("refresh",elements,tiddler);
+	};
+
+	$tw.macro.processMacros = function(method,elements,tiddler) {
+		$(elements).each(function(i) {
+			var e = $(this);
+			if(!e.hasClass("tw_ignoreMacros")) {
+				if(e.hasClass("tw_macro")) {
+					$tw.macro.callMacro(method,e,tiddler);
+				} else  {
+					var c = e.children();
+					if(c)
+						$tw.macro.processMacros(method,c,tiddler);
+				}
+			}
+		});
+	};
+	
+	// Search up the DOM hierarchy to find a macro that will accept the given command
+	$tw.macro.dispatchCommand = function(command,elem,options) {
+		var method = "command_" + command,
+			ret = undefined;
+		// Move upwards looking for a macro to call
+		do {
+			if(elem.hasClass("tw_macro")) {
+				ret = $tw.macro.callMacro(method,elem,options);
+			}
+			elem = elem.parent();
+		} while((ret === undefined) && elem.length > 0);
+		// If we reach the top of the tree without finding a handler then broadcast the event from the top
+		if((ret === undefined) && (elem.length === 0)) {
+			$tw.macro.broadcastCommand(command,$("body").children(),options);
+			ret = true;
+		}
+		return ret;
+	};
+	
+	// Broadcast a command to a given set of elements
+	$tw.macro.broadcastCommand = function(command,elements,options) {
+		var method = "command_" + command;
+		$(elements).each(function(i) {
+			var elem = $(this),
+				ret = undefined;
+			if(elem.hasClass("tw_macro")) {
+				ret = $tw.macro.callMacro(method,elem,options);
+			}
+			if(ret === undefined) {
+				$tw.macro.broadcastCommand(command,elem.children(),options);
+			}
+		});
+		// TODO: Perhaps return value should indicate whether the command was dispatched at least once 
+	};
+
+	// Invoke a specified method on the macro attached to an element
+	//   method - the method to be invoked eg "createViewMode"
+	//   elemMacro - the element to which the macro is attached
+	//   args - further arguments passed to the macro method
+	// Returns:
+	//   undefined - no macro handler could be found
+	// or
+	//   anything else - return value of macro method
+	// If the macro is defined but the specified method is not present, then the default for that method is executed instead
+	$tw.macro.callMacro = function(method,elemMacro /*, arguments */) {
+		var macroName = elemMacro.attr("data-tw-macro"),
+			params = elemMacro.attr("data-tw-params"),
+			macro = $tw.macros[macroName],
+			args =[], t, ret;
+		// Assemble the arguments
+		args.push(elemMacro,params);
+		for(t=2; t<arguments.length; t++)
+			args.push(arguments[t]);
+		// Check whether the macro is missing
+		if(macro === undefined)
+			macro = $tw.macro.missing;
+		// Check whether the method is missing
+		var fnMethod = macro[method];
+		if(fnMethod === undefined)
+			fnMethod = $tw.macro.fallback[method];
+		// Call the method
+		return fnMethod ? fnMethod.apply(macro,args) : undefined;
+	};
+
+})();
+
+</script>
+<script type="text/javascript">
+/*tiddlywiki-plugin*
+title: $tw.macro.missing
+*/
+
+// These are the macro methods used when the macro is undefined
+
+$tw.macro.missing = {};
+
+(function() {
+
+$tw.macro.missing.createViewMode = function(elemMacro,params,tiddler) {
+	var macroName = $(elemMacro).attr("data-tw-macro");
+	$("<span>").addClass("tw_macroError").text("No such macro as '" + macroName + "'").insertBefore(elemMacro);
+};
+	
+})();
+
+</script>
+<script type="text/javascript">
+/*tiddlywiki-plugin*
+title: $tw.macro.fallback
+*/
+
+// These are the macro methods used when the macro is defined but a required method is missing
+
+$tw.macro.fallback = {};
+
+(function() {
+
+	$tw.macro.fallback.createEditMode = function(elemMacro,params,tiddler) {
+		var content = elemMacro.contents();
+		var macro = elemMacro.attr("data-tw-macro");
+		var token = $("<span/>").addClass("tw_editProxy").attr("contentEditable",false).text("macro").append(
+			$("<span/>").addClass("tw_proxyName").attr("contentEditable",true).text(macro)
+		).append(
+			$("<span/>").addClass("tw_proxyParams").attr("contentEditable",true).text(params)
+		);
+		if(content.length > 0) {
+			token.append($("<div/>").addClass("tw_proxyContent").attr("contentEditable",true).append(content))
+			$tw.macro.createMacrosEditMode(content,tiddler);
+		}
+		token.appendTo(elemMacro);
+	};
+
+	$tw.macro.fallback.refresh = function(elemMacro,params,tiddler) {
+		var children = elemMacro.children();
+		if(children.length > 0) {
+			$tw.macro.refreshMacros(children,tiddler);
+		}
+	};
+
+})();
+
+</script>
+<script type="text/x-tiddler">
+title: TiddlerDisplay
+modifier: JeremyRuston
+modified: 2010-03-02T12:39:34Z
+type: text/x-markdown
+tags: notes
+tags: documentation
+
+An important macro is displayTiddler, which creates a tiddler frame (marked with the class "tw_tiddlerFrame") that displays a tiddler complete with a UI for editting, and switching between revisions. HTML5 custom attributes named "data-tw-tiddler-title" and "data-tw-template-title" are hold the title of the tiddler and template used to display it.
+
+Tiddler frames can have a number of states associated with them that are maintained through special classes assigned to the frame:
+
+tw_editMode - tiddler is displayed in edit mode
+tw_showDetail - detailed tiddler information is visible
+tw_focussed - tiddler has the keyboard focus
+
+Various macros can be used to create a tiddler container (marked with the class "tw_tiddlerContainer"):
+
+- story is like a conventional TiddlyWiki story column
+- SinglePageMode closes the previous tiddler when a new one is opened
+- Cecily would also be a special container, with standard logic governing which links open in the canvas, and which in, say, an overlay frame, or a tooltip
+
+navigateTiddler should invoke a special method on the container macro when a tiddler is displayed/adjusted/removed. Then something like Cecily could be done as a special container, with standard logic governing which links open in the canvas, and which in, say, an overlay frame, or a tooltip. And single page mode just becomes a special container.
+
+Tooltips could be done as a nested container, as long as we take care in the traversal as we search for the right container. We need to search for the target container first as a child of the frame with the tiddler that contained the link that was clicked on, and then search up the DOM tree looking for containers that are siblings of the parent chain.
+</script>
+<script type="text/javascript">
+/*tiddlywiki-plugin*
+title: $tw.macros.story
+*/
+
+$tw.macros.story = {};
+
+(function() {
+
+	$tw.macros.story.createViewMode = function(elemMacro,params,tiddler) {
+		var p = params.split(" ");
+		var accepts = p[0];
+		var insertPoint = p[1];
+		elemMacro.attr("data-tw-accepts",accepts);
+		elemMacro.attr("data-tw-insert-point",insertPoint);
+		elemMacro.addClass("tw_tiddlerContainer");
+		var header = elemMacro.find(".tw_tiddlerContainerHeader");
+		$tw.macro.createMacrosViewMode(header.children(),tiddler);
+		var content = elemMacro.find(".tw_tiddlerContainerContent");
+		$tw.macro.createMacrosViewMode(content.children(),tiddler);
+	};
+	
+	$tw.macros.story.insertTiddlerFrameInContainer = function(elemMacro,params,tiddler,options) {
+		var accepts = elemMacro.attr("data-tw-accepts");
+		var insertPoint = elemMacro.attr("data-tw-insert-point");
+		var elemTiddler = null;
+		if($tw(tiddler).filter(accepts).length() === 1) {
+			elemTiddler = $("<div/>").prependTo(elemMacro.find(".tw_tiddlerContainerContent").eq(0));
+		}
+		return elemTiddler;
+	};
+	
+	$tw.macros.story.command_closeTiddler = function(elem,params,options) {
+		var content = elem.find(".tw_tiddlerContainerContent").children();
+		content.addClass("tw_ignoreMacros");
+		content.hide("blind",{direction: "vertical"},500,function() {content.remove();});
+		return true;
+	};
+
+	$tw.macros.story.command_editTiddler = function(elem,params,options) {
+		var content = elem.find(".tw_tiddlerContainerContent").children();
+		$tw.macro.broadcastCommand("editTiddler",content,options);
+		return true;
+	};
+
+	$tw.macros.story.command_detailsTiddler = function(elem,params,options) {
+		var content = elem.find(".tw_tiddlerContainerContent").children();
+		$tw.macro.broadcastCommand("detailsTiddler",content,options);
+		return true;
+	};
+
+})();
+
+</script>
+<script type="text/javascript">
+/*tiddlywiki-plugin*
+title: $tw.macros.displayTiddler
+*/
+
+$tw.macros.displayTiddler = {};
+
+(function() {
+
+	$tw.macros.displayTiddler.createViewMode = function(elemMacro,params,tiddler) {
+		var p = params.split(" ");
+		elemMacro.attr("data-tw-tiddler-title",p[0]);
+		elemMacro.toggleClass("tw_editMode",p[1] == "edit");
+		elemMacro.attr("data-tw-template-title",p[2]);
+		elemMacro.toggleClass("tw_tiddlerFrame",!!p[2]);
+		$tw.macros.displayTiddler.render(elemMacro,params,tiddler);
+	};
+
+	$tw.macros.displayTiddler.refresh = function(elemMacro,params,tiddler) {
+		$tw.macros.displayTiddler.render(elemMacro,params,tiddler);
+	};
+
+	$tw.macros.displayTiddler.render = function(elemMacro) {
+		var title = elemMacro.attr("data-tw-tiddler-title");
+		var editMode = elemMacro.hasClass("tw_editMode");
+		var templateTitle = elemMacro.attr("data-tw-template-title");
+		var template = templateTitle ? $tw.store.getTiddler(templateTitle) : null;
+		var showDetail = elemMacro.hasClass("tw_showDetail");
+		tiddler = $tw.store.getTiddler(title);
+		elemMacro.toggleClass("tw_missingTiddler",!tiddler)
+		if(!tiddler) {
+			tiddler = new $tw.Tiddler({title: "Missing tiddler",text: "No text yet"});
+		}
+		if(template) {
+			elemMacro.html($(template.toHtml()));
+			$tw.macro.createMacrosViewMode(elemMacro.children(),tiddler);
+		} else {
+			elemMacro.html($(tiddler.toHtml()));
+			if(editMode) {
+				$tw.macro.createMacrosEditMode(elemMacro.children(),tiddler);
+			} else {
+				$tw.macro.createMacrosViewMode(elemMacro.children(),tiddler);
+			}
+		}
+		if(!showDetail)
+			$(".tw_tiddlerDetail",elemMacro).hide();
+	};
+
+	$tw.macros.displayTiddler.command_closeTiddler = function(elem,params,options) {
+		if(elem.hasClass("tw_tiddlerFrame")) {
+			elem.addClass("tw_ignoreMacros");
+			elem.hide("blind",{direction: "vertical"},500,function() {elem.remove();});
+		}
+		return true;
+	};
+
+	$tw.macros.displayTiddler.command_editTiddler = function(elem,params,options) {
+		var editMode = !elem.hasClass("tw_editMode");
+		elem.toggleClass("tw_editMode",editMode);
+		$tw.macros.displayTiddler.render(elem);
+		return true;
+	};
+
+	$tw.macros.displayTiddler.command_detailsTiddler = function(elem,params,options) {
+		var showDetail = !elem.hasClass("tw_showDetail");
+		elem.toggleClass("tw_showDetail",showDetail);
+		$(".tw_tiddlerDetail",elem)[showDetail ? "slideDown" : "slideUp"]();
+		return true;
+	};
+	
+})();
+
+</script>
+<script type="text/javascript">
+/*tiddlywiki-plugin*
+title: $tw.macros.field
+*/
+
+$tw.macros.field = {
+	callstack: []
+};
+
+(function() {
+	
+	$tw.macros.field.checkAndPushCallstack = function(title) {
+		if($.inArray(title,$tw.macros.field.callstack) !== -1) {
+			return true;
+		} else {
+			$tw.macros.field.callstack.push(title);
+			return false;
+		}
+	};
+	
+	$tw.macros.field.popCallstack = function() {
+		$tw.macros.field.callstack.pop();
+	};
+	
+	$tw.macros.field.createViewMode = function(elemMacro,params,tiddler) {
+		var p = params.split(" ");
+		var field = p[0];
+		var fmt = p[1];
+		var className = p[2];
+		var tiddlerFrame = elemMacro.closest(".tw_tiddlerFrame");
+		editMode = tiddlerFrame ? tiddlerFrame.hasClass("tw_editMode") : false;
+		var fields = tiddler.getFields();
+		if(field in fields) {
+			switch(fmt) {
+				case "text":
+					elemMacro.text(fields[field]);
+					break;
+				case "html":
+					if(field === "text") {
+						elemMacro.html(tiddler.toHtml());
+					} else {
+						elemMacro.html(fields[field]);
+					}
+					if(editMode) {
+						var toolbar = $tw.toolbar.create("#$tw.toolbar.edit");
+						elemMacro.before(toolbar);
+						$tw.macro.createMacrosEditMode(elemMacro.children(),tiddler);
+						elemMacro.attr("contentEditable",true);
+						elemMacro.bind("focus",function(e) {
+							//$tw.startup.editToolbar.fadeIn(400);
+						});
+						elemMacro.bind("blur",function(e) {
+							//$tw.startup.editToolbar.fadeOut(400);
+						});
+					} else {
+						if($tw.macros.field.checkAndPushCallstack(tiddler.title)) {
+							elemMacro.text("Can't recursively view the body of a tiddler");
+						} else {
+							$tw.macro.createMacrosViewMode(elemMacro.children(),tiddler);	
+							$tw.macros.field.popCallstack();
+						}
+					}
+					break;
+			}
+		}
+		if(className)
+			elemMacro.addClass(className);
+	};
+	
+})();
+
+</script>
+<script type="text/javascript">
+/*tiddlywiki-plugin*
+title: $tw.macros.image
+*/
+
+$tw.macros.image = {};
+
+(function() {
+	
+	$tw.macros.image.createViewMode = function(elemMacro,params,tiddler) {
+		var p = params.split(" ");
+		var title = p[0];
+		var width = p[1] ? parseInt(p[1],10) : null;
+		var height = p[2] ? parseInt(p[2],10) : null;
+		var image = $tw.image.render($tw.store.getTiddler(title));
+		if(width)
+			image.width(width);
+		if(height)
+			image.height(height);
+		elemMacro.empty();
+		image.appendTo(elemMacro);
+	};
+	
+})();
+
+</script>
+<script type="text/javascript">
+/*tiddlywiki-plugin*
+title: $tw.macros.command
+*/
+
+$tw.macros.command = {};
+
+(function() {
+	
+	$tw.macros.command.commands = {
+		closeTiddler: {text: "Close this tiddler"},
+		editTiddler: {text: "Edit this tiddler"},
+		detailsTiddler: {text: "Show/hide details of this tiddler"}
+	};
+	
+	$tw.macros.command.createViewMode = function(elemMacro,params,tiddler) {
+		var p = params.split(" ");
+		var commandName = p[0];
+		var command = $tw.macros.command.commands[commandName];
+		elemMacro.addClass("tw_button")
+		if(command)
+			elemMacro.attr("title",command.text);
+		elemMacro.data("tw_commandName",commandName);
+		$tw.macro.createMacrosViewMode(elemMacro.children(),tiddler);
+	};
+
+	$(".tw_macro[data-tw-macro='command']").live("click",function(e) {
+		var commandName = $(this).data("tw_commandName");
+		var command = $tw.macros.command.commands[commandName];
+		var ret = $tw.macro.dispatchCommand(commandName,$(this),{ev: e});
+		if(ret === undefined)
+			$tw.log("Undefined command:",commandName);
+		return false;
+	});
+	
+})();
+
+</script>
+<script type="text/javascript">
+/*tiddlywiki-plugin*
+title: $tw.macros.editCommand
+*/
+
+$tw.macros.editCommand = {};
+
+(function() {
+	
+	$tw.macros.editCommand.commands = {
+		bold: {text: "Bold"},
+		decreaseFontSize: {text: "Smaller"},
+		"delete": {text: "Delete"},
+		increaseFontSize: {text: "Bigger"},
+		indent: {text: "Indent"},
+		insertHorizontalRule: {text: "Rule"},
+		insertOrderedList: {text: "Numbered list"},
+		insertUnorderedList: {text: "Bullet list"},
+		italic: {text: "Italic"},
+		justifyCenter: {text: "Centre justify"},
+		justifyLeft: {text: "Left justify"},
+		justifyRight: {text: "Right justify"},
+		outdent: {text: "Outdent"},
+		redo: {text: "Redo"},
+		selectAll: {text: "Select all"},
+		strikeThrough: {text: "Strikethrough"},
+		subscript: {text: "Subscript"},
+		superscript: {text: "Superscript"},
+		underline: {text: "Underline"},
+		undo: {text: "Undo"}
+	};
+	
+	$tw.macros.editCommand.createViewMode = function(elemMacro,params,tiddler) {
+		var p = params.split(" ");
+		var commandName = p[0];
+		var command = $tw.macros.editCommand.commands[commandName];
+		if(!command)
+			return; // Should return error information for processing by the macro dispatcher
+		var link = elemMacro.addClass("tw_button tw_dynamicButton").attr("title",command.text).data("tw_dynamicButtonQuery",commandName);
+		$tw.macro.createMacrosViewMode(link.children(),tiddler);
+	};
+
+	$(".tw_macro[data-tw-macro='editCommand']").live("click",function(e) {
+		var commandName = $(this).data("tw_dynamicButtonQuery");
+		document.execCommand(commandName,false,null);
+		return false;
+	});
+	
+})();
+
+</script>
+<script type="text/javascript">
+/*tiddlywiki-plugin*
+title: $tw.macros.link
+*/
+
+$tw.macros.link = {};
+
+(function() {	
+
+	$tw.macros.link.createViewMode = function(elemMacro,params,tiddler) {
+		$tw.macros.link.render(elemMacro)
+		$tw.macro.createMacrosViewMode(elemMacro.children(),tiddler);
+	};
+	
+	$tw.macros.link.refresh = function(elemMacro,params,tiddler) {
+		$tw.macros.link.render(elemMacro);
+		$tw.macro.refresh(elemMacro.children(),tiddler);
+	};
+
+	$tw.macros.link.create = function(targetTitle,containingTiddler) {
+		var link = $("<a/>").addClass("tw_macro").attr("href","#");
+		link.attr("data-tw-macro","link").attr("data-tw-params",targetTitle);
+		link.text(targetTitle);
+		$tw.macros.link.render(link);
+		return link;
+	};
+
+	$tw.macros.link.render = function(elemMacro) {
+		var targetTitle = $(elemMacro).attr("data-tw-params");
+		var target = $tw.store.getTiddler(targetTitle);
+		elemMacro.toggleClass("tw_missingLink",target === null);
+	};
+
+	// Event handler for clicking on a link
+	$(".tw_macro[data-tw-macro='link']").live("click",function(e) {
+		var targetTitle = $(this).attr("data-tw-params");
+		var target = $tw(targetTitle);
+		var editMode = e.shiftKey;
+		if(target.length() === 0) {
+			target = $tw(new $tw.Tiddler({title: targetTitle}));
+		}
+		target.navigate({jOrigin: this, editMode: editMode});
+		return false;
+	});
+	
+})();
+
+</script>
+<script type="text/javascript">
+/*tiddlywiki-plugin*
+title: $tw.macros.fields
+*/
+
+$tw.macros.fields = {};
+
+(function() {
+
+	$tw.macros.fields.createViewMode = function(elemMacro,params,tiddler) {
+		$tw.utils.renderObject(tiddler.getFields(),["text","title"]).appendTo(elemMacro);
+	};
+	
+	$tw.macros.fields.refresh = function(elemMacro,params,tiddler) {
+		elemMacro.empty();
+		$tw.utils.renderObject(tiddler.getFields(),["text","title"]).appendTo(elemMacro);
+	};
+
+})();
+
+
+</script>
+<script type="text/javascript">
+/*tiddlywiki-plugin*
+title: $tw.macros.list
+*/
+
+$tw.macros.list = {};
+
+(function() {	
+
+	$tw.macros.list.createViewMode = function(elemMacro,params,tiddler) {
+		var wrapper = $("<ul/>").addClass("tw_tiddlerList").appendTo(elemMacro);
+		$tw("*").each(function(i) {
+			var link = $tw.macros.link.create(this.title,tiddler);
+			var listItem = $("<li/>").addClass("tw_tiddlerListItem").append(link).appendTo(wrapper);
+		});
+		
+	};
+	
+})();
+
+</script>
+<script type="text/javascript">
+/*tiddlywiki-plugin*
+title: $tw.macros.navigator
+*/
+
+$tw.macros.navigator = {};
+
+(function() {	
+
+	$tw.macros.navigator.createViewMode = function(elemMacro,params,tiddler) {
+		var wrapper = $("<div/>").appendTo(elemMacro);
+		wrapper.css({
+			"overflow": "none",
+			"margin-top": "-50px",
+			"height": "100%"
+		});
+		var list = $("<ul/>").addClass("tw_tiddlerList").appendTo(wrapper);
+		list.css({
+			"padding-left": "0px",
+			"font-size": "9pt"
+		});
+		$tw("*").sort("title").each(function(i) {
+			var link = $tw.macros.link.create(this.title,tiddler);
+			var listItem = $("<li/>").addClass("tw_tiddlerListItem").append(link).appendTo(list);
+			listItem.css({
+				"list-style": "none"
+			})
+		});
+		wrapper.click(function() {
+			console.log($.extend({},list.get(0)));
+		});
+	};
+	
+})();
+
+</script>
+<script type="text/javascript">
+/*tiddlywiki-plugin*
+title: $tw.image
+*/
+
+$tw.image = {};
+
+(function() {
+
+	$tw.image.render = function(tiddler,options) {
+		var defaults = {
+			fixSVG: true
+		};
+		options = $.extend({},defaults,options);
+		var img;
+		switch(tiddler.type) {
+			case "image/svg+xml": // General SVG image
+				if(document.importNode) { // Check for IE
+					var svgDoc = new DOMParser().parseFromString(tiddler.getText(), "application/xml").documentElement;
+					if(options.fixSVG)
+						$tw.image.fixSVG(svgDoc.childNodes,$tw.image.generateIdPrefix());
+					img = $(document.importNode(svgDoc, true));
+				} else {
+					var svgDoc = new DOMParser().parseFromString(tiddler.getText(), "application/xml").documentElement;
+					if(options.fixSVG)
+						$tw.image.fixSVG(svgDoc.childNodes,$tw.image.generateIdPrefix());
+					img = $(document.importNode(svgDoc, true));
+				}
+				break;
+			default: // Any other image
+				img = $("<img/>");
+				if($.browser.msie && $.browser.version.substring(0,1) < 8) {
+					img.attr("src","mhtml:!" + tiddler.title);
+				} else {
+					img.attr("src","data:" + tiddler.type + ";base64," + tiddler.getText());
+				}
+				break;
+		}
+		return img;
+	};
+
+	// Fix up all references to IDs in an SVG fragment with a prefix
+	$tw.image.fixSVG = function(childNodes,idPrefix) {
+		var urlPattern = /^\s*url\(\#([^\)]*)\)\s*$/ig;
+		var fixes = [
+			{attr: "id", namespace: "", pattern: /^(.*)$/ig},
+			{attr: "fill", namespace: "", pattern: urlPattern},
+			{attr: "stroke", namespace: "", pattern: urlPattern},
+			{attr: "href", namespace: "http://www.w3.org/1999/xlink", pattern: /^#(.*)$/ig}
+		];
+		for(var t=0; t<childNodes.length; t++) {
+			var node = childNodes[t];
+			for(var a=0; a<fixes.length; a++) {
+				var fix = fixes[a];
+				if(node.hasAttributeNS && node.hasAttributeNS(fix.namespace,fix.attr)) {
+					var v = node.getAttributeNS(fix.namespace,fix.attr);
+					fix.pattern.lastIndex = 0;
+					var match = fix.pattern.exec(v);
+					if(match) {
+						var replacement = (idPrefix + match[1]).replace("$","$$$$"); // Make sure replacement string doesn't contain any single dollar signs
+						v = v.replace(match[1],replacement);
+						node.setAttributeNS(fix.namespace,fix.attr,v);
+					}
+				}
+			}
+			var children = node.childNodes;
+			if(children.length > 0)
+			 	$tw.image.fixSVG(children,idPrefix);
+		}
+	};
+
+	var fixPrefix = 1;
+	
+	// Generate a new, safe and unused ID prefix
+	$tw.image.generateIdPrefix = function() {
+		return "$tw_svgfix_" + (fixPrefix++).toString() + "_";
+	};
+
+})();
+
+</script>
+<script type="text/javascript">
+/*tiddlywiki-plugin*
+title: $tw.converters.markdown
+*/
+
+if(!$tw.converters)
+	$tw.converters = {};
+
+$tw.converters.markdown = {
+	converter: null
+};
+
+(function() {
+	
+	$tw.converters.markdown.toHtml = function(markdown) {
+		if(!$tw.converters.markdown.converter)
+			$tw.converters.markdown.converter = new Showdown.converter();
+		var html = "Problem with Markdown conversion";
+		if($tw.converters.markdown.converter) {
+			html = $($tw.converters.markdown.converter.makeHtml(markdown));
+			html = $tw.converters.markdown.processLinks(html);
+		}
+		return html;
+	};
+	
+	$tw.converters.markdown.processLinks = function(html) {
+		html.find("a").each(function(i) {
+			$(this).addClass("tw_macro").attr("data-tw-macro","link").attr("data-tw-params",$(this).attr("href"));
+		});
+		return html;
+	};
+	
+})();
+
+</script>
+<script type="text/javascript">
+/*tiddlywiki-plugin*
+title: $tw.test.clockTiddler
+description: Simple plugin that updates the tiddler "Clock" every second with the current time and date
+*/
+
+(function() {
+	
+	// Only trigger the update timer if the text of the tiddler is requested
+	$tw.store.storeTiddler({title: "Clock", text: function () {
+		var getDate = function() {return (new Date()).toString()};
+		window.setInterval(function() {
+			$tw.store.storeTiddler({title: "Clock", text: getDate()});
+		}, 1*1000);
+		return getDate();
+	}});
+	
+})();
+</script>
+<script type="text/javascript">
+/*tiddlywiki-plugin*
+title: $tw.test.quoteTiddler
+description: Simple plugin that updates the tiddler "Quote" with a new quote every time it is read
+*/
+
+(function() {
+
+	var quotes = [
+		"Bad times are the fabric upon which good times are woven",
+		"Superstition brings bad luck",
+		"What a long strange trip it's been"
+	], quote = 0;
+	var handler = function() {
+		if(quote >= quotes.length)
+			quote = 0;
+		return {
+			returnValue: quotes[quote++],
+			newValue: handler
+		};
+	}
+	$tw.store.storeTiddler({title: "Quote",text: handler});
+
+})();
+	
+</script>
+<script type="text/javascript">
+/*tiddlywiki-plugin*
+title: $tw.startup
+*/
+
+$tw.startup = {
+	editToolbar: null,
+	navToolbar: null,
+	mainToolbar: null
+};
+
+(function() {
+	
+	$tw.log("Startup starting");
+	
+	$(".tw_tiddler").hide();
+	$tw.storage.loadContent();
+	$tw.store.debug();
+	
+	// Remove static styles
+	$($tw("$tw.styles.static").eq(0).getFields()._storage).remove();
+	// Render the page template
+	$tw("$tw.templates.page.default").render();
+	// Render any global SVG definitions
+	$tw("#$tw.svg.definition").filter("[type[image/svg+xml]]").each(function (i) {
+		$("body").append($tw.image.render(this,{fixSVG: false}));
+	});
+	// Open some tiddlers
+	$tw("Credits").navigate({editMode: false});
+	$tw("TechnicalDocumentation").navigate({editMode: false});
+	$tw("Improvements").navigate({editMode: false});
+	$tw("TiddlyWiki5").navigate({editMode: false});
+	$tw("HelloThere").navigate({editMode: false});
+	
+	$(document).keyup(function() {$tw.toolbar.updateToolbarButtonStates();});
+	$(document).mousedown(function() {$tw.toolbar.updateToolbarButtonStates();});
+	$(document).mouseup(function() {$tw.toolbar.updateToolbarButtonStates();});
+	
+	$tw.store.addNotification({callback: $tw.display.refresh, selector: "*"});
+
+	//$tw.startup.navToolbar = $tw.toolbar.create("#$tw.toolbar.nav","tw_barLeft").appendTo("body");
+	//$tw.startup.navToolbar.find(".tw_bar").hide().show("slide",{direction: "left"});
+	$tw.startup.mainToolbar = $tw.toolbar.create("#$tw.toolbar.main","tw_barBottom").appendTo("body");
+	$tw.startup.mainToolbar.find(".tw_bar").hide().show("slide",{direction: "down"});
+	$tw.startup.editToolbar = $tw.toolbar.create("#$tw.toolbar.edit","tw_barTop").appendTo("body").hide();
+
+	$tw.log("Startup ending");
+
+})();
+
+</script>
+</html>
+
+

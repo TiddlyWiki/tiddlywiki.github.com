@@ -1,0 +1,477 @@
+<?xml version="1.0"?>
+<rss version="2.0">
+<channel>
+<title>TiddlyWiki 2.2.0 (beta 5)</title>
+<link>http://www.tiddlywiki.com/beta/</link>
+<description>a reusable non-linear personal web notebook</description>
+<language>en-us</language>
+<copyright>Copyright 2007 JeremyRuston</copyright>
+<pubDate>Fri, 30 Mar 2007 16:20:04 GMT</pubDate>
+<lastBuildDate>Fri, 30 Mar 2007 16:20:04 GMT</lastBuildDate>
+<docs>http://blogs.law.harvard.edu/tech/rss</docs>
+<generator>TiddlyWiki 2.2.0</generator>
+<item>
+<title>WikipediaImpressionistPaintersServer</title>
+<description>&lt;table&gt;&lt;tbody&gt;&lt;tr class=&quot;evenRow&quot;&gt;&lt;td&gt;&lt;strong&gt;Description:&lt;/strong&gt;&lt;/td&gt;&lt;td&gt;Wikipedia articles in the category &quot;Impressionist painters&quot;&lt;/td&gt;&lt;/tr&gt;&lt;tr class=&quot;oddRow&quot;&gt;&lt;td&gt;&lt;strong&gt;Type:&lt;/strong&gt;&lt;/td&gt;&lt;td&gt;mediawiki&lt;/td&gt;&lt;/tr&gt;&lt;tr class=&quot;evenRow&quot;&gt;&lt;td&gt;&lt;strong&gt;URL:&lt;/strong&gt;&lt;/td&gt;&lt;td&gt;&lt;a target=&quot;_blank&quot; title=&quot;External link to http://www.wikipedia.org/w/&quot; href=&quot;http://www.wikipedia.org/w/&quot; class=&quot;externalLink&quot;&gt;http://www.wikipedia.org/w/&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr class=&quot;oddRow&quot;&gt;&lt;td&gt;&lt;strong&gt;Workspace:&lt;/strong&gt;&lt;/td&gt;&lt;td&gt;Main&lt;/td&gt;&lt;/tr&gt;&lt;tr class=&quot;evenRow&quot;&gt;&lt;td&gt;&lt;strong&gt;TiddlerFilter:&lt;/strong&gt;&lt;/td&gt;&lt;td&gt;[tags[Impressionist_painters]]&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;</description>
+<category>systemServer</category>
+<link>http://www.tiddlywiki.com/beta/#WikipediaImpressionistPaintersServer</link>
+<pubDate>Tue, 20 Mar 2007 00:00:00 GMT</pubDate>
+</item>
+<item>
+<title>WikipediaWikiServer</title>
+<description>&lt;table&gt;&lt;tbody&gt;&lt;tr class=&quot;evenRow&quot;&gt;&lt;td&gt;&lt;strong&gt;Description:&lt;/strong&gt;&lt;/td&gt;&lt;td&gt;Wikipedia articles in the category &quot;Wiki&quot;&lt;/td&gt;&lt;/tr&gt;&lt;tr class=&quot;oddRow&quot;&gt;&lt;td&gt;&lt;strong&gt;Type:&lt;/strong&gt;&lt;/td&gt;&lt;td&gt;mediawiki&lt;/td&gt;&lt;/tr&gt;&lt;tr class=&quot;evenRow&quot;&gt;&lt;td&gt;&lt;strong&gt;URL:&lt;/strong&gt;&lt;/td&gt;&lt;td&gt;&lt;a target=&quot;_blank&quot; title=&quot;External link to http://www.wikipedia.org/w/&quot; href=&quot;http://www.wikipedia.org/w/&quot; class=&quot;externalLink&quot;&gt;http://www.wikipedia.org/w/&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr class=&quot;oddRow&quot;&gt;&lt;td&gt;&lt;strong&gt;Workspace:&lt;/strong&gt;&lt;/td&gt;&lt;td&gt;Main&lt;/td&gt;&lt;/tr&gt;&lt;tr class=&quot;evenRow&quot;&gt;&lt;td&gt;&lt;strong&gt;TiddlerFilter:&lt;/strong&gt;&lt;/td&gt;&lt;td&gt;[tags[Wiki]]&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;</description>
+<category>systemServer</category>
+<link>http://www.tiddlywiki.com/beta/#WikipediaWikiServer</link>
+<pubDate>Tue, 20 Mar 2007 00:00:00 GMT</pubDate>
+</item>
+<item>
+<title>MartinsPluginsServer</title>
+<description>&lt;table&gt;&lt;tbody&gt;&lt;tr class=&quot;evenRow&quot;&gt;&lt;td&gt;&lt;strong&gt;URL:&lt;/strong&gt;&lt;/td&gt;&lt;td align=&quot;left&quot;&gt;&lt;a target=&quot;_blank&quot; title=&quot;External link to http://www.martinswiki.com/&quot; href=&quot;http://www.martinswiki.com/&quot; class=&quot;externalLink&quot;&gt;http://www.martinswiki.com/&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr class=&quot;oddRow&quot;&gt;&lt;td&gt;&lt;strong&gt;Description:&lt;/strong&gt;&lt;/td&gt;&lt;td align=&quot;left&quot;&gt;Martin Buddens's Plugins&lt;/td&gt;&lt;/tr&gt;&lt;tr class=&quot;evenRow&quot;&gt;&lt;td&gt;&lt;strong&gt;Author:&lt;/strong&gt;&lt;/td&gt;&lt;td align=&quot;left&quot;&gt;&lt;a tiddlyfields=&quot;&quot; tiddlylink=&quot;MartinBudden&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to http://www.tiddlywiki.com/beta/#MartinBudden&quot; href=&quot;http://www.tiddlywiki.com/beta/#MartinBudden&quot; class=&quot;externalLink&quot;&gt;MartinBudden&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;</description>
+<category>systemServer</category>
+<link>http://www.tiddlywiki.com/beta/#MartinsPluginsServer</link>
+<pubDate>Tue, 20 Mar 2007 00:00:00 GMT</pubDate>
+</item>
+<item>
+<title>HelloThere</title>
+<description>Welcome to version &lt;span&gt;2.2.0 (beta 5)&lt;/span&gt; of &lt;a tiddlyfields=&quot;&quot; tiddlylink=&quot;TiddlyWiki&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to http://www.tiddlywiki.com/beta/#TiddlyWiki&quot; href=&quot;http://www.tiddlywiki.com/beta/#TiddlyWiki&quot; class=&quot;externalLink&quot;&gt;TiddlyWiki&lt;/a&gt;. Feedback and discussion is welcome in the &lt;a target=&quot;_blank&quot; title=&quot;External link to http://groups.google.com/group/TiddlyWikiDev&quot; href=&quot;http://groups.google.com/group/TiddlyWikiDev&quot; class=&quot;externalLink&quot;&gt;TiddlyWikiDev Google group&lt;/a&gt;.&lt;br&gt;&lt;br&gt;&lt;span class=&quot;marked&quot;&gt;Note - this is unstable, potentially broken &lt;strong&gt;beta&lt;/strong&gt; code: it's not quite finished and it's not been tested with the various &lt;a tiddlyfields=&quot;&quot; tiddlylink=&quot;Plugins&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to http://www.tiddlywiki.com/beta/#Plugins&quot; href=&quot;http://www.tiddlywiki.com/beta/#Plugins&quot; class=&quot;externalLink&quot;&gt;Plugins&lt;/a&gt; on which &lt;a tiddlyfields=&quot;&quot; tiddlylink=&quot;TiddlyWiki&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to http://www.tiddlywiki.com/beta/#TiddlyWiki&quot; href=&quot;http://www.tiddlywiki.com/beta/#TiddlyWiki&quot; class=&quot;externalLink&quot;&gt;TiddlyWiki&lt;/a&gt; users rely. Don't use it for anything important unless you know what you're doing.&lt;/span&gt;&lt;br&gt;&lt;br&gt;This is beta 4 of 2.2 that includes various bug fixes over the previous beta 3. It also features a new, simplified animation for opening tiddlers that should perform better across a range of browsers. Finally, there is some documentation about the new &lt;a tiddlyfields=&quot;&quot; tiddlylink=&quot;ServerAdaptorMechanism&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to http://www.tiddlywiki.com/beta/#ServerAdaptorMechanism&quot; href=&quot;http://www.tiddlywiki.com/beta/#ServerAdaptorMechanism&quot; class=&quot;externalLink&quot;&gt;ServerAdaptorMechanism&lt;/a&gt;.&lt;br&gt;&lt;br&gt;This substantial new release of &lt;a tiddlyfields=&quot;&quot; tiddlylink=&quot;TiddlyWiki&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to http://www.tiddlywiki.com/beta/#TiddlyWiki&quot; href=&quot;http://www.tiddlywiki.com/beta/#TiddlyWiki&quot; class=&quot;externalLink&quot;&gt;TiddlyWiki&lt;/a&gt; adds several features:&lt;br&gt;&lt;ul&gt;&lt;li&gt; A new 'backstage' user interface to group together operations that are needed by authors rather than readers or users&lt;/li&gt;&lt;ul&gt;&lt;li&gt; The backstage area by default only appears for non-read-only &lt;a tiddlyfields=&quot;&quot; tiddlylink=&quot;TiddlyWikis&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to http://www.tiddlywiki.com/beta/#TiddlyWikis&quot; href=&quot;http://www.tiddlywiki.com/beta/#TiddlyWikis&quot; class=&quot;externalLink&quot;&gt;TiddlyWikis&lt;/a&gt;; &lt;a tiddlyfields=&quot;&quot; tiddlylink=&quot;DownloadSoftware&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to http://www.tiddlywiki.com/beta/#DownloadSoftware&quot; href=&quot;http://www.tiddlywiki.com/beta/#DownloadSoftware&quot; class=&quot;externalLink&quot;&gt;DownloadSoftware&lt;/a&gt; and open this TW from a &lt;a target=&quot;_blank&quot; title=&quot;External link to file://&quot; href=&quot;file://&quot; class=&quot;externalLink&quot;&gt;file://&lt;/a&gt; URL to try it out&lt;/li&gt;&lt;/ul&gt;&lt;li&gt; The beginnings of a new framework to support synchronising tiddlers with external servers and files&lt;/li&gt;&lt;ul&gt;&lt;li&gt; See &lt;a target=&quot;_blank&quot; title=&quot;External link to http://ross.typepad.com/blog/2006/12/socialtext_unpl.html&quot; href=&quot;http://ross.typepad.com/blog/2006/12/socialtext_unpl.html&quot; class=&quot;externalLink&quot;&gt;Socialtext Unplugged&lt;/a&gt; for an example; more to come soon&lt;/li&gt;&lt;/ul&gt;&lt;li&gt; Ability to use &amp;lt;PRE&amp;gt; tags in the store area to avoid having to escape newlines and backslashes&lt;/li&gt;&lt;li&gt; Added paramifier for overriding current read-only state (eg, &lt;a target=&quot;_blank&quot; title=&quot;External link to http://www.tiddlywiki.com/beta/#readOnly:no&quot; href=&quot;http://www.tiddlywiki.com/beta/#readOnly:no&quot; class=&quot;externalLink&quot;&gt;http://www.tiddlywiki.com/beta/#readOnly:no&lt;/a&gt;)&lt;/li&gt;&lt;li&gt; Embolden tags in the tag listing that are also defined as tiddlers&lt;/li&gt;&lt;li&gt; Improved &lt;code&gt;&amp;lt;&amp;lt;newTiddler&amp;gt;&amp;gt;&lt;/code&gt; and &lt;code&gt;&amp;lt;&amp;lt;newJournal&amp;gt;&amp;gt;&lt;/code&gt; macros to accept custom fields&lt;/li&gt;&lt;li&gt; Rearranged shadow tiddlers into their own, unencoded store area&lt;/li&gt;&lt;li&gt; Improved support for &lt;a tiddlyfields=&quot;&quot; tiddlylink=&quot;XMLHttpRequest&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to http://www.tiddlywiki.com/beta/#XMLHttpRequest&quot; href=&quot;http://www.tiddlywiki.com/beta/#XMLHttpRequest&quot; class=&quot;externalLink&quot;&gt;XMLHttpRequest&lt;/a&gt; operations&lt;/li&gt;&lt;li&gt; Various improved error messages&lt;/li&gt;&lt;li&gt; Greatly improved startup speed, and improved performance for many other common operations&lt;/li&gt;&lt;li&gt; Extensive bug fixes and refactorings&lt;/li&gt;&lt;li&gt; ...and by popular request, we've started to reformat the &lt;a tiddlyfields=&quot;&quot; tiddlylink=&quot;TiddlyWiki&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to http://www.tiddlywiki.com/beta/#TiddlyWiki&quot; href=&quot;http://www.tiddlywiki.com/beta/#TiddlyWiki&quot; class=&quot;externalLink&quot;&gt;TiddlyWiki&lt;/a&gt; source code to use the more conventional K&amp;amp;R layout standard&lt;/li&gt;&lt;/ul&gt;See the full &lt;a target=&quot;_blank&quot; title=&quot;External link to http://trac.tiddlywiki.org/tiddlywiki/wiki/ReleaseNoteTwoPointTwo&quot; href=&quot;http://trac.tiddlywiki.org/tiddlywiki/wiki/ReleaseNoteTwoPointTwo&quot; class=&quot;externalLink&quot;&gt;release note at tiddlywiki.org&lt;/a&gt;</description>
+<category>welcome</category>
+<link>http://www.tiddlywiki.com/beta/#HelloThere</link>
+<pubDate>Wed, 28 Feb 2007 08:06:00 GMT</pubDate>
+</item>
+<item>
+<title>TryItOut</title>
+<description>Here's how to try out the features in this new beta:&lt;br&gt;&lt;ol&gt;&lt;li&gt; Download a copy of this &lt;a tiddlyfields=&quot;&quot; tiddlylink=&quot;TiddlyWiki&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to http://www.tiddlywiki.com/beta/#TiddlyWiki&quot; href=&quot;http://www.tiddlywiki.com/beta/#TiddlyWiki&quot; class=&quot;externalLink&quot;&gt;TiddlyWiki&lt;/a&gt; by right-clicking on &lt;a target=&quot;_blank&quot; title=&quot;External link to index.html&quot; href=&quot;index.html&quot; class=&quot;externalLink&quot;&gt;this link&lt;/a&gt;&lt;/li&gt;&lt;li&gt; Open it in your browser (at the moment, &lt;a tiddlyfields=&quot;&quot; tiddlylink=&quot;FireFox&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to http://www.tiddlywiki.com/beta/#FireFox&quot; href=&quot;http://www.tiddlywiki.com/beta/#FireFox&quot; class=&quot;externalLink&quot;&gt;FireFox&lt;/a&gt; works best)&lt;/li&gt;&lt;li&gt; Click on the 'backstage' link in the upper right&lt;/li&gt;&lt;li&gt; Click on 'import'&lt;/li&gt;&lt;li&gt; Select '&lt;a tiddlyfields=&quot;&quot; tiddlylink=&quot;SocialtextDotNext&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to http://www.tiddlywiki.com/beta/#SocialtextDotNext&quot; href=&quot;http://www.tiddlywiki.com/beta/#SocialtextDotNext&quot; class=&quot;externalLink&quot;&gt;SocialtextDotNext&lt;/a&gt;' from the lower drop down list&lt;/li&gt;&lt;li&gt; Click 'Open'&lt;/li&gt;&lt;li&gt; Enter 'stoss' as the workspace name&lt;/li&gt;&lt;li&gt; Click 'Open'&lt;/li&gt;&lt;li&gt; Select some tiddlers and then scroll to the bottom and click 'import'&lt;/li&gt;&lt;li&gt; Wait for the confirmation message to verify that the tiddlers have been imported&lt;/li&gt;&lt;/ol&gt;</description>
+<link>http://www.tiddlywiki.com/beta/#TryItOut</link>
+<pubDate>Wed, 28 Feb 2007 08:00:00 GMT</pubDate>
+</item>
+<item>
+<title>BobsPluginsServer</title>
+<description>&lt;table&gt;&lt;tbody&gt;&lt;tr class=&quot;evenRow&quot;&gt;&lt;td&gt;&lt;strong&gt;URL:&lt;/strong&gt;&lt;/td&gt;&lt;td&gt;&lt;a target=&quot;_blank&quot; title=&quot;External link to http://bob.mcelrath.org/plugins.html&quot; href=&quot;http://bob.mcelrath.org/plugins.html&quot; class=&quot;externalLink&quot;&gt;http://bob.mcelrath.org/plugins.html&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr class=&quot;oddRow&quot;&gt;&lt;td&gt;&lt;strong&gt;Description:&lt;/strong&gt;&lt;/td&gt;&lt;td&gt;Bob &lt;a tiddlyfields=&quot;&quot; tiddlylink=&quot;McElrath&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to http://www.tiddlywiki.com/beta/#McElrath&quot; href=&quot;http://www.tiddlywiki.com/beta/#McElrath&quot; class=&quot;externalLink&quot;&gt;McElrath&lt;/a&gt;'s Plugins&lt;/td&gt;&lt;/tr&gt;&lt;tr class=&quot;evenRow&quot;&gt;&lt;td&gt;&lt;strong&gt;Author:&lt;/strong&gt;&lt;/td&gt;&lt;td&gt;&lt;a tiddlyfields=&quot;&quot; tiddlylink=&quot;BobMcElrath&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to http://www.tiddlywiki.com/beta/#BobMcElrath&quot; href=&quot;http://www.tiddlywiki.com/beta/#BobMcElrath&quot; class=&quot;externalLink&quot;&gt;BobMcElrath&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;</description>
+<category>systemServer</category>
+<link>http://www.tiddlywiki.com/beta/#BobsPluginsServer</link>
+<pubDate>Tue, 27 Feb 2007 22:22:00 GMT</pubDate>
+</item>
+<item>
+<title>ServerAdaptorMechanism</title>
+<description>&lt;a tiddlyfields=&quot;&quot; tiddlylink=&quot;TiddlyWiki&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to http://www.tiddlywiki.com/beta/#TiddlyWiki&quot; href=&quot;http://www.tiddlywiki.com/beta/#TiddlyWiki&quot; class=&quot;externalLink&quot;&gt;TiddlyWiki&lt;/a&gt;'s architecture for interacting with servers allows it to be plugged into a wide variety of servers. This is done through the addition of plugins containing custom server adaptors. Server adaptors are designed to allow for &lt;a tiddlyfields=&quot;&quot; tiddlylink=&quot;UseCases&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to http://www.tiddlywiki.com/beta/#UseCases&quot; href=&quot;http://www.tiddlywiki.com/beta/#UseCases&quot; class=&quot;externalLink&quot;&gt;UseCases&lt;/a&gt; like importing tiddlers, loading missing tiddlers on the fly and synchronising changes with a server. Separate macros and core extensions implement such features by accessing the facilities provided by server adaptors.&lt;br&gt;&lt;br&gt;Server adaptors are designed to use a familiar model akin to a device driver, adapting a standardised interface to whatever is required by the underlying server: &lt;a target=&quot;_blank&quot; title=&quot;External link to http://en.wikipedia.org/wiki/Webdav&quot; href=&quot;http://en.wikipedia.org/wiki/Webdav&quot; class=&quot;externalLink&quot;&gt;WebDAV&lt;/a&gt;, &lt;a tiddlyfields=&quot;&quot; tiddlylink=&quot;ZiddlyWiki&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to http://www.tiddlywiki.com/beta/#ZiddlyWiki&quot; href=&quot;http://www.tiddlywiki.com/beta/#ZiddlyWiki&quot; class=&quot;externalLink&quot;&gt;ZiddlyWiki&lt;/a&gt;, &lt;a target=&quot;_blank&quot; title=&quot;External link to http://en.wikipedia.org/wiki/MediaWiki&quot; href=&quot;http://en.wikipedia.org/wiki/MediaWiki&quot; class=&quot;externalLink&quot;&gt;MediaWiki&lt;/a&gt;, &lt;a target=&quot;_blank&quot; title=&quot;External link to http://www.socialtext.com/&quot; href=&quot;http://www.socialtext.com/&quot; class=&quot;externalLink&quot;&gt;Socialtext&lt;/a&gt; or HTML scraping.&lt;br&gt;&lt;br&gt;Many server architectures are &lt;a target=&quot;_blank&quot; title=&quot;External link to http://en.wikipedia.org/wiki/REST&quot; href=&quot;http://en.wikipedia.org/wiki/REST&quot; class=&quot;externalLink&quot;&gt;REST&lt;/a&gt; based, and &lt;a tiddlyfields=&quot;&quot; tiddlylink=&quot;TiddlyWiki&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to http://www.tiddlywiki.com/beta/#TiddlyWiki&quot; href=&quot;http://www.tiddlywiki.com/beta/#TiddlyWiki&quot; class=&quot;externalLink&quot;&gt;TiddlyWiki&lt;/a&gt; server adaptors are particularly easy to create for common REST patterns. It is also possible to create &lt;a tiddlyfields=&quot;&quot; tiddlylink=&quot;TiddlyWiki&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to http://www.tiddlywiki.com/beta/#TiddlyWiki&quot; href=&quot;http://www.tiddlywiki.com/beta/#TiddlyWiki&quot; class=&quot;externalLink&quot;&gt;TiddlyWiki&lt;/a&gt; server adaptors for severs with an &lt;a target=&quot;_blank&quot; title=&quot;External link to http://en.wikipedia.org/wiki/XML-RPC&quot; href=&quot;http://en.wikipedia.org/wiki/XML-RPC&quot; class=&quot;externalLink&quot;&gt;XML-RPC&lt;/a&gt; interface.&lt;br&gt;&lt;br&gt;Server adaptors are registered by name in the global object &lt;code&gt;config.adaptors&lt;/code&gt;. Each entry is a reference to an object constructor for that type of server adaptor. The adaptor object must implement the following methods:&lt;br&gt;&lt;ul&gt;&lt;li&gt; &lt;a tiddlyfields=&quot;&quot; tiddlylink=&quot;Adaptor.openHost&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to http://www.tiddlywiki.com/beta/#Adaptor.openHost&quot; href=&quot;http://www.tiddlywiki.com/beta/#Adaptor.openHost&quot; class=&quot;externalLink&quot;&gt;Adaptor.openHost&lt;/a&gt;&lt;/li&gt;&lt;li&gt; &lt;a tiddlyfields=&quot;&quot; tiddlylink=&quot;Adaptor.openWorkspace&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to http://www.tiddlywiki.com/beta/#Adaptor.openWorkspace&quot; href=&quot;http://www.tiddlywiki.com/beta/#Adaptor.openWorkspace&quot; class=&quot;externalLink&quot;&gt;Adaptor.openWorkspace&lt;/a&gt;&lt;/li&gt;&lt;li&gt; &lt;a tiddlyfields=&quot;&quot; tiddlylink=&quot;Adaptor.getTiddler&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to http://www.tiddlywiki.com/beta/#Adaptor.getTiddler&quot; href=&quot;http://www.tiddlywiki.com/beta/#Adaptor.getTiddler&quot; class=&quot;externalLink&quot;&gt;Adaptor.getTiddler&lt;/a&gt;&lt;/li&gt;&lt;li&gt; &lt;a tiddlyfields=&quot;&quot; tiddlylink=&quot;Adaptor.close&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to http://www.tiddlywiki.com/beta/#Adaptor.close&quot; href=&quot;http://www.tiddlywiki.com/beta/#Adaptor.close&quot; class=&quot;externalLink&quot;&gt;Adaptor.close&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;br&gt;Additionally the adaptor may implement the following methods:&lt;br&gt;&lt;ul&gt;&lt;li&gt; &lt;a tiddlyfields=&quot;&quot; tiddlylink=&quot;Adaptor.getWorkspaceList&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to http://www.tiddlywiki.com/beta/#Adaptor.getWorkspaceList&quot; href=&quot;http://www.tiddlywiki.com/beta/#Adaptor.getWorkspaceList&quot; class=&quot;externalLink&quot;&gt;Adaptor.getWorkspaceList&lt;/a&gt; (required to support the Import Tiddlers &lt;a tiddlyfields=&quot;&quot; tiddlylink=&quot;UseCase&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to http://www.tiddlywiki.com/beta/#UseCase&quot; href=&quot;http://www.tiddlywiki.com/beta/#UseCase&quot; class=&quot;externalLink&quot;&gt;UseCase&lt;/a&gt;)&lt;/li&gt;&lt;li&gt; &lt;a tiddlyfields=&quot;&quot; tiddlylink=&quot;Adaptor.getTiddlerList&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to http://www.tiddlywiki.com/beta/#Adaptor.getTiddlerList&quot; href=&quot;http://www.tiddlywiki.com/beta/#Adaptor.getTiddlerList&quot; class=&quot;externalLink&quot;&gt;Adaptor.getTiddlerList&lt;/a&gt; (required to support the Import Tiddlers &lt;a tiddlyfields=&quot;&quot; tiddlylink=&quot;UseCase&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to http://www.tiddlywiki.com/beta/#UseCase&quot; href=&quot;http://www.tiddlywiki.com/beta/#UseCase&quot; class=&quot;externalLink&quot;&gt;UseCase&lt;/a&gt;)&lt;/li&gt;&lt;li&gt; &lt;a tiddlyfields=&quot;&quot; tiddlylink=&quot;Adaptor.putTiddler&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to http://www.tiddlywiki.com/beta/#Adaptor.putTiddler&quot; href=&quot;http://www.tiddlywiki.com/beta/#Adaptor.putTiddler&quot; class=&quot;externalLink&quot;&gt;Adaptor.putTiddler&lt;/a&gt; (required to support the Sync &lt;a tiddlyfields=&quot;&quot; tiddlylink=&quot;UseCase&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to http://www.tiddlywiki.com/beta/#UseCase&quot; href=&quot;http://www.tiddlywiki.com/beta/#UseCase&quot; class=&quot;externalLink&quot;&gt;UseCase&lt;/a&gt;)&lt;/li&gt;&lt;li&gt; &lt;a tiddlyfields=&quot;&quot; tiddlylink=&quot;Adaptor.getTiddlerRevision&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to http://www.tiddlywiki.com/beta/#Adaptor.getTiddlerRevision&quot; href=&quot;http://www.tiddlywiki.com/beta/#Adaptor.getTiddlerRevision&quot; class=&quot;externalLink&quot;&gt;Adaptor.getTiddlerRevision&lt;/a&gt;&lt;/li&gt;&lt;li&gt; &lt;a tiddlyfields=&quot;&quot; tiddlylink=&quot;Adaptor.getTiddlerRevisionList&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to http://www.tiddlywiki.com/beta/#Adaptor.getTiddlerRevisionList&quot; href=&quot;http://www.tiddlywiki.com/beta/#Adaptor.getTiddlerRevisionList&quot; class=&quot;externalLink&quot;&gt;Adaptor.getTiddlerRevisionList&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;br&gt;The adaptor object is used through the life of a connection to a server; see &lt;a tiddlyfields=&quot;&quot; tiddlylink=&quot;ServerAdaptorConcepts&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to http://www.tiddlywiki.com/beta/#ServerAdaptorConcepts&quot; href=&quot;http://www.tiddlywiki.com/beta/#ServerAdaptorConcepts&quot; class=&quot;externalLink&quot;&gt;ServerAdaptorConcepts&lt;/a&gt; for details. Many of the methods use an &lt;a tiddlyfields=&quot;&quot; tiddlylink=&quot;AsynchronousPattern&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to http://www.tiddlywiki.com/beta/#AsynchronousPattern&quot; href=&quot;http://www.tiddlywiki.com/beta/#AsynchronousPattern&quot; class=&quot;externalLink&quot;&gt;AsynchronousPattern&lt;/a&gt; of callbacks to deliver their results.&lt;br&gt;&lt;br&gt;Custom formatters for the &lt;a tiddlyfields=&quot;&quot; tiddlylink=&quot;WikifierFormatterMechanism&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to http://www.tiddlywiki.com/beta/#WikifierFormatterMechanism&quot; href=&quot;http://www.tiddlywiki.com/beta/#WikifierFormatterMechanism&quot; class=&quot;externalLink&quot;&gt;WikifierFormatterMechanism&lt;/a&gt; are often used alongside server adaptors to allow &lt;a tiddlyfields=&quot;&quot; tiddlylink=&quot;TiddlyWiki&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to http://www.tiddlywiki.com/beta/#TiddlyWiki&quot; href=&quot;http://www.tiddlywiki.com/beta/#TiddlyWiki&quot; class=&quot;externalLink&quot;&gt;TiddlyWiki&lt;/a&gt; to display content in the native format of a server.</description>
+<category>mechanisms</category>
+<link>http://www.tiddlywiki.com/beta/#ServerAdaptorMechanism</link>
+<pubDate>Sun, 25 Feb 2007 16:17:00 GMT</pubDate>
+</item>
+<item>
+<title>Adaptor.putTiddler</title>
+<description>&lt;pre&gt;Adaptor.putTiddler(tiddler,context,userParams,callback)
+&lt;/pre&gt;Stores a named tiddler to an adaptor opened to a workspace on a host (see &lt;a tiddlyfields=&quot;&quot; tiddlylink=&quot;ServerAdaptorConcepts&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to http://www.tiddlywiki.com/beta/#ServerAdaptorConcepts&quot; href=&quot;http://www.tiddlywiki.com/beta/#ServerAdaptorConcepts&quot; class=&quot;externalLink&quot;&gt;ServerAdaptorConcepts&lt;/a&gt;). This function uses the &lt;a tiddlyfields=&quot;&quot; tiddlylink=&quot;AsynchronousPattern&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to http://www.tiddlywiki.com/beta/#AsynchronousPattern&quot; href=&quot;http://www.tiddlywiki.com/beta/#AsynchronousPattern&quot; class=&quot;externalLink&quot;&gt;AsynchronousPattern&lt;/a&gt;.&lt;br&gt;&lt;br&gt;&lt;strong&gt;Parameters:&lt;/strong&gt;&lt;br&gt;&lt;table&gt;&lt;tbody&gt;&lt;tr class=&quot;evenRow&quot;&gt;&lt;td align=&quot;left&quot;&gt;tiddler&lt;/td&gt;&lt;td align=&quot;left&quot;&gt;The Tiddler to store&lt;/td&gt;&lt;/tr&gt;&lt;tr class=&quot;oddRow&quot;&gt;&lt;td align=&quot;left&quot;&gt;context&lt;/td&gt;&lt;td align=&quot;left&quot;&gt;context object that is passed to the callback function&lt;/td&gt;&lt;/tr&gt;&lt;tr class=&quot;evenRow&quot;&gt;&lt;td align=&quot;left&quot;&gt;userParams&lt;/td&gt;&lt;td align=&quot;left&quot;&gt;user settable object object that is passed on unchanged to the callback function&lt;/td&gt;&lt;/tr&gt;&lt;tr class=&quot;oddRow&quot;&gt;&lt;td align=&quot;left&quot;&gt;callback&lt;/td&gt;&lt;td align=&quot;left&quot;&gt;Reference to callback function, see &lt;a tiddlyfields=&quot;&quot; tiddlylink=&quot;AdaptorCallbackSignature&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to http://www.tiddlywiki.com/beta/#AdaptorCallbackSignature&quot; href=&quot;http://www.tiddlywiki.com/beta/#AdaptorCallbackSignature&quot; class=&quot;externalLink&quot;&gt;AdaptorCallbackSignature&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;strong&gt;Returns:&lt;/strong&gt;&lt;br&gt;&lt;table&gt;&lt;tbody&gt;&lt;tr class=&quot;evenRow&quot;&gt;&lt;td align=&quot;left&quot;&gt;true&lt;/td&gt;&lt;td align=&quot;left&quot;&gt;on success&lt;/td&gt;&lt;/tr&gt;&lt;tr class=&quot;oddRow&quot;&gt;&lt;td align=&quot;left&quot;&gt;string&lt;/td&gt;&lt;td align=&quot;left&quot;&gt;an error message if there was an error issuing the request&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;br&gt;&lt;strong&gt;Callback signature&lt;/strong&gt; as per &lt;a tiddlyfields=&quot;&quot; tiddlylink=&quot;AdaptorCallbackSignature&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to http://www.tiddlywiki.com/beta/#AdaptorCallbackSignature&quot; href=&quot;http://www.tiddlywiki.com/beta/#AdaptorCallbackSignature&quot; class=&quot;externalLink&quot;&gt;AdaptorCallbackSignature&lt;/a&gt;.</description>
+<category>functions</category>
+<link>http://www.tiddlywiki.com/beta/#Adaptor.putTiddler</link>
+<pubDate>Sun, 25 Feb 2007 15:47:00 GMT</pubDate>
+</item>
+<item>
+<title>AdaptorCallbackSignature</title>
+<description>&lt;pre&gt;callback(context,userParams)
+&lt;/pre&gt;&lt;table&gt;&lt;tbody&gt;&lt;tr class=&quot;evenRow&quot;&gt;&lt;td align=&quot;left&quot;&gt;userParams&lt;/td&gt;&lt;td align=&quot;left&quot;&gt;userParams object (unchanged) as passed by the original caller&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;context contains the following fields:&lt;br&gt;&lt;table&gt;&lt;tbody&gt;&lt;tr class=&quot;evenRow&quot;&gt;&lt;td align=&quot;left&quot;&gt;context.status&lt;/td&gt;&lt;td align=&quot;left&quot;&gt;True if original call was successful, false if there was an error&lt;/td&gt;&lt;/tr&gt;&lt;tr class=&quot;oddRow&quot;&gt;&lt;td align=&quot;left&quot;&gt;context.statusText&lt;/td&gt;&lt;td align=&quot;left&quot;&gt;Error message if context.status is false&lt;/td&gt;&lt;/tr&gt;&lt;tr class=&quot;evenRow&quot;&gt;&lt;td align=&quot;left&quot;&gt;context.adpator&lt;/td&gt;&lt;td align=&quot;left&quot;&gt;Reference to the adaptor object&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;Additionally, context may contain the following fields, depending on the adaptor function originally called:&lt;br&gt;&lt;table&gt;&lt;tbody&gt;&lt;tr class=&quot;evenRow&quot;&gt;&lt;td align=&quot;left&quot;&gt;context.workspaces&lt;/td&gt;&lt;td align=&quot;left&quot;&gt;Array of workspaces, see &lt;a tiddlyfields=&quot;&quot; tiddlylink=&quot;Adaptor.getWorkspaceList&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to http://www.tiddlywiki.com/beta/#Adaptor.getWorkspaceList&quot; href=&quot;http://www.tiddlywiki.com/beta/#Adaptor.getWorkspaceList&quot; class=&quot;externalLink&quot;&gt;Adaptor.getWorkspaceList&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr class=&quot;oddRow&quot;&gt;&lt;td align=&quot;left&quot;&gt;context.tiddler&lt;/td&gt;&lt;td&gt;Tiddler retrieved, see &lt;a tiddlyfields=&quot;&quot; tiddlylink=&quot;Adaptor.getTiddler&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to http://www.tiddlywiki.com/beta/#Adaptor.getTiddler&quot; href=&quot;http://www.tiddlywiki.com/beta/#Adaptor.getTiddler&quot; class=&quot;externalLink&quot;&gt;Adaptor.getTiddler&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr class=&quot;evenRow&quot;&gt;&lt;td align=&quot;left&quot;&gt;context.tiddlers&lt;/td&gt;&lt;td&gt;Array of Tiddlers retrieved, not all Tiddler fields filled in, see &lt;a tiddlyfields=&quot;&quot; tiddlylink=&quot;Adaptor.getTiddlerList&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to http://www.tiddlywiki.com/beta/#Adaptor.getTiddlerList&quot; href=&quot;http://www.tiddlywiki.com/beta/#Adaptor.getTiddlerList&quot; class=&quot;externalLink&quot;&gt;Adaptor.getTiddlerList&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr class=&quot;oddRow&quot;&gt;&lt;td align=&quot;left&quot;&gt;context.revisions&lt;/td&gt;&lt;td align=&quot;left&quot;&gt;Array of revisions of the current Tiddler, not all Tiddler fields filled in, see &lt;a tiddlyfields=&quot;&quot; tiddlylink=&quot;Adaptor.getTiddlerRevisionList&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to http://www.tiddlywiki.com/beta/#Adaptor.getTiddlerRevisionList&quot; href=&quot;http://www.tiddlywiki.com/beta/#Adaptor.getTiddlerRevisionList&quot; class=&quot;externalLink&quot;&gt;Adaptor.getTiddlerRevisionList&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;</description>
+<category>functions</category>
+<link>http://www.tiddlywiki.com/beta/#AdaptorCallbackSignature</link>
+<pubDate>Sun, 25 Feb 2007 15:43:00 GMT</pubDate>
+</item>
+<item>
+<title>Adaptor.close</title>
+<description>&lt;pre&gt;Adaptor.close()
+&lt;/pre&gt;Should only be called after the last callback has completed&lt;br&gt;&lt;br&gt;Closes an adaptor, severing the connection to the workspace and host (see &lt;a tiddlyfields=&quot;&quot; tiddlylink=&quot;ServerAdaptorConcepts&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to http://www.tiddlywiki.com/beta/#ServerAdaptorConcepts&quot; href=&quot;http://www.tiddlywiki.com/beta/#ServerAdaptorConcepts&quot; class=&quot;externalLink&quot;&gt;ServerAdaptorConcepts&lt;/a&gt;).&lt;br&gt;&lt;ul&gt;&lt;li&gt; &lt;a tiddlyfields=&quot;&quot; tiddlylink=&quot;Adaptor.close&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to http://www.tiddlywiki.com/beta/#Adaptor.close&quot; href=&quot;http://www.tiddlywiki.com/beta/#Adaptor.close&quot; class=&quot;externalLink&quot;&gt;Adaptor.close&lt;/a&gt; shouldn't be called while there are outstanding callbacks&lt;/li&gt;&lt;li&gt; &lt;a tiddlyfields=&quot;&quot; tiddlylink=&quot;Adaptor.close&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to http://www.tiddlywiki.com/beta/#Adaptor.close&quot; href=&quot;http://www.tiddlywiki.com/beta/#Adaptor.close&quot; class=&quot;externalLink&quot;&gt;Adaptor.close&lt;/a&gt; must be called to ensure that all pending write operations are completed&lt;/li&gt;&lt;/ul&gt;&lt;strong&gt;Parameters:&lt;/strong&gt;&lt;br&gt;None.&lt;br&gt;&lt;br&gt;&lt;strong&gt;Returns:&lt;/strong&gt;&lt;br&gt;&lt;table&gt;&lt;tbody&gt;&lt;tr class=&quot;evenRow&quot;&gt;&lt;td align=&quot;left&quot;&gt;true&lt;/td&gt;&lt;td align=&quot;left&quot;&gt;on success&lt;/td&gt;&lt;/tr&gt;&lt;tr class=&quot;oddRow&quot;&gt;&lt;td align=&quot;left&quot;&gt;string&lt;/td&gt;&lt;td align=&quot;left&quot;&gt;an error message if there was an error issuing the request&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;</description>
+<category>functions</category>
+<link>http://www.tiddlywiki.com/beta/#Adaptor.close</link>
+<pubDate>Sun, 25 Feb 2007 15:34:00 GMT</pubDate>
+</item>
+<item>
+<title>Adaptor.getTiddler</title>
+<description>&lt;pre&gt;Adaptor.getTiddler(title,context,userParams,callback)
+&lt;/pre&gt;Retrieves a named tiddler from an adaptor opened to a workspace on a host (see &lt;a tiddlyfields=&quot;&quot; tiddlylink=&quot;ServerAdaptorConcepts&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to http://www.tiddlywiki.com/beta/#ServerAdaptorConcepts&quot; href=&quot;http://www.tiddlywiki.com/beta/#ServerAdaptorConcepts&quot; class=&quot;externalLink&quot;&gt;ServerAdaptorConcepts&lt;/a&gt;). This function uses the &lt;a tiddlyfields=&quot;&quot; tiddlylink=&quot;AsynchronousPattern&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to http://www.tiddlywiki.com/beta/#AsynchronousPattern&quot; href=&quot;http://www.tiddlywiki.com/beta/#AsynchronousPattern&quot; class=&quot;externalLink&quot;&gt;AsynchronousPattern&lt;/a&gt;.&lt;br&gt;&lt;br&gt;&lt;strong&gt;Parameters:&lt;/strong&gt;&lt;br&gt;&lt;table&gt;&lt;tbody&gt;&lt;tr class=&quot;evenRow&quot;&gt;&lt;td align=&quot;left&quot;&gt;title&lt;/td&gt;&lt;td align=&quot;left&quot;&gt;Title of the tiddler to retrieve&lt;/td&gt;&lt;/tr&gt;&lt;tr class=&quot;oddRow&quot;&gt;&lt;td align=&quot;left&quot;&gt;context&lt;/td&gt;&lt;td align=&quot;left&quot;&gt;context object that is passed to the callback function&lt;/td&gt;&lt;/tr&gt;&lt;tr class=&quot;evenRow&quot;&gt;&lt;td align=&quot;left&quot;&gt;userParams&lt;/td&gt;&lt;td align=&quot;left&quot;&gt;user settable object object that is passed on unchanged to the callback function&lt;/td&gt;&lt;/tr&gt;&lt;tr class=&quot;oddRow&quot;&gt;&lt;td align=&quot;left&quot;&gt;callback&lt;/td&gt;&lt;td align=&quot;left&quot;&gt;Reference to callback function, see &lt;a tiddlyfields=&quot;&quot; tiddlylink=&quot;AdaptorCallbackSignature&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to http://www.tiddlywiki.com/beta/#AdaptorCallbackSignature&quot; href=&quot;http://www.tiddlywiki.com/beta/#AdaptorCallbackSignature&quot; class=&quot;externalLink&quot;&gt;AdaptorCallbackSignature&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;strong&gt;Returns:&lt;/strong&gt;&lt;br&gt;&lt;table&gt;&lt;tbody&gt;&lt;tr class=&quot;evenRow&quot;&gt;&lt;td align=&quot;left&quot;&gt;true&lt;/td&gt;&lt;td align=&quot;left&quot;&gt;on success&lt;/td&gt;&lt;/tr&gt;&lt;tr class=&quot;oddRow&quot;&gt;&lt;td align=&quot;left&quot;&gt;string&lt;/td&gt;&lt;td align=&quot;left&quot;&gt;an error message if there was an error issuing the request&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;strong&gt;Callback signature&lt;/strong&gt; as per &lt;a tiddlyfields=&quot;&quot; tiddlylink=&quot;AdaptorCallbackSignature&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to http://www.tiddlywiki.com/beta/#AdaptorCallbackSignature&quot; href=&quot;http://www.tiddlywiki.com/beta/#AdaptorCallbackSignature&quot; class=&quot;externalLink&quot;&gt;AdaptorCallbackSignature&lt;/a&gt; with additional fields:&lt;br&gt;&lt;table&gt;&lt;tbody&gt;&lt;tr class=&quot;evenRow&quot;&gt;&lt;td align=&quot;left&quot;&gt;context.tiddler&lt;/td&gt;&lt;td align=&quot;left&quot;&gt;The retrieved tiddler object, with all the standard fields and the &lt;a tiddlyfields=&quot;&quot; tiddlylink=&quot;ServerAdaptorExtendedFields&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to http://www.tiddlywiki.com/beta/#ServerAdaptorExtendedFields&quot; href=&quot;http://www.tiddlywiki.com/beta/#ServerAdaptorExtendedFields&quot; class=&quot;externalLink&quot;&gt;ServerAdaptorExtendedFields&lt;/a&gt; filled in&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;</description>
+<category>functions</category>
+<link>http://www.tiddlywiki.com/beta/#Adaptor.getTiddler</link>
+<pubDate>Sun, 25 Feb 2007 15:31:00 GMT</pubDate>
+</item>
+<item>
+<title>Adaptor.getTiddlerList</title>
+<description>&lt;pre&gt;Adaptor.getTiddlerList(context,userParams,callback,filter)
+&lt;/pre&gt;Gets a list of the tiddlers available on an adaptor opened to a workspace on a host (see &lt;a tiddlyfields=&quot;&quot; tiddlylink=&quot;ServerAdaptorConcepts&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to http://www.tiddlywiki.com/beta/#ServerAdaptorConcepts&quot; href=&quot;http://www.tiddlywiki.com/beta/#ServerAdaptorConcepts&quot; class=&quot;externalLink&quot;&gt;ServerAdaptorConcepts&lt;/a&gt;). This function uses the &lt;a tiddlyfields=&quot;&quot; tiddlylink=&quot;AsynchronousPattern&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to http://www.tiddlywiki.com/beta/#AsynchronousPattern&quot; href=&quot;http://www.tiddlywiki.com/beta/#AsynchronousPattern&quot; class=&quot;externalLink&quot;&gt;AsynchronousPattern&lt;/a&gt;.&lt;br&gt;&lt;br&gt;&lt;strong&gt;Parameters:&lt;/strong&gt;&lt;br&gt;&lt;table&gt;&lt;tbody&gt;&lt;tr class=&quot;evenRow&quot;&gt;&lt;td align=&quot;left&quot;&gt;context&lt;/td&gt;&lt;td align=&quot;left&quot;&gt;context object that is passed to the callback function&lt;/td&gt;&lt;/tr&gt;&lt;tr class=&quot;oddRow&quot;&gt;&lt;td align=&quot;left&quot;&gt;userParams&lt;/td&gt;&lt;td align=&quot;left&quot;&gt;user settable object object that is passed on unchanged to the callback function&lt;/td&gt;&lt;/tr&gt;&lt;tr class=&quot;evenRow&quot;&gt;&lt;td align=&quot;left&quot;&gt;callback&lt;/td&gt;&lt;td align=&quot;left&quot;&gt;reference to callback function, see &lt;a tiddlyfields=&quot;&quot; tiddlylink=&quot;AdaptorCallbackSignature&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to http://www.tiddlywiki.com/beta/#AdaptorCallbackSignature&quot; href=&quot;http://www.tiddlywiki.com/beta/#AdaptorCallbackSignature&quot; class=&quot;externalLink&quot;&gt;AdaptorCallbackSignature&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr class=&quot;oddRow&quot;&gt;&lt;td align=&quot;left&quot;&gt;filter&lt;/td&gt;&lt;td align=&quot;left&quot;&gt;optional string to select tiddlers returned in list, see &lt;a tiddlyfields=&quot;&quot; tiddlylink=&quot;TiddlerSelection&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to http://www.tiddlywiki.com/beta/#TiddlerSelection&quot; href=&quot;http://www.tiddlywiki.com/beta/#TiddlerSelection&quot; class=&quot;externalLink&quot;&gt;TiddlerSelection&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;strong&gt;Returns:&lt;/strong&gt;&lt;br&gt;&lt;table&gt;&lt;tbody&gt;&lt;tr class=&quot;evenRow&quot;&gt;&lt;td align=&quot;left&quot;&gt;true&lt;/td&gt;&lt;td align=&quot;left&quot;&gt;on success&lt;/td&gt;&lt;/tr&gt;&lt;tr class=&quot;oddRow&quot;&gt;&lt;td align=&quot;left&quot;&gt;string&lt;/td&gt;&lt;td align=&quot;left&quot;&gt;an error message if there was an error issuing the request&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;strong&gt;Callback signature&lt;/strong&gt; as per &lt;a tiddlyfields=&quot;&quot; tiddlylink=&quot;AdaptorCallbackSignature&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to http://www.tiddlywiki.com/beta/#AdaptorCallbackSignature&quot; href=&quot;http://www.tiddlywiki.com/beta/#AdaptorCallbackSignature&quot; class=&quot;externalLink&quot;&gt;AdaptorCallbackSignature&lt;/a&gt; with additional fields:&lt;br&gt;&lt;table&gt;&lt;tbody&gt;&lt;tr class=&quot;evenRow&quot;&gt;&lt;td align=&quot;left&quot;&gt;context.tiddlers&lt;/td&gt;&lt;td align=&quot;left&quot;&gt;Array of tiddlers, with a minimum set of fields filled in, see below&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;The tiddlers in the &lt;code&gt;context.tiddlers&lt;/code&gt; array have the following minimum set of fields, although particular adaptors may choose to return additional information in further fields.&lt;br&gt;&lt;table&gt;&lt;tbody&gt;&lt;tr class=&quot;evenRow&quot;&gt;&lt;td align=&quot;left&quot;&gt;title&lt;/td&gt;&lt;td align=&quot;left&quot;&gt;Title of the tiddler (as used in &lt;a tiddlyfields=&quot;&quot; tiddlylink=&quot;Adaptor.getTiddler&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to http://www.tiddlywiki.com/beta/#Adaptor.getTiddler&quot; href=&quot;http://www.tiddlywiki.com/beta/#Adaptor.getTiddler&quot; class=&quot;externalLink&quot;&gt;Adaptor.getTiddler&lt;/a&gt;)&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;</description>
+<category>functions</category>
+<link>http://www.tiddlywiki.com/beta/#Adaptor.getTiddlerList</link>
+<pubDate>Sun, 25 Feb 2007 15:31:00 GMT</pubDate>
+</item>
+<item>
+<title>Adaptor.getWorkspaceList</title>
+<description>&lt;pre&gt;Adaptor.getWorkspaceList(context,userParams,callback)
+&lt;/pre&gt;Gets a list of the workspaces available on a particular host (see &lt;a tiddlyfields=&quot;&quot; tiddlylink=&quot;ServerAdaptorConcepts&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to http://www.tiddlywiki.com/beta/#ServerAdaptorConcepts&quot; href=&quot;http://www.tiddlywiki.com/beta/#ServerAdaptorConcepts&quot; class=&quot;externalLink&quot;&gt;ServerAdaptorConcepts&lt;/a&gt;). This function uses the &lt;a tiddlyfields=&quot;&quot; tiddlylink=&quot;AsynchronousPattern&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to http://www.tiddlywiki.com/beta/#AsynchronousPattern&quot; href=&quot;http://www.tiddlywiki.com/beta/#AsynchronousPattern&quot; class=&quot;externalLink&quot;&gt;AsynchronousPattern&lt;/a&gt;.&lt;br&gt;&lt;br&gt;&lt;strong&gt;Parameters:&lt;/strong&gt;&lt;br&gt;&lt;table&gt;&lt;tbody&gt;&lt;tr class=&quot;evenRow&quot;&gt;&lt;td align=&quot;left&quot;&gt;context&lt;/td&gt;&lt;td align=&quot;left&quot;&gt;context object that is passed to the callback function&lt;/td&gt;&lt;/tr&gt;&lt;tr class=&quot;oddRow&quot;&gt;&lt;td align=&quot;left&quot;&gt;userParams&lt;/td&gt;&lt;td align=&quot;left&quot;&gt;user settable object object that is passed on unchanged to the callback function&lt;/td&gt;&lt;/tr&gt;&lt;tr class=&quot;evenRow&quot;&gt;&lt;td align=&quot;left&quot;&gt;callback&lt;/td&gt;&lt;td align=&quot;left&quot;&gt;Reference to callback function, see &lt;a tiddlyfields=&quot;&quot; tiddlylink=&quot;AdaptorCallbackSignature&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to http://www.tiddlywiki.com/beta/#AdaptorCallbackSignature&quot; href=&quot;http://www.tiddlywiki.com/beta/#AdaptorCallbackSignature&quot; class=&quot;externalLink&quot;&gt;AdaptorCallbackSignature&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;strong&gt;Returns:&lt;/strong&gt;&lt;br&gt;&lt;table&gt;&lt;tbody&gt;&lt;tr class=&quot;evenRow&quot;&gt;&lt;td align=&quot;left&quot;&gt;true&lt;/td&gt;&lt;td align=&quot;left&quot;&gt;on success&lt;/td&gt;&lt;/tr&gt;&lt;tr class=&quot;oddRow&quot;&gt;&lt;td align=&quot;left&quot;&gt;string&lt;/td&gt;&lt;td align=&quot;left&quot;&gt;an error message if there was an error issuing the request&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;strong&gt;Callback signature&lt;/strong&gt; as per &lt;a tiddlyfields=&quot;&quot; tiddlylink=&quot;AdaptorCallbackSignature&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to http://www.tiddlywiki.com/beta/#AdaptorCallbackSignature&quot; href=&quot;http://www.tiddlywiki.com/beta/#AdaptorCallbackSignature&quot; class=&quot;externalLink&quot;&gt;AdaptorCallbackSignature&lt;/a&gt; with additional fields:&lt;br&gt;&lt;table&gt;&lt;tbody&gt;&lt;tr class=&quot;evenRow&quot;&gt;&lt;td align=&quot;left&quot;&gt;context.workspaces&lt;/td&gt;&lt;td align=&quot;left&quot;&gt;An array of information about each available workspace (see below)&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;The entries in the &lt;code&gt;context.workspaces&lt;/code&gt; array have the following minimum set of fields, although particular adaptors may choose to return additional information in further fields.&lt;br&gt;&lt;table&gt;&lt;tbody&gt;&lt;tr class=&quot;evenRow&quot;&gt;&lt;td align=&quot;left&quot;&gt;title&lt;/td&gt;&lt;td align=&quot;left&quot;&gt;Title of the workspace (as used in &lt;a tiddlyfields=&quot;&quot; tiddlylink=&quot;Adaptor.openWorkspace&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to http://www.tiddlywiki.com/beta/#Adaptor.openWorkspace&quot; href=&quot;http://www.tiddlywiki.com/beta/#Adaptor.openWorkspace&quot; class=&quot;externalLink&quot;&gt;Adaptor.openWorkspace&lt;/a&gt;)&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;</description>
+<category>functions</category>
+<link>http://www.tiddlywiki.com/beta/#Adaptor.getWorkspaceList</link>
+<pubDate>Sun, 25 Feb 2007 15:30:00 GMT</pubDate>
+</item>
+<item>
+<title>Adaptor.openWorkspace</title>
+<description>&lt;pre&gt;Adaptor.openWorkspace(host,context,userParams,callback)
+&lt;/pre&gt;Opens a particular workspace in an adaptor that has already been opened on a host (see &lt;a tiddlyfields=&quot;&quot; tiddlylink=&quot;ServerAdaptorConcepts&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to http://www.tiddlywiki.com/beta/#ServerAdaptorConcepts&quot; href=&quot;http://www.tiddlywiki.com/beta/#ServerAdaptorConcepts&quot; class=&quot;externalLink&quot;&gt;ServerAdaptorConcepts&lt;/a&gt;). This function uses the &lt;a tiddlyfields=&quot;&quot; tiddlylink=&quot;AsynchronousPattern&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to http://www.tiddlywiki.com/beta/#AsynchronousPattern&quot; href=&quot;http://www.tiddlywiki.com/beta/#AsynchronousPattern&quot; class=&quot;externalLink&quot;&gt;AsynchronousPattern&lt;/a&gt;.&lt;br&gt;&lt;br&gt;&lt;strong&gt;Parameters:&lt;/strong&gt;&lt;br&gt;&lt;table&gt;&lt;tbody&gt;&lt;tr class=&quot;evenRow&quot;&gt;&lt;td align=&quot;left&quot;&gt;workspace&lt;/td&gt;&lt;td align=&quot;left&quot;&gt;Name of workspace&lt;/td&gt;&lt;/tr&gt;&lt;tr class=&quot;oddRow&quot;&gt;&lt;td align=&quot;left&quot;&gt;context&lt;/td&gt;&lt;td align=&quot;left&quot;&gt;context object that is passed to the callback function&lt;/td&gt;&lt;/tr&gt;&lt;tr class=&quot;evenRow&quot;&gt;&lt;td align=&quot;left&quot;&gt;userParams&lt;/td&gt;&lt;td align=&quot;left&quot;&gt;user settable object object that is passed on unchanged to the callback function&lt;/td&gt;&lt;/tr&gt;&lt;tr class=&quot;oddRow&quot;&gt;&lt;td align=&quot;left&quot;&gt;callback&lt;/td&gt;&lt;td align=&quot;left&quot;&gt;Reference to callback function, see &lt;a tiddlyfields=&quot;&quot; tiddlylink=&quot;AdaptorCallbackSignature&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to http://www.tiddlywiki.com/beta/#AdaptorCallbackSignature&quot; href=&quot;http://www.tiddlywiki.com/beta/#AdaptorCallbackSignature&quot; class=&quot;externalLink&quot;&gt;AdaptorCallbackSignature&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;strong&gt;Returns:&lt;/strong&gt;&lt;br&gt;&lt;table&gt;&lt;tbody&gt;&lt;tr class=&quot;evenRow&quot;&gt;&lt;td align=&quot;left&quot;&gt;true&lt;/td&gt;&lt;td align=&quot;left&quot;&gt;on success&lt;/td&gt;&lt;/tr&gt;&lt;tr class=&quot;oddRow&quot;&gt;&lt;td align=&quot;left&quot;&gt;string&lt;/td&gt;&lt;td align=&quot;left&quot;&gt;an error message if there was an error issuing the request&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;strong&gt;Callback signature&lt;/strong&gt; as per &lt;a tiddlyfields=&quot;&quot; tiddlylink=&quot;AdaptorCallbackSignature&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to http://www.tiddlywiki.com/beta/#AdaptorCallbackSignature&quot; href=&quot;http://www.tiddlywiki.com/beta/#AdaptorCallbackSignature&quot; class=&quot;externalLink&quot;&gt;AdaptorCallbackSignature&lt;/a&gt;.</description>
+<category>functions</category>
+<link>http://www.tiddlywiki.com/beta/#Adaptor.openWorkspace</link>
+<pubDate>Sun, 25 Feb 2007 15:29:00 GMT</pubDate>
+</item>
+<item>
+<title>Adaptor.openHost</title>
+<description>&lt;pre&gt;Adaptor.openHost(host,context,userParams,callback)
+&lt;/pre&gt;Creates an adaptor for talking to a particular host (see &lt;a tiddlyfields=&quot;&quot; tiddlylink=&quot;ServerAdaptorConcepts&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to http://www.tiddlywiki.com/beta/#ServerAdaptorConcepts&quot; href=&quot;http://www.tiddlywiki.com/beta/#ServerAdaptorConcepts&quot; class=&quot;externalLink&quot;&gt;ServerAdaptorConcepts&lt;/a&gt;). This function uses the &lt;a tiddlyfields=&quot;&quot; tiddlylink=&quot;AsynchronousPattern&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to http://www.tiddlywiki.com/beta/#AsynchronousPattern&quot; href=&quot;http://www.tiddlywiki.com/beta/#AsynchronousPattern&quot; class=&quot;externalLink&quot;&gt;AsynchronousPattern&lt;/a&gt;.&lt;br&gt;&lt;br&gt;&lt;strong&gt;Parameters:&lt;/strong&gt;&lt;br&gt;&lt;table&gt;&lt;tbody&gt;&lt;tr class=&quot;evenRow&quot;&gt;&lt;td align=&quot;left&quot;&gt;host&lt;/td&gt;&lt;td align=&quot;left&quot;&gt;URI of server&lt;/td&gt;&lt;/tr&gt;&lt;tr class=&quot;oddRow&quot;&gt;&lt;td align=&quot;left&quot;&gt;context&lt;/td&gt;&lt;td align=&quot;left&quot;&gt;context object that is passed to the callback function&lt;/td&gt;&lt;/tr&gt;&lt;tr class=&quot;evenRow&quot;&gt;&lt;td align=&quot;left&quot;&gt;userParams&lt;/td&gt;&lt;td align=&quot;left&quot;&gt;user settable object object that is passed on unchanged to the callback function&lt;/td&gt;&lt;/tr&gt;&lt;tr class=&quot;oddRow&quot;&gt;&lt;td align=&quot;left&quot;&gt;callback&lt;/td&gt;&lt;td align=&quot;left&quot;&gt;Reference to callback function, see &lt;a tiddlyfields=&quot;&quot; tiddlylink=&quot;AdaptorCallbackSignature&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to http://www.tiddlywiki.com/beta/#AdaptorCallbackSignature&quot; href=&quot;http://www.tiddlywiki.com/beta/#AdaptorCallbackSignature&quot; class=&quot;externalLink&quot;&gt;AdaptorCallbackSignature&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;strong&gt;Returns:&lt;/strong&gt;&lt;br&gt;&lt;table&gt;&lt;tbody&gt;&lt;tr class=&quot;evenRow&quot;&gt;&lt;td align=&quot;left&quot;&gt;true&lt;/td&gt;&lt;td align=&quot;left&quot;&gt;on success&lt;/td&gt;&lt;/tr&gt;&lt;tr class=&quot;oddRow&quot;&gt;&lt;td align=&quot;left&quot;&gt;string&lt;/td&gt;&lt;td align=&quot;left&quot;&gt;an error message if there was an error issuing the request&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;strong&gt;Callback signature&lt;/strong&gt; as per &lt;a tiddlyfields=&quot;&quot; tiddlylink=&quot;AdaptorCallbackSignature&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to http://www.tiddlywiki.com/beta/#AdaptorCallbackSignature&quot; href=&quot;http://www.tiddlywiki.com/beta/#AdaptorCallbackSignature&quot; class=&quot;externalLink&quot;&gt;AdaptorCallbackSignature&lt;/a&gt;.</description>
+<category>functions</category>
+<link>http://www.tiddlywiki.com/beta/#Adaptor.openHost</link>
+<pubDate>Sun, 25 Feb 2007 15:29:00 GMT</pubDate>
+</item>
+<item>
+<title>ServerAdaptorExtendedFields</title>
+<description>The &lt;a tiddlyfields=&quot;&quot; tiddlylink=&quot;ServerAdaptorMechanism&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to http://www.tiddlywiki.com/beta/#ServerAdaptorMechanism&quot; href=&quot;http://www.tiddlywiki.com/beta/#ServerAdaptorMechanism&quot; class=&quot;externalLink&quot;&gt;ServerAdaptorMechanism&lt;/a&gt; uses &lt;a tiddlyfields=&quot;&quot; tiddlylink=&quot;ExtendedFields&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to http://www.tiddlywiki.com/beta/#ExtendedFields&quot; href=&quot;http://www.tiddlywiki.com/beta/#ExtendedFields&quot; class=&quot;externalLink&quot;&gt;ExtendedFields&lt;/a&gt; to store additional data with tiddlers that are associated with a server host. The standard fields are listed below, but particular adaptors will often add their own custom fields for their own purposes.&lt;br&gt;&lt;table&gt;&lt;tbody&gt;&lt;tr class=&quot;evenRow&quot;&gt;&lt;td align=&quot;left&quot;&gt;server.type&lt;/td&gt;&lt;td align=&quot;left&quot;&gt;The type of server adaptor associated with this tiddler&lt;/td&gt;&lt;td align=&quot;left&quot;&gt;eg &quot;file&quot;, &quot;socialtext&quot;&lt;/td&gt;&lt;/tr&gt;&lt;tr class=&quot;oddRow&quot;&gt;&lt;td align=&quot;left&quot;&gt;server.host&lt;/td&gt;&lt;td align=&quot;left&quot;&gt;The host server URL&lt;/td&gt;&lt;td align=&quot;left&quot;&gt;eg &quot;&lt;a target=&quot;_blank&quot; title=&quot;External link to http://www.socialtext.net/&quot; href=&quot;http://www.socialtext.net/&quot; class=&quot;externalLink&quot;&gt;http://www.socialtext.net/&lt;/a&gt;&quot;&lt;/td&gt;&lt;/tr&gt;&lt;tr class=&quot;evenRow&quot;&gt;&lt;td align=&quot;left&quot;&gt;server.workspace&lt;/td&gt;&lt;td align=&quot;left&quot;&gt;The workspace associated with this tiddler&lt;/td&gt;&lt;td align=&quot;left&quot;&gt;eg &quot;stoss&quot;&lt;/td&gt;&lt;/tr&gt;&lt;tr class=&quot;oddRow&quot;&gt;&lt;td align=&quot;left&quot;&gt;server.page.name&lt;/td&gt;&lt;td align=&quot;left&quot;&gt;The full (human readable) name of the tiddler's page on the server&lt;/td&gt;&lt;td align=&quot;left&quot;&gt;eg &quot;Socialtext Open Source Wiki&quot;&lt;/td&gt;&lt;/tr&gt;&lt;tr class=&quot;evenRow&quot;&gt;&lt;td align=&quot;left&quot;&gt;server.page.id&lt;/td&gt;&lt;td align=&quot;left&quot;&gt;The normalized form of the tiddler's page name on the server&lt;/td&gt;&lt;td align=&quot;left&quot;&gt;eg &quot;socialtext_open_source_wiki&quot;&lt;/td&gt;&lt;/tr&gt;&lt;tr class=&quot;oddRow&quot;&gt;&lt;td align=&quot;left&quot;&gt;server.page.revision&lt;/td&gt;&lt;td align=&quot;left&quot;&gt;The revision of the page. Host dependent, but normally a number&lt;/td&gt;&lt;td align=&quot;left&quot;&gt;eg &quot;20070222050650&quot;&lt;/td&gt;&lt;/tr&gt;&lt;tr class=&quot;evenRow&quot;&gt;&lt;td align=&quot;left&quot;&gt;wikiformat&lt;/td&gt;&lt;td align=&quot;left&quot;&gt;The wikiformat of the tiddler&lt;/td&gt;&lt;td align=&quot;left&quot;&gt;eg &quot;socialtext&quot;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;br&gt;&lt;br&gt;See &lt;a tiddlyfields=&quot;&quot; tiddlylink=&quot;ServerAdaptorConcepts&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to http://www.tiddlywiki.com/beta/#ServerAdaptorConcepts&quot; href=&quot;http://www.tiddlywiki.com/beta/#ServerAdaptorConcepts&quot; class=&quot;externalLink&quot;&gt;ServerAdaptorConcepts&lt;/a&gt; for the meanings of terms like host, workspace and adaptor.</description>
+<link>http://www.tiddlywiki.com/beta/#ServerAdaptorExtendedFields</link>
+<pubDate>Sun, 25 Feb 2007 14:26:00 GMT</pubDate>
+</item>
+<item>
+<title>ZimbraAdaptorPlugin</title>
+<description>&lt;table&gt;&lt;tbody&gt;&lt;tr class=&quot;evenRow&quot;&gt;&lt;td&gt;&lt;strong&gt;Name:&lt;/strong&gt;&lt;/td&gt;&lt;td&gt;ZimbraAdaptorPlugin&lt;/td&gt;&lt;/tr&gt;&lt;tr class=&quot;oddRow&quot;&gt;&lt;td&gt;&lt;strong&gt;Description:&lt;/strong&gt;&lt;/td&gt;&lt;td&gt;Adaptor for Zimbra Collaboration Server (&lt;a target=&quot;_blank&quot; title=&quot;External link to http://www.zimbra.com/&quot; href=&quot;http://www.zimbra.com/&quot; class=&quot;externalLink&quot;&gt;http://www.zimbra.com/&lt;/a&gt;)&lt;/td&gt;&lt;/tr&gt;&lt;tr class=&quot;evenRow&quot;&gt;&lt;td&gt;&lt;strong&gt;Author:&lt;/strong&gt;&lt;/td&gt;&lt;td&gt;Jeremy Ruston (jeremy (at) osmosoft (dot) com)&lt;/td&gt;&lt;/tr&gt;&lt;tr class=&quot;oddRow&quot;&gt;&lt;td&gt;&lt;strong&gt;CodeRepository:&lt;/strong&gt;&lt;/td&gt;&lt;td&gt;&lt;a target=&quot;_blank&quot; title=&quot;External link to http://svn.tiddlywiki.org/Trunk/verticals/zimbra/plugins/ZimbraAdaptorPlugin.js&quot; href=&quot;http://svn.tiddlywiki.org/Trunk/verticals/zimbra/plugins/ZimbraAdaptorPlugin.js&quot; class=&quot;externalLink&quot;&gt;http://svn.tiddlywiki.org/Trunk/verticals/zimbra/plugins/ZimbraAdaptorPlugin.js&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr class=&quot;evenRow&quot;&gt;&lt;td&gt;&lt;strong&gt;Version:&lt;/strong&gt;&lt;/td&gt;&lt;td&gt;0.1.0&lt;/td&gt;&lt;/tr&gt;&lt;tr class=&quot;oddRow&quot;&gt;&lt;td&gt;&lt;strong&gt;Date:&lt;/strong&gt;&lt;/td&gt;&lt;td&gt;Feb 23, 2007&lt;/td&gt;&lt;/tr&gt;&lt;tr class=&quot;evenRow&quot;&gt;&lt;td&gt;&lt;strong&gt;Comments:&lt;/strong&gt;&lt;/td&gt;&lt;td&gt;Please make comments at &lt;a target=&quot;_blank&quot; title=&quot;External link to http://groups.google.co.uk/group/TiddlyWikiDev&quot; href=&quot;http://groups.google.co.uk/group/TiddlyWikiDev&quot; class=&quot;externalLink&quot;&gt;http://groups.google.co.uk/group/TiddlyWikiDev&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr class=&quot;oddRow&quot;&gt;&lt;td&gt;&lt;strong&gt;License:&lt;/strong&gt;&lt;/td&gt;&lt;td&gt;&lt;a target=&quot;_blank&quot; title=&quot;External link to http://creativecommons.org/licenses/by-sa/2.5/&quot; href=&quot;http://creativecommons.org/licenses/by-sa/2.5/&quot; class=&quot;externalLink&quot;&gt;Creative Commons Attribution-ShareAlike 2.5 License&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr class=&quot;evenRow&quot;&gt;&lt;td&gt;&lt;strong&gt;CoreVersion:&lt;/strong&gt;&lt;/td&gt;&lt;td&gt;2.2.0&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;br&gt;&lt;pre&gt;if(!version.extensions.ZimbraAdaptorPlugin) {
+version.extensions.ZimbraAdaptorPlugin = {installed:true};
+
+function ZimbraAdaptor()
+{
+	this.host = null;
+	this.workspace = null;
+	return this;
+}
+
+merge(ZimbraAdaptor,{
+	serverType: 'zimbra',
+	getTiddlerListUrl: '%0service/home/%1/Notebook.rss',
+	viewTiddlerUrl: '%0service/home/%1/Notebook/%2',
+	getTiddlerUrl: '%0service/home/%1/Notebook/%2?fmt=native',
+	tiddlerTemplate: '&amp;lt;html&amp;gt;%0&amp;lt;/html&amp;gt;'
+});
+
+ZimbraAdaptor.prototype.openHost = function(host,context,userParams,callback)
+{
+	this.host = host;
+	context.status = true;
+	window.setTimeout(function() {callback(context,userParams);},10);
+	return true;
+}
+
+ZimbraAdaptor.prototype.getWorkspaceList = function(context,userParams,callback)
+{
+	context.workspaces = [];
+	context.status = true;
+	window.setTimeout(function() {callback(context,userParams);},10);
+	return true;
+}
+
+ZimbraAdaptor.prototype.openWorkspace = function(workspace,context,userParams,callback)
+{
+	this.workspace = workspace;
+	context.status = true;
+	window.setTimeout(function() {callback(context,userParams);},10);
+	return true;
+}
+
+ZimbraAdaptor.prototype.getTiddlerList = function(context,userParams,callback)
+{
+	context.adaptor = this;
+	context.callback = callback;
+	context.userParams = userParams;
+	var url = ZimbraAdaptor.getTiddlerListUrl.format([this.host,this.workspace]);
+	var ret = loadRemoteFile(url,ZimbraAdaptor.getTiddlerListCallback,context);
+	return typeof(ret) == &quot;string&quot; ? ret : true;
+}
+
+ZimbraAdaptor.getTiddlerListCallback = function(status,context,responseText,url,xhr)
+{
+	var adaptor = context.adaptor;
+	context.status = status;
+	if(!status) {
+		context.statusText = &quot;Error reading file: &quot; + xhr.statusText;
+	} else {
+		context.tiddlers = adaptor.readRss(responseText);
+	}
+	context.callback(context,context.userParams);
+}
+
+ZimbraAdaptor.prototype.readRss = function(rssText)
+{
+	var tiddlers = [];
+	var xml = (new DOMParser()).parseFromString(rssText,&quot;text/xml&quot;);
+	var root = xml.getElementsByTagName('rss')[0];
+	var channel = root.getElementsByTagName('channel')[0];
+	var items = channel.getElementsByTagName('item');
+	for(var t=0; t&amp;lt;items.length; t++) {
+		var title = items[t].getElementsByTagName('title')[0].firstChild.nodeValue;
+		var c = title.lastIndexOf(&quot; ver &quot;);
+		if(c != -1)
+			title = title.substr(0,c);
+		if(tiddlers.findByField(&quot;title&quot;,title) == null) {
+			var tiddler = new Tiddler(title);
+			var pubDate = items[t].getElementsByTagName('pubDate')[0].firstChild.nodeValue;
+			tiddler.modified = new Date(pubDate);
+			tiddlers.push(tiddler);
+		}
+	}
+	return tiddlers;
+}
+
+ZimbraAdaptor.prototype.generateTiddlerInfo = function(tiddler)
+{
+	var info = {};
+	var host = this &amp;amp;&amp;amp; this.host ? this.host : tiddler.fields['server.host'];
+	var workspace = this &amp;amp;&amp;amp; this.workspace ? this.workspace : tiddler.fields['server.workspace'];
+	info.uri = ZimbraAdaptor.viewTiddlerUrl.format([host,workspace,encodeURI(tiddler.title)]);
+	return info;
+}
+
+ZimbraAdaptor.prototype.getTiddler = function(title,context,userParams,callback)
+{
+	context.adaptor = this;
+	context.callback = callback;
+	context.userParams = userParams;
+	context.title = title;
+	var url = ZimbraAdaptor.getTiddlerUrl.format([this.host,this.workspace,encodeURI(title)]);
+	var ret = loadRemoteFile(url,ZimbraAdaptor.getTiddlerCallback,context);
+	return typeof(ret) == &quot;string&quot; ? ret : true;
+}
+
+ZimbraAdaptor.getTiddlerCallback = function(status,context,responseText,url,xhr)
+{
+	var adaptor = context.adaptor;
+	context.status = status;
+	if(!status) {
+		context.statusText = &quot;Error reading file: &quot; + xhr.statusText;
+	} else {
+		context.tiddler = new Tiddler(context.title);
+		context.tiddler.text = ZimbraAdaptor.tiddlerTemplate.format([responseText]);
+	}
+	context.callback(context,context.userParams);
+}
+
+ZimbraAdaptor.prototype.putTiddler = function(tiddler,context,userParams,callback)
+{
+
+}
+
+ZimbraAdaptor.prototype.close = function() {return true;};
+
+config.adaptors[ZimbraAdaptor.serverType] = ZimbraAdaptor;
+
+} //# end of 'install only once'
+&lt;/pre&gt;</description>
+<category>systemConfig</category>
+<link>http://www.tiddlywiki.com/beta/#ZimbraAdaptorPlugin</link>
+<pubDate>Fri, 23 Feb 2007 11:16:00 GMT</pubDate>
+</item>
+<item>
+<title>SharedRecordsAdaptorPlugin</title>
+<description>&lt;table&gt;&lt;tbody&gt;&lt;tr class=&quot;evenRow&quot;&gt;&lt;td&gt;&lt;strong&gt;Name:&lt;/strong&gt;&lt;/td&gt;&lt;td&gt;SharedRecordsAdaptorPlugin&lt;/td&gt;&lt;/tr&gt;&lt;tr class=&quot;oddRow&quot;&gt;&lt;td&gt;&lt;strong&gt;Description:&lt;/strong&gt;&lt;/td&gt;&lt;td&gt;Adaptor for Shared Record Server (&lt;a target=&quot;_blank&quot; title=&quot;External link to http://www.sharedrecords.org/&quot; href=&quot;http://www.sharedrecords.org/&quot; class=&quot;externalLink&quot;&gt;http://www.sharedrecords.org/&lt;/a&gt;)&lt;/td&gt;&lt;/tr&gt;&lt;tr class=&quot;evenRow&quot;&gt;&lt;td&gt;&lt;strong&gt;Author:&lt;/strong&gt;&lt;/td&gt;&lt;td&gt;Jeremy Ruston (jeremy (at) osmosoft (dot) com)&lt;/td&gt;&lt;/tr&gt;&lt;tr class=&quot;oddRow&quot;&gt;&lt;td&gt;&lt;strong&gt;CodeRepository:&lt;/strong&gt;&lt;/td&gt;&lt;td&gt;&lt;a target=&quot;_blank&quot; title=&quot;External link to http://svn.tiddlywiki.org/Trunk/verticals/sharedrecords/plugins/SharedRecordsAdaptorPlugin.js&quot; href=&quot;http://svn.tiddlywiki.org/Trunk/verticals/sharedrecords/plugins/SharedRecordsAdaptorPlugin.js&quot; class=&quot;externalLink&quot;&gt;http://svn.tiddlywiki.org/Trunk/verticals/sharedrecords/plugins/SharedRecordsAdaptorPlugin.js&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr class=&quot;evenRow&quot;&gt;&lt;td&gt;&lt;strong&gt;Version:&lt;/strong&gt;&lt;/td&gt;&lt;td&gt;0.2.0&lt;/td&gt;&lt;/tr&gt;&lt;tr class=&quot;oddRow&quot;&gt;&lt;td&gt;&lt;strong&gt;Date:&lt;/strong&gt;&lt;/td&gt;&lt;td&gt;Feb 23, 2007&lt;/td&gt;&lt;/tr&gt;&lt;tr class=&quot;evenRow&quot;&gt;&lt;td&gt;&lt;strong&gt;Comments:&lt;/strong&gt;&lt;/td&gt;&lt;td&gt;Please make comments at &lt;a target=&quot;_blank&quot; title=&quot;External link to http://groups.google.co.uk/group/TiddlyWikiDev&quot; href=&quot;http://groups.google.co.uk/group/TiddlyWikiDev&quot; class=&quot;externalLink&quot;&gt;http://groups.google.co.uk/group/TiddlyWikiDev&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr class=&quot;oddRow&quot;&gt;&lt;td&gt;&lt;strong&gt;License:&lt;/strong&gt;&lt;/td&gt;&lt;td&gt;&lt;a target=&quot;_blank&quot; title=&quot;External link to http://creativecommons.org/licenses/by-sa/2.5/&quot; href=&quot;http://creativecommons.org/licenses/by-sa/2.5/&quot; class=&quot;externalLink&quot;&gt;Creative Commons Attribution-ShareAlike 2.5 License&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr class=&quot;evenRow&quot;&gt;&lt;td&gt;&lt;strong&gt;CoreVersion:&lt;/strong&gt;&lt;/td&gt;&lt;td&gt;2.2.0&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;br&gt;&lt;pre&gt;if(!version.extensions.SharedRecordsAdaptorPlugin) {
+version.extensions.SharedRecordsAdaptorPlugin = {installed:true};
+
+function SharedRecordsAdaptor()
+{
+	this.host = null;
+	this.workspace = null;
+	return this;
+}
+
+merge(SharedRecordsAdaptor,{
+	serverType: 'sharedrecords',
+	getTiddlersUrl: '%0%1_log.json',
+	viewTiddlersUrl: '%0%1.data',
+	putTiddlersUrl: '%0%1_log?max-sequence-number=%2&amp;amp;format=json',
+	notLoadedError: &quot;SharedRecords data has not been loaded&quot;,
+	notFoundError: &quot;SharedRecords tiddler not found&quot;,
+	jsonTag: '%0',
+	jsonTagSep: ',',
+	jsonEntry: '{&quot;title&quot;:%0,&quot;modified&quot;:&quot;%1&quot;,&quot;modifier&quot;:%2,&quot;created&quot;:&quot;%3&quot;,\n&quot;tags&quot;:[%4],&quot;text&quot;:%5,\n&quot;sharedRecords.recordUID&quot;:%6,&quot;contentType&quot;:%7,&quot;sharedRecords.sequenceNumber&quot;:%8}\n',
+	jsonWrapper: '{&quot;tiddlers&quot;:[%0]}'
+});
+
+// Static method to create a Date() from a string in the format yyyy-MM-ddTHH:mm:ss.SSSz where z is the locale
+SharedRecordsAdaptor.convertFromFullUTCISO1806 = function(dateString)
+{
+	var theDate = new Date(Date.UTC(parseInt(dateString.substr(0,4),10),
+							parseInt(dateString.substr(5,2),10)-1,
+							parseInt(dateString.substr(8,2),10),
+							parseInt(dateString.substr(11,2),10),
+							parseInt(dateString.substr(14,2),10),
+							parseInt(dateString.substr(17,2), 10)));
+	return(theDate);
+}
+
+// Static method to convert string in ISO date format to a Date() object
+SharedRecordsAdaptor.convertToFullUTCISO1806 = function(d)
+{
+	return d.formatString(&quot;YYYY-0MM-0DDT0hh:0mm:0ss.000UTC&quot;);
+}
+
+SharedRecordsAdaptor.prototype.openHost = function(host,context,userParams,callback)
+{
+	this.host = host;
+	context.status = true;
+	window.setTimeout(function() {callback(context,userParams);},10);
+	return true;
+}
+
+SharedRecordsAdaptor.prototype.getWorkspaceList = function(context,userParams,callback)
+{
+	context.workspaces = [];
+	context.status = true;
+	window.setTimeout(function() {callback(context,userParams);},10);
+	return true;
+}
+
+SharedRecordsAdaptor.prototype.openWorkspace = function(workspace,context,userParams,callback)
+{
+	this.workspace = workspace;
+	context.adaptor = this;
+	context.callback = callback;
+	context.userParams = userParams;
+	var url = SharedRecordsAdaptor.getTiddlersUrl.format([this.host,this.workspace]);
+	var ret = loadRemoteFile(url,SharedRecordsAdaptor.openWorkspaceCallback,context);
+	return typeof(ret) == &quot;string&quot; ? ret : true;
+};
+
+SharedRecordsAdaptor.openWorkspaceCallback = function(status,context,responseText,url,xhr)
+{
+	var adaptor = context.adaptor;
+	context.status = status;
+	if(!status) {
+		context.statusText = &quot;Error reading file: &quot; + xhr.statusText;
+	} else {
+		adaptor.serverData = eval(&quot;(&quot; + responseText + &quot;)&quot;);
+	}
+	context.callback(context,context.userParams);
+}
+
+SharedRecordsAdaptor.prototype.getTiddlerList = function(context,userParams,callback)
+{
+	if(!this.serverData)
+		return SharedRecordsAdaptor.notLoadedError;
+	context.tiddlers = [];
+	for(var t=0; t&amp;lt;this.serverData.tiddlers.length; t++) {
+		var serverTiddler = this.serverData.tiddlers[t];
+		var tiddler = new Tiddler(serverTiddler.title);
+		tiddler.text = serverTiddler.text;
+		tiddler.modified = SharedRecordsAdaptor.convertFromFullUTCISO1806(serverTiddler.modified);
+		tiddler.modifier = serverTiddler.modifier;
+		tiddler.fields['server.page.version'] = String.zeroPad(10,serverTiddler['sharedRecords.sequenceNumber']);
+		tiddler.tags = serverTiddler.tags;
+		context.tiddlers.push(tiddler);
+	}
+	context.status = true;
+	window.setTimeout(function() {callback(context,userParams);},10);
+	return true;
+}
+
+
+SharedRecordsAdaptor.prototype.generateTiddlerInfo = function(tiddler)
+{
+	var info = {};
+	var host = this &amp;amp;&amp;amp; this.host ? this.host : tiddler.fields['server.host'];
+	var workspace = this &amp;amp;&amp;amp; this.workspace ? this.workspace : tiddler.fields['server.workspace'];
+	info.uri = SharedRecordsAdaptor.viewTiddlersUrl.format([host,workspace,tiddler.title]);
+	return info;
+}
+
+SharedRecordsAdaptor.prototype.getTiddler = function(title,context,userParams,callback)
+{
+	if(!this.serverData)
+		return SharedRecordsAdaptor.notLoadedError;
+	var t = this.serverData.tiddlers.findByField('title',title);
+	if(t != -1) {
+		var serverTiddler = this.serverData.tiddlers[t];
+		context.tiddler = new Tiddler(title);
+		context.tiddler.text = serverTiddler.text;
+		context.tiddler.modified = SharedRecordsAdaptor.convertFromFullUTCISO1806(serverTiddler.modified);
+		context.tiddler.modifier = serverTiddler.modifier;
+		context.tiddler.tags = serverTiddler.tags;
+		context.tiddler.fields['server.type'] = SharedRecordsAdaptor.serverType;
+		context.tiddler.fields['server.host'] = this.host;
+		context.tiddler.fields['server.workspace'] = this.workspace;
+		context.tiddler.fields['server.page.version'] = String.zeroPad(10,serverTiddler['sharedRecords.sequenceNumber']);
+		context.tiddler.fields['content.type'] = serverTiddler.contentType;
+		context.status = true;
+	} else {
+		context.status = false;
+		context.statusText = SharedRecordsAdaptor.notFoundError;
+	}
+	window.setTimeout(function() {callback(context,userParams);},10);
+	return true;
+}
+
+SharedRecordsAdaptor.prototype.putTiddler = function(tiddler,context,userParams,callback)
+{
+	var jsonTags = [];
+	for(var tag=0; tag&amp;lt;tiddler.tags.length; tag++)
+		jsonTags.push(SocialtextAdaptor.jsonTag.format([tiddler.tags[tag].toJSONString()]));
+	var sequenceNumber = tiddler.fields['server.page.version'];
+	sequenceNumber = sequenceNumber === undefined ? -1 : parseInt(sequenceNumber,10);
+	sequenceNumber = -1; // Just for the moment
+	var contentType = tiddler.fields['content.type'];
+	if(contentType === undefined)
+		contentType = 'text/html';
+	var jsonTiddler = SharedRecordsAdaptor.jsonEntry.format([
+			tiddler.title.toJSONString(),
+			SharedRecordsAdaptor.convertToFullUTCISO1806(tiddler.modified),
+			tiddler.modifier.toJSONString(),
+			SharedRecordsAdaptor.convertToFullUTCISO1806(tiddler.created),
+			jsonTags.join(SharedRecordsAdaptor.jsonTagSep),
+			tiddler.text.toJSONString(),
+			this.workspace.toJSONString(),
+			contentType.toJSONString(),
+			sequenceNumber
+			]);
+	var jsonRecord = SharedRecordsAdaptor.jsonWrapper.format([jsonTiddler]);
+	var url = SharedRecordsAdaptor.putTiddlersUrl.format([this.host,this.workspace,sequenceNumber]);
+	context.adaptor = this;
+	context.callback = callback;
+	context.userParams = userParams;
+	var r = doHttp(&quot;POST&quot;,
+		url,
+		jsonRecord,
+		null,null,null,
+		SharedRecordsAdaptor.putTiddlerCallback,context);
+	return typeof r == 'string' ? r : true;
+}
+
+SharedRecordsAdaptor.putTiddlerCallback = function(status,context,responseText,url,xhr)
+{
+	if(status) {
+		context.status = true;
+	} else {
+		context.status = false;
+		context.statusText = xhr.statusText + &quot; (&quot; + xhr.status + &quot;)&quot;;
+	}
+	if(context.callback)
+		context.callback(context,context.userParams);
+}
+
+SharedRecordsAdaptor.prototype.close = function() {return true;};
+
+config.adaptors[SharedRecordsAdaptor.serverType] = SharedRecordsAdaptor;
+
+} //# end of 'install only once'
+&lt;/pre&gt;</description>
+<category>systemConfig</category>
+<link>http://www.tiddlywiki.com/beta/#SharedRecordsAdaptorPlugin</link>
+<pubDate>Fri, 23 Feb 2007 11:16:00 GMT</pubDate>
+</item>
+<item>
+<title>WikipediaIPstackServer</title>
+<description>&lt;table&gt;&lt;tbody&gt;&lt;tr class=&quot;evenRow&quot;&gt;&lt;td&gt;&lt;strong&gt;Description:&lt;/strong&gt;&lt;/td&gt;&lt;td&gt;Wikipedia articles containing &lt;a tiddlyfields=&quot;&quot; tiddlylink=&quot;IPstack&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to http://www.tiddlywiki.com/beta/#IPstack&quot; href=&quot;http://www.tiddlywiki.com/beta/#IPstack&quot; class=&quot;externalLink&quot;&gt;IPstack&lt;/a&gt; template&lt;/td&gt;&lt;/tr&gt;&lt;tr class=&quot;oddRow&quot;&gt;&lt;td&gt;&lt;strong&gt;Type:&lt;/strong&gt;&lt;/td&gt;&lt;td&gt;mediawiki&lt;/td&gt;&lt;/tr&gt;&lt;tr class=&quot;evenRow&quot;&gt;&lt;td&gt;&lt;strong&gt;URL:&lt;/strong&gt;&lt;/td&gt;&lt;td&gt;&lt;a target=&quot;_blank&quot; title=&quot;External link to http://www.wikipedia.org/w/&quot; href=&quot;http://www.wikipedia.org/w/&quot; class=&quot;externalLink&quot;&gt;http://www.wikipedia.org/w/&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr class=&quot;oddRow&quot;&gt;&lt;td&gt;&lt;strong&gt;Workspace:&lt;/strong&gt;&lt;/td&gt;&lt;td&gt;Main&lt;/td&gt;&lt;/tr&gt;&lt;tr class=&quot;evenRow&quot;&gt;&lt;td&gt;&lt;strong&gt;TiddlerFilter:&lt;/strong&gt;&lt;/td&gt;&lt;td&gt;[template[&lt;a tiddlyfields=&quot;&quot; tiddlylink=&quot;IPstack&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to http://www.tiddlywiki.com/beta/#IPstack&quot; href=&quot;http://www.tiddlywiki.com/beta/#IPstack&quot; class=&quot;externalLink&quot;&gt;IPstack&lt;/a&gt;]]&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;</description>
+<category>systemServer</category>
+<link>http://www.tiddlywiki.com/beta/#WikipediaIPstackServer</link>
+<pubDate>Thu, 22 Feb 2007 00:00:00 GMT</pubDate>
+</item>
+<item>
+<title>SocialtextDotNetServer</title>
+<description>&lt;table&gt;&lt;tbody&gt;&lt;tr class=&quot;evenRow&quot;&gt;&lt;td&gt;&lt;strong&gt;Type:&lt;/strong&gt;&lt;/td&gt;&lt;td&gt;socialtext&lt;/td&gt;&lt;/tr&gt;&lt;tr class=&quot;oddRow&quot;&gt;&lt;td&gt;&lt;strong&gt;URL:&lt;/strong&gt;&lt;/td&gt;&lt;td&gt;&lt;a target=&quot;_blank&quot; title=&quot;External link to http://www.socialtext.net/&quot; href=&quot;http://www.socialtext.net/&quot; class=&quot;externalLink&quot;&gt;http://www.socialtext.net/&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr class=&quot;evenRow&quot;&gt;&lt;td&gt;&lt;strong&gt;Workspace:&lt;/strong&gt;&lt;/td&gt;&lt;td&gt;&lt;a tiddlyfields=&quot;&quot; tiddlylink=&quot;TiddlySandbox&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to http://www.tiddlywiki.com/beta/#TiddlySandbox&quot; href=&quot;http://www.tiddlywiki.com/beta/#TiddlySandbox&quot; class=&quot;externalLink&quot;&gt;TiddlySandbox&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr class=&quot;oddRow&quot;&gt;&lt;td&gt;&lt;strong&gt;&lt;a tiddlyfields=&quot;&quot; tiddlylink=&quot;WorkspaceList&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to http://www.tiddlywiki.com/beta/#WorkspaceList&quot; href=&quot;http://www.tiddlywiki.com/beta/#WorkspaceList&quot; class=&quot;externalLink&quot;&gt;WorkspaceList&lt;/a&gt;:&lt;/strong&gt;&lt;/td&gt;&lt;td&gt;stoss &lt;a tiddlyfields=&quot;&quot; tiddlylink=&quot;Socialtext REST Documentation&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to http://www.tiddlywiki.com/beta/#Socialtext REST Documentation&quot; href=&quot;http://www.tiddlywiki.com/beta/#Socialtext%20REST%20Documentation&quot; class=&quot;externalLink&quot;&gt;Socialtext REST Documentation&lt;/a&gt; &lt;a tiddlyfields=&quot;&quot; tiddlylink=&quot;TiddlySandbox&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to http://www.tiddlywiki.com/beta/#TiddlySandbox&quot; href=&quot;http://www.tiddlywiki.com/beta/#TiddlySandbox&quot; class=&quot;externalLink&quot;&gt;TiddlySandbox&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr class=&quot;evenRow&quot;&gt;&lt;td&gt;&lt;strong&gt;Description:&lt;/strong&gt;&lt;/td&gt;&lt;td&gt;Socialtext's public server&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;</description>
+<category>systemServer</category>
+<link>http://www.tiddlywiki.com/beta/#SocialtextDotNetServer</link>
+<pubDate>Sun, 18 Feb 2007 17:15:00 GMT</pubDate>
+</item>
+</channel>
+</rss>
