@@ -925,7 +925,7 @@ There are a number of resources for non-English language speakers:
 <pre>&lt;&lt;download&gt;&gt;
 </pre>
 </div>
-<div title="DownloadTiddlyWikiPlugin" creator="psd" modifier="EricShulman" created="201102111121" modified="201207210855" tags="systemConfig" changecount="1">
+<div title="DownloadTiddlyWikiPlugin" creator="psd" modifier="EricShulman" created="201102111121" modified="201207210855" tags="systemConfig" changecount="2">
 <pre>/***
 |''Name:''|DownloadTiddlyWikiPlugin|
 |''Description:''|Download TiddlyWiki according to browser type|
@@ -957,7 +957,7 @@ config.macros.download.onClick = function(ev)
 {
 	// display the tiddler containing the instructions
 	var e = ev || window.event;
-	var title = &quot;Installation&quot;;
+	var title = &quot;Downloading&quot;;
 	var url = 'empty.zip';
 	if(config.browser.isOpera || config.browser.isWindows) {
 		story.displayTiddler(target,title);

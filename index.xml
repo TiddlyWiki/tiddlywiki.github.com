@@ -7,60 +7,10 @@
 <description>a reusable non-linear personal web notebook</description>
 <language>en</language>
 <copyright>Copyright 2012 EricShulman</copyright>
-<pubDate>Sat, 21 Jul 2012 08:59:09 GMT</pubDate>
-<lastBuildDate>Sat, 21 Jul 2012 08:59:09 GMT</lastBuildDate>
+<pubDate>Tue, 24 Jul 2012 09:16:25 GMT</pubDate>
+<lastBuildDate>Tue, 24 Jul 2012 09:16:25 GMT</lastBuildDate>
 <docs>http://blogs.law.harvard.edu/tech/rss</docs>
 <generator>TiddlyWiki 2.6.5</generator>
-<item>
-<title>DownloadTiddlyWikiPlugin</title>
-<description>&lt;table class=&quot;twtable&quot;&gt;&lt;tbody&gt;&lt;tr class=&quot;evenRow&quot;&gt;&lt;td&gt;&lt;strong&gt;Name:&lt;/strong&gt;&lt;/td&gt;&lt;td&gt;DownloadTiddlyWikiPlugin&lt;/td&gt;&lt;/tr&gt;&lt;tr class=&quot;oddRow&quot;&gt;&lt;td&gt;&lt;strong&gt;Description:&lt;/strong&gt;&lt;/td&gt;&lt;td&gt;Download TiddlyWiki according to browser type&lt;/td&gt;&lt;/tr&gt;&lt;tr class=&quot;evenRow&quot;&gt;&lt;td&gt;&lt;strong&gt;Version:&lt;/strong&gt;&lt;/td&gt;&lt;td&gt;0.0.9&lt;/td&gt;&lt;/tr&gt;&lt;tr class=&quot;oddRow&quot;&gt;&lt;td&gt;&lt;strong&gt;Date:&lt;/strong&gt;&lt;/td&gt;&lt;td&gt;Jul 18, 2012&lt;/td&gt;&lt;/tr&gt;&lt;tr class=&quot;evenRow&quot;&gt;&lt;td&gt;&lt;strong&gt;Source:&lt;/strong&gt;&lt;/td&gt;&lt;td&gt;&lt;a target=&quot;_blank&quot; title=&quot;External link to http://www.tiddlywiki.com/#DownloadTiddlyWikiPlugin&quot; href=&quot;http://www.tiddlywiki.com/#DownloadTiddlyWikiPlugin&quot; class=&quot;externalLink&quot;&gt;http://www.tiddlywiki.com/#DownloadTiddlyWikiPlugin&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr class=&quot;oddRow&quot;&gt;&lt;td&gt;&lt;strong&gt;License:&lt;/strong&gt;&lt;/td&gt;&lt;td&gt;&lt;a tiddlylink=&quot;BSD open source license&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to http://tiddlywiki.com/
-#BSD open source license&quot; href=&quot;http://tiddlywiki.com/%0A#BSD%20open%20source%20license&quot; class=&quot;externalLink null&quot;&gt;BSD open source license&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr class=&quot;evenRow&quot;&gt;&lt;td&gt;&lt;strong&gt;CoreVersion:&lt;/strong&gt;&lt;/td&gt;&lt;td&gt;2.4.1&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;br&gt;&lt;pre&gt;if(!version.extensions.DownloadTiddlyWikiPlugin) {
-version.extensions.DownloadTiddlyWikiPlugin = {installed:true};
-
-config.macros.download = {};
-
-merge(config.macros.download,{
-	label: &quot;download&quot;,
-	prompt: &quot;Download TiddlyWiki&quot;,
-	className: &quot;chunkyButton&quot;});
-
-config.macros.download.handler = function(place,macroName,params,wikifier,paramString,tiddler)
-{
-	var span = createTiddlyElement(place,&quot;span&quot;,null,this.className);
-	createTiddlyButton(span,params[0]||this.label,params[1]||this.prompt,this.onClick);
-};
-
-config.macros.download.onClick = function(ev)
-{
-	// display the tiddler containing the instructions
-	var e = ev || window.event;
-	var title = &quot;Installation&quot;;
-	var url = 'empty.zip';
-	if(config.browser.isOpera || config.browser.isWindows) {
-		story.displayTiddler(target,title);
-		window.setTimeout(function() {document.location.href = url;},300);
-	} else {
-		// put an iframe in the target instructions tiddler to start the download
-		var html = '&amp;lt;html&amp;gt;&amp;lt;iframe src=&quot;' + url + '&quot; style=&quot;display:none&quot;&amp;gt;&amp;lt;/html&amp;gt;';
-		var tiddler = store.getTiddler(title);
-		var oldText = tiddler.text;
-		tiddler.text = html + tiddler.text;
-		var target = resolveTarget(e);
-		story.closeTiddler(title,true);
-		story.displayTiddler(target,title);
-		tiddler.text = oldText;
-	}
-	return false;
-};
-
-} //# end of 'install only once'
-&lt;/pre&gt;</description>
-<category>systemConfig</category>
-<link>http://tiddlywiki.com/
-#DownloadTiddlyWikiPlugin</link>
-<pubDate>Sat, 21 Jul 2012 08:55:00 GMT</pubDate>
-
-</item>
 <item>
 <title>HelloThere</title>
 <description>Welcome to &lt;a tiddlylink=&quot;TiddlyWiki&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to http://tiddlywiki.com/
@@ -90,6 +40,56 @@ config.macros.download.onClick = function(ev)
 <category>welcome</category>
 <link>http://tiddlywiki.com/
 #HelloThere</link>
+<pubDate>Sat, 21 Jul 2012 08:55:00 GMT</pubDate>
+
+</item>
+<item>
+<title>DownloadTiddlyWikiPlugin</title>
+<description>&lt;table class=&quot;twtable&quot;&gt;&lt;tbody&gt;&lt;tr class=&quot;evenRow&quot;&gt;&lt;td&gt;&lt;strong&gt;Name:&lt;/strong&gt;&lt;/td&gt;&lt;td&gt;DownloadTiddlyWikiPlugin&lt;/td&gt;&lt;/tr&gt;&lt;tr class=&quot;oddRow&quot;&gt;&lt;td&gt;&lt;strong&gt;Description:&lt;/strong&gt;&lt;/td&gt;&lt;td&gt;Download TiddlyWiki according to browser type&lt;/td&gt;&lt;/tr&gt;&lt;tr class=&quot;evenRow&quot;&gt;&lt;td&gt;&lt;strong&gt;Version:&lt;/strong&gt;&lt;/td&gt;&lt;td&gt;0.0.9&lt;/td&gt;&lt;/tr&gt;&lt;tr class=&quot;oddRow&quot;&gt;&lt;td&gt;&lt;strong&gt;Date:&lt;/strong&gt;&lt;/td&gt;&lt;td&gt;Jul 18, 2012&lt;/td&gt;&lt;/tr&gt;&lt;tr class=&quot;evenRow&quot;&gt;&lt;td&gt;&lt;strong&gt;Source:&lt;/strong&gt;&lt;/td&gt;&lt;td&gt;&lt;a target=&quot;_blank&quot; title=&quot;External link to http://www.tiddlywiki.com/#DownloadTiddlyWikiPlugin&quot; href=&quot;http://www.tiddlywiki.com/#DownloadTiddlyWikiPlugin&quot; class=&quot;externalLink&quot;&gt;http://www.tiddlywiki.com/#DownloadTiddlyWikiPlugin&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr class=&quot;oddRow&quot;&gt;&lt;td&gt;&lt;strong&gt;License:&lt;/strong&gt;&lt;/td&gt;&lt;td&gt;&lt;a tiddlylink=&quot;BSD open source license&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to http://tiddlywiki.com/
+#BSD open source license&quot; href=&quot;http://tiddlywiki.com/%0A#BSD%20open%20source%20license&quot; class=&quot;externalLink null&quot;&gt;BSD open source license&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr class=&quot;evenRow&quot;&gt;&lt;td&gt;&lt;strong&gt;CoreVersion:&lt;/strong&gt;&lt;/td&gt;&lt;td&gt;2.4.1&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;br&gt;&lt;pre&gt;if(!version.extensions.DownloadTiddlyWikiPlugin) {
+version.extensions.DownloadTiddlyWikiPlugin = {installed:true};
+
+config.macros.download = {};
+
+merge(config.macros.download,{
+	label: &quot;download&quot;,
+	prompt: &quot;Download TiddlyWiki&quot;,
+	className: &quot;chunkyButton&quot;});
+
+config.macros.download.handler = function(place,macroName,params,wikifier,paramString,tiddler)
+{
+	var span = createTiddlyElement(place,&quot;span&quot;,null,this.className);
+	createTiddlyButton(span,params[0]||this.label,params[1]||this.prompt,this.onClick);
+};
+
+config.macros.download.onClick = function(ev)
+{
+	// display the tiddler containing the instructions
+	var e = ev || window.event;
+	var title = &quot;Downloading&quot;;
+	var url = 'empty.zip';
+	if(config.browser.isOpera || config.browser.isWindows) {
+		story.displayTiddler(target,title);
+		window.setTimeout(function() {document.location.href = url;},300);
+	} else {
+		// put an iframe in the target instructions tiddler to start the download
+		var html = '&amp;lt;html&amp;gt;&amp;lt;iframe src=&quot;' + url + '&quot; style=&quot;display:none&quot;&amp;gt;&amp;lt;/html&amp;gt;';
+		var tiddler = store.getTiddler(title);
+		var oldText = tiddler.text;
+		tiddler.text = html + tiddler.text;
+		var target = resolveTarget(e);
+		story.closeTiddler(title,true);
+		story.displayTiddler(target,title);
+		tiddler.text = oldText;
+	}
+	return false;
+};
+
+} //# end of 'install only once'
+&lt;/pre&gt;</description>
+<category>systemConfig</category>
+<link>http://tiddlywiki.com/
+#DownloadTiddlyWikiPlugin</link>
 <pubDate>Sat, 21 Jul 2012 08:55:00 GMT</pubDate>
 
 </item>
@@ -199,7 +199,7 @@ config.macros.download.onClick = function(ev)
 &lt;/pre&gt;All the parameters are optional:&lt;br&gt;&lt;ul&gt;&lt;li&gt; &lt;strong&gt;field&lt;/strong&gt; determines which field to use as the basis for the list. It is usually &lt;code&gt;modified&lt;/code&gt; or &lt;code&gt;created&lt;/code&gt;&lt;/li&gt;&lt;li&gt; &lt;strong&gt;maxlength&lt;/strong&gt; is an integer that limits the maximum number of tiddlers to include in the list&lt;/li&gt;&lt;li&gt; &lt;strong&gt;dateformat&lt;/strong&gt; is a &lt;a tiddlylink=&quot;Date Formats&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to http://tiddlywiki.com/
 #Date Formats&quot; href=&quot;http://tiddlywiki.com/%0A#Date%20Formats&quot; class=&quot;externalLink null&quot;&gt;date format string&lt;/a&gt; that determines the format of the dates&lt;/li&gt;&lt;li&gt; &lt;strong&gt;template&lt;/strong&gt; names the tiddler to use as the template for list entries&lt;ul&gt;&lt;li&gt; The default template is &lt;code&gt;&amp;lt;&amp;lt;view title link&amp;gt;&amp;gt;&lt;/code&gt; to cause the display of the tiddler title as a link to the tiddler&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;&lt;li&gt; &lt;strong&gt;groupTemplate&lt;/strong&gt; names the tiddler to use as the template for grouping entries in the list&lt;ul&gt;&lt;li&gt; The default groupTemplate is &lt;code&gt;&amp;lt;&amp;lt;view %0 date '%1'&amp;gt;&amp;gt;&lt;/code&gt;, where &lt;code&gt;%0&lt;/code&gt; is the name of the field being displayed and &lt;code&gt;%1&lt;/code&gt; is the &lt;strong&gt;dateformat&lt;/strong&gt; selected in the third argument&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;&lt;li&gt; &lt;strong&gt;filter&lt;/strong&gt; is a tiddler filter that is used to filter the tiddlers that appear in the list&lt;/li&gt;&lt;/ul&gt;&lt;br&gt;For example:&lt;br&gt;&lt;pre&gt;&amp;lt;&amp;lt;timeline created 5&amp;gt;&amp;gt;&amp;gt;
 &lt;/pre&gt;displays as:&lt;br&gt;&lt;div refresh=&quot;macro&quot; macroname=&quot;timeline&quot; params=&quot;created 5&quot;&gt;&lt;ul class=&quot;timeline&quot;&gt;&lt;li class=&quot;listTitle&quot;&gt;20 March 2012&lt;/li&gt;&lt;li class=&quot;listLink&quot;&gt;&lt;a tiddlylink=&quot;TiddlyWiki5&quot; refresh=&quot;link&quot; class=&quot;tiddlyLink tiddlyLinkExisting&quot; title=&quot;TiddlyWiki5 - jermolene, Tuesday, March 20, 2012 3:42:00 AM&quot; href=&quot;javascript:;&quot;&gt;TiddlyWiki5&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;ul class=&quot;timeline&quot;&gt;&lt;li class=&quot;listTitle&quot;&gt;7 March 2012&lt;/li&gt;&lt;li class=&quot;listLink&quot;&gt;&lt;a tiddlylink=&quot;luakit&quot; refresh=&quot;link&quot; class=&quot;tiddlyLink tiddlyLinkExisting&quot; title=&quot;luakit - jermolene, Wednesday, March 07, 2012 8:02:00 AM&quot; href=&quot;javascript:;&quot;&gt;luakit&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;ul class=&quot;timeline&quot;&gt;&lt;li class=&quot;listTitle&quot;&gt;14 November 2011&lt;/li&gt;&lt;li class=&quot;listLink&quot;&gt;&lt;a tiddlylink=&quot;Mathematics&quot; refresh=&quot;link&quot; class=&quot;tiddlyLink tiddlyLinkExisting&quot; title=&quot;Mathematics - jermolene, Monday, November 14, 2011 4:28:00 AM&quot; href=&quot;javascript:;&quot;&gt;Mathematics&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;ul class=&quot;timeline&quot;&gt;&lt;li class=&quot;listTitle&quot;&gt;3 November 2011&lt;/li&gt;&lt;li class=&quot;listLink&quot;&gt;&lt;a tiddlylink=&quot;SideBarOptions&quot; refresh=&quot;link&quot; class=&quot;tiddlyLink tiddlyLinkExisting&quot; title=&quot;This shadow tiddler is used as the contents of the option panel in the right-hand sidebar&quot; href=&quot;javascript:;&quot;&gt;SideBarOptions&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;ul class=&quot;timeline&quot;&gt;&lt;li class=&quot;listTitle&quot;&gt;20 October 2011&lt;/li&gt;&lt;li class=&quot;listLink&quot;&gt;&lt;a tiddlylink=&quot;ColorPalette&quot; refresh=&quot;link&quot; class=&quot;tiddlyLink tiddlyLinkExisting&quot; title=&quot;These values in this shadow tiddler determine the colour scheme of the ~TiddlyWiki user interface&quot; href=&quot;javascript:;&quot;&gt;ColorPalette&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;&lt;br&gt;&lt;pre&gt;&amp;lt;&amp;lt;timeline modified 5&amp;gt;&amp;gt;
-&lt;/pre&gt;displays as:&lt;br&gt;&lt;div refresh=&quot;macro&quot; macroname=&quot;timeline&quot; params=&quot;modified 5&quot;&gt;&lt;ul class=&quot;timeline&quot;&gt;&lt;li class=&quot;listTitle&quot;&gt;21 July 2012&lt;/li&gt;&lt;li class=&quot;listLink&quot;&gt;&lt;a tiddlylink=&quot;DownloadTiddlyWikiPlugin&quot; refresh=&quot;link&quot; class=&quot;tiddlyLink tiddlyLinkExisting&quot; title=&quot;DownloadTiddlyWikiPlugin - EricShulman, Saturday, July 21, 2012 1:55:00 AM&quot; href=&quot;javascript:;&quot;&gt;DownloadTiddlyWikiPlugin&lt;/a&gt;&lt;/li&gt;&lt;li class=&quot;listLink&quot;&gt;&lt;a tiddlylink=&quot;HelloThere&quot; refresh=&quot;link&quot; class=&quot;tiddlyLink tiddlyLinkExisting&quot; title=&quot;HelloThere - EricShulman, Saturday, July 21, 2012 1:55:00 AM&quot; href=&quot;javascript:;&quot;&gt;HelloThere&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;ul class=&quot;timeline&quot;&gt;&lt;li class=&quot;listTitle&quot;&gt;20 March 2012&lt;/li&gt;&lt;li class=&quot;listLink&quot;&gt;&lt;a tiddlylink=&quot;TiddlyWiki5&quot; refresh=&quot;link&quot; class=&quot;tiddlyLink tiddlyLinkExisting&quot; title=&quot;TiddlyWiki5 - jermolene, Tuesday, March 20, 2012 3:42:00 AM&quot; href=&quot;javascript:;&quot;&gt;TiddlyWiki5&lt;/a&gt;&lt;/li&gt;&lt;li class=&quot;listLink&quot;&gt;&lt;a tiddlylink=&quot;TiddlyWiki&quot; refresh=&quot;link&quot; class=&quot;tiddlyLink tiddlyLinkExisting&quot; title=&quot;TiddlyWiki - jermolene, Tuesday, March 20, 2012 3:34:00 AM&quot; href=&quot;javascript:;&quot;&gt;TiddlyWiki&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;ul class=&quot;timeline&quot;&gt;&lt;li class=&quot;listTitle&quot;&gt;11 March 2012&lt;/li&gt;&lt;li class=&quot;listLink&quot;&gt;&lt;a tiddlylink=&quot;MainMenu&quot; refresh=&quot;link&quot; class=&quot;tiddlyLink tiddlyLinkExisting&quot; title=&quot;This shadow tiddler is used as the contents of the main menu in the left-hand column of the screen&quot; href=&quot;javascript:;&quot;&gt;MainMenu&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;&lt;br&gt;</description>
+&lt;/pre&gt;displays as:&lt;br&gt;&lt;div refresh=&quot;macro&quot; macroname=&quot;timeline&quot; params=&quot;modified 5&quot;&gt;&lt;ul class=&quot;timeline&quot;&gt;&lt;li class=&quot;listTitle&quot;&gt;21 July 2012&lt;/li&gt;&lt;li class=&quot;listLink&quot;&gt;&lt;a tiddlylink=&quot;HelloThere&quot; refresh=&quot;link&quot; class=&quot;tiddlyLink tiddlyLinkExisting&quot; title=&quot;HelloThere - EricShulman, Saturday, July 21, 2012 1:55:00 AM&quot; href=&quot;javascript:;&quot;&gt;HelloThere&lt;/a&gt;&lt;/li&gt;&lt;li class=&quot;listLink&quot;&gt;&lt;a tiddlylink=&quot;DownloadTiddlyWikiPlugin&quot; refresh=&quot;link&quot; class=&quot;tiddlyLink tiddlyLinkExisting&quot; title=&quot;DownloadTiddlyWikiPlugin - EricShulman, Saturday, July 21, 2012 1:55:00 AM&quot; href=&quot;javascript:;&quot;&gt;DownloadTiddlyWikiPlugin&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;ul class=&quot;timeline&quot;&gt;&lt;li class=&quot;listTitle&quot;&gt;20 March 2012&lt;/li&gt;&lt;li class=&quot;listLink&quot;&gt;&lt;a tiddlylink=&quot;TiddlyWiki5&quot; refresh=&quot;link&quot; class=&quot;tiddlyLink tiddlyLinkExisting&quot; title=&quot;TiddlyWiki5 - jermolene, Tuesday, March 20, 2012 3:42:00 AM&quot; href=&quot;javascript:;&quot;&gt;TiddlyWiki5&lt;/a&gt;&lt;/li&gt;&lt;li class=&quot;listLink&quot;&gt;&lt;a tiddlylink=&quot;TiddlyWiki&quot; refresh=&quot;link&quot; class=&quot;tiddlyLink tiddlyLinkExisting&quot; title=&quot;TiddlyWiki - jermolene, Tuesday, March 20, 2012 3:34:00 AM&quot; href=&quot;javascript:;&quot;&gt;TiddlyWiki&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;ul class=&quot;timeline&quot;&gt;&lt;li class=&quot;listTitle&quot;&gt;11 March 2012&lt;/li&gt;&lt;li class=&quot;listLink&quot;&gt;&lt;a tiddlylink=&quot;MainMenu&quot; refresh=&quot;link&quot; class=&quot;tiddlyLink tiddlyLinkExisting&quot; title=&quot;This shadow tiddler is used as the contents of the main menu in the left-hand column of the screen&quot; href=&quot;javascript:;&quot;&gt;MainMenu&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;&lt;br&gt;</description>
 <category>macro</category>
 <link>http://tiddlywiki.com/
 #%5B%5Btimeline%20macro%5D%5D</link>
