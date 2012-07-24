@@ -522,8 +522,9 @@ TiddlyWiki266Changes
 </pre>
 </div>
 <div title="HelloThere" modifier="EricShulman" type="text/x-tiddlywiki">
-<pre>This is the ALPHA build of TiddlyWiki v&lt;&lt;version&gt;&gt;.
+<pre>This is the ALPHA build of TiddlyWiki v&lt;&lt;version&gt;&gt;, and includes all changes already committed to the [[TiddlyWiki repository|http://github.com/tiddlywiki/tiddlywiki]] plus pending pull requests that have been submitted for approval.
 
+This version of TiddlyWiki &quot;Classic&quot; is the first build to use TiddlyWiki5 to assemble and generate the core system, rather than the old Ruby-based ginsu/cook utilities previously used.  In addition, all TiddlyWiki.com content is now being hosted using GitHub Pages, which greatly simplifies the process of posting updates and will allow more frequent updates in the coming months.
 </pre>
 </div>
 <div title="TiddlyWiki266Changes" modifier="EricShulman" type="text/x-tiddlywiki">
@@ -568,17 +569,12 @@ TiddlyWiki266Changes
 </pre>
 </div>
 <div title="WhatsNew" modifier="EricShulman" type="text/x-tiddlywiki">
-<pre>The following is a summary of user-level feature changes in TiddlyWiki v2.6.6:
-!!!SystemSettings autosave
-&gt;Updates to the SystemSettings tiddler (i.e., when you change a persistent option checkbox or text input) will now trigger autosave handling if chkAutoSave is enabled.
-!!!Sync machine
-&gt;The backstage &quot;sync&quot; command and internal &quot;sync machine&quot; handling has been removed from the TiddlyWiki core code. Sync functionality will be migrated to an optional plugin in a future release (schedule to be determined).
-!!!Backstage cloak
-&gt;The &quot;backstage cloak&quot; (shading applied to the document when the backstage is displayed) now matches document height instead of window height.
-!!!Unsaved changes ('dirty' flag)
-&gt;Whenever a tiddler is changed, the document will always be marked as 'dirty' to indicate that there are pending unsaved changes.  Previously, setting this flag was bypassed when viewing remotely-hosted documents (e.g., TiddlySpace).
-!!!TiddlySpace: defaultCustomFields
-&gt;Saving a tiddler automatically adds &quot;defaultCustomFields&quot; (when no other fields are defined).  This allows tiddlers that are created/modified by existing TiddlyWiki plugins to be properly saved to a remote TiddlySpace.  Note: currently, defaultCustomFields are only being used with TiddlySpace, so this change will have no effect when saving tiddlers in a standard file-based (i.e. non-TiddlySpace) TiddlyWiki document.
+<pre>The following is a summary of notable user-level feature changes in TiddlyWiki v2.6.6:
+*''SystemSettings autosave''&lt;br&gt;Updates to the SystemSettings tiddler (i.e., when you change a persistent option checkbox or text input) will now trigger autosave handling if chkAutoSave is enabled.
+*''Sync machine removed''&lt;br&gt;The backstage &quot;sync&quot; command and internal &quot;sync machine&quot; handling has been removed from the TiddlyWiki core code. Sync functionality will be migrated to an optional plugin in a future release (schedule to be determined).
+*''Backstage &quot;cloak&quot; size''&lt;br&gt;The &quot;backstage cloak&quot; (shading applied to the document when the backstage is displayed) now matches document height instead of window height.
+*''TiddlySpace: defaultCustomFields''&lt;br&gt;Saving a tiddler automatically adds &quot;defaultCustomFields&quot; (when no other fields are defined).  This allows tiddlers that are created/modified by existing TiddlyWiki plugins to be properly saved to a remote TiddlySpace.  //Note: currently, defaultCustomFields are only being used with TiddlySpace, so this change will have no effect when saving tiddlers in a standard file-based (i.e. non-TiddlySpace) TiddlyWiki document.//
+*''Unsaved changes ('dirty' flag)''&lt;br&gt;Whenever a tiddler is changed, the document will always be marked as 'dirty' to indicate that there are pending unsaved changes.  Previously, setting this flag was bypassed when viewing remotely-hosted documents (e.g., TiddlySpace).
 </pre>
 </div>
 </div>
