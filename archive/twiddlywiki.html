@@ -1,0 +1,289 @@
+<html>
+<head>
+<title>TwiddlyWiki</title>
+<script type="text/javascript">
+<!--
+
+// Animation engine
+var animating = 0; // Incremented at start of each animation, decremented afterwards. If zero, the interval timer is disabled
+var animaterID; // ID of the timer used for animating
+
+var shifterElement = null; // Element being shifted; null if none
+var shifterStartLeft,shifterStartTop,shifterStartWidth,shifterStartHeight; // Where we're shifting to
+var shifterTargetLeft,shifterTargetTop,shifterTargetWidth,shifterTargetHeight; // Where we're shifting to
+var shifterProgress; // 0..1 of how far we are
+var shifterStep; // 0..1 of how much to shift each step
+
+function startAnimating()
+{
+    if(animating++ == 0)
+        animaterID = window.setInterval("doAnimate();",25);
+}
+
+function stopAnimating()
+{
+    if(--animating == 0)
+        window.clearInterval(animaterID)
+}
+
+function doAnimate()
+{
+    if(shifterElement != null)
+        doShifter();
+}
+
+function startShifter(e,target)
+{
+    stopShifter();
+    shifterElement = e;
+    shifterElement.style.visibility = "visible";
+    shifterStartLeft = e.offsetLeft;
+    shifterStartTop = e.offsetTop;
+    shifterStartWidth = e.offsetWidth;
+    shifterStartHeight = e.offsetHeight;
+    shifterTargetLeft = target.offsetLeft;
+    shifterTargetTop = target.offsetTop;
+    shifterTargetWidth = target.offsetWidth;
+    shifterTargetHeight = target.offsetHeight;
+    shifterProgress = 0;
+    shifterStep = 0.07;
+    startAnimating();
+}
+
+function stopShifter()
+{
+    if(shifterElement != null)
+        {
+        stopAnimating();
+        shifterElement.style.visibility = "hidden"; 
+        shifterElement = null;
+        }
+}
+
+function doShifter()
+{
+    shifterProgress += shifterStep;
+    if(shifterProgress > 1.0)
+        stopShifter();
+    else
+        {
+        var f;
+        if(shifterProgress < 0.5)
+            {
+            // shifterProgress is 0 - 0.49999; map it to 0 - 1, cube it to slow it at the start, then back to 0 - 0.4999
+            f = (shifterProgress * 2);
+            f = f*f*f;
+            f = f/2;
+            }
+        else
+            {
+            // shifterProgress is 0.5 - 0.99999; flip it to 1 - 0, cube it to slow it down at the end, then back to 0.5 to 1
+            f = 1-(shifterProgress-0.5)*2;
+            f = f*f*f;
+            f = 1-f/2;
+            f
+            }
+        shifterElement.style.left = shifterStartLeft + (shifterTargetLeft-shifterStartLeft) * f;
+        shifterElement.style.top = shifterStartTop + (shifterTargetTop-shifterStartTop) * f;
+        shifterElement.style.width = shifterStartWidth + (shifterTargetWidth-shifterStartWidth) * f;
+        shifterElement.style.height = shifterStartHeight + (shifterTargetHeight-shifterStartHeight) * f;
+        }
+}
+
+// Link patterns
+var upperLetter = "[A-Z]";
+var lowerLetter = "[a-z]";
+var anyLetter = "[A-Za-z_0-9]";
+var linkPattern = upperLetter + "+" + lowerLetter + "+" + upperLetter + anyLetter + "*";
+
+function getTwiddle(title)
+{
+    var twiddleStore = document.getElementById("store" + title);
+    if(twiddleStore != null)
+        return(twiddleStore.firstChild.nodeValue);
+    else
+        return("None");
+}
+
+// Create child text nodes and link elements to represent a wiki-fied version of some text
+function wikify(text,parent)
+{
+    // Loop through the bits of the body text
+    do {
+        // Get the next wiki word and it's position
+        var wikiLinkWord = text.match(linkPattern);
+        var wikiLinkPos = text.search(linkPattern);
+        // If there isn't one, dump out the entire remaining text
+        if(wikiLinkPos == -1)
+            parent.appendChild(document.createTextNode(text));
+        else
+            {
+            // Dump out any text before the wiki word
+            if(wikiLinkPos > 0)
+                parent.appendChild(document.createTextNode(text.slice(0,wikiLinkPos)));
+            // Dump out the link itself
+            var theLink = document.createElement("a");
+            parent.appendChild(theLink);
+            theLink.setAttribute("href","#");
+            theLink.setAttribute("onClick","displayTwiddle('" + wikiLinkWord + "')");
+            theLink.appendChild(document.createTextNode(wikiLinkWord));
+            // Figure out if the wiki word exists
+            if(getTwiddle(wikiLinkWord) == "None")
+                theLink.setAttribute("style","font-weight:bold");
+            else
+                theLink.setAttribute("style","font-weight:normal");
+            // Move up past the wiki word, and let the loop take us back up to the top
+            text = text.slice(wikiLinkPos + wikiLinkWord[0].length);
+            }    
+    } while(wikiLinkPos != -1);
+}
+
+function displayTwiddle(title)
+{
+    // Check if the twiddly bit is already displayed
+    var theTwiddle = document.getElementById("twiddle" + title);
+    if(theTwiddle == null)
+        {
+        // If not, create it and link it in
+        theTwiddle = createTwiddle(title,"Last modified by Jeremy");
+        document.getElementById("displayArea").appendChild(theTwiddle);
+        }
+    // Animate the floater from the link location to the location of the new twiddlybit    
+    var e = document.getElementById("floater");
+    e.style.left = event.target.offsetLeft;
+    e.style.top = event.target.offsetTop;
+    e.style.width = event.target.offsetWidth;
+    e.style.height = event.target.offsetHeight;
+    var ft = document.createTextNode(title);
+    e.replaceChild(ft,e.firstChild);
+    startShifter(e,theTwiddle);
+    
+}
+
+function findTargetTwiddle()
+{
+}
+
+function createTwiddle(title,subtitle)
+{
+    // Get the body of the twiddly bit
+    var twiddleText = getTwiddle(title);
+    // Create the whole twiddle itself, title and subtitle
+    var theTwiddle = createTwiddlyElement(null,"div","twiddlyBit",null);
+    theTwiddle.setAttribute("id","twiddle" + title);
+    var theTitle = createTwiddlyElement(theTwiddle,"div","title",title);
+    var theSubtitle = createTwiddlyElement(theTitle,"div","subtitle",subtitle);
+    // Add the body
+    var theBody = document.createElement("div");
+    theBody.setAttribute("class","body");
+    // Add the body text wikifing the links
+    wikify(twiddleText,theBody);
+    // Attach the body
+    theTwiddle.appendChild(theBody);
+    // Return the twiddly bit
+    return(theTwiddle);
+}
+
+function createTwiddlyElement(theParent,theElement,theClass,theText)
+{
+    var e = document.createElement(theElement);
+    if(theClass != null)
+        e.setAttribute("class",theClass);
+    if(theText != null)
+        e.appendChild(document.createTextNode(theText));
+    if(theParent != null)
+        theParent.appendChild(e);
+    return(e);
+}
+
+function main()
+{
+    displayTwiddle('StartHere');
+}
+
+// -->
+</script>
+<style type="text/css">
+<!--
+
+body {
+    margin: 4px;
+}
+
+.twiddlyBit {
+    font-family: 'Georgia',times;
+    border: 1px solid #888888;
+    padding: 3px 3px 3px 3px;
+    margin: 1px;
+    background-color: #EEEEEE;
+    float: left;
+    width: 98%;
+}
+
+.twiddlyBit .twiddlyBit {
+    background-color: #DDDDDD;
+    width: 45%;
+}
+
+.twiddlyBit .twiddlyBit .twiddlyBit {
+    background-color: #CCCCCC;
+}
+
+.twiddlyBit .title {
+    font-size: 7pt;
+    color: #888888;
+    font-weight: bold;
+    padding-bottom: 2px;
+    border-bottom: 1px solid black;
+    margin-bottom: 2px;
+}
+
+.twiddlyBit .title .subtitle {
+    font-size: 7pt;
+    font-style: italic;
+    font-weight: normal;
+}
+
+.twiddlyBit .body {
+    font-size: 10pt;
+}
+
+.twiddlyBit .body a {
+    color: blue;
+    text-decoration: underline;
+}
+
+.twiddlyBit .body a:hover {
+    color: white;
+    background-color: blue;
+}
+
+#storeArea {
+    display: none;
+}
+
+#floater {
+    font-size: 10pt;
+    visibility: hidden;
+    color: white;
+    background-color: #888888;
+    position: absolute;
+    opacity: 0.5;
+}
+
+-->
+</style>
+</head>
+    <body onload="main()">
+        <div ID="storeArea">
+            <div ID="storeStartHere">Welcome to TwiddlyWiki, a kind of MicroContent WikiWikiWeb. There's not a lot here at the moment, just a couple of SillyExamples and AnotherExample. Later on, we'll add BetterThings</div>
+            <div ID="storeMicroContent">MicroContent being a fashionable word for self-contained fragments of content that are typically smaller than entire pages. Often MicroContent is presented via some kind of aggregation that reduces the perceptual shock and resource cost of context switching (eg Blogs aggregating several entries onto a page, or this TwiddlyWiki aggregating TwiddlyBits into pages</div>
+            <div ID="storeSillyExamples">This is just one of ever so many silly examples. Not even a particularly good one since it doesn't actually have any links whatsoever...</div>
+            <div ID="storeAnotherExample">This might be a better example because it LinksToThings.</div>
+            <div ID="storeLinksToThings">And this just makes you think again about SillyExamples and AnotherExample</div>
+            <div ID="storeBetterThings">BetterThings isn't one of them, AndThisOne doesn't even exist</div>
+        </div>
+        <div ID="displayArea"></div>
+        <div ID="floater">Floater!!!</div>
+    </body>
+</html>
