@@ -2307,12 +2307,12 @@ The new implementation offers a popup menu of the names of all the referring tid
 <pre>TiddlyWiki's RSS feed is available [[here|http://www.tiddlywiki.com/index.xml]]. You can generate an RSS feed for your own TiddlyWiki using the GenerateAnRssFeed option.
 </pre>
 </div>
-<div title="Safari" creator="psd" modifier="blaine" created="201102111107" modified="201102111310" tags="browsers issues">
+<div title="Safari" creator="psd" modifier="EricShulman" created="201102111107" modified="201208060549" tags="browsers issues" changecount="1">
 <pre>Safari can SaveChanges using the TiddlySaver Java applet.
 
 There are still some issues with Safari:
 * Permalinks with Unicode characters in them (like [[this one|http://avm.free.fr/tidlipo.html#AdaptationFran%C3%A7aise]]) don't work properly
-</pre>
+* When using Safari 6.0 on OSX &quot;Mountain Lion&quot;, TiddlySaver.jar does not get loaded properly.  To work around this, go to &quot;preferences / advanced&quot; and check &quot;Show Develop menu in menu bar&quot;, then mark &quot;Disable local file restrictions&quot; </pre>
 </div>
 <div title="SafeMode" creator="psd" modifier="jermolene" created="201102111107" modified="201110201351" tags="features">
 <pre>SafeMode can be selected by putting {{{#start:safe}}} (see StartupParameters) on the end of the TiddlyWiki URL. It stops TiddlyWiki from executing any [[Plugins]], modifying shadow tiddlers, or reading/writing cookies. It can be useful for tracking down problems caused by rogue [[Plugins]].
