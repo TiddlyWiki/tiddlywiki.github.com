@@ -39,13 +39,11 @@ ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF S
 DAMAGE.
 " />
 <!--PRE-HEAD-START-->
-
 <!--{{{-->
 <link rel='alternate' type='application/rss+xml' title='RSS' href='index.xml' />
 <!--}}}-->
 <!--PRE-HEAD-END-->
 <title>
-
 </title>
 <style id="styleArea" type="text/css">
 #saveTest {display:none;}
@@ -63,7 +61,7 @@ DAMAGE.
 <!--PRE-BODY-START-->
 <!--PRE-BODY-END-->
 <div id="copyright">
-Welcome to TiddlyWiki created by Jeremy Ruston; Copyright &copy; 2004-2007 Jeremy Ruston, Copyright &copy; 2007-2012 UnaMesa Association
+Welcome to TiddlyWiki created by Jeremy Ruston; Copyright &copy; 2004-2007 Jeremy Ruston, Copyright &copy; 2007-2011 UnaMesa Association
 </div>
 <noscript>
 <div id="javascriptWarning">
@@ -80,16 +78,8 @@ This page requires JavaScript to function properly.<br /><br />If you are using 
 <div id="contentWrapper"></div>
 <div id="contentStash"></div>
 <div id="shadowArea">
-<div title="MarkupPreHead">
-<pre>
-&lt;!--{{{--&gt;
-&lt;link rel='alternate' type='application/rss+xml' title='RSS' href='index.xml' /&gt;
-&lt;!--}}}--&gt;
-</pre>
-</div>
 <div title="ColorPalette">
-<pre>
-Background: #fff
+<pre>Background: #fff
 Foreground: #000
 PrimaryPale: #8cf
 PrimaryLight: #18f
@@ -106,9 +96,77 @@ TertiaryDark: #666
 Error: #f88
 </pre>
 </div>
+<div title="EditTemplate">
+<pre>&lt;!--{{{--&gt;
+&lt;div class='toolbar' macro='toolbar [[ToolbarCommands::EditToolbar]]'&gt;&lt;/div&gt;
+&lt;div class='title' macro='view title'&gt;&lt;/div&gt;
+&lt;div class='editor' macro='edit title'&gt;&lt;/div&gt;
+&lt;div macro='annotations'&gt;&lt;/div&gt;
+&lt;div class='editor' macro='edit text'&gt;&lt;/div&gt;
+&lt;div class='editor' macro='edit tags'&gt;&lt;/div&gt;&lt;div class='editorFooter'&gt;&lt;span macro='message views.editor.tagPrompt'&gt;&lt;/span&gt;&lt;span macro='tagChooser excludeLists'&gt;&lt;/span&gt;&lt;/div&gt;
+&lt;!--}}}--&gt;
+</pre>
+</div>
+<div title="GettingStarted">
+<pre>To get started with this blank [[TiddlyWiki]], you'll need to modify the following tiddlers:
+* [[SiteTitle]] &amp; [[SiteSubtitle]]: The title and subtitle of the site, as shown above (after saving, they will also appear in the browser title bar)
+* [[MainMenu]]: The menu (usually on the left)
+* [[DefaultTiddlers]]: Contains the names of the tiddlers that you want to appear when the TiddlyWiki is opened
+You'll also need to enter your username for signing your edits: &lt;&lt;option txtUserName&gt;&gt;
+</pre>
+</div>
+<div title="ImportTiddlers">
+<pre>&lt;&lt;importTiddlers&gt;&gt;
+</pre>
+</div>
+<div title="MarkupPreHead">
+<pre>&lt;!--{{{--&gt;
+&lt;link rel='alternate' type='application/rss+xml' title='RSS' href='index.xml' /&gt;
+&lt;!--}}}--&gt;
+</pre>
+</div>
+<div title="OptionsPanel">
+<pre>These [[InterfaceOptions]] for customising [[TiddlyWiki]] are saved in your browser
+
+Your username for signing your edits. Write it as a [[WikiWord]] (eg [[JoeBloggs]])
+
+&lt;&lt;option txtUserName&gt;&gt;
+&lt;&lt;option chkSaveBackups&gt;&gt; [[SaveBackups]]
+&lt;&lt;option chkAutoSave&gt;&gt; [[AutoSave]]
+&lt;&lt;option chkRegExpSearch&gt;&gt; [[RegExpSearch]]
+&lt;&lt;option chkCaseSensitiveSearch&gt;&gt; [[CaseSensitiveSearch]]
+&lt;&lt;option chkAnimate&gt;&gt; [[EnableAnimations]]
+
+----
+Also see [[AdvancedOptions]]
+</pre>
+</div>
+<div title="PageTemplate">
+<pre>&lt;!--{{{--&gt;
+&lt;div class='header' role='banner' macro='gradient vert [[ColorPalette::PrimaryLight]] [[ColorPalette::PrimaryMid]]'&gt;
+&lt;div class='headerShadow'&gt;
+&lt;span class='siteTitle' refresh='content' tiddler='SiteTitle'&gt;&lt;/span&gt;&amp;nbsp;
+&lt;span class='siteSubtitle' refresh='content' tiddler='SiteSubtitle'&gt;&lt;/span&gt;
+&lt;/div&gt;
+&lt;div class='headerForeground'&gt;
+&lt;span class='siteTitle' refresh='content' tiddler='SiteTitle'&gt;&lt;/span&gt;&amp;nbsp;
+&lt;span class='siteSubtitle' refresh='content' tiddler='SiteSubtitle'&gt;&lt;/span&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id='mainMenu' role='navigation' refresh='content' tiddler='MainMenu'&gt;&lt;/div&gt;
+&lt;div id='sidebar'&gt;
+&lt;div id='sidebarOptions' role='navigation' refresh='content' tiddler='SideBarOptions'&gt;&lt;/div&gt;
+&lt;div id='sidebarTabs' role='complementary' refresh='content' force='true' tiddler='SideBarTabs'&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id='displayArea' role='main'&gt;
+&lt;div id='messageArea'&gt;&lt;/div&gt;
+&lt;div id='tiddlerDisplay'&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;!--}}}--&gt;
+</pre>
+</div>
 <div title="StyleSheetColors">
-<pre>
-/*{{{*/
+<pre>/*{{{*/
 body {background:[[ColorPalette::Background]]; color:[[ColorPalette::Foreground]];}
 
 a {color:[[ColorPalette::PrimaryMid]];}
@@ -245,8 +303,7 @@ h2,h3 {border-bottom:1px solid [[ColorPalette::TertiaryLight]];}
 </pre>
 </div>
 <div title="StyleSheetLayout">
-<pre>
-/*{{{*/
+<pre>/*{{{*/
 * html .tiddler {height:1%;}
 
 body {font-size:.75em; font-family:arial,helvetica; margin:0; padding:0;}
@@ -418,8 +475,7 @@ table.listView th, table.listView td, table.listView tr {padding:0 3px 0 3px;}
 </pre>
 </div>
 <div title="StyleSheetLocale">
-<pre>
-/***
+<pre>/***
 StyleSheet for use when a translation requires any css style changes.
 This StyleSheet can be used directly by languages such as Chinese, Japanese and Korean which need larger font sizes.
 ***/
@@ -434,8 +490,7 @@ body {font-size:0.8em;}
 </pre>
 </div>
 <div title="StyleSheetPrint">
-<pre>
-/*{{{*/
+<pre>/*{{{*/
 @media print {
 #mainMenu, #sidebar, #messageArea, .toolbar, #backstageButton, #backstageArea {display: none !important;}
 #displayArea {margin: 1em 1em 0em;}
@@ -444,34 +499,8 @@ noscript {display:none;} /* Fixes a feature in Firefox 1.5.0.2 where print previ
 /*}}}*/
 </pre>
 </div>
-<div title="PageTemplate">
-<pre>
-&lt;!--{{{--&gt;
-&lt;div class='header' role='banner' macro='gradient vert [[ColorPalette::PrimaryLight]] [[ColorPalette::PrimaryMid]]'&gt;
-&lt;div class='headerShadow'&gt;
-&lt;span class='siteTitle' refresh='content' tiddler='SiteTitle'&gt;&lt;/span&gt;&amp;nbsp;
-&lt;span class='siteSubtitle' refresh='content' tiddler='SiteSubtitle'&gt;&lt;/span&gt;
-&lt;/div&gt;
-&lt;div class='headerForeground'&gt;
-&lt;span class='siteTitle' refresh='content' tiddler='SiteTitle'&gt;&lt;/span&gt;&amp;nbsp;
-&lt;span class='siteSubtitle' refresh='content' tiddler='SiteSubtitle'&gt;&lt;/span&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div id='mainMenu' role='navigation' refresh='content' tiddler='MainMenu'&gt;&lt;/div&gt;
-&lt;div id='sidebar'&gt;
-&lt;div id='sidebarOptions' role='navigation' refresh='content' tiddler='SideBarOptions'&gt;&lt;/div&gt;
-&lt;div id='sidebarTabs' role='complementary' refresh='content' force='true' tiddler='SideBarTabs'&gt;&lt;/div&gt;
-&lt;/div&gt;
-&lt;div id='displayArea' role='main'&gt;
-&lt;div id='messageArea'&gt;&lt;/div&gt;
-&lt;div id='tiddlerDisplay'&gt;&lt;/div&gt;
-&lt;/div&gt;
-&lt;!--}}}--&gt;
-</pre>
-</div>
 <div title="ViewTemplate">
-<pre>
-&lt;!--{{{--&gt;
+<pre>&lt;!--{{{--&gt;
 &lt;div class='toolbar' role='navigation' macro='toolbar [[ToolbarCommands::ViewToolbar]]'&gt;&lt;/div&gt;
 &lt;div class='title' macro='view title'&gt;&lt;/div&gt;
 &lt;div class='subtitle'&gt;&lt;span macro='view modifier link'&gt;&lt;/span&gt;, &lt;span macro='view modified date'&gt;&lt;/span&gt; (&lt;span macro='message views.wikified.createdPrompt'&gt;&lt;/span&gt; &lt;span macro='view created date'&gt;&lt;/span&gt;)&lt;/div&gt;
@@ -481,51 +510,7 @@ noscript {display:none;} /* Fixes a feature in Firefox 1.5.0.2 where print previ
 &lt;div class='tagClear'&gt;&lt;/div&gt;
 &lt;!--}}}--&gt;
 </pre>
-</div>
-<div title="EditTemplate">
-<pre>
-&lt;!--{{{--&gt;
-&lt;div class='toolbar' macro='toolbar [[ToolbarCommands::EditToolbar]]'&gt;&lt;/div&gt;
-&lt;div class='title' macro='view title'&gt;&lt;/div&gt;
-&lt;div class='editor' macro='edit title'&gt;&lt;/div&gt;
-&lt;div macro='annotations'&gt;&lt;/div&gt;
-&lt;div class='editor' macro='edit text'&gt;&lt;/div&gt;
-&lt;div class='editor' macro='edit tags'&gt;&lt;/div&gt;&lt;div class='editorFooter'&gt;&lt;span macro='message views.editor.tagPrompt'&gt;&lt;/span&gt;&lt;span macro='tagChooser excludeLists'&gt;&lt;/span&gt;&lt;/div&gt;
-&lt;!--}}}--&gt;
-</pre>
-</div>
-<div title="GettingStarted">
-<pre>
-To get started with this blank [[TiddlyWiki]], you'll need to modify the following tiddlers:
-* [[SiteTitle]] &amp; [[SiteSubtitle]]: The title and subtitle of the site, as shown above (after saving, they will also appear in the browser title bar)
-* [[MainMenu]]: The menu (usually on the left)
-* [[DefaultTiddlers]]: Contains the names of the tiddlers that you want to appear when the TiddlyWiki is opened
-You'll also need to enter your username for signing your edits: &lt;&lt;option txtUserName&gt;&gt;
-</pre>
-</div>
-<div title="OptionsPanel">
-<pre>
-These [[InterfaceOptions]] for customising [[TiddlyWiki]] are saved in your browser
-
-Your username for signing your edits. Write it as a [[WikiWord]] (eg [[JoeBloggs]])
-
-&lt;&lt;option txtUserName&gt;&gt;
-&lt;&lt;option chkSaveBackups&gt;&gt; [[SaveBackups]]
-&lt;&lt;option chkAutoSave&gt;&gt; [[AutoSave]]
-&lt;&lt;option chkRegExpSearch&gt;&gt; [[RegExpSearch]]
-&lt;&lt;option chkCaseSensitiveSearch&gt;&gt; [[CaseSensitiveSearch]]
-&lt;&lt;option chkAnimate&gt;&gt; [[EnableAnimations]]
-
-----
-Also see [[AdvancedOptions]]
-</pre>
-</div>
-<div title="ImportTiddlers">
-<pre>
-&lt;&lt;importTiddlers&gt;&gt;
-</pre>
-</div>
-</div>
+</div></div>
 <!--POST-SHADOWAREA-->
 <div id="storeArea">
 </div>
@@ -542,6 +527,7 @@ if(useJavaSaver)
 	document.write("<applet style='position:absolute;left:-1px' name='TiddlySaver' code='TiddlySaver.class' archive='TiddlySaver.jar' width='1' height='1'></applet>");
 //]]>
 </script>
+
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="jQuery.twStylesheet.js"></script>
 <script type="text/javascript" src="twcore.js"></script>
@@ -551,11 +537,16 @@ if(useJavaSaver)
 </script>
 <script id="jslibArea" type="text/javascript">
 //<![CDATA[
-
 //]]>
 </script>
 <script id="jqueryArea" type="text/javascript">
 //<![CDATA[
+//]]>
+</script>
+<script type="text/javascript">
+//<![CDATA[
+if(useJavaSaver)
+	document.write("<applet style='position:absolute;left:-1px' name='TiddlySaver' code='TiddlySaver.class' archive='TiddlySaver.jar' width='1' height='1'></applet>");
 //]]>
 </script>
 <!--POST-SCRIPT-START-->
