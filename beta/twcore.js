@@ -4951,7 +4951,6 @@ config.macros.importTiddlers.onBrowseChange = function(e)
 				netscape.security.PrivilegeManager.enablePrivilege("UniversalFileRead");
 			}
 		} catch (ex) {
-			showException(ex);
 		}
 	}
 	var fileInput = wizard.getElement("txtPath");
@@ -6430,13 +6429,57 @@ function javaUrlToFilename(url)
 	return i > 0 ? url.substring(i-1) : url;
 }
 
+/*
+ *
+ * in between when the applet has been started
+ * and the user has given permission to run the applet
+ * we get an applet object, but it doesn't have the methods
+ * we expect yet.
+ *
+ */
+var LOG_TIDDLYSAVER = true;
+function logTiddlySaverException(msg, ex) {
+	var applet = document.applets['TiddlySaver'];
+	console.log(msg + ": " + ex);
+	if (LOG_TIDDLYSAVER && applet) {
+		try {
+			console.log(msg + ": " + applet.getLastErrorMsg());
+			console.log(msg + ": " + applet.getLastErrorStackTrace());
+		} catch (ex) {}
+	}
+}
+
+function javaDebugInformation () {
+	var applet = document.applets['TiddlySaver'];
+	var what = [
+		["Java Version", applet.getJavaVersion],
+		["Last Exception", applet.getLastErrorMessage],
+		["Last Exception Stack Trace", applet.getLastErrorStackTrace],
+		["System Properties", applet.getSystemProperties] ];
+
+	function formatItem (description, method) {
+		try {
+			 result = String(method.call(applet));
+		} catch (ex) {
+			 result = String(ex)
+		}
+		return description + ": " + result
+	}
+
+	return jQuery.map(what, function (item) { return formatItem.apply(this, item) })
+			.join('\n\n')
+}
+
 function javaSaveFile(filePath,content)
 {
+	var applet = document.applets['TiddlySaver'];
 	try {
-		if(document.applets["TiddlySaver"])
-			return document.applets["TiddlySaver"].saveFile(javaUrlToFilename(filePath),"UTF-8",content);
+		if (applet && filePath) 
+			return applet.saveFile(javaUrlToFilename(filePath), "UTF-8", content);
 	} catch(ex) {
+		logTiddlySaverException("javaSaveFile", ex);
 	}
+	// is this next block working anywhere ? -- grmble
 	try {
 		var s = new java.io.PrintStream(new java.io.FileOutputStream(javaUrlToFilename(filePath)));
 		s.print(content);
@@ -6449,15 +6492,18 @@ function javaSaveFile(filePath,content)
 
 function javaLoadFile(filePath)
 {
+	var applet = document.applets['TiddlySaver'];
 	try {
-		if(document.applets["TiddlySaver"]) {
-			var ret = document.applets["TiddlySaver"].loadFile(javaUrlToFilename(filePath),"UTF-8");
+		if (applet && filePath) {
+			var ret = applet.loadFile(javaUrlToFilename(filePath),"UTF-8");
 			if(!ret)
 				return null;
 			return String(ret);
 		}
 	} catch(ex) {
+		logTiddlySaverException("javaLoadFile", ex);
 	}
+	// is this next block working anywhere ? -- grmble
 	var content = [];
 	try {
 		var r = new java.io.BufferedReader(new java.io.FileReader(javaUrlToFilename(filePath)));
@@ -6797,8 +6843,11 @@ config.defaultAdaptor = FileAdaptor.serverType;
 
 function ajaxReq(args)
 {
-	if(window.Components && window.netscape && window.netscape.security && document.location.protocol.indexOf("http") == -1)
-		window.netscape.security.PrivilegeManager.enablePrivilege("UniversalBrowserRead");
+	try {
+		if(window.Components && window.netscape && window.netscape.security && document.location.protocol.indexOf("http") == -1)
+			window.netscape.security.PrivilegeManager.enablePrivilege("UniversalBrowserRead");
+	} catch (ex) {
+	}
 	return jQuery.ajax(args);
 }
 
@@ -6841,8 +6890,11 @@ function httpReq(type,url,callback,params,headers,data,contentType,username,pass
 		options.username = username;
 	if(password)
 		options.password = password;
-	if(window.Components && window.netscape && window.netscape.security && document.location.protocol.indexOf("http") == -1)
-		window.netscape.security.PrivilegeManager.enablePrivilege("UniversalBrowserRead");
+	try {
+		if(window.Components && window.netscape && window.netscape.security && document.location.protocol.indexOf("http") == -1)
+			window.netscape.security.PrivilegeManager.enablePrivilege("UniversalBrowserRead");
+	} catch (ex) {
+	}
 	return jQuery.ajax(options);
 }
 
