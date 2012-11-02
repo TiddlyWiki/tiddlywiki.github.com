@@ -3,7 +3,7 @@
 <head>
 <script id="versionArea" type="text/javascript">
 //<![CDATA[
-var version = {title: "TiddlyWiki", major: 2, minor: 7, revision: 0, beta: 1, date: new Date("October 22, 2012"), extensions: {}};
+var version = {title: "TiddlyWiki", major: 2, minor: 7, revision: 0, beta: 2, date: new Date("November 1, 2012"), extensions: {}};
 //]]>
 </script>
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
@@ -1259,8 +1259,17 @@ var installedPlugins = []; // Information filled in when plugins are executed
 var startingUp = false; // Whether we're in the process of starting up
 var pluginInfo,tiddler; // Used to pass information to plugins in loadPlugins()
 
+// Whether this file can be saved back to the same location [Preemption]
+window.allowSave = window.allowSave || function(l)
+{
+	return (document.location.protocol == "file:");
+}
+
 // Whether to use the JavaSaver applet
-var useJavaSaver = (config.browser.isSafari || config.browser.isOpera) && (document.location.toString().substr(0,4) != "http");
+var useJavaSaver = window.allowSave() && (config.browser.isSafari || config.browser.isOpera);
+
+// Allow preemption code a chance to tweak config and useJavaSaver [Preemption]
+if (window.tweakConfig) window.tweakConfig();
 
 if(!window || !window.console) {
 	console = {tiddlywiki:true,log:function(message) {displayMessage(message);}};
@@ -1295,7 +1304,7 @@ function main()
 	t3 = new Date();
 	invokeParamifier(params,"onload");
 	t4 = new Date();
-	readOnly = (window.location.protocol == "file:") ? false : config.options.chkHttpReadOnly;
+	readOnly = window.allowSave() ? false : config.options.chkHttpReadOnly;
 	var pluginProblem = loadPlugins("systemConfig");
 	doc.trigger("loadPlugins");
 	t5 = new Date();
@@ -4693,7 +4702,7 @@ Story.prototype.loadMissingTiddler = function(title,fields,callback)
 				t.modified = t.created;
 			var dirty = store.isDirty();
 			context.tiddler = store.saveTiddler(t.title,t.title,t.text,t.modifier,t.modified,t.tags,t.fields,true,t.created,t.creator);
-			if(window.location.protocol != "file:")
+			if(!window.allowSave())
 				store.setDirty(dirty);
 			autoSaveChanges();
 		} else {
@@ -5464,13 +5473,17 @@ config.macros.importTiddlers.onBrowseChange = function(e)
 {
 	var wizard = new Wizard(this);
 	var file = this.value;
+	file = file.replace(/^C:\\fakepath\\/i,''); // remove fakepath (chrome/opera/safari)
 	if(this.files && this.files[0]) {
-		file = this.files[0].fileName;
 		try {
-			if(typeof(netscape) !== "undefined") {
-				netscape.security.PrivilegeManager.enablePrivilege("UniversalFileRead");
-			}
+			netscape.security.PrivilegeManager.enablePrivilege("UniversalFileRead");
+			file = this.files[0].fileName; // REQUIRES PRIVILEGES.. NULL otherwise
 		} catch (ex) {
+			// non-priv fallback: combine filename with path to current document
+			var path=getLocalPath(document.location.href);
+			var slashpos=path.lastIndexOf('/'); if (slashpos==-1) slashpos=path.lastIndexOf('\\'); 
+			if (slashpos!=-1) path=path.substr(0,slashpos+1); // remove filename, leave trailing 	slash
+			file=path+file;
 		}
 	}
 	var fileInput = wizard.getElement("txtPath");
@@ -5764,7 +5777,7 @@ config.macros.upgrade.onClickUpgrade = function(e)
 {
 	var me = config.macros.upgrade;
 	var w = new Wizard(this);
-	if(window.location.protocol != "file:") {
+	if(!window.allowSave()) {
 		alert(me.errorCantUpgrade);
 		return false;
 	}
@@ -6610,7 +6623,7 @@ function saveChanges(onlyIfDirty,tiddlers)
 	var t0 = new Date();
 	var msg = config.messages;
 	var originalPath = document.location.toString();
-	if(originalPath.substr(0,5) != "file:") {
+	if(!window.allowSave()) {
 		alert(msg.notFileUrlError);
 		if(store.tiddlerExists(msg.saveInstructions))
 			story.displayTiddler(null,msg.saveInstructions);
@@ -6687,7 +6700,8 @@ function saveEmpty(localPath,original,posDiv)
 		alert(config.messages.emptyFailed);
 }
 
-function getLocalPath(origPath)
+// Translate URL to local path [Preemption]
+window.getLocalPath = window.getLocalPath || function(origPath)
 {
 	var originalPath = convertUriToUTF8(origPath,config.options.txtFileSystemCharSet);
 	// Remove any location or query part of the URL
@@ -6797,12 +6811,15 @@ function generateRss()
 //-- Filesystem code
 //--
 
-function copyFile(dest,source)
+// Copy a file in filesystem [Preemption]
+window.copyFile = window.copyFile || function(dest,source)
 {
 	return config.browser.isIE ? ieCopyFile(dest,source) : false;
 }
 
-function saveFile(fileUrl,content)
+
+// Save a file in filesystem [Preemption]
+window.saveFile = window.saveFile || function(fileUrl,content)
 {
 	var r = mozillaSaveFile(fileUrl,content);
 	if(!r)
@@ -6812,7 +6829,8 @@ function saveFile(fileUrl,content)
 	return r;
 }
 
-function loadFile(fileUrl)
+// Load a file from filesystem [Preemption]
+window.loadFile = window.loadFile || function(fileUrl)
 {
 	var r = mozillaLoadFile(fileUrl);
 	if((r == null) || (r == false))
@@ -7363,12 +7381,30 @@ config.defaultAdaptor = FileAdaptor.serverType;
 
 function ajaxReq(args)
 {
-	try {
-		if(window.Components && window.netscape && window.netscape.security && document.location.protocol.indexOf("http") == -1)
-			window.netscape.security.PrivilegeManager.enablePrivilege("UniversalBrowserRead");
-	} catch (ex) {
+	if (args.url.startsWith("file")) { // LOCAL FILE
+		try {
+			// get FireFox privileges (FF14 and earlier)
+			if(window.Components && window.netscape && window.netscape.security)
+				window.netscape.security.PrivilegeManager.enablePrivilege("UniversalBrowserRead");
+		} catch (ex) {
+			// FF15+ fallback: no privs for ajax-based LOCAL file access
+			return localAjax(args);
+		}
 	}
 	return jQuery.ajax(args);
+}
+
+function localAjax(args)
+{
+	var data=loadFile(getLocalPath(args.url));
+	if (data) {
+		var jqXHR = { responseText:data };
+		args.success(data,"success",jqXHR);
+	} else {
+		var jqXHR = { message:"Cannot read local file" };
+		args.error(jqXHR,"error",0);
+	}
+	return true;
 }
 
 function httpReq(type,url,callback,params,headers,data,contentType,username,password,allowCache)
