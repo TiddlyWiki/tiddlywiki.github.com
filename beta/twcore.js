@@ -10,7 +10,6 @@
 // JSLint directives
 /*global jQuery:false, version:false */
 /*jslint bitwise:true, browser:true, confusion:true, eqeq:true, evil:true, forin:true, maxerr:100, plusplus:true, regexp:true, sloppy:true, sub:true, undef:true, unparam:true, vars:true, white:true */
-
 //--
 //-- Configuration repository
 //--
@@ -233,7 +232,6 @@ config.shadowTiddlers = {
 	WindowTitle: '<<tiddler SiteTitle>> - <<tiddler SiteSubtitle>>'
 };
 
-
 // Browser detection... In a very few places, there's nothing else for it but to know what browser we're using.
 config.userAgent = navigator.userAgent.toLowerCase();
 config.browser = {
@@ -263,7 +261,6 @@ merge(config.glyphs,{
 		bentArrowRight: ["\u2192","\u21AA"]
 	}
 });
-
 
 //--
 //-- Translateable strings
@@ -720,7 +717,6 @@ merge(config.annotations,{
 	ToolbarCommands: "This shadow tiddler determines which commands are shown in tiddler toolbars",
 	ViewTemplate: "The HTML template in this shadow tiddler determines how tiddlers look"
 	});
-
 //--
 //-- Main
 //--
@@ -965,7 +961,6 @@ function isPluginEnabled(plugin)
 	return true;
 }
 
-
 //--
 //-- Paramifiers
 //--
@@ -1100,7 +1095,6 @@ config.paramifiers.filter = {
 	}
 };
 
-
 //--
 //-- Formatter helpers
 //--
@@ -1190,7 +1184,6 @@ config.formatterHelpers = {
 	}
 
 };
-
 
 //--
 //-- Standard formatters
@@ -1720,7 +1713,6 @@ config.formatters = [
 
 ];
 
-
 //--
 //-- Wikifier
 //--
@@ -1922,7 +1914,6 @@ function highlightify(source,output,highlightRegExp,tiddler)
 		wikifier.outputText(output,0,source.length);
 	}
 }
-
 
 //--
 //-- Macro definitions
@@ -2488,7 +2479,6 @@ config.macros.annotations.handler = function(place,macroName,params,wikifier,par
 	var text = a.format([title]);
 	wikify(text,createTiddlyElement(place,"div",null,"annotation"),null,tiddler);
 };
-
 //--
 //-- NewTiddler and NewJournal macros
 //--
@@ -2569,7 +2559,6 @@ config.macros.newJournal.handler = function(place,macroName,params,wikifier,para
 		config.macros.newTiddler.createNewTiddlerButton(place,title,params,this.label,this.prompt,this.accessKey,"text",true);
 	}
 };
-
 
 //--
 //-- Search macro
@@ -2652,7 +2641,6 @@ config.macros.search.onFocus = function(e)
 	this.select();
 };
 
-
 //--
 //-- Tabs macro
 //--
@@ -2717,7 +2705,6 @@ config.macros.tabs.switchTab = function(tabset,tab)
 		}
 	}
 };
-
 
 //--
 //-- Tiddler toolbar
@@ -2876,7 +2863,6 @@ config.macros.toolbar.customCommand = function(place,command,wikifier,tiddler)
 {
 };
 
-
 //--
 //-- Menu and toolbar commands
 //--
@@ -2986,7 +2972,6 @@ config.commands.fields.handlePopup = function(popup,title)
 	else
 		createTiddlyElement(popup,"div",null,null,this.emptyText);
 };
-
 
 //--
 //-- Tiddler() object
@@ -3192,7 +3177,6 @@ Tiddler.prototype.getAdaptor = function()
 	var serverType = this.getServerType();
 	return serverType ? new config.adaptors[serverType]() : null;
 };
-
 
 //--
 //-- TiddlyWiki instance contains TiddlerS
@@ -3812,7 +3796,6 @@ TiddlyWiki.prototype.sortTiddlers = function(tiddlers,field)
 	return tiddlers;
 };
 
-
 //--
 //-- Filter a list of tiddlers
 //--
@@ -3870,7 +3853,6 @@ TiddlyWiki.prototype.filterTiddlers = function(filter)
 	}
 	return results;
 };
-
 // Returns true if path is a valid field name (path),
 // i.e. a sequence of identifiers, separated by "."
 TiddlyWiki.isValidFieldName = function(name)
@@ -4043,7 +4025,6 @@ TiddlyWiki.prototype.forEachField = function(tiddler,callback,onlyExtendedFields
 	}
 	return undefined;
 };
-
 
 //--
 //-- Story functions
@@ -4662,7 +4643,6 @@ Story.prototype.switchTheme = function(theme)
 	}
 };
 
-
 //--
 //-- Backstage
 //--
@@ -4849,7 +4829,6 @@ config.macros.backstage.handler = function(place,macroName,params)
 	if(backstageTask)
 		createTiddlyButton(place,backstageTask.text,backstageTask.tooltip,function(e) {backstage.switchTab(params[0]); return false;});
 };
-
 
 //--
 //-- ImportTiddlers macro
@@ -5240,7 +5219,6 @@ config.macros.importTiddlers.onGetTiddler = function(context,wizard)
 	}
 };
 
-
 //--
 //-- Upgrade macro
 //--
@@ -5358,7 +5336,6 @@ function upgradeFrom(path)
 	window.location = window.location.toString().substr(0,window.location.toString().lastIndexOf("?"));
 }
 
-
 //--
 //-- Manager UI for groups of tiddlers
 //--
@@ -5458,7 +5435,6 @@ config.macros.plugins.doDelete = function(e)
 	}
 };
 
-
 //--
 //-- Message area
 //--
@@ -5502,7 +5478,6 @@ function clearMessage()
 	}
 	return false;
 }
-
 
 //--
 //-- Refresh mechanism
@@ -5686,7 +5661,6 @@ function refreshAll()
 	refreshStyles(config.refresherData.styleSheet);
 	refreshStyles("StyleSheetPrint");
 }
-
 
 //--
 //-- Option handling
@@ -5991,7 +5965,6 @@ config.macros.options.onChangeUnknown = function(e)
 	return false;
 };
 
-
 //--
 //-- Saving
 //--
@@ -6228,7 +6201,6 @@ function getBackupPath(localPath,title,extension)
 	return backupPath;
 }
 
-
 //--
 //-- RSS Saving
 //--
@@ -6285,7 +6257,6 @@ function generateRss()
 	// Save it all
 	return s.join("\n");
 }
-
 
 //--
 //-- Filesystem code
@@ -6535,7 +6506,6 @@ function javaLoadFile(filePath)
 	return content.join("\n");
 }
 
-
 //--
 //-- Filesystem utilities
 //--
@@ -6633,7 +6603,6 @@ function convertUriToUTF8(uri,charSet)
 	}
 	return converter.convertURISpecToUTF8(uri,charSet);
 }
-
 //--
 //-- Server adaptor base class
 //--
@@ -6702,7 +6671,6 @@ AdaptorBase.prototype.openWorkspace = function(workspace,context,userParams,call
 		window.setTimeout(function() {callback(context,userParams);},10);
 	return true;
 };
-
 
 //--
 //-- Server adaptor for talking to static TiddlyWiki files
@@ -6854,7 +6822,6 @@ config.adaptors[FileAdaptor.serverType] = FileAdaptor;
 
 config.defaultAdaptor = FileAdaptor.serverType;
 
-
 //--
 //-- HTTP request code
 //--
@@ -6933,7 +6900,6 @@ function httpReq(type,url,callback,params,headers,data,contentType,username,pass
 	}
 	return jQuery.ajax(options);
 }
-
 //--
 //-- TiddlyWiki-specific utility functions
 //--
@@ -7203,7 +7169,6 @@ function createTiddlyDropDown(place,onchange,options,defaultValue)
 	return sel;
 }
 
-
 //--
 //-- TiddlyWiki-specific popup utility functions
 //--
@@ -7316,7 +7281,6 @@ function createTiddlyError(place,title,text)
 	var btn = createTiddlyButton(place,title,null,onClickError,"errorButton");
 	if(text) btn.setAttribute("errorText",text);
 }
-
 //-
 //- Animation engine
 //-
@@ -7362,7 +7326,6 @@ Animator.slowInSlowOut = function(progress)
 {
 	return(1-((Math.cos(progress * Math.PI)+1)/2));
 };
-
 
 //--
 //-- Morpher animation
@@ -7435,7 +7398,6 @@ Morpher.prototype.tick = function()
 	return true;
 };
 
-
 //--
 //-- Zoomer animation
 //--
@@ -7457,7 +7419,6 @@ function Zoomer(text,startElement,targetElement,unused)
 	return new Morpher(e,config.animDuration,p,c);
 }
 
-
 //--
 //-- Scroller animation
 //--
@@ -7467,7 +7428,6 @@ function Scroller(targetElement)
 	var p = [{style: '-tw-vertScroll', start: findScrollY(), end: ensureVisible(targetElement)}];
 	return new Morpher(targetElement,config.animDuration,p);
 }
-
 
 //--
 //-- Slider animation
@@ -7503,7 +7463,6 @@ function Slider(element,opening,unused,deleteMode)
 	}
 	return new Morpher(element,config.animDuration,p,c);
 }
-
 
 //--
 //-- Popup menu
@@ -7603,7 +7562,6 @@ Popup.removeFrom = function(from)
 	Popup.stack = Popup.stack.slice(0,from);
 };
 
-
 //--
 //-- Wizard support
 //--
@@ -7672,7 +7630,6 @@ Wizard.prototype.getElement = function(name)
 {
 	return this.formElem.elements[name];
 };
-
 
 //--
 //-- ListView gadget
@@ -7938,7 +7895,6 @@ ListView.columnTypes.TiddlerLink = {
 		}
 };
 
-
 //--
 //-- Augmented methods for the JavaScript Array() object
 //--
@@ -8041,7 +7997,6 @@ Array.prototype.map = function(fn,thisObj)
 	}
 	return a;
 };}
-
 
 //--
 //-- Augmented methods for the JavaScript String() object
@@ -8323,7 +8278,6 @@ function getFlag(params,name,defaultValue)
 	return !!getParam(params,name,defaultValue);
 }
 
-
 //--
 //-- Augmented methods for the JavaScript Date() object
 //--
@@ -8443,7 +8397,6 @@ Date.convertFromYYYYMMDDHHMMSSMMM = function(d)
 			parseInt(d.substr(14,3)||"000",10)));
 };
 
-
 //--
 //-- RGB colour object
 //--
@@ -8502,7 +8455,6 @@ RGB.prototype.toString = function()
 			("0" + Math.floor(clamp(this.g,0,1) * 255).toString(16)).right(2) +
 			("0" + Math.floor(clamp(this.b,0,1) * 255).toString(16)).right(2);
 };
-
 
 //--
 //-- DOM utilities - many derived from www.quirksmode.org
@@ -8774,7 +8726,6 @@ function removeStyleSheet(id)
 	jQuery.twStylesheet.remove({id:id});
 }
 
-
 //--
 //-- LoaderBase and SaverBase
 //--
@@ -8818,7 +8769,6 @@ SaverBase.prototype.externalize = function(store)
 	}
 	return results.join("\n");
 };
-
 
 //--
 //-- TW21Loader (inherits from LoaderBase)
@@ -8874,7 +8824,6 @@ TW21Loader.prototype.internalizeTiddler = function(store,tiddler,title,node)
 	tiddler.assign(title,text,modifier,modified,tags,created,fields,creator);
 	return tiddler;
 };
-
 
 //--
 //-- TW21Saver (inherits from SaverBase)

@@ -2,46 +2,46 @@
 <rss version="2.0">
 <channel>
 <title>TiddlyWiki</title>
-<description>Pre-release build v2.7.0 (beta 2) October, 2012</description>
+<description>Pre-release build v2.7.1 (beta 1) October, 2012</description>
 <language>en</language>
-<copyright>Copyright 2012 EricShulman</copyright>
-<pubDate>Fri, 02 Nov 2012 05:16:59 GMT</pubDate>
-<lastBuildDate>Fri, 02 Nov 2012 05:16:59 GMT</lastBuildDate>
+<copyright>Copyright 2013 EricShulman</copyright>
+<pubDate>Fri, 01 Mar 2013 06:45:18 GMT</pubDate>
+<lastBuildDate>Fri, 01 Mar 2013 06:45:18 GMT</lastBuildDate>
 <docs>http://blogs.law.harvard.edu/tech/rss</docs>
-<generator>TiddlyWiki 2.7.0 (beta 2)</generator>
+<generator>TiddlyWiki 2.7.1 (beta 1)</generator>
 <item>
 <title>WhatsNew</title>
-<description>The following is a summary of notable user-level feature changes in TiddlyWiki v&lt;span&gt;2.7.0 (beta 2)&lt;/span&gt;:&lt;br&gt;&lt;ul&gt;&lt;li&gt;&lt;strong&gt;&lt;a tiddlylink=&quot;FireFox&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#FireFox&quot; href=&quot;null#FireFox&quot; class=&quot;externalLink null&quot;&gt;FireFox&lt;/a&gt; &quot;privilege&quot; handling&lt;/strong&gt;&lt;br&gt;Catch and supress &quot;privilege&quot; error messages in the &lt;a tiddlylink=&quot;TWCore&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#TWCore&quot; href=&quot;null#TWCore&quot; class=&quot;externalLink null&quot;&gt;TWCore&lt;/a&gt; backstage Import functions that use &lt;a tiddlylink=&quot;FireFox&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#FireFox&quot; href=&quot;null#FireFox&quot; class=&quot;externalLink null&quot;&gt;FireFox&lt;/a&gt; local file I/O or &quot;ajax&quot; remote (http) file access.&lt;/li&gt;&lt;li&gt;&lt;strong&gt;&lt;a tiddlylink=&quot;TiddlySaver&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#TiddlySaver&quot; href=&quot;null#TiddlySaver&quot; class=&quot;externalLink null&quot;&gt;TiddlySaver&lt;/a&gt;&lt;/strong&gt;&lt;br&gt;Changes in handling for filenames with Unicode/&lt;a tiddlylink=&quot;UTF-8&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#UTF-8&quot; href=&quot;null#UTF-8&quot; class=&quot;externalLink null&quot;&gt;UTF-8&lt;/a&gt; characters.  Updated new signed security certificate.&lt;/li&gt;&lt;li&gt;&lt;strong&gt;backstage import&lt;/strong&gt;&lt;br&gt;Fixes for importing tiddlers from local files (must be in same directory as current document)&lt;/li&gt;&lt;/ul&gt;</description>
+<description>The following is a summary of notable user-level feature changes in TiddlyWiki v&lt;span&gt;2.7.1 (beta 1)&lt;/span&gt;:&lt;br&gt;&lt;ul&gt;&lt;li&gt;&lt;strong&gt;&lt;a tiddlylink=&quot;FireFox&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#FireFox&quot; href=&quot;null#FireFox&quot; class=&quot;externalLink null&quot;&gt;FireFox&lt;/a&gt; &quot;privilege&quot; handling&lt;/strong&gt;&lt;br&gt;Catch and supress &quot;privilege&quot; error messages in the &lt;a tiddlylink=&quot;TWCore&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#TWCore&quot; href=&quot;null#TWCore&quot; class=&quot;externalLink null&quot;&gt;TWCore&lt;/a&gt; backstage Import functions that use &lt;a tiddlylink=&quot;FireFox&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#FireFox&quot; href=&quot;null#FireFox&quot; class=&quot;externalLink null&quot;&gt;FireFox&lt;/a&gt; local file I/O or &quot;ajax&quot; remote (http) file access.&lt;/li&gt;&lt;li&gt;&lt;strong&gt;&lt;a tiddlylink=&quot;TiddlySaver&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#TiddlySaver&quot; href=&quot;null#TiddlySaver&quot; class=&quot;externalLink null&quot;&gt;TiddlySaver&lt;/a&gt;&lt;/strong&gt;&lt;br&gt;Changes in handling for filenames with Unicode/&lt;a tiddlylink=&quot;UTF-8&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#UTF-8&quot; href=&quot;null#UTF-8&quot; class=&quot;externalLink null&quot;&gt;UTF-8&lt;/a&gt; characters.  Updated new signed security certificate.&lt;/li&gt;&lt;li&gt;&lt;strong&gt;backstage import&lt;/strong&gt;&lt;br&gt;Fixes for importing tiddlers from local files (must be in same directory as current document)&lt;/li&gt;&lt;/ul&gt;</description>
 <link>null#WhatsNew</link>
-<pubDate>Thu, 01 Nov 2012 07:00:00 GMT</pubDate>
+<pubDate>Fri, 01 Mar 2013 08:00:00 GMT</pubDate>
 
 </item>
 <item>
 <title>SiteTitle</title>
 <description>&lt;a tiddlylink=&quot;TiddlyWiki&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#TiddlyWiki&quot; href=&quot;null#TiddlyWiki&quot; class=&quot;externalLink null&quot;&gt;TiddlyWiki&lt;/a&gt;</description>
 <link>null#SiteTitle</link>
-<pubDate>Thu, 01 Nov 2012 07:00:00 GMT</pubDate>
+<pubDate>Fri, 01 Mar 2013 08:00:00 GMT</pubDate>
 
 </item>
 <item>
 <title>SiteSubtitle</title>
-<description>&lt;strong&gt;Pre-release build v&lt;span&gt;2.7.0 (beta 2)&lt;/span&gt; October, 2012&lt;/strong&gt;</description>
+<description>&lt;strong&gt;Pre-release build v&lt;span&gt;2.7.1 (beta 1)&lt;/span&gt; October, 2012&lt;/strong&gt;</description>
 <link>null#SiteSubtitle</link>
-<pubDate>Thu, 01 Nov 2012 07:00:00 GMT</pubDate>
+<pubDate>Fri, 01 Mar 2013 08:00:00 GMT</pubDate>
 
 </item>
 <item>
 <title>HelloThere</title>
-<description>This is the &lt;a tiddlylink=&quot;PRE-RELEASE&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#PRE-RELEASE&quot; href=&quot;null#PRE-RELEASE&quot; class=&quot;externalLink null&quot;&gt;PRE-RELEASE&lt;/a&gt; build of TiddlyWiki v&lt;span&gt;2.7.0 (beta 2)&lt;/span&gt;, and incorporates all changes currently committed to the &lt;a target=&quot;_blank&quot; title=&quot;External link to http://github.com/tiddlywiki/tiddlywiki&quot; href=&quot;http://github.com/tiddlywiki/tiddlywiki&quot; class=&quot;externalLink&quot;&gt;TiddlyWiki source repository&lt;/a&gt;, including several enhancements to key functions and objects, as well as an internal update to use a newer revision of jQuery (now v1.8.1)&lt;br&gt;&lt;br&gt;TiddlyWiki &quot;Classic&quot; uses TiddlyWiki5-based tools to assemble and output the core system, rather than the Ruby-based ginsu/cook utilities that were previously used.  The ability of TiddlyWiki5 to directly create TiddlyWiki Classic documents ensures a robust and reliable future for the existing &quot;installed base&quot; of TiddlyWiki, even as the community migrates to using the new power and flexiblity of TiddlyWiki5.&lt;br&gt;&lt;br&gt;You can view/download versions of TiddlyWiki from the following locations:&lt;br&gt;&lt;table class=&quot;twtable&quot;&gt;&lt;tbody&gt;&lt;tr class=&quot;evenRow&quot;&gt;&lt;td&gt;current release of TiddlyWiki Classic&lt;/td&gt;&lt;td&gt;&lt;a target=&quot;_blank&quot; title=&quot;External link to http://www.TiddlyWiki.com/&quot; href=&quot;http://www.TiddlyWiki.com/&quot; class=&quot;externalLink&quot;&gt;http://www.TiddlyWiki.com/&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr class=&quot;oddRow&quot;&gt;&lt;td&gt;latest pre-release of TiddlyWiki Classic&lt;/td&gt;&lt;td&gt;&lt;a target=&quot;_blank&quot; title=&quot;External link to http://www.TiddlyWiki.com/beta/&quot; href=&quot;http://www.TiddlyWiki.com/beta/&quot; class=&quot;externalLink&quot;&gt;http://www.TiddlyWiki.com/beta/&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr class=&quot;evenRow&quot;&gt;&lt;td&gt;latest pre-release of TiddlyWiki5&lt;/td&gt;&lt;td&gt;&lt;a target=&quot;_blank&quot; title=&quot;External link to http://five.TiddlyWiki.com/&quot; href=&quot;http://five.TiddlyWiki.com/&quot; class=&quot;externalLink&quot;&gt;http://five.TiddlyWiki.com/&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;</description>
+<description>This is the &lt;a tiddlylink=&quot;PRE-RELEASE&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#PRE-RELEASE&quot; href=&quot;null#PRE-RELEASE&quot; class=&quot;externalLink null&quot;&gt;PRE-RELEASE&lt;/a&gt; build of TiddlyWiki v&lt;span&gt;2.7.1 (beta 1)&lt;/span&gt;, and incorporates all changes currently committed to the &lt;a target=&quot;_blank&quot; title=&quot;External link to http://github.com/tiddlywiki/tiddlywiki&quot; href=&quot;http://github.com/tiddlywiki/tiddlywiki&quot; class=&quot;externalLink&quot;&gt;TiddlyWiki source repository&lt;/a&gt;, including several enhancements to key functions and objects, as well as an internal update to use a newer revision of jQuery (now v1.8.1)&lt;br&gt;&lt;br&gt;TiddlyWiki &quot;Classic&quot; uses TiddlyWiki5-based tools to assemble and output the core system, rather than the Ruby-based ginsu/cook utilities that were previously used.  The ability of TiddlyWiki5 to directly create TiddlyWiki Classic documents ensures a robust and reliable future for the existing &quot;installed base&quot; of TiddlyWiki, even as the community migrates to using the new power and flexiblity of TiddlyWiki5.&lt;br&gt;&lt;br&gt;You can view/download versions of TiddlyWiki from the following locations:&lt;br&gt;&lt;table class=&quot;twtable&quot;&gt;&lt;tbody&gt;&lt;tr class=&quot;evenRow&quot;&gt;&lt;td&gt;current release of TiddlyWiki Classic&lt;/td&gt;&lt;td&gt;&lt;a target=&quot;_blank&quot; title=&quot;External link to http://www.TiddlyWiki.com/&quot; href=&quot;http://www.TiddlyWiki.com/&quot; class=&quot;externalLink&quot;&gt;http://www.TiddlyWiki.com/&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr class=&quot;oddRow&quot;&gt;&lt;td&gt;latest pre-release of TiddlyWiki Classic&lt;/td&gt;&lt;td&gt;&lt;a target=&quot;_blank&quot; title=&quot;External link to http://www.TiddlyWiki.com/beta/&quot; href=&quot;http://www.TiddlyWiki.com/beta/&quot; class=&quot;externalLink&quot;&gt;http://www.TiddlyWiki.com/beta/&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr class=&quot;evenRow&quot;&gt;&lt;td&gt;latest pre-release of TiddlyWiki5&lt;/td&gt;&lt;td&gt;&lt;a target=&quot;_blank&quot; title=&quot;External link to http://five.TiddlyWiki.com/&quot; href=&quot;http://five.TiddlyWiki.com/&quot; class=&quot;externalLink&quot;&gt;http://five.TiddlyWiki.com/&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;</description>
 <link>null#HelloThere</link>
-<pubDate>Thu, 01 Nov 2012 07:00:00 GMT</pubDate>
+<pubDate>Fri, 01 Mar 2013 08:00:00 GMT</pubDate>
 
 </item>
 <item>
 <title>DefaultTiddlers</title>
 <description>&lt;a tiddlylink=&quot;HelloThere&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#HelloThere&quot; href=&quot;null#HelloThere&quot; class=&quot;externalLink null&quot;&gt;HelloThere&lt;/a&gt;&lt;br&gt;&lt;a tiddlylink=&quot;WhatsNew&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#WhatsNew&quot; href=&quot;null#WhatsNew&quot; class=&quot;externalLink null&quot;&gt;WhatsNew&lt;/a&gt;&lt;br&gt;</description>
 <link>null#DefaultTiddlers</link>
-<pubDate>Thu, 01 Nov 2012 07:00:00 GMT</pubDate>
+<pubDate>Fri, 01 Mar 2013 08:00:00 GMT</pubDate>
 
 </item>
 </channel>
