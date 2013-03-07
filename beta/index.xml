@@ -5,15 +5,22 @@
 <description>Pre-release build v2.7.1 (beta 1) March, 2013</description>
 <language>en</language>
 <copyright>Copyright 2013 EricShulman</copyright>
-<pubDate>Wed, 06 Mar 2013 23:06:16 GMT</pubDate>
-<lastBuildDate>Wed, 06 Mar 2013 23:06:16 GMT</lastBuildDate>
+<pubDate>Thu, 07 Mar 2013 07:17:23 GMT</pubDate>
+<lastBuildDate>Thu, 07 Mar 2013 07:17:23 GMT</lastBuildDate>
 <docs>http://blogs.law.harvard.edu/tech/rss</docs>
 <generator>TiddlyWiki 2.7.1 (beta 1)</generator>
 <item>
 <title>WhatsNew</title>
-<description>This revision corrects a Unicode/UTF-8 character encoding error that was present within the body of the jQuery 1.8.1 code that was used to build TW2.7.0.  TiddlyWiki documents that contain UTF-8 encoded characters (e.g., content in a non-Latin language) should now be properly recognized and processed without automatic (and incorrect) conversion of multi-byte sequences that had previously resulted in &quot;mangled&quot; content.&lt;br&gt;</description>
+<description>This revision includes only ONE significant change: the internal embedded copy of the jQuery library has been updated from v1.8.1 to v1.8.3 in order to correct a Unicode/&lt;a tiddlylink=&quot;UTF-8&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#UTF-8&quot; href=&quot;null#UTF-8&quot; class=&quot;externalLink null&quot;&gt;UTF-8&lt;/a&gt; character encoding error that was present within &lt;a tiddlylink=&quot;TW2&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#TW2&quot; href=&quot;null#TW2&quot; class=&quot;externalLink null&quot;&gt;TW2&lt;/a&gt;.7.0.  This update should allow documents containing &lt;a tiddlylink=&quot;UTF-8&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#UTF-8&quot; href=&quot;null#UTF-8&quot; class=&quot;externalLink null&quot;&gt;UTF-8&lt;/a&gt; encoded characters (e.g., content in a non-Latin language) to be more consistently recognized and saved/loaded without 'mangling' those &lt;a tiddlylink=&quot;UTF-8&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#UTF-8&quot; href=&quot;null#UTF-8&quot; class=&quot;externalLink null&quot;&gt;UTF-8&lt;/a&gt; encoded characters.</description>
 <link>null#WhatsNew</link>
-<pubDate>Fri, 01 Mar 2013 08:00:00 GMT</pubDate>
+<pubDate>Thu, 07 Mar 2013 07:17:17 GMT</pubDate>
+
+</item>
+<item>
+<title>HelloThere</title>
+<description>This is the &lt;a tiddlylink=&quot;PRE-RELEASE&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#PRE-RELEASE&quot; href=&quot;null#PRE-RELEASE&quot; class=&quot;externalLink null&quot;&gt;PRE-RELEASE&lt;/a&gt; build of TiddlyWiki v&lt;span&gt;2.7.1 (beta 1)&lt;/span&gt;, and includes an internal update to use a newer revision of jQuery (from v1.8.1 to v1.8.3).&lt;br&gt;&lt;br&gt;&lt;span style=&quot;font-size: 24pt; display: block; text-align: center;&quot;&gt;&lt;a target=&quot;_blank&quot; title=&quot;External link to http://www.TiddlyWiki.com/beta/empty.zip&quot; href=&quot;http://www.TiddlyWiki.com/beta/empty.zip&quot; class=&quot;externalLink&quot;&gt;download now&lt;/a&gt;&lt;/span&gt;&lt;br&gt;&lt;br&gt;TiddlyWiki &quot;Classic&quot; uses TiddlyWiki5-based tools to assemble and output the core system, rather than the Ruby-based ginsu/cook utilities that were previously used.  The ability of TiddlyWiki5 to directly create TiddlyWiki Classic documents ensures a robust and reliable future for the existing &quot;installed base&quot; of TiddlyWiki, even as the community migrates to using the new power and flexiblity of TiddlyWiki5.&lt;br&gt;&lt;br&gt;You can view versions of TiddlyWiki from the following locations:&lt;br&gt;&lt;table class=&quot;twtable&quot;&gt;&lt;tbody&gt;&lt;tr class=&quot;evenRow&quot;&gt;&lt;td&gt;current release of TiddlyWiki Classic&lt;/td&gt;&lt;td&gt;&lt;a target=&quot;_blank&quot; title=&quot;External link to http://www.TiddlyWiki.com/&quot; href=&quot;http://www.TiddlyWiki.com/&quot; class=&quot;externalLink&quot;&gt;http://www.TiddlyWiki.com/&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr class=&quot;oddRow&quot;&gt;&lt;td&gt;latest pre-release of TiddlyWiki Classic&lt;/td&gt;&lt;td&gt;&lt;a target=&quot;_blank&quot; title=&quot;External link to http://www.TiddlyWiki.com/beta/&quot; href=&quot;http://www.TiddlyWiki.com/beta/&quot; class=&quot;externalLink&quot;&gt;http://www.TiddlyWiki.com/beta/&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr class=&quot;evenRow&quot;&gt;&lt;td&gt;latest pre-release of TiddlyWiki5&lt;/td&gt;&lt;td&gt;&lt;a target=&quot;_blank&quot; title=&quot;External link to http://five.TiddlyWiki.com/&quot; href=&quot;http://five.TiddlyWiki.com/&quot; class=&quot;externalLink&quot;&gt;http://five.TiddlyWiki.com/&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;br&gt;</description>
+<link>null#HelloThere</link>
+<pubDate>Thu, 07 Mar 2013 07:17:06 GMT</pubDate>
 
 </item>
 <item>
@@ -27,13 +34,6 @@
 <title>SiteSubtitle</title>
 <description>&lt;strong&gt;Pre-release build v&lt;span&gt;2.7.1 (beta 1)&lt;/span&gt; March, 2013&lt;/strong&gt;</description>
 <link>null#SiteSubtitle</link>
-<pubDate>Fri, 01 Mar 2013 08:00:00 GMT</pubDate>
-
-</item>
-<item>
-<title>HelloThere</title>
-<description>This is the &lt;a tiddlylink=&quot;PRE-RELEASE&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#PRE-RELEASE&quot; href=&quot;null#PRE-RELEASE&quot; class=&quot;externalLink null&quot;&gt;PRE-RELEASE&lt;/a&gt; build of TiddlyWiki v&lt;span&gt;2.7.1 (beta 1)&lt;/span&gt;, and includes an internal update to use a newer revision of jQuery (from v1.8.1 to v1.8.3).&lt;br&gt;&lt;br&gt;&lt;span style=&quot;font-size: 24pt; display: block; text-align: center;&quot;&gt;&lt;a target=&quot;_blank&quot; title=&quot;External link to http://www.TiddlyWiki.com/beta/empty.zip&quot; href=&quot;http://www.TiddlyWiki.com/beta/empty.zip&quot; class=&quot;externalLink&quot;&gt;download now&lt;/a&gt;&lt;/span&gt;&lt;br&gt;&lt;br&gt;TiddlyWiki &quot;Classic&quot; uses TiddlyWiki5-based tools to assemble and output the core system, rather than the Ruby-based ginsu/cook utilities that were previously used.  The ability of TiddlyWiki5 to directly create TiddlyWiki Classic documents ensures a robust and reliable future for the existing &quot;installed base&quot; of TiddlyWiki, even as the community migrates to using the new power and flexiblity of TiddlyWiki5.&lt;br&gt;&lt;br&gt;You can view versions of TiddlyWiki from the following locations:&lt;br&gt;&lt;table class=&quot;twtable&quot;&gt;&lt;tbody&gt;&lt;tr class=&quot;evenRow&quot;&gt;&lt;td&gt;current release of TiddlyWiki Classic&lt;/td&gt;&lt;td&gt;&lt;a target=&quot;_blank&quot; title=&quot;External link to http://www.TiddlyWiki.com/&quot; href=&quot;http://www.TiddlyWiki.com/&quot; class=&quot;externalLink&quot;&gt;http://www.TiddlyWiki.com/&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr class=&quot;oddRow&quot;&gt;&lt;td&gt;latest pre-release of TiddlyWiki Classic&lt;/td&gt;&lt;td&gt;&lt;a target=&quot;_blank&quot; title=&quot;External link to http://www.TiddlyWiki.com/beta/&quot; href=&quot;http://www.TiddlyWiki.com/beta/&quot; class=&quot;externalLink&quot;&gt;http://www.TiddlyWiki.com/beta/&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr class=&quot;evenRow&quot;&gt;&lt;td&gt;latest pre-release of TiddlyWiki5&lt;/td&gt;&lt;td&gt;&lt;a target=&quot;_blank&quot; title=&quot;External link to http://five.TiddlyWiki.com/&quot; href=&quot;http://five.TiddlyWiki.com/&quot; class=&quot;externalLink&quot;&gt;http://five.TiddlyWiki.com/&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;br&gt;</description>
-<link>null#HelloThere</link>
 <pubDate>Fri, 01 Mar 2013 08:00:00 GMT</pubDate>
 
 </item>
