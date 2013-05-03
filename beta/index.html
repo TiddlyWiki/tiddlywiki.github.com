@@ -3,7 +3,7 @@
 <head>
 <script id="versionArea" type="text/javascript">
 //<![CDATA[
-var version = {title: "TiddlyWiki", major: 2, minor: 7, revision: 2, beta: 1, date: new Date("April 17, 2013"), extensions: {}};
+var version = {title: "TiddlyWiki", major: 2, minor: 7, revision: 2, beta: 1, date: new Date("April 30, 2013"), extensions: {}};
 
 //]]>
 </script>
@@ -527,7 +527,7 @@ WhatsNew
 </pre>
 </div>
 <div title="HelloThere" modifier="EricShulman" type="text/x-tiddlywiki">
-<pre>This is the PRE-RELEASE build of ~TiddlyWiki v&lt;&lt;version&gt;&gt;, and includes an internal update to use a newer revision of jQuery (from v1.8.1 to v1.8.3).
+<pre>This is the ~PRE-RELEASE &quot;beta&quot; build of ~TiddlyWiki v&lt;&lt;version&gt;&gt;.
 
 @@font-size:24pt;display:block;text-align:center;[[download now|http://www.TiddlyWiki.com/beta/empty.zip]]@@
 
@@ -547,7 +547,16 @@ You can view versions of ~TiddlyWiki from the following locations:
 <pre>TiddlyWiki</pre>
 </div>
 <div title="WhatsNew" modifier="EricShulman" type="text/x-tiddlywiki">
-<pre>This is the initial beta release of TW2.7.2 and incorporates only ''content changes''.  Subsequent beta releases will include changes to TW core functions and features.</pre>
+<pre>This revision includes the following changes:
+*{{block{
+Backstage&gt;import: now uses ~HTML5 &quot;~FileReader&quot; API whenever available (currently supported by Chrome, ~FireFox 20+, etc.).  You can now successfully ''//select and import files that are outside of the current folder.//''  See https://github.com/TiddlyWiki/tiddlywiki/issues/116.  
+&gt;Note: this change only applies when you use the &quot;browse&quot; (or &quot;select file&quot;) button to choose a document from your local filesystem.   If you manually enter (or paste) a local &quot;file://&quot; URL into the import form, the previous &quot;loadFile&quot; local file I/O handling is used, which requires the ~TiddlyFox addon (for ~FireFox 15+), or the ~TiddlySaver java applet (for Chrome, Safari, and other Webkit-based browsers).  Internet Explorer uses it's own native &quot;~ActiveX&quot; file I/O functions.
+}}}
+*{{block{
+Internet Explorer: when using ~IE10 (the current version of IE), special-case handling of embedded newlines in ~PRE-formatted blocks is no longer applied.  See https://github.com/TiddlyWiki/tiddlywiki/issues/118.  This corrects a formatting/display error introduced by changes in ~IE10.
+&gt;Note: this change only applies to ~IE10 and above; special handling is still applied to embedded newlines in IE9 and earlier so there should be no change to existing content when viewed on IE9 or earlier.
+}}}
+</pre>
 </div>
 </div>
 <!--POST-STOREAREA-->
@@ -1313,6 +1322,7 @@ if(!window || !window.console) {
 // Starting up
 function main()
 {
+
 	var t10,t9,t8,t7,t6,t5,t4,t3,t2,t1,t0 = new Date();
 	startingUp = true;
 	var doc = jQuery(document);
@@ -1720,7 +1730,7 @@ config.formatterHelpers = {
 		var lookaheadMatch = this.lookaheadRegExp.exec(w.source);
 		if(lookaheadMatch && lookaheadMatch.index == w.matchStart) {
 			var text = lookaheadMatch[1];
-			if(config.browser.isIE)
+			if(config.browser.isIE && (config.browser.ieVersion[1] < 10))
 				text = text.replace(/\n/g,"\r");
 			createTiddlyElement(w.output,this.element,null,null,text);
 			w.nextMatch = lookaheadMatch.index + lookaheadMatch[0].length;
@@ -5626,6 +5636,8 @@ config.macros.importTiddlers.onOpenWorkspace = function(context,wizard)
 	if(context.status !== true)
 		displayMessage("Error in importTiddlers.onOpenWorkspace: " + context.statusText);
 	var adaptor = wizard.getValue("adaptor");
+	var browse=wizard.getElement("txtBrowse");
+	if (browse.files) context.file=browse.files[0]; // for HTML5 FileReader
 	adaptor.getTiddlerList(context,wizard,me.onGetTiddlerList,wizard.getValue("feedTiddlerFilter"));
 	wizard.setButtons([{caption: me.cancelLabel, tooltip: me.cancelPrompt, onClick: me.onCancel}],me.statusGetTiddlerList);
 };
@@ -6623,8 +6635,10 @@ function autoSaveChanges(onlyIfDirty,tiddlers)
 
 function loadOriginal(localPath)
 {
-	return loadFile(localPath);
+	var content=loadFile(localPath);
+	return content;
 }
+
 
 // Save this tiddlywiki with the pending changes
 function saveChanges(onlyIfDirty,tiddlers)
@@ -7286,6 +7300,7 @@ FileAdaptor.prototype.getTiddlerList = function(context,userParams,callback,filt
 	var options = {
 		type:"GET",
 		url:context.host,
+		file:context.file, // for HTML5 FileReader
 		processData:false,
 		success:function(data,textStatus,jqXHR) {
 			FileAdaptor.loadTiddlyWikiSuccess(context,jqXHR);
@@ -7387,29 +7402,33 @@ config.defaultAdaptor = FileAdaptor.serverType;
 
 function ajaxReq(args)
 {
-	if (args.url.startsWith("file")) { // LOCAL FILE
-		try {
-			// get FireFox privileges (FF14 and earlier)
-			if(window.Components && window.netscape && window.netscape.security)
-				window.netscape.security.PrivilegeManager.enablePrivilege("UniversalBrowserRead");
-		} catch (ex) {
-			// FF15+ fallback: no privs for ajax-based LOCAL file access
-			return localAjax(args);
-		}
-	}
+	if (args.file || args.url.startsWith("file"))  // LOCAL FILE
+		return localAjax(args);
 	return jQuery.ajax(args);
 }
 
 function localAjax(args)
 {
-	var data=loadFile(getLocalPath(args.url));
-	if (data) {
-		var jqXHR = { responseText:data };
-		args.success(data,"success",jqXHR);
-	} else {
-		var jqXHR = { message:"Cannot read local file" };
-		args.error(jqXHR,"error",0);
-	}
+	var success=function(data)
+		{ args.success(data,"success",{ responseText:data }); }
+	var failure=function(who)
+		{ args.error({ message:who+": cannot read local file" },"error",0); }
+
+	if (args.file) try { // HTML5 FileReader (Chrome, FF20+, Safari, etc.)
+		var reader=new FileReader();
+		reader.onload=function(e)  { success(e.target.result); }
+		reader.onerror=function(e) { failure("FileReader"); }
+		reader.readAsText(args.file);
+		return true;
+	} catch (ex) { ; }
+
+	try { // local file I/O (IE, FF with TiddlyFox, Chrome/Safari with TiddlySaver, etc.)
+		var data=loadFile(getLocalPath(args.url));
+		if (data) success(data);
+		else failure("loadFile");
+		return true;
+	} catch (ex) { ; }
+
 	return true;
 }
 

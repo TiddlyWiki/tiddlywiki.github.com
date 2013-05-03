@@ -754,6 +754,7 @@ if(!window || !window.console) {
 // Starting up
 function main()
 {
+
 	var t10,t9,t8,t7,t6,t5,t4,t3,t2,t1,t0 = new Date();
 	startingUp = true;
 	var doc = jQuery(document);
@@ -1161,7 +1162,7 @@ config.formatterHelpers = {
 		var lookaheadMatch = this.lookaheadRegExp.exec(w.source);
 		if(lookaheadMatch && lookaheadMatch.index == w.matchStart) {
 			var text = lookaheadMatch[1];
-			if(config.browser.isIE)
+			if(config.browser.isIE && (config.browser.ieVersion[1] < 10))
 				text = text.replace(/\n/g,"\r");
 			createTiddlyElement(w.output,this.element,null,null,text);
 			w.nextMatch = lookaheadMatch.index + lookaheadMatch[0].length;
@@ -5067,6 +5068,8 @@ config.macros.importTiddlers.onOpenWorkspace = function(context,wizard)
 	if(context.status !== true)
 		displayMessage("Error in importTiddlers.onOpenWorkspace: " + context.statusText);
 	var adaptor = wizard.getValue("adaptor");
+	var browse=wizard.getElement("txtBrowse");
+	if (browse.files) context.file=browse.files[0]; // for HTML5 FileReader
 	adaptor.getTiddlerList(context,wizard,me.onGetTiddlerList,wizard.getValue("feedTiddlerFilter"));
 	wizard.setButtons([{caption: me.cancelLabel, tooltip: me.cancelPrompt, onClick: me.onCancel}],me.statusGetTiddlerList);
 };
@@ -6064,8 +6067,10 @@ function autoSaveChanges(onlyIfDirty,tiddlers)
 
 function loadOriginal(localPath)
 {
-	return loadFile(localPath);
+	var content=loadFile(localPath);
+	return content;
 }
+
 
 // Save this tiddlywiki with the pending changes
 function saveChanges(onlyIfDirty,tiddlers)
@@ -6727,6 +6732,7 @@ FileAdaptor.prototype.getTiddlerList = function(context,userParams,callback,filt
 	var options = {
 		type:"GET",
 		url:context.host,
+		file:context.file, // for HTML5 FileReader
 		processData:false,
 		success:function(data,textStatus,jqXHR) {
 			FileAdaptor.loadTiddlyWikiSuccess(context,jqXHR);
@@ -6828,29 +6834,33 @@ config.defaultAdaptor = FileAdaptor.serverType;
 
 function ajaxReq(args)
 {
-	if (args.url.startsWith("file")) { // LOCAL FILE
-		try {
-			// get FireFox privileges (FF14 and earlier)
-			if(window.Components && window.netscape && window.netscape.security)
-				window.netscape.security.PrivilegeManager.enablePrivilege("UniversalBrowserRead");
-		} catch (ex) {
-			// FF15+ fallback: no privs for ajax-based LOCAL file access
-			return localAjax(args);
-		}
-	}
+	if (args.file || args.url.startsWith("file"))  // LOCAL FILE
+		return localAjax(args);
 	return jQuery.ajax(args);
 }
 
 function localAjax(args)
 {
-	var data=loadFile(getLocalPath(args.url));
-	if (data) {
-		var jqXHR = { responseText:data };
-		args.success(data,"success",jqXHR);
-	} else {
-		var jqXHR = { message:"Cannot read local file" };
-		args.error(jqXHR,"error",0);
-	}
+	var success=function(data)
+		{ args.success(data,"success",{ responseText:data }); }
+	var failure=function(who)
+		{ args.error({ message:who+": cannot read local file" },"error",0); }
+
+	if (args.file) try { // HTML5 FileReader (Chrome, FF20+, Safari, etc.)
+		var reader=new FileReader();
+		reader.onload=function(e)  { success(e.target.result); }
+		reader.onerror=function(e) { failure("FileReader"); }
+		reader.readAsText(args.file);
+		return true;
+	} catch (ex) { ; }
+
+	try { // local file I/O (IE, FF with TiddlyFox, Chrome/Safari with TiddlySaver, etc.)
+		var data=loadFile(getLocalPath(args.url));
+		if (data) success(data);
+		else failure("loadFile");
+		return true;
+	} catch (ex) { ; }
+
 	return true;
 }
 
