@@ -3,7 +3,7 @@
 <head>
 <script id="versionArea" type="text/javascript">
 //<![CDATA[
-var version = {title: "TiddlyWiki", major: 2, minor: 7, revision: 2, beta: 1, date: new Date("April 30, 2013"), extensions: {}};
+var version = {title: "TiddlyWiki", major: 2, minor: 7, revision: 2, beta: 2, date: new Date("May 13, 2013"), extensions: {}};
 
 //]]>
 </script>
@@ -46,7 +46,7 @@ DAMAGE.
 <!--}}}-->
 
 <!--PRE-HEAD-END-->
-<title> TiddlyWiki - Pre-release build v2.7.2 (beta 1) April, 2013 </title>
+<title> TiddlyWiki - Pre-release build v2.7.2 (beta 2) April, 2013 </title>
 <style id="styleArea" type="text/css">
 #saveTest {display:none;}
 #messageArea {display:none;}
@@ -549,12 +549,16 @@ You can view versions of ~TiddlyWiki from the following locations:
 <div title="WhatsNew" modifier="EricShulman" type="text/x-tiddlywiki">
 <pre>This revision includes the following changes:
 *{{block{
-Backstage&gt;import: now uses ~HTML5 &quot;~FileReader&quot; API whenever available (currently supported by Chrome, ~FireFox 20+, etc.).  You can now successfully ''//select and import files that are outside of the current folder.//''  See https://github.com/TiddlyWiki/tiddlywiki/issues/116.  
-&gt;Note: this change only applies when you use the &quot;browse&quot; (or &quot;select file&quot;) button to choose a document from your local filesystem.   If you manually enter (or paste) a local &quot;file://&quot; URL into the import form, the previous &quot;loadFile&quot; local file I/O handling is used, which requires the ~TiddlyFox addon (for ~FireFox 15+), or the ~TiddlySaver java applet (for Chrome, Safari, and other Webkit-based browsers).  Internet Explorer uses it's own native &quot;~ActiveX&quot; file I/O functions.
+''Backstage&gt;import:''
+See https://github.com/TiddlyWiki/tiddlywiki/issues/116
+Importing tiddlers now uses &quot;~FileReader&quot; API whenever available (currently supported by Chrome, Firefox 20+, etc.).  This new ~HTML5-standard browser-based file I/O handling ''//does not require any special privileges or security permissions//'' to read contents of files that you interactively select from your local filesystem, and you can now successfully ''//import tiddler from files that are outside of the current folder.//''
+&gt;Note: this change only applies when you use the &quot;browse&quot; (or &quot;select file&quot;) button to interactively choose a document from your local filesystem.   If you manually enter (or paste) a local {{{file://}}} URL into the import form (or if ~FileReader handling is not supported by your browser version), the existing browser-specific file I/O functions are used, which requires security permissions and/or other add-ons to permit reading of file contents; e.g. ~TiddlyFox (~FireFox), ~TiddlySaver java applet (Chrome, Safari, Opera, etc.), or ~ActiveX (Internet Explorer).
 }}}
 *{{block{
-Internet Explorer: when using ~IE10 (the current version of IE), special-case handling of embedded newlines in ~PRE-formatted blocks is no longer applied.  See https://github.com/TiddlyWiki/tiddlywiki/issues/118.  This corrects a formatting/display error introduced by changes in ~IE10.
-&gt;Note: this change only applies to ~IE10 and above; special handling is still applied to embedded newlines in IE9 and earlier so there should be no change to existing content when viewed on IE9 or earlier.
+''Internet Explorer:''
+See https://github.com/TiddlyWiki/tiddlywiki/issues/118
+When using ~IE10 (the current version of IE), special-case handling of embedded newlines in ~PRE-formatted blocks is no longer applied.  This corrects a formatting/display error introduced by changes in ~IE10.
+&gt;Note: this change only applies to ~IE10 and above; special handling is still applied to embedded newlines in ~IE9 and earlier so there should be no change to existing content when viewed on ~IE9 or earlier.
 }}}
 </pre>
 </div>
@@ -805,7 +809,7 @@ config.userAgent = navigator.userAgent.toLowerCase();
 config.browser = {
 	isIE: config.userAgent.indexOf("msie") != -1 && config.userAgent.indexOf("opera") == -1,
 	isGecko: navigator.product == "Gecko" && config.userAgent.indexOf("WebKit") == -1,
-	ieVersion: /MSIE (\d.\d)/i.exec(config.userAgent), // config.browser.ieVersion[1], if it exists, will be the IE version string, eg "6.0"
+	ieVersion: /MSIE (\d{1,2}.\d)/i.exec(config.userAgent), // config.browser.ieVersion[1], if it exists, will be the IE version string, eg "6.0"
 	isSafari: config.userAgent.indexOf("applewebkit") != -1,
 	isBadSafari: !((new RegExp("[\u0150\u0170]","g")).test("\u0150")),
 	firefoxDate: /gecko\/(\d{8})/i.exec(config.userAgent), // config.browser.firefoxDate[1], if it exists, will be Firefox release date as "YYYYMMDD"
