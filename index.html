@@ -3,7 +3,7 @@
 <head>
 <script id="versionArea" type="text/javascript">
 //<![CDATA[
-var version = {title: "TiddlyWiki", major: 2, minor: 7, revision: 1, date: new Date("March 11, 2013"), extensions: {}};
+var version = {title: "TiddlyWiki", major: 2, minor: 7, revision: 2, date: new Date("May 15, 2013"), extensions: {}};
 
 //]]>
 </script>
@@ -621,20 +621,15 @@ The backstage area is only available when a TiddlyWiki is edittable - typically 
 |''Description:''|Bob ~McElrath's Plugins|
 |''Author:''|~BobMcElrath|</pre>
 </div>
-<div title="Browsers" creator="psd" modifier="jermolene" created="201102111106" modified="201203071602" tags="features">
+<div title="Browsers" creator="psd" modifier="jermolene" created="201102111106" modified="201304260846" tags="features">
 <pre>Here is a table of web browsers that work with ~TiddlyWiki:
 
 |!Browser |!Version |!Allows changes to be saved locally?|
 |InternetExplorer |6.0+ |Yes |
-|FireFox |1.0+ |Yes |
+|FireFox |1.0+ |Yes, with the TiddlyFox extension |
 |[[Safari]] |1.0+ |Yes, using TiddlySaver plugin|
 |[[Opera]] |? |Yes, using TiddlySaver plugin|
-|Netscape Navigator |7.0+ |Yes |
-|[[Camino]] |1.0+ |Yes |
 |[[Chrome]] |All |Yes, using TiddlySaver plugin|
-|[[iPhone]] |All |Yes. See [[iTW|http://www.apple.com/webapps/productivity/itwatiddlywikiforiphone.html]]|
-|[[Wii]] |All |No |
-|[[luakit]] |All |Yes |
 
 See also the [[TiddlyWiki apps available for smartphones|MobileDevices]].
 
@@ -869,8 +864,8 @@ The ExampleStyleSheet shows some of the basic options you can control (see Anoth
 {{{DDth MMM YYYY}}} - 16th February 2011
 {{{DDth mmm hh:mm:ss}}} - 16th Feb 2011 11:38:42</pre>
 </div>
-<div title="DefaultTiddlers" creator="psd" modifier="ericshulman" created="201102111106" modified="201303112254">
-<pre>HelloThere GettingStarted WhatsNew [[TiddlyWiki Browser Compatibility]] Raves Examples
+<div title="DefaultTiddlers" creator="psd" modifier="ericshulman" created="201102111106" modified="201303130929">
+<pre>HelloThere GettingStarted WhatsNew Raves Examples
 </pre>
 </div>
 <div title="DefaultTiddlers shadows" creator="matt" modifier="jon" created="201102111436" modified="201201271331" tags="shadow">
@@ -1300,23 +1295,10 @@ Also, see TiddlyWikiAdaptations
 <div title="Feedback" creator="psd" modifier="blaine" created="201102111106" modified="201102111310">
 <pre>If you've any comments, corrections or observations about TiddlyWiki, the best way to get our attention is to post to the [[Community]] groups -- or write a blog entry.</pre>
 </div>
-<div title="FireFox" creator="psd" modifier="jermolene" created="201102111106" modified="201111031801" tags="browsers issues">
-<pre>~TiddlyWiki works well in ~FireFox v1.0 and above. If you're experiencing problems, make sure you've followed the [[downloading guidelines|Downloading]].
+<div title="FireFox" creator="psd" modifier="jermolene" created="201102111106" modified="201304260841" tags="browsers issues">
+<pre>To use TiddlyWiki with recent versions of Mozilla Firefox you'll need to install the TiddlyFox extension. It enables TiddlyWiki documents loaded from a {{{file:///}}} URI to save changes to themselves.
 
-When saving ~TiddlyWiki in ~FireFox for the first time, you can run into problems if you accidentally click 'Deny' on the dialog, and select //Remember this decision//.
-
-To reverse the effects, first locate the file {{{prefs.js}}} in your ~FireFox profile directory:
-* Under Windows you'll find it at something like {{{C:\Documents and Settings\Jeremy\Application Data\Mozilla\Firefox\Profiles\o3dhupu6.default\prefs.js}}}, where {{{Jeremy}}} is the name of your windows profile and {{{o3dhupu6}}} will be a similar string of gobbledegook. 
-* On the Mac it'll be at {{{~/Library/Application Support/Firefox/Profiles/o3dhupu6.default/prefs.js}}} 
-* On Linux you can find this file at {{{~/.mozilla/firefox/o3dhupu6.default/prefs.js}}}.
-
-Open the file in a text editor and find the line {{{user_pref(&quot;capability.principal.codebase.p0.denied&quot;, &quot;UniversalXPConnect&quot;);}}} and simply replace the word {{{denied}}} with {{{granted}}}.
-//(Thanks to ~JonScully for figuring out this fix)//
-
-Firefox users should be aware that GreaseMonkey can break TiddlyWiki. There's also a rather unpredictable FireFoxKeyboardIssue.</pre>
-</div>
-<div title="FireFoxKeyboardIssue" creator="psd" modifier="blaine" created="201102111106" modified="201102111310" tags="browsers issues">
-<pre>Under FireFox, TiddlyWiki can get into a state where it ignores the arrow keys on the keyboard but accepts ordinary alphanumeric input. The triggers for this behaviour are unclear, but it doesn't just affect TiddlyWiki. The solution appears to be to locate the file {{{compreg.dat}}} in your FireFox profile folder and rename it to {{{compreg.dat.old}}}.</pre>
+&lt;&lt;tiddler TiddlyFox&gt;&gt;</pre>
 </div>
 <div title="FlickrBadge" creator="psd" modifier="blaine" created="201102111106" modified="201102111310" tags="tips">
 <pre>Here's one way to get a Flickr badge in TiddlyWiki:
@@ -1341,8 +1323,9 @@ You'll need to know your Flickr person ID, which should replace the value &quot;
 
 Note that you must set the tiddler SiteUrl to be the URL where your TiddlyWiki will be published. (Don't put leading spaces or line breaks before or after the URL).</pre>
 </div>
-<div title="GettingStarted" creator="psd" modifier="jermolene" created="201102111106" modified="201111031801" tags="instructions">
+<div title="GettingStarted" creator="psd" modifier="ericshulman" created="201102111106" modified="201303130924" tags="instructions">
 <pre>Once you've successfully [[downloaded|Downloading]] ~TiddlyWiki, you can find out how to:
+* [[Setup TiddlyWiki with your browser|Browsers]]
 * [[Edit your tiddlers|Editing]]
 * [[Save changes|SaveChanges]]
 * [[Search]] for content
@@ -1414,14 +1397,12 @@ Display as:
 !!!!!Heading Level 5
 !!!!!!Heading Level 6</pre>
 </div>
-<div title="HelloThere" creator="psd" modifier="ericshulman" created="201102111106" modified="201303112252" tags="gettingstarted welcome">
+<div title="HelloThere" creator="psd" modifier="ericshulman" created="201102111106" modified="201303130941" tags="gettingstarted welcome">
 <pre>Welcome to TiddlyWiki, a reusable non-linear personal web notebook.  It's a unique [[wiki|WikiWikiWeb]] that people [[love using|Raves]] to keep ideas and information organised. It was originally created by JeremyRuston and is now a thriving [[open source|OpenSourceLicense]] project with a busy [[Community]] of independent developers.
 
-TiddlyWiki is written in [[HTML]], [[CSS]] and JavaScript to run on any reasonably modern [[browser|Browsers]] without needing any ServerSide logic. It allows anyone to create personal SelfContained hypertext documents that can be published to a WebServer, sent by email, stored in a DropBox or kept on a USB thumb drive to make a WikiOnAStick. Because it doesn't need to be installed and configured it makes a great GuerillaWiki.
+TiddlyWiki is written in HTML, CSS and JavaScript to run on any reasonably modern [[browser|Browsers]] without needing any ServerSide logic. It allows anyone to create personal SelfContained hypertext documents that can be published to a web server, sent by email, stored in a Dropbox or kept on a USB thumb drive to make a WikiOnAStick. Because it doesn't need to be installed and configured it makes a great GuerillaWiki.
 
-This is revision &lt;&lt;version&gt;&gt; of TiddlyWiki Classic, and is published under an OpenSourceLicense.  Incremental updates will occur every few months, depending upon the complexity of the changes being made.  The next planned update of TiddlyWiki Classic will be version 2.7.2.
-
-A comprehensive re-write of the entire TiddlyWiki system, called TiddlyWiki5, is now under active development by Jeremy Ruston, and is available for pre-release viewing and testing here: http://five.tiddlywiki.com</pre>
+This is revision &lt;&lt;version&gt;&gt; of TiddlyWiki Classic, and is published under an OpenSourceLicense.  Incremental updates will occur every few months, depending upon the complexity of the changes being made.  A comprehensive re-write of TiddlyWiki, called TiddlyWiki5, is now under active development. It is available for testing here: http://five.tiddlywiki.com</pre>
 </div>
 <div title="Help and Support" creator="psd" modifier="jermolene" created="201102111106" modified="201111031657" tags="community gettingstarted help">
 <pre>TiddlyWiki is an [[OpenSourceLicense|open source]] product, with most help and support being provided by the [[Community]]. The best way to get help with a specific problem is the TiddlyWiki DiscussionForums (it's worth searching the group archives to see if anyone else has already solved the same problem).
@@ -1819,7 +1800,7 @@ See also [[Tagging Macro]]</pre>
 [[version|version macro]]
 [[view|view macro]]</pre>
 </div>
-<div title="MainMenu" creator="jermolene" modifier="jermolene" created="201208201134" modified="201210250844">
+<div title="MainMenu" creator="jermolene" modifier="ericshulman" created="201208201134" modified="201303130915">
 <pre>HelloThere
 
 GettingStarted
@@ -1839,7 +1820,7 @@ GettingStarted
 &lt;/html&gt;
 
 ^^[img[favicon.ico]] TiddlyWiki &lt;&lt;version&gt;&gt;
-© 2012 [[UnaMesa|http://www.unamesa.org/]]^^
+© 2013 [[UnaMesa|http://www.unamesa.org/]]^^
 </pre>
 </div>
 <div title="MainMenu shadows" creator="matt" modifier="matt" created="201102111611" modified="201102151511" tags="shadow">
@@ -2910,6 +2891,19 @@ Drag these links to your bookmark/favourites bar, or right click on them and cho
 If you're creating your own bookmarklets, this [[editor|http://subsimple.com/bookmarklets/jsbuilder.htm]] and these [[tips|http://subsimple.com/bookmarklets/tips.asp]] are useful resources.
 </pre>
 </div>
+<div title="TiddlyFox" creator="jermolene" modifier="jermolene" created="201304260844" modified="201304260844">
+<pre>TiddlyFox is an extension for Mozilla Firefox that enables TiddlyWiki documents loaded from a {{{file:///}}} URI to save changes to themselves.
+
+The latest version of TiddlyFox can be installed from:
+
+https://github.com/TiddlyWiki/TiddlyFox/raw/master/tiddlyfox.xpi
+
+You can also install TiddlyFox from Mozilla's official addon library, but note that this version typically lags behind the latest release.
+
+https://addons.mozilla.org/en-US/firefox/addon/tiddlyfox/
+
+</pre>
+</div>
 <div title="TiddlySaver" creator="psd" modifier="jermolene" created="201102111107" modified="201111031645" tags="features">
 <pre>The ~TiddlySaver Java applet allows ~TiddlyWiki to save changes in a local version (from a file:// URL) of Safari, Opera and other browsers. It is a small file named [[&quot;TiddlySaver.jar&quot;|TiddlySaver.jar]] that must be placed in the same directory as your ~TiddlyWiki file. As of August 2008, when an empty ~TiddlyWiki file is downloaded using either Safari or Opera, it is bundled with a copy of the ~TiddlySaver.jar file in a zip file - both files must be in the same directory ''whenever the ~TiddlyWiki file is opened'' in order to work.
 
@@ -2935,15 +2929,8 @@ Unlike most wikis, TiddlyWiki isn't about group collaboration; it is a wiki in t
 ~TiddlyWiki was originally created by JeremyRuston and is now a thriving [[open source|OpenSourceLicense]] project with a busy [[Community]] of independent developers. [[Osmosoft]], part of [[BT|http://btplc.com]], is the leading contributor to the project.
 </pre>
 </div>
-<div title="TiddlyWiki Browser Compatibility" creator="jon" modifier="ericshulman" created="201110041247" modified="201212180119" tags="browsers issues">
-<pre>Recent updates to Firefox and Chrome include tighter default security settings that can interfere with the operation of TiddlyWiki. The main cause is restrictions on the ability of TiddlyWiki running from a {{{file://}}} URI to obtain permission to access local files as well as files stored remotely on other servers.
-!!!Known Problems with Local File Saving in TiddlyWiki
-* Firefox version 14 and below asked the user for permission to access the local file system, both for reading and writing files, with an option to retain and re-use that setting whenever the associated ~TiddlyWiki document is loaded into the browser.  Unfortunately, FireFox version 15 and above no longer allows requests to access the local file system, and produces an error instead (note: existing TiddlyWiki documents that were //already approved for local file access in a prior version of Firefox// will continue to work as before).   Fortunately there is a ''fix'' for this problem: Jeremy Ruston has written a small, easy-to-install FireFox extension called TiddlyFox that provides replacements for the necessary file I/O functions, allowing new TiddlyWiki documents to be saved locally.
-** You can obtain the TiddlyFox extension here: https://addons.mozilla.org/en-US/firefox/addon/tiddlyfox/
-** If you'd rather not install an extension -- ''//and you are using FireFox 16 or below//'' -- you can also edit your Firefox preferences files to re-enable saving for specific TiddlyWiki files as discussed in this [[GoogleGroups message|https://groups.google.com/d/msg/tiddlywikidev/1Em8cJviVKk/LVGKpu2LzeAJ]].&lt;br&gt;//note: this trick does not work with FireFox 17+, which completely removes support for privilegeManager functions//
-** Another alternative is to re-install an older version of FireFox (v14.x or earlier).  There are numerous web sites that maintain archived copies of the previous installation files.
-** You could also install a [[portable version of FireFox 3.6.x|http://portableapps.com/apps/internet/firefox_portable/localization#legacy36]] directly onto a USB stick, solely for use with TiddlyWiki documents, while still using the current version of FireFox for all your other web browsing activities.
-!!!Known Problems with Upgrading TiddlyWiki
+<div title="TiddlyWiki Browser Compatibility" creator="jon" modifier="jermolene" created="201110041247" modified="201304260843" tags="browsers issues">
+<pre>!!!Known Problems with Upgrading TiddlyWiki
 * Versions of TiddlyWiki before and including 2.6.3 are known to have an issue with the upgrade function. To upgrade these versions you will need to [[download|Downloading]] the latest version of an empty TiddlyWiki and import your content into it using the [[import function|Import Tiddlers]] in the backstage.
 !!!Known Problems with Importing in TiddlyWiki
 * It is not possible to import from TiddlyWiki's on servers which are not [[CORS|http://en.wikipedia.org/wiki/Cross-Origin_Resource_Sharing]] enabled.  Although many popular sites, such as [[TiddlyTools|http://tiddlytools.com]], are currently CORS enabled, some are not. Fortunately this is fixable - webmasters can enable CORS on their sites by following the instructions [[here|http://enable-cors.org]] and if a website is not CORS enabled you can e-mail the owner to tell them the problem.
@@ -3072,9 +3059,20 @@ Under Vista, TiddlyWiki will not save changes correctly if you are viewing the T
 <pre>|''URL:''|http://visualtw.ouvaton.org/VisualTW.html|
 |''Author:''|Pascal|</pre>
 </div>
-<div title="WhatsNew" creator="ericshulman" modifier="ericshulman" created="201209160311" modified="201303112252" tags="gettingstarted welcome">
-<pre>The following is a summary of notable changes between ~TiddlyWiki v2.7.0 and v2.7.1.
-*''jQuery update''&lt;br&gt;The jQuery library embedded in ~TiddlyWiki has been updated from v1.8.1 to v1.8.3.  This corrects a &quot;~UTF-8 character encoding&quot; problem that was causing errors when saving/loading documents containing multi-byte &quot;international&quot; character sets, resulting in 'mangled' binary-valued content.</pre>
+<div title="WhatsNew" creator="ericshulman" modifier="ericshulman" created="201209160311" modified="201305131027" tags="gettingstarted welcome">
+<pre>The following is a summary of changes between ~TiddlyWiki v2.7.1 and v2.7.2.
+*{{block{
+''Backstage&gt;import:''
+See https://github.com/TiddlyWiki/tiddlywiki/issues/116
+Importing tiddlers now uses &quot;~FileReader&quot; API whenever available (currently supported by Chrome, Firefox 20+, etc.).  This new ~HTML5-standard browser-based file I/O handling ''//does not require any special privileges or security permissions//'' to read contents of files that you interactively select from your local filesystem, and you can now successfully ''//import tiddler from files that are outside of the current folder.//''
+&gt;Note: this change only applies when you use the &quot;browse&quot; (or &quot;select file&quot;) button to interactively choose a document from your local filesystem.   If you manually enter (or paste) a local {{{file://}}} URL into the import form (or if ~FileReader handling is not supported by your browser version), the existing browser-specific file I/O functions are used, which requires security permissions and/or other add-ons to permit reading of file contents; e.g. ~TiddlyFox (~FireFox), ~TiddlySaver java applet (Chrome, Safari, Opera, etc.), or ~ActiveX (Internet Explorer).
+}}}
+*{{block{
+''Internet Explorer:''
+See https://github.com/TiddlyWiki/tiddlywiki/issues/118
+When using ~IE10 (the current version of IE), special-case handling of embedded newlines in ~PRE-formatted blocks is no longer applied.  This corrects a formatting/display error introduced by changes in ~IE10.
+&gt;Note: this change only applies to ~IE10 and above; special handling is still applied to embedded newlines in ~IE9 and earlier so there should be no change to existing content when viewed on ~IE9 or earlier.
+}}}</pre>
 </div>
 <div title="Wii" creator="psd" modifier="blaine" created="201102111107" modified="201102111310">
 <pre>TiddlyWiki seems to [[work fine on the Wii browser|http://blog.deuceofalltrades.com/2007/02/wii-browser-meets-microcontent.html]], at least for browsing -- it doesn't appear that you can save or upload changes.</pre>
@@ -3787,7 +3785,7 @@ config.userAgent = navigator.userAgent.toLowerCase();
 config.browser = {
 	isIE: config.userAgent.indexOf("msie") != -1 && config.userAgent.indexOf("opera") == -1,
 	isGecko: navigator.product == "Gecko" && config.userAgent.indexOf("WebKit") == -1,
-	ieVersion: /MSIE (\d.\d)/i.exec(config.userAgent), // config.browser.ieVersion[1], if it exists, will be the IE version string, eg "6.0"
+	ieVersion: /MSIE (\d{1,2}.\d)/i.exec(config.userAgent), // config.browser.ieVersion[1], if it exists, will be the IE version string, eg "6.0"
 	isSafari: config.userAgent.indexOf("applewebkit") != -1,
 	isBadSafari: !((new RegExp("[\u0150\u0170]","g")).test("\u0150")),
 	firefoxDate: /gecko\/(\d{8})/i.exec(config.userAgent), // config.browser.firefoxDate[1], if it exists, will be Firefox release date as "YYYYMMDD"
@@ -4304,6 +4302,7 @@ if(!window || !window.console) {
 // Starting up
 function main()
 {
+
 	var t10,t9,t8,t7,t6,t5,t4,t3,t2,t1,t0 = new Date();
 	startingUp = true;
 	var doc = jQuery(document);
@@ -4711,7 +4710,7 @@ config.formatterHelpers = {
 		var lookaheadMatch = this.lookaheadRegExp.exec(w.source);
 		if(lookaheadMatch && lookaheadMatch.index == w.matchStart) {
 			var text = lookaheadMatch[1];
-			if(config.browser.isIE)
+			if(config.browser.isIE && (config.browser.ieVersion[1] < 10))
 				text = text.replace(/\n/g,"\r");
 			createTiddlyElement(w.output,this.element,null,null,text);
 			w.nextMatch = lookaheadMatch.index + lookaheadMatch[0].length;
@@ -8617,6 +8616,8 @@ config.macros.importTiddlers.onOpenWorkspace = function(context,wizard)
 	if(context.status !== true)
 		displayMessage("Error in importTiddlers.onOpenWorkspace: " + context.statusText);
 	var adaptor = wizard.getValue("adaptor");
+	var browse=wizard.getElement("txtBrowse");
+	if (browse.files) context.file=browse.files[0]; // for HTML5 FileReader
 	adaptor.getTiddlerList(context,wizard,me.onGetTiddlerList,wizard.getValue("feedTiddlerFilter"));
 	wizard.setButtons([{caption: me.cancelLabel, tooltip: me.cancelPrompt, onClick: me.onCancel}],me.statusGetTiddlerList);
 };
@@ -9614,8 +9615,10 @@ function autoSaveChanges(onlyIfDirty,tiddlers)
 
 function loadOriginal(localPath)
 {
-	return loadFile(localPath);
+	var content=loadFile(localPath);
+	return content;
 }
+
 
 // Save this tiddlywiki with the pending changes
 function saveChanges(onlyIfDirty,tiddlers)
@@ -10277,6 +10280,7 @@ FileAdaptor.prototype.getTiddlerList = function(context,userParams,callback,filt
 	var options = {
 		type:"GET",
 		url:context.host,
+		file:context.file, // for HTML5 FileReader
 		processData:false,
 		success:function(data,textStatus,jqXHR) {
 			FileAdaptor.loadTiddlyWikiSuccess(context,jqXHR);
@@ -10378,29 +10382,33 @@ config.defaultAdaptor = FileAdaptor.serverType;
 
 function ajaxReq(args)
 {
-	if (args.url.startsWith("file")) { // LOCAL FILE
-		try {
-			// get FireFox privileges (FF14 and earlier)
-			if(window.Components && window.netscape && window.netscape.security)
-				window.netscape.security.PrivilegeManager.enablePrivilege("UniversalBrowserRead");
-		} catch (ex) {
-			// FF15+ fallback: no privs for ajax-based LOCAL file access
-			return localAjax(args);
-		}
-	}
+	if (args.file || args.url.startsWith("file"))  // LOCAL FILE
+		return localAjax(args);
 	return jQuery.ajax(args);
 }
 
 function localAjax(args)
 {
-	var data=loadFile(getLocalPath(args.url));
-	if (data) {
-		var jqXHR = { responseText:data };
-		args.success(data,"success",jqXHR);
-	} else {
-		var jqXHR = { message:"Cannot read local file" };
-		args.error(jqXHR,"error",0);
-	}
+	var success=function(data)
+		{ args.success(data,"success",{ responseText:data }); }
+	var failure=function(who)
+		{ args.error({ message:who+": cannot read local file" },"error",0); }
+
+	if (args.file) try { // HTML5 FileReader (Chrome, FF20+, Safari, etc.)
+		var reader=new FileReader();
+		reader.onload=function(e)  { success(e.target.result); }
+		reader.onerror=function(e) { failure("FileReader"); }
+		reader.readAsText(args.file);
+		return true;
+	} catch (ex) { ; }
+
+	try { // local file I/O (IE, FF with TiddlyFox, Chrome/Safari with TiddlySaver, etc.)
+		var data=loadFile(getLocalPath(args.url));
+		if (data) success(data);
+		else failure("loadFile");
+		return true;
+	} catch (ex) { ; }
+
 	return true;
 }
 
