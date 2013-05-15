@@ -7,10 +7,54 @@
 <description>a reusable non-linear personal web notebook</description>
 <language>en</language>
 <copyright>Copyright 2013 YourName</copyright>
-<pubDate>Wed, 15 May 2013 18:15:27 GMT</pubDate>
-<lastBuildDate>Wed, 15 May 2013 18:15:27 GMT</lastBuildDate>
+<pubDate>Wed, 15 May 2013 18:22:06 GMT</pubDate>
+<lastBuildDate>Wed, 15 May 2013 18:22:06 GMT</lastBuildDate>
 <docs>http://blogs.law.harvard.edu/tech/rss</docs>
 <generator>TiddlyWiki 2.7.2</generator>
+<item>
+<title>HelloThere</title>
+<description>Welcome to &lt;a class=&quot;externalLink null&quot; href=&quot;http://tiddlywiki.com/
+#TiddlyWiki&quot; title=&quot;External link to http://tiddlywiki.com/
+#TiddlyWiki&quot; target=&quot;_blank&quot; refresh=&quot;link&quot; tiddlylink=&quot;TiddlyWiki&quot;&gt;TiddlyWiki&lt;/a&gt;, a reusable non-linear personal web notebook.  It's a unique &lt;a class=&quot;externalLink null&quot; href=&quot;http://tiddlywiki.com/
+#WikiWikiWeb&quot; title=&quot;External link to http://tiddlywiki.com/
+#WikiWikiWeb&quot; target=&quot;_blank&quot; refresh=&quot;link&quot; tiddlylink=&quot;WikiWikiWeb&quot;&gt;wiki&lt;/a&gt; that people &lt;a class=&quot;externalLink null&quot; href=&quot;http://tiddlywiki.com/
+#Raves&quot; title=&quot;External link to http://tiddlywiki.com/
+#Raves&quot; target=&quot;_blank&quot; refresh=&quot;link&quot; tiddlylink=&quot;Raves&quot;&gt;love using&lt;/a&gt; to keep ideas and information organised. It was originally created by &lt;a class=&quot;externalLink null&quot; href=&quot;http://tiddlywiki.com/
+#JeremyRuston&quot; title=&quot;External link to http://tiddlywiki.com/
+#JeremyRuston&quot; target=&quot;_blank&quot; refresh=&quot;link&quot; tiddlylink=&quot;JeremyRuston&quot;&gt;JeremyRuston&lt;/a&gt; and is now a thriving &lt;a class=&quot;externalLink null&quot; href=&quot;http://tiddlywiki.com/
+#OpenSourceLicense&quot; title=&quot;External link to http://tiddlywiki.com/
+#OpenSourceLicense&quot; target=&quot;_blank&quot; refresh=&quot;link&quot; tiddlylink=&quot;OpenSourceLicense&quot;&gt;open source&lt;/a&gt; project with a busy &lt;a class=&quot;externalLink null&quot; href=&quot;http://tiddlywiki.com/
+#Community&quot; title=&quot;External link to http://tiddlywiki.com/
+#Community&quot; target=&quot;_blank&quot; refresh=&quot;link&quot; tiddlylink=&quot;Community&quot;&gt;Community&lt;/a&gt; of independent developers.&lt;br&gt;&lt;br&gt;&lt;a class=&quot;externalLink null&quot; href=&quot;http://tiddlywiki.com/
+#TiddlyWiki&quot; title=&quot;External link to http://tiddlywiki.com/
+#TiddlyWiki&quot; target=&quot;_blank&quot; refresh=&quot;link&quot; tiddlylink=&quot;TiddlyWiki&quot;&gt;TiddlyWiki&lt;/a&gt; is written in HTML, CSS and &lt;a class=&quot;externalLink null&quot; href=&quot;http://tiddlywiki.com/
+#JavaScript&quot; title=&quot;External link to http://tiddlywiki.com/
+#JavaScript&quot; target=&quot;_blank&quot; refresh=&quot;link&quot; tiddlylink=&quot;JavaScript&quot;&gt;JavaScript&lt;/a&gt; to run on any reasonably modern &lt;a class=&quot;externalLink null&quot; href=&quot;http://tiddlywiki.com/
+#Browsers&quot; title=&quot;External link to http://tiddlywiki.com/
+#Browsers&quot; target=&quot;_blank&quot; refresh=&quot;link&quot; tiddlylink=&quot;Browsers&quot;&gt;browser&lt;/a&gt; without needing any &lt;a class=&quot;externalLink null&quot; href=&quot;http://tiddlywiki.com/
+#ServerSide&quot; title=&quot;External link to http://tiddlywiki.com/
+#ServerSide&quot; target=&quot;_blank&quot; refresh=&quot;link&quot; tiddlylink=&quot;ServerSide&quot;&gt;ServerSide&lt;/a&gt; logic. It allows anyone to create personal &lt;a class=&quot;externalLink null&quot; href=&quot;http://tiddlywiki.com/
+#SelfContained&quot; title=&quot;External link to http://tiddlywiki.com/
+#SelfContained&quot; target=&quot;_blank&quot; refresh=&quot;link&quot; tiddlylink=&quot;SelfContained&quot;&gt;SelfContained&lt;/a&gt; hypertext documents that can be published to a web server, sent by email, stored in a Dropbox or kept on a USB thumb drive to make a &lt;a class=&quot;externalLink null&quot; href=&quot;http://tiddlywiki.com/
+#WikiOnAStick&quot; title=&quot;External link to http://tiddlywiki.com/
+#WikiOnAStick&quot; target=&quot;_blank&quot; refresh=&quot;link&quot; tiddlylink=&quot;WikiOnAStick&quot;&gt;WikiOnAStick&lt;/a&gt;. Because it doesn't need to be installed and configured it makes a great &lt;a class=&quot;externalLink null&quot; href=&quot;http://tiddlywiki.com/
+#GuerillaWiki&quot; title=&quot;External link to http://tiddlywiki.com/
+#GuerillaWiki&quot; target=&quot;_blank&quot; refresh=&quot;link&quot; tiddlylink=&quot;GuerillaWiki&quot;&gt;GuerillaWiki&lt;/a&gt;.&lt;br&gt;&lt;br&gt;This is revision &lt;span&gt;2.7.2&lt;/span&gt; of &lt;a class=&quot;externalLink null&quot; href=&quot;http://tiddlywiki.com/
+#TiddlyWiki&quot; title=&quot;External link to http://tiddlywiki.com/
+#TiddlyWiki&quot; target=&quot;_blank&quot; refresh=&quot;link&quot; tiddlylink=&quot;TiddlyWiki&quot;&gt;TiddlyWiki&lt;/a&gt; Classic, and is published under an &lt;a class=&quot;externalLink null&quot; href=&quot;http://tiddlywiki.com/
+#OpenSourceLicense&quot; title=&quot;External link to http://tiddlywiki.com/
+#OpenSourceLicense&quot; target=&quot;_blank&quot; refresh=&quot;link&quot; tiddlylink=&quot;OpenSourceLicense&quot;&gt;OpenSourceLicense&lt;/a&gt;.  Incremental updates will occur every few months, depending upon the complexity of the changes being made.  A comprehensive re-write of &lt;a class=&quot;externalLink null&quot; href=&quot;http://tiddlywiki.com/
+#TiddlyWiki&quot; title=&quot;External link to http://tiddlywiki.com/
+#TiddlyWiki&quot; target=&quot;_blank&quot; refresh=&quot;link&quot; tiddlylink=&quot;TiddlyWiki&quot;&gt;TiddlyWiki&lt;/a&gt;, called &lt;a class=&quot;externalLink null&quot; href=&quot;http://tiddlywiki.com/
+#TiddlyWiki5&quot; title=&quot;External link to http://tiddlywiki.com/
+#TiddlyWiki5&quot; target=&quot;_blank&quot; refresh=&quot;link&quot; tiddlylink=&quot;TiddlyWiki5&quot;&gt;TiddlyWiki5&lt;/a&gt;, is now under active development. It is available for testing here: &lt;a class=&quot;externalLink&quot; href=&quot;http://five.tiddlywiki.com&quot; title=&quot;External link to http://five.tiddlywiki.com&quot; target=&quot;_blank&quot;&gt;http://five.tiddlywiki.com&lt;/a&gt;</description>
+<category>gettingstarted</category>
+<category>welcome</category>
+<link>http://tiddlywiki.com/
+#HelloThere</link>
+<pubDate>Wed, 15 May 2013 18:21:00 GMT</pubDate>
+
+</item>
 <item>
 <title>WhatsNew</title>
 <description>The following is a summary of changes between TiddlyWiki v2.7.1 and v2.7.2.&lt;br&gt;&lt;ul&gt;&lt;li&gt;&lt;div class=&quot;block&quot;&gt;&lt;strong&gt;Backstage&amp;gt;import:&lt;/strong&gt;&lt;br&gt;See &lt;a class=&quot;externalLink&quot; href=&quot;https://github.com/TiddlyWiki/tiddlywiki/issues/116&quot; title=&quot;External link to https://github.com/TiddlyWiki/tiddlywiki/issues/116&quot; target=&quot;_blank&quot;&gt;https://github.com/TiddlyWiki/tiddlywiki/issues/116&lt;/a&gt;&lt;br&gt;Importing tiddlers now uses &quot;FileReader&quot; API whenever available (currently supported by Chrome, Firefox 20+, etc.).  This new HTML5-standard browser-based file I/O handling &lt;strong&gt;&lt;em&gt;does not require any special privileges or security permissions&lt;/em&gt;&lt;/strong&gt; to read contents of files that you interactively select from your local filesystem, and you can now successfully &lt;strong&gt;&lt;em&gt;import tiddler from files that are outside of the current folder.&lt;/em&gt;&lt;/strong&gt;&lt;br&gt;&lt;blockquote&gt;Note: this change only applies when you use the &quot;browse&quot; (or &quot;select file&quot;) button to interactively choose a document from your local filesystem.   If you manually enter (or paste) a local &lt;code&gt;file://&lt;/code&gt; URL into the import form (or if FileReader handling is not supported by your browser version), the existing browser-specific file I/O functions are used, which requires security permissions and/or other add-ons to permit reading of file contents; e.g. TiddlyFox (FireFox), TiddlySaver java applet (Chrome, Safari, Opera, etc.), or ActiveX (Internet Explorer).&lt;br&gt;&lt;/blockquote&gt;&lt;/div&gt;&lt;/li&gt;&lt;li&gt;&lt;div class=&quot;block&quot;&gt;&lt;strong&gt;Internet Explorer:&lt;/strong&gt;&lt;br&gt;See &lt;a class=&quot;externalLink&quot; href=&quot;https://github.com/TiddlyWiki/tiddlywiki/issues/118&quot; title=&quot;External link to https://github.com/TiddlyWiki/tiddlywiki/issues/118&quot; target=&quot;_blank&quot;&gt;https://github.com/TiddlyWiki/tiddlywiki/issues/118&lt;/a&gt;&lt;br&gt;When using IE10 (the current version of IE), special-case handling of embedded newlines in PRE-formatted blocks is no longer applied.  This corrects a formatting/display error introduced by changes in IE10.&lt;br&gt;&lt;blockquote&gt;Note: this change only applies to IE10 and above; special handling is still applied to embedded newlines in IE9 and earlier so there should be no change to existing content when viewed on IE9 or earlier.&lt;br&gt;&lt;/blockquote&gt;&lt;/div&gt;&lt;/li&gt;&lt;/ul&gt;</description>
@@ -110,50 +154,6 @@
 <link>http://tiddlywiki.com/
 #FireFox</link>
 <pubDate>Fri, 26 Apr 2013 08:41:00 GMT</pubDate>
-
-</item>
-<item>
-<title>HelloThere</title>
-<description>Welcome to &lt;a class=&quot;externalLink null&quot; href=&quot;http://tiddlywiki.com/
-#TiddlyWiki&quot; title=&quot;External link to http://tiddlywiki.com/
-#TiddlyWiki&quot; target=&quot;_blank&quot; refresh=&quot;link&quot; tiddlylink=&quot;TiddlyWiki&quot;&gt;TiddlyWiki&lt;/a&gt;, a reusable non-linear personal web notebook.  It's a unique &lt;a class=&quot;externalLink null&quot; href=&quot;http://tiddlywiki.com/
-#WikiWikiWeb&quot; title=&quot;External link to http://tiddlywiki.com/
-#WikiWikiWeb&quot; target=&quot;_blank&quot; refresh=&quot;link&quot; tiddlylink=&quot;WikiWikiWeb&quot;&gt;wiki&lt;/a&gt; that people &lt;a class=&quot;externalLink null&quot; href=&quot;http://tiddlywiki.com/
-#Raves&quot; title=&quot;External link to http://tiddlywiki.com/
-#Raves&quot; target=&quot;_blank&quot; refresh=&quot;link&quot; tiddlylink=&quot;Raves&quot;&gt;love using&lt;/a&gt; to keep ideas and information organised. It was originally created by &lt;a class=&quot;externalLink null&quot; href=&quot;http://tiddlywiki.com/
-#JeremyRuston&quot; title=&quot;External link to http://tiddlywiki.com/
-#JeremyRuston&quot; target=&quot;_blank&quot; refresh=&quot;link&quot; tiddlylink=&quot;JeremyRuston&quot;&gt;JeremyRuston&lt;/a&gt; and is now a thriving &lt;a class=&quot;externalLink null&quot; href=&quot;http://tiddlywiki.com/
-#OpenSourceLicense&quot; title=&quot;External link to http://tiddlywiki.com/
-#OpenSourceLicense&quot; target=&quot;_blank&quot; refresh=&quot;link&quot; tiddlylink=&quot;OpenSourceLicense&quot;&gt;open source&lt;/a&gt; project with a busy &lt;a class=&quot;externalLink null&quot; href=&quot;http://tiddlywiki.com/
-#Community&quot; title=&quot;External link to http://tiddlywiki.com/
-#Community&quot; target=&quot;_blank&quot; refresh=&quot;link&quot; tiddlylink=&quot;Community&quot;&gt;Community&lt;/a&gt; of independent developers.&lt;br&gt;&lt;br&gt;&lt;a class=&quot;externalLink null&quot; href=&quot;http://tiddlywiki.com/
-#TiddlyWiki&quot; title=&quot;External link to http://tiddlywiki.com/
-#TiddlyWiki&quot; target=&quot;_blank&quot; refresh=&quot;link&quot; tiddlylink=&quot;TiddlyWiki&quot;&gt;TiddlyWiki&lt;/a&gt; is written in HTML, CSS and &lt;a class=&quot;externalLink null&quot; href=&quot;http://tiddlywiki.com/
-#JavaScript&quot; title=&quot;External link to http://tiddlywiki.com/
-#JavaScript&quot; target=&quot;_blank&quot; refresh=&quot;link&quot; tiddlylink=&quot;JavaScript&quot;&gt;JavaScript&lt;/a&gt; to run on any reasonably modern &lt;a class=&quot;externalLink null&quot; href=&quot;http://tiddlywiki.com/
-#Browsers&quot; title=&quot;External link to http://tiddlywiki.com/
-#Browsers&quot; target=&quot;_blank&quot; refresh=&quot;link&quot; tiddlylink=&quot;Browsers&quot;&gt;browser&lt;/a&gt; without needing any &lt;a class=&quot;externalLink null&quot; href=&quot;http://tiddlywiki.com/
-#ServerSide&quot; title=&quot;External link to http://tiddlywiki.com/
-#ServerSide&quot; target=&quot;_blank&quot; refresh=&quot;link&quot; tiddlylink=&quot;ServerSide&quot;&gt;ServerSide&lt;/a&gt; logic. It allows anyone to create personal &lt;a class=&quot;externalLink null&quot; href=&quot;http://tiddlywiki.com/
-#SelfContained&quot; title=&quot;External link to http://tiddlywiki.com/
-#SelfContained&quot; target=&quot;_blank&quot; refresh=&quot;link&quot; tiddlylink=&quot;SelfContained&quot;&gt;SelfContained&lt;/a&gt; hypertext documents that can be published to a web server, sent by email, stored in a Dropbox or kept on a USB thumb drive to make a &lt;a class=&quot;externalLink null&quot; href=&quot;http://tiddlywiki.com/
-#WikiOnAStick&quot; title=&quot;External link to http://tiddlywiki.com/
-#WikiOnAStick&quot; target=&quot;_blank&quot; refresh=&quot;link&quot; tiddlylink=&quot;WikiOnAStick&quot;&gt;WikiOnAStick&lt;/a&gt;. Because it doesn't need to be installed and configured it makes a great &lt;a class=&quot;externalLink null&quot; href=&quot;http://tiddlywiki.com/
-#GuerillaWiki&quot; title=&quot;External link to http://tiddlywiki.com/
-#GuerillaWiki&quot; target=&quot;_blank&quot; refresh=&quot;link&quot; tiddlylink=&quot;GuerillaWiki&quot;&gt;GuerillaWiki&lt;/a&gt;.&lt;br&gt;&lt;br&gt;This is revision &lt;span&gt;2.7.2&lt;/span&gt; of &lt;a class=&quot;externalLink null&quot; href=&quot;http://tiddlywiki.com/
-#TiddlyWiki&quot; title=&quot;External link to http://tiddlywiki.com/
-#TiddlyWiki&quot; target=&quot;_blank&quot; refresh=&quot;link&quot; tiddlylink=&quot;TiddlyWiki&quot;&gt;TiddlyWiki&lt;/a&gt; Classic, and is published under an &lt;a class=&quot;externalLink null&quot; href=&quot;http://tiddlywiki.com/
-#OpenSourceLicense&quot; title=&quot;External link to http://tiddlywiki.com/
-#OpenSourceLicense&quot; target=&quot;_blank&quot; refresh=&quot;link&quot; tiddlylink=&quot;OpenSourceLicense&quot;&gt;OpenSourceLicense&lt;/a&gt;.  Incremental updates will occur every few months, depending upon the complexity of the changes being made.  A comprehensive re-write of &lt;a class=&quot;externalLink null&quot; href=&quot;http://tiddlywiki.com/
-#TiddlyWiki&quot; title=&quot;External link to http://tiddlywiki.com/
-#TiddlyWiki&quot; target=&quot;_blank&quot; refresh=&quot;link&quot; tiddlylink=&quot;TiddlyWiki&quot;&gt;TiddlyWiki&lt;/a&gt;, called &lt;a class=&quot;externalLink null&quot; href=&quot;http://tiddlywiki.com/
-#TiddlyWiki5&quot; title=&quot;External link to http://tiddlywiki.com/
-#TiddlyWiki5&quot; target=&quot;_blank&quot; refresh=&quot;link&quot; tiddlylink=&quot;TiddlyWiki5&quot;&gt;TiddlyWiki5&lt;/a&gt;, is now under active development. It is available for testing here: &lt;a class=&quot;externalLink&quot; href=&quot;http://five.tiddlywiki.com&quot; title=&quot;External link to http://five.tiddlywiki.com&quot; target=&quot;_blank&quot;&gt;http://five.tiddlywiki.com&lt;/a&gt;</description>
-<category>gettingstarted</category>
-<category>welcome</category>
-<link>http://tiddlywiki.com/
-#HelloThere</link>
-<pubDate>Wed, 13 Mar 2013 09:41:00 GMT</pubDate>
 
 </item>
 <item>
@@ -471,7 +471,7 @@ config.macros.download.onClick = function(ev)
 #Date Formats&quot; title=&quot;External link to http://tiddlywiki.com/
 #Date Formats&quot; target=&quot;_blank&quot; refresh=&quot;link&quot; tiddlylink=&quot;Date Formats&quot;&gt;date format string&lt;/a&gt; that determines the format of the dates&lt;/li&gt;&lt;li&gt; &lt;strong&gt;template&lt;/strong&gt; names the tiddler to use as the template for list entries&lt;ul&gt;&lt;li&gt; The default template is &lt;code&gt;&amp;lt;&amp;lt;view title link&amp;gt;&amp;gt;&lt;/code&gt; to cause the display of the tiddler title as a link to the tiddler&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;&lt;li&gt; &lt;strong&gt;groupTemplate&lt;/strong&gt; names the tiddler to use as the template for grouping entries in the list&lt;ul&gt;&lt;li&gt; The default groupTemplate is &lt;code&gt;&amp;lt;&amp;lt;view %0 date '%1'&amp;gt;&amp;gt;&lt;/code&gt;, where &lt;code&gt;%0&lt;/code&gt; is the name of the field being displayed and &lt;code&gt;%1&lt;/code&gt; is the &lt;strong&gt;dateformat&lt;/strong&gt; selected in the third argument&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;&lt;li&gt; &lt;strong&gt;filter&lt;/strong&gt; is a tiddler filter that is used to filter the tiddlers that appear in the list&lt;/li&gt;&lt;/ul&gt;&lt;br&gt;For example:&lt;br&gt;&lt;pre&gt;&amp;lt;&amp;lt;timeline created 5&amp;gt;&amp;gt;&amp;gt;
 &lt;/pre&gt;displays as:&lt;br&gt;&lt;div params=&quot;created 5&quot; macroname=&quot;timeline&quot; refresh=&quot;macro&quot;&gt;&lt;ul class=&quot;timeline&quot;&gt;&lt;li class=&quot;listTitle&quot;&gt;26 April 2013&lt;/li&gt;&lt;li class=&quot;listLink&quot;&gt;&lt;a href=&quot;javascript:;&quot; title=&quot;TiddlyFox - jermolene, Friday, April 26, 2013 01:44:00&quot; class=&quot;tiddlyLink tiddlyLinkExisting&quot; refresh=&quot;link&quot; tiddlylink=&quot;TiddlyFox&quot;&gt;TiddlyFox&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;ul class=&quot;timeline&quot;&gt;&lt;li class=&quot;listTitle&quot;&gt;15 September 2012&lt;/li&gt;&lt;li class=&quot;listLink&quot;&gt;&lt;a href=&quot;javascript:;&quot; title=&quot;WhatsNew - ericshulman, Monday, May 13, 2013 03:27:00&quot; class=&quot;tiddlyLink tiddlyLinkExisting&quot; refresh=&quot;link&quot; tiddlylink=&quot;WhatsNew&quot;&gt;WhatsNew&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;ul class=&quot;timeline&quot;&gt;&lt;li class=&quot;listTitle&quot;&gt;20 August 2012&lt;/li&gt;&lt;li class=&quot;listLink&quot;&gt;&lt;a href=&quot;javascript:;&quot; title=&quot;This shadow tiddler is used as the contents of the main menu in the left-hand column of the screen&quot; class=&quot;tiddlyLink tiddlyLinkExisting&quot; refresh=&quot;link&quot; tiddlylink=&quot;MainMenu&quot;&gt;MainMenu&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;ul class=&quot;timeline&quot;&gt;&lt;li class=&quot;listTitle&quot;&gt;20 March 2012&lt;/li&gt;&lt;li class=&quot;listLink&quot;&gt;&lt;a href=&quot;javascript:;&quot; title=&quot;TiddlyWiki5 - jermolene, Tuesday, March 20, 2012 03:42:00&quot; class=&quot;tiddlyLink tiddlyLinkExisting&quot; refresh=&quot;link&quot; tiddlylink=&quot;TiddlyWiki5&quot;&gt;TiddlyWiki5&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;ul class=&quot;timeline&quot;&gt;&lt;li class=&quot;listTitle&quot;&gt;7 March 2012&lt;/li&gt;&lt;li class=&quot;listLink&quot;&gt;&lt;a href=&quot;javascript:;&quot; title=&quot;luakit - jermolene, Wednesday, March 07, 2012 08:02:00&quot; class=&quot;tiddlyLink tiddlyLinkExisting&quot; refresh=&quot;link&quot; tiddlylink=&quot;luakit&quot;&gt;luakit&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;&lt;br&gt;&lt;pre&gt;&amp;lt;&amp;lt;timeline modified 5&amp;gt;&amp;gt;
-&lt;/pre&gt;displays as:&lt;br&gt;&lt;div params=&quot;modified 5&quot; macroname=&quot;timeline&quot; refresh=&quot;macro&quot;&gt;&lt;ul class=&quot;timeline&quot;&gt;&lt;li class=&quot;listTitle&quot;&gt;13 May 2013&lt;/li&gt;&lt;li class=&quot;listLink&quot;&gt;&lt;a href=&quot;javascript:;&quot; title=&quot;WhatsNew - ericshulman, Monday, May 13, 2013 03:27:00&quot; class=&quot;tiddlyLink tiddlyLinkExisting&quot; refresh=&quot;link&quot; tiddlylink=&quot;WhatsNew&quot;&gt;WhatsNew&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;ul class=&quot;timeline&quot;&gt;&lt;li class=&quot;listTitle&quot;&gt;26 April 2013&lt;/li&gt;&lt;li class=&quot;listLink&quot;&gt;&lt;a href=&quot;javascript:;&quot; title=&quot;Browsers - jermolene, Friday, April 26, 2013 01:46:00&quot; class=&quot;tiddlyLink tiddlyLinkExisting&quot; refresh=&quot;link&quot; tiddlylink=&quot;Browsers&quot;&gt;Browsers&lt;/a&gt;&lt;/li&gt;&lt;li class=&quot;listLink&quot;&gt;&lt;a href=&quot;javascript:;&quot; title=&quot;TiddlyFox - jermolene, Friday, April 26, 2013 01:44:00&quot; class=&quot;tiddlyLink tiddlyLinkExisting&quot; refresh=&quot;link&quot; tiddlylink=&quot;TiddlyFox&quot;&gt;TiddlyFox&lt;/a&gt;&lt;/li&gt;&lt;li class=&quot;listLink&quot;&gt;&lt;a href=&quot;javascript:;&quot; title=&quot;TiddlyWiki Browser Compatibility - jermolene, Friday, April 26, 2013 01:43:00&quot; class=&quot;tiddlyLink tiddlyLinkExisting&quot; refresh=&quot;link&quot; tiddlylink=&quot;TiddlyWiki Browser Compatibility&quot;&gt;TiddlyWiki Browser Compatibility&lt;/a&gt;&lt;/li&gt;&lt;li class=&quot;listLink&quot;&gt;&lt;a href=&quot;javascript:;&quot; title=&quot;FireFox - jermolene, Friday, April 26, 2013 01:41:00&quot; class=&quot;tiddlyLink tiddlyLinkExisting&quot; refresh=&quot;link&quot; tiddlylink=&quot;FireFox&quot;&gt;FireFox&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;</description>
+&lt;/pre&gt;displays as:&lt;br&gt;&lt;div params=&quot;modified 5&quot; macroname=&quot;timeline&quot; refresh=&quot;macro&quot;&gt;&lt;ul class=&quot;timeline&quot;&gt;&lt;li class=&quot;listTitle&quot;&gt;15 May 2013&lt;/li&gt;&lt;li class=&quot;listLink&quot;&gt;&lt;a href=&quot;javascript:;&quot; title=&quot;HelloThere - ericshulman, Wednesday, May 15, 2013 11:21:00&quot; class=&quot;tiddlyLink tiddlyLinkExisting&quot; refresh=&quot;link&quot; tiddlylink=&quot;HelloThere&quot;&gt;HelloThere&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;ul class=&quot;timeline&quot;&gt;&lt;li class=&quot;listTitle&quot;&gt;13 May 2013&lt;/li&gt;&lt;li class=&quot;listLink&quot;&gt;&lt;a href=&quot;javascript:;&quot; title=&quot;WhatsNew - ericshulman, Monday, May 13, 2013 03:27:00&quot; class=&quot;tiddlyLink tiddlyLinkExisting&quot; refresh=&quot;link&quot; tiddlylink=&quot;WhatsNew&quot;&gt;WhatsNew&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;ul class=&quot;timeline&quot;&gt;&lt;li class=&quot;listTitle&quot;&gt;26 April 2013&lt;/li&gt;&lt;li class=&quot;listLink&quot;&gt;&lt;a href=&quot;javascript:;&quot; title=&quot;Browsers - jermolene, Friday, April 26, 2013 01:46:00&quot; class=&quot;tiddlyLink tiddlyLinkExisting&quot; refresh=&quot;link&quot; tiddlylink=&quot;Browsers&quot;&gt;Browsers&lt;/a&gt;&lt;/li&gt;&lt;li class=&quot;listLink&quot;&gt;&lt;a href=&quot;javascript:;&quot; title=&quot;TiddlyFox - jermolene, Friday, April 26, 2013 01:44:00&quot; class=&quot;tiddlyLink tiddlyLinkExisting&quot; refresh=&quot;link&quot; tiddlylink=&quot;TiddlyFox&quot;&gt;TiddlyFox&lt;/a&gt;&lt;/li&gt;&lt;li class=&quot;listLink&quot;&gt;&lt;a href=&quot;javascript:;&quot; title=&quot;TiddlyWiki Browser Compatibility - jermolene, Friday, April 26, 2013 01:43:00&quot; class=&quot;tiddlyLink tiddlyLinkExisting&quot; refresh=&quot;link&quot; tiddlylink=&quot;TiddlyWiki Browser Compatibility&quot;&gt;TiddlyWiki Browser Compatibility&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;</description>
 <category>macro</category>
 <link>http://tiddlywiki.com/
 #%5B%5Btimeline%20macro%5D%5D</link>
