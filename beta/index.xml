@@ -2,46 +2,46 @@
 <rss version="2.0">
 <channel>
 <title>TiddlyWiki</title>
-<description>Pre-release build v2.7.2 (beta 2) April, 2013</description>
+<description>Pre-release build v2.8.0 (beta 1) April, 2013</description>
 <language>en</language>
 <copyright>Copyright 2013 YourName</copyright>
-<pubDate>Mon, 13 May 2013 10:26:16 GMT</pubDate>
-<lastBuildDate>Mon, 13 May 2013 10:26:16 GMT</lastBuildDate>
+<pubDate>Tue, 21 May 2013 18:29:49 GMT</pubDate>
+<lastBuildDate>Tue, 21 May 2013 18:29:49 GMT</lastBuildDate>
 <docs>http://blogs.law.harvard.edu/tech/rss</docs>
-<generator>TiddlyWiki 2.7.2 (beta 2)</generator>
+<generator>TiddlyWiki 2.8.0 (beta 1)</generator>
 <item>
 <title>WhatsNew</title>
 <description>This revision includes the following changes:&lt;br&gt;&lt;ul&gt;&lt;li&gt;&lt;div class=&quot;block&quot;&gt;&lt;strong&gt;Backstage&amp;gt;import:&lt;/strong&gt;&lt;br&gt;See &lt;a class=&quot;externalLink&quot; href=&quot;https://github.com/TiddlyWiki/tiddlywiki/issues/116&quot; title=&quot;External link to https://github.com/TiddlyWiki/tiddlywiki/issues/116&quot; target=&quot;_blank&quot;&gt;https://github.com/TiddlyWiki/tiddlywiki/issues/116&lt;/a&gt;&lt;br&gt;Importing tiddlers now uses &quot;FileReader&quot; API whenever available (currently supported by Chrome, Firefox 20+, etc.).  This new HTML5-standard browser-based file I/O handling &lt;strong&gt;&lt;em&gt;does not require any special privileges or security permissions&lt;/em&gt;&lt;/strong&gt; to read contents of files that you interactively select from your local filesystem, and you can now successfully &lt;strong&gt;&lt;em&gt;import tiddler from files that are outside of the current folder.&lt;/em&gt;&lt;/strong&gt;&lt;br&gt;&lt;blockquote&gt;Note: this change only applies when you use the &quot;browse&quot; (or &quot;select file&quot;) button to interactively choose a document from your local filesystem.   If you manually enter (or paste) a local &lt;code&gt;file://&lt;/code&gt; URL into the import form (or if FileReader handling is not supported by your browser version), the existing browser-specific file I/O functions are used, which requires security permissions and/or other add-ons to permit reading of file contents; e.g. TiddlyFox (FireFox), TiddlySaver java applet (Chrome, Safari, Opera, etc.), or ActiveX (Internet Explorer).&lt;br&gt;&lt;/blockquote&gt;&lt;/div&gt;&lt;/li&gt;&lt;li&gt;&lt;div class=&quot;block&quot;&gt;&lt;strong&gt;Internet Explorer:&lt;/strong&gt;&lt;br&gt;See &lt;a class=&quot;externalLink&quot; href=&quot;https://github.com/TiddlyWiki/tiddlywiki/issues/118&quot; title=&quot;External link to https://github.com/TiddlyWiki/tiddlywiki/issues/118&quot; target=&quot;_blank&quot;&gt;https://github.com/TiddlyWiki/tiddlywiki/issues/118&lt;/a&gt;&lt;br&gt;When using IE10 (the current version of IE), special-case handling of embedded newlines in PRE-formatted blocks is no longer applied.  This corrects a formatting/display error introduced by changes in IE10.&lt;br&gt;&lt;blockquote&gt;Note: this change only applies to IE10 and above; special handling is still applied to embedded newlines in IE9 and earlier so there should be no change to existing content when viewed on IE9 or earlier.&lt;br&gt;&lt;/blockquote&gt;&lt;/div&gt;&lt;/li&gt;&lt;/ul&gt;</description>
 <link>null#WhatsNew</link>
-<pubDate>Mon, 13 May 2013 07:00:00 GMT</pubDate>
+<pubDate>Tue, 21 May 2013 07:00:00 GMT</pubDate>
 
 </item>
 <item>
 <title>SiteTitle</title>
 <description>&lt;a class=&quot;externalLink null&quot; href=&quot;null#TiddlyWiki&quot; title=&quot;External link to null#TiddlyWiki&quot; target=&quot;_blank&quot; refresh=&quot;link&quot; tiddlylink=&quot;TiddlyWiki&quot;&gt;TiddlyWiki&lt;/a&gt;</description>
 <link>null#SiteTitle</link>
-<pubDate>Mon, 13 May 2013 07:00:00 GMT</pubDate>
+<pubDate>Tue, 21 May 2013 07:00:00 GMT</pubDate>
 
 </item>
 <item>
 <title>SiteSubtitle</title>
-<description>&lt;strong&gt;Pre-release build v&lt;span&gt;2.7.2 (beta 2)&lt;/span&gt; April, 2013&lt;/strong&gt;</description>
+<description>&lt;strong&gt;Pre-release build v&lt;span&gt;2.8.0 (beta 1)&lt;/span&gt; April, 2013&lt;/strong&gt;</description>
 <link>null#SiteSubtitle</link>
-<pubDate>Mon, 13 May 2013 07:00:00 GMT</pubDate>
+<pubDate>Tue, 21 May 2013 07:00:00 GMT</pubDate>
 
 </item>
 <item>
 <title>HelloThere</title>
-<description>This is the PRE-RELEASE &quot;beta&quot; build of TiddlyWiki v&lt;span&gt;2.7.2 (beta 2)&lt;/span&gt;.&lt;br&gt;&lt;br&gt;&lt;span style=&quot;font-size: 24pt; display: block; text-align: center; &quot;&gt;&lt;a class=&quot;externalLink&quot; href=&quot;http://www.TiddlyWiki.com/beta/empty.zip&quot; title=&quot;External link to http://www.TiddlyWiki.com/beta/empty.zip&quot; target=&quot;_blank&quot;&gt;download now&lt;/a&gt;&lt;/span&gt;&lt;br&gt;&lt;br&gt;TiddlyWiki &quot;Classic&quot; uses TiddlyWiki5-based tools to assemble and output the core system, rather than the Ruby-based ginsu/cook utilities that were previously used.  The ability of TiddlyWiki5 to directly create TiddlyWiki Classic documents ensures a robust and reliable future for the existing &quot;installed base&quot; of TiddlyWiki, even as the community migrates to using the new power and flexiblity of TiddlyWiki5.&lt;br&gt;&lt;br&gt;You can view versions of TiddlyWiki from the following locations:&lt;br&gt;&lt;table class=&quot;twtable&quot;&gt;&lt;tbody&gt;&lt;tr class=&quot;evenRow&quot;&gt;&lt;td&gt;current release of TiddlyWiki Classic&lt;/td&gt;&lt;td&gt;&lt;a class=&quot;externalLink&quot; href=&quot;http://www.TiddlyWiki.com/&quot; title=&quot;External link to http://www.TiddlyWiki.com/&quot; target=&quot;_blank&quot;&gt;http://www.TiddlyWiki.com/&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr class=&quot;oddRow&quot;&gt;&lt;td&gt;latest pre-release of TiddlyWiki Classic&lt;/td&gt;&lt;td&gt;&lt;a class=&quot;externalLink&quot; href=&quot;http://www.TiddlyWiki.com/beta/&quot; title=&quot;External link to http://www.TiddlyWiki.com/beta/&quot; target=&quot;_blank&quot;&gt;http://www.TiddlyWiki.com/beta/&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr class=&quot;evenRow&quot;&gt;&lt;td&gt;latest pre-release of TiddlyWiki5&lt;/td&gt;&lt;td&gt;&lt;a class=&quot;externalLink&quot; href=&quot;http://five.TiddlyWiki.com/&quot; title=&quot;External link to http://five.TiddlyWiki.com/&quot; target=&quot;_blank&quot;&gt;http://five.TiddlyWiki.com/&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;br&gt;</description>
+<description>This is the PRE-RELEASE &quot;beta&quot; build of TiddlyWiki v&lt;span&gt;2.8.0 (beta 1)&lt;/span&gt;.&lt;br&gt;&lt;br&gt;&lt;span style=&quot;font-size: 24pt; display: block; text-align: center; &quot;&gt;&lt;a class=&quot;externalLink&quot; href=&quot;http://www.TiddlyWiki.com/beta/empty.zip&quot; title=&quot;External link to http://www.TiddlyWiki.com/beta/empty.zip&quot; target=&quot;_blank&quot;&gt;download now&lt;/a&gt;&lt;/span&gt;&lt;br&gt;&lt;br&gt;TiddlyWiki &quot;Classic&quot; uses TiddlyWiki5-based tools to assemble and output the core system, rather than the Ruby-based ginsu/cook utilities that were previously used.  The ability of TiddlyWiki5 to directly create TiddlyWiki Classic documents ensures a robust and reliable future for the existing &quot;installed base&quot; of TiddlyWiki, even as the community migrates to using the new power and flexiblity of TiddlyWiki5.&lt;br&gt;&lt;br&gt;You can view versions of TiddlyWiki from the following locations:&lt;br&gt;&lt;table class=&quot;twtable&quot;&gt;&lt;tbody&gt;&lt;tr class=&quot;evenRow&quot;&gt;&lt;td&gt;current release of TiddlyWiki Classic&lt;/td&gt;&lt;td&gt;&lt;a class=&quot;externalLink&quot; href=&quot;http://www.TiddlyWiki.com/&quot; title=&quot;External link to http://www.TiddlyWiki.com/&quot; target=&quot;_blank&quot;&gt;http://www.TiddlyWiki.com/&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr class=&quot;oddRow&quot;&gt;&lt;td&gt;latest pre-release of TiddlyWiki Classic&lt;/td&gt;&lt;td&gt;&lt;a class=&quot;externalLink&quot; href=&quot;http://www.TiddlyWiki.com/beta/&quot; title=&quot;External link to http://www.TiddlyWiki.com/beta/&quot; target=&quot;_blank&quot;&gt;http://www.TiddlyWiki.com/beta/&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr class=&quot;evenRow&quot;&gt;&lt;td&gt;latest pre-release of TiddlyWiki5&lt;/td&gt;&lt;td&gt;&lt;a class=&quot;externalLink&quot; href=&quot;http://five.TiddlyWiki.com/&quot; title=&quot;External link to http://five.TiddlyWiki.com/&quot; target=&quot;_blank&quot;&gt;http://five.TiddlyWiki.com/&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;br&gt;</description>
 <link>null#HelloThere</link>
-<pubDate>Mon, 13 May 2013 07:00:00 GMT</pubDate>
+<pubDate>Tue, 21 May 2013 07:00:00 GMT</pubDate>
 
 </item>
 <item>
 <title>DefaultTiddlers</title>
 <description>&lt;a class=&quot;externalLink null&quot; href=&quot;null#HelloThere&quot; title=&quot;External link to null#HelloThere&quot; target=&quot;_blank&quot; refresh=&quot;link&quot; tiddlylink=&quot;HelloThere&quot;&gt;HelloThere&lt;/a&gt;&lt;br&gt;&lt;a class=&quot;externalLink null&quot; href=&quot;null#WhatsNew&quot; title=&quot;External link to null#WhatsNew&quot; target=&quot;_blank&quot; refresh=&quot;link&quot; tiddlylink=&quot;WhatsNew&quot;&gt;WhatsNew&lt;/a&gt;&lt;br&gt;</description>
 <link>null#DefaultTiddlers</link>
-<pubDate>Mon, 13 May 2013 07:00:00 GMT</pubDate>
+<pubDate>Tue, 21 May 2013 07:00:00 GMT</pubDate>
 
 </item>
 </channel>

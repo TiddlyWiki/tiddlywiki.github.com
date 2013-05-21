@@ -738,7 +738,7 @@ var pluginInfo,tiddler; // Used to pass information to plugins in loadPlugins()
 // Whether this file can be saved back to the same location [Preemption]
 window.allowSave = window.allowSave || function(l)
 {
-	return (document.location.protocol == "file:");
+	return true;
 }
 
 // Whether to use the JavaSaver applet
@@ -754,6 +754,7 @@ if(!window || !window.console) {
 // Starting up
 function main()
 {
+	window.originalHTML=recreateOriginal();
 
 	var t10,t9,t8,t7,t6,t5,t4,t3,t2,t1,t0 = new Date();
 	startingUp = true;
@@ -6068,9 +6069,35 @@ function autoSaveChanges(onlyIfDirty,tiddlers)
 function loadOriginal(localPath)
 {
 	var content=loadFile(localPath);
+	if (!content) content=window.originalHTML||recreateOriginal();
 	return content;
 }
 
+function recreateOriginal()
+{
+	// construct doctype
+	var t=document.doctype;
+	var content = "<!DOCTYPE "+t.name;
+	if      (t.publicId)		content+=' PUBLIC "'+t.publicId+'"';
+	else if (t.systemId)		content+=' SYSTEM "'+t.systemId+'"';
+	content+=' "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"';
+	content+='>\n';
+
+	// append current document content
+	content+=document.documentElement.outerHTML;
+
+	content=content.replace(/<div id="saveTest">savetest<\/div>/,'<div id="saveTest"></div>');
+	content=content.replace(/script><applet [^\>]*><\/applet>/g,'script>');
+	content=content.replace(/><head>/,'>\n<head>');
+	content=content.replace(/\n\n<\/body><\/html>$/,'</body>\n</html>\n');
+	content=content.replace(/(<(meta) [^\>]*[^\/])>/g,'$1 />');
+	content=content.replace(/<noscript>[^\<]*<\/noscript>/,
+		function(m){return m.replace(/&lt;/g,'<').replace(/&gt;/g,'>');});
+	content=content.replace(/<div id="copyright">[^\<]*<\/div>/,
+		function(m){return m.replace(/\xA9/g,'&copy;');});
+
+	return content;
+}
 
 // Save this tiddlywiki with the pending changes
 function saveChanges(onlyIfDirty,tiddlers)
@@ -6282,6 +6309,10 @@ window.saveFile = window.saveFile || function(fileUrl,content)
 		r = ieSaveFile(fileUrl,content);
 	if(!r)
 		r = javaSaveFile(fileUrl,content);
+	if(!r)
+		r = HTML5DownloadSaveFile(fileUrl,content);
+	if(!r)
+		r = manualSaveFile(fileUrl,content);
 	return r;
 }
 
@@ -6511,6 +6542,39 @@ function javaLoadFile(filePath)
 	return content.join("\n");
 }
 
+function HTML5DownloadSaveFile(filePath,content)
+{
+	if(document.createElement("a").download !== undefined) {
+		try {
+			var slashpos=filePath.lastIndexOf("/");
+			if (slashpos==-1) slashpos=filePath.lastIndexOf("\\"); 
+			var filename=filePath.substr(slashpos+1);
+			var uri = "data:text/html," + encodeURIComponent(content);
+			var link = document.createElement("a");
+			link.setAttribute("target","_blank");
+			link.setAttribute("href",uri);
+			link.setAttribute("download",filename);
+			document.body.appendChild(link); link.click(); document.body.removeChild(link);
+			return true;
+		} catch(ex) {
+			return true;
+		}
+
+	}
+	return null;
+}
+
+// Returns null if it can't do it, false if there's an error, true if it saved OK
+function manualSaveFile(filePath,content)
+{
+	// QUICK FALLBACK for showing a link to data: URI
+	var slashpos=filePath.lastIndexOf("/");
+	if (slashpos==-1) slashpos=filePath.lastIndexOf("\\"); 
+	var filename=filePath.substr(slashpos+1);
+	var uri = "data:text/html," + encodeURIComponent(content);
+	displayMessage("RIGHT CLICK HERE TO SAVE "+filename+": ",uri);
+	return true;
+}
 //--
 //-- Filesystem utilities
 //--
