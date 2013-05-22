@@ -46,7 +46,7 @@ DAMAGE.
 <!--}}}-->
 
 <!--PRE-HEAD-END-->
-<title> TiddlyWiki - Pre-release build v2.8.0 (beta 1) April, 2013 </title>
+<title> TiddlyWiki - Pre-release build v2.8.0 (beta 1) May, 2013 </title>
 <style id="styleArea" type="text/css">
 #saveTest {display:none;}
 #messageArea {display:none;}
@@ -527,21 +527,18 @@ WhatsNew
 </pre>
 </div>
 <div title="HelloThere" modifier="EricShulman" type="text/x-tiddlywiki">
-<pre>This is the ~PRE-RELEASE &quot;beta&quot; build of ~TiddlyWiki v&lt;&lt;version&gt;&gt;.
+<pre>''This is the ~PRE-RELEASE &quot;beta&quot; build of ~TiddlyWiki v&lt;&lt;version&gt;&gt;.''
 
-@@font-size:24pt;display:block;text-align:center;[[download now|http://www.TiddlyWiki.com/beta/empty.zip]]@@
+@@font-size:24pt;[[download now...|http://www.TiddlyWiki.com/beta/empty.zip]]@@
 
-~TiddlyWiki &quot;Classic&quot; uses ~TiddlyWiki5-based tools to assemble and output the core system, rather than the Ruby-based ginsu/cook utilities that were previously used.  The ability of ~TiddlyWiki5 to directly create ~TiddlyWiki Classic documents ensures a robust and reliable future for the existing &quot;installed base&quot; of ~TiddlyWiki, even as the community migrates to using the new power and flexiblity of ~TiddlyWiki5.
-
-You can view versions of ~TiddlyWiki from the following locations:
-|current release of ~TiddlyWiki Classic|http://www.TiddlyWiki.com/|
-|latest pre-release of ~TiddlyWiki Classic|http://www.TiddlyWiki.com/beta/|
-|latest pre-release of ~TiddlyWiki5|http://five.TiddlyWiki.com/|
-
+You can view other versions of ~TiddlyWiki from the following locations:
+| current release of ~TiddlyWiki Classic|!http://www.TiddlyWiki.com/|
+| previous releases of ~TiddlyWiki Classic|!http://tiddlywiki.com/archive/|
+| latest pre-release of ~TiddlyWiki5|!http://five.TiddlyWiki.com/|
 </pre>
 </div>
 <div title="SiteSubtitle" type="text/x-tiddlywiki">
-<pre>''Pre-release build v&lt;&lt;version&gt;&gt; April, 2013''</pre>
+<pre>''Pre-release build v&lt;&lt;version&gt;&gt; May, 2013''</pre>
 </div>
 <div title="SiteTitle" type="text/x-tiddlywiki">
 <pre>TiddlyWiki</pre>
@@ -549,16 +546,19 @@ You can view versions of ~TiddlyWiki from the following locations:
 <div title="WhatsNew" modifier="EricShulman" type="text/x-tiddlywiki">
 <pre>This revision includes the following changes:
 *{{block{
-''Backstage&gt;import:''
-See https://github.com/TiddlyWiki/tiddlywiki/issues/116
-Importing tiddlers now uses &quot;~FileReader&quot; API whenever available (currently supported by Chrome, Firefox 20+, etc.).  This new ~HTML5-standard browser-based file I/O handling ''//does not require any special privileges or security permissions//'' to read contents of files that you interactively select from your local filesystem, and you can now successfully ''//import tiddler from files that are outside of the current folder.//''
-&gt;Note: this change only applies when you use the &quot;browse&quot; (or &quot;select file&quot;) button to interactively choose a document from your local filesystem.   If you manually enter (or paste) a local {{{file://}}} URL into the import form (or if ~FileReader handling is not supported by your browser version), the existing browser-specific file I/O functions are used, which requires security permissions and/or other add-ons to permit reading of file contents; e.g. ~TiddlyFox (~FireFox), ~TiddlySaver java applet (Chrome, Safari, Opera, etc.), or ~ActiveX (Internet Explorer).
+''~HTML5 &quot;download&quot; saving''
+When you invoke &lt;&lt;saveChanges&gt;&gt;, ~TiddlyWiki attempts to use browser-specific //direct file I/O// functions to read/write locally stored files.  Unfortunately, many newer browsers block use of these functions unless you grant special permissions and/or install browser add-ons (e.g. ~TiddlyFox, ~TiddlySaver, or ~ActiveX) to enable reading/writing of local file contents.  In ~TiddlyWiki version 2.7.x and earlier, when direct file I/O functions are not available, ~TiddlyWiki is unable to save the document and simply reports an error to that effect.  ''~TiddlyWiki version 2.8.0 introduces new fallback handling for saving your changes when direct file I/O is not available.''
+
+The new handling permits ~HTML5-compatible browsers to ''&quot;download&quot; the current document from active browser memory (including any unsaved changes)'' by triggering the familiar &quot;download a file&quot; dialog(s) provided by your browser.  This process typically allows you to accept/deny the &quot;download&quot; of your updated document file and, depending upon your browser's settings, select the location (path and filename) in which to save it, ''//without requiring any special security permissions or browser add-ons//.''
+
+In addition to working with local documents, the new fallback method can also be used to view //and// ''edit a ~TiddlyWiki document that has been posted online, without first needing to download and open a local copy''.  When you select &lt;&lt;saveChanges&gt;&gt;, the online document -- including any changes you've made -- is downloaded to your local filesystem.  You can then open the local copy to continue editing and update the local file using direct file I/O (if enabled) or fallback &quot;download&quot; handling to overwrite the local file if direct file I/O is not enabled.
+
+//Note: Currently, the fallback &quot;download&quot; method can only be used to save the main ~TiddlyWiki document file and does not generate and save backup files, XML files (for RSS feeds) or new blank files (&quot;empty.html&quot;), even if these options are selected in [[AdvancedOptions]].  To save these additional locally-stored files, a direct file I/O method must be enabled (i.e., permissions granted and/or add-ons installed).//
+
 }}}
 *{{block{
-''Internet Explorer:''
-See https://github.com/TiddlyWiki/tiddlywiki/issues/118
-When using ~IE10 (the current version of IE), special-case handling of embedded newlines in ~PRE-formatted blocks is no longer applied.  This corrects a formatting/display error introduced by changes in ~IE10.
-&gt;Note: this change only applies to ~IE10 and above; special handling is still applied to embedded newlines in ~IE9 and earlier so there should be no change to existing content when viewed on ~IE9 or earlier.
+''manual download saving''
+If direct file I/O is unavailable ''//and the ~HTML5 &quot;download&quot; feature is not supported by your browser//'' (i.e, you are using an older browser), ~TiddlyWiki will display linked message text in the upper-right corner &quot;message area&quot;.  This link contains the entire document content (including your changes), encoded a special data:// URI.  When you right-click and select &quot;save link as...&quot; from the link's popup menu, it triggers the same browser-provided &quot;download a file&quot; interactive process outlined above, allowing you to save the encoded link content as a file on your local filesystem.
 }}}
 </pre>
 </div>
