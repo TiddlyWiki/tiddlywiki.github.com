@@ -6152,8 +6152,14 @@ function saveMain(localPath,original,posDiv)
 		showException(ex);
 	}
 	if(save) {
-		if (!config.saveByDownload) //# set by HTML5DownloadSaveFile() or manualSaveFile()
-			displayMessage(config.messages.mainSaved,"file://" + localPath);
+		if (config.saveByDownload) { //# set by HTML5DownloadSaveFile() or manualSaveFile()
+			var link = "data:text/html," + encodeURIComponent(revised);
+			var msg  = config.messages.mainDownload;
+		} else {
+			var link = "file://" + localPath;
+			var msg  = config.messages.mainSaved;
+		}
+		displayMessage(msg,link);
 		store.setDirty(false);
 	} else {
 		alert(config.messages.mainFailed);
@@ -6560,7 +6566,6 @@ function HTML5DownloadSaveFile(filePath,content)
 		link.setAttribute("href",uri);
 		link.setAttribute("download",filename);
 		document.body.appendChild(link); link.click(); document.body.removeChild(link);
-		displayMessage(config.messages.mainDownload,uri);
 		return true;
 	}
 	return null;

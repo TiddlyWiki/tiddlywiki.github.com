@@ -46,7 +46,9 @@ DAMAGE.
 <!--}}}-->
 
 <!--PRE-HEAD-END-->
-<title> TiddlyWiki - Pre-release build v2.8.0 (beta 1) May, 2013 </title>
+<title>
+
+</title>
 <style id="styleArea" type="text/css">
 #saveTest {display:none;}
 #messageArea {display:none;}
@@ -526,7 +528,7 @@ noscript {display:none;} /* Fixes a feature in Firefox 1.5.0.2 where print previ
 WhatsNew
 </pre>
 </div>
-<div title="HelloThere" modifier="EricShulman" type="text/x-tiddlywiki">
+<div title="HelloThere" type="text/x-tiddlywiki" modifier="EricShulman">
 <pre>''This is the ~PRE-RELEASE &quot;beta&quot; build of ~TiddlyWiki v&lt;&lt;version&gt;&gt;.''
 
 @@font-size:24pt;[[download now...|http://www.TiddlyWiki.com/beta/empty.zip]]@@
@@ -543,7 +545,7 @@ You can view other versions of ~TiddlyWiki from the following locations:
 <div title="SiteTitle" type="text/x-tiddlywiki">
 <pre>TiddlyWiki</pre>
 </div>
-<div title="WhatsNew" modifier="EricShulman" type="text/x-tiddlywiki">
+<div title="WhatsNew" type="text/x-tiddlywiki" modifier="EricShulman">
 <pre>This revision includes the following changes:
 *{{block{
 ''~HTML5 &quot;download&quot; saving''
@@ -562,6 +564,9 @@ If direct file I/O is unavailable ''//and the ~HTML5 &quot;download&quot; featur
 }}}
 </pre>
 </div>
+
+
+
 </div>
 <!--POST-STOREAREA-->
 <!--POST-BODY-START-->
@@ -6724,8 +6729,14 @@ function saveMain(localPath,original,posDiv)
 		showException(ex);
 	}
 	if(save) {
-		if (!config.saveByDownload) //# set by HTML5DownloadSaveFile() or manualSaveFile()
-			displayMessage(config.messages.mainSaved,"file://" + localPath);
+		if (config.saveByDownload) { //# set by HTML5DownloadSaveFile() or manualSaveFile()
+			var link = "data:text/html," + encodeURIComponent(revised);
+			var msg  = config.messages.mainDownload;
+		} else {
+			var link = "file://" + localPath;
+			var msg  = config.messages.mainSaved;
+		}
+		displayMessage(msg,link);
 		store.setDirty(false);
 	} else {
 		alert(config.messages.mainFailed);
@@ -7132,7 +7143,6 @@ function HTML5DownloadSaveFile(filePath,content)
 		link.setAttribute("href",uri);
 		link.setAttribute("download",filename);
 		document.body.appendChild(link); link.click(); document.body.removeChild(link);
-		displayMessage(config.messages.mainDownload,uri);
 		return true;
 	}
 	return null;
