@@ -3,7 +3,7 @@
 <head>
 <script id="versionArea" type="text/javascript">
 //<![CDATA[
-var version = {title: "TiddlyWiki", major: 2, minor: 8, revision: 1, beta: 1, date: new Date("June 5, 2013"), extensions: {}};
+var version = {title: "TiddlyWiki", major: 2, minor: 8, revision: 1, beta: 2, date: new Date("June 19, 2013"), extensions: {}};
 
 //]]>
 </script>
@@ -46,7 +46,7 @@ DAMAGE.
 <!--}}}-->
 
 <!--PRE-HEAD-END-->
-<title> TiddlyWiki - Pre-release build v2.8.1 (beta 1) </title>
+<title> TiddlyWiki - Pre-release build v2.8.1 (beta 2) </title>
 <style id="styleArea" type="text/css">
 #saveTest {display:none;}
 #messageArea {display:none;}
@@ -544,7 +544,7 @@ You can view other versions of ~TiddlyWiki from the following locations:
 <pre>TiddlyWiki</pre>
 </div>
 <div title="WhatsNew" modifier="EricShulman" type="text/x-tiddlywiki">
-<pre>This revision includes three fixes to the new ''~HTML5 &quot;download&quot; saving'':
+<pre>This revision includes several fixes to the new ''~HTML5 &quot;download&quot; saving'', as well correcting the calculation of the 'useJavaSaver' and 'readOnly' flags when the document is viewed online:
 *{{block{
 https://github.com/TiddlyWiki/tiddlywiki/pull/135
 ''Critical fix to get TiddlyWiki 2.8.0 working on IE 6 and 7 (and 8)''
@@ -559,6 +559,11 @@ https://github.com/TiddlyWiki/tiddlywiki/issues/136
 https://github.com/TiddlyWiki/tiddlywiki/issues/137
 ''Fallback manual download saving in TW280 displays two messages''
 &gt;Manual download saving displays a message (&quot;RIGHT CLICK HERE to download...&quot;) as intended.  However, an extra message related to //automatic// ~HTML5-based download saving is then displayed immediately following the first message.  ''The extra message is no longer displayed.''
+}}}
+*{{block{
+https://github.com/TiddlyWiki/tiddlywiki/issues/139
+''tiddlywiki.com gives a Java warning''
+&gt;A change to the window.allowSave() test function in ~TW280 resulted in incorrect calculation of the 'readOnly' and 'useJavaSaver' flags at startup, resulting in an errant Java warning message when the document is viewed online.  ''A new test function, window.isLocal(), is now used to correctly calulate the startup flags.''
 }}}
 </pre>
 </div>
@@ -1315,8 +1320,14 @@ window.allowSave = window.allowSave || function(l)
 	return true;
 }
 
+// Whether this file is being viewed locally
+window.isLocal = function()
+{
+	return (document.location.protocol == "file:");
+}
+
 // Whether to use the JavaSaver applet
-var useJavaSaver = window.allowSave() && (config.browser.isSafari || config.browser.isOpera);
+var useJavaSaver = window.isLocal() && (config.browser.isSafari || config.browser.isOpera);
 
 // Allow preemption code a chance to tweak config and useJavaSaver [Preemption]
 if (window.tweakConfig) window.tweakConfig();
@@ -1356,7 +1367,7 @@ function main()
 	t3 = new Date();
 	invokeParamifier(params,"onload");
 	t4 = new Date();
-	readOnly = window.allowSave() ? false : config.options.chkHttpReadOnly;
+	readOnly = window.isLocal() ? false : config.options.chkHttpReadOnly;
 	var pluginProblem = loadPlugins("systemConfig");
 	doc.trigger("loadPlugins");
 	t5 = new Date();
