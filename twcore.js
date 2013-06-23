@@ -743,8 +743,14 @@ window.allowSave = window.allowSave || function(l)
 	return true;
 }
 
+// Whether this file is being viewed locally
+window.isLocal = function()
+{
+	return (document.location.protocol == "file:");
+}
+
 // Whether to use the JavaSaver applet
-var useJavaSaver = window.allowSave() && (config.browser.isSafari || config.browser.isOpera);
+var useJavaSaver = window.isLocal() && (config.browser.isSafari || config.browser.isOpera);
 
 // Allow preemption code a chance to tweak config and useJavaSaver [Preemption]
 if (window.tweakConfig) window.tweakConfig();
@@ -784,7 +790,7 @@ function main()
 	t3 = new Date();
 	invokeParamifier(params,"onload");
 	t4 = new Date();
-	readOnly = window.allowSave() ? false : config.options.chkHttpReadOnly;
+	readOnly = window.isLocal() ? false : config.options.chkHttpReadOnly;
 	var pluginProblem = loadPlugins("systemConfig");
 	doc.trigger("loadPlugins");
 	t5 = new Date();
@@ -6078,10 +6084,15 @@ function loadOriginal(localPath)
 function recreateOriginal()
 {
 	// construct doctype
+	var content = "<!DOCTYPE ";
 	var t=document.doctype;
-	var content = "<!DOCTYPE "+t.name;
-	if      (t.publicId)		content+=' PUBLIC "'+t.publicId+'"';
-	else if (t.systemId)		content+=' SYSTEM "'+t.systemId+'"';
+	if (!t) 
+		content+="html"
+	else {
+		content+=t.name;
+		if      (t.publicId)		content+=' PUBLIC "'+t.publicId+'"';
+		else if (t.systemId)		content+=' SYSTEM "'+t.systemId+'"';
+	}
 	content+=' "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"';
 	content+='>\n';
 
@@ -6131,16 +6142,20 @@ function saveChanges(onlyIfDirty,tiddlers)
 	}
 	var co=config.options; //# abbreviation
 	config.saveByDownload=false;
+	config.saveByManualDownload=false;
 	saveMain(localPath,original,posDiv);
-	if(co.chkSaveBackups && !config.saveByDownload)
-		saveBackup(localPath,original);
-	if(co.chkSaveEmptyTemplate && !config.saveByDownload)
-		saveEmpty(localPath,original,posDiv);
-	if(co.chkGenerateAnRssFeed && saveRss instanceof Function && !config.saveByDownload)
-		saveRss(localPath);
+	if (!config.saveByDownload && !config.saveByManualDownload) {
+		if(co.chkSaveBackups)
+			saveBackup(localPath,original);
+		if(co.chkSaveEmptyTemplate)
+			saveEmpty(localPath,original,posDiv);
+		if(co.chkGenerateAnRssFeed && saveRss instanceof Function)
+			saveRss(localPath);
+	}
 	if(co.chkDisplayInstrumentation)
 		displayMessage("saveChanges " + (new Date()-t0) + " ms");
 }
+
 
 function saveMain(localPath,original,posDiv)
 {
@@ -6152,14 +6167,16 @@ function saveMain(localPath,original,posDiv)
 		showException(ex);
 	}
 	if(save) {
-		if (config.saveByDownload) { //# set by HTML5DownloadSaveFile() or manualSaveFile()
-			var link = "data:text/html," + encodeURIComponent(revised);
-			var msg  = config.messages.mainDownload;
-		} else {
-			var link = "file://" + localPath;
-			var msg  = config.messages.mainSaved;
+		if (!config.saveByManualDownload) {
+			if (config.saveByDownload) { //# set by HTML5DownloadSaveFile()
+				var link = getDataURI(revised);
+				var msg  = config.messages.mainDownload;
+			} else {
+				var link = "file://" + localPath;
+				var msg  = config.messages.mainSaved;
+			}
+			displayMessage(msg,link);
 		}
-		displayMessage(msg,link);
 		store.setDirty(false);
 	} else {
 		alert(config.messages.mainFailed);
@@ -6560,7 +6577,7 @@ function HTML5DownloadSaveFile(filePath,content)
 		var slashpos=filePath.lastIndexOf("/");
 		if (slashpos==-1) slashpos=filePath.lastIndexOf("\\"); 
 		var filename=filePath.substr(slashpos+1);
-		var uri = "data:text/html," + encodeURIComponent(content);
+		var uri = getDataURI(content);
 		var link = document.createElement("a");
 		link.setAttribute("target","_blank");
 		link.setAttribute("href",uri);
@@ -6575,15 +6592,44 @@ function HTML5DownloadSaveFile(filePath,content)
 function manualSaveFile(filePath,content)
 {
 	// FALLBACK for showing a link to data: URI
-	config.saveByDownload=true;
+	config.saveByManualDownload=true;
 	var slashpos=filePath.lastIndexOf("/");
 	if (slashpos==-1) slashpos=filePath.lastIndexOf("\\"); 
 	var filename=filePath.substr(slashpos+1);
-	var uri = "data:text/html," + encodeURIComponent(content);
+	var uri = getDataURI(content);
 	displayMessage(config.messages.mainDownloadManual,uri);
 	return true;
 }
-//--
+
+// construct data URI (using base64 encoding to preserve multi-byte encodings)
+function getDataURI(data) {
+	if (config.browser.isIE)
+		return "data:text/html,"+encodeURIComponent(data);
+	else
+		return "data:text/html;base64,"+encodeBase64(data);
+}
+
+function encodeBase64(data) {
+	if (!data) return "";
+	var keyStr = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=";
+	var out = "";
+	var chr1,chr2,chr3="";
+	var enc1,enc2,enc3,enc4="";
+	for (var count=0,i=0; i<data.length; ) {
+		chr1=data.charCodeAt(i++);
+		chr2=data.charCodeAt(i++);
+		chr3=data.charCodeAt(i++);
+		enc1=chr1 >> 2;
+		enc2=((chr1 & 3) << 4) | (chr2 >> 4);
+		enc3=((chr2 & 15) << 2) | (chr3 >> 6);
+		enc4=chr3 & 63;
+		if (isNaN(chr2)) enc3=enc4=64;
+		else if (isNaN(chr3)) enc4=64;
+		out+=keyStr.charAt(enc1)+keyStr.charAt(enc2)+keyStr.charAt(enc3)+keyStr.charAt(enc4);
+		chr1=chr2=chr3=enc1=enc2=enc3=enc4="";
+	}
+	return out;
+}//--
 //-- Filesystem utilities
 //--
 
