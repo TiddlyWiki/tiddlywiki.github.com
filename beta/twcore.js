@@ -65,6 +65,7 @@ config.options = {
 	chkInsertTabs: false,
 	chkUsePreForStorage: true, // Whether to use <pre> format for storage
 	chkDisplayInstrumentation: false,
+	chkRemoveExtraMarkers: false, // #162
 	txtBackupFolder: "",
 	txtEditorFocus: "text",
 	txtMainTab: "tabTimeline",
@@ -181,7 +182,7 @@ if(!((new RegExp("[\u0150\u0170]","g")).test("\u0150"))) {
 }
 config.textPrimitives.sliceSeparator = "::";
 config.textPrimitives.sectionSeparator = "##";
-config.textPrimitives.urlPattern = "(?:file|http|https|mailto|ftp|irc|news|data):[^\\s'\"]+(?:/|\\b)";
+config.textPrimitives.urlPattern = "(?:file|http|https|mailto|ftp|irc|news|data):[^\\s'\"]+(?:/|\\b|\\[|\\])"; // #132
 config.textPrimitives.unWikiLink = "~";
 config.textPrimitives.wikiLink = "(?:(?:" + config.textPrimitives.upperLetter + "+" +
 	config.textPrimitives.lowerLetter + "+" +
@@ -228,7 +229,7 @@ config.shadowTiddlers = {
 	AdvancedOptions: '<<options>>',
 	PluginManager: '<<plugins>>',
 	SystemSettings: '',
-	ToolbarCommands: '|~ViewToolbar|closeTiddler closeOthers +editTiddler > fields syncing permalink references jump|\n|~EditToolbar|+saveTiddler -cancelTiddler deleteTiddler|',
+	ToolbarCommands: '|~ViewToolbar|closeTiddler closeOthers +editTiddler > fields permalink references jump|\n|~EditToolbar|+saveTiddler -cancelTiddler deleteTiddler|', // #160
 	WindowTitle: '<<tiddler SiteTitle>> - <<tiddler SiteSubtitle>>'
 };
 
@@ -296,6 +297,7 @@ merge(config.optionsDesc,{
 	chkForceMinorUpdate: "Don't update modifier username and date when editing tiddlers",
 	chkConfirmDelete: "Require confirmation before deleting tiddlers",
 	chkInsertTabs: "Use the tab key to insert tab characters instead of moving between fields",
+	chkRemoveExtraMarkers: "Replace unused transclusion markers with blanks", // #162
 	txtBackupFolder: "Name of folder to use for backups",
 	txtMaxEditRows: "Maximum number of rows in edit boxes",
 	txtTheme: "Name of the theme to use",
@@ -2136,7 +2138,7 @@ config.macros.tiddler.handler = function(place,macroName,params,wikifier,paramSt
 		refresh: "content", tiddler: tiddlerName
 	});
 	if(args!==undefined)
-		wrapper.setAttribute("args","[["+args.join("]] [[")+"]]");
+		wrapper.macroArgs=args; // #154
 	this.transclude(wrapper,tiddlerName,args);
 };
 
@@ -2158,6 +2160,12 @@ config.macros.tiddler.transclude = function(wrapper,tiddlerName,args)
 			var placeholderRE = new RegExp("\\$" + (i + 1),"mg");
 			text = text.replace(placeholderRE,args[i]);
 		}
+		// #162 start
+		if (n && config.options.chkRemoveExtraMarkers) for(i=n; i<9; i++) {
+			var placeholderRE = new RegExp("\\$" + (i + 1),"mg");
+			text = text.replace(placeholderRE,"");
+		}
+		// #162 end
 		config.macros.tiddler.renderText(wrapper,text,tiddlerName);
 	} finally {
 		stack.pop();
@@ -2536,7 +2544,7 @@ config.macros.newTiddler.onClickNewTiddler = function()
 	var customFields = this.getAttribute("customFields");
 	if(!customFields && !store.isShadowTiddler(title))
 		customFields = String.encodeHashMap(config.defaultCustomFields);
-	story.displayTiddler(null,title,template,false,null,null);
+	story.displayTiddler(this,title,template,false,null,null); // #161
 	var tiddlerElem = story.getTiddler(title);
 	if(customFields)
 		story.addCustomFields(tiddlerElem,customFields);
@@ -3357,7 +3365,7 @@ TiddlyWiki.prototype.getRecursiveTiddlerText = function(title,defaultText,depth)
 };
 
 //TiddlyWiki.prototype.slicesRE = /(?:^([\'\/]{0,2})~?([\.\w]+)\:\1[\t\x20]*([^\n]+)[\t\x20]*$)|(?:^\|([\'\/]{0,2})~?([\.\w]+)\:?\4\|[\t\x20]*([^\n]+)[\t\x20]*\|$)/gm;
-TiddlyWiki.prototype.slicesRE = /(?:^([\'\/]{0,2})~?([\.\w]+)\:\1[\t\x20]*([^\n]*)[\t\x20]*$)|(?:^\|([\'\/]{0,2})~?([\.\w]+)\:?\4\|[\t\x20]*([^\|\n]*)[\t\x20]*\|$)/gm;
+TiddlyWiki.prototype.slicesRE = /(?:^([\'\/]{0,2})~?([\.\w]+)\:\1[\t\x20]*([^\n]+)[\t\x20]*$)|(?:^\|\x20?([\'\/]{0,2})~?([^\|\s\:\~\'\/]|(?:[^\|\s~\'\/][^\|\n\f\r]*[^\|\s\:\'\/]))\:?\4[\x20\t]*\|[\t\x20]*([^\n\t\x20](?:[^\n]*[^\n\t\x20])?)[\t\x20]*\|$)/gm; // #112
 // @internal
 TiddlyWiki.prototype.calcAllSlices = function(title)
 {
@@ -4226,7 +4234,7 @@ Story.prototype.refreshTiddler = function(title,template,force,customFields,defa
 					var tags = [];
 					tiddler.set(title,store.getTiddlerText(title),config.views.wikified.shadowModifier,version.date,tags,version.date);
 				} else {
-					var text = template=="EditTemplate" ?
+					var text = template==config.tiddlerTemplates[DEFAULT_EDIT_TEMPLATE] ? // #166
 								config.views.editor.defaultText.format([title]) :
 								config.views.wikified.defaultText.format([title]);
 					text = defaultText || text;
@@ -5519,6 +5527,7 @@ config.refreshers = {
 
 	tiddler: function(e,changeList)
 		{
+		if (startingUp) return true; // #147
 		var title = e.getAttribute("tiddler");
 		var template = e.getAttribute("template");
 		if(changeList && (changeList.indexOf && changeList.indexOf(title) != -1) && !story.isDirty(title))
@@ -5532,7 +5541,7 @@ config.refreshers = {
 		{
 		var title = e.getAttribute("tiddler");
 		var force = e.getAttribute("force");
-		var args = e.getAttribute("args");
+		var args = e.macroArgs; // #154
 		if(force != null || changeList == null || (changeList.indexOf && changeList.indexOf(title) != -1)) {
 			jQuery(e).empty();
 			config.macros.tiddler.transclude(e,title,args);
@@ -5732,7 +5741,8 @@ function loadCookies()
 {
 	var i,cookies = getCookies();
 	if(cookies['TiddlyWiki']) {
-		cookies = cookies['TiddlyWiki'].decodeHashMap();
+		var unbaked = cookies['TiddlyWiki'].replace(/%22/g,'"'); // #159
+		cookies = unbaked.decodeHashMap(); // #159
 	}
 	for(i in cookies) {
 		if(config.optionsSource[i] != 'setting') {
@@ -5787,7 +5797,12 @@ function saveCookie(name)
 		value = value == null ? 'false' : value;
 		cookies[key] = value;
 	}
-	document.cookie = 'TiddlyWiki=' + String.encodeHashMap(cookies) + '; expires=Fri, 1 Jan 2038 12:00:00 UTC; path=/';
+	// #159 start
+	var baked = 'TiddlyWiki='
+		+ String.encodeHashMap(cookies)
+		+ '; expires=Fri, 1 Jan 2038 12:00:00 UTC; path=/';
+	document.cookie = baked.replace(/"/g,'%22');
+	// #159 end
 	cookies = getCookies();
 	var c;
 	for(c in cookies) {
@@ -6506,7 +6521,7 @@ function javaDebugInformation () {
 	var applet = document.applets['TiddlySaver'];
 	var what = [
 		["Java Version", applet.getJavaVersion],
-		["Last Exception", applet.getLastErrorMessage],
+		["Last Exception", applet.getLastErrorMsg], // #156
 		["Last Exception Stack Trace", applet.getLastErrorStackTrace],
 		["System Properties", applet.getSystemProperties] ];
 
@@ -8177,11 +8192,7 @@ String.prototype.format = function(s)
 // Escape any special RegExp characters with that character preceded by a backslash
 String.prototype.escapeRegExp = function()
 {
-	var s = "\\^$*+?()=!|,{}[].";
-	var t,c = this;
-	for(t=0; t<s.length; t++)
-		c = c.replace(new RegExp("\\" + s.substr(t,1),"g"),"\\" + s.substr(t,1));
-	return c;
+    return this.replace(/[\-\/\\\^\$\*\+\?\.\(\)\|\[\]\{\}]/g, '\\$&'); // #157
 };
 
 // Convert "\" to "\s", newlines to "\n" (and remove carriage returns)

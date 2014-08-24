@@ -3,7 +3,7 @@
 <head>
 <script id="versionArea" type="text/javascript">
 //<![CDATA[
-var version = {title: "TiddlyWiki", major: 2, minor: 8, revision: 1, beta: 2, date: new Date("June 19, 2013"), extensions: {}};
+var version = {title: "TiddlyWiki", major: 2, minor: 9, revision: 0, beta: 1, date: new Date("August 23, 2014"), extensions: {}};
 
 //]]>
 </script>
@@ -46,7 +46,7 @@ DAMAGE.
 <!--}}}-->
 
 <!--PRE-HEAD-END-->
-<title> TiddlyWiki - Pre-release build v2.8.1 (beta 2) </title>
+<title> TiddlyWiki Classic - version 2.9.0 (beta 1) </title>
 <style id="styleArea" type="text/css">
 #saveTest {display:none;}
 #messageArea {display:none;}
@@ -527,45 +527,163 @@ WhatsNew
 </pre>
 </div>
 <div title="HelloThere" modifier="EricShulman" type="text/x-tiddlywiki">
-<pre>''This is the ~PRE-RELEASE &quot;beta&quot; build of ~TiddlyWiki v&lt;&lt;version&gt;&gt;.''
+<pre>''This is version &lt;&lt;version&gt;&gt; of ~TiddlyWiki Classic.''
 
 @@font-size:24pt;[[download now...|http://www.TiddlyWiki.com/beta/empty.zip]]@@
 
 You can view other versions of ~TiddlyWiki from the following locations:
-| current release of ~TiddlyWiki Classic|!http://www.TiddlyWiki.com/|
+| current release of ~TiddlyWiki Classic|!http://classic.TiddlyWiki.com/|
 | previous releases of ~TiddlyWiki Classic|!http://tiddlywiki.com/archive/|
-| latest pre-release of ~TiddlyWiki5|!http://five.TiddlyWiki.com/|
+| latest release of ~TiddlyWiki5 (Beta)|!http://TiddlyWiki.com/|
 </pre>
 </div>
 <div title="SiteSubtitle" type="text/x-tiddlywiki">
-<pre>''Pre-release build v&lt;&lt;version&gt;&gt;''</pre>
+<pre>version &lt;&lt;version&gt;&gt;</pre>
 </div>
 <div title="SiteTitle" type="text/x-tiddlywiki">
-<pre>TiddlyWiki</pre>
+<pre>~TiddlyWiki Classic</pre>
 </div>
 <div title="WhatsNew" modifier="EricShulman" type="text/x-tiddlywiki">
-<pre>This revision includes several fixes to the new ''~HTML5 &quot;download&quot; saving'', as well correcting the calculation of the 'useJavaSaver' and 'readOnly' flags when the document is viewed online:
-*{{block{
-https://github.com/TiddlyWiki/tiddlywiki/pull/135
-''Critical fix to get TiddlyWiki 2.8.0 working on IE 6 and 7 (and 8)''
-&gt;IE8 and earlier do not define 'doctype' value, causing a &quot;failure to load&quot; problem during startup.  ''recreateOriginal() now checks for a valid doctype value to avoid the error.''
-}}}
-*{{block{
-https://github.com/TiddlyWiki/tiddlywiki/issues/136
-''International characters corrupted by TW280 'download saving' in FireFox''
-&gt;Firefox does some additional processing of &quot;URL-encoded&quot; content that results in incorrect saving of international characters.  ''Content for download is now &quot;base64-encoded&quot; to prevent unwanted extra processing by FireFox.''
-}}}
-*{{block{
-https://github.com/TiddlyWiki/tiddlywiki/issues/137
-''Fallback manual download saving in TW280 displays two messages''
-&gt;Manual download saving displays a message (&quot;RIGHT CLICK HERE to download...&quot;) as intended.  However, an extra message related to //automatic// ~HTML5-based download saving is then displayed immediately following the first message.  ''The extra message is no longer displayed.''
-}}}
-*{{block{
-https://github.com/TiddlyWiki/tiddlywiki/issues/139
-''tiddlywiki.com gives a Java warning''
-&gt;A change to the window.allowSave() test function in ~TW280 resulted in incorrect calculation of the 'readOnly' and 'useJavaSaver' flags at startup, resulting in an errant Java warning message when the document is viewed online.  ''A new test function, window.isLocal(), is now used to correctly calulate the startup flags.''
-}}}
-</pre>
+<pre>This revision includes updates to resolve the following open issues and/or pull requests:
+^^''//(click an individual heading below to toggle details, or click here to &lt;html&gt;&lt;a href=&quot;javascript:;&quot; class=&quot;TiddlyLink&quot;
+onclick=&quot;
+	var show='show all details';
+        var hide='hide all details';
+	var here=story.findContainingTiddler(this); if (!here) return false;
+	var elems=here.getElementsByTagName('*');
+	var state=(this.innerHTML==show)?'none':'block';
+	for (var e=0; e&lt;elems.length; e++) { var p=elems[e];
+		if (p.className!='sliderPanel' || p.style.display!=state) continue;
+		p.previousSibling.onclick();
+	}
+	this.innerHTML=state=='none'?hide:show;
+	return false;
+&quot;&gt;show all details&lt;/a&gt;&lt;nowiki&gt;&lt;/html&gt;)//''^^
+*&lt;&lt;slider &quot;&quot; &quot;WhatsNew##112&quot; &quot;112: Allow international characters and leading/trailing whitespace in slice names&quot;&gt;&gt;
+*&lt;&lt;slider &quot;&quot; &quot;WhatsNew##132&quot; &quot;132: URLs containing square brackets not recognized&quot;&gt;&gt;
+*&lt;&lt;slider &quot;&quot; &quot;WhatsNew##147&quot; &quot;147: Transclusion problem on startup&quot;&gt;&gt;
+*&lt;&lt;slider &quot;&quot; &quot;WhatsNew##154&quot; &quot;154: Parametric transclusion doesn't work properly with refreshing&quot;&gt;&gt;
+*&lt;&lt;slider &quot;&quot; &quot;WhatsNew##156&quot; &quot;156: Fix javaDebugInformation function&quot;&gt;&gt;
+*&lt;&lt;slider &quot;&quot; &quot;WhatsNew##157&quot; &quot;157: Improve the String.prototype.escapeRegExp utility&quot;&gt;&gt;
+*&lt;&lt;slider &quot;&quot; &quot;WhatsNew##159&quot; &quot;159: Cookies are not working in Opera&quot;&gt;&gt;
+*&lt;&lt;slider &quot;&quot; &quot;WhatsNew##160&quot; &quot;160: Remove the syncing item from the default ToolbarCommands&quot;&gt;&gt;
+*&lt;&lt;slider &quot;&quot; &quot;WhatsNew##161&quot; &quot;161: Make new tiddlers open below below the one containing newTiddler macro&quot;&gt;&gt;
+*&lt;&lt;slider &quot;&quot; &quot;WhatsNew##162&quot; &quot;162: Substitute missing arguments of parametric transclusions with an empty line&quot;&gt;&gt;
+*&lt;&lt;slider &quot;&quot; &quot;WhatsNew##TBD&quot; &quot;166: Use default editmode text for themes with non-standard template names&quot;&gt;&gt;
+/%
+!!!112
+&lt;&lt;&lt;
+''Description:''
+https://github.com/TiddlyWiki/tiddlywiki/pull/112
+Slice names currently only recognize standard Latin characters, and do not permit flexible use of whitespace both within and/or surrounding a slice name.
+''Changes:''
+The {{{TiddlyWiki.prototype.slicesRE}}} regular expression has been updated to allow international characters and variable whitespace.
+''Expected Impact:''
+Slice names currently recognized in existing documents will continue to be handled as before.  Slice names may now contain international characters and/or spaces within the slice name, and can use variable surrounding whitespace to help format the slice table defintion (e.g., for readability of slice tables in edit mode).
+&lt;&lt;&lt;
+!!!132
+&lt;&lt;&lt;
+''Description:''
+https://github.com/TiddlyWiki/tiddlywiki/issues/132
+If a URL embedded in tiddler content contains square brackets (e.g., using literal {{{&quot;[[&quot;}}} and {{{&quot;]]&quot;}}} for a perma-link to another ~TiddlyWiki document), the brackets are not properly recognized by ~TiddlyWiki as being part of the URL, and the resulting link is incorrect.
+''Changes:''
+The {{{config.textPrimitives.urlPattern}}} regular expression has been updated to permit square brackets to occur within the URL text.
+''Expected Impact:''
+Embedded URLs that contain perma-links using square brackets will now be properly recognized.  No impact on URLs not containing square brackets.  No impact on other wiki formats.
+&lt;&lt;&lt;
+!!!147
+&lt;&lt;&lt;
+''Description:''
+https://github.com/TiddlyWiki/tiddlywiki/issues/147
+During startup processing, tiddlers are being rendered and then automatically refreshed.  When a tiddler contains transcluded content that uses macro parameter substitutions, the additional refresh handling will re-process any substitution macro parameters, which can cause unintended side effects due to processing of evaluated parameters.
+''Changes:''
+The refresh handler for tiddlers now checks for the 'startingUp' global flag, and bypasses the extra (and unnecessary) re-rendering of the tiddler.
+''Expected Impact:''
+This only affects startup processing, and will have no impact on subsequent display updates during the session.
+For additional technical details, see http://startuptransclusions.tiddlyspot.com/ and http://tobibeer.tiddlyspace.com/#startingUp
+&lt;&lt;&lt;
+!!!154
+&lt;&lt;&lt;
+''Description:''
+https://github.com/TiddlyWiki/tiddlywiki/issues/154
+If a parameter used with the {{{&lt;&lt;tiddler&gt;&gt;}}} macro contains square brackets, the transclusion will render properly when first displayed, but will incorrectly re-parse the parameters when automatically refreshing the transcluded content in response to changes in the source tiddler.
+''Changes:''
+The parameters used with {{{&lt;&lt;tiddler&gt;&gt;}}} are now stored as a pre-parsed data object, rather than a text attribute, so they don't need to be re-parsed during a refresh.
+''Expected Impact:''
+{{{&lt;&lt;tiddler&gt;&gt;}}} parameters with square brackets will be processed correctly when content is refreshed.  No impact on parameters not containing square brackets.
+&lt;&lt;&lt;
+!!!156
+&lt;&lt;&lt;
+''Description:''
+https://github.com/TiddlyWiki/tiddlywiki/pull/156
+javaDebugInformation() function was calling a misnamed applet function
+''Changes:''
+The function name has been corrected.
+''Expected Impact:''
+This is a development utility function that is only invoked manually when debugging a failure in TiddlySaver.jar, and will have NO effect during normal TiddlyWiki operation.
+&lt;&lt;&lt;
+!!!157
+&lt;&lt;&lt;
+''Description:''
+https://github.com/TiddlyWiki/tiddlywiki/issues/157
+The ~TWCore utility function, escapeRegExp(), does not properly handle special symbols, &quot;dash&quot; (-) and &quot;slash&quot; (/).  In addition, this same function has been re-implemented in ~TiddlyWiki5, using a much more efficient method that is 100% backward-compatible with ~TiddlyWiki Classic.
+''Changes:''
+The code for {{{String.escapeRegExp()}}} has been replaced with the newer implementation from ~TiddlyWiki5.
+''Expected Impact:''
+Unknown, but none expected.
+&lt;&lt;&lt;
+!!!159
+&lt;&lt;&lt;
+''Description:''
+https://github.com/TiddlyWiki/tiddlywiki/issues/159
+The ~TWCore utility function, encodeHashMap() generates a text string containing name/value pairs using double-quotes around the values.  This &quot;hash map&quot; text is used internally in various ways to handle custom fields on tiddlers.  The hash map text format is also used when storing persistent ~TiddlyWiki option settings in a browser-based cookie.  However, double quotes are officially illegal in a cookie value.  Although many browsers allow the use of double-quotes anyway, some browsers, such as Opera, will reject cookie values containing double-quotes.
+''Changes:''
+The ~TWCore {{{saveCookie()}}} and {{{loadCookies()}}} functions have been updated to encode/decode all double-quotes into &quot;%22&quot; character codes, allowing them to be stored and retrieved from all browsers, without violating formal specifications for allowed cookie values.
+''Expected Impact:''
+Existing cookies that use literal double-quotes will still be recognized, but will be updated to use %22 encoding whenever the cookie value is changed.  If an existing cookie value contains literal &quot;%22&quot;, it will be converted to a double-quote character when read.
+&lt;&lt;&lt;
+!!!160
+&lt;&lt;&lt;
+''Description:''
+https://github.com/TiddlyWiki/tiddlywiki/issues/160
+The default ~ViewToolbar definition in ~ToolbarCommands, includes a command for &quot;syncing&quot;.  However, the supporting 'sync' handlers were removed from ~TiddlyWiki some time ago, so this command item produces a non-functional blank space when the toolbar is displayed.
+''Changes:''
+The default Shadow definition for ~ToolbarCommands has been updated.
+''Expected Impact:''
+Elimination of errant whitespace between toolbar command items.  Custom server-side environments such as TiddlySpace that provide their own 'sync' handlers may need to update the default ~ToolbarCommands to restore the 'sync' menu item.
+&lt;&lt;&lt;
+!!!161
+&lt;&lt;&lt;
+''Description:''
+https://github.com/TiddlyWiki/tiddlywiki/issues/161
+By default, the {{{&lt;&lt;newTiddler&gt;&gt;}}} and {{{&lt;&lt;newJournal&gt;&gt;}}} macros open a newly created tiddler at the top of the story column.  For the default use from the sidebar controls, this is a reasonable behavior.  However, if the newTiddler/newJournal macro is placed within tiddler content, then the placement of the newly created tiddler can cause the page display to scroll the current tiddler out of view, which can disrupt the workflow.
+''Changes:''
+The newTiddler/newJournal macro handler has been updated so that new tiddlers will automatically appear below the one that contains the macro, rather than always at the top of the story column.
+''Expected Impact:''
+Reduced scrolling and improved workflow when creating new tiddlers.
+&lt;&lt;&lt;
+!!!162
+&lt;&lt;&lt;
+''Description:''
+https://github.com/TiddlyWiki/tiddlywiki/issues/162
+When using {{{&lt;&lt;tiddler TiddlerName with: param param ...&gt;&gt;}}}, occurences of $1 through $9 contained in the source tiddler are replaced with the corresponding parameter values from the {{{&lt;&lt;tiddler&gt;&gt;}}} macro.  However, any unused markers are left as-is; e.g., if only two parameters are provided, only $1 and $2 will be replaced, and instances of $3 through $9 will remain in the rendered content.  For some use-cases, removing any remaining markers is preferable; however, changing the current default behavior may result in unexpected results for existing users.
+''Changes:''
+A new option, ''chkRemoveExtraMarkers'', has been added to AdvancedOptions to permit the alternative handling for markers.  The option defaults to undefined/false, which results in the existing behavior.  Setting this option enables the alternative handling that removes any transcluded markers not otherwise replaced by macro parameter values.
+''Expected Impact:''
+None, unless chkRemoveExtraMarkers option flag is enabled.
+&lt;&lt;&lt;
+!!!166
+&lt;&lt;&lt;
+''Description:''
+https://github.com/TiddlyWiki/tiddlywiki/issues/166
+When a theme defines an edit template with a name other than &quot;~EditTemplate&quot;, the default text shown when editing a new tiddler was incorrectly using the viewmode text (&quot;The tiddler '...' doesn't yet exist. Double-click to create it&quot;), instead of the correct editmode text (&quot;Type the text for '...'&quot;).
+''Changes:''
+The tiddler display handler now checks for the edit template name as defined by the current theme, rather than always looking for the standard template name.
+''Expected impact:''
+Themes that use an alternative name for the ~EditTemplate will now use the correct default text when editing a new tiddler.
+&lt;&lt;&lt;
+!
+%/</pre>
 </div>
 </div>
 <!--POST-STOREAREA-->
@@ -642,6 +760,7 @@ config.options = {
 	chkInsertTabs: false,
 	chkUsePreForStorage: true, // Whether to use <pre> format for storage
 	chkDisplayInstrumentation: false,
+	chkRemoveExtraMarkers: false, // #162
 	txtBackupFolder: "",
 	txtEditorFocus: "text",
 	txtMainTab: "tabTimeline",
@@ -758,7 +877,7 @@ if(!((new RegExp("[\u0150\u0170]","g")).test("\u0150"))) {
 }
 config.textPrimitives.sliceSeparator = "::";
 config.textPrimitives.sectionSeparator = "##";
-config.textPrimitives.urlPattern = "(?:file|http|https|mailto|ftp|irc|news|data):[^\\s'\"]+(?:/|\\b)";
+config.textPrimitives.urlPattern = "(?:file|http|https|mailto|ftp|irc|news|data):[^\\s'\"]+(?:/|\\b|\\[|\\])"; // #132
 config.textPrimitives.unWikiLink = "~";
 config.textPrimitives.wikiLink = "(?:(?:" + config.textPrimitives.upperLetter + "+" +
 	config.textPrimitives.lowerLetter + "+" +
@@ -805,7 +924,7 @@ config.shadowTiddlers = {
 	AdvancedOptions: '<<options>>',
 	PluginManager: '<<plugins>>',
 	SystemSettings: '',
-	ToolbarCommands: '|~ViewToolbar|closeTiddler closeOthers +editTiddler > fields syncing permalink references jump|\n|~EditToolbar|+saveTiddler -cancelTiddler deleteTiddler|',
+	ToolbarCommands: '|~ViewToolbar|closeTiddler closeOthers +editTiddler > fields permalink references jump|\n|~EditToolbar|+saveTiddler -cancelTiddler deleteTiddler|', // #160
 	WindowTitle: '<<tiddler SiteTitle>> - <<tiddler SiteSubtitle>>'
 };
 
@@ -873,6 +992,7 @@ merge(config.optionsDesc,{
 	chkForceMinorUpdate: "Don't update modifier username and date when editing tiddlers",
 	chkConfirmDelete: "Require confirmation before deleting tiddlers",
 	chkInsertTabs: "Use the tab key to insert tab characters instead of moving between fields",
+	chkRemoveExtraMarkers: "Replace unused transclusion markers with blanks", // #162
 	txtBackupFolder: "Name of folder to use for backups",
 	txtMaxEditRows: "Maximum number of rows in edit boxes",
 	txtTheme: "Name of the theme to use",
@@ -2713,7 +2833,7 @@ config.macros.tiddler.handler = function(place,macroName,params,wikifier,paramSt
 		refresh: "content", tiddler: tiddlerName
 	});
 	if(args!==undefined)
-		wrapper.setAttribute("args","[["+args.join("]] [[")+"]]");
+		wrapper.macroArgs=args; // #154
 	this.transclude(wrapper,tiddlerName,args);
 };
 
@@ -2735,6 +2855,12 @@ config.macros.tiddler.transclude = function(wrapper,tiddlerName,args)
 			var placeholderRE = new RegExp("\\$" + (i + 1),"mg");
 			text = text.replace(placeholderRE,args[i]);
 		}
+		// #162 start
+		if (n && config.options.chkRemoveExtraMarkers) for(i=n; i<9; i++) {
+			var placeholderRE = new RegExp("\\$" + (i + 1),"mg");
+			text = text.replace(placeholderRE,"");
+		}
+		// #162 end
 		config.macros.tiddler.renderText(wrapper,text,tiddlerName);
 	} finally {
 		stack.pop();
@@ -3113,7 +3239,7 @@ config.macros.newTiddler.onClickNewTiddler = function()
 	var customFields = this.getAttribute("customFields");
 	if(!customFields && !store.isShadowTiddler(title))
 		customFields = String.encodeHashMap(config.defaultCustomFields);
-	story.displayTiddler(null,title,template,false,null,null);
+	story.displayTiddler(this,title,template,false,null,null); // #161
 	var tiddlerElem = story.getTiddler(title);
 	if(customFields)
 		story.addCustomFields(tiddlerElem,customFields);
@@ -3934,7 +4060,7 @@ TiddlyWiki.prototype.getRecursiveTiddlerText = function(title,defaultText,depth)
 };
 
 //TiddlyWiki.prototype.slicesRE = /(?:^([\'\/]{0,2})~?([\.\w]+)\:\1[\t\x20]*([^\n]+)[\t\x20]*$)|(?:^\|([\'\/]{0,2})~?([\.\w]+)\:?\4\|[\t\x20]*([^\n]+)[\t\x20]*\|$)/gm;
-TiddlyWiki.prototype.slicesRE = /(?:^([\'\/]{0,2})~?([\.\w]+)\:\1[\t\x20]*([^\n]*)[\t\x20]*$)|(?:^\|([\'\/]{0,2})~?([\.\w]+)\:?\4\|[\t\x20]*([^\|\n]*)[\t\x20]*\|$)/gm;
+TiddlyWiki.prototype.slicesRE = /(?:^([\'\/]{0,2})~?([\.\w]+)\:\1[\t\x20]*([^\n]+)[\t\x20]*$)|(?:^\|\x20?([\'\/]{0,2})~?([^\|\s\:\~\'\/]|(?:[^\|\s~\'\/][^\|\n\f\r]*[^\|\s\:\'\/]))\:?\4[\x20\t]*\|[\t\x20]*([^\n\t\x20](?:[^\n]*[^\n\t\x20])?)[\t\x20]*\|$)/gm; // #112
 // @internal
 TiddlyWiki.prototype.calcAllSlices = function(title)
 {
@@ -4803,7 +4929,7 @@ Story.prototype.refreshTiddler = function(title,template,force,customFields,defa
 					var tags = [];
 					tiddler.set(title,store.getTiddlerText(title),config.views.wikified.shadowModifier,version.date,tags,version.date);
 				} else {
-					var text = template=="EditTemplate" ?
+					var text = template==config.tiddlerTemplates[DEFAULT_EDIT_TEMPLATE] ? // #166
 								config.views.editor.defaultText.format([title]) :
 								config.views.wikified.defaultText.format([title]);
 					text = defaultText || text;
@@ -6096,6 +6222,7 @@ config.refreshers = {
 
 	tiddler: function(e,changeList)
 		{
+		if (startingUp) return true; // #147
 		var title = e.getAttribute("tiddler");
 		var template = e.getAttribute("template");
 		if(changeList && (changeList.indexOf && changeList.indexOf(title) != -1) && !story.isDirty(title))
@@ -6109,7 +6236,7 @@ config.refreshers = {
 		{
 		var title = e.getAttribute("tiddler");
 		var force = e.getAttribute("force");
-		var args = e.getAttribute("args");
+		var args = e.macroArgs; // #154
 		if(force != null || changeList == null || (changeList.indexOf && changeList.indexOf(title) != -1)) {
 			jQuery(e).empty();
 			config.macros.tiddler.transclude(e,title,args);
@@ -6309,7 +6436,8 @@ function loadCookies()
 {
 	var i,cookies = getCookies();
 	if(cookies['TiddlyWiki']) {
-		cookies = cookies['TiddlyWiki'].decodeHashMap();
+		var unbaked = cookies['TiddlyWiki'].replace(/%22/g,'"'); // #159
+		cookies = unbaked.decodeHashMap(); // #159
 	}
 	for(i in cookies) {
 		if(config.optionsSource[i] != 'setting') {
@@ -6364,7 +6492,12 @@ function saveCookie(name)
 		value = value == null ? 'false' : value;
 		cookies[key] = value;
 	}
-	document.cookie = 'TiddlyWiki=' + String.encodeHashMap(cookies) + '; expires=Fri, 1 Jan 2038 12:00:00 UTC; path=/';
+	// #159 start
+	var baked = 'TiddlyWiki='
+		+ String.encodeHashMap(cookies)
+		+ '; expires=Fri, 1 Jan 2038 12:00:00 UTC; path=/';
+	document.cookie = baked.replace(/"/g,'%22');
+	// #159 end
 	cookies = getCookies();
 	var c;
 	for(c in cookies) {
@@ -7083,7 +7216,7 @@ function javaDebugInformation () {
 	var applet = document.applets['TiddlySaver'];
 	var what = [
 		["Java Version", applet.getJavaVersion],
-		["Last Exception", applet.getLastErrorMessage],
+		["Last Exception", applet.getLastErrorMsg], // #156
 		["Last Exception Stack Trace", applet.getLastErrorStackTrace],
 		["System Properties", applet.getSystemProperties] ];
 
@@ -8754,11 +8887,7 @@ String.prototype.format = function(s)
 // Escape any special RegExp characters with that character preceded by a backslash
 String.prototype.escapeRegExp = function()
 {
-	var s = "\\^$*+?()=!|,{}[].";
-	var t,c = this;
-	for(t=0; t<s.length; t++)
-		c = c.replace(new RegExp("\\" + s.substr(t,1),"g"),"\\" + s.substr(t,1));
-	return c;
+    return this.replace(/[\-\/\\\^\$\*\+\?\.\(\)\|\[\]\{\}]/g, '\\$&'); // #157
 };
 
 // Convert "\" to "\s", newlines to "\n" (and remove carriage returns)
