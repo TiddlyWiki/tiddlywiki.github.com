@@ -3,7 +3,7 @@
 <head>
 <script id="versionArea" type="text/javascript">
 //<![CDATA[
-var version = {title: "TiddlyWiki", major: 2, minor: 9, revision: 0, beta: 1, date: new Date("August 23, 2014"), extensions: {}};
+var version = {title: "TiddlyWiki", major: 2, minor: 9, revision: 0, beta: 2, date: new Date("October 15, 2014"), extensions: {}};
 
 //]]>
 </script>
@@ -534,9 +534,10 @@ WhatsNew
 @@font-size:24pt;[[download now...|http://classic.TiddlyWiki.com/beta/empty.zip]]@@
 
 You can view other versions of ~TiddlyWiki from the following locations:
-| current release of ~TiddlyWiki Classic|!http://classic.TiddlyWiki.com/|
-| previous releases of ~TiddlyWiki Classic|!http://tiddlywiki.com/archive/|
-| latest release of ~TiddlyWiki5 (Beta)|!http://TiddlyWiki.com/|
+| current release of ~TiddlyWiki|!http://TiddlyWiki.com/ |
+| beta pre-release of ~TiddlyWiki Classic|!http://classic.TiddlyWiki.com/beta |
+| current release of ~TiddlyWiki Classic|!http://classic.TiddlyWiki.com/ |
+| previous releases of ~TiddlyWiki Classic|!http://classic.tiddlywiki.com/archive/ |
 </pre>
 </div>
 <div title="SiteSubtitle" type="text/x-tiddlywiki">
@@ -638,11 +639,11 @@ Unknown, but none expected.
 &lt;&lt;&lt;
 ''Description:''
 https://github.com/TiddlyWiki/tiddlywiki/issues/159
-The ~TWCore utility function, encodeHashMap() generates a text string containing name/value pairs using double-quotes around the values.  This &quot;hash map&quot; text is used internally in various ways to handle custom fields on tiddlers.  The hash map text format is also used when storing persistent ~TiddlyWiki option settings in a browser-based cookie.  However, double quotes are officially illegal in a cookie value.  Although many browsers allow the use of double-quotes anyway, some browsers, such as Opera, will reject cookie values containing double-quotes.
+The ~TWCore utility function, encodeHashMap() is used to &quot;pack&quot; the ~TiddlyWiki option values when storing persistent settings in a browser-based cookie.  This function uses double-quotes around the options value.  However, double-quotes are officially illegal in a cookie value.  Although many browsers allow the use of double-quotes anyway, some browsers, such as Opera, will reject cookie values containing double-quotes.
 ''Changes:''
-The ~TWCore {{{saveCookie()}}} and {{{loadCookies()}}} functions have been updated to encode/decode all double-quotes into &quot;%22&quot; character codes, allowing them to be stored and retrieved from all browsers, without violating formal specifications for allowed cookie values.
+The ~TWCore {{{saveCookie()}}} and {{{loadCookies()}}} functions have been updated to encode/decode all double-quotes into &quot;%22&quot; character codes, allowing them to be stored and retrieved from all browsers, without violating formal specifications for allowed cookie values.  To preserve backward compatibility, the new, quote-encoded cookie is named &quot;~TiddlyWikiOptions&quot; rather than just &quot;~TiddlyWiki&quot;, so that previous versions of TiddlyWiki will continue to use the old cookie name, while new version will use the updated cookie name.
 ''Expected Impact:''
-Existing cookies that use literal double-quotes will still be recognized, but will be updated to use %22 encoding whenever the cookie value is changed.  If an existing cookie value contains literal &quot;%22&quot;, it will be converted to a double-quote character when read.
+The first time a copy of TW290 or above is opened, the option values from any existing &quot;~TiddlyWiki&quot; cookie will be copied to the new &quot;~TiddlyWikiOptions&quot; cookie and use %22 encoding whenever a cookie value is changed.  Once the new option cookie is stored, changes to option values made using older versions of TiddlyWiki will not be reflected in version TW290 and above.
 &lt;&lt;&lt;
 !!!160
 &lt;&lt;&lt;
@@ -6440,10 +6441,10 @@ function getCookies()
 function loadCookies()
 {
 	var i,cookies = getCookies();
-	if(cookies['TiddlyWiki']) {
-		var unbaked = cookies['TiddlyWiki'].replace(/%22/g,'"'); // #159
-		cookies = unbaked.decodeHashMap(); // #159
-	}
+	if(cookies['TiddlyWikiOptions']) // TW290 and later //#159
+		cookies = cookies['TiddlyWikiOptions'].replace(/%22/g,'"').decodeHashMap(); // #159
+	else if(cookies['TiddlyWiki']) // TW281 and earlier
+		cookies = cookies['TiddlyWiki'].decodeHashMap();
 	for(i in cookies) {
 		if(config.optionsSource[i] != 'setting') {
 			setOption(i,cookies[i]);
@@ -6497,12 +6498,10 @@ function saveCookie(name)
 		value = value == null ? 'false' : value;
 		cookies[key] = value;
 	}
-	// #159 start
-	var baked = 'TiddlyWiki='
-		+ String.encodeHashMap(cookies)
+	// TW290 and later (#159)
+	document.cookie = 'TiddlyWikiOptions='
+		+ String.encodeHashMap(cookies).replace(/"/g,'%22')
 		+ '; expires=Fri, 1 Jan 2038 12:00:00 UTC; path=/';
-	document.cookie = baked.replace(/"/g,'%22');
-	// #159 end
 	cookies = getCookies();
 	var c;
 	for(c in cookies) {
@@ -9708,12 +9707,6 @@ TW21Saver.prototype.externalizeTiddler = function(store,tiddler)
 
 
 
-//]]>
-</script>
-<script type="text/javascript">
-//<![CDATA[
-if(useJavaSaver)
-	document.write("<applet style='position:absolute;left:-1px' name='TiddlySaver' code='TiddlySaver.class' archive='TiddlySaver.jar' width='1' height='1'></applet>");
 //]]>
 </script>
 
