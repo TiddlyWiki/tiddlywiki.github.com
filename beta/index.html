@@ -3,7 +3,7 @@
 <head>
 <script id="versionArea" type="text/javascript">
 //<![CDATA[
-var version = {title: "TiddlyWiki", major: 2, minor: 9, revision: 0, beta: 2, date: new Date("October 15, 2014"), extensions: {}};
+var version = {title: "TiddlyWiki", major: 2, minor: 9, revision: 0, beta: 3, date: new Date("November 3, 2014"), extensions: {}};
 
 //]]>
 </script>
@@ -46,7 +46,7 @@ DAMAGE.
 <!--}}}-->
 
 <!--PRE-HEAD-END-->
-<title> TiddlyWiki Classic - version 2.9.0 (beta 2) </title>
+<title> TiddlyWiki Classic - version 2.9.0 (beta 3) </title>
 <style id="styleArea" type="text/css">
 #saveTest {display:none;}
 #messageArea {display:none;}
@@ -571,6 +571,7 @@ onclick=&quot;
 *&lt;&lt;slider &quot;&quot; &quot;WhatsNew##161&quot; &quot;161: Make new tiddlers open below below the one containing newTiddler macro&quot;&gt;&gt;
 *&lt;&lt;slider &quot;&quot; &quot;WhatsNew##162&quot; &quot;162: Substitute missing arguments of parametric transclusions with an empty line&quot;&gt;&gt;
 *&lt;&lt;slider &quot;&quot; &quot;WhatsNew##166&quot; &quot;166: Use default editmode text for themes with non-standard template names&quot;&gt;&gt;
+*&lt;&lt;slider &quot;&quot; &quot;WhatsNew##170&quot; &quot;170: literal embedded HTML syntax breaks PhoneGap&quot;&gt;&gt;
 /%
 !!!112
 &lt;&lt;&lt;
@@ -682,6 +683,16 @@ When a theme defines an edit template with a name other than &quot;~EditTemplate
 The tiddler display handler now checks for the edit template name as defined by the current theme, rather than always looking for the standard template name.
 ''Expected impact:''
 Themes that use an alternative name for the ~EditTemplate will now use the correct default text when editing a new tiddler.
+&lt;&lt;&lt;
+!!!170
+&lt;&lt;&lt;
+''Description:''
+https://github.com/TiddlyWiki/tiddlywiki/issues/170
+When submitting ~TiddlyWiki documents to http://build.phonegap.com, they produced mangled output because the recreateOriginal() function includes embedded /body and /html syntax.
+''Changes:''
+The code within recreateOriginal() has been changed to split literal HTML syntax into pieces and use '+' to rejoin them, so that the strings are unaffected, but PhoneGap will not stumble on them.
+''Expected impact:''
+No effect on TiddlyWiki usage.  Allows TiddlyWiki Classic documents to be correctly used in PhoneGap projects.
 &lt;&lt;&lt;
 !
 %/</pre>
@@ -6811,7 +6822,7 @@ function recreateOriginal()
 	content=content.replace(/<div id="saveTest">savetest<\/div>/,'<div id="saveTest"></div>');
 	content=content.replace(/script><applet [^\>]*><\/applet>/g,'script>');
 	content=content.replace(/><head>/,'>\n<head>');
-	content=content.replace(/\n\n<\/body><\/html>$/,'</body>\n</html>\n');
+	content=content.replace(/\n\n<\/body><\/html>$/,'</'+'body>\n</'+'html>\n'); // #170
 	content=content.replace(/(<(meta) [^\>]*[^\/])>/g,'$1 />');
 	content=content.replace(/<noscript>[^\<]*<\/noscript>/,
 		function(m){return m.replace(/&lt;/g,'<').replace(/&gt;/g,'>');});
