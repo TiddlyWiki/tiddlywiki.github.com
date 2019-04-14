@@ -1546,39 +1546,42 @@ The table below shows how accented characters can be built up by subsituting a b
 | slash | &amp;amp;_slash; | &amp;nbsp; | &amp;nbsp; | &amp;nbsp; | &amp;nbsp; | &amp;nbsp; | &amp;nbsp; | &amp;Oslash; | &amp;oslash; | &amp;nbsp; | &amp;nbsp; | &amp;nbsp; | &amp;nbsp; | &amp;nbsp; | &amp;nbsp; | &amp;nbsp; |
 | cedilla | &amp;amp;_cedil; | &amp;nbsp; | &amp;nbsp; | &amp;nbsp; | &amp;nbsp; | &amp;nbsp; | &amp;nbsp; | &amp;nbsp; | &amp;nbsp; | &amp;nbsp; | &amp;nbsp; | &amp;nbsp; | &amp;nbsp; | &amp;nbsp; | &amp;nbsp; | &amp;Ccedil; | &amp;ccedil; |</pre>
 </div>
-<div title="Image Formatting" creator="matt" modifier="Yakov Litvin" created="201102111430" modified="201903280846" tags="formatting">
+<div title="Image Formatting" creator="matt" modifier="Yakov Litvin" created="201102111430" modified="201904141327" tags="formatting" changecount="8">
 <pre>!Simple Images
 {{{
 [img[images/fractalveg.jpg]]
 }}}
 Displays as:
+
 [img[images/fractalveg.jpg]]
 !Tooltips for Images
 {{{
 [img[tooltip|images/fractalveg.jpg]]
 }}}
-Show a toolitp if one hovers mouse over the image:
+Shows a toolitp if one hovers mouse over the image:
+
 [img[tooltip|images/fractalveg.jpg]]
 !Image Links
 {{{
 [img[images/fractalveg.jpg][http://www.flickr.com/photos/jermy/10134618/]]
 }}}
 Makes the image clickable (works as a link; check out the tooltip as well):
+
 [img[images/fractalveg.jpg][http://www.flickr.com/photos/jermy/10134618/]]
 !Floating Images with Text
 {{{
 [&lt;img[images/fractalveg.jpg]]
 }}}
-[&lt;img[images/fractalveg.jpg]]Displays as:
+[&lt;img[images/fractalveg.jpg]] Floats to the left like here
+@@clear:both;display:block; @@
+To start a new line with &quot;cleared&quot; float like this, put the code below in the beginning of it:
 {{{
 @@clear:both;display:block; @@
 }}}
-Will then clear the float.
-@@clear:both;display:block;Like this@@
+[&gt;img[images/fractalveg.jpg]]Likewise, you can make image float to the right:
 {{{
 [&gt;img[images/fractalveg.jpg]]
 }}}
-[&gt;img[images/fractalveg.jpg]]Displays as:@@clear:both;display:block; @@
 !See Also
 [[Image Macro]]</pre>
 </div>
