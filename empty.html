@@ -3,7 +3,7 @@
 <head>
 <script id="versionArea" type="text/javascript">
 //<![CDATA[
-var version = {title: "TiddlyWiki", major: 2, minor: 8, revision: 1, date: new Date("June 23, 2013"), extensions: {}};
+var version = { title: "TiddlyWiki", major: 2, minor: 9, revision: 2, date: new Date("February 12, 2019"), extensions: {} };
 
 //]]>
 </script>
@@ -167,7 +167,7 @@ Also see [[AdvancedOptions]]
 &lt;div id='sidebarTabs' role='complementary' refresh='content' force='true' tiddler='SideBarTabs'&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;div id='displayArea' role='main'&gt;
-&lt;div id='messageArea'&gt;&lt;/div&gt;
+&lt;div id='messageArea' class='messageArea'&gt;&lt;/div&gt;
 &lt;div id='tiddlerDisplay'&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;!--}}}--&gt;
@@ -212,11 +212,10 @@ h2,h3 {border-bottom:1px solid [[ColorPalette::TertiaryLight]];}
 #sidebarOptions .sliderPanel a:hover {color:[[ColorPalette::Background]]; background:[[ColorPalette::PrimaryMid]];}
 #sidebarOptions .sliderPanel a:active {color:[[ColorPalette::PrimaryMid]]; background:[[ColorPalette::Background]];}
 
-.wizard {background:[[ColorPalette::PrimaryPale]]; border:1px solid [[ColorPalette::PrimaryMid]];}
-.wizard h1 {color:[[ColorPalette::PrimaryDark]]; border:none;}
-.wizard h2 {color:[[ColorPalette::Foreground]]; border:none;}
-.wizardStep {background:[[ColorPalette::Background]]; color:[[ColorPalette::Foreground]];
-	border:1px solid [[ColorPalette::PrimaryMid]];}
+.wizard { background:[[ColorPalette::PrimaryPale]]; }
+.wizard__title    { color:[[ColorPalette::PrimaryDark]]; border:none; }
+.wizard__subtitle { color:[[ColorPalette::Foreground]]; border:none; }
+.wizardStep { background:[[ColorPalette::Background]]; color:[[ColorPalette::Foreground]]; }
 .wizardStep.wizardStepDone {background:[[ColorPalette::TertiaryLight]];}
 .wizardFooter {background:[[ColorPalette::PrimaryPale]];}
 .wizardFooter .status {background:[[ColorPalette::PrimaryDark]]; color:[[ColorPalette::Background]];}
@@ -234,8 +233,12 @@ h2,h3 {border-bottom:1px solid [[ColorPalette::TertiaryLight]];}
 .wizard .putToServer {background:#ff80ff;}
 .wizard .gotFromServer {background:#80ffff;}
 
-#messageArea {border:1px solid [[ColorPalette::SecondaryMid]]; background:[[ColorPalette::SecondaryLight]]; color:[[ColorPalette::Foreground]];}
-#messageArea .button {color:[[ColorPalette::PrimaryMid]]; background:[[ColorPalette::SecondaryPale]]; border:none;}
+.messageArea { border:1px solid [[ColorPalette::SecondaryMid]]; background:[[ColorPalette::SecondaryLight]]; color:[[ColorPalette::Foreground]]; }
+.messageToolbar__button { color:[[ColorPalette::PrimaryMid]]; background:[[ColorPalette::SecondaryPale]]; border:none; }
+.messageToolbar__button_withIcon { background:inherit; }
+.messageToolbar__button_withIcon:active { background:inherit; border:none; }
+.messageToolbar__icon { fill:[[ColorPalette::TertiaryDark]]; }
+.messageToolbar__icon:hover { fill:[[ColorPalette::Foreground]]; }
 
 .popupTiddler {background:[[ColorPalette::TertiaryPale]]; border:2px solid [[ColorPalette::TertiaryMid]];}
 
@@ -379,18 +382,20 @@ a.tiddlyLinkNonExisting.shadow {font-weight:bold;}
 #sidebarOptions .sliderPanel input {margin:0 0 0.3em 0;}
 #sidebarTabs .tabContents {width:15em; overflow:hidden;}
 
-.wizard {padding:0.1em 1em 0 2em;}
-.wizard h1 {font-size:2em; font-weight:bold; background:none; padding:0; margin:0.4em 0 0.2em;}
-.wizard h2 {font-size:1.2em; font-weight:bold; background:none; padding:0; margin:0.4em 0 0.2em;}
-.wizardStep {padding:1em 1em 1em 1em;}
-.wizard .button {margin:0.5em 0 0; font-size:1.2em;}
-.wizardFooter {padding:0.8em 0.4em 0.8em 0;}
-.wizardFooter .status {padding:0 0.4em; margin-left:1em;}
-.wizard .button {padding:0.1em 0.2em;}
+.wizard { padding:0.1em 2em 0; }
+.wizard__title    { font-size:2em; }
+.wizard__subtitle { font-size:1.2em; }
+.wizard__title, .wizard__subtitle { font-weight:bold; background:none; padding:0; margin:0.4em 0 0.2em; }
+.wizardStep { padding:1em; }
+.wizardFooter { padding:0.8em 0.4em 0.8em 0; }
+.wizardFooter .status { padding:0.2em 0.7em; margin-left:0.3em; }
+.wizardFooter .button { margin:0.5em 0 0; font-size:1.2em; padding:0.2em 0.5em; }
 
-#messageArea {position:fixed; top:2em; right:0; margin:0.5em; padding:0.5em; z-index:2000; _position:absolute;}
-.messageToolbar {display:block; text-align:right; padding:0.2em;}
-#messageArea a {text-decoration:underline;}
+.messageArea { position:fixed; top:2em; right:0; margin:0.5em; padding:0.7em 1em; z-index:2000; }
+.messageToolbar { text-align:right; padding:0.2em 0; }
+.messageToolbar__button { text-decoration:underline; }
+.messageToolbar__icon { height: 1em; }
+.messageArea__text a { text-decoration:underline; }
 
 .tiddlerPopupButton {padding:0.2em;}
 .popupTiddler {position: absolute; z-index:300; padding:1em; margin:0;}
@@ -455,7 +460,7 @@ table.listView th, table.listView td, table.listView tr {padding:0 3px 0 3px;}
 .viewer code {font-size:1.2em; line-height:1.4em;}
 
 .editor {font-size:1.1em;}
-.editor input, .editor textarea {display:block; width:100%; font:inherit;}
+.editor input, .editor textarea {display:block; width:100%; box-sizing: border-box; font:inherit;}
 .editorFooter {padding:0.25em 0; font-size:.9em;}
 .editorFooter .button {padding-top:0; padding-bottom:0;}
 
@@ -472,7 +477,7 @@ table.listView th, table.listView td, table.listView tr {padding:0 3px 0 3px;}
 #backstageButton {display:none; position:absolute; z-index:175; top:0; right:0;}
 #backstageButton a {padding:0.1em 0.4em; margin:0.1em;}
 #backstage {position:relative; width:100%; z-index:50;}
-#backstagePanel {display:none; z-index:100; position:absolute; width:90%; margin-left:3em; padding:1em;}
+#backstagePanel { display:none; z-index:100; position:absolute; width:90%; margin-left:3em; }
 .backstagePanelFooter {padding-top:0.2em; float:right;}
 .backstagePanelFooter a {padding:0.2em 0.4em;}
 #backstageCloak {display:none; z-index:20; position:absolute; width:100%; height:100px;}
@@ -500,7 +505,7 @@ body {font-size:0.8em;}
 <div title="StyleSheetPrint">
 <pre>/*{{{*/
 @media print {
-#mainMenu, #sidebar, #messageArea, .toolbar, #backstageButton, #backstageArea {display: none !important;}
+#mainMenu, #sidebar, .messageArea, .toolbar, #backstageButton, #backstageArea {display: none !important;}
 #displayArea {margin: 1em 1em 0em;}
 noscript {display:none;} /* Fixes a feature in Firefox 1.5.0.2 where print preview displays the noscript content */
 }
@@ -597,6 +602,7 @@ config.options = {
 	chkInsertTabs: false,
 	chkUsePreForStorage: true, // Whether to use <pre> format for storage
 	chkDisplayInstrumentation: false,
+	chkRemoveExtraMarkers: false, // #162
 	txtBackupFolder: "",
 	txtEditorFocus: "text",
 	txtMainTab: "tabTimeline",
@@ -671,7 +677,7 @@ config.macros = {
 	refreshDisplay: {},
 	importTiddlers: {},
 	upgrade: {
-		source: "http://tiddlywiki-releases.tiddlyspace.com/upgrade",
+		source: "https://classic.tiddlywiki.com/upgrade/",
 		backupExtension: "pre.core.upgrade"
 	},
 	sync: {},
@@ -713,7 +719,7 @@ if(!((new RegExp("[\u0150\u0170]","g")).test("\u0150"))) {
 }
 config.textPrimitives.sliceSeparator = "::";
 config.textPrimitives.sectionSeparator = "##";
-config.textPrimitives.urlPattern = "(?:file|http|https|mailto|ftp|irc|news|data):[^\\s'\"]+(?:/|\\b)";
+config.textPrimitives.urlPattern = "(?:file|http|https|mailto|ftp|irc|news|data):[^\\s'\"]+(?:/|\\b|\\[|\\])"; // #132
 config.textPrimitives.unWikiLink = "~";
 config.textPrimitives.wikiLink = "(?:(?:" + config.textPrimitives.upperLetter + "+" +
 	config.textPrimitives.lowerLetter + "+" +
@@ -760,7 +766,7 @@ config.shadowTiddlers = {
 	AdvancedOptions: '<<options>>',
 	PluginManager: '<<plugins>>',
 	SystemSettings: '',
-	ToolbarCommands: '|~ViewToolbar|closeTiddler closeOthers +editTiddler > fields syncing permalink references jump|\n|~EditToolbar|+saveTiddler -cancelTiddler deleteTiddler|',
+	ToolbarCommands: '|~ViewToolbar|closeTiddler closeOthers +editTiddler > fields permalink references jump|\n|~EditToolbar|+saveTiddler -cancelTiddler deleteTiddler|', // #160
 	WindowTitle: '<<tiddler SiteTitle>> - <<tiddler SiteSubtitle>>'
 };
 
@@ -801,7 +807,8 @@ merge(config.glyphs,{
 // Strings in "double quotes" should be translated; strings in 'single quotes' should be left alone
 
 merge(config.options,{
-	txtUserName: "YourName"});
+	txtUserName: "YourName"
+});
 
 merge(config.tasks,{
 	save: {text: "save", tooltip: "Save your changes to this TiddlyWiki"},
@@ -828,10 +835,13 @@ merge(config.optionsDesc,{
 	chkForceMinorUpdate: "Don't update modifier username and date when editing tiddlers",
 	chkConfirmDelete: "Require confirmation before deleting tiddlers",
 	chkInsertTabs: "Use the tab key to insert tab characters instead of moving between fields",
+	chkRemoveExtraMarkers: "Replace unused transclusion markers with blanks", // #162
 	txtBackupFolder: "Name of folder to use for backups",
 	txtMaxEditRows: "Maximum number of rows in edit boxes",
 	txtTheme: "Name of the theme to use",
-	txtFileSystemCharSet: "Default character set for saving changes (Firefox/Mozilla only)"});
+	txtFileSystemCharSet: "Default character set for saving changes (Firefox/Mozilla only)",
+	txtUpgradeCoreURI: "Custom URI to download TiddlyWiki core from (when upgrading)"
+});
 
 merge(config.messages,{
 	customConfigError: "Problems were encountered loading plugins. See PluginManager for details",
@@ -856,7 +866,7 @@ merge(config.messages,{
 	rssFailed: "Failed to save RSS feed file",
 	emptySaved: "Empty template saved",
 	emptyFailed: "Failed to save empty template file",
-	mainSaved: "Main TiddlyWiki file saved",
+	mainSaved: "TiddlyWiki saved",
 	mainDownload: "Downloading/saving main TiddlyWiki file",
 	mainDownloadManual: "RIGHT CLICK HERE to download/save main TiddlyWiki file",
 	mainFailed: "Failed to save main TiddlyWiki file. Your changes have not been saved",
@@ -875,11 +885,13 @@ merge(config.messages,{
 	fieldCannotBeChanged: "Field '%0' cannot be changed",
 	loadingMissingTiddler: "Attempting to retrieve the tiddler '%0' from the '%1' server at:\n\n'%2' in the workspace '%3'",
 	upgradeDone: "The upgrade to version %0 is now complete\n\nClick 'OK' to reload the newly upgraded TiddlyWiki",
-	invalidCookie: "Invalid cookie '%0'"});
+	invalidCookie: "Invalid cookie '%0'"
+});
 
 merge(config.messages.messageClose,{
 	text: "close",
-	tooltip: "close this message area"});
+	tooltip: "close this message area"
+});
 
 config.messages.backstage = {
 	open: {text: "backstage", tooltip: "Open the backstage area to perform authoring and editing tasks"},
@@ -907,8 +919,7 @@ config.messages.dates.daySuffixes = ["st","nd","rd","th","th","th","th","th","th
 config.messages.dates.am = "am";
 config.messages.dates.pm = "pm";
 
-merge(config.messages.tiddlerPopup,{
-	});
+merge(config.messages.tiddlerPopup,{});
 
 merge(config.views.wikified.tag,{
 	labelNoTags: "no tags",
@@ -917,33 +928,38 @@ merge(config.views.wikified.tag,{
 	tooltip: "Show tiddlers tagged with '%0'",
 	openAllText: "Open all",
 	openAllTooltip: "Open all of these tiddlers",
-	popupNone: "No other tiddlers tagged with '%0'"});
+	popupNone: "No other tiddlers tagged with '%0'"
+});
 
 merge(config.views.wikified,{
 	defaultText: "The tiddler '%0' doesn't yet exist. Double-click to create it",
 	defaultModifier: "(missing)",
 	shadowModifier: "(built-in shadow tiddler)",
 	dateFormat: "DD MMM YYYY",
-	createdPrompt: "created"});
+	createdPrompt: "created"
+});
 
 merge(config.views.editor,{
 	tagPrompt: "Type tags separated with spaces, [[use double square brackets]] if necessary, or add existing",
-	defaultText: "Type the text for '%0'"});
+	defaultText: "Type the text for '%0'"
+});
 
 merge(config.views.editor.tagChooser,{
 	text: "tags",
 	tooltip: "Choose existing tags to add to this tiddler",
 	popupNone: "There are no tags defined",
-	tagTooltip: "Add the tag '%0'"});
+	tagTooltip: "Add the tag '%0'"
+});
 
 merge(config.messages,{
 	sizeTemplates:
-		[
+	[
 		{unit: 1024*1024*1024, template: "%0\u00a0GB"},
 		{unit: 1024*1024, template: "%0\u00a0MB"},
 		{unit: 1024, template: "%0\u00a0KB"},
 		{unit: 1, template: "%0\u00a0B"}
-		]});
+	]
+});
 
 merge(config.macros.search,{
 	label: "search",
@@ -951,19 +967,23 @@ merge(config.macros.search,{
 	placeholder: "",
 	accessKey: "F",
 	successMsg: "%0 tiddlers found matching %1",
-	failureMsg: "No tiddlers found matching %0"});
+	failureMsg: "No tiddlers found matching %0"
+});
 
 merge(config.macros.tagging,{
 	label: "tagging: ",
 	labelNotTag: "not tagging",
-	tooltip: "List of tiddlers tagged with '%0'"});
+	tooltip: "List of tiddlers tagged with '%0'"
+});
 
 merge(config.macros.timeline,{
-	dateFormat: "DD MMM YYYY"});
+	dateFormat: "DD MMM YYYY"
+});
 
 merge(config.macros.allTags,{
 	tooltip: "Show tiddlers tagged with '%0'",
-	noTags: "There are no tagged tiddlers"});
+	noTags: "There are no tagged tiddlers"
+});
 
 config.macros.list.all.prompt = "All tiddlers in alphabetical order";
 config.macros.list.missing.prompt = "Tiddlers that have links to them but are not defined";
@@ -973,27 +993,32 @@ config.macros.list.touched.prompt = "Tiddlers that have been modified locally";
 
 merge(config.macros.closeAll,{
 	label: "close all",
-	prompt: "Close all displayed tiddlers (except any that are being edited)"});
+	prompt: "Close all displayed tiddlers (except any that are being edited)"
+});
 
 merge(config.macros.permaview,{
 	label: "permaview",
-	prompt: "Link to an URL that retrieves all the currently displayed tiddlers"});
+	prompt: "Link to an URL that retrieves all the currently displayed tiddlers"
+});
 
 merge(config.macros.saveChanges,{
 	label: "save changes",
 	prompt: "Save all tiddlers to create a new TiddlyWiki",
-	accessKey: "S"});
+	accessKey: "S"
+});
 
 merge(config.macros.newTiddler,{
 	label: "new tiddler",
 	prompt: "Create a new tiddler",
 	title: "New Tiddler",
-	accessKey: "N"});
+	accessKey: "N"
+});
 
 merge(config.macros.newJournal,{
 	label: "new journal",
 	prompt: "Create a new tiddler from the current date and time",
-	accessKey: "J"});
+	accessKey: "J"
+});
 
 merge(config.macros.options,{
 	wizardTitle: "Tweak advanced options",
@@ -1005,11 +1030,12 @@ merge(config.macros.options,{
 			{name: 'Option', field: 'option', title: "Option", type: 'String'},
 			{name: 'Description', field: 'description', title: "Description", type: 'WikiText'},
 			{name: 'Name', field: 'name', title: "Name", type: 'String'}
-			],
+		],
 		rowClasses: [
 			{className: 'lowlight', field: 'lowlight'}
-			]}
-	});
+		]
+	}
+});
 
 merge(config.macros.plugins,{
 	wizardTitle: "Manage plugins",
@@ -1035,11 +1061,12 @@ merge(config.macros.plugins,{
 			{name: 'Startup Time', field: 'startupTime', title: "Startup Time", type: 'String'},
 			{name: 'Error', field: 'error', title: "Status", type: 'Boolean', trueText: "Error", falseText: "OK"},
 			{name: 'Log', field: 'log', title: "Log", type: 'StringList'}
-			],
+		],
 		rowClasses: [
 			{className: 'error', field: 'error'},
 			{className: 'warning', field: 'warning'}
-			]},
+		]
+	},
 	listViewTemplateReadOnly: {
 		columns: [
 			{name: 'Tiddler', field: 'tiddler', title: "Tiddler", type: 'Tiddler'},
@@ -1050,12 +1077,13 @@ merge(config.macros.plugins,{
 			{name: 'Startup Time', field: 'startupTime', title: "Startup Time", type: 'String'},
 			{name: 'Error', field: 'error', title: "Status", type: 'Boolean', trueText: "Error", falseText: "OK"},
 			{name: 'Log', field: 'log', title: "Log", type: 'StringList'}
-			],
+		],
 		rowClasses: [
 			{className: 'error', field: 'error'},
 			{className: 'warning', field: 'warning'}
-			]}
-	});
+		]
+	}
+});
 
 merge(config.macros.toolbar,{
 	moreLabel: "more",
@@ -1063,12 +1091,12 @@ merge(config.macros.toolbar,{
 	lessLabel: "less",
 	lessPrompt: "Hide additional commands",
 	separator: "|"
-	});
+});
 
 merge(config.macros.refreshDisplay,{
 	label: "refresh",
 	prompt: "Redraw the entire TiddlyWiki display"
-	});
+});
 
 merge(config.macros.importTiddlers,{
 	readOnlyWarning: "You cannot import into a read-only TiddlyWiki file. Try opening it from a file:// URL",
@@ -1111,10 +1139,10 @@ merge(config.macros.importTiddlers,{
 			{name: 'Tiddler', field: 'tiddler', title: "Tiddler", type: 'Tiddler'},
 			{name: 'Size', field: 'size', tiddlerLink: 'size', title: "Size", type: 'Size'},
 			{name: 'Tags', field: 'tags', title: "Tags", type: 'Tags'}
-			],
-		rowClasses: [
-			]}
-	});
+		],
+		rowClasses: []
+	}
+});
 
 merge(config.macros.upgrade,{
 	wizardTitle: "Upgrade TiddlyWiki core code",
@@ -1142,53 +1170,61 @@ merge(config.macros.upgrade,{
 	cancelPrompt: "Cancel the upgrade process",
 	step3Title: "Upgrade cancelled",
 	step3Html: "You have cancelled the upgrade process"
-	});
+});
 
-merge(config.macros.annotations,{
-	});
+merge(config.macros.annotations,{});
 
 merge(config.commands.closeTiddler,{
 	text: "close",
-	tooltip: "Close this tiddler"});
+	tooltip: "Close this tiddler"
+});
 
 merge(config.commands.closeOthers,{
 	text: "close others",
-	tooltip: "Close all other tiddlers"});
+	tooltip: "Close all other tiddlers"
+});
 
 merge(config.commands.editTiddler,{
 	text: "edit",
 	tooltip: "Edit this tiddler",
 	readOnlyText: "view",
-	readOnlyTooltip: "View the source of this tiddler"});
+	readOnlyTooltip: "View the source of this tiddler"
+});
 
 merge(config.commands.saveTiddler,{
 	text: "done",
-	tooltip: "Save changes to this tiddler"});
+	tooltip: "Save changes to this tiddler"
+});
 
 merge(config.commands.cancelTiddler,{
 	text: "cancel",
 	tooltip: "Undo changes to this tiddler",
 	warning: "Are you sure you want to abandon your changes to '%0'?",
 	readOnlyText: "done",
-	readOnlyTooltip: "View this tiddler normally"});
+	readOnlyTooltip: "View this tiddler normally"
+});
 
 merge(config.commands.deleteTiddler,{
 	text: "delete",
 	tooltip: "Delete this tiddler",
-	warning: "Are you sure you want to delete '%0'?"});
+	warning: "Are you sure you want to delete '%0'?"
+});
 
 merge(config.commands.permalink,{
 	text: "permalink",
-	tooltip: "Permalink for this tiddler"});
+	tooltip: "Permalink for this tiddler"
+});
 
 merge(config.commands.references,{
 	text: "references",
 	tooltip: "Show tiddlers that link to this one",
-	popupNone: "No references"});
+	popupNone: "No references"
+});
 
 merge(config.commands.jump,{
 	text: "jump",
-	tooltip: "Jump to another open tiddler"});
+	tooltip: "Jump to another open tiddler"
+});
 
 merge(config.commands.fields,{
 	text: "fields",
@@ -1198,11 +1234,11 @@ merge(config.commands.fields,{
 		columns: [
 			{name: 'Field', field: 'field', title: "Field", type: 'String'},
 			{name: 'Value', field: 'value', title: "Value", type: 'String'}
-			],
-		rowClasses: [
-			],
-		buttons: [
-			]}});
+		],
+		rowClasses: [],
+		buttons: []
+	}
+});
 
 merge(config.shadowTiddlers,{
 	DefaultTiddlers: "[[GettingStarted]]",
@@ -1213,7 +1249,7 @@ merge(config.shadowTiddlers,{
 	SideBarOptions: '<<search>><<closeAll>><<permaview>><<newTiddler>><<newJournal "DD MMM YYYY" "journal">><<saveChanges>><<slider chkSliderOptionsPanel OptionsPanel "options \u00bb" "Change TiddlyWiki advanced options">>',
 	SideBarTabs: '<<tabs txtMainTab "Timeline" "Timeline" TabTimeline "All" "All tiddlers" TabAll "Tags" "All tags" TabTags "More" "More lists" TabMore>>',
 	TabMore: '<<tabs txtMoreTab "Missing" "Missing tiddlers" TabMoreMissing "Orphans" "Orphaned tiddlers" TabMoreOrphans "Shadowed" "Shadowed tiddlers" TabMoreShadowed>>'
-	});
+});
 
 merge(config.annotations,{
 	AdvancedOptions: "This shadow tiddler provides access to several advanced options",
@@ -1250,7 +1286,7 @@ merge(config.annotations,{
 	TabTimeline: "This shadow tiddler contains the contents of the 'Timeline' tab in the right-hand sidebar",
 	ToolbarCommands: "This shadow tiddler determines which commands are shown in tiddler toolbars",
 	ViewTemplate: "The HTML template in this shadow tiddler determines how tiddlers look"
-	});
+});
 //--
 //-- Main
 //--
@@ -2668,7 +2704,7 @@ config.macros.tiddler.handler = function(place,macroName,params,wikifier,paramSt
 		refresh: "content", tiddler: tiddlerName
 	});
 	if(args!==undefined)
-		wrapper.setAttribute("args","[["+args.join("]] [[")+"]]");
+		wrapper.macroArgs=args; // #154
 	this.transclude(wrapper,tiddlerName,args);
 };
 
@@ -2690,6 +2726,12 @@ config.macros.tiddler.transclude = function(wrapper,tiddlerName,args)
 			var placeholderRE = new RegExp("\\$" + (i + 1),"mg");
 			text = text.replace(placeholderRE,args[i]);
 		}
+		// #162 start
+		if (n && config.options.chkRemoveExtraMarkers) for(i=n; i<9; i++) {
+			var placeholderRE = new RegExp("\\$" + (i + 1),"mg");
+			text = text.replace(placeholderRE,"");
+		}
+		// #162 end
 		config.macros.tiddler.renderText(wrapper,text,tiddlerName);
 	} finally {
 		stack.pop();
@@ -3068,7 +3110,7 @@ config.macros.newTiddler.onClickNewTiddler = function()
 	var customFields = this.getAttribute("customFields");
 	if(!customFields && !store.isShadowTiddler(title))
 		customFields = String.encodeHashMap(config.defaultCustomFields);
-	story.displayTiddler(null,title,template,false,null,null);
+	story.displayTiddler(this,title,template,false,null,null); // #161
 	var tiddlerElem = story.getTiddler(title);
 	if(customFields)
 		story.addCustomFields(tiddlerElem,customFields);
@@ -3889,7 +3931,7 @@ TiddlyWiki.prototype.getRecursiveTiddlerText = function(title,defaultText,depth)
 };
 
 //TiddlyWiki.prototype.slicesRE = /(?:^([\'\/]{0,2})~?([\.\w]+)\:\1[\t\x20]*([^\n]+)[\t\x20]*$)|(?:^\|([\'\/]{0,2})~?([\.\w]+)\:?\4\|[\t\x20]*([^\n]+)[\t\x20]*\|$)/gm;
-TiddlyWiki.prototype.slicesRE = /(?:^([\'\/]{0,2})~?([\.\w]+)\:\1[\t\x20]*([^\n]*)[\t\x20]*$)|(?:^\|([\'\/]{0,2})~?([\.\w]+)\:?\4\|[\t\x20]*([^\|\n]*)[\t\x20]*\|$)/gm;
+TiddlyWiki.prototype.slicesRE = /(?:^([\'\/]{0,2})~?([\.\w]+)\:\1[\t\x20]*([^\n]+)[\t\x20]*$)|(?:^\|\x20?([\'\/]{0,2})~?([^\|\s\:\~\'\/]|(?:[^\|\s~\'\/][^\|\n\f\r]*[^\|\s\:\'\/]))\:?\4[\x20\t]*\|[\t\x20]*([^\n\t\x20](?:[^\n]*[^\n\t\x20])?)[\t\x20]*\|$)/gm; // #112
 // @internal
 TiddlyWiki.prototype.calcAllSlices = function(title)
 {
@@ -4380,11 +4422,11 @@ config.filters = {
 };
 
 // Filter a list of tiddlers
-TiddlyWiki.prototype.filterTiddlers = function(filter)
+TiddlyWiki.prototype.filterTiddlers = function(filter,results)
 {
 	var re = /([^\s\[\]]+)|(?:\[([ \w\.\-]+)\[([^\]]+)\]\])|(?:\[\[([^\]]+)\]\])/mg;
 
-	var results = [];
+	results = results || [];
 	if(filter) {
 		var match = re.exec(filter);
 		while(match) {
@@ -4758,7 +4800,7 @@ Story.prototype.refreshTiddler = function(title,template,force,customFields,defa
 					var tags = [];
 					tiddler.set(title,store.getTiddlerText(title),config.views.wikified.shadowModifier,version.date,tags,version.date);
 				} else {
-					var text = template=="EditTemplate" ?
+					var text = template==config.tiddlerTemplates[DEFAULT_EDIT_TEMPLATE] ? // #166
 								config.views.editor.defaultText.format([title]) :
 								config.views.wikified.defaultText.format([title]);
 					text = defaultText || text;
@@ -5211,19 +5253,20 @@ var backstage = {
 		this.toolbar = jQuery("#backstageToolbar").empty()[0];
 		this.button = jQuery("#backstageButton").empty()[0];
 		this.button.style.display = "block";
-		var t = cmb.open.text + " " + glyph("bentArrowLeft");
-		this.showButton = createTiddlyButton(this.button,t,cmb.open.tooltip,
-						function(e) {backstage.show(); return false;},null,"backstageShow");
-		t = glyph("bentArrowRight") + " " + cmb.close.text;
-		this.hideButton = createTiddlyButton(this.button,t,cmb.close.tooltip,
-						function(e) {backstage.hide(); return false;},null,"backstageHide");
+		var text = cmb.open.text + " " + glyph("bentArrowLeft");
+		this.showButton = createTiddlyButton(this.button,text,cmb.open.tooltip,
+			function(e) { backstage.show(); return false; },null,"backstageShow");
+		text = glyph("bentArrowRight") + " " + cmb.close.text;
+		this.hideButton = createTiddlyButton(this.button,text,cmb.close.tooltip,
+			function(e) { backstage.hide(); return false; },null,"backstageHide");
 		this.cloak = document.getElementById("backstageCloak");
 		this.panel = document.getElementById("backstagePanel");
 		this.panelFooter = createTiddlyElement(this.panel,"div",null,"backstagePanelFooter");
 		this.panelBody = createTiddlyElement(this.panel,"div",null,"backstagePanelBody");
-		this.cloak.onmousedown = function(e) {backstage.switchTab(null);};
+		this.cloak.onmousedown = function(e) { backstage.switchTab(null); };
 		createTiddlyText(this.toolbar,cmb.prompt);
-		for(t=0; t<config.backstageTasks.length; t++) {
+		for(var t = 0; t < config.backstageTasks.length; t++)
+		{
 			var taskName = config.backstageTasks[t];
 			var task = config.tasks[taskName];
 			var handler = task.action ? this.onClickCommand : this.onClickTab;
@@ -5231,7 +5274,7 @@ var backstage = {
 			var btn = createTiddlyButton(this.toolbar,text,task.tooltip,handler,"backstageTab");
 			jQuery(btn).addClass(task.action ? "backstageAction" : "backstageTask");
 			btn.setAttribute("task", taskName);
-			}
+		}
 		this.content = document.getElementById("contentWrapper");
 		if(config.options.chkBackstage)
 			this.show();
@@ -5355,7 +5398,7 @@ var backstage = {
 				{style: "top", start: 0, end: -(backstage.panel.offsetHeight), template: "%0px"},
 				{style: "display", atEnd: "none"}
 			];
-			var c = function(element,properties) {backstage.cloak.style.display = "none";};
+			var c = function(element,properties) { backstage.cloak.style.display = "none"; };
 			anim.startAnimating(new Morpher(backstage.panel,config.animDuration,p,c));
 		} else {
 			jQuery([backstage.panel,backstage.cloak]).hide();
@@ -5369,7 +5412,9 @@ config.macros.backstage.handler = function(place,macroName,params)
 {
 	var backstageTask = config.tasks[params[0]];
 	if(backstageTask)
-		createTiddlyButton(place,backstageTask.text,backstageTask.tooltip,function(e) {backstage.switchTab(params[0]); return false;});
+		createTiddlyButton(place,backstageTask.text,backstageTask.tooltip,function(e) {
+			backstage.switchTab(params[0]); return false;
+		});
 };
 
 //--
@@ -5609,8 +5654,8 @@ config.macros.importTiddlers.onOpenWorkspace = function(context,wizard)
 	if(context.status !== true)
 		displayMessage("Error in importTiddlers.onOpenWorkspace: " + context.statusText);
 	var adaptor = wizard.getValue("adaptor");
-	var browse=wizard.getElement("txtBrowse");
-	if (browse.files) context.file=browse.files[0]; // for HTML5 FileReader
+	var browse = wizard.getElement("txtBrowse");
+	if (browse.files) context.file = browse.files[0]; // for HTML5 FileReader
 	adaptor.getTiddlerList(context,wizard,me.onGetTiddlerList,wizard.getValue("feedTiddlerFilter"));
 	wizard.setButtons([{caption: me.cancelLabel, tooltip: me.cancelPrompt, onClick: me.onCancel}],me.statusGetTiddlerList);
 };
@@ -5767,11 +5812,16 @@ config.macros.importTiddlers.onGetTiddler = function(context,wizard)
 //-- Upgrade macro
 //--
 
+config.macros.upgrade.getSourceURL = function()
+{
+	return config.options.txtUpgradeCoreURI || config.macros.upgrade.source;
+};
+
 config.macros.upgrade.handler = function(place)
 {
 	var w = new Wizard();
 	w.createWizard(place,this.wizardTitle);
-	w.addStep(this.step1Title,this.step1Html.format([this.source,this.source]));
+	w.addStep(this.step1Title,this.step1Html.format([this.getSourceURL(),this.getSourceURL()]));
 	w.setButtons([{caption: this.upgradeLabel, tooltip: this.upgradePrompt, onClick: this.onClickUpgrade}]);
 };
 
@@ -5787,30 +5837,32 @@ config.macros.upgrade.onClickUpgrade = function(e)
 		alert(me.errorNotSaved);
 		return false;
 	}
+	
+	w.setButtons([],me.statusPreparingBackup);
 	var localPath = getLocalPath(document.location.toString());
 	var backupPath = getBackupPath(localPath,me.backupExtension);
-	w.setValue("backupPath",backupPath);
-	w.setButtons([],me.statusPreparingBackup);
 	var original = loadOriginal(localPath);
+	
 	w.setButtons([],me.statusSavingBackup);
-	var backup = copyFile(backupPath,localPath);
-	if(!backup)
-		backup = saveFile(backupPath,original);
-	if(!backup) {
+	var backupSuccess = copyFile(backupPath,localPath) || saveFile(backupPath,original);
+	if(!backupSuccess) {
 		w.setButtons([],me.errorSavingBackup);
 		alert(me.errorSavingBackup);
 		return false;
 	}
+	w.setValue("backupPath",backupPath);
+	
 	w.setButtons([],me.statusLoadingCore);
+	var sourceURL = me.getSourceURL();
 	var options = {
 		type:"GET",
-		url:me.source,
+		url:sourceURL,
 		processData:false,
 		success:function(data,textStatus,jqXHR) {
-			me.onLoadCore(true,w,jqXHR.responseText,me.source,jqXHR);
+			me.onLoadCore(true,w,jqXHR.responseText,sourceURL,jqXHR);
 		},
 		error:function(jqXHR,textStatus,errorThrown) {
-			me.onLoadCore(false,w,null,me.source,jqXHR);
+			me.onLoadCore(false,w,null,sourceURL,jqXHR);
 		}
 	};
 	ajaxReq(options);
@@ -5833,12 +5885,14 @@ config.macros.upgrade.onLoadCore = function(status,params,responseText,url,xhr)
 		return;
 	}
 	var onStartUpgrade = function(e) {
+		
 		w.setButtons([],me.statusSavingCore);
 		var localPath = getLocalPath(document.location.toString());
 		saveFile(localPath,responseText);
+		
 		w.setButtons([],me.statusReloadingCore);
 		var backupPath = w.getValue("backupPath");
-		var newLoc = document.location.toString() + "?time=" + new Date().convertToYYYYMMDDHHMM() + "#upgrade:[[" + encodeURI(backupPath) + "]]";
+		var newLoc = addUpgradePartsToURI(document.location.toString(), backupPath);
 		window.setTimeout(function () {window.location = newLoc;},10);
 	};
 	var step2 = [me.step2Html_downgrade,me.step2Html_restore,me.step2Html_upgrade][compareVersions(version,newVer) + 1];
@@ -5862,12 +5916,64 @@ config.macros.upgrade.extractVersion = function(upgradeFile)
 	return m ? {title: m[1], major: m[2], minor: m[3], revision: m[4], beta: m[6], date: new Date(m[7])} : null;
 };
 
+// a helper, splits uri into parts, passes the map of parts to modify and glues parts back
+function changeUri(uri, modify)
+{
+	var uriPartsRE = /^(?:([\w:]+)\/\/)?([^\/\?#]+)?([^\?#]+)?(?:\?([^#]*))?(?:#(.*))?$/;
+	var match = uriPartsRE.exec(uri) || [null,'','','','',''];
+	var parts = {
+		scheme:	match[1],
+		host:	match[2],
+		path:	match[3],
+		query:	match[4],
+		hash:	match[5]
+	};
+	modify(parts);
+	var newScheme = parts.scheme === undefined ? '' : (parts.scheme + '//'),
+	    newHost   = parts.host || '',
+	    newPath   = parts.path || '',
+	    newQuery  = parts.query ? ('?' + parts.query) : '',
+	    newHash   = parts.hash   === undefined ? '' : ('#' + parts.hash);
+	return newScheme + newHost + newPath + newQuery + newHash;
+}
+
+function addUpgradePartsToURI(uri, backupPath)
+{
+	return changeUri(uri, function(uriParts)
+	{
+		var newParamifier = 'upgrade:[['+ encodeURI(backupPath) +']]';
+		uriParts.hash = (uriParts.hash ? uriParts.hash + '%20' : '') + newParamifier;
+		
+		var newQuery = "time=" + new Date().convertToYYYYMMDDHHMM();
+		uriParts.query = (uriParts.query ? uriParts.query + '&' : '') + newQuery;
+	});
+}
+
+function stripUpgradePartsFromURI(uri)
+{
+	return changeUri(uri, function(uriParts)
+	{
+		var queryParts = uriParts.query.split('&'),
+		    hashParts = uriParts.hash.split('%20'); // splits paramifiers with a space in argument
+		
+		for(var i = 0; i < queryParts.length; i++)
+			if(queryParts[i].indexOf('time=') == 0)
+				queryParts.splice(i--,1);
+		
+		// relies on the upgrade paramifier being added to the end of hash
+		for(i = 0; i < hashParts.length; i++)
+			if(hashParts[i].indexOf('upgrade:') == 0)
+				hashParts = hashParts.slice(0,i);
+		
+		uriParts.query = queryParts.join('&');
+		uriParts.hash = hashParts.join('%20') || undefined;
+	})
+}
+
 function upgradeFrom(path)
 {
 	var importStore = new TiddlyWiki();
 	var tw = loadFile(path);
-	if(window.netscape !== undefined)
-		tw = convertUTF8ToUnicode(tw);
 	importStore.importTiddlyWiki(tw);
 	importStore.forEachTiddler(function(title,tiddler) {
 		if(!store.getTiddler(title)) {
@@ -5877,7 +5983,7 @@ function upgradeFrom(path)
 	refreshDisplay();
 	saveChanges(); //# To create appropriate Markup* sections
 	alert(config.messages.upgradeDone.format([formatVersion()]));
-	window.location = window.location.toString().substr(0,window.location.toString().lastIndexOf("?"));
+	window.location = stripUpgradePartsFromURI(window.location.toString());
 }
 
 //--
@@ -5988,28 +6094,37 @@ function getMessageDiv()
 	var msgArea = document.getElementById("messageArea");
 	if(!msgArea)
 		return null;
-	if(!msgArea.hasChildNodes())
-		createTiddlyButton(createTiddlyElement(msgArea,"div",null,"messageToolbar"),
-			config.messages.messageClose.text,
-			config.messages.messageClose.tooltip,
-			clearMessage);
+	if(!msgArea.hasChildNodes()) {
+		var toolbar = createTiddlyElement(msgArea,"div",null,"messageArea__toolbar messageToolbar");
+		var btn = createTiddlyButton(toolbar, '', config.messages.messageClose.tooltip, clearMessage,
+			"button messageToolbar__button");
+
+		btn.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10" class="messageToolbar__icon">'+
+		'	<rect width="1" height="13.1" x="4.5" y="-1.6" transform="rotate(-45 5 5)"/>'+
+		'	<rect width="1" height="13.1" x="4.5" y="-1.6" transform="rotate(+45 5 5)"/>'+
+		'</svg>';
+		// inline SVG is unsupported in old FireFox
+		if(window.HTMLUnknownElement && btn.firstChild instanceof window.HTMLUnknownElement) {
+			btn.innerHTML = config.messages.messageClose.text;
+		} else {
+			btn.classList.add('messageToolbar__button_withIcon');
+		}
+	}
 	msgArea.style.display = "block";
-	return createTiddlyElement(msgArea,"div");
+	return createTiddlyElement(msgArea,"div",null,"messageArea__text");
 }
 
-function displayMessage(text,linkText)
+function displayMessage(text, link)
 {
 	var e = getMessageDiv();
 	if(!e) {
 		alert(text);
 		return;
 	}
-	if(linkText) {
-		var link = createTiddlyElement(e,"a",null,null,text);
-		link.href = linkText;
-		link.target = "_blank";
-	} else {
+	if(!link) {
 		e.appendChild(document.createTextNode(text));
+	} else {
+		createTiddlyElement(e,"a",null,null,text,{ href: link, target: "_blank" });
 	}
 }
 
@@ -6051,6 +6166,7 @@ config.refreshers = {
 
 	tiddler: function(e,changeList)
 		{
+		if (startingUp) return true; // #147
 		var title = e.getAttribute("tiddler");
 		var template = e.getAttribute("template");
 		if(changeList && (changeList.indexOf && changeList.indexOf(title) != -1) && !story.isDirty(title))
@@ -6064,7 +6180,7 @@ config.refreshers = {
 		{
 		var title = e.getAttribute("tiddler");
 		var force = e.getAttribute("force");
-		var args = e.getAttribute("args");
+		var args = e.macroArgs; // #154
 		if(force != null || changeList == null || (changeList.indexOf && changeList.indexOf(title) != -1)) {
 			jQuery(e).empty();
 			config.macros.tiddler.transclude(e,title,args);
@@ -6263,9 +6379,12 @@ function getCookies()
 function loadCookies()
 {
 	var i,cookies = getCookies();
-	if(cookies['TiddlyWiki']) {
+	if(cookies['TiddlyWikiClassicOptions']) // TW291 and later //#159
+		cookies = cookies['TiddlyWikiClassicOptions'].replace(/%22/g,'"').replace(/%25/g,'%').decodeHashMap(); // #159
+	else if(cookies['TiddlyWikiOptions']) // TW290 beta //#159
+		cookies = cookies['TiddlyWikiOptions'].replace(/%25/g,'%').decodeHashMap(); // #159
+	else if(cookies['TiddlyWiki']) // TW281 and earlier
 		cookies = cookies['TiddlyWiki'].decodeHashMap();
-	}
 	for(i in cookies) {
 		if(config.optionsSource[i] != 'setting') {
 			setOption(i,cookies[i]);
@@ -6319,7 +6438,10 @@ function saveCookie(name)
 		value = value == null ? 'false' : value;
 		cookies[key] = value;
 	}
-	document.cookie = 'TiddlyWiki=' + String.encodeHashMap(cookies) + '; expires=Fri, 1 Jan 2038 12:00:00 UTC; path=/';
+	// TW291 and later (#159)
+	document.cookie = 'TiddlyWikiClassicOptions='
+		+ String.encodeHashMap(cookies).replace(/%/g,'%25').replace(/"/g,'%22')
+		+ '; expires=Fri, 1 Jan 2038 12:00:00 UTC; path=/';
 	cookies = getCookies();
 	var c;
 	for(c in cookies) {
@@ -6560,7 +6682,7 @@ function updateMarkupBlock(s,blockName,tiddlerName)
 	return s.replaceChunk(
 			"<!--%0-START-->".format([blockName]),
 			"<!--%0-END-->".format([blockName]),
-			"\n" + convertUnicodeToFileFormat(store.getRecursiveTiddlerText(tiddlerName,"")) + "\n");
+			"\n" + store.getRecursiveTiddlerText(tiddlerName,"") + "\n");
 }
 
 function updateOriginal(original,posDiv,localPath)
@@ -6572,9 +6694,9 @@ function updateOriginal(original,posDiv,localPath)
 		return null;
 	}
 	var revised = original.substr(0,posDiv[0] + startSaveArea.length) + "\n" +
-				convertUnicodeToFileFormat(store.allTiddlersAsHtml()) + "\n" +
+				store.allTiddlersAsHtml() + "\n" +
 				original.substr(posDiv[1]);
-	var newSiteTitle = convertUnicodeToFileFormat(getPageTitle()).htmlEncode();
+	var newSiteTitle = getPageTitle().htmlEncode();
 	revised = revised.replaceChunk("<title"+">","</title"+">"," " + newSiteTitle + " ");
 	revised = updateLanguageAttribute(revised);
 	revised = updateMarkupBlock(revised,"PRE-HEAD","MarkupPreHead");
@@ -6606,39 +6728,38 @@ function autoSaveChanges(onlyIfDirty,tiddlers)
 		saveChanges(onlyIfDirty,tiddlers);
 }
 
+// get the full HTML of the original file
 function loadOriginal(localPath)
 {
-	var content=loadFile(localPath);
-	if (!content) content=window.originalHTML||recreateOriginal();
-	return content;
+	return loadFile(localPath) || window.originalHTML || recreateOriginal();
 }
 
 function recreateOriginal()
 {
 	// construct doctype
 	var content = "<!DOCTYPE ";
-	var t=document.doctype;
+	var t = document.doctype;
 	if (!t) 
-		content+="html"
+		content += "html"
 	else {
-		content+=t.name;
+		content += t.name;
 		if      (t.publicId)		content+=' PUBLIC "'+t.publicId+'"';
 		else if (t.systemId)		content+=' SYSTEM "'+t.systemId+'"';
 	}
-	content+=' "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"';
-	content+='>\n';
+	content += ' "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"';
+	content += '>\n';
 
 	// append current document content
-	content+=document.documentElement.outerHTML;
+	content += document.documentElement.outerHTML;
 
-	content=content.replace(/<div id="saveTest">savetest<\/div>/,'<div id="saveTest"></div>');
-	content=content.replace(/script><applet [^\>]*><\/applet>/g,'script>');
-	content=content.replace(/><head>/,'>\n<head>');
-	content=content.replace(/\n\n<\/body><\/html>$/,'</body>\n</html>\n');
-	content=content.replace(/(<(meta) [^\>]*[^\/])>/g,'$1 />');
-	content=content.replace(/<noscript>[^\<]*<\/noscript>/,
-		function(m){return m.replace(/&lt;/g,'<').replace(/&gt;/g,'>');});
-	content=content.replace(/<div id="copyright">[^\<]*<\/div>/,
+	content = content.replace(/<div id="saveTest">savetest<\/div>/,'<div id="saveTest"></div>');
+	content = content.replace(/script><applet [^\>]*><\/applet>/g,'script>');
+	content = content.replace(/><head>/,'>\n<head>');
+	content = content.replace(/\n\n<\/body><\/html>$/,'</'+'body>\n</'+'html>\n'); // #170
+	content = content.replace(/(<(meta) [^\>]*[^\/])>/g,'$1 />');
+	content = content.replace(/<noscript>[^\<]*<\/noscript>/,
+		function(m){ return m.replace(/&lt;/g,'<').replace(/&gt;/g,'>'); });
+	content = content.replace(/<div id="copyright">[^\<]*<\/div>/,
 		function(m){return m.replace(/\xA9/g,'&copy;');});
 
 	return content;
@@ -6672,9 +6793,9 @@ function saveChanges(onlyIfDirty,tiddlers)
 		alert(msg.invalidFileError.format([localPath]));
 		return;
 	}
-	var co=config.options; //# abbreviation
-	config.saveByDownload=false;
-	config.saveByManualDownload=false;
+	var co = config.options; //# abbreviation
+	config.saveByDownload = false;
+	config.saveByManualDownload = false;
 	saveMain(localPath,original,posDiv);
 	if (!config.saveByDownload && !config.saveByManualDownload) {
 		if(co.chkSaveBackups)
@@ -6718,10 +6839,8 @@ function saveMain(localPath,original,posDiv)
 function saveBackup(localPath,original)
 {
 	var backupPath = getBackupPath(localPath);
-	var backup = copyFile(backupPath,localPath);
-	if(!backup)
-		backup = saveFile(backupPath,original);
-	if(backup)
+	var backupSuccess = copyFile(backupPath,localPath) || saveFile(backupPath,original);
+	if(backupSuccess)
 		displayMessage(config.messages.backupSaved,"file://" + backupPath);
 	else
 		alert(config.messages.backupFailed);
@@ -6800,7 +6919,7 @@ function getBackupPath(localPath,title,extension)
 function saveRss(localPath)
 {
 	var rssPath = localPath.substr(0,localPath.lastIndexOf(".")) + ".xml";
-	if(saveFile(rssPath,convertUnicodeToFileFormat(generateRss())))
+	if(saveFile(rssPath,generateRss()))
 		displayMessage(config.messages.rssSaved,"file://" + rssPath);
 	else
 		alert(config.messages.rssFailed);
@@ -6860,7 +6979,6 @@ window.copyFile = window.copyFile || function(dest,source)
 	return config.browser.isIE ? ieCopyFile(dest,source) : false;
 }
 
-
 // Save a file in filesystem [Preemption]
 window.saveFile = window.saveFile || function(fileUrl,content)
 {
@@ -6880,12 +6998,13 @@ window.saveFile = window.saveFile || function(fileUrl,content)
 window.loadFile = window.loadFile || function(fileUrl)
 {
 	var r = mozillaLoadFile(fileUrl);
-	if((r == null) || (r == false))
+	if((r === null) || (r === false))
 		r = ieLoadFile(fileUrl);
-	if((r == null) || (r == false))
+	if((r === null) || (r === false))
 		r = javaLoadFile(fileUrl);
 	return r;
 }
+
 
 function ieCreatePath(path)
 {
@@ -6908,7 +7027,7 @@ function ieCreatePath(path)
 		parent = fso.GetParentFolderName(parent);
 	}
 
-	for(i=scan.length-1;i>=0;i--) {
+	for(i = scan.length-1; i >= 0; i--) {
 		if(!fso.FolderExists(scan[i])) {
 			fso.CreateFolder(scan[i]);
 		}
@@ -6926,7 +7045,7 @@ function ieSaveFile(filePath,content)
 		return null;
 	}
 	var file = fso.OpenTextFile(filePath,2,-1,0);
-	file.Write(content);
+	file.Write(convertUnicodeToHtmlEntities(content));
 	file.Close();
 	return true;
 }
@@ -6960,49 +7079,50 @@ function ieCopyFile(dest,source)
 // Returns null if it can't do it, false if there's an error, true if it saved OK
 function mozillaSaveFile(filePath,content)
 {
-	if(window.Components) {
-		try {
-			netscape.security.PrivilegeManager.enablePrivilege("UniversalXPConnect");
-			var file = Components.classes["@mozilla.org/file/local;1"].createInstance(Components.interfaces.nsILocalFile);
-			file.initWithPath(filePath);
-			if(!file.exists())
-				file.create(0,0x01B4);// 0x01B4 = 0664
-			var out = Components.classes["@mozilla.org/network/file-output-stream;1"].createInstance(Components.interfaces.nsIFileOutputStream);
-			out.init(file,0x22,0x04,null);
-			out.write(content,content.length);
-			out.flush();
-			out.close();
-			return true;
-		} catch(ex) {
-			return false;
-		}
+	if(!window.Components)
+		return null;
+	
+	content = mozConvertUnicodeToUTF8(content);
+	try {
+		netscape.security.PrivilegeManager.enablePrivilege("UniversalXPConnect");
+		var file = Components.classes["@mozilla.org/file/local;1"].createInstance(Components.interfaces.nsILocalFile);
+		file.initWithPath(filePath);
+		if(!file.exists())
+			file.create(0,0x01B4);// 0x01B4 = 0664
+		var out = Components.classes["@mozilla.org/network/file-output-stream;1"].createInstance(Components.interfaces.nsIFileOutputStream);
+		out.init(file,0x22,0x04,null);
+		out.write(content,content.length);
+		out.flush();
+		out.close();
+		return true;
+	} catch(ex) {
+		return false;
 	}
-	return null;
 }
 
 // Returns null if it can't do it, false if there's an error, or a string of the content if successful
 function mozillaLoadFile(filePath)
 {
-	if(window.Components) {
-		try {
-			netscape.security.PrivilegeManager.enablePrivilege("UniversalXPConnect");
-			var file = Components.classes["@mozilla.org/file/local;1"].createInstance(Components.interfaces.nsILocalFile);
-			file.initWithPath(filePath);
-			if(!file.exists())
-				return null;
-			var inputStream = Components.classes["@mozilla.org/network/file-input-stream;1"].createInstance(Components.interfaces.nsIFileInputStream);
-			inputStream.init(file,0x01,0x04,null);
-			var sInputStream = Components.classes["@mozilla.org/scriptableinputstream;1"].createInstance(Components.interfaces.nsIScriptableInputStream);
-			sInputStream.init(inputStream);
-			var contents = sInputStream.read(sInputStream.available());
-			sInputStream.close();
-			inputStream.close();
-			return contents;
-		} catch(ex) {
-			return false;
-		}
+	if(!window.Components)
+		return null;
+	
+	try {
+		netscape.security.PrivilegeManager.enablePrivilege("UniversalXPConnect");
+		var file = Components.classes["@mozilla.org/file/local;1"].createInstance(Components.interfaces.nsILocalFile);
+		file.initWithPath(filePath);
+		if(!file.exists())
+			return null;
+		var inputStream = Components.classes["@mozilla.org/network/file-input-stream;1"].createInstance(Components.interfaces.nsIFileInputStream);
+		inputStream.init(file,0x01,0x04,null);
+		var sInputStream = Components.classes["@mozilla.org/scriptableinputstream;1"].createInstance(Components.interfaces.nsIScriptableInputStream);
+		sInputStream.init(inputStream);
+		var contents = sInputStream.read(sInputStream.available());
+		sInputStream.close();
+		inputStream.close();
+		return mozConvertUTF8ToUnicode(contents);
+	} catch(ex) {
+		return false;
 	}
-	return null;
 }
 
 function javaUrlToFilename(url)
@@ -7023,7 +7143,8 @@ function javaUrlToFilename(url)
  *
  */
 var LOG_TIDDLYSAVER = true;
-function logTiddlySaverException(msg, ex) {
+function logTiddlySaverException(msg, ex)
+{
 	var applet = document.applets['TiddlySaver'];
 	console.log(msg + ": " + ex);
 	if (LOG_TIDDLYSAVER && applet) {
@@ -7034,11 +7155,12 @@ function logTiddlySaverException(msg, ex) {
 	}
 }
 
-function javaDebugInformation () {
+function javaDebugInformation ()
+{
 	var applet = document.applets['TiddlySaver'];
 	var what = [
 		["Java Version", applet.getJavaVersion],
-		["Last Exception", applet.getLastErrorMessage],
+		["Last Exception", applet.getLastErrorMsg], // #156
 		["Last Exception Stack Trace", applet.getLastErrorStackTrace],
 		["System Properties", applet.getSystemProperties] ];
 
@@ -7104,64 +7226,71 @@ function javaLoadFile(filePath)
 
 function HTML5DownloadSaveFile(filePath,content)
 {
-	if(document.createElement("a").download !== undefined) {
-		config.saveByDownload=true;
-		var slashpos=filePath.lastIndexOf("/");
-		if (slashpos==-1) slashpos=filePath.lastIndexOf("\\"); 
-		var filename=filePath.substr(slashpos+1);
-		var uri = getDataURI(content);
-		var link = document.createElement("a");
-		link.setAttribute("target","_blank");
-		link.setAttribute("href",uri);
-		link.setAttribute("download",filename);
-		document.body.appendChild(link); link.click(); document.body.removeChild(link);
-		return true;
-	}
-	return null;
+	var link = document.createElement("a");
+	if(link.download === undefined)
+		return null;
+	
+	config.saveByDownload = true;
+	var slashpos = filePath.lastIndexOf("/");
+	if (slashpos==-1) slashpos = filePath.lastIndexOf("\\");
+	var filename = filePath.substr(slashpos+1);
+	var uri = getDataURI(content);
+	link.setAttribute("target","_blank");
+	link.setAttribute("href",uri);
+	link.setAttribute("download",filename);
+	document.body.appendChild(link); link.click(); document.body.removeChild(link);
+	return true;
 }
 
 // Returns null if it can't do it, false if there's an error, true if it saved OK
 function manualSaveFile(filePath,content)
 {
 	// FALLBACK for showing a link to data: URI
-	config.saveByManualDownload=true;
-	var slashpos=filePath.lastIndexOf("/");
-	if (slashpos==-1) slashpos=filePath.lastIndexOf("\\"); 
-	var filename=filePath.substr(slashpos+1);
+	config.saveByManualDownload = true;
+	var slashpos = filePath.lastIndexOf("/");
+	if (slashpos==-1) slashpos = filePath.lastIndexOf("\\");
+	var filename = filePath.substr(slashpos+1);
 	var uri = getDataURI(content);
 	displayMessage(config.messages.mainDownloadManual,uri);
 	return true;
 }
 
 // construct data URI (using base64 encoding to preserve multi-byte encodings)
-function getDataURI(data) {
+function getDataURI(data)
+{
 	if (config.browser.isIE)
 		return "data:text/html,"+encodeURIComponent(data);
 	else
-		return "data:text/html;base64,"+encodeBase64(data);
+		// manualConvertUnicodeToUTF8 was moved here from convertUnicodeToFileFormat
+		// in 2.9.1 it was used only for FireFox but happened to fix download saving non-ASCII in Chrome & Safari as well
+		return "data:text/html;base64,"+encodeBase64(manualConvertUnicodeToUTF8(data));
 }
 
-function encodeBase64(data) {
+function encodeBase64(data)
+{
 	if (!data) return "";
 	var keyStr = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=";
 	var out = "";
-	var chr1,chr2,chr3="";
-	var enc1,enc2,enc3,enc4="";
-	for (var count=0,i=0; i<data.length; ) {
-		chr1=data.charCodeAt(i++);
-		chr2=data.charCodeAt(i++);
-		chr3=data.charCodeAt(i++);
-		enc1=chr1 >> 2;
-		enc2=((chr1 & 3) << 4) | (chr2 >> 4);
-		enc3=((chr2 & 15) << 2) | (chr3 >> 6);
-		enc4=chr3 & 63;
-		if (isNaN(chr2)) enc3=enc4=64;
-		else if (isNaN(chr3)) enc4=64;
-		out+=keyStr.charAt(enc1)+keyStr.charAt(enc2)+keyStr.charAt(enc3)+keyStr.charAt(enc4);
-		chr1=chr2=chr3=enc1=enc2=enc3=enc4="";
+	var chr1,chr2,chr3 = "";
+	var enc1,enc2,enc3,enc4 = "";
+	for (var count = 0, i = 0; i < data.length; )
+	{
+		chr1 = data.charCodeAt(i++);
+		chr2 = data.charCodeAt(i++);
+		chr3 = data.charCodeAt(i++);
+		enc1 = chr1 >> 2;
+		enc2 = ((chr1 & 3) << 4) | (chr2 >> 4);
+		enc3 = ((chr2 & 15) << 2) | (chr3 >> 6);
+		enc4 = chr3 & 63;
+		if (isNaN(chr2)) enc3 = enc4 = 64;
+		else if (isNaN(chr3)) enc4 = 64;
+		out += keyStr.charAt(enc1) + keyStr.charAt(enc2) + keyStr.charAt(enc3) + keyStr.charAt(enc4);
+		chr1 = chr2 = chr3 = enc1 = enc2 = enc3 = enc4 = "";
 	}
 	return out;
-}//--
+}
+
+//--
 //-- Filesystem utilities
 //--
 
@@ -7210,23 +7339,6 @@ function mozConvertUTF8ToUnicode(u)
 	return fin.length > 0 ? s+fin : s;
 }
 
-function convertUnicodeToFileFormat(s)
-{
-	return config.browser.isOpera || !window.netscape ? (config.browser.isIE ? convertUnicodeToHtmlEntities(s) : s) : mozConvertUnicodeToUTF8(s);
-}
-
-function convertUnicodeToHtmlEntities(s)
-{
-	var re = /[^\u0000-\u007F]/g;
-	return s.replace(re,function($0) {return "&#" + $0.charCodeAt(0).toString() + ";";});
-}
-
-function convertUnicodeToUTF8(s)
-{
-// return convertUnicodeToFileFormat to allow plugin migration
-	return convertUnicodeToFileFormat(s);
-}
-
 function manualConvertUnicodeToUTF8(s)
 {
 	return unescape(encodeURIComponent(s));
@@ -7246,6 +7358,12 @@ function mozConvertUnicodeToUTF8(s)
 	return fin.length > 0 ? u + fin : u;
 }
 
+function convertUnicodeToHtmlEntities(s)
+{
+	var re = /[^\u0000-\u007F]/g;
+	return s.replace(re,function($0) {return "&#" + $0.charCodeAt(0).toString() + ";";});
+}
+
 function convertUriToUTF8(uri,charSet)
 {
 	if(window.netscape == undefined || charSet == undefined || charSet == "")
@@ -7258,6 +7376,20 @@ function convertUriToUTF8(uri,charSet)
 	}
 	return converter.convertURISpecToUTF8(uri,charSet);
 }
+
+// deprecated helper for backward-compatibility with elder extensions
+// (browser/saving method-specific convertion is only needed in browser-specific savers)
+function convertUnicodeToFileFormat(s)
+{
+	return s;
+}
+
+// deprecated helper for backward-compatibility with elder extensions
+function convertUnicodeToUTF8(s)
+{
+	return s;
+}
+
 //--
 //-- Server adaptor base class
 //--
@@ -7380,14 +7512,14 @@ FileAdaptor.prototype.getTiddlerList = function(context,userParams,callback,filt
 		return context.complete(context,context.userParams);
 	}
 	var options = {
-		type:"GET",
-		url:context.host,
-		file:context.file, // for HTML5 FileReader
-		processData:false,
-		success:function(data,textStatus,jqXHR) {
+		type: "GET",
+		url: context.host,
+		file: context.file, // for HTML5 FileReader
+		processData: false,
+		success: function(data,textStatus,jqXHR) {
 			FileAdaptor.loadTiddlyWikiSuccess(context,jqXHR);
 		},
-		error:function(jqXHR,textStatus,errorThrown) {
+		error: function(jqXHR,textStatus,errorThrown) {
 			context.xhr = jqXHR;
 			FileAdaptor.loadTiddlyWikiError(context,jqXHR);
 		}
@@ -7491,21 +7623,23 @@ function ajaxReq(args)
 
 function localAjax(args)
 {
-	var success=function(data)
-		{ args.success(data,"success",{ responseText:data }); }
-	var failure=function(who)
-		{ args.error({ message:who+": cannot read local file" },"error",0); }
+	var success = function(data) {
+		args.success(data,"success",{ responseText:data });
+	};
+	var failure = function(who) {
+		args.error({ message:who+": cannot read local file" },"error",0);
+	};
 
 	if (args.file) try { // HTML5 FileReader (Chrome, FF20+, Safari, etc.)
-		var reader=new FileReader();
-		reader.onload=function(e)  { success(e.target.result); }
-		reader.onerror=function(e) { failure("FileReader"); }
+		var reader = new FileReader();
+		reader.onload = function(e)  { success(e.target.result); }
+		reader.onerror = function(e) { failure("FileReader"); }
 		reader.readAsText(args.file);
 		return true;
 	} catch (ex) { ; }
 
 	try { // local file I/O (IE, FF with TiddlyFox, Chrome/Safari with TiddlySaver, etc.)
-		var data=loadFile(getLocalPath(args.url));
+		var data = loadFile(getLocalPath(args.url));
 		if (data) success(data);
 		else failure("loadFile");
 		return true;
@@ -7527,11 +7661,11 @@ function httpReq(type,url,callback,params,headers,data,contentType,username,pass
 	};
 
 	var options = {
-		type:type,
-		url:url,
-		processData:false,
-		data:data,
-		cache:!!allowCache,
+		type: type,
+		url: url,
+		processData: false,
+		data: data,
+		cache: !!allowCache,
 		beforeSend: function(xhr) {
 			var i;
 			for(i in headers)
@@ -8251,8 +8385,8 @@ Wizard.prototype.getValue = function(name)
 
 Wizard.prototype.createWizard = function(place,title)
 {
-	this.formElem = createTiddlyElement(place,"form",null,"wizard");
-	createTiddlyElement(this.formElem,"h1",null,null,title);
+	this.formElem = createTiddlyElement(place,'form',null,'wizard');
+	createTiddlyElement(this.formElem,'h1',null,'wizard__title',title);
 	this.bodyElem = createTiddlyElement(this.formElem,"div",null,"wizardBody");
 	this.footElem = createTiddlyElement(this.formElem,"div",null,"wizardFooter");
 	return this.formElem;
@@ -8266,11 +8400,10 @@ Wizard.prototype.clear = function()
 Wizard.prototype.setButtons = function(buttonInfo,status)
 {
 	jQuery(this.footElem).empty();
-	var t;
-	for(t=0; t<buttonInfo.length; t++) {
+	for(var t = 0; t < buttonInfo.length; t++) {
 		createTiddlyButton(this.footElem,buttonInfo[t].caption,buttonInfo[t].tooltip,buttonInfo[t].onClick);
 		insertSpacer(this.footElem);
-		}
+	}
 	if(typeof status == "string") {
 		createTiddlyElement(this.footElem,"span",null,"status",status);
 	}
@@ -8279,8 +8412,8 @@ Wizard.prototype.setButtons = function(buttonInfo,status)
 Wizard.prototype.addStep = function(stepTitle,html)
 {
 	jQuery(this.bodyElem).empty();
-	var w = createTiddlyElement(this.bodyElem,"div");
-	createTiddlyElement(w,"h2",null,null,stepTitle);
+	var w = createTiddlyElement(this.bodyElem,'div');
+	createTiddlyElement(w,'h2',null,'wizard__subtitle',stepTitle);
 	var step = createTiddlyElement(w,"div",null,"wizardStep");
 	step.innerHTML = html;
 	applyHtmlMacros(step,tiddler);
@@ -8709,11 +8842,7 @@ String.prototype.format = function(s)
 // Escape any special RegExp characters with that character preceded by a backslash
 String.prototype.escapeRegExp = function()
 {
-	var s = "\\^$*+?()=!|,{}[].";
-	var t,c = this;
-	for(t=0; t<s.length; t++)
-		c = c.replace(new RegExp("\\" + s.substr(t,1),"g"),"\\" + s.substr(t,1));
-	return c;
+    return this.replace(/[\-\/\\\^\$\*\+\?\.\(\)\|\[\]\{\}]/g, '\\$&'); // #157
 };
 
 // Convert "\" to "\s", newlines to "\n" (and remove carriage returns)
@@ -8749,9 +8878,9 @@ String.prototype.parseParams = function(defaultName,defaultValue,allowEval,noNam
 	var parseToken = function(match,p) {
 		var n;
 		if(match[p]) // Double quoted
-			n = match[p];
+			n = match[p].replace(/\\"/g,'"');
 		else if(match[p+1]) // Single quoted
-			n = match[p+1];
+			n = match[p+1].replace(/\\'/g,"'");
 		else if(match[p+2]) // Double-square-bracket quoted
 			n = match[p+2];
 		else if(match[p+3]) // Double-brace quoted
