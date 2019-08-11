@@ -296,7 +296,7 @@ h2,h3 {border-bottom:1px solid [[ColorPalette::TertiaryLight]];}
 .viewer th, .viewer thead td, .twtable th, .twtable thead td {background:[[ColorPalette::SecondaryMid]]; border:1px solid [[ColorPalette::TertiaryDark]]; color:[[ColorPalette::Background]];}
 .viewer td, .viewer tr, .twtable td, .twtable tr {border:1px solid [[ColorPalette::TertiaryDark]];}
 
-.viewer pre {border:1px solid [[ColorPalette::SecondaryLight]]; background:[[ColorPalette::SecondaryPale]];}
+.viewer pre {background:[[ColorPalette::SecondaryPale]];}
 .viewer code {color:[[ColorPalette::SecondaryDark]];}
 .viewer hr {border:0; border-top:dashed 1px [[ColorPalette::TertiaryDark]]; color:[[ColorPalette::TertiaryDark]];}
 
@@ -452,7 +452,6 @@ a.tiddlyLinkNonExisting.shadow {font-weight:bold;}
 
 .annotation { padding: 0.5em 0.8em; margin: 0.5em 1px; }
 
-* html .viewer pre {width:99%; padding:0 0 1em 0;}
 .viewer {line-height:1.4em; padding-top:0.5em;}
 .viewer .button {margin:0 0.25em; padding:0 0.25em;}
 .viewer blockquote {line-height:1.5em; padding-left:0.8em;margin-left:2.5em;}
@@ -463,10 +462,12 @@ a.tiddlyLinkNonExisting.shadow {font-weight:bold;}
 table.listView {font-size:0.85em; margin:0.8em 1.0em;}
 table.listView th, table.listView td, table.listView tr {padding:0 3px 0 3px;}
 
-.viewer pre {padding:0.5em; margin-left:0.5em; font-size:1.2em; line-height:1.4em; overflow:auto;}
-.viewer code {font-size:1.2em; line-height:1.4em;}
+* html .viewer pre {width:99%; padding:0 0 1em 0;}
+.viewer pre {padding:0.5em; overflow:auto;}
+pre, code { font-family: monospace, monospace; font-size: 1em; }
+.viewer pre, .viewer code { line-height: 1.4em; }
 
-.editor {font-size:1.1em;}
+.editor {font-size:1.1em; line-height:1.4em;}
 .editor input, .editor textarea {display:block; width:100%; box-sizing: border-box; font:inherit;}
 .editorFooter {padding:0.25em 0; font-size:.9em;}
 .editorFooter .button {padding-top:0; padding-bottom:0;}
@@ -810,9 +811,9 @@ lists of tiddlers contained in this document&quot;&gt;&gt;@@</pre>
 </div>
 <div title="Contribute" creator="psd" modifier="blaine" created="201102111106" modified="201102111310">
 <pre>~TiddlyWiki has an enthusiastic and friendly [[Community|Help and Support]] of people around the world helping to grow and improve it. But there's always more to do and we welcome any offers of assistance. There are many ways that you can help:
-* Testing and [[reporting bugs|http://trac.tiddlywiki.org/wiki/ReportingBugs]] against the core code. Clear, easily reproducible bug reports are incredibly useful and really help the team improve the quality of ~TiddlyWiki
+* Testing and [[reporting bugs|https://github.com/TiddlyWiki/TiddlyWiki/issues]] against the core code. Clear, easily reproducible bug reports are incredibly useful and really help the team improve the quality of ~TiddlyWiki
 * [[Contributing code|http://trac.tiddlywiki.org/wiki/ContributingCode]]
-* [[Making translations|http://trac.tiddlywiki.org/wiki/Translations]]
+* [[Making translations|https://github.com/TiddlyWiki/translations]]
 * Documentation needs planning, writing and editing, particularly user guide information at http://www.tiddlywiki.org
 If you would like to make a financial contribution, ~TiddlyWiki is owned by the not-for-profit [[UnaMesa Foundation|http://www.unamesa.org/]] which welcomes donations.</pre>
 </div>
@@ -1586,7 +1587,6 @@ To start a new line with &quot;cleared&quot; float like this, put the code below
 {{{
 [&gt;img[images/fractalveg.jpg]]
 }}}
-[&gt;img[images/fractalveg.jpg]]Displays as.@@clear:both;display:block; @@
 !See Also
 [[Image Macro]]</pre>
 </div>
@@ -1832,7 +1832,7 @@ GettingStarted
 &lt;img src=&quot;//api.flattr.com/button/flattr-badge-large.png&quot; alt=&quot;Flattr this&quot; title=&quot;Flattr this&quot; border=&quot;0&quot; /&gt;&lt;/a&gt;
 &lt;/html&gt;
 %/
-^^[img[favicon.ico]] TiddlyWiki &lt;&lt;version&gt;&gt;
+^^[img[images/favicon.ico]] TiddlyWiki &lt;&lt;version&gt;&gt;
 © 2013 [[UnaMesa|http://www.unamesa.org/]]^^
 </pre>
 </div>
