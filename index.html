@@ -773,7 +773,6 @@ ColorPaletteParameters: HSL([229|48], [0.5146822107288709],[0.1|0.82086966533332
 <pre>~TiddlyWiki today is the result of the efforts of dozens of people around the world generously contributing their time and skill, and offering considerable help and support.
 
 The community has several hubs for different activities:
-
 * DiscussionForums on Google Groups
 * ~TiddlyWiki code at http://github.com/TiddlyWiki/tiddlywiki
 * ~TiddlyWiki issue tracker at https://github.com/TiddlyWiki/tiddlywiki/issues
@@ -923,10 +922,8 @@ There are a number of resources for non-English language speakers:
 </div>
 <div title="Documentation" creator="mkerrigan" modifier="mkerrigan" created="201908251853" modified="201909012028" tags="community help" type="text/x-tiddlywiki">
 <pre>Documentation for ~TiddlyWiki Classic is maintained [[here|https://classic.tiddlywiki.com]]. Content tiddlers are stored [[in the core Github repository|https://github.com/TiddlyWiki/TiddlyWiki/tree/master/content]] as separate files and are merged into a single TW (this site) with the [[build tools|https://github.com/TiddlyWiki/tiddlywiki.com]].
-
 !Contributing
 Documentation always needs updates and improvements and contributions are welcome. You can contribute by opening a pull request on Github. Feel free to propose changes; to learn more about best practices and specific needs, please ask at the [[community forum|DiscussionForums]].
-
 !History and other documentation
 Previously documentation was maintained in a ~MediaWiki instance hosted by Osmosoft at tiddlywiki.org. [[In 2011|https://groups.google.com/forum/?fromgroups#!topic/tiddlywiki/wAW1pQABu8k]], the content was migrated to a ~TiddlySpace known as the Community Documentation. A separate ~DeveloperDocumention was also hosted on ~TiddlySpace. [[In 2016|https://groups.google.com/forum/#!topic/tiddlyspace/gDqcOXvpiZc]] with ~TiddlySpace discontinued, the Community Documentation and ~DeveloperDocumention are no longer actively maintained.
 
@@ -2332,6 +2329,51 @@ Alternatively, you can rename the file to {{{*.hta}}} which has the added bonus 
 &lt;&lt;&lt;
 This is all a bit frustrating. An easy alternative is to use FireFox, which seems to do the trick on all platforms.</pre>
 </div>
+<div title="Setting up saving" creator="Yakov Litvin" modifier="mkerrigan" created="201910130019" modified="201910150019" tags="gettingstarted" type="text/x-tiddlywiki">
+<pre>Since version 2.8.1, ~TiddlyWiki has a fallback saver. If no saver method is configured, pressing [[SaveChanges]] will display a download dialog. The browser may prompt for the location to save the file. Select the existing version of the file to replace it. This method works on most major browsers, but does not provide an ideal user experience as it requires manual intervention for each save. Below are various tools that remove this routine from saving.
+!Browser Plugins
+Plugins are simple to install and provide smooth user experience, but they are also platform- and browser-specific to some extent.
+* [[Timimi|https://ibnishak.github.io/Timimi/#Installing Timimi]]
+&gt; Extension by Riz for Firefox that saves standalone ~TiddlyWiki files. It has the advantage of enabling automatic saving from any folder (requires to also install a platform-specific app, uses native messaging ~APIs).
+* [[savetiddlers|https://github.com/buggyj/savetiddlers]]
+&gt; Extension by buggyj for Firefox/Chrome and some Chromium-based browsers such as Opera. Requires the ~TiddlyWiki file to be in a subfolder within the Downloads folder.
+* [[file-backups|https://github.com/pmario/file-backups]]
+&gt; Extension by pmario for Firefox and should work in any browser that supports web-extensions. Requires the ~TiddlyWiki file to be in the Downloads folder. The [[internal backup mechanism|SaveBackups]] must be off.
+!Standalone applications
+Desktop applications provide automatic saving and are not browser dependent. The disadvantage is they don't offer tabs for browsing and require your ~TiddlyWiki file to be a inside a specific folder.
+* [[TiddlyDesktop|https://github.com/Jermolene/TiddlyDesktop]]
+&gt; Application by Jeremy Ruston for macOS, Windows, and Linux. Based on [[NW.js|https://nwjs.io/]].
+* [[nwTWcSaver|https://github.com/nwOkido/nwTWcSaver]]
+&gt; Minimalistic approach by nwOkido using bare NW.js and a saver plugin.
+!Serverside applications
+These methods for automatic saving are somewhat advanced, but allow for placing ~TiddlyWiki on a server (local or remote) and generally work with any browser.
+* [[MainTiddlyServer|https://yakovl.github.io/MainTiddlyServer/]]
+&gt; PHP server by Yakov Litvin suitable for both local and remote usage.
+* [[tiddly-node-saver|https://github.com/fallwest/tiddly-node-saver]]
+&gt; node.js server by James Westfall for local usage with enhanced load/save file capabilities
+* [[TiddlyWeb|http://tiddlyweb.com/]]
+&gt; Python server by ~UnaMesa, Osmosoft and Peermore Ltd. with advanced model with multiple users, access control etc.
+!Mobile
+All of solutions above should work in most desktop ~OSs like Windows, Mac or other Unix family OS (Linux, Ubuntu, etc). While some may work on mobile devices, applications written for the respective platform are usually simpler to setup and have better performance.
+
+Android
+* Tiddloid [[released on GitHub|https://github.com/donmor/Tiddloid/releases]]
+&gt; presumably the best open source solution for the moment
+* Quinoid [[released on GitHub|https://github.com/Marxsal/Quinoid01/releases]]
+&gt; a less mature open source app
+* [[AndTidWiki|https://play.google.com/store/apps/details?id=de.mgsimon.android.andtidwiki]]
+&gt; a closed source app (the first to support TW on Android)
+* [[MainTiddlyServer|https://yakovl.github.io/MainTiddlyServer/]]
+&gt; Along with [[Server for PHP|https://play.google.com/store/apps/details?id=com.esminis.server.php&amp;hl=en]]. ([[may not work|https://bitbucket.org/esminis/server]] in Android 10)
+iOS
+* [[Quine|https://appadvice.com/app/quine/1228682923]]
+&gt; Paid app by Chris Hunt allowing users to open, edit, and save ~TiddlyWiki files. Works with local storage, Dropbox, and iCloud. Requires iOS 12+.
+!Hosted Options
+Also, you can store your TW(s) on a server:
+* [[TiddlySpot|http://tiddlyspot.com/]], a free hosting for ~TiddlyWiki
+* (this list should be expanded, if you are familiar with Github, you can suggest edits [[here|https://github.com/TiddlyWiki/TiddlyWiki/blob/master/content/Setting%2520up%2520saving.tid]])
+</pre>
+</div>
 <div title="ShadowTiddlers" creator="psd" modifier="blaine" created="201102111107" modified="201102111310" tags="concepts terminology" type="text/x-tiddlywiki">
 <pre>ShadowTiddlers are special tiddlers that have default values that take over if they are undefined or deleted. For example, PageTemplate and StyleSheetColors are both shadow tiddlers.
 
@@ -2940,12 +2982,12 @@ Thanks to Andrew Gregory for the original TiddlySaver code, and ~BidiX for arran
 |''Description:''|Small Tools for Big Ideas!|
 |''Author:''|EricShulman|</pre>
 </div>
-<div title="TiddlyWiki" creator="psd" modifier="jermolene" created="201102111107" modified="201203201034" tags="concepts" type="text/x-tiddlywiki">
+<div title="TiddlyWiki" creator="psd" modifier="mkerrigan" created="201102111107" modified="201909070006" tags="concepts" type="text/x-tiddlywiki">
 <pre>~TiddlyWiki is a complete [[wiki|WikiWikiWeb]] in a single HTML file. It contains the entire text of the wiki, and all the ~JavaScript, CSS and HTML machinery to be able to display it, and let you edit it or search it - without needing a server. Of course, there are also some useful ServerSide adaptations out there.
 
 Unlike most wikis, TiddlyWiki isn't about group collaboration; it is a wiki in the sense of elevating linking be a part of the punctuation of writing. You can easily publish a TiddlyWiki you have created by placing the single file on a web server (for instance the homepage hosting provided by many ISPs). If you need full  group collaboration features, there are several HostedOptions to choose from.
 
-~TiddlyWiki was originally created by JeremyRuston and is now a thriving [[open source|OpenSourceLicense]] project with a busy [[Community]] of independent developers. [[Osmosoft]], part of [[BT|http://btplc.com]], is the leading contributor to the project.
+~TiddlyWiki was originally created by JeremyRuston and is now a thriving [[open source|OpenSourceLicense]] project with a busy [[Community]] of independent developers.
 </pre>
 </div>
 <div title="TiddlyWiki Browser Compatibility" creator="jon" modifier="jermolene" created="201110041247" modified="201304260843" tags="browsers issues" type="text/x-tiddlywiki">
