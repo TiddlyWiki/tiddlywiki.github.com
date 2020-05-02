@@ -639,16 +639,15 @@ The backstage area is only available when a TiddlyWiki is edittable - typically 
 
 |!Browser |!Version |!Allows changes to be saved locally?|
 |InternetExplorer |6.0+ |Yes |
-|FireFox |1.0+ |Yes, with the TiddlyFox extension |
+|[[Firefox]] |1.0+ |Yes, with the TiddlyFox extension |
 |[[Safari]] |1.0+ |Yes, using TiddlySaver plugin|
 |[[Opera]] |? |Yes, using TiddlySaver plugin|
 |[[Chrome]] |All |Yes, using TiddlySaver plugin|
 
 See also the [[TiddlyWiki apps available for smartphones|MobileDevices]].
 
-
-
-Please [[let us know|https://groups.google.com/group/TiddlyWikiClassic]] of any additions or corrections.</pre>
+Please [[let us know|https://groups.google.com/group/TiddlyWikiClassic]] of any additions or corrections.
+</pre>
 </div>
 <div title="CSS Formatting" creator="matt" modifier="jermolene" created="201102111426" modified="201111031822" tags="formatting" type="text/x-tiddlywiki">
 <pre>!!Inline Styles
@@ -692,9 +691,10 @@ Some random text
 <div title="CharacterEncoding" creator="psd" modifier="blaine" created="201102111106" modified="201102111310" tags="troubleshooting" type="text/x-tiddlywiki">
 <pre>When you upload a TiddlyWiki to a web server, if doesn't load properly, it may be a CharacterEncoding issue.
 
-TiddlyWiki uses Unicode ~UTF-8 encoding and won't load properly if your host is serving it as ~ISO-8859-1. You should be able to check this by loading another page on the server in FireFox and selecting 'Page Info' on the 'Tools' menu.
+TiddlyWiki uses Unicode ~UTF-8 encoding and won't load properly if your host is serving it as ~ISO-8859-1. You should be able to check this by loading another page on the server in [[Firefox]] and selecting 'Page Info' on the 'Tools' menu.
 
-If this is the case, it should be reasonably easy to sort out. We recommend that you contact your server host and ask them to serve it in ~UTF-8 mode. If you are more technically hands-on, you may be able to [[solve the issue yourself|http://www.w3.org/International/questions/qa-htaccess-charset]].</pre>
+If this is the case, it should be reasonably easy to sort out. We recommend that you contact your server host and ask them to serve it in ~UTF-8 mode. If you are more technically hands-on, you may be able to [[solve the issue yourself|http://www.w3.org/International/questions/qa-htaccess-charset]].
+</pre>
 </div>
 <div title="Chrome" creator="psd" modifier="blaine" created="201102111106" modified="201102111310" tags="browsers issues" type="text/x-tiddlywiki">
 <pre>~TiddlyWiki works well in Google Chrome and Chromium using [[TiddlySaver]].
@@ -747,8 +747,8 @@ QuaternaryDark: #140
 Error: #f88
 </pre>
 </div>
-<div title="ColorPalette shadows" creator="matt" modifier="matt" created="201102111436" modified="201102151510" tags="shadow" type="text/x-tiddlywiki">
-<pre>This tiddler determines the colour scheme used within the TiddlyWiki.  When a new space is created the random color palette macro determines the default, however these can be overwritten directly in the ColorPalette tiddler.
+<div title="ColorPalette shadows" creator="matt" modifier="retostauss" created="201102111436" modified="202003301308" tags="shadow" type="text/x-tiddlywiki">
+<pre>This tiddler determines the colour scheme used within the TiddlyWiki.
 
 {{{
 Background: #e0e3f5
@@ -767,7 +767,8 @@ TertiaryMid: #b13a38
 TertiaryDark: #260c0c
 Error: #f88
 ColorPaletteParameters: HSL([229|48], [0.5146822107288709],[0.1|0.8208696653333263])
-}}}</pre>
+}}}
+</pre>
 </div>
 <div title="Community" creator="psd" modifier="mkerrigan" created="201102111106" modified="201908241858" tags="community help" type="text/x-tiddlywiki">
 <pre>~TiddlyWiki today is the result of the efforts of dozens of people around the world generously contributing their time and skill, and offering considerable help and support.
@@ -903,8 +904,8 @@ Note you can also put filters into your DefaultTiddlers tiddler. For instance to
 &lt;&lt;toolbar deleteTiddler&gt;&gt;
 }}}</pre>
 </div>
-<div title="DeveloperDocumentation" creator="blaine" modifier="jermolene" created="201102111259" modified="201111031824" tags="community help" type="text/x-tiddlywiki">
-<pre>TiddlyWiki developer documentation is being built up at http://tiddlywikidev.tiddlyspace.com/.
+<div title="DeveloperDocumentation" creator="blaine" modifier="retostauss" created="201102111259" modified="202003301319" tags="community help" type="text/x-tiddlywiki">
+<pre>TiddlyWiki developer documentation was built up at http://tiddlywikidev.tiddlyspace.com/, which is no longer available. You may have a look at the Internet Archive for [[a snapshot of 2016|https://web.archive.org/web/20160810230802/http://tiddlywikidev.tiddlyspace.com/]].
 
 Michael Mahemoff has written a very helpful outline of the architecture of ~TiddlyWiki: [[Part 1|http://softwareas.com/tiddlywiki-internals-1-of-3-architectural-concepts]], [[Part 2|http://softwareas.com/tiddlywiki-internals-2-of-3-list-of-javascript-files]] and [[Part 3|http://softwareas.com/tiddlywiki-internals-3-of-3-key-javascript-classes-and-files]].
 </pre>
@@ -920,10 +921,13 @@ There are a number of resources for non-English language speakers:
 * A guide to [[TiddlyWiki in Japanese|http://web.archive.org/web/20181105134952/https://www.geocities.jp/potto372/tiddlywiki/tiddlywikinote.html]]
 </pre>
 </div>
-<div title="Documentation" creator="mkerrigan" modifier="mkerrigan" created="201908251853" modified="201909012028" tags="community help" type="text/x-tiddlywiki">
-<pre>Documentation for ~TiddlyWiki Classic is maintained [[here|https://classic.tiddlywiki.com]]. Content tiddlers are stored [[in the core Github repository|https://github.com/TiddlyWiki/TiddlyWiki/tree/master/content]] as separate files and are merged into a single TW (this site) with the [[build tools|https://github.com/TiddlyWiki/tiddlywiki.com]].
+<div title="Documentation" creator="mkerrigan" modifier="Yakov Litvin" created="201908251853" modified="202004292018" tags="community help" type="text/x-tiddlywiki">
+<pre>Documentation for ~TiddlyWiki Classic is maintained [[here|https://classic.tiddlywiki.com]]. Content tiddlers are stored [[in the core GitHub repository|https://github.com/TiddlyWiki/TiddlyWiki/tree/master/content]] as separate files and are merged into a single TW (this site) with the [[build tools|https://github.com/TiddlyWiki/TiddlyWiki/blob/master/build/README.md]].
 !Contributing
-Documentation always needs updates and improvements and contributions are welcome. You can contribute by opening a pull request on Github. Feel free to propose changes; to learn more about best practices and specific needs, please ask at the [[community forum|DiscussionForums]].
+Documentation always needs updates and improvements and contributions are welcome.
+* Feel free to propose changes; to learn more about what is needed most, ask at the [[community forum|DiscussionForums]]. /%# put some bits from the google doc here, or link it %/
+* Also, you can ask about best practices and guidelines. /%# they should become a part of docs at some point %/
+* If you are not familiar with contributing at ~GitHub, learn [[how to propose changes|Improving documentation via GitHub]].
 !History and other documentation
 Previously documentation was maintained in a ~MediaWiki instance hosted by Osmosoft at tiddlywiki.org. [[In 2011|https://groups.google.com/forum/?fromgroups#!topic/tiddlywiki/wAW1pQABu8k]], the content was migrated to a ~TiddlySpace known as the Community Documentation. A separate ~DeveloperDocumention was also hosted on ~TiddlySpace. [[In 2016|https://groups.google.com/forum/#!topic/tiddlyspace/gDqcOXvpiZc]] with ~TiddlySpace discontinued, the Community Documentation and ~DeveloperDocumention are no longer actively maintained.
 
@@ -1317,10 +1321,11 @@ Also, see TiddlyWikiAdaptations
 <div title="Feedback" creator="psd" modifier="blaine" created="201102111106" modified="201102111310" type="text/x-tiddlywiki">
 <pre>If you've any comments, corrections or observations about TiddlyWiki, the best way to get our attention is to post to the [[Community]] groups -- or write a blog entry.</pre>
 </div>
-<div title="FireFox" creator="psd" modifier="jermolene" created="201102111106" modified="201304260841" tags="browsers issues" type="text/x-tiddlywiki">
+<div title="Firefox" creator="psd" modifier="jermolene" created="201102111106" modified="201304260841" tags="browsers issues" type="text/x-tiddlywiki">
 <pre>To use TiddlyWiki with recent versions of Mozilla Firefox you'll need to install the TiddlyFox extension. It enables TiddlyWiki documents loaded from a {{{file:///}}} URI to save changes to themselves.
 
-&lt;&lt;tiddler TiddlyFox&gt;&gt;</pre>
+&lt;&lt;tiddler TiddlyFox&gt;&gt;
+</pre>
 </div>
 <div title="FlickrBadge" creator="psd" modifier="blaine" created="201102111106" modified="201102111310" tags="tips" type="text/x-tiddlywiki">
 <pre>Here's one way to get a Flickr badge in TiddlyWiki:
@@ -1596,8 +1601,7 @@ To start a new line with &quot;cleared&quot; float like this, put the code below
 {{{
 [&gt;img[images/fractalveg.jpg]]
 }}}
-!See Also
-[[Image Macro]]</pre>
+</pre>
 </div>
 <div title="Importing Tiddlers" creator="psd" modifier="jermolene" created="201103011514" modified="201110201351" type="text/x-tiddlywiki">
 <pre>To import tiddlers from another ~TiddlyWiki file, or from an external website, follow these instructions.
@@ -1607,6 +1611,29 @@ To start a new line with &quot;cleared&quot; float like this, put the code below
 # In the menu, click on 'Import'. You will then see a window that looks like this - and you can follow the guidance from there. Note that you may need to grant authorisation to your ~TiddlyWiki file to import tiddlers - this is fine and expected.
 &lt;&lt;importTiddlers&gt;&gt;
 </pre>
+</div>
+<div title="Improving documentation via GitHub" creator="mkerrigan" modifier="Yakov Litvin" created="202002130039" modified="202004292047" type="text/x-tiddlywiki">
+<pre>Anyone can suggest improvements to the documentation. Since it is [[built|https://github.com/TiddlyWiki/TiddlyWiki/blob/master/build/README.md]] from separate .tid content [[files|https://github.com/TiddlyWiki/TiddlyWiki/tree/master/content]] stored in the {{{TiddlyWiki}}} [[GitHub repository|https://github.com/TiddlyWiki/TiddlyWiki]], proposing changes is done via ~GitHub too. Here's how:
+# Create an account on [[GitHub|https://github.com]] if you don't already have one. /%#
+	to adapt:
+# Sign the [[Contributor License Agreement|https://tiddlywiki.com/#Contributor%20License%20Agreement]] as described in [[Signing the Contributor License Agreement|https://tiddlywiki.com/#Signing%20the%20Contributor%20License%20Agreement]].
+%/
+# For the tiddler you want to improve, locate its .tid file either by clicking from the &quot;suggest changes&quot; button or directly within the [[content|https://github.com/TiddlyWiki/TiddlyWiki/tree/master/content]] folder.
+# Click the pencil edit icon to make changes to the file. ~GitHub will prompt you to write the file into your personal fork of the repository.
+** A &quot;fork&quot; is your personal copy of the repository that you can edit freely. Later you can propose to merge your changes into the main repository via a pull request (see below).
+** Ensure to adjust the modified field with a date time stamp in {{{YYYYMMDDHHMM}}} format and the modifier field with your username.
+# Below the edit box for the tiddler text you should see a box labeled ''Propose file change''.
+# Enter a brief title to explain the change, prefixed with &quot;docs:&quot; (eg, &quot;docs: add examples of the slider macro usage&quot;).
+# If necessary, enter a longer description too.
+# Click the green button labeled ''Propose file change''.
+# On the following screen, click the green button labeled ''Create pull request''.
+One of the core developers will review your pull request and merge it so it will be incorporated into main repository.
+/%# describe also:
+* aspects of edit beyond the first one, branch names and updating master in the fork
+* split.recipe and how to propose renaming, deleting or adding a tiddler
+* review the process in practice and add if there's any missing bits (like commenting the pull request itself
+  and the process of reviewing/improving a PR)
+%/</pre>
 </div>
 <div title="IncrementalSearch" creator="psd" modifier="blaine" created="201102111106" modified="201102111310" tags="features" type="text/x-tiddlywiki">
 <pre>When you type more than three characters in the search box at the upper right, any matching tiddlers are automatically displayed with the text highlighted. There's a couple of minor issues: the highlights don't get removed when you clear the search, and occasionally, on some browsers, keystrokes get missed if you type quickly so you may need to click the 'search' button to manually trigger the search.</pre>
@@ -1866,10 +1893,11 @@ The plugin should now be available for use.</pre>
 	type=&quot;application/rss+xml&quot; title=&quot;tiddlywiki.com's RSS feed&quot; /&gt;
 &lt;!--}}}--&gt;</pre>
 </div>
-<div title="MartinsPluginsServer" creator="psd" modifier="blaine" created="201102111106" modified="201102111310" tags="systemServer" type="text/x-tiddlywiki">
-<pre>|''URL:''|http://www.martinswiki.com/ |
+<div title="MartinsPluginsServer" creator="psd" modifier="mkerrigan" created="201102111106" modified="202002130039" tags="systemServer" type="text/x-tiddlywiki">
+<pre>|''URL:''|http://web.archive.org/web/20120321101358/http://www.martinswiki.com/ |
 |''Description:''|Martin Buddens's Plugins |
-|''Author:''|MartinBudden |</pre>
+|''Author:''|MartinBudden |
+</pre>
 </div>
 <div title="Mathematics" creator="jermolene" modifier="jermolene" created="201111141221" modified="201111141228" tags="niche" type="text/x-tiddlywiki">
 <pre>There are several ways to incorporate mathematical formulae into TiddlyWiki, both of which let you to type ordinary LaTeX into a tiddler:
@@ -2280,8 +2308,8 @@ It's important to save changes using ~TiddlyWiki's built in saving functionality
 It's worthwhile configuring your backup settings. You can edit the AdvancedOptions to decide when backups are made and where they're saved.
 
 If you're still experiencing problems, the following links will help: 
-*General guidance on FireFox, InternetExplorer, [[Opera]], [[Camino]] or [[Safari]]
-* if you're using InternetExplorer on Windows you might run into XP ServicePack2Problems or VistaIssues
+* General guidance on [[Firefox]], InternetExplorer, [[Opera]], [[Camino]] or [[Safari]]
+* If you're using InternetExplorer on Windows you might run into XP ServicePack2Problems or VistaIssues
 </pre>
 </div>
 <div title="SaveEmptyTemplate" creator="psd" modifier="blaine" created="201102111107" modified="201102111310" tags="features options" type="text/x-tiddlywiki">
@@ -2296,9 +2324,10 @@ The template TiddlyWiki is called 'empty.html'.</pre>
 }}}</pre>
 </div>
 <div title="SaveUnpredictabilities" creator="psd" modifier="blaine" created="201102111107" modified="201102111310" tags="issues troubleshooting" type="text/x-tiddlywiki">
-<pre>Several people have reported problems with reusing TiddlyWiki when they have used the File/Save command of their browser to save it. The issue is that some browsers (notably FireFox) don't save the text of the HTML file exactly as it appears on the server, but rather save a snapshot of the current state of the page. In the case of a highly dynamic page like TiddlyWiki, this leads to all sorts of peculiarness...
+<pre>Several people have reported problems with reusing TiddlyWiki when they have used the File/Save command of their browser to save it. The issue is that some browsers (notably [[Firefox]]) don't save the text of the HTML file exactly as it appears on the server, but rather save a snapshot of the current state of the page. In the case of a highly dynamic page like TiddlyWiki, this leads to all sorts of peculiarness...
 
-TiddlyWiki now displays a warning if it thinks that it has been saved wrongly.</pre>
+TiddlyWiki now displays a warning if it thinks that it has been saved wrongly.
+</pre>
 </div>
 <div title="Search" creator="psd" modifier="jermolene" created="201102111107" modified="201111031649" type="text/x-tiddlywiki">
 <pre>The default version of ~TiddlyWiki includes basic search functionality. When a search term is entered, all tiddlers that contain this term are opened, with the search term highlighted wherever it appears.
@@ -2327,7 +2356,8 @@ If you find yourself running into the information bar frequently, you can disabl
 
 Alternatively, you can rename the file to {{{*.hta}}} which has the added bonus of automatically granting all necessary save permissions.
 &lt;&lt;&lt;
-This is all a bit frustrating. An easy alternative is to use FireFox, which seems to do the trick on all platforms.</pre>
+This is all a bit frustrating. An easy alternative is to use [[Firefox]], which seems to do the trick on all platforms.
+</pre>
 </div>
 <div title="Setting up saving" creator="Yakov Litvin" modifier="mkerrigan" created="201910130019" modified="201910150019" tags="gettingstarted" type="text/x-tiddlywiki">
 <pre>Since version 2.8.1, ~TiddlyWiki has a fallback saver. If no saver method is configured, pressing [[SaveChanges]] will display a download dialog. The browser may prompt for the location to save the file. Select the existing version of the file to replace it. This method works on most major browsers, but does not provide an ideal user experience as it requires manual intervention for each save. Below are various tools that remove this routine from saving.
@@ -2371,7 +2401,7 @@ iOS
 !Hosted Options
 Also, you can store your TW(s) on a server:
 * [[TiddlySpot|http://tiddlyspot.com/]], a free hosting for ~TiddlyWiki
-* (this list should be expanded, if you are familiar with Github, you can suggest edits [[here|https://github.com/TiddlyWiki/TiddlyWiki/blob/master/content/Setting%2520up%2520saving.tid]])
+* (this list should be expanded, you can suggest edits by clicking &quot;suggest edits&quot; and following the instructions)
 </pre>
 </div>
 <div title="ShadowTiddlers" creator="psd" modifier="blaine" created="201102111107" modified="201102111310" tags="concepts terminology" type="text/x-tiddlywiki">
@@ -2717,6 +2747,50 @@ Or you can put in full ~StyleSheets, like that seen in TiddlySpace in the StyleS
 [[StyleSheetTiddlySpace]]
 /*}}}*/
 }}}</pre>
+</div>
+<div title="SuggestChangesPlugin" creator="Yakov Litvin" modifier="Yakov Litvin" created="202002211843" modified="202004291710" tags="systemConfig" type="text/x-tiddlywiki">
+<pre>/***
+|Description	|Makes contributing to docs of TiddlyWiki Classic easier: changes label of the &quot;view&quot; toolbar command to &quot;suggest changes&quot; and once a user clicks it, shows an annotation in the tiddler that guides them how to contribute|
+|Author		|Yakov Litvin|
+|Version	|1.0.0|
+|License	|MIT|
+|Overwrites	|{{{config.macros.annotations.handler}}}|
+***/
+//{{{
+var repoBaseUrl = &quot;https://github.com/TiddlyWiki/TiddlyWiki&quot;;
+var repoContentUrl = repoBaseUrl + &quot;/tree/master/content&quot;;
+var getRepoContentTiddlerUrl = function(title) { 
+	return repoBaseUrl + &quot;/blob/master/content/&quot; +
+		encodeURIComponent( encodeURIComponent(title) ) + &quot;.tid&quot;;
+};
+var getContributeAnnotation = function(title) {
+	return &quot;Willing to contribute? If you are familiar with ~GitHub, &quot; +
+	  &quot;you can open this tiddler [[there|&quot;+ getRepoContentTiddlerUrl(title) +&quot;]], &quot;+
+	  &quot;edit it and create a pull request (see also \&quot;Contributing\&quot; in [[Documentation]]). &quot;+
+	  &quot;If this link to the tiddler source is broken, please find it &quot;+
+	  &quot;in [[the list|&quot;+ repoContentUrl +&quot;]]. &quot;+
+	  &quot;If you are not familiar with ~GitHub but want to contribute, please &quot;+
+	  &quot;take a look at the [[instructions|Improving documentation via GitHub]].&quot;;
+};
+
+store.forEachTiddler(function(title, tiddler) {
+	var contributeAnnotation = getContributeAnnotation(title);
+	config.annotations[title] = config.annotations[title] ?
+		config.annotations[title] + &quot;\n\n&quot; + contributeAnnotation :
+		contributeAnnotation;
+});
+
+// replace .format with .replace to avoid removing %2520 etc from annotation
+config.macros.annotations.handler = function(place, macroName, params, wikifier, paramString, tiddler) {
+	var title = tiddler ? tiddler.title : null;
+	var annotation = title ? config.annotations[title] : null;
+	if(!annotation) return;
+	var text = annotation.replace('%0', title);
+	wikify(text, createTiddlyElement(place, &quot;div&quot;, null, &quot;annotation&quot;), null, tiddler);
+};
+
+config.commands.editTiddler.readOnlyText = &quot;suggest changes&quot;;
+//}}}</pre>
 </div>
 <div title="Suppressing Formatting" creator="psd" modifier="psd" created="201102161122" modified="201102161122" tags="formatting" type="text/x-tiddlywiki">
 <pre>Wiki markup rules can be suppressed for any given section of text by enclosing it in 3 ''double'' quotes:
@@ -8479,14 +8553,14 @@ config.macros.backstage.handler = function(place,macroName,params)
 //-- ImportTiddlers macro
 //--
 
-config.macros.importTiddlers.handler = function(place,macroName,params,wikifier,paramString,tiddler)
+config.macros.importTiddlers.handler = function(place, macroName, params, wikifier, paramString, tiddler)
 {
 	if(readOnly) {
-		createTiddlyElement(place,"div",null,"marked",this.readOnlyWarning);
+		createTiddlyElement(place, "div", null, "marked", this.readOnlyWarning);
 		return;
 	}
 	var w = new Wizard();
-	w.createWizard(place,this.wizardTitle);
+	w.createWizard(place, this.wizardTitle);
 	this.restart(w);
 };
 
@@ -8537,19 +8611,18 @@ config.macros.importTiddlers.restart = function(wizard)
 config.macros.importTiddlers.getFeeds = function()
 {
 	var feeds = {};
-	var t,tagged = store.getTaggedTiddlers("systemServer","title");
-	for(t=0; t<tagged.length; t++) {
+	var t, tagged = store.getTaggedTiddlers("systemServer", "title");
+	for(t = 0; t < tagged.length; t++) {
 		var title = tagged[t].title;
-		var serverType = store.getTiddlerSlice(title,"Type");
-		if(!serverType)
-			serverType = "file";
-		feeds[title] = {title: title,
-						url: store.getTiddlerSlice(title,"URL"),
-						workspace: store.getTiddlerSlice(title,"Workspace"),
-						workspaceList: store.getTiddlerSlice(title,"WorkspaceList"),
-						tiddlerFilter: store.getTiddlerSlice(title,"TiddlerFilter"),
-						serverType: serverType,
-						description: store.getTiddlerSlice(title,"Description")};
+		feeds[title] = {
+			title: title,
+			url: store.getTiddlerSlice(title, "URL"),
+			workspace: store.getTiddlerSlice(title, "Workspace"),
+			workspaceList: store.getTiddlerSlice(title, "WorkspaceList"),
+			tiddlerFilter: store.getTiddlerSlice(title, "TiddlerFilter"),
+			serverType: store.getTiddlerSlice(title, "Type") || "file",
+			description: store.getTiddlerSlice(title, "Description")
+		};
 	}
 	return feeds;
 };
@@ -8577,17 +8650,18 @@ config.macros.importTiddlers.onBrowseChange = function(e)
 {
 	var wizard = new Wizard(this);
 	var file = this.value;
-	file = file.replace(/^C:\\fakepath\\/i,''); // remove fakepath (chrome/opera/safari)
+	file = file.replace(/^C:\\fakepath\\/i, ''); // remove fakepath (chrome/opera/safari)
 	if(this.files && this.files[0]) {
 		try {
 			netscape.security.PrivilegeManager.enablePrivilege("UniversalFileRead");
 			file = this.files[0].fileName; // REQUIRES PRIVILEGES.. NULL otherwise
 		} catch (ex) {
 			// non-priv fallback: combine filename with path to current document
-			var path=getLocalPath(document.location.href);
-			var slashpos=path.lastIndexOf('/'); if (slashpos==-1) slashpos=path.lastIndexOf('\\'); 
-			if (slashpos!=-1) path=path.substr(0,slashpos+1); // remove filename, leave trailing 	slash
-			file=path+file;
+			var path = getLocalPath(document.location.href);
+			var slashpos = path.lastIndexOf('/');
+			if (slashpos == -1) slashpos = path.lastIndexOf('\\');
+			if (slashpos != -1) path = path.substr(0, slashpos + 1); // remove filename, leave trailing slash
+			file = path + file;
 		}
 	}
 	var fileInput = wizard.getElement("txtPath");
@@ -8597,26 +8671,29 @@ config.macros.importTiddlers.onBrowseChange = function(e)
 	return true;
 };
 
-config.macros.importTiddlers.getURLFromLocalPath = function(v)
+config.macros.importTiddlers.getURLFromLocalPath = function(path)
 {
-	if(!v || !v.length)
-		return v;
-	v = v.replace(/\\/g,"/"); // use "/" for cross-platform consistency
-	var u;
-	var t = v.split(":");
-	var p = t[1] || t[0]; // remove drive letter (if any)
+	if(!path) return path;
+	// use "/" for cross-platform consistency
+	path = path.replace(/\\/g, "/");
+	var t = path.split(":");
 	if(t[1] && (t[0] == "http" || t[0] == "https" || t[0] == "file")) {
-		u = v;
-	} else if(p.substr(0,1)=="/") {
-		u = document.location.protocol + "//" + document.location.hostname + (t[1] ? "/" : "") + v;
-	} else {
-		var c = document.location.href.replace(/\\/g,"/");
-		var pos = c.lastIndexOf("/");
-		if(pos!=-1)
-			c = c.substr(0,pos); // remove filename
-		u = c + "/" + p;
+		// input is already a URL
+		return path;
 	}
-	return u;
+
+	var p = t[1] || t[0]; // remove drive letter (if any)
+	if(p.substr(0, 1) == "/") {
+		// path is absolute, add protocol + domain + extra slash (if drive letter)
+		return document.location.protocol + "//" + document.location.hostname + (t[1] ? "/" : "") + path;
+	}
+
+	// path is relative, add current document protocol + domain + path
+	var c = document.location.href.replace(/\\/g, "/");
+	var pos = c.lastIndexOf("/");
+	if(pos != -1)
+		c = c.substr(0, pos); // remove filename
+	return c + "/" + p;
 };
 
 config.macros.importTiddlers.onOpen = function(e)
@@ -8627,52 +8704,52 @@ config.macros.importTiddlers.onOpen = function(e)
 	var url = fileInput.value;
 	var serverType = wizard.getElement("selTypes").value || config.defaultAdaptor;
 	var adaptor = new config.adaptors[serverType]();
-	wizard.setValue("adaptor",adaptor);
-	wizard.setValue("serverType",serverType);
-	wizard.setValue("host",url);
-	adaptor.openHost(url,null,wizard,me.onOpenHost);
-	wizard.setButtons([{caption: me.cancelLabel, tooltip: me.cancelPrompt, onClick: me.onCancel}],me.statusOpenHost);
+	wizard.setValue("adaptor", adaptor);
+	wizard.setValue("serverType", serverType);
+	wizard.setValue("host", url);
+	adaptor.openHost(url, null, wizard, me.onOpenHost);
+	wizard.setButtons([{caption: me.cancelLabel, tooltip: me.cancelPrompt, onClick: me.onCancel}], me.statusOpenHost);
 	return false;
 };
 
-config.macros.importTiddlers.onOpenHost = function(context,wizard)
+config.macros.importTiddlers.onOpenHost = function(context, wizard)
 {
 	var me = config.macros.importTiddlers;
 	var adaptor = wizard.getValue("adaptor");
 	if(context.status !== true)
 		displayMessage("Error in importTiddlers.onOpenHost: " + context.statusText);
-	adaptor.getWorkspaceList(context,wizard,me.onGetWorkspaceList);
-	wizard.setButtons([{caption: me.cancelLabel, tooltip: me.cancelPrompt, onClick: me.onCancel}],me.statusGetWorkspaceList);
+	adaptor.getWorkspaceList(context, wizard, me.onGetWorkspaceList);
+	wizard.setButtons([{caption: me.cancelLabel, tooltip: me.cancelPrompt, onClick: me.onCancel}], me.statusGetWorkspaceList);
 };
 
-config.macros.importTiddlers.onGetWorkspaceList = function(context,wizard)
+config.macros.importTiddlers.onGetWorkspaceList = function(context, wizard)
 {
 	var me = config.macros.importTiddlers;
 	if(context.status !== true)
 		displayMessage("Error in importTiddlers.onGetWorkspaceList: " + context.statusText);
-	wizard.setValue("context",context);
+	wizard.setValue("context", context);
 	var workspace = wizard.getValue("feedWorkspace");
-	if(!workspace && context.workspaces.length==1)
+	if(!workspace && context.workspaces.length == 1)
 		workspace = context.workspaces[0].title;
 	if(workspace) {
-		context.adaptor.openWorkspace(workspace,context,wizard,me.onOpenWorkspace);
-		wizard.setValue("workspace",workspace);
-		wizard.setButtons([{caption: me.cancelLabel, tooltip: me.cancelPrompt, onClick: me.onCancel}],me.statusOpenWorkspace);
+		context.adaptor.openWorkspace(workspace, context, wizard, me.onOpenWorkspace);
+		wizard.setValue("workspace", workspace);
+		wizard.setButtons([{caption: me.cancelLabel, tooltip: me.cancelPrompt, onClick: me.onCancel}], me.statusOpenWorkspace);
 		return;
 	}
 	wizard.addStep(me.step2Title,me.step2Html);
-	var t,s = wizard.getElement("selWorkspace");
+	var t, s = wizard.getElement("selWorkspace");
 	s.onchange = me.onWorkspaceChange;
-	for(t=0; t<context.workspaces.length; t++) {
-		var e = createTiddlyElement(s,"option",null,null,context.workspaces[t].title);
+	for(t = 0; t < context.workspaces.length; t++) {
+		var e = createTiddlyElement(s, "option", null, null, context.workspaces[t].title);
 		e.value = context.workspaces[t].title;
 	}
 	var workspaceList = wizard.getValue("feedWorkspaceList");
 	if(workspaceList) {
-		var n,list = workspaceList.parseParams("workspace",null,false,true);
-		for(n=1; n<list.length; n++) {
-			if(context.workspaces.findByField("title",list[n].value) == null) {
-				e = createTiddlyElement(s,"option",null,null,list[n].value);
+		var n, list = workspaceList.parseParams("workspace", null, false, true);
+		for(n = 1; n < list.length; n++) {
+			if(context.workspaces.findByField("title", list[n].value) == null) {
+				e = createTiddlyElement(s, "option", null, null, list[n].value);
 				e.value = list[n].value;
 			}
 		}
@@ -8699,10 +8776,10 @@ config.macros.importTiddlers.onChooseWorkspace = function(e)
 	var wizard = new Wizard(this);
 	var adaptor = wizard.getValue("adaptor");
 	var workspace = wizard.getElement("txtWorkspace").value;
-	wizard.setValue("workspace",workspace);
+	wizard.setValue("workspace", workspace);
 	var context = wizard.getValue("context");
-	adaptor.openWorkspace(workspace,context,wizard,me.onOpenWorkspace);
-	wizard.setButtons([{caption: me.cancelLabel, tooltip: me.cancelPrompt, onClick: me.onCancel}],me.statusOpenWorkspace);
+	adaptor.openWorkspace(workspace, context, wizard, me.onOpenWorkspace);
+	wizard.setButtons([{caption: me.cancelLabel, tooltip: me.cancelPrompt, onClick: me.onCancel}], me.statusOpenWorkspace);
 	return false;
 };
 
@@ -8714,15 +8791,15 @@ config.macros.importTiddlers.onOpenWorkspace = function(context,wizard)
 	var adaptor = wizard.getValue("adaptor");
 	var browse = wizard.getElement("txtBrowse");
 	if (browse.files) context.file = browse.files[0]; // for HTML5 FileReader
-	adaptor.getTiddlerList(context,wizard,me.onGetTiddlerList,wizard.getValue("feedTiddlerFilter"));
-	wizard.setButtons([{caption: me.cancelLabel, tooltip: me.cancelPrompt, onClick: me.onCancel}],me.statusGetTiddlerList);
+	adaptor.getTiddlerList(context, wizard, me.onGetTiddlerList, wizard.getValue("feedTiddlerFilter"));
+	wizard.setButtons([{caption: me.cancelLabel, tooltip: me.cancelPrompt, onClick: me.onCancel}], me.statusGetTiddlerList);
 };
 
-config.macros.importTiddlers.onGetTiddlerList = function(context,wizard)
+config.macros.importTiddlers.onGetTiddlerList = function(context, wizard)
 {
 	var me = config.macros.importTiddlers;
 	if(context.status !== true) {
-		var error = context.statusText||me.errorGettingTiddlerList;
+		var error = context.statusText || me.errorGettingTiddlerList;
 		if(context.host.indexOf("file://") === 0) {
 			error = me.errorGettingTiddlerListFile;
 		} else {
@@ -8736,35 +8813,34 @@ config.macros.importTiddlers.onGetTiddlerList = function(context,wizard)
 	// Extract data for the listview
 	var listedTiddlers = [];
 	if(context.tiddlers) {
-		var n;
-		for(n=0; n<context.tiddlers.length; n++) {
+		for(var n = 0; n < context.tiddlers.length; n++) {
 			var tiddler = context.tiddlers[n];
 			listedTiddlers.push({
 				title: tiddler.title,
 				modified: tiddler.modified,
 				modifier: tiddler.modifier,
-				text: tiddler.text ? wikifyPlainText(tiddler.text,100) : "",
+				text: tiddler.text ? wikifyPlainText(tiddler.text, 100) : "",
 				tags: tiddler.tags,
 				size: tiddler.text ? tiddler.text.length : 0,
 				tiddler: tiddler
 			});
 		}
 	}
-	listedTiddlers.sort(function(a,b) {return a.title < b.title ? -1 : (a.title == b.title ? 0 : +1);});
+	listedTiddlers.sort(function(a, b) { return a.title < b.title ? -1 : (a.title == b.title ? 0 : +1); });
 	// Display the listview
-	wizard.addStep(me.step3Title,me.step3Html);
+	wizard.addStep(me.step3Title, me.step3Html);
 	var markList = wizard.getElement("markList");
 	var listWrapper = document.createElement("div");
-	markList.parentNode.insertBefore(listWrapper,markList);
-	var listView = ListView.create(listWrapper,listedTiddlers,me.listViewTemplate);
-	wizard.setValue("listView",listView);
-	wizard.setValue("context",context);
+	markList.parentNode.insertBefore(listWrapper, markList);
+	var listView = ListView.create(listWrapper, listedTiddlers, me.listViewTemplate);
+	wizard.setValue("listView", listView);
+	wizard.setValue("context", context);
 	var txtSaveTiddler = wizard.getElement("txtSaveTiddler");
 	txtSaveTiddler.value = me.generateSystemServerName(wizard);
 	wizard.setButtons([
-			{caption: me.cancelLabel, tooltip: me.cancelPrompt, onClick: me.onCancel},
-			{caption: me.importLabel, tooltip: me.importPrompt, onClick: me.doImport}
-		]);
+		{caption: me.cancelLabel, tooltip: me.cancelPrompt, onClick: me.onCancel},
+		{caption: me.importLabel, tooltip: me.importPrompt, onClick: me.doImport}
+	]);
 };
 
 config.macros.importTiddlers.generateSystemServerName = function(wizard)
@@ -8773,7 +8849,7 @@ config.macros.importTiddlers.generateSystemServerName = function(wizard)
 	var host = wizard.getValue("host");
 	var workspace = wizard.getValue("workspace");
 	var pattern = config.macros.importTiddlers[workspace ? "systemServerNamePattern" : "systemServerNamePatternNoWorkspace"];
-	return pattern.format([serverType,host,workspace]);
+	return pattern.format([serverType, host, workspace]);
 };
 
 config.macros.importTiddlers.saveServerTiddler = function(wizard)
@@ -8791,7 +8867,7 @@ config.macros.importTiddlers.saveServerTiddler = function(wizard)
 	var host = wizard.getValue("host");
 	var workspace = wizard.getValue("workspace");
 	var text = me.serverSaveTemplate.format([serverType,host,workspace]);
-	store.saveTiddler(txtSaveTiddler,txtSaveTiddler,text,me.serverSaveModifier,new Date(),["systemServer"]);
+	store.saveTiddler(txtSaveTiddler, txtSaveTiddler, text, me.serverSaveModifier, new Date(), ["systemServer"]);
 };
 
 config.macros.importTiddlers.doImport = function(e)
@@ -8801,13 +8877,12 @@ config.macros.importTiddlers.doImport = function(e)
 	if(wizard.getElement("chkSave").checked)
 		me.saveServerTiddler(wizard);
 	var chkSync = wizard.getElement("chkSync").checked;
-	wizard.setValue("sync",chkSync);
+	wizard.setValue("sync", chkSync);
 	var listView = wizard.getValue("listView");
 	var rowNames = ListView.getSelectedRows(listView);
 	var adaptor = wizard.getValue("adaptor");
 	var overwrite = [];
-	var t;
-	for(t=0; t<rowNames.length; t++) {
+	for(var t = 0; t < rowNames.length; t++) {
 		if(store.tiddlerExists(rowNames[t]))
 			overwrite.push(rowNames[t]);
 	}
@@ -8815,30 +8890,30 @@ config.macros.importTiddlers.doImport = function(e)
 		if(!confirm(me.confirmOverwriteText.format([overwrite.join(", ")])))
 			return false;
 	}
-	wizard.addStep(me.step4Title.format([rowNames.length]),me.step4Html);
-	for(t=0; t<rowNames.length; t++) {
+	wizard.addStep(me.step4Title.format([rowNames.length]), me.step4Html);
+	for(t = 0; t < rowNames.length; t++) {
 		var link = document.createElement("div");
-		createTiddlyLink(link,rowNames[t],true);
+		createTiddlyLink(link, rowNames[t], true);
 		var place = wizard.getElement("markReport");
-		place.parentNode.insertBefore(link,place);
+		place.parentNode.insertBefore(link, place);
 	}
-	wizard.setValue("remainingImports",rowNames.length);
+	wizard.setValue("remainingImports", rowNames.length);
 	wizard.setButtons([
 			{caption: me.cancelLabel, tooltip: me.cancelPrompt, onClick: me.onCancel}
-		],me.statusDoingImport);
+		], me.statusDoingImport);
 	var wizardContext = wizard.getValue("context");
 	var tiddlers = wizardContext ? wizardContext.tiddlers : [];
-	for(t=0; t<rowNames.length; t++) {
+	for(t = 0; t < rowNames.length; t++) {
 		var context = {
-			allowSynchronous:true,
-			tiddler:tiddlers[tiddlers.findByField("title",rowNames[t])]
+			allowSynchronous: true,
+			tiddler: tiddlers[tiddlers.findByField("title", rowNames[t])]
 		};
-		adaptor.getTiddler(rowNames[t],context,wizard,me.onGetTiddler);
+		adaptor.getTiddler(rowNames[t], context, wizard, me.onGetTiddler);
 	}
 	return false;
 };
 
-config.macros.importTiddlers.onGetTiddler = function(context,wizard)
+config.macros.importTiddlers.onGetTiddler = function(context, wizard)
 {
 	var me = config.macros.importTiddlers;
 	if(!context.status)
@@ -8847,13 +8922,13 @@ config.macros.importTiddlers.onGetTiddler = function(context,wizard)
 	store.suspendNotifications();
 	store.saveTiddler(tiddler.title, tiddler.title, tiddler.text, tiddler.modifier, tiddler.modified, tiddler.tags, tiddler.fields, true, tiddler.created);
 	if(!wizard.getValue("sync")) {
-		store.setValue(tiddler.title,'server',null);
+		store.setValue(tiddler.title, 'server', null);
 	}
 	store.resumeNotifications();
 	if(!context.isSynchronous)
-		store.notify(tiddler.title,true);
+		store.notify(tiddler.title, true);
 	var remainingImports = wizard.getValue("remainingImports")-1;
-	wizard.setValue("remainingImports",remainingImports);
+	wizard.setValue("remainingImports", remainingImports);
 	if(remainingImports == 0) {
 		if(context.isSynchronous) {
 			store.notifyAll();
@@ -8861,7 +8936,7 @@ config.macros.importTiddlers.onGetTiddler = function(context,wizard)
 		}
 		wizard.setButtons([
 				{caption: me.doneLabel, tooltip: me.donePrompt, onClick: me.onClose}
-			],me.statusDoneImport);
+			], me.statusDoneImport);
 		autoSaveChanges();
 	}
 };
@@ -9720,30 +9795,29 @@ function checkUnsavedChanges()
 function updateLanguageAttribute(s)
 {
 	if(config.locale) {
-		var mRE = /(<html(?:.*?)?)(?: xml:lang\="([a-z]+)")?(?: lang\="([a-z]+)")?>/;
-		var m = mRE.exec(s);
+		var m = /(<html(?:.*?)?)(?: xml:lang\="([a-z]+)")?(?: lang\="([a-z]+)")?>/.exec(s);
 		if(m) {
-			var t = m[1];
+			var htmlTag = m[1];
 			if(m[2])
-				t += ' xml:lang="' + config.locale + '"';
+				htmlTag += ' xml:lang="' + config.locale + '"';
 			if(m[3])
-				t += ' lang="' + config.locale + '"';
-			t += ">";
-			s = s.substr(0,m.index) + t + s.substr(m.index+m[0].length);
+				htmlTag += ' lang="' + config.locale + '"';
+			htmlTag += ">";
+			s = s.substr(0, m.index) + htmlTag + s.substr(m.index + m[0].length);
 		}
 	}
 	return s;
 }
 
-function updateMarkupBlock(s,blockName,tiddlerName)
+function updateMarkupBlock(s, blockName, tiddlerName)
 {
 	return s.replaceChunk(
 			"<!--%0-START-->".format([blockName]),
 			"<!--%0-END-->".format([blockName]),
-			"\n" + store.getRecursiveTiddlerText(tiddlerName,"") + "\n");
+			"\n" + store.getRecursiveTiddlerText(tiddlerName, "") + "\n");
 }
 
-function updateOriginal(original,posDiv,localPath)
+function updateOriginal(original, posDiv, localPath)
 {
 	if(!posDiv)
 		posDiv = locateStoreArea(original);
@@ -9751,16 +9825,16 @@ function updateOriginal(original,posDiv,localPath)
 		alert(config.messages.invalidFileError.format([localPath]));
 		return null;
 	}
-	var revised = original.substr(0,posDiv[0] + startSaveArea.length) + "\n" +
+	var revised = original.substr(0, posDiv[0] + startSaveArea.length) + "\n" +
 				store.allTiddlersAsHtml() + "\n" +
 				original.substr(posDiv[1]);
 	var newSiteTitle = getPageTitle().htmlEncode();
-	revised = revised.replaceChunk("<title"+">","</title"+">"," " + newSiteTitle + " ");
+	revised = revised.replaceChunk("<title"+">", "</title"+">", " " + newSiteTitle + " ");
 	revised = updateLanguageAttribute(revised);
-	revised = updateMarkupBlock(revised,"PRE-HEAD","MarkupPreHead");
-	revised = updateMarkupBlock(revised,"POST-HEAD","MarkupPostHead");
-	revised = updateMarkupBlock(revised,"PRE-BODY","MarkupPreBody");
-	revised = updateMarkupBlock(revised,"POST-SCRIPT","MarkupPostBody");
+	revised = updateMarkupBlock(revised, "PRE-HEAD", "MarkupPreHead");
+	revised = updateMarkupBlock(revised, "POST-HEAD", "MarkupPostHead");
+	revised = updateMarkupBlock(revised, "PRE-BODY", "MarkupPreBody");
+	revised = updateMarkupBlock(revised, "POST-SCRIPT", "MarkupPostBody");
 	return revised;
 }
 
@@ -9774,16 +9848,16 @@ function locateStoreArea(original)
 	if(limitClosingDiv == -1)
 		limitClosingDiv = original.indexOf("<"+"!--POST-BODY-START--"+">");
 	var start = limitClosingDiv == -1 ? original.length : limitClosingDiv;
-	var posClosingDiv = original.lastIndexOf(endSaveArea,start);
+	var posClosingDiv = original.lastIndexOf(endSaveArea, start);
 	if(posClosingDiv == -1)
-		posClosingDiv = original.lastIndexOf(endSaveAreaCaps,start);
-	return (posOpeningDiv != -1 && posClosingDiv != -1) ? [posOpeningDiv,posClosingDiv] : null;
+		posClosingDiv = original.lastIndexOf(endSaveAreaCaps, start);
+	return (posOpeningDiv != -1 && posClosingDiv != -1) ? [posOpeningDiv, posClosingDiv] : null;
 }
 
-function autoSaveChanges(onlyIfDirty,tiddlers)
+function autoSaveChanges(onlyIfDirty, tiddlers)
 {
 	if(config.options.chkAutoSave)
-		saveChanges(onlyIfDirty,tiddlers);
+		saveChanges(onlyIfDirty, tiddlers);
 }
 
 // get the full HTML of the original file
@@ -9792,17 +9866,20 @@ function loadOriginal(localPath)
 	return loadFile(localPath) || window.originalHTML || recreateOriginal();
 }
 
+// reconstruct original HTML file content from current document memory
 function recreateOriginal()
 {
 	// construct doctype
 	var content = "<!DOCTYPE ";
 	var t = document.doctype;
-	if (!t) 
+	if (!t)
 		content += "html"
 	else {
 		content += t.name;
-		if      (t.publicId)		content+=' PUBLIC "'+t.publicId+'"';
-		else if (t.systemId)		content+=' SYSTEM "'+t.systemId+'"';
+		if(t.publicId)
+			content += ' PUBLIC "' + t.publicId + '"';
+		else if(t.systemId)
+			content += ' SYSTEM "' + t.systemId + '"';
 	}
 	content += ' "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"';
 	content += '>\n';
@@ -9810,83 +9887,91 @@ function recreateOriginal()
 	// append current document content
 	content += document.documentElement.outerHTML;
 
-	content = content.replace(/<div id="saveTest">savetest<\/div>/,'<div id="saveTest"></div>');
-	content = content.replace(/script><applet [^\>]*><\/applet>/g,'script>');
-	content = content.replace(/><head>/,'>\n<head>');
-	content = content.replace(/\n\n<\/body><\/html>$/,'</'+'body>\n</'+'html>\n'); // #170
-	content = content.replace(/(<(meta) [^\>]*[^\/])>/g,'$1 />');
+	// clear 'savetest' marker
+	content = content.replace(/<div id="saveTest">savetest<\/div>/, '<div id="saveTest"></div>');
+	content = content.replace(/script><applet [^\>]*><\/applet>/g, 'script>');
+	// newline before head tag
+	content = content.replace(/><head>/, '>\n<head>');
+	// newlines before/after end of body/html tags
+	content = content.replace(/\n\n<\/body><\/html>$/, '</'+'body>\n</'+'html>\n'); // #170
+	// meta tag terminators
+	content = content.replace(/(<(meta) [^\>]*[^\/])>/g, '$1 />');
+	// decode LT/GT entities in noscript
 	content = content.replace(/<noscript>[^\<]*<\/noscript>/,
-		function(m){ return m.replace(/&lt;/g,'<').replace(/&gt;/g,'>'); });
+		function(m){ return m.replace(/&lt;/g, '<').replace(/&gt;/g, '>'); });
+	// encode copyright symbols (UTF-8 to HTML entity)
 	content = content.replace(/<div id="copyright">[^\<]*<\/div>/,
-		function(m){return m.replace(/\xA9/g,'&copy;');});
+		function(m){ return m.replace(/\xA9/g, '&copy;'); });
 
 	return content;
 }
 
 // Save this tiddlywiki with the pending changes
-function saveChanges(onlyIfDirty,tiddlers)
+function saveChanges(onlyIfDirty, tiddlers)
 {
 	if(onlyIfDirty && !store.isDirty())
 		return;
 	clearMessage();
 	var t0 = new Date();
 	var msg = config.messages;
-	var originalPath = document.location.toString();
 	if(!window.allowSave()) {
 		alert(msg.notFileUrlError);
 		if(store.tiddlerExists(msg.saveInstructions))
-			story.displayTiddler(null,msg.saveInstructions);
+			story.displayTiddler(null, msg.saveInstructions);
 		return;
 	}
+	// Load the original file
+	var originalPath = document.location.toString();
 	var localPath = getLocalPath(originalPath);
 	var original = loadOriginal(localPath);
 	if(original == null) {
 		alert(msg.cantSaveError);
 		if(store.tiddlerExists(msg.saveInstructions))
-			story.displayTiddler(null,msg.saveInstructions);
+			story.displayTiddler(null, msg.saveInstructions);
 		return;
 	}
+	// Locate the storeArea div's
 	var posDiv = locateStoreArea(original);
 	if(!posDiv) {
 		alert(msg.invalidFileError.format([localPath]));
 		return;
 	}
-	var co = config.options; //# abbreviation
+	var co = config.options; // abbreviation
 	config.saveByDownload = false;
 	config.saveByManualDownload = false;
-	saveMain(localPath,original,posDiv);
+	saveMain(localPath, original, posDiv);
 	if (!config.saveByDownload && !config.saveByManualDownload) {
 		if(co.chkSaveBackups)
-			saveBackup(localPath,original);
+			saveBackup(localPath, original);
 		if(co.chkSaveEmptyTemplate)
-			saveEmpty(localPath,original,posDiv);
+			saveEmpty(localPath, original, posDiv);
 		if(co.chkGenerateAnRssFeed && saveRss instanceof Function)
 			saveRss(localPath);
 	}
 	if(co.chkDisplayInstrumentation)
-		displayMessage("saveChanges " + (new Date()-t0) + " ms");
+		displayMessage("saveChanges " + (new Date() - t0) + " ms");
 }
 
-
-function saveMain(localPath,original,posDiv)
+function saveMain(localPath, original, posDiv)
 {
 	var save;
 	try {
-		var revised = updateOriginal(original,posDiv,localPath);
-		save = saveFile(localPath,revised);
+		var revised = updateOriginal(original, posDiv, localPath);
+		save = saveFile(localPath, revised);
 	} catch (ex) {
 		showException(ex);
 	}
+	// report status to user
 	if(save) {
 		if (!config.saveByManualDownload) {
-			if (config.saveByDownload) { //# set by HTML5DownloadSaveFile()
+			if (config.saveByDownload) { // set by HTML5DownloadSaveFile()
 				var link = getDataURI(revised);
 				var msg  = config.messages.mainDownload;
 			} else {
 				var link = "file://" + localPath;
 				var msg  = config.messages.mainSaved;
 			}
-			displayMessage(msg,link);
+			displayMessage(msg, link);
 		}
 		store.setDirty(false);
 	} else {
@@ -9894,30 +9979,30 @@ function saveMain(localPath,original,posDiv)
 	}
 }
 
-function saveBackup(localPath,original)
+function saveBackup(localPath, original)
 {
 	var backupPath = getBackupPath(localPath);
-	var backupSuccess = copyFile(backupPath,localPath) || saveFile(backupPath,original);
+	var backupSuccess = copyFile(backupPath, localPath) || saveFile(backupPath, original);
 	if(backupSuccess)
-		displayMessage(config.messages.backupSaved,"file://" + backupPath);
+		displayMessage(config.messages.backupSaved, "file://" + backupPath);
 	else
 		alert(config.messages.backupFailed);
 }
 
-function saveEmpty(localPath,original,posDiv)
+function saveEmpty(localPath, original, posDiv)
 {
-	var emptyPath,p;
-	if((p = localPath.lastIndexOf("/")) != -1)
-		emptyPath = localPath.substr(0,p) + "/";
-	else if((p = localPath.lastIndexOf("\\")) != -1)
-		emptyPath = localPath.substr(0,p) + "\\";
+	var emptyPath, slashPosition;
+	if((slashPosition = localPath.lastIndexOf("/")) != -1)
+		emptyPath = localPath.substr(0, slashPosition) + "/";
+	else if((slashPosition = localPath.lastIndexOf("\\")) != -1)
+		emptyPath = localPath.substr(0, slashPosition) + "\\";
 	else
 		emptyPath = localPath + ".";
 	emptyPath += "empty.html";
-	var empty = original.substr(0,posDiv[0] + startSaveArea.length) + original.substr(posDiv[1]);
-	var emptySave = saveFile(emptyPath,empty);
+	var empty = original.substr(0, posDiv[0] + startSaveArea.length) + original.substr(posDiv[1]);
+	var emptySave = saveFile(emptyPath, empty);
 	if(emptySave)
-		displayMessage(config.messages.emptySaved,"file://" + emptyPath);
+		displayMessage(config.messages.emptySaved, "file://" + emptyPath);
 	else
 		alert(config.messages.emptyFailed);
 }
@@ -9925,33 +10010,37 @@ function saveEmpty(localPath,original,posDiv)
 // Translate URL to local path [Preemption]
 window.getLocalPath = window.getLocalPath || function(origPath)
 {
-	var originalPath = convertUriToUTF8(origPath,config.options.txtFileSystemCharSet);
+	var originalPath = convertUriToUTF8(origPath, config.options.txtFileSystemCharSet);
 	// Remove any location or query part of the URL
 	var argPos = originalPath.indexOf("?");
 	if(argPos != -1)
-		originalPath = originalPath.substr(0,argPos);
+		originalPath = originalPath.substr(0, argPos);
 	var hashPos = originalPath.indexOf("#");
 	if(hashPos != -1)
-		originalPath = originalPath.substr(0,hashPos);
+		originalPath = originalPath.substr(0, hashPos);
 	// Convert file://localhost/ to file:///
 	if(originalPath.indexOf("file://localhost/") == 0)
 		originalPath = "file://" + originalPath.substr(16);
 	// Convert to a native file format
+	// "file:///x:/path/path/path..." - pc local file --> "x:\path\path\path..."
+	// "file://///server/share/path/path/path..." - FireFox pc network file --> "\\server\share\path\path\path..."
+	// "file:///path/path/path..." - mac/unix local file --> "/path/path/path..."
+	// "file://server/share/path/path/path..." - pc network file --> "\\server\share\path\path\path..."
 	var localPath;
 	if(originalPath.charAt(9) == ":") // pc local file
-		localPath = unescape(originalPath.substr(8)).replace(new RegExp("/","g"),"\\");
+		localPath = unescape(originalPath.substr(8)).replace(new RegExp("/", "g"), "\\");
 	else if(originalPath.indexOf("file://///") == 0) // FireFox pc network file
-		localPath = "\\\\" + unescape(originalPath.substr(10)).replace(new RegExp("/","g"),"\\");
+		localPath = "\\\\" + unescape(originalPath.substr(10)).replace(new RegExp("/", "g"), "\\");
 	else if(originalPath.indexOf("file:///") == 0) // mac/unix local file
 		localPath = unescape(originalPath.substr(7));
 	else if(originalPath.indexOf("file:/") == 0) // mac/unix local file
 		localPath = unescape(originalPath.substr(5));
 	else // pc network file
-		localPath = "\\\\" + unescape(originalPath.substr(7)).replace(new RegExp("/","g"),"\\");
+		localPath = "\\\\" + unescape(originalPath.substr(7)).replace(new RegExp("/", "g"), "\\");
 	return localPath;
 }
 
-function getBackupPath(localPath,title,extension)
+function getBackupPath(localPath, filenameSuffix, extension)
 {
 	var slash = "\\";
 	var dirPathPos = localPath.lastIndexOf("\\");
@@ -9959,13 +10048,12 @@ function getBackupPath(localPath,title,extension)
 		dirPathPos = localPath.lastIndexOf("/");
 		slash = "/";
 	}
-	var backupFolder = config.options.txtBackupFolder;
-	if(!backupFolder || backupFolder == "")
-		backupFolder = ".";
-	var backupPath = localPath.substr(0,dirPathPos) + slash + backupFolder + localPath.substr(dirPathPos);
-	backupPath = backupPath.substr(0,backupPath.lastIndexOf(".")) + ".";
-	if(title)
-		backupPath += title.replace(/[\\\/\*\?\":<> ]/g,"_") + ".";
+	var backupFolder = config.options.txtBackupFolder || ".";
+	var backupPath = localPath.substr(0, dirPathPos) + slash + backupFolder + localPath.substr(dirPathPos);
+	backupPath = backupPath.substr(0, backupPath.lastIndexOf(".")) + ".";
+	var illegalFilenameCharacterOrSpaceRE = /[\\\/\*\?\":<> ]/g;
+	if(filenameSuffix)
+		backupPath += filenameSuffix.replace(illegalFilenameCharacterOrSpaceRE, "_") + ".";
 	backupPath += (new Date()).convertToYYYYMMDDHHMMSSMMM() + "." + (extension || "html");
 	return backupPath;
 }
@@ -9976,19 +10064,18 @@ function getBackupPath(localPath,title,extension)
 
 function saveRss(localPath)
 {
-	var rssPath = localPath.substr(0,localPath.lastIndexOf(".")) + ".xml";
-	if(saveFile(rssPath,generateRss()))
-		displayMessage(config.messages.rssSaved,"file://" + rssPath);
+	var rssPath = localPath.substr(0, localPath.lastIndexOf(".")) + ".xml";
+	if(saveFile(rssPath, generateRss()))
+		displayMessage(config.messages.rssSaved, "file://" + rssPath);
 	else
 		alert(config.messages.rssFailed);
 }
 
-tiddlerToRssItem = function(tiddler,uri)
+tiddlerToRssItem = function(tiddler, uri)
 {
 	var s = "<title" + ">" + tiddler.title.htmlEncode() + "</title" + ">\n";
-	s += "<description>" + wikifyStatic(tiddler.text,null,tiddler).htmlEncode() + "</description>\n";
-	var i;
-	for(i=0; i<tiddler.tags.length; i++)
+	s += "<description>" + wikifyStatic(tiddler.text, null, tiddler).htmlEncode() + "</description>\n";
+	for(var i = 0; i < tiddler.tags.length; i++)
 		s += "<category>" + tiddler.tags[i] + "</category>\n";
 	s += "<link>" + uri + "#" + encodeURIComponent(String.encodeTiddlyLink(tiddler.title)) + "</link>\n";
 	s +="<pubDate>" + tiddler.modified.toGMTString() + "</pubDate>\n";
@@ -10004,10 +10091,10 @@ function generateRss()
 	s.push("<" + "?xml version=\"1.0\"?" + ">");
 	s.push("<rss version=\"2.0\">");
 	s.push("<channel>");
-	s.push("<title" + ">" + wikifyPlainText(store.getTiddlerText("SiteTitle",""),null,tiddler).htmlEncode() + "</title" + ">");
+	s.push("<title" + ">" + wikifyPlainText(store.getTiddlerText("SiteTitle", ""), null, tiddler).htmlEncode() + "</title" + ">");
 	if(u)
 		s.push("<link>" + u.htmlEncode() + "</link>");
-	s.push("<description>" + wikifyPlainText(store.getTiddlerText("SiteSubtitle",""),null,tiddler).htmlEncode() + "</description>");
+	s.push("<description>" + wikifyPlainText(store.getTiddlerText("SiteSubtitle", ""), null, tiddler).htmlEncode() + "</description>");
 	s.push("<language>" + config.locale + "</language>");
 	s.push("<copyright>Copyright " + d.getFullYear() + " " + config.options.txtUserName.htmlEncode() + "</copyright>");
 	s.push("<pubDate>" + d.toGMTString() + "</pubDate>");
@@ -10015,10 +10102,10 @@ function generateRss()
 	s.push("<docs>http://blogs.law.harvard.edu/tech/rss</docs>");
 	s.push("<generator>TiddlyWiki " + formatVersion() + "</generator>");
 	// The body
-	var tiddlers = store.getTiddlers("modified","excludeLists");
-	var i,n = config.numRssItems > tiddlers.length ? 0 : tiddlers.length-config.numRssItems;
-	for(i=tiddlers.length-1; i>=n; i--) {
-		s.push("<item>\n" + tiddlerToRssItem(tiddlers[i],u) + "\n</item>");
+	var tiddlers = store.getTiddlers("modified", "excludeLists");
+	var i, n = config.numRssItems > tiddlers.length ? 0 : tiddlers.length - config.numRssItems;
+	for(i = tiddlers.length - 1; i >= n; i--) {
+		s.push("<item>\n" + tiddlerToRssItem(tiddlers[i], u) + "\n</item>");
 	}
 	// And footer
 	s.push("</channel>");
@@ -10032,23 +10119,23 @@ function generateRss()
 //--
 
 // Copy a file in filesystem [Preemption]
-window.copyFile = window.copyFile || function(dest,source)
+window.copyFile = window.copyFile || function(dest, source)
 {
-	return config.browser.isIE ? ieCopyFile(dest,source) : false;
+	return config.browser.isIE ? ieCopyFile(dest, source) : false;
 }
 
 // Save a file in filesystem [Preemption]
-window.saveFile = window.saveFile || function(fileUrl,content)
+window.saveFile = window.saveFile || function(fileUrl, content)
 {
-	var r = mozillaSaveFile(fileUrl,content);
+	var r = mozillaSaveFile(fileUrl, content);
 	if(!r)
-		r = ieSaveFile(fileUrl,content);
+		r = ieSaveFile(fileUrl, content);
 	if(!r)
-		r = javaSaveFile(fileUrl,content);
+		r = javaSaveFile(fileUrl, content);
 	if(!r)
-		r = HTML5DownloadSaveFile(fileUrl,content);
+		r = HTML5DownloadSaveFile(fileUrl, content);
 	if(!r)
-		r = manualSaveFile(fileUrl,content);
+		r = manualSaveFile(fileUrl, content);
 	return r;
 }
 
@@ -10072,12 +10159,14 @@ function ieCreatePath(path)
 		return null;
 	}
 
+	// Remove the filename, if present. Use trailing slash (i.e. "foo\bar\") if no filename.
 	var pos = path.lastIndexOf("\\");
-	if(pos==-1)
+	if(pos == -1)
 		pos = path.lastIndexOf("/");
-	if(pos!=-1)
-		path = path.substring(0,pos+1);
+	if(pos != -1)
+		path = path.substring(0, pos + 1);
 
+	// Walk up the path until we find a folder that exists
 	var scan = [path];
 	var parent = fso.GetParentFolderName(path);
 	while(parent && !fso.FolderExists(parent)) {
@@ -10085,6 +10174,7 @@ function ieCreatePath(path)
 		parent = fso.GetParentFolderName(parent);
 	}
 
+	// Walk back down the path, creating folders
 	for(i = scan.length-1; i >= 0; i--) {
 		if(!fso.FolderExists(scan[i])) {
 			fso.CreateFolder(scan[i]);
@@ -10094,7 +10184,7 @@ function ieCreatePath(path)
 }
 
 // Returns null if it can't do it, false if there's an error, true if it saved OK
-function ieSaveFile(filePath,content)
+function ieSaveFile(filePath, content)
 {
 	ieCreatePath(filePath);
 	try {
@@ -10102,7 +10192,7 @@ function ieSaveFile(filePath,content)
 	} catch(ex) {
 		return null;
 	}
-	var file = fso.OpenTextFile(filePath,2,-1,0);
+	var file = fso.OpenTextFile(filePath, 2, -1, 0);
 	file.Write(convertUnicodeToHtmlEntities(content));
 	file.Close();
 	return true;
@@ -10113,7 +10203,7 @@ function ieLoadFile(filePath)
 {
 	try {
 		var fso = new ActiveXObject("Scripting.FileSystemObject");
-		var file = fso.OpenTextFile(filePath,1);
+		var file = fso.OpenTextFile(filePath, 1);
 		var content = file.ReadAll();
 		file.Close();
 	} catch(ex) {
@@ -10122,7 +10212,7 @@ function ieLoadFile(filePath)
 	return content;
 }
 
-function ieCopyFile(dest,source)
+function ieCopyFile(dest, source)
 {
 	ieCreatePath(dest);
 	try {
@@ -10135,7 +10225,7 @@ function ieCopyFile(dest,source)
 }
 
 // Returns null if it can't do it, false if there's an error, true if it saved OK
-function mozillaSaveFile(filePath,content)
+function mozillaSaveFile(filePath, content)
 {
 	if(!window.Components)
 		return null;
@@ -10146,10 +10236,10 @@ function mozillaSaveFile(filePath,content)
 		var file = Components.classes["@mozilla.org/file/local;1"].createInstance(Components.interfaces.nsILocalFile);
 		file.initWithPath(filePath);
 		if(!file.exists())
-			file.create(0,0x01B4);// 0x01B4 = 0664
+			file.create(0, 0x01B4);// 0x01B4 = 0664
 		var out = Components.classes["@mozilla.org/network/file-output-stream;1"].createInstance(Components.interfaces.nsIFileOutputStream);
-		out.init(file,0x22,0x04,null);
-		out.write(content,content.length);
+		out.init(file, 0x22, 0x04, null);
+		out.write(content, content.length);
 		out.flush();
 		out.close();
 		return true;
@@ -10171,7 +10261,7 @@ function mozillaLoadFile(filePath)
 		if(!file.exists())
 			return null;
 		var inputStream = Components.classes["@mozilla.org/network/file-input-stream;1"].createInstance(Components.interfaces.nsIFileInputStream);
-		inputStream.init(file,0x01,0x04,null);
+		inputStream.init(file, 0x01, 0x04, null);
 		var sInputStream = Components.classes["@mozilla.org/scriptableinputstream;1"].createInstance(Components.interfaces.nsIScriptableInputStream);
 		sInputStream.init(inputStream);
 		var contents = sInputStream.read(sInputStream.available());
@@ -10189,7 +10279,7 @@ function javaUrlToFilename(url)
 	if(url.indexOf(f) == 0)
 		return url.substring(f.length);
 	var i = url.indexOf(":");
-	return i > 0 ? url.substring(i-1) : url;
+	return i > 0 ? url.substring(i - 1) : url;
 }
 
 /*
@@ -10235,7 +10325,7 @@ function javaDebugInformation ()
 			.join('\n\n')
 }
 
-function javaSaveFile(filePath,content)
+function javaSaveFile(filePath, content)
 {
 	var applet = document.applets['TiddlySaver'];
 	try {
@@ -10260,10 +10350,8 @@ function javaLoadFile(filePath)
 	var applet = document.applets['TiddlySaver'];
 	try {
 		if (applet && filePath) {
-			var ret = applet.loadFile(javaUrlToFilename(filePath),"UTF-8");
-			if(!ret)
-				return null;
-			return String(ret);
+			var value = applet.loadFile(javaUrlToFilename(filePath), "UTF-8");
+			return !value ? null : String(value);
 		}
 	} catch(ex) {
 		logTiddlySaverException("javaLoadFile", ex);
@@ -10282,7 +10370,7 @@ function javaLoadFile(filePath)
 	return content.join("\n");
 }
 
-function HTML5DownloadSaveFile(filePath,content)
+function HTML5DownloadSaveFile(filePath, content)
 {
 	var link = document.createElement("a");
 	if(link.download === undefined)
@@ -10290,26 +10378,26 @@ function HTML5DownloadSaveFile(filePath,content)
 	
 	config.saveByDownload = true;
 	var slashpos = filePath.lastIndexOf("/");
-	if (slashpos==-1) slashpos = filePath.lastIndexOf("\\");
-	var filename = filePath.substr(slashpos+1);
+	if (slashpos == -1) slashpos = filePath.lastIndexOf("\\");
+	var filename = filePath.substr(slashpos + 1);
 	var uri = getDataURI(content);
-	link.setAttribute("target","_blank");
-	link.setAttribute("href",uri);
-	link.setAttribute("download",filename);
+	link.setAttribute("target", "_blank");
+	link.setAttribute("href", uri);
+	link.setAttribute("download", filename);
 	document.body.appendChild(link); link.click(); document.body.removeChild(link);
 	return true;
 }
 
 // Returns null if it can't do it, false if there's an error, true if it saved OK
-function manualSaveFile(filePath,content)
+function manualSaveFile(filePath, content)
 {
 	// FALLBACK for showing a link to data: URI
 	config.saveByManualDownload = true;
 	var slashpos = filePath.lastIndexOf("/");
-	if (slashpos==-1) slashpos = filePath.lastIndexOf("\\");
-	var filename = filePath.substr(slashpos+1);
+	if (slashpos == -1) slashpos = filePath.lastIndexOf("\\");
+	var filename = filePath.substr(slashpos + 1);
 	var uri = getDataURI(content);
-	displayMessage(config.messages.mainDownloadManual,uri);
+	displayMessage(config.messages.mainDownloadManual, uri);
 	return true;
 }
 
@@ -10317,11 +10405,11 @@ function manualSaveFile(filePath,content)
 function getDataURI(data)
 {
 	if (config.browser.isIE)
-		return "data:text/html,"+encodeURIComponent(data);
+		return "data:text/html," + encodeURIComponent(data);
 	else
 		// manualConvertUnicodeToUTF8 was moved here from convertUnicodeToFileFormat
 		// in 2.9.1 it was used only for FireFox but happened to fix download saving non-ASCII in Chrome & Safari as well
-		return "data:text/html;base64,"+encodeBase64(manualConvertUnicodeToUTF8(data));
+		return "data:text/html;base64," + encodeBase64(manualConvertUnicodeToUTF8(data));
 }
 
 function encodeBase64(data)
@@ -10481,7 +10569,7 @@ AdaptorBase.minHostName = function(host)
 	return host;
 };
 
-AdaptorBase.prototype.setContext = function(context,userParams,callback)
+AdaptorBase.prototype.setContext = function(context, userParams, callback)
 {
 	if(!context) context = {};
 	context.userParams = userParams;
@@ -10496,24 +10584,45 @@ AdaptorBase.prototype.setContext = function(context,userParams,callback)
 };
 
 // Open the specified host
+//   host - uri of host (eg, "http://www.tiddlywiki.com/" or "www.tiddlywiki.com")
+//   context is itself passed on as a parameter to the callback function
+//   userParams - user settable object object that is passed on unchanged to the callback function
+//   callback - optional function to be called on completion
+// Return value is true if the request was successfully issued, false if this connector doesn't support openHost(),
+//   or an error description string if there was a problem
+// The callback parameters are callback(context)
+//   context.status - true if OK, string if error
+//   context.adaptor - reference to this adaptor object
+//   userParams - parameters as originally passed into the openHost function
 AdaptorBase.prototype.openHost = function(host,context,userParams,callback)
 {
 	this.host = host;
-	context = this.setContext(context,userParams,callback);
+	context = this.setContext(context, userParams, callback);
 	context.status = true;
 	if(callback)
-		window.setTimeout(function() {context.callback(context,userParams);},10);
+		window.setTimeout(function() { context.callback(context, userParams); }, 10);
 	return true;
 };
 
 // Open the specified workspace
-AdaptorBase.prototype.openWorkspace = function(workspace,context,userParams,callback)
+//   workspace - name of workspace to open
+//   context - passed on as a parameter to the callback function
+//   userParams - user settable object object that is passed on unchanged to the callback function
+//   callback - function to be called on completion
+// Return value is true if the request was successfully issued
+//   or an error description string if there was a problem
+// The callback parameters are callback(context, userParams)
+//   context.status - true if OK, false if error
+//   context.statusText - error message if there was an error
+//   context.adaptor - reference to this adaptor object
+//   userParams - parameters as originally passed into the openWorkspace function
+AdaptorBase.prototype.openWorkspace = function(workspace, context, userParams, callback)
 {
 	this.workspace = workspace;
-	context = this.setContext(context,userParams,callback);
+	context = this.setContext(context, userParams, callback);
 	context.status = true;
 	if(callback)
-		window.setTimeout(function() {callback(context,userParams);},10);
+		window.setTimeout(function() { callback(context, userParams); }, 10);
 	return true;
 };
 
@@ -10530,7 +10639,7 @@ FileAdaptor.prototype = new AdaptorBase();
 FileAdaptor.serverType = 'file';
 FileAdaptor.serverLabel = 'TiddlyWiki';
 
-FileAdaptor.loadTiddlyWikiSuccess = function(context,jqXHR)
+FileAdaptor.loadTiddlyWikiSuccess = function(context, jqXHR)
 {
 	context.status = true;
 	context.adaptor.store = new TiddlyWiki();
@@ -10538,64 +10647,85 @@ FileAdaptor.loadTiddlyWikiSuccess = function(context,jqXHR)
 		context.statusText = config.messages.invalidFileError.format([context.host]);
 		context.status = false;
 	}
-	context.complete(context,context.userParams);
+	context.complete(context, context.userParams);
 };
 
-FileAdaptor.loadTiddlyWikiError = function(context,jqXHR)
+FileAdaptor.loadTiddlyWikiError = function(context, jqXHR)
 {
 	context.status = false;
 	context.statusText = jqXHR.message;
-	context.complete(context,context.userParams);
+	context.complete(context, context.userParams);
 };
 
 // Get the list of workspaces on a given server
-FileAdaptor.prototype.getWorkspaceList = function(context,userParams,callback)
+//   context - passed on as a parameter to the callback function
+//   userParams - user settable object object that is passed on unchanged to the callback function
+//   callback - function to be called on completion
+// Return value is true if the request was successfully issued, false if this connector doesn't support getWorkspaceList(),
+//   or an error description string if there was a problem
+// The callback parameters are callback(context, userParams)
+//   context.status - true if OK, false if error
+//   context.statusText - error message if there was an error
+//   context.adaptor - reference to this adaptor object
+//   userParams - parameters as originally passed into the getWorkspaceList function
+FileAdaptor.prototype.getWorkspaceList = function(context, userParams, callback)
 {
-	context = this.setContext(context,userParams,callback);
+	context = this.setContext(context, userParams, callback);
 	context.workspaces = [{title:"(default)"}];
 	context.status = true;
 	if(callback)
-		window.setTimeout(function() {callback(context,userParams);},10);
+		window.setTimeout(function() { callback(context, userParams); }, 10);
 	return true;
 };
 
 // Gets the list of tiddlers within a given workspace
-FileAdaptor.prototype.getTiddlerList = function(context,userParams,callback,filter)
+//   context - passed on as a parameter to the callback function
+//   userParams - user settable object object that is passed on unchanged to the callback function
+//   callback - function to be called on completion
+//   filter - filter expression
+// Return value is true if the request was successfully issued,
+//   or an error description string if there was a problem
+// The callback parameters are callback(context, userParams)
+//   context.status - true if OK, false if error
+//   context.statusText - error message if there was an error
+//   context.adaptor - reference to this adaptor object
+//   context.tiddlers - array of tiddler objects
+//   userParams - parameters as originally passed into the getTiddlerList function
+FileAdaptor.prototype.getTiddlerList = function(context, userParams, callback, filter)
 {
-	context = this.setContext(context,userParams,callback);
+	context = this.setContext(context, userParams, callback);
 	if(!context.filter)
 		context.filter = filter;
 	context.complete = FileAdaptor.getTiddlerListComplete;
 	if(this.store) {
-		return context.complete(context,context.userParams);
+		return context.complete(context, context.userParams);
 	}
 	var options = {
 		type: "GET",
 		url: context.host,
 		file: context.file, // for HTML5 FileReader
 		processData: false,
-		success: function(data,textStatus,jqXHR) {
-			FileAdaptor.loadTiddlyWikiSuccess(context,jqXHR);
+		success: function(data, textStatus, jqXHR) {
+			FileAdaptor.loadTiddlyWikiSuccess(context, jqXHR);
 		},
-		error: function(jqXHR,textStatus,errorThrown) {
+		error: function(jqXHR, textStatus, errorThrown) {
 			context.xhr = jqXHR;
-			FileAdaptor.loadTiddlyWikiError(context,jqXHR);
+			FileAdaptor.loadTiddlyWikiError(context, jqXHR);
 		}
 	};
 	return ajaxReq(options);
 };
 
-FileAdaptor.getTiddlerListComplete = function(context,userParams)
+FileAdaptor.getTiddlerListComplete = function(context, userParams)
 {
 	if(context.status) {
 		if(context.filter) {
 			context.tiddlers = context.adaptor.store.filterTiddlers(context.filter);
 		} else {
 			context.tiddlers = [];
-			context.adaptor.store.forEachTiddler(function(title,tiddler) {context.tiddlers.push(tiddler);});
+			context.adaptor.store.forEachTiddler(function(title, tiddler) { context.tiddlers.push(tiddler); });
 		}
-		var i;
-		for(i=0; i<context.tiddlers.length; i++) {
+		for(var i = 0; i < context.tiddlers.length; i++) {
 			context.tiddlers[i].fields['server.type'] = FileAdaptor.serverType;
 			context.tiddlers[i].fields['server.host'] = AdaptorBase.minHostName(context.host);
 			context.tiddlers[i].fields['server.page.revision'] = context.tiddlers[i].modified.convertToYYYYMMDDHHMM();
@@ -10603,42 +10733,54 @@ FileAdaptor.getTiddlerListComplete = function(context,userParams)
 		context.status = true;
 	}
 	if(context.callback) {
-		window.setTimeout(function() {context.callback(context,userParams);},10);
+		window.setTimeout(function() { context.callback(context, userParams); }, 10);
 	}
 	return true;
 };
 
 FileAdaptor.prototype.generateTiddlerInfo = function(tiddler)
 {
-	var info = {};
-	info.uri = tiddler.fields['server.host'] + "#" + tiddler.title;
-	return info;
+	return {
+		uri: tiddler.fields['server.host'] + "#" + tiddler.title
+	};
 };
 
 // Retrieve a tiddler from a given workspace on a given server
-FileAdaptor.prototype.getTiddler = function(title,context,userParams,callback)
+//   title - title of the tiddler to get
+//   context - passed on as a parameter to the callback function
+//   userParams - user settable object object that is passed on unchanged to the callback function
+//   callback - function to be called on completion
+// Return value is true if the request was successfully issued,
+//   or an error description string if there was a problem
+// The callback parameters are callback(context, userParams)
+//   context.status - true if OK, false if error
+//   context.statusText - error message if there was an error
+//   context.adaptor - reference to this adaptor object
+//   context.tiddler - the retrieved tiddler, or null if it cannot be found
+//   userParams - parameters as originally passed into the getTiddler function
+FileAdaptor.prototype.getTiddler = function(title, context, userParams, callback)
 {
-	context = this.setContext(context,userParams,callback);
+	context = this.setContext(context, userParams, callback);
 	context.title = title;
 	context.complete = FileAdaptor.getTiddlerComplete;
 	if(context.adaptor.store) {
-		return context.complete(context,context.userParams);
+		return context.complete(context, context.userParams);
 	}
 	var options = {
-		type:"GET",
-		url:context.host,
-		processData:false,
-		success:function(data,textStatus,jqXHR) {
-			FileAdaptor.loadTiddlyWikiSuccess(context,jqXHR);
+		type: "GET",
+		url: context.host,
+		processData: false,
+		success: function(data, textStatus, jqXHR) {
+			FileAdaptor.loadTiddlyWikiSuccess(context, jqXHR);
 		},
-		error:function(jqXHR,textStatus,errorThrown) {
-			FileAdaptor.loadTiddlyWikiError(context,jqXHR);
+		error: function(jqXHR, textStatus, errorThrown) {
+			FileAdaptor.loadTiddlyWikiError(context, jqXHR);
 		}
 	};
 	return ajaxReq(options);
 };
 
-FileAdaptor.getTiddlerComplete = function(context,userParams)
+FileAdaptor.getTiddlerComplete = function(context, userParams)
 {
 	var t = context.adaptor.store.fetchTiddler(context.title);
 	if(t) {
@@ -10652,9 +10794,9 @@ FileAdaptor.getTiddlerComplete = function(context,userParams)
 	}
 	if(context.allowSynchronous) {
 		context.isSynchronous = true;
-		context.callback(context,userParams);
+		context.callback(context, userParams);
 	} else {
-		window.setTimeout(function() {context.callback(context,userParams);},10);
+		window.setTimeout(function() { context.callback(context, userParams); }, 10);
 	}
 	return true;
 };
@@ -10672,6 +10814,8 @@ config.defaultAdaptor = FileAdaptor.serverType;
 //-- HTTP request code
 //--
 
+// Perform an http request using the jQuery ajax function
+// fallback to privileged file I/O or HTML5 FileReader
 function ajaxReq(args)
 {
 	if (args.file || args.url.startsWith("file"))  // LOCAL FILE
@@ -10679,13 +10823,14 @@ function ajaxReq(args)
 	return jQuery.ajax(args);
 }
 
+// perform local I/O and FAKE a minimal XHR response object
 function localAjax(args)
 {
 	var success = function(data) {
-		args.success(data,"success",{ responseText:data });
+		args.success(data, "success", { responseText:data });
 	};
 	var failure = function(who) {
-		args.error({ message:who+": cannot read local file" },"error",0);
+		args.error({ message: who + ": cannot read local file" }, "error", 0);
 	};
 
 	if (args.file) try { // HTML5 FileReader (Chrome, FF20+, Safari, etc.)
@@ -10706,7 +10851,26 @@ function localAjax(args)
 	return true;
 }
 
-function httpReq(type,url,callback,params,headers,data,contentType,username,password,allowCache)
+// Perform an http request
+//   type - GET/POST/PUT/DELETE
+//   url - the source url
+//   data - optional data for POST and PUT
+//   contentType - optionalContent type for the data (defaults to application/x-www-form-urlencoded)
+//   username - optional username for basic authentication
+//   password - optional password for basic authentication
+//   callback - function to call when there is a response
+//   params - parameter object that gets passed to the callback for storing it's state
+//   headers - optional hashmap of additional headers
+//   allowCache - unless true, adds a "nocache=" parameter to the URL
+// Return value is the underlying XMLHttpRequest object, or a string if there was an error
+// Callback function is called like this:
+//   callback(status, params, responseText, url, xhr)
+//     status - true if OK, false if error
+//     params - the parameter object provided to loadRemoteFile()
+//     responseText - the text of the file
+//     url - requested URL
+//     xhr - the underlying XMLHttpRequest object
+function httpReq(type, url, callback, params, headers, data, contentType, username, password, allowCache)
 {
 	var httpSuccess = function(xhr) {
 		try {
@@ -10725,18 +10889,17 @@ function httpReq(type,url,callback,params,headers,data,contentType,username,pass
 		data: data,
 		cache: !!allowCache,
 		beforeSend: function(xhr) {
-			var i;
-			for(i in headers)
-				xhr.setRequestHeader(i,headers[i]);
+			for(var i in headers)
+				xhr.setRequestHeader(i, headers[i]);
 		}
 	};
 
 	if(callback) {
-		options.complete = function(xhr,textStatus) {
+		options.complete = function(xhr, textStatus) {
 			if(httpSuccess(xhr))
-				callback(true,params,xhr.responseText,url,xhr);
+				callback(true, params, xhr.responseText, url, xhr);
 			else
-				callback(false,params,null,url,xhr);
+				callback(false, params, null, url, xhr);
 		};
 	}
 	if(contentType)
