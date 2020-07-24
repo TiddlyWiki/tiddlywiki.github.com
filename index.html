@@ -936,63 +936,13 @@ There's also a number of other [[tutorials and guides|TutorialsAndGuides]] creat
 Many seemingly gone docs and other resources in ~TiddlyWikis are in fact available via [[Web Archive|http://web.archive.org/]], for instance [[Community Documentation|http://web.archive.org/web/20161211153445/http://tiddlywiki.tiddlyspace.com/]] and [[Developer Documentation|http://web.archive.org/web/20160810230802/http://tiddlywikidev.tiddlyspace.com/]].
 </pre>
 </div>
-<div title="Download" creator="psd" modifier="jermolene" created="201102111106" modified="201111031824" tags="gettingstarted" type="text/x-tiddlywiki">
-<pre>&lt;&lt;download&gt;&gt;</pre>
-</div>
-<div title="DownloadTiddlyWikiPlugin" creator="psd" modifier="jermolene" created="201102111121" modified="201207211547" tags="systemConfig" type="text/x-tiddlywiki">
-<pre>/***
-|''Name:''|DownloadTiddlyWikiPlugin|
-|''Description:''|Download TiddlyWiki according to browser type|
-|''Version:''|0.0.9|
-|''Date:''|Jul 18, 2012|
-|''Source:''|https://classic.tiddlywiki.com/#DownloadTiddlyWikiPlugin|
-|''License:''|[[BSD open source license]]|
-|''~CoreVersion:''|2.4.1|
-***/
-
-//{{{
-if(!version.extensions.DownloadTiddlyWikiPlugin) {
-version.extensions.DownloadTiddlyWikiPlugin = {installed:true};
-
-config.macros.download = {};
-
-merge(config.macros.download,{
-	label: &quot;download&quot;,
-	prompt: &quot;Download TiddlyWiki&quot;,
-	className: &quot;chunkyButton&quot;});
-
-config.macros.download.handler = function(place,macroName,params,wikifier,paramString,tiddler)
-{
-	var span = createTiddlyElement(place,&quot;span&quot;,null,this.className);
-	createTiddlyButton(span,params[0]||this.label,params[1]||this.prompt,this.onClick);
-};
-
-config.macros.download.onClick = function(ev)
-{
-	// display the tiddler containing the instructions
-	var e = ev || window.event;
-	var title = &quot;Downloading&quot;;
-	var url = 'empty.zip';
-	if(config.browser.isOpera || config.browser.isWindows) {
-		story.displayTiddler(target,title);
-		window.setTimeout(function() {document.location.href = url;},300);
-	} else {
-		// put an iframe in the target instructions tiddler to start the download
-		var html = '&lt;html&gt;&lt;iframe src=&quot;' + url + '&quot; style=&quot;display:none&quot;&gt;&lt;/html&gt;';
-		var tiddler = store.getTiddler(title);
-		var oldText = tiddler.text;
-		tiddler.text = html + tiddler.text;
-		var target = resolveTarget(e);
-		story.closeTiddler(title,true);
-		story.displayTiddler(target,title);
-		tiddler.text = oldText;
-	}
-	return false;
-};
-
-} //# end of 'install only once'
-//}}}
-</pre>
+<div title="Download" creator="psd" modifier="Yakov Litvin" created="201102111106" modified="202007241838" tags="gettingstarted" type="text/x-tiddlywiki" changecount="6">
+<pre>&lt;html&gt;&lt;a class=&quot;downloadButton&quot; title=&quot;Download TiddlyWiki&quot;
+  href=&quot;empty.html&quot; download=&quot;empty.html&quot; onclick=&quot;story.displayTiddler(null,'Setting up saving')&quot;
+  tabindex=&quot;0&quot;
+&gt;
+    download
+&lt;/a&gt;&lt;/html&gt;</pre>
 </div>
 <div title="Downloading" creator="psd" modifier="jermolene" created="201102111106" modified="201111031807" tags="instructions" type="text/x-tiddlywiki">
 <pre>The following downloading guidelines have been created to cover the vast majority of browsers and operating systems.
@@ -2675,7 +2625,7 @@ The complete list of commands is:
 
 See the details of the underlying ParameterParser for more details.</pre>
 </div>
-<div title="StyleSheet" creator="psd" modifier="jermolene" created="201102111107" modified="201111031825" type="text/x-tiddlywiki">
+<div title="StyleSheet" creator="psd" modifier="Yakov Litvin" created="201102111107" modified="202007241905" type="text/x-tiddlywiki" changecount="19">
 <pre>/***
 This fixes a problem with the tabs slider
 ***/
@@ -2705,33 +2655,30 @@ body {
 	font-size: 1.1em;
 }
 
-#contentWrapper .chunkyButton {
-	width: auto;
-}
-
-#contentWrapper span.chunkyButton {
+.downloadButton {
+	display: inline-block;
+	padding: 0.5em 1em;
+	border-radius: .5em;
 	border: none;
-}
-
-#contentWrapper span.chunkyButton a.button, #contentWrapper span.chunkyButton a:active.button {
-	font-weight: bold;
+	text-align: center;
 	font-size: 1.3em;
+	font-weight: bold;
 	color: [[ColorPalette::Background]];
 	background-color: [[ColorPalette::QuaternaryMid]];
-	text-align: center;
-	padding: 0.5em 1em;
-	border-radius: 1ex;
-	border-style: none !important;
 }
-
-#contentWrapper span.chunkyButton a.button:hover {
-	background-color: [[ColorPalette::QuaternaryDark]];
-	color: [[ColorPalette::Background]];
-	border-style: none !important;
+.downloadButton:hover {
+	color: [[ColorPalette::QuaternaryMid]];
+	background-color: [[ColorPalette::Background]];
+	box-shadow: 0 0 0 1px [[ColorPalette::QuaternaryMid]];
 }
-
+.downloadButton:active {
+	transform: scale(.95);
+}
+.downloadButton:focus {
+	outline: none;
+	box-shadow: 0 0 0 1px [[ColorPalette::QuaternaryDark]];
+}
 /*}}}*/
-
 </pre>
 </div>
 <div title="StyleSheet shadows" creator="matt" modifier="matt" created="201102111439" modified="201102151512" tags="shadow" type="text/x-tiddlywiki">
