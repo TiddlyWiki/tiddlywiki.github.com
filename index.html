@@ -540,8 +540,8 @@ body {font-size:0.8em;}
 |''Description:''|UdoBorkowski's Extensions for TiddlyWiki|
 |''Author:''|UdoBorkowski|</pre>
 </div>
-<div title="Advanced download options" creator="psd" modifier="jermolene" created="201102111106" modified="201301171556" tags="help" type="text/x-tiddlywiki">
-<pre>When you click on the [[download|Download]] button, the website will detect your browser and operating system, and trigger a download for either an empty ~TiddlyWiki file or, if you're running [[Safari]] or [[Opera]], a zip file which also includes the TiddlySaver file. This is version &lt;&lt;version&gt;&gt; of ~TiddlyWiki.
+<div title="Advanced download options" creator="psd" modifier="mkerrigan" created="201102111106" modified="202005261156" tags="help" type="text/x-tiddlywiki">
+<pre>When you click on the [[download|Download]] button it will download a zip file containing an empty ~TiddlyWiki file and a copy of the TiddlySaver file. This is version &lt;&lt;version&gt;&gt; of ~TiddlyWiki.
 
 Advanced users may find these download options helpful (right click the link and select &quot;Save as&quot; to download):
 * [[An empty TiddlyWiki file|./empty.html]]
@@ -549,8 +549,7 @@ Advanced users may find these download options helpful (right click the link and
 * [[A copy of this website (TiddlyWiki.com) minus images|#]]
 * [[The TiddlySaver.jar file on its own|./TiddlySaver.jar]]
 Finally, these links may be useful:
-* [[Downloading]] instructions for the main browsers
-* A list of supported [[Browsers]]
+* [[Setting up saving]]
 * Archive of older versions of TiddlyWiki in the [[archive|./archive/]]
 </pre>
 </div>
@@ -624,10 +623,13 @@ The backstage area is only available when a TiddlyWiki is edittable - typically 
 |/%this text will be invisible%/hidden text|{{{/%this text will be invisible%/}}}|
 </pre>
 </div>
-<div title="BidiXTWServer" creator="psd" modifier="blaine" created="201102111106" modified="201102111310" tags="systemServer" type="text/x-tiddlywiki">
-<pre>|''URL:''|http://tiddlywiki.bidix.info/|
-|''Description:''|Repository for BidiX's TiddlyWiki Extensions|
-|''Author:''|BidiX|</pre>
+<div title="BidiXTWServer" creator="psd" modifier="mkerrigan" created="201102111106" modified="202005261424" tags="systemServer" type="text/x-tiddlywiki">
+<pre>|''URL:''|[[http://tiddlywiki.bidix.info/|https://web.archive.org/web/20130801155706/http://tiddlywiki.bidix.info/]]|
+|''Description:''|Repository for ~BidiX's TiddlyWiki Extensions|
+|''Author:''|~BidiX|
+
+Community member ~BidiX created an adaptation of the ~TiddlyWiki user interface as an [[iPhone web app|https://web.archive.org/web/20130117085629/https://www.apple.com/webapps/productivity/itwatiddlywikiforiphone.html]]. It can be downloaded [[here|https://web.archive.org/web/20130129032529if_/http://itw.bidix.info/]].
+</pre>
 </div>
 <div title="BobsPluginsServer" creator="psd" modifier="colmbritton" created="201102111106" modified="201102161206" tags="systemServer" type="text/x-tiddlywiki">
 <pre>|''URL:''|http://bob.mcelrath.org/plugins.html|
@@ -936,9 +938,9 @@ There's also a number of other [[tutorials and guides|TutorialsAndGuides]] creat
 Many seemingly gone docs and other resources in ~TiddlyWikis are in fact available via [[Web Archive|http://web.archive.org/]], for instance [[Community Documentation|http://web.archive.org/web/20161211153445/http://tiddlywiki.tiddlyspace.com/]] and [[Developer Documentation|http://web.archive.org/web/20160810230802/http://tiddlywikidev.tiddlyspace.com/]].
 </pre>
 </div>
-<div title="Download" creator="psd" modifier="Yakov Litvin" created="201102111106" modified="202007241838" tags="gettingstarted" type="text/x-tiddlywiki" changecount="6">
+<div title="Download" creator="psd" modifier="Yakov Litvin" created="201102111106" modified="202007241824" tags="gettingstarted" type="text/x-tiddlywiki">
 <pre>&lt;html&gt;&lt;a class=&quot;downloadButton&quot; title=&quot;Download TiddlyWiki&quot;
-  href=&quot;empty.html&quot; download=&quot;empty.html&quot; onclick=&quot;story.displayTiddler(null,'Setting up saving')&quot;
+  href=&quot;empty.html&quot; download=&quot;empty.html&quot; onclick=&quot;story.displayTiddler(null, 'Setting up saving')&quot;
   tabindex=&quot;0&quot;
 &gt;
     download
@@ -1382,14 +1384,12 @@ TiddlyWiki is written in HTML, CSS and JavaScript to run on any reasonably moder
 This is revision &lt;&lt;version&gt;&gt; of TiddlyWiki Classic, and is published under an OpenSourceLicense.  Incremental updates will occur every few months, depending upon the complexity of the changes being made.  A comprehensive re-write of TiddlyWiki, called TiddlyWiki5, is now under active development. It is available for testing here: http://five.tiddlywiki.com</pre>
 </div>
 <div title="Help and Support" creator="psd" modifier="jermolene" created="201102111106" modified="201111031657" tags="community gettingstarted help" type="text/x-tiddlywiki">
-<pre>TiddlyWiki is an [[OpenSourceLicense|open source]] product, with most help and support being provided by the [[Community]]. The best way to get help with a specific problem is the TiddlyWiki DiscussionForums (it's worth searching the group archives to see if anyone else has already solved the same problem).
+<pre>TiddlyWiki is an [[OpenSourceLicense]] product, with most help and support being provided by the [[Community]]. The best way to get help with a specific problem is the TiddlyWiki DiscussionForums (it's worth searching the group archives to see if anyone else has already solved the same problem).
 
 There are a number of other useful resources for learning about TiddlyWiki:
 
 * [[TiddlerToddler|http://tiddlertoddler.tiddlyspot.com/]] from Julie Starr
 * [[TwHelp|http://twhelp.tiddlyspot.com/]] from Morris Gray
-
-
 </pre>
 </div>
 <div title="HideEditingFeatures" creator="psd" modifier="jermolene" created="201102111106" modified="201110201351" tags="features options" type="text/x-tiddlywiki">
@@ -2625,7 +2625,7 @@ The complete list of commands is:
 
 See the details of the underlying ParameterParser for more details.</pre>
 </div>
-<div title="StyleSheet" creator="psd" modifier="Yakov Litvin" created="201102111107" modified="202007241905" type="text/x-tiddlywiki" changecount="19">
+<div title="StyleSheet" creator="psd" modifier="Yakov Litvin" created="201102111107" modified="202007241825" type="text/x-tiddlywiki">
 <pre>/***
 This fixes a problem with the tabs slider
 ***/
@@ -2667,9 +2667,7 @@ body {
 	background-color: [[ColorPalette::QuaternaryMid]];
 }
 .downloadButton:hover {
-	color: [[ColorPalette::QuaternaryMid]];
-	background-color: [[ColorPalette::Background]];
-	box-shadow: 0 0 0 1px [[ColorPalette::QuaternaryMid]];
+	background-color: [[ColorPalette::QuaternaryDark]];
 }
 .downloadButton:active {
 	transform: scale(.95);
@@ -2678,8 +2676,8 @@ body {
 	outline: none;
 	box-shadow: 0 0 0 1px [[ColorPalette::QuaternaryDark]];
 }
-/*}}}*/
-</pre>
+
+/*}}}*/</pre>
 </div>
 <div title="StyleSheet shadows" creator="matt" modifier="matt" created="201102111439" modified="201102151512" tags="shadow" type="text/x-tiddlywiki">
 <pre>The StyleSheet tiddler allows you to customise the look and feel of your TiddlyWiki using CSS
@@ -3251,9 +3249,6 @@ Displays as:
 </div>
 <div title="favicon.ico" creator="jon" modifier="jon" created="201102111115" modified="201102111115" type="image/x-icon">
 <pre>AAABAAEAEBAAAAAAGABoAwAAFgAAACgAAAAQAAAAIAAAAAEAGAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD////////////////////////////////////////////////a2tra2tra2tra2tr///////////+fn5+fn5+fn5+fn5+fn5+fn5/////////////a2tra2tra2tra2tr////MzMz////////////////////////////////////////a2tra2tra2tra2tr///////////+fn5+fn5+fn5+fn5+fn5+fn5+fn5+fn5/////a2tra2tra2tra2tr////MzMz////////////////////////////////////////a2tra2tra2tra2tr///////////+fn5+fn5+fn5+fn5/////////////////////a2tra2tra2tra2tr////MzMz///+fn5+fn5+fn5+fn5+fn5+fn5+fn5+fn5/////a2tra2tra2tra2tr///////////+fn5+fn5+fn5+fn5+fn5+fn5+fn5+fn5/////////////////////////MzMz////////////////////////////////////////a2tra2tra2tra2tr///////////+fn5+fn5+fn5+fn5+fn5+fn5+fn5/////////////////////////////MzMz///+fn5+fn5+fn5+fn5+fn5+fn5+fn5+fn5/////a2tra2tra2tra2tr////////////////////////////////////////////////////////////////ETQPETQPETQPETQPETQPETQPETQPETQPETQPETQPETQPETQPETQPETQPETQPETQPVXgfVXgfVXgfVXgfVXgfVXgfVXgfVXgfVXgfVXgfVXgfVXgfVXgfVXgfVXgfVXgfmbwvmbwvmbwvmbwvmbwvmbwvmbwvmbwvmbwvmbwvmbwvmbwvmbwvmbwvmbwvmbwv2fw/2fw/2fw/2fw/2fw/2fw/2fw/2fw/2fw/2fw/2fw/2fw/2fw/2fw/2fw/2fw8AAOLpAADg6QAAf18AAP//AAD//wAA//8AAP//AAD//wAAAIAAAP//AAD/fwAA//8AAACAAAD//wAA//8AAOHp</pre>
-</div>
-<div title="iPhone" creator="blaine" modifier="blaine" created="201102111259" modified="201102111310" type="text/x-tiddlywiki">
-<pre>Community member ~BidiX has created an adaptation of the ~TiddlyWiki user interface [[specially for the iPhone|http://www.apple.com/webapps/productivity/itwatiddlywikiforiphone.html]]</pre>
 </div>
 <div title="list macro" creator="colmbritton" modifier="jermolene" created="201102111439" modified="201112141644" tags="macro" type="text/x-tiddlywiki">
 <pre>The {{{&lt;&lt;list&gt;&gt;}}} macro creates a list of tiddlers of a given type. It takes the following parameters:
@@ -7696,15 +7691,18 @@ TiddlyWiki.prototype.forEachField = function(tiddler,callback,onlyExtendedFields
 //-- Story functions
 //--
 
-function Story(containerId,idPrefix)
+// A story is a HTML div containing a sequence of tiddlers that can be manipulated
+//  container - id of containing element
+//  idPrefix - string prefix prepended to title to make ids for tiddlers in this story
+function Story(containerId, idPrefix)
 {
 	this.container = containerId;
 	this.idPrefix = idPrefix;
 	this.highlightRegExp = null;
 	this.tiddlerId = function(title) {
-		title = title.replace(/_/g, "__").replace(/ /g, "_");
-		var id = this.idPrefix + title;
-		return id == this.container ? this.idPrefix + "_" + title : id;
+		var validId = title.replace(/_/g, "__").replace(/ /g, "_");
+		var id = this.idPrefix + validId;
+		return id == this.container ? this.idPrefix + "_" + validId : id;
 	};
 	this.containerId = function() {
 		return this.container;
@@ -7721,59 +7719,59 @@ Story.prototype.getContainer = function()
 	return document.getElementById(this.containerId());
 };
 
-Story.prototype.forEachTiddler = function(fn)
+Story.prototype.forEachTiddler = function(handleTiddler)
 {
 	var place = this.getContainer();
 	if(!place)
 		return;
-	var e = place.firstChild;
-	while(e) {
-		var n = e.nextSibling;
-		var title = e.getAttribute("tiddler");
+	var el = place.firstChild;
+	while(el) {
+		var next = el.nextSibling;
+		var title = el.getAttribute("tiddler");
 		if(title) {
-			fn.call(this,title,e);
+			handleTiddler.call(this, title, el);
 		}
-		e = n;
+		el = next;
 	}
 };
 
-Story.prototype.displayDefaultTiddlers = function()
-{
-	this.displayTiddlers(null,store.filterTiddlers(store.getTiddlerText("DefaultTiddlers")));
-};
-
-Story.prototype.displayTiddlers = function(srcElement,titles,template,animate,unused,customFields,toggle)
-{
-	for(var t = titles.length-1; t >= 0; t--)
-		this.displayTiddler(srcElement,titles[t],template,animate,unused,customFields);
-};
-
-Story.prototype.displayTiddler = function(srcElement,tiddler,template,animate,unused,customFields,toggle,animationSrc)
+Story.prototype.displayTiddler = function(srcElement, tiddler, template, animate, unused, customFields, toggle, animationSrc)
 {
 	var title = (tiddler instanceof Tiddler) ? tiddler.title : tiddler;
 	var tiddlerElem = this.getTiddler(title);
 	if(tiddlerElem) {
 		if(toggle) {
 			if(tiddlerElem.getAttribute("dirty") != "true")
-				this.closeTiddler(title,true);
+				this.closeTiddler(title, true);
 		} else {
-			this.refreshTiddler(title,template,false,customFields);
+			this.refreshTiddler(title, template, false, customFields);
 		}
 	} else {
 		var place = this.getContainer();
 		var before = this.positionTiddler(srcElement);
-		tiddlerElem = this.createTiddler(place,before,title,template,customFields);
+		tiddlerElem = this.createTiddler(place, before, title, template, customFields);
 	}
 	if(animationSrc && typeof animationSrc !== "string") {
 		srcElement = animationSrc;
 	}
 	if(srcElement && typeof srcElement !== "string") {
 		if(config.options.chkAnimate && (animate == undefined || animate == true) && anim && typeof Zoomer == "function" && typeof Scroller == "function")
-			anim.startAnimating(new Zoomer(title,srcElement,tiddlerElem),new Scroller(tiddlerElem));
+			anim.startAnimating(new Zoomer(title, srcElement, tiddlerElem), new Scroller(tiddlerElem));
 		else
-			window.scrollTo(0,ensureVisible(tiddlerElem));
+			window.scrollTo(0, ensureVisible(tiddlerElem));
 	}
 	return tiddlerElem;
+};
+
+Story.prototype.displayTiddlers = function(srcElement, titles, template, animate, unused, customFields, toggle)
+{
+	for(var t = titles.length - 1; t >= 0; t--)
+		this.displayTiddler(srcElement, titles[t], template, animate, unused, customFields);
+};
+
+Story.prototype.displayDefaultTiddlers = function()
+{
+	this.displayTiddlers(null, store.filterTiddlers(store.getTiddlerText("DefaultTiddlers")));
 };
 
 Story.prototype.positionTiddler = function(srcElement)
@@ -7802,21 +7800,21 @@ Story.prototype.positionTiddler = function(srcElement)
 	return before;
 };
 
-Story.prototype.createTiddler = function(place,before,title,template,customFields)
+Story.prototype.createTiddler = function(place, before, title, template, customFields)
 {
-	var tiddlerElem = createTiddlyElement(null,"div",this.tiddlerId(title),"tiddler");
-	tiddlerElem.setAttribute("refresh","tiddler");
+	var tiddlerElem = createTiddlyElement(null, "div", this.tiddlerId(title), "tiddler");
+	tiddlerElem.setAttribute("refresh", "tiddler");
 	if(customFields)
-		tiddlerElem.setAttribute("tiddlyFields",customFields);
-	place.insertBefore(tiddlerElem,before);
+		tiddlerElem.setAttribute("tiddlyFields", customFields);
+	place.insertBefore(tiddlerElem, before);
 	var defaultText = null;
 	if(!store.tiddlerExists(title) && !store.isShadowTiddler(title))
-		defaultText = this.loadMissingTiddler(title,customFields);
-	this.refreshTiddler(title,template,false,customFields,defaultText);
+		defaultText = this.loadMissingTiddler(title, customFields);
+	this.refreshTiddler(title, template, false, customFields, defaultText);
 	return tiddlerElem;
 };
 
-Story.prototype.loadMissingTiddler = function(title,fields,callback)
+Story.prototype.loadMissingTiddler = function(title, fields, callback)
 {
 	var getTiddlerCallback = function(context)
 	{
@@ -7825,12 +7823,13 @@ Story.prototype.loadMissingTiddler = function(title,fields,callback)
 			t.created  = t.created  || new Date();
 			t.modified = t.modified || t.created;
 			var dirty = store.isDirty();
-			context.tiddler = store.saveTiddler(t.title,t.title,t.text,t.modifier,t.modified,t.tags,t.fields,true,t.created,t.creator);
+			context.tiddler = store.saveTiddler(t.title, t.title, t.text, t.modifier, t.modified,
+				t.tags, t.fields, true, t.created, t.creator);
 			if(!window.allowSave())
 				store.setDirty(dirty);
 			autoSaveChanges();
 		} else {
-			story.refreshTiddler(context.title,null,true);
+			story.refreshTiddler(context.title, null, true);
 		}
 		context.adaptor.close();
 		if(callback) {
@@ -7845,11 +7844,11 @@ Story.prototype.loadMissingTiddler = function(title,fields,callback)
 	context.host = tiddler.fields['server.host'];
 	context.workspace = tiddler.fields['server.workspace'];
 	var adaptor = new config.adaptors[context.serverType]();
-	adaptor.getTiddler(title,context,null,getTiddlerCallback);
-	return config.messages.loadingMissingTiddler.format([title,context.serverType,context.host,context.workspace]);
+	adaptor.getTiddler(title, context, null, getTiddlerCallback);
+	return config.messages.loadingMissingTiddler.format([title, context.serverType, context.host, context.workspace]);
 };
 
-Story.prototype.chooseTemplateForTiddler = function(title,template)
+Story.prototype.chooseTemplateForTiddler = function(title, template)
 {
 	if(!template)
 		template = DEFAULT_VIEW_TEMPLATE;
@@ -7858,19 +7857,19 @@ Story.prototype.chooseTemplateForTiddler = function(title,template)
 	return template;
 };
 
-Story.prototype.getTemplateForTiddler = function(title,template,tiddler)
+Story.prototype.getTemplateForTiddler = function(title, template, tiddler)
 {
-	return store.getRecursiveTiddlerText(template,null,10);
+	return store.getRecursiveTiddlerText(template, null, 10);
 };
 
-Story.prototype.refreshTiddler = function(title,template,force,customFields,defaultText)
+Story.prototype.refreshTiddler = function(title, template, force, customFields, defaultText)
 {
 	var tiddlerElem = this.getTiddler(title);
 	if(!tiddlerElem) return null;
 
 	if(tiddlerElem.getAttribute("dirty") == "true" && !force)
 		return tiddlerElem;
-	template = this.chooseTemplateForTiddler(title,template);
+	template = this.chooseTemplateForTiddler(title, template);
 	var currTemplate = tiddlerElem.getAttribute("template");
 	if((template != currTemplate) || force) {
 		var tiddler = store.getTiddler(title);
@@ -7878,25 +7877,25 @@ Story.prototype.refreshTiddler = function(title,template,force,customFields,defa
 			tiddler = new Tiddler();
 			if(store.isShadowTiddler(title)) {
 				var tags = [];
-				tiddler.set(title,store.getTiddlerText(title),config.views.wikified.shadowModifier,version.date,tags,version.date);
+				tiddler.set(title, store.getTiddlerText(title), config.views.wikified.shadowModifier, version.date, tags, version.date);
 			} else {
 				var text = template == config.tiddlerTemplates[DEFAULT_EDIT_TEMPLATE] ? // #166
 							config.views.editor.defaultText.format([title]) :
 							config.views.wikified.defaultText.format([title]);
 				text = defaultText || text;
 				var fields = customFields ? customFields.decodeHashMap() : null;
-				tiddler.set(title,text,config.views.wikified.defaultModifier,version.date,[],version.date,fields);
+				tiddler.set(title, text, config.views.wikified.defaultModifier, version.date, [], version.date, fields);
 			}
 		}
-		tiddlerElem.setAttribute("tags",tiddler.tags.join(" "));
-		tiddlerElem.setAttribute("tiddler",title);
-		tiddlerElem.setAttribute("template",template);
+		tiddlerElem.setAttribute("tags", tiddler.tags.join(" "));
+		tiddlerElem.setAttribute("tiddler", title);
+		tiddlerElem.setAttribute("template", template);
 		tiddlerElem.onmouseover = this.onTiddlerMouseOver;
 		tiddlerElem.onmouseout = this.onTiddlerMouseOut;
 		tiddlerElem.ondblclick = this.onTiddlerDblClick;
-		tiddlerElem[window.event?"onkeydown":"onkeypress"] = this.onTiddlerKeyPress;
-		tiddlerElem.innerHTML = this.getTemplateForTiddler(title,template,tiddler);
-		applyHtmlMacros(tiddlerElem,tiddler);
+		tiddlerElem[window.event ? "onkeydown" : "onkeypress"] = this.onTiddlerKeyPress;
+		tiddlerElem.innerHTML = this.getTemplateForTiddler(title, template, tiddler);
+		applyHtmlMacros(tiddlerElem, tiddler);
 		if(store.getTaggedTiddlers(title).length > 0)
 			jQuery(tiddlerElem).addClass("isTag");
 		else
@@ -7908,43 +7907,41 @@ Story.prototype.refreshTiddler = function(title,template,force,customFields,defa
 			jQuery(tiddlerElem).addClass(store.isShadowTiddler(title) ? "shadow" : "missing");
 		}
 		if(customFields)
-			this.addCustomFields(tiddlerElem,customFields);
+			this.addCustomFields(tiddlerElem, customFields);
 	}
 	return tiddlerElem;
 };
 
-Story.prototype.addCustomFields = function(place,customFields)
+Story.prototype.addCustomFields = function(place, customFields)
 {
 	var fields = customFields.decodeHashMap();
-	var w = createTiddlyElement(place,"div",null,"customFields");
-	w.style.display = "none";
-	for(var t in fields) {
-		var e = document.createElement("input");
-		e.setAttribute("type","text");
-		e.setAttribute("value",fields[t]);
-		w.appendChild(e);
-		e.setAttribute("edit",t);
+	var container = createTiddlyElement(place, "div", null, "customFields");
+	container.style.display = "none";
+	for(var fieldName in fields) {
+		var input = document.createElement("input");
+		input.setAttribute("type", "text");
+		input.setAttribute("value", fields[fieldName]);
+		container.appendChild(input);
+		input.setAttribute("edit", fieldName);
 	}
 };
 
 Story.prototype.refreshAllTiddlers = function(force)
 {
-	var e = this.getContainer().firstChild;
-	while(e) {
-		var template = e.getAttribute("template");
-		if(template && e.getAttribute("dirty") != "true") {
-			this.refreshTiddler(e.getAttribute("tiddler"),force ? null : template,true);
+	this.forEachTiddler(function(title, element) {
+		var template = element.getAttribute("template");
+		if(template && element.getAttribute("dirty") != "true") {
+			this.refreshTiddler(title, force ? null : template, true);
 		}
-		e = e.nextSibling;
-	}
+	})
 };
 
-Story.prototype.onTiddlerMouseOver = function(e)
+Story.prototype.onTiddlerMouseOver = function()
 {
 	jQuery(this).addClass("selected");
 };
 
-Story.prototype.onTiddlerMouseOut = function(e)
+Story.prototype.onTiddlerMouseOut = function()
 {
 	jQuery(this).removeClass("selected");
 };
@@ -7956,7 +7953,7 @@ Story.prototype.onTiddlerDblClick = function(ev)
 	if(target && target.nodeName.toLowerCase() != "input" && target.nodeName.toLowerCase() != "textarea") {
 		if(document.selection && document.selection.empty)
 			document.selection.empty();
-		config.macros.toolbar.invokeCommand(this,"defaultCommand",e);
+		config.macros.toolbar.invokeCommand(this, "defaultCommand", e);
 		e.cancelBubble = true;
 		if(e.stopPropagation) e.stopPropagation();
 		return true;
@@ -7973,15 +7970,15 @@ Story.prototype.onTiddlerKeyPress = function(ev)
 	var target = resolveTarget(e);
 	switch(e.keyCode) {
 	case 9: // Tab
-		var ed = story.getTiddlerField(title,"text");
-		if(target.tagName.toLowerCase() == "input" && ed.value == config.views.editor.defaultText.format([title])) {
+		var editor = story.getTiddlerField(title, "text");
+		if(target.tagName.toLowerCase() == "input" && editor.value == config.views.editor.defaultText.format([title])) {
 			// moving from input field and editor still contains default text, so select it
-			ed.focus();
-			ed.select();
+			editor.focus();
+			editor.select();
 			consume = true;
 		}
 		if(config.options.chkInsertTabs && !e.ctrlKey && target.tagName.toLowerCase() == "textarea") {
-			replaceSelection(target,String.fromCharCode(9));
+			replaceSelection(target, String.fromCharCode(9));
 			consume = true;
 		}
 		if(config.isOpera) {
@@ -7996,13 +7993,13 @@ Story.prototype.onTiddlerKeyPress = function(ev)
 	case 77: // Ctrl-Enter is "M" on some platforms
 		if(e.ctrlKey) {
 			blurElement(this);
-			config.macros.toolbar.invokeCommand(this,"defaultCommand",e);
+			config.macros.toolbar.invokeCommand(this, "defaultCommand", e);
 			consume = true;
 		}
 		break;
 	case 27: // Escape
 		blurElement(this);
-		config.macros.toolbar.invokeCommand(this,"cancelCommand",e);
+		config.macros.toolbar.invokeCommand(this, "cancelCommand", e);
 		consume = true;
 		break;
 	}
@@ -8015,14 +8012,14 @@ Story.prototype.onTiddlerKeyPress = function(ev)
 	return !consume;
 };
 
-Story.prototype.getTiddlerField = function(title,field)
+Story.prototype.getTiddlerField = function(title, field)
 {
 	var tiddlerElem = this.getTiddler(title);
 	if(!tiddlerElem) return null;
 
-	var t, e = null, children = tiddlerElem.getElementsByTagName("*");
-	for(t = 0; t < children.length; t++) {
-		var c = children[t];
+	var i, e = null, children = tiddlerElem.getElementsByTagName("*");
+	for(i = 0; i < children.length; i++) {
+		var c = children[i];
 		if(c.tagName.toLowerCase() == "input" || c.tagName.toLowerCase() == "textarea") {
 			if(!e)
 				e = c;
@@ -8033,9 +8030,9 @@ Story.prototype.getTiddlerField = function(title,field)
 	return e;
 };
 
-Story.prototype.focusTiddler = function(title,field)
+Story.prototype.focusTiddler = function(title, field)
 {
-	var e = this.getTiddlerField(title,field);
+	var e = this.getTiddlerField(title, field);
 	if(e) {
 		e.focus();
 		e.select();
@@ -8051,43 +8048,45 @@ Story.prototype.blurTiddler = function(title)
 	}
 };
 
-Story.prototype.setTiddlerField = function(title,tag,mode,field)
+Story.prototype.setTiddlerField = function(title, tag, mode, field)
 {
-	var c = this.getTiddlerField(title,field);
-	var tags = c.value.readBracketedList();
-	tags.setItem(tag,mode);
-	c.value = String.encodeTiddlyLinkList(tags);
+	var editor = this.getTiddlerField(title, field);
+	var tags = editor.value.readBracketedList();
+	tags.setItem(tag, mode);
+	editor.value = String.encodeTiddlyLinkList(tags);
 };
 
-Story.prototype.setTiddlerTag = function(title,tag,mode)
+Story.prototype.setTiddlerTag = function(title, tag, mode)
 {
-	this.setTiddlerField(title,tag,mode,"tags");
+	this.setTiddlerField(title, tag, mode, "tags");
 };
 
-Story.prototype.closeTiddler = function(title,animate,unused)
+Story.prototype.closeTiddler = function(title, shouldAnimate, unused)
 {
 	var tiddlerElem = this.getTiddler(title);
 	if(!tiddlerElem) return;
 
 	clearMessage();
 	this.scrubTiddler(tiddlerElem);
-	if(config.options.chkAnimate && animate && anim && typeof Slider == "function") {
-		anim.startAnimating(new Slider(tiddlerElem,false,null,"all"));
+	if(config.options.chkAnimate && shouldAnimate && anim && typeof Slider == "function") {
+		anim.startAnimating(new Slider(tiddlerElem, false, null, "all"));
 	} else {
 		jQuery(tiddlerElem).remove();
 	}
 };
 
-Story.prototype.scrubTiddler = function(tiddlerElem)
+Story.prototype.scrubTiddler = function(tiddlerElement)
 {
-	tiddlerElem.id = null;
+	tiddlerElement.id = null;
 };
 
-Story.prototype.setDirty = function(title,dirty)
+// 'dirty' flag attribute is used on tiddlers to mark those having unsaved changes
+
+Story.prototype.setDirty = function(title, dirty)
 {
 	var tiddlerElem = this.getTiddler(title);
 	if(tiddlerElem)
-		tiddlerElem.setAttribute("dirty",dirty ? "true" : "false");
+		tiddlerElem.setAttribute("dirty", dirty ? "true" : "false");
 };
 
 Story.prototype.isDirty = function(title)
@@ -8101,7 +8100,7 @@ Story.prototype.isDirty = function(title)
 Story.prototype.areAnyDirty = function()
 {
 	var r = false;
-	this.forEachTiddler(function(title,element) {
+	this.forEachTiddler(function(title, element) {
 		if(this.isDirty(title))
 			r = true;
 	});
@@ -8111,11 +8110,11 @@ Story.prototype.areAnyDirty = function()
 Story.prototype.closeAllTiddlers = function(exclude)
 {
 	clearMessage();
-	this.forEachTiddler(function(title,element) {
+	this.forEachTiddler(function(title, element) {
 		if((title != exclude) && element.getAttribute("dirty") != "true")
 			this.closeTiddler(title);
 	});
-	window.scrollTo(0,ensureVisible(this.container));
+	window.scrollTo(0, ensureVisible(this.container));
 };
 
 Story.prototype.isEmpty = function()
@@ -8124,16 +8123,16 @@ Story.prototype.isEmpty = function()
 	return place && place.firstChild == null;
 };
 
-Story.prototype.search = function(text,useCaseSensitive,useRegExp)
+Story.prototype.search = function(text, useCaseSensitive, useRegExp)
 {
 	this.closeAllTiddlers();
-	highlightHack = new RegExp(useRegExp ? text : text.escapeRegExp(),useCaseSensitive ? "mg" : "img");
-	var matches = store.search(highlightHack,"title","excludeSearch");
-	this.displayTiddlers(null,matches);
+	highlightHack = new RegExp(useRegExp ? text : text.escapeRegExp(), useCaseSensitive ? "mg" : "img");
+	var matches = store.search(highlightHack, "title", "excludeSearch");
+	this.displayTiddlers(null, matches);
 	highlightHack = null;
 	var q = useRegExp ? "/" : "'";
 	if(matches.length > 0)
-		displayMessage(config.macros.search.successMsg.format([matches.length.toString(),q + text + q]));
+		displayMessage(config.macros.search.successMsg.format([matches.length.toString(), q + text + q]));
 	else
 		displayMessage(config.macros.search.failureMsg.format([q + text + q]));
 };
@@ -8146,49 +8145,49 @@ Story.prototype.findContainingTiddler = function(e)
 	return e;
 };
 
-Story.prototype.gatherSaveFields = function(e,fields)
+Story.prototype.gatherSaveFields = function(e, fields)
 {
 	if(e && e.getAttribute) {
-		var f = e.getAttribute("edit");
-		if(f)
-			fields[f] = e.value.replace(/\r/mg,"");
+		var fieldName = e.getAttribute("edit");
+		if(fieldName)
+			fields[fieldName] = e.value.replace(/\r/mg, "");
 		if(e.hasChildNodes()) {
-			var t,c = e.childNodes;
-			for(t = 0; t < c.length; t++)
-				this.gatherSaveFields(c[t],fields);
+			var i, c = e.childNodes;
+			for(i = 0; i < c.length; i++)
+				this.gatherSaveFields(c[i], fields);
 		}
 	}
 };
 
 Story.prototype.hasChanges = function(title)
 {
-	var e = this.getTiddler(title);
-	if(!e) return false;
+	var tiddlerElement = this.getTiddler(title);
+	if(!tiddlerElement) return false;
 
 	var fields = {};
-	this.gatherSaveFields(e,fields);
+	this.gatherSaveFields(tiddlerElement, fields);
 	if(store.fetchTiddler(title)) {
-		for(var n in fields) {
-			if(store.getValue(title,n) != fields[n]) //# tiddler changed
+		for(var fieldName in fields) {
+			if(store.getValue(title, fieldName) != fields[fieldName])
 				return true;
 		}
-	} else {
-		if(store.isShadowTiddler(title) && store.getShadowTiddlerText(title) == fields.text) { //# not checking for title or tags
-			return false;
-		} else { //# changed shadow or new tiddler
-			return true;
-		}
+		return false;
 	}
-	return false;
+	if(store.isShadowTiddler(title)) {
+		// not checking for title or tags
+		return store.getShadowTiddlerText(title) != fields.text;
+	}
+	// new tiddler
+	return true;
 };
 
-Story.prototype.saveTiddler = function(title,minorUpdate)
+Story.prototype.saveTiddler = function(title, minorUpdate)
 {
 	var tiddlerElem = this.getTiddler(title);
 	if(!tiddlerElem) return null;
 
 	var fields = {};
-	this.gatherSaveFields(tiddlerElem,fields);
+	this.gatherSaveFields(tiddlerElem, fields);
 	var newTitle = fields.title || title;
 	if(!store.tiddlerExists(newTitle)) {
 		newTitle = newTitle.trim();
@@ -8200,11 +8199,11 @@ Story.prototype.saveTiddler = function(title,minorUpdate)
 			title = newTitle;
 	}
 	if(newTitle != title)
-		this.closeTiddler(newTitle,false);
+		this.closeTiddler(newTitle, false);
 	tiddlerElem.id = this.tiddlerId(newTitle);
-	tiddlerElem.setAttribute("tiddler",newTitle);
-	tiddlerElem.setAttribute("template",DEFAULT_VIEW_TEMPLATE);
-	tiddlerElem.setAttribute("dirty","false");
+	tiddlerElem.setAttribute("tiddler", newTitle);
+	tiddlerElem.setAttribute("template", DEFAULT_VIEW_TEMPLATE);
+	tiddlerElem.setAttribute("dirty", "false");
 	if(config.options.chkForceMinorUpdate)
 		minorUpdate = !minorUpdate;
 	if(!store.tiddlerExists(newTitle))
@@ -8215,14 +8214,15 @@ Story.prototype.saveTiddler = function(title,minorUpdate)
 		var extendedFields = t.fields;
 		creator = t.creator;
 	} else {
-		extendedFields = merge({},config.defaultCustomFields);
+		extendedFields = merge({}, config.defaultCustomFields);
 	}
 	for(var n in fields) {
 		if(!TiddlyWiki.isStandardField(n))
 			extendedFields[n] = fields[n];
 	}
-	var tiddler = store.saveTiddler(title,newTitle,fields.text,minorUpdate ? undefined : config.options.txtUserName,minorUpdate ? undefined : newDate,fields.tags,extendedFields,null,null,creator);
-	autoSaveChanges(null,[tiddler]);
+	var tiddler = store.saveTiddler(title, newTitle, fields.text, minorUpdate ? undefined : config.options.txtUserName,
+		minorUpdate ? undefined : newDate, fields.tags, extendedFields, null, null, creator);
+	autoSaveChanges(null, [tiddler]);
 	return newTitle;
 };
 
@@ -8237,7 +8237,7 @@ Story.prototype.getPermaViewHash = function(titles)
 Story.prototype.permaView = function()
 {
 	var titles = [];
-	this.forEachTiddler(function(title,element) {
+	this.forEachTiddler(function(title, element) {
 		titles.push(title);
 	});
 	var hash = this.getPermaViewHash(titles);
@@ -8250,18 +8250,18 @@ Story.prototype.switchTheme = function(theme)
 	if(safeMode)
 		return;
 
-	var getSlice = function(theme,slice) {
+	var getSlice = function(theme, slice) {
 		var r;
 		if(readOnly)
-			r = store.getTiddlerSlice(theme,slice+"ReadOnly") || store.getTiddlerSlice(theme,"Web"+slice);
-		r = r || store.getTiddlerSlice(theme,slice);
+			r = store.getTiddlerSlice(theme, slice + "ReadOnly") || store.getTiddlerSlice(theme, "Web" + slice);
+		r = r || store.getTiddlerSlice(theme, slice);
 		if(r && r.indexOf(config.textPrimitives.sectionSeparator) == 0)
 			r = theme + r;
 		return store.isAvailable(r) ? r : slice;
 	};
 
-	var replaceNotification = function(i,name,theme,slice) {
-		var newName = getSlice(theme,slice);
+	var replaceNotification = function(i, name, theme, slice) {
+		var newName = getSlice(theme, slice);
 		if(name != newName && store.namedNotifications[i].name == name) {
 			store.namedNotifications[i].name = newName;
 			return newName;
@@ -8278,28 +8278,28 @@ Story.prototype.switchTheme = function(theme)
 	for(var i = 0; i < config.notifyTiddlers.length; i++) {
 		var name = config.notifyTiddlers[i].name;
 		switch(name) {
-		case "PageTemplate":
-			config.refresherData.pageTemplate = replaceNotification(i,config.refresherData.pageTemplate,theme,name);
-			break;
-		case "StyleSheet":
-			removeStyleSheet(config.refresherData.styleSheet);
-			config.refresherData.styleSheet = replaceNotification(i,config.refresherData.styleSheet,theme,name);
-			break;
-		case "ColorPalette":
-			config.refresherData.colorPalette = replaceNotification(i,config.refresherData.colorPalette,theme,name);
-			break;
-		default:
-			break;
+			case "PageTemplate":
+				config.refresherData.pageTemplate = replaceNotification(i, config.refresherData.pageTemplate, theme, name);
+				break;
+			case "StyleSheet":
+				removeStyleSheet(config.refresherData.styleSheet);
+				config.refresherData.styleSheet = replaceNotification(i, config.refresherData.styleSheet, theme, name);
+				break;
+			case "ColorPalette":
+				config.refresherData.colorPalette = replaceNotification(i, config.refresherData.colorPalette, theme, name);
+				break;
+			default:
+				break;
 		}
 	}
-	config.tiddlerTemplates[vi] = getSlice(theme,"ViewTemplate");
-	config.tiddlerTemplates[ei] = getSlice(theme,"EditTemplate");
+	config.tiddlerTemplates[vi] = getSlice(theme, "ViewTemplate");
+	config.tiddlerTemplates[ei] = getSlice(theme, "EditTemplate");
 	if(!startingUp) {
-		if(config.refresherData.pageTemplate!=pt || config.tiddlerTemplates[vi]!=vt || config.tiddlerTemplates[ei]!=et) {
+		if(config.refresherData.pageTemplate != pt || config.tiddlerTemplates[vi] != vt || config.tiddlerTemplates[ei] != et) {
 			refreshAll();
 			this.refreshAllTiddlers(true);
 		} else {
-			setStylesheet(store.getRecursiveTiddlerText(config.refresherData.styleSheet,"",10),config.refreshers.styleSheet);
+			setStylesheet(store.getRecursiveTiddlerText(config.refresherData.styleSheet, "", 10), config.refreshers.styleSheet);
 		}
 		config.options.txtTheme = theme;
 		saveOption("txtTheme");
