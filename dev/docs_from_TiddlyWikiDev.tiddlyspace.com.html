@@ -10021,9 +10021,6 @@ TiddlyWiki.prototype.reverseLookup = function(lookupField,lookupValue,lookupMatc
 	&lt;span class=&quot;titleBar&quot;&gt;
 		&lt;div class='title' macro='view title text'&gt;&lt;/div&gt;
 	&lt;/span&gt;
-	&lt;span class='modifierIcon'
-		macro='view modifier SiteIcon label:no height:48 width:48 preserveAspectRatio:yes'&gt;
-	&lt;/span&gt;
 	&lt;div class='toolbar'
 		macro='toolbar [[ToolbarCommands::RevisionToolbar]] icons:yes height:48 width:48 more:popup'&gt;
 	&lt;/div&gt;
@@ -11981,20 +11978,6 @@ noscript {display:none;} /* Fixes a feature in Firefox 1.5.0.2 where print previ
 	margin-left: 0px;
 }
 
-.modifierIcon {
-	position: absolute;
-	width: 74px;
-	top: 0px;
-	right: 0px;
-	_right: 74px; /* in IE6 positioning works incorrectly so use -width instead */
-	text-align: right;
-}
-
-.modifierIcon img,
-.modifierIcon svg {
-	margin-right: 8px;
-}
-
 .tiddler .viewer {
 	padding-bottom: 16px;
 	margin: 0 0 0 56px;
@@ -12139,10 +12122,6 @@ noscript {display:none;} /* Fixes a feature in Firefox 1.5.0.2 where print previ
 	font-size: 1.5em;
 }
 
-.modifierIcon .externalImage .image a:hover {
-	background: none;
-}
-
 div.toolbar {
 	visibility:hidden;
 	right:-16px;
@@ -12179,15 +12158,6 @@ a.image:hover {
 	.tiddler .heading .title {
 		font-size: 32px;
 		line-height: 32px;
-	}
-
-	.tiddler .modifierIcon img,
-	.tiddler .modifierIcon svg,
-	.originButton svg {
-		width: 32px;
-		height: 32px;
-		margin-left: 0px;
-		margin-right: 0px;
 	}
 
 	.tiddler .followButton {
@@ -12627,11 +12597,6 @@ body ul { margin: 0; }
 .viewRevision .toolbar {
 	right: 48px;
 	top: 8px;
-}
-
-.viewRevision .modifierIcon img,
-.viewRevision .modifierIcon svg {
-	margin-right: 8px;
 }
 
 .viewRevision .toolbar svg {
@@ -19436,9 +19401,6 @@ By default, how a tiddler is displayed is defined by one of the shadow tiddlers 
 			last modified on
 			&lt;span macro=&quot;view modified date&quot;&gt;&lt;/span&gt;
 		&lt;/span&gt;
-	&lt;/span&gt;
-	&lt;span class='modifierIcon'
-		macro='view modifier SiteIcon label:no spaceLink:yes height:48 width:48 preserveAspectRatio:yes'&gt;
 	&lt;/span&gt;
 	&lt;div class='tagClear'&gt;&lt;/div&gt;
 &lt;/div&gt;
