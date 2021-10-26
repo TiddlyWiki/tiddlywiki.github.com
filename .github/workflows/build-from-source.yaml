@@ -1,0 +1,41 @@
+name: rebuild index.html from sources repo
+
+on:
+  workflow_dispatch:
+    inputs:
+      commitMessage:
+        description: "Commit message"
+        required: true
+        default: "update index.html"
+      committerName:
+        description: "Username for commit"
+        required: true
+      committerEmail:
+        description: "User email for commit"
+        required: true
+  # todo: setup repository_dispatch as well
+
+jobs:
+  build-site:
+    runs-on: ubuntu-latest
+    steps:
+      # actions/checkout@v2 should be run first since it makes files created in cwd before not accessible
+      - uses: actions/checkout@v2
+      - name: get TiddlyWiki source
+        run: git clone https://github.com/TiddlyWiki/TiddlyWiki.git
+      - name: install dependencies and build index.html
+        run: |
+          cd ./TiddlyWiki
+          npm i
+          npm run build-site
+          cd ..
+      - name: move and commit resulting file
+        # todo: get the "build/cooked/" path bit from core repo itself
+        run: |
+          mv ./TiddlyWiki/build/cooked/*/index.html ./
+          git config --global user.name ${{ github.event.inputs.committerName }}
+          git config --global user.email ${{ github.event.inputs.committerEmail }}
+          git add ./index.html
+          git commit -m "${{ github.event.inputs.commitMessage }}"
+          git push
+      # todo: update other bits as well, like upgrade folder
