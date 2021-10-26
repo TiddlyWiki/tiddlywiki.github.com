@@ -540,17 +540,16 @@ body {font-size:0.8em;}
 |''Description:''|UdoBorkowski's Extensions for TiddlyWiki|
 |''Author:''|UdoBorkowski|</pre>
 </div>
-<div title="Advanced download options" creator="psd" modifier="mkerrigan" created="201102111106" modified="202005261156" tags="help" type="text/x-tiddlywiki">
-<pre>When you click on the [[download|Download]] button it will download a zip file containing an empty ~TiddlyWiki file and a copy of the TiddlySaver file. This is version &lt;&lt;version&gt;&gt; of ~TiddlyWiki.
+<div title="Advanced download options" creator="psd" modifier="mkerrigan" created="201102111106" modified="202008091322" tags="help" type="text/x-tiddlywiki">
+<pre>When you click on the [[download|Download]] button it will download an empty ~TiddlyWiki file. This is version &lt;&lt;version&gt;&gt; of ~TiddlyWiki.
 
 Advanced users may find these download options helpful (right click the link and select &quot;Save as&quot; to download):
-* [[An empty TiddlyWiki file|./empty.html]]
-* [[A zip file containing an empty TiddlyWiki file plus a TiddlySaver file|./empty.zip]]
-* [[A copy of this website (TiddlyWiki.com) minus images|#]]
-* [[The TiddlySaver.jar file on its own|./TiddlySaver.jar]]
+* [[A copy of this website|#]] (~TiddlyWiki.com) minus images.
+* [[A zip archive|./empty.zip]] containing an empty ~TiddlyWiki file plus a TiddlySaver file.
+* [[The TiddlySaver.jar file|./TiddlySaver.jar]] on its own.
 Finally, these links may be useful:
 * [[Setting up saving]]
-* Archive of older versions of TiddlyWiki in the [[archive|./archive/]]
+* Older ~TiddlyWiki versions in the [[archive|./archive/]]
 </pre>
 </div>
 <div title="AnotherExampleStyleSheet" creator="psd" modifier="blaine" created="201102111106" modified="201102111310" tags="examples" type="text/x-tiddlywiki">
@@ -602,12 +601,13 @@ background-color: #88aaff;
 
 However, if you also have the SaveBackups checkbox ticked, you'll end up with a lot of archived files. You may prefer to select either one or the other.</pre>
 </div>
-<div title="BackstageArea" creator="psd" modifier="colmbritton" created="201102111106" modified="201102211427" tags="features" type="text/x-tiddlywiki">
-<pre>One of the great strengths of TiddlyWiki is the way that its interface can be customised by editting various shadow tiddlers. However, a problem that has consistently emerged is the difficulty of reconciling the needs of authors, who need access to the full array of TiddlyWiki features, and the needs of ordinary readers, who generally benefit from seeing a restricted set of functionality more suited to their needs.
+<div title="BackstageArea" creator="psd" modifier="Yakov Litvin" created="201102111106" modified="202110251027" tags="features" type="text/x-tiddlywiki">
+<pre>One of the great strengths of TiddlyWiki is its highly customisable interface. However, while authors need to access the full array of TiddlyWiki features, readers generally benefit from seeing a restricted set of functionality (only things which they can use).
 
-The new backstage area in release 2.2 offers a solution to this conundrum by providing a consistent way of accessing authoring functionality that is independent of the interface customisations (so, even if you blast away the contents of your PageTemplate, you can still access the backstage area).
-
-The backstage area is only available when a TiddlyWiki is edittable - typically meaning that it's been opened off of a {{{file://}}} URL. It appears as an unobtrusive link in the topright corner of the page. Clicking it reveals the backstage toolbar consisting of commands like {{{saveChanges}}} and drop-down tasks like ImportTiddlers, SyncMacro, PluginManager and Tweak (which provides access to the new [[options macro]]).</pre>
+The backstage area helps with this by providing access to authoring functionality that is
+* independent of the interface customisations (even if you blast away the contents of your PageTemplate, you can still access the backstage area)
+* only available when a TiddlyWiki is editable (typically meaning that it's been opened off of a {{{file://}}} URL)
+It appears as a link in the topright corner of the page. Clicking it reveals the backstage toolbar consisting of commands like {{{saveChanges}}} and drop-down tasks like ImportTiddlers, Upgrade, PluginManager and Tweak (which provides access to the new [[options macro]]).</pre>
 </div>
 <div title="Basic Formatting" creator="matt" modifier="psd" created="201102111425" modified="201102151515" tags="formatting" type="text/x-tiddlywiki">
 <pre>|Style|Formatting|h
@@ -2248,8 +2248,15 @@ There are still some issues with Safari:
 <pre>SafeMode can be selected by putting {{{#start:safe}}} (see StartupParameters) on the end of the TiddlyWiki URL. It stops TiddlyWiki from executing any [[Plugins]], modifying shadow tiddlers, or reading/writing cookies. It can be useful for tracking down problems caused by rogue [[Plugins]].
 </pre>
 </div>
-<div title="SaveBackups" creator="psd" modifier="blaine" created="201102111107" modified="201102111310" tags="features options" type="text/x-tiddlywiki">
-<pre>This is one of the InterfaceOptions you can use to customize TiddlyWiki. It determines whether TiddlyWiki creates a backup file each time you SaveChanges. I'd suggest keeping it switched on for safety!</pre>
+<div title="SaveBackups" creator="psd" modifier="mkerrigan" created="201102111107" modified="202008190049" tags="features options" type="text/x-tiddlywiki">
+<pre>The SaveBackups option in the InterfaceOptions determines if the internal backup mechanism will create a backup each time the ~TiddlyWiki is saved.
+
+If no [[saver method|Setting up saving]] is configured, no backup file will be created. Using the manual download saving method will not overwrite the ~TiddlyWiki file in place unless the user chooses the overwrite the existing ~TiddlyWiki file.
+
+Many saver methods have their own way of creating automatic backups. In addition, the operating system or server where the ~TiddlyWiki file is stored may also provide file backup protection.
+
+Note: Do not use File -&gt; Save As or Save Page As from the browser menu to create backups, otherwise this can lead to SaveUnpredictabilities.
+</pre>
 </div>
 <div title="SaveChanges" creator="psd" modifier="jermolene" created="201102111107" modified="201111031825" tags="features gettingstarted instructions" type="text/x-tiddlywiki">
 <pre>If you've followed the appropriate [[Downloading]] guidelines, then you can save your changes as you go along. (AutoSave makes this easy).
@@ -3948,7 +3955,7 @@ merge(config.messages,{
 	pluginForced: "Executed because forced via 'systemConfigForce' tag",
 	pluginVersionError: "Not executed because this plugin needs a newer version of TiddlyWiki",
 	nothingSelected: "Nothing is selected. You must select one or more items first",
-	savedSnapshotError: "It appears that this TiddlyWiki has been incorrectly saved. Please see http://www.tiddlywiki.com/#Download for details",
+	savedSnapshotError: "It appears that this TiddlyWiki has been incorrectly saved. Please see https://classic.tiddlywiki.com/#SaveUnpredictabilities for details",
 	subtitleUnknown: "(unknown)",
 	undefinedTiddlerToolTip: "The tiddler '%0' doesn't yet exist",
 	shadowedTiddlerToolTip: "The tiddler '%0' doesn't yet exist, but has a pre-defined shadow value",
