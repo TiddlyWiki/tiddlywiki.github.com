@@ -27,6 +27,8 @@ jobs:
         run: |
           git clone https://github.com/TiddlyWiki/TiddlyWiki.git
           cd ./TiddlyWiki
+          # temp fix attempt
+          npm install tiddlywiki@5.1.21
           npm i
           # - name: build index.html, move resulting file, stage it
           #   run: |
