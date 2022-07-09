@@ -1,0 +1,67 @@
+name: update site for a new release from sources repo
+# https://github.wiki/en/actions/creating-actions/metadata-syntax-for-github-actions?learn=create_actions&learnProduct=actions#description
+description: |
+  update download package, core for upgrading, site core version, archive page and files;
+  site content (what's new etc) should be updated manually
+
+on:
+  workflow_dispatch:
+    inputs:
+      # 
+      committerName:
+        description: "Username for commit"
+        required: true
+      committerEmail:
+        description: "User email for commit"
+        required: true
+
+jobs:
+  build-and-update:
+    runs-on: ubuntu-latest
+    steps:
+      # todo: test the whole scenario
+      - uses: actions/checkout@v2
+      - name: config git
+        run: |
+          git config --global user.name ${{ github.event.inputs.committerName }}
+          git config --global user.email ${{ github.event.inputs.committerEmail }}
+      - name: get TiddlyWiki source and install dependencies
+        run: |
+          git clone https://github.com/TiddlyWiki/TiddlyWiki.git
+          cd ./TiddlyWiki
+          npm i
+      - name: build index.html, move resulting file, stage it
+        run: |
+          npm run build-site
+          mv ./build/cooked/*/index.html ../
+          git add ../index.html
+          # test bits to be removed:
+          echo "index.html's head:"
+          head -n 7 ../index.html
+      - name: build empty TW, copy resulting file as empty.html, upgrade/index.html, stage it
+        run: |
+          npm run build-core
+          cp ./build/cooked/*/empty.html ../
+          cp ./build/cooked/*/empty.html ../upgrade/index.html
+          git add ../empty.html ../upgrade/index.html
+          # test bits to be removed:
+          echo "empty.html's and upgrade/index.html's heads:"
+          head -n 7 ../empty.html
+          head -n 7 ../upgrade/index.html
+      - name: build tests.html, move resulting file, stage it
+        run: |
+          npm run build-test
+          mv ./build/cooked/*/test.html ../
+          git add ../test.html
+          # test bits to be removed:
+          echo "test.html's head:"
+          head -n 7 ../test.html
+      # todo: build and copy tiddlywiki_externaljs.html, twcore.js, jQuery.twStylesheet.js, jquery.js
+      - name: commit and push result
+        run: |
+          package=$(cat package.json)
+          version=$(node -pe 'JSON.parse(process.argv[1]).version' "$package")
+          cd ..
+          echo "update site to v$version (index.html, empty.html, upgrade/index.html, test.html, ___)"
+          # git commit -m "update site to v$version (index.html, empty.html, upgrade/index.html, test.html, ___)"
+          # git push
