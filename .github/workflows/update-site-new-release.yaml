@@ -1,8 +1,6 @@
+# update download package, core for upgrading, site core version, test.html
+# site content (what's new etc) should be updated manually
 name: update site for a new release from sources repo
-# https://github.wiki/en/actions/creating-actions/metadata-syntax-for-github-actions?learn=create_actions&learnProduct=actions#description
-description: |
-  update download package, core for upgrading, site core version, archive page and files;
-  site content (what's new etc) should be updated manually
 
 on:
   workflow_dispatch:
