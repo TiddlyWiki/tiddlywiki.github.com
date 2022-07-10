@@ -1,5 +1,5 @@
-# update download package, core for upgrading, site core version, test.html
-# site content (what's new etc) should be updated manually
+# Update download package, core for upgrading, site core version and content, RSS, test.html
+# Site content (what's new etc) in the main repo should be updated manually before running this
 name: update site for a new release from sources repo
 
 on:
@@ -19,7 +19,7 @@ jobs:
     steps:
       # todo:
       # - fix: build-site fails on Ubuntu (unlike on Windows)
-      # - test the whole scenario
+      # - test the whole scenario, remove the logging bits, enable committing
       - uses: actions/checkout@v2
       - name: config git
         run: |
@@ -32,15 +32,19 @@ jobs:
           # temp fix attempt
           npm install tiddlywiki@5.1.21
           npm i
-          # - name: build index.html, move resulting file, stage it
+          # - name: build index.html, index.xml (RSS), move and stage resulting files
           #   run: |
           npm run build-site
           mv ./build/cooked/*/index.html ../
+          mv ./build/cooked/*/index.xml ../
           git add ../index.html
+          git add ../index.xml
           # test bits to be removed:
           echo "index.html's head:"
           head -n 7 ../index.html
-      - name: build empty TW, copy resulting file as empty.html, upgrade/index.html, stage it
+          echo "index.xml:"
+          cat ../index.xml
+      - name: build empty TW, copy resulting file as empty.html, upgrade/index.html, stage them
         run: |
           npm run build-core
           cp ./build/cooked/*/empty.html ../
