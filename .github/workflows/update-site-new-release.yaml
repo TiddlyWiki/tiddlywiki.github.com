@@ -17,7 +17,9 @@ jobs:
   build-and-update:
     runs-on: ubuntu-latest
     steps:
-      # todo: test the whole scenario
+      # todo:
+      # - fix: build-site fails on Ubuntu (unlike on Windows)
+      # - test the whole scenario
       - uses: actions/checkout@v2
       - name: config git
         run: |
@@ -51,11 +53,11 @@ jobs:
       - name: build tests.html, move resulting file, stage it
         run: |
           npm run build-test
-          mv ./build/cooked/*/test.html ../
-          git add ../test.html
+          mv ./build/cooked/*/test.html ../tests.html
+          git add ../tests.html
           # test bits to be removed:
           echo "test.html's head:"
-          head -n 7 ../test.html
+          head -n 7 ../tests.html
       # todo: build and copy tiddlywiki_externaljs.html, twcore.js, jQuery.twStylesheet.js, jquery.js
       - name: commit and push result
         run: |
