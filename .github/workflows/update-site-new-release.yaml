@@ -30,15 +30,15 @@ jobs:
         run: |
           git clone https://github.com/TiddlyWiki/TiddlyWiki.git
           cd ./TiddlyWiki
-          # temp fix attempt
-          npm install tiddlywiki@5.1.21
           npm i
           # - name: build empty TW, copy resulting file as empty.html, upgrade/index.html, stage them
           #   run: |
           npm run build-core
           cp ./build/cooked/*/empty.html ../
           cp ./build/cooked/*/empty.html ../upgrade/index.html
-          git add ../empty.html ../upgrade/index.html
+          cd ..
+          git add empty.html upgrade/index.html
+          cd ./TiddlyWiki
           # test bits to be removed:
           echo "empty.html's and upgrade/index.html's heads:"
           head -n 7 ../empty.html
