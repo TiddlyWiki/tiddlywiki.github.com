@@ -31,28 +31,7 @@ jobs:
           git clone https://github.com/TiddlyWiki/TiddlyWiki.git
           cd ./TiddlyWiki
           npm i
-          # - name: build tests.html, move resulting file, stage it
-          #   run: |
-          npm run build-test
-          mv ./build/cooked/*/test.html ../tests.html
-          cd ..
-          git add tests.html
-          # test bits to be removed:
-          echo "tests.html's head:"
-          head -n 7 tests.html
-          cd -
-      - name: build index.html, index.xml (RSS), move and stage resulting files
-        run: |
-          npm run build-site
-          mv ./build/cooked/*/index.html ../
-          mv ./build/cooked/*/index.xml ../
-          git add ../index.html
-          git add ../index.xml
-          # test bits to be removed:
-          echo "index.html's head:"
-          head -n 7 ../index.html
-          echo "index.xml:"
-          cat ../index.xml
+          # not sure why separating into steps breaks things yet (todo: rename the merged step)
           # - name: build empty TW, copy resulting file as empty.html, upgrade/index.html, stage them
           #   run: |
           npm run build-core
@@ -60,7 +39,26 @@ jobs:
           cp ./build/cooked/*/empty.html ../upgrade/index.html
           cd ..
           git add empty.html upgrade/index.html
-          cd ./TiddlyWiki
+          cd -
+          # - name: build tests.html, move resulting file, stage it
+          #   run: |
+          npm run build-test
+          mv ./build/cooked/*/test.html ../tests.html
+          cd ..
+          git add tests.html
+          cd -
+          # # - name: build index.html, index.xml (RSS), move and stage resulting files
+          # #   run: |
+          # npm run build-site
+          # mv ./build/cooked/*/index.html ../
+          # mv ./build/cooked/*/index.xml ../
+          # git add ../index.html
+          # git add ../index.xml
+          # # test bits to be removed:
+          # echo "index.html's head:"
+          # head -n 7 ../index.html
+          # echo "index.xml:"
+          # cat ../index.xml
       # todo: build and copy tiddlywiki_externaljs.html, twcore.js, jQuery.twStylesheet.js, jquery.js
       - name: commit and push result
         run: |
