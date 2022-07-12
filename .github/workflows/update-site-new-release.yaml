@@ -18,7 +18,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       # todo:
-      # - fix: build-site fails on Ubuntu (unlike on Windows)
+      # - fix: build-site (RSS generation) fails on Ubuntu (unlike on Windows)
+      #  - test other steps: do they work ok?
       # - test the whole scenario, remove the logging bits, enable committing
       - uses: actions/checkout@v2
       - name: config git
@@ -32,8 +33,18 @@ jobs:
           # temp fix attempt
           npm install tiddlywiki@5.1.21
           npm i
-          # - name: build index.html, index.xml (RSS), move and stage resulting files
+          # - name: build empty TW, copy resulting file as empty.html, upgrade/index.html, stage them
           #   run: |
+          npm run build-core
+          cp ./build/cooked/*/empty.html ../
+          cp ./build/cooked/*/empty.html ../upgrade/index.html
+          git add ../empty.html ../upgrade/index.html
+          # test bits to be removed:
+          echo "empty.html's and upgrade/index.html's heads:"
+          head -n 7 ../empty.html
+          head -n 7 ../upgrade/index.html
+      - name: build index.html, index.xml (RSS), move and stage resulting files
+        run: |
           npm run build-site
           mv ./build/cooked/*/index.html ../
           mv ./build/cooked/*/index.xml ../
@@ -44,16 +55,6 @@ jobs:
           head -n 7 ../index.html
           echo "index.xml:"
           cat ../index.xml
-      - name: build empty TW, copy resulting file as empty.html, upgrade/index.html, stage them
-        run: |
-          npm run build-core
-          cp ./build/cooked/*/empty.html ../
-          cp ./build/cooked/*/empty.html ../upgrade/index.html
-          git add ../empty.html ../upgrade/index.html
-          # test bits to be removed:
-          echo "empty.html's and upgrade/index.html's heads:"
-          head -n 7 ../empty.html
-          head -n 7 ../upgrade/index.html
       - name: build tests.html, move resulting file, stage it
         run: |
           npm run build-test
@@ -69,5 +70,5 @@ jobs:
           version=$(node -pe 'JSON.parse(process.argv[1]).version' "$package")
           cd ..
           echo "update site to v$version (index.html, empty.html, upgrade/index.html, test.html, ___)"
-          # git commit -m "update site to v$version (index.html, empty.html, upgrade/index.html, test.html, ___)"
+          # git commit -m "update site to v$version (index.html, index.xml, empty.html, upgrade/index.html, test.html, ___)"
           # git push
