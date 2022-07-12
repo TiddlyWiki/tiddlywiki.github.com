@@ -29,24 +29,24 @@ jobs:
       - name: get TiddlyWiki source and install dependencies
         run: |
           git clone https://github.com/TiddlyWiki/TiddlyWiki.git
-          cd ./TiddlyWiki
+          cd TiddlyWiki
           npm i
-          # not sure why separating into steps breaks things yet (todo: rename the merged step)
-          # - name: build empty TW, copy resulting file as empty.html, upgrade/index.html, stage them
-          #   run: |
+      # looks like each new step cwd is changed back to the "root"
+      - name: build empty TW, copy resulting file as empty.html, upgrade/index.html, stage them
+        run: |
+          cd TiddlyWiki
           npm run build-core
           cp ./build/cooked/*/empty.html ../
           cp ./build/cooked/*/empty.html ../upgrade/index.html
           cd ..
           git add empty.html upgrade/index.html
-          cd -
-          # - name: build tests.html, move resulting file, stage it
-          #   run: |
+      - name: build tests.html, move resulting file, stage it
+        run: |
+          cd TiddlyWiki
           npm run build-test
           mv ./build/cooked/*/test.html ../tests.html
           cd ..
           git add tests.html
-          cd -
           # # - name: build index.html, index.xml (RSS), move and stage resulting files
           # #   run: |
           # npm run build-site
