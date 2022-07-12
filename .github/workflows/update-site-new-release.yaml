@@ -31,18 +31,16 @@ jobs:
           git clone https://github.com/TiddlyWiki/TiddlyWiki.git
           cd ./TiddlyWiki
           npm i
-          # - name: build empty TW, copy resulting file as empty.html, upgrade/index.html, stage them
+          # - name: build tests.html, move resulting file, stage it
           #   run: |
-          npm run build-core
-          cp ./build/cooked/*/empty.html ../
-          cp ./build/cooked/*/empty.html ../upgrade/index.html
+          npm run build-test
+          mv ./build/cooked/*/test.html ../tests.html
           cd ..
-          git add empty.html upgrade/index.html
-          cd ./TiddlyWiki
+          git add tests.html
           # test bits to be removed:
-          echo "empty.html's and upgrade/index.html's heads:"
-          head -n 7 ../empty.html
-          head -n 7 ../upgrade/index.html
+          echo "test.html's head:"
+          head -n 7 ../tests.html
+          cd -
       - name: build index.html, index.xml (RSS), move and stage resulting files
         run: |
           npm run build-site
