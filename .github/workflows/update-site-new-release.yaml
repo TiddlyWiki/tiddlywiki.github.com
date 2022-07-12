@@ -62,6 +62,7 @@ jobs:
       # todo: build and copy tiddlywiki_externaljs.html, twcore.js, jQuery.twStylesheet.js, jquery.js
       - name: commit and push result
         run: |
+          cd ./TiddlyWiki
           package=$(cat package.json)
           version=$(node -pe 'JSON.parse(process.argv[1]).version' "$package")
           cd ..
