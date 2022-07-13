@@ -18,7 +18,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       # todo:
-      # - add step: build and copy tiddlywiki_externaljs.html, twcore.js, jQuery.twStylesheet.js, jquery.js
       # - test the whole scenario, remove the logging bits, enable committing
       - uses: actions/checkout@v2
       - name: config git
@@ -54,6 +53,14 @@ jobs:
           mv ./build/cooked/*/test.html ../tests.html
           cd ..
           git add tests.html
+      - name: build tiddlywiki_externaljs.html and js files, move, stage
+        run: |
+          cd TiddlyWiki
+          npm run build-external-core
+          #  tiddlywiki_externaljs.html  jquery.js  jQuery.twStylesheet.js  twcore.js
+          mv ./build/cooked/*/* ../
+          cd ..
+          git add *
       - name: commit and push result
         run: |
           cd TiddlyWiki
