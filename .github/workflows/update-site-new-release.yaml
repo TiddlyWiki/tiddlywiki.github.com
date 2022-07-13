@@ -30,7 +30,7 @@ jobs:
           git clone https://github.com/TiddlyWiki/TiddlyWiki.git
           cd TiddlyWiki
           npm i
-      # looks like each new step cwd is changed back to the "root"
+      # looks like on each new step cwd is changed back to the "root", so we cd back
       - name: build index.html, index.xml (RSS), move and stage resulting files
         run: |
           cd TiddlyWiki
@@ -39,8 +39,6 @@ jobs:
           mv ./build/cooked/*/* ../
           cd ..
           git add *
-          # test bits to be removed:
-          git status
       - name: build empty TW, copy resulting file as empty.html, upgrade/index.html, stage them
         run: |
           cd TiddlyWiki
@@ -58,11 +56,26 @@ jobs:
           git add tests.html
       - name: commit and push result
         run: |
-          cd ./TiddlyWiki
+          cd TiddlyWiki
           package=$(cat package.json)
           version=$(node -pe 'JSON.parse(process.argv[1]).version' "$package")
           cd ..
+          # test bits, remove
           echo "update site to v$version (index.html?, index.xml?, empty.html, upgrade/index.html, test.html, ___)"
+          echo "index.html's head:"
+          head -n 7 index.html
+          if [ ! -f index.xml ]; then
+            echo "index.xml was not created"
+          else
+            echo "index.xml:"
+            cat index.xml
+          fi
+          echo "empty.html's head:"
+          head -n 7 empty.html
+          echo "upgrade/index.html's head:"
+          head -n 7 upgrade/index.html
+          echo "tests.html's head:"
+          head -n 7 tests.html
           git status
           # git commit -m "update site to v$version (index.html, index.xml, empty.html, upgrade/index.html, test.html, ___)"
           # git push
