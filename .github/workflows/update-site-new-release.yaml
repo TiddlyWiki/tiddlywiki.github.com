@@ -19,7 +19,6 @@ jobs:
     steps:
       # todo:
       # - add step: build and copy tiddlywiki_externaljs.html, twcore.js, jQuery.twStylesheet.js, jquery.js
-      # - fix: build-site (RSS generation) fails on Ubuntu (unlike on Windows)
       # - test the whole scenario, remove the logging bits, enable committing
       - uses: actions/checkout@v2
       - name: config git
@@ -36,15 +35,12 @@ jobs:
         run: |
           cd TiddlyWiki
           npm run build-site
-          mv ./build/cooked/*/index.html ../
-          mv ./build/cooked/*/index.xml ../
-          git add ../index.html
-          git add ../index.xml
+          # generating index.html may fail (on Ubuntu, unlike on Windows), so use wildcards
+          mv ./build/cooked/*/* ../
+          cd ..
+          git add *
           # test bits to be removed:
-          echo "index.html's head:"
-          head -n 7 ../index.html
-          echo "index.xml:"
-          cat ../index.xml
+          git status
       - name: build empty TW, copy resulting file as empty.html, upgrade/index.html, stage them
         run: |
           cd TiddlyWiki
