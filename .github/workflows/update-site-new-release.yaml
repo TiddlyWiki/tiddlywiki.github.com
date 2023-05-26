@@ -5,7 +5,6 @@ name: update site for a new release from sources repo
 on:
   workflow_dispatch:
     inputs:
-      # 
       committerName:
         description: "Username for commit"
         required: true
@@ -18,7 +17,16 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       # todo:
-      # - test the whole scenario, remove the logging bits, enable committing
+      # - fix: building also adds TiddlyWiki as ??, presumably by `git add *`` at the "build index.html ..." step
+      #  . this breaks updating GitHub Pages: step "Checkout" ("Fetching submodules") fails on
+      #    /usr/bin/git submodule sync --recursive
+      #    /usr/bin/git -c protocol.version=2 submodule update --init --force --depth=1 --recursive
+      #    with
+      #    Error: fatal: No url found for submodule path 'TiddlyWiki' in .gitmodules
+      #    Error: The process '/usr/bin/git' failed with exit code 128
+      # - try to restore generation of RSS on Ubuntu (why phantomjs fails now? different node.js version? [can test on Contabo]
+      #   try to fix.. or use Puppeteer instead.. or without headless browser at all)
+      # * construct commit message based on what was really updated
       - uses: actions/checkout@v2
       - name: config git
         run: |
@@ -83,6 +91,6 @@ jobs:
           package=$(cat package.json)
           version=$(node -pe 'JSON.parse(process.argv[1]).version' "$package")
           cd ..
-          # git commit -m "update site to v$version (index.html, index.xml, empty.html, upgrade/index.html, test.html, ___)"
+          # git commit -m "update site to v$version (index.html?, index.xml?, empty.html, upgrade/index.html, test.html, tiddlywiki_externaljs.html, jquery.js, jQuery.twStylesheet.js, twcore.js)"
           git commit -m "update site to v$version"
           git push
