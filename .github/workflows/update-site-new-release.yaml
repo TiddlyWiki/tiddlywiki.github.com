@@ -34,6 +34,11 @@ jobs:
         run: |
           cd TiddlyWiki
           npm run build-site
+          echo "built site parts:" > build_summary.txt
+          ls ./build/cooked/* > build_summary.txt
+          if [ ! -f ./build/cooked/*/index.xml ]; then
+            echo "warning: index.xml was not created" > build_summary.txt
+          fi
           # generating index.html may fail (on Ubuntu, unlike on Windows), so use wildcards
           mv ./build/cooked/*/* ../
           cd ..
@@ -42,6 +47,8 @@ jobs:
         run: |
           cd TiddlyWiki
           npm run build-core
+          echo "built core:" > build_summary.txt
+          ls ./build/cooked/* > build_summary.txt
           cp ./build/cooked/*/empty.html ../
           cp ./build/cooked/*/empty.html ../upgrade/index.html
           cd ..
@@ -50,6 +57,8 @@ jobs:
         run: |
           cd TiddlyWiki
           npm run build-test
+          echo "built test:" > build_summary.txt
+          ls ./build/cooked/* > build_summary.txt
           mv ./build/cooked/*/test.html ../tests.html
           cd ..
           git add tests.html
@@ -57,32 +66,21 @@ jobs:
         run: |
           cd TiddlyWiki
           npm run build-external-core
+          echo "built test:" > build_summary.txt
+          ls ./build/cooked/* > build_summary.txt
           #  tiddlywiki_externaljs.html  jquery.js  jQuery.twStylesheet.js  twcore.js
           mv ./build/cooked/*/* ../
           cd ..
           git add *
+      - name: summarize what's built and what's updated
+        run: |
+          cat build_summary.txt
+          git status
       - name: commit and push result
         run: |
           cd TiddlyWiki
           package=$(cat package.json)
           version=$(node -pe 'JSON.parse(process.argv[1]).version' "$package")
           cd ..
-          # test bits, remove
-          echo "update site to v$version (index.html?, index.xml?, empty.html, upgrade/index.html, test.html, ___)"
-          echo "index.html's head:"
-          head -n 7 index.html
-          if [ ! -f index.xml ]; then
-            echo "index.xml was not created"
-          else
-            echo "index.xml:"
-            cat index.xml
-          fi
-          echo "empty.html's head:"
-          head -n 7 empty.html
-          echo "upgrade/index.html's head:"
-          head -n 7 upgrade/index.html
-          echo "tests.html's head:"
-          head -n 7 tests.html
-          git status
           # git commit -m "update site to v$version (index.html, index.xml, empty.html, upgrade/index.html, test.html, ___)"
           # git push
