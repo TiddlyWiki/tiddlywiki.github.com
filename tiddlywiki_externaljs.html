@@ -3,7 +3,7 @@
 <head>
 <script id="versionArea" type="text/javascript">
 //<![CDATA[
-var version = {title: "TiddlyWiki", major: 2, minor: 8, revision: 1, date: new Date("June 23, 2013"), extensions: {}};
+var version = {title: "TiddlyWiki", major: 2, minor: 9, revision: 4, date: new Date("May 11, 2023"), extensions: {}};
 
 //]]>
 </script>
@@ -50,13 +50,16 @@ DAMAGE.
 
 </title>
 <style id="styleArea" type="text/css">
-#saveTest {display:none;}
-#messageArea {display:none;}
-#copyright {display:none;}
-#storeArea {display:none;}
-#storeArea div {padding:0.5em; margin:1em 0em 0em 0em; border-color:#fff #666 #444 #ddd; border-style:solid; border-width:2px; overflow:auto;}
-#shadowArea {display:none;}
-#javascriptWarning {width:100%; text-align:center; font-weight:bold; background-color:#dd1100; color:#fff; padding:1em 0em;}
+#saveTest, #messageArea, #copyright, #storeArea, #shadowArea {
+	display: none;
+}
+#javascriptWarning {
+	text-align: center;
+	padding: 1em;
+	font-weight: bold;
+	background-color: #dd1100;
+	color: #fff;
+}
 
 </style>
 <!--POST-HEAD-START-->
@@ -151,20 +154,20 @@ Also see [[AdvancedOptions]]
 </div>
 <div title="PageTemplate">
 <pre>&lt;!--{{{--&gt;
-&lt;div class='header' role='banner' macro='gradient vert [[ColorPalette::PrimaryLight]] [[ColorPalette::PrimaryMid]]'&gt;
-&lt;div class='headerShadow'&gt;
-&lt;span class='siteTitle' refresh='content' tiddler='SiteTitle'&gt;&lt;/span&gt;&amp;nbsp;
-&lt;span class='siteSubtitle' refresh='content' tiddler='SiteSubtitle'&gt;&lt;/span&gt;
-&lt;/div&gt;
-&lt;div class='headerForeground'&gt;
-&lt;span class='siteTitle' refresh='content' tiddler='SiteTitle'&gt;&lt;/span&gt;&amp;nbsp;
-&lt;span class='siteSubtitle' refresh='content' tiddler='SiteSubtitle'&gt;&lt;/span&gt;
-&lt;/div&gt;
+&lt;div class='header' role='banner'&gt;
+  &lt;div class='headerShadow'&gt;
+    &lt;span class='siteTitle' refresh='content' tiddler='SiteTitle'&gt;&lt;/span&gt;&amp;nbsp;
+    &lt;span class='siteSubtitle' refresh='content' tiddler='SiteSubtitle'&gt;&lt;/span&gt;
+  &lt;/div&gt;
+  &lt;div class='headerForeground'&gt;
+    &lt;span class='siteTitle' refresh='content' tiddler='SiteTitle'&gt;&lt;/span&gt;&amp;nbsp;
+    &lt;span class='siteSubtitle' refresh='content' tiddler='SiteSubtitle'&gt;&lt;/span&gt;
+  &lt;/div&gt;
 &lt;/div&gt;
 &lt;div id='mainMenu' role='navigation' refresh='content' tiddler='MainMenu'&gt;&lt;/div&gt;
 &lt;div id='sidebar'&gt;
-&lt;div id='sidebarOptions' role='navigation' refresh='content' tiddler='SideBarOptions'&gt;&lt;/div&gt;
-&lt;div id='sidebarTabs' role='complementary' refresh='content' force='true' tiddler='SideBarTabs'&gt;&lt;/div&gt;
+  &lt;div id='sidebarOptions' role='navigation' refresh='content' tiddler='SideBarOptions'&gt;&lt;/div&gt;
+  &lt;div id='sidebarTabs' role='complementary' refresh='content' force='true' tiddler='SideBarTabs'&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;div id='displayArea' role='main'&gt;
 &lt;div id='messageArea'&gt;&lt;/div&gt;
@@ -181,7 +184,7 @@ a {color:[[ColorPalette::PrimaryMid]];}
 a:hover {background-color:[[ColorPalette::PrimaryMid]]; color:[[ColorPalette::Background]];}
 a img {border:0;}
 
-h1,h2,h3,h4,h5,h6 {color:[[ColorPalette::SecondaryDark]]; background:transparent;}
+h1, h2, h3, h4, h5, h6 { color: [[ColorPalette::SecondaryDark]]; }
 h1 {border-bottom:2px solid [[ColorPalette::TertiaryLight]];}
 h2,h3 {border-bottom:1px solid [[ColorPalette::TertiaryLight]];}
 
@@ -189,13 +192,18 @@ h2,h3 {border-bottom:1px solid [[ColorPalette::TertiaryLight]];}
 .button:hover {color:[[ColorPalette::PrimaryDark]]; background:[[ColorPalette::SecondaryLight]]; border-color:[[ColorPalette::SecondaryMid]];}
 .button:active {color:[[ColorPalette::Background]]; background:[[ColorPalette::SecondaryMid]]; border:1px solid [[ColorPalette::SecondaryDark]];}
 
-.header {background:[[ColorPalette::PrimaryMid]];}
+.header {
+	background: -moz-linear-gradient(to bottom, [[ColorPalette::PrimaryLight]], [[ColorPalette::PrimaryMid]]);
+	background: linear-gradient(to bottom, [[ColorPalette::PrimaryLight]], [[ColorPalette::PrimaryMid]]);
+}
+.header a:hover {background:transparent;}
 .headerShadow {color:[[ColorPalette::Foreground]];}
 .headerShadow a {font-weight:normal; color:[[ColorPalette::Foreground]];}
 .headerForeground {color:[[ColorPalette::Background]];}
 .headerForeground a {font-weight:normal; color:[[ColorPalette::PrimaryPale]];}
 
-.tabSelected {color:[[ColorPalette::PrimaryDark]];
+.tabSelected {
+	color:[[ColorPalette::PrimaryDark]];
 	background:[[ColorPalette::TertiaryPale]];
 	border-left:1px solid [[ColorPalette::TertiaryLight]];
 	border-top:1px solid [[ColorPalette::TertiaryLight]];
@@ -212,19 +220,22 @@ h2,h3 {border-bottom:1px solid [[ColorPalette::TertiaryLight]];}
 #sidebarOptions .sliderPanel a:hover {color:[[ColorPalette::Background]]; background:[[ColorPalette::PrimaryMid]];}
 #sidebarOptions .sliderPanel a:active {color:[[ColorPalette::PrimaryMid]]; background:[[ColorPalette::Background]];}
 
-.wizard {background:[[ColorPalette::PrimaryPale]]; border:1px solid [[ColorPalette::PrimaryMid]];}
-.wizard h1 {color:[[ColorPalette::PrimaryDark]]; border:none;}
-.wizard h2 {color:[[ColorPalette::Foreground]]; border:none;}
-.wizardStep {background:[[ColorPalette::Background]]; color:[[ColorPalette::Foreground]];
-	border:1px solid [[ColorPalette::PrimaryMid]];}
+.wizard { background:[[ColorPalette::PrimaryPale]]; }
+.wizard__title    { color:[[ColorPalette::PrimaryDark]]; border:none; }
+.wizard__subtitle { color:[[ColorPalette::Foreground]]; border:none; }
+.wizardStep { background:[[ColorPalette::Background]]; color:[[ColorPalette::Foreground]]; }
 .wizardStep.wizardStepDone {background:[[ColorPalette::TertiaryLight]];}
 .wizardFooter {background:[[ColorPalette::PrimaryPale]];}
 .wizardFooter .status {background:[[ColorPalette::PrimaryDark]]; color:[[ColorPalette::Background]];}
-.wizard .button {color:[[ColorPalette::Foreground]]; background:[[ColorPalette::SecondaryLight]]; border: 1px solid;
-	border-color:[[ColorPalette::SecondaryPale]] [[ColorPalette::SecondaryDark]] [[ColorPalette::SecondaryDark]] [[ColorPalette::SecondaryPale]];}
+.wizard .button {
+	color:[[ColorPalette::Foreground]]; background:[[ColorPalette::SecondaryLight]]; border: 1px solid;
+	border-color:[[ColorPalette::SecondaryPale]] [[ColorPalette::SecondaryDark]] [[ColorPalette::SecondaryDark]] [[ColorPalette::SecondaryPale]];
+}
 .wizard .button:hover {color:[[ColorPalette::Foreground]]; background:[[ColorPalette::Background]];}
-.wizard .button:active {color:[[ColorPalette::Background]]; background:[[ColorPalette::Foreground]]; border: 1px solid;
-	border-color:[[ColorPalette::PrimaryDark]] [[ColorPalette::PrimaryPale]] [[ColorPalette::PrimaryPale]] [[ColorPalette::PrimaryDark]];}
+.wizard .button:active {
+	color:[[ColorPalette::Background]]; background:[[ColorPalette::Foreground]]; border: 1px solid;
+	border-color:[[ColorPalette::PrimaryDark]] [[ColorPalette::PrimaryPale]] [[ColorPalette::PrimaryPale]] [[ColorPalette::PrimaryDark]];
+}
 
 .wizard .notChanged {background:transparent;}
 .wizard .changedLocally {background:#80ff80;}
@@ -234,19 +245,29 @@ h2,h3 {border-bottom:1px solid [[ColorPalette::TertiaryLight]];}
 .wizard .putToServer {background:#ff80ff;}
 .wizard .gotFromServer {background:#80ffff;}
 
-#messageArea {border:1px solid [[ColorPalette::SecondaryMid]]; background:[[ColorPalette::SecondaryLight]]; color:[[ColorPalette::Foreground]];}
-#messageArea .button {color:[[ColorPalette::PrimaryMid]]; background:[[ColorPalette::SecondaryPale]]; border:none;}
+#messageArea { background:[[ColorPalette::SecondaryLight]]; color:[[ColorPalette::Foreground]]; box-shadow: 1px 2px 5px [[ColorPalette::TertiaryMid]]; }
+.messageToolbar__button { color:[[ColorPalette::PrimaryMid]]; background:[[ColorPalette::SecondaryPale]]; border:none; }
+.messageToolbar__button_withIcon { background:inherit; }
+.messageToolbar__button_withIcon:active { background:inherit; border:none; }
+.messageToolbar__icon { fill:[[ColorPalette::TertiaryDark]]; }
+.messageToolbar__icon:hover { fill:[[ColorPalette::Foreground]]; }
+
+.popup {
+	background: [[ColorPalette::Background]];
+	color: [[ColorPalette::TertiaryDark]];
+	box-shadow: 1px 2px 5px [[ColorPalette::TertiaryMid]];
+}
+.popup li a, .popup li a:visited, .popup li a:hover, .popup li a:active {
+	color:[[ColorPalette::Foreground]]; border: none;
+}
+.popup li a:hover { background:[[ColorPalette::SecondaryLight]]; }
+.popup li a:active { background:[[ColorPalette::SecondaryPale]]; }
+.popup li.disabled { color:[[ColorPalette::TertiaryMid]]; }
+.popupHighlight {color:[[ColorPalette::Foreground]];}
+.popup hr {color:[[ColorPalette::PrimaryDark]]; background:[[ColorPalette::PrimaryDark]]; border-bottom:1px;}
+.listBreak div {border-bottom:1px solid [[ColorPalette::TertiaryDark]];}
 
 .popupTiddler {background:[[ColorPalette::TertiaryPale]]; border:2px solid [[ColorPalette::TertiaryMid]];}
-
-.popup {background:[[ColorPalette::TertiaryPale]]; color:[[ColorPalette::TertiaryDark]]; border-left:1px solid [[ColorPalette::TertiaryMid]]; border-top:1px solid [[ColorPalette::TertiaryMid]]; border-right:2px solid [[ColorPalette::TertiaryDark]]; border-bottom:2px solid [[ColorPalette::TertiaryDark]];}
-.popup hr {color:[[ColorPalette::PrimaryDark]]; background:[[ColorPalette::PrimaryDark]]; border-bottom:1px;}
-.popup li.disabled {color:[[ColorPalette::TertiaryMid]];}
-.popup li a, .popup li a:visited {color:[[ColorPalette::Foreground]]; border: none;}
-.popup li a:hover {background:[[ColorPalette::SecondaryLight]]; color:[[ColorPalette::Foreground]]; border: none;}
-.popup li a:active {background:[[ColorPalette::SecondaryPale]]; color:[[ColorPalette::Foreground]]; border: none;}
-.popupHighlight {background:[[ColorPalette::Background]]; color:[[ColorPalette::Foreground]];}
-.listBreak div {border-bottom:1px solid [[ColorPalette::TertiaryDark]];}
 
 .tiddler .defaultCommand {font-weight:bold;}
 
@@ -260,8 +281,8 @@ h2,h3 {border-bottom:1px solid [[ColorPalette::TertiaryLight]];}
 .selected .toolbar a {color:[[ColorPalette::TertiaryMid]];}
 .selected .toolbar a:hover {color:[[ColorPalette::Foreground]];}
 
-.tagging, .tagged {border:1px solid [[ColorPalette::TertiaryPale]]; background-color:[[ColorPalette::TertiaryPale]];}
-.selected .tagging, .selected .tagged {background-color:[[ColorPalette::TertiaryLight]]; border:1px solid [[ColorPalette::TertiaryMid]];}
+.tagging, .tagged { border: 1px solid [[ColorPalette::TertiaryPale]]; background-color: [[ColorPalette::TertiaryPale]]; }
+.selected .tagging, .selected .tagged { background-color: [[ColorPalette::TertiaryLight]]; border: 1px solid [[ColorPalette::TertiaryLight]]; }
 .tagging .listTitle, .tagged .listTitle {color:[[ColorPalette::PrimaryDark]];}
 .tagging .button, .tagged .button {border:none;}
 
@@ -276,17 +297,17 @@ h2,h3 {border-bottom:1px solid [[ColorPalette::TertiaryLight]];}
 
 .imageLink, #displayArea .imageLink {background:transparent;}
 
-.annotation {background:[[ColorPalette::SecondaryLight]]; color:[[ColorPalette::Foreground]]; border:2px solid [[ColorPalette::SecondaryMid]];}
+.annotation { background:[[ColorPalette::SecondaryLight]]; color:[[ColorPalette::Foreground]]; }
 
 .viewer .listTitle {list-style-type:none; margin-left:-2em;}
 .viewer .button {border:1px solid [[ColorPalette::SecondaryMid]];}
 .viewer blockquote {border-left:3px solid [[ColorPalette::TertiaryDark]];}
 
-.viewer table, table.twtable {border:2px solid [[ColorPalette::TertiaryDark]];}
-.viewer th, .viewer thead td, .twtable th, .twtable thead td {background:[[ColorPalette::SecondaryMid]]; border:1px solid [[ColorPalette::TertiaryDark]]; color:[[ColorPalette::Background]];}
-.viewer td, .viewer tr, .twtable td, .twtable tr {border:1px solid [[ColorPalette::TertiaryDark]];}
+.viewer th, .viewer thead td, .twtable th, .twtable thead td { background: [[ColorPalette::SecondaryMid]]; color: [[ColorPalette::Background]]; }
+.viewer td, .viewer tr, .twtable td, .twtable tr { border: 1px solid [[ColorPalette::TertiaryLight]]; }
+.twtable caption { color: [[ColorPalette::TertiaryMid]]; }
 
-.viewer pre {border:1px solid [[ColorPalette::SecondaryLight]]; background:[[ColorPalette::SecondaryPale]];}
+.viewer pre {background:[[ColorPalette::SecondaryPale]];}
 .viewer code {color:[[ColorPalette::SecondaryDark]];}
 .viewer hr {border:0; border-top:dashed 1px [[ColorPalette::TertiaryDark]]; color:[[ColorPalette::TertiaryDark]];}
 
@@ -312,9 +333,9 @@ h2,h3 {border-bottom:1px solid [[ColorPalette::TertiaryLight]];}
 </div>
 <div title="StyleSheetLayout">
 <pre>/*{{{*/
-* html .tiddler {height:1%;}
+body { font-size:.75em; font-family:arial,helvetica,sans-serif; margin:0; padding:0; }
 
-body {font-size:.75em; font-family:arial,helvetica; margin:0; padding:0;}
+* html .tiddler {height:1%;}
 
 h1,h2,h3,h4,h5,h6 {font-weight:bold; text-decoration:none;}
 h1,h2,h3 {padding-bottom:1px; margin-top:1.2em;margin-bottom:0.3em;}
@@ -326,8 +347,6 @@ h4 {font-size:1em;}
 h5 {font-size:.9em;}
 
 hr {height:1px;}
-
-a {text-decoration:none;}
 
 dt {font-weight:bold;}
 
@@ -343,11 +362,14 @@ ol ol ol ol ol ol ol {list-style-type:decimal;}
 
 #contentWrapper .chkOptionInput {border:0;}
 
-.externalLink {text-decoration:underline;}
-
 .indent {margin-left:3em;}
 .outdent {margin-left:3em; text-indent:-3em;}
 code.escaped {white-space:nowrap;}
+
+
+a {text-decoration:none;}
+
+.externalLink {text-decoration:underline;}
 
 .tiddlyLinkExisting {font-weight:bold;}
 .tiddlyLinkNonExisting {font-style:italic;}
@@ -356,14 +378,14 @@ code.escaped {white-space:nowrap;}
 a.tiddlyLinkNonExisting.shadow {font-weight:bold;}
 
 #mainMenu .tiddlyLinkExisting,
-	#mainMenu .tiddlyLinkNonExisting,
-	#sidebarTabs .tiddlyLinkNonExisting {font-weight:normal; font-style:normal;}
+#mainMenu .tiddlyLinkNonExisting,
+#sidebarTabs .tiddlyLinkNonExisting {font-weight:normal; font-style:normal;}
 #sidebarTabs .tiddlyLinkExisting {font-weight:bold; font-style:normal;}
 
+
 .header {position:relative;}
-.header a:hover {background:transparent;}
-.headerShadow {position:relative; padding:4.5em 0 1em 1em; left:-1px; top:-1px;}
-.headerForeground {position:absolute; padding:4.5em 0 1em 1em; left:0; top:0;}
+.headerShadow {position:relative; padding:3em 0 1em 1em; left:-1px; top:-1px;}
+.headerForeground {position:absolute; padding:3em 0 1em 1em; left:0; top:0;}
 
 .siteTitle {font-size:3em;}
 .siteSubtitle {font-size:1.2em;}
@@ -379,29 +401,30 @@ a.tiddlyLinkNonExisting.shadow {font-weight:bold;}
 #sidebarOptions .sliderPanel input {margin:0 0 0.3em 0;}
 #sidebarTabs .tabContents {width:15em; overflow:hidden;}
 
-.wizard {padding:0.1em 1em 0 2em;}
-.wizard h1 {font-size:2em; font-weight:bold; background:none; padding:0; margin:0.4em 0 0.2em;}
-.wizard h2 {font-size:1.2em; font-weight:bold; background:none; padding:0; margin:0.4em 0 0.2em;}
-.wizardStep {padding:1em 1em 1em 1em;}
-.wizard .button {margin:0.5em 0 0; font-size:1.2em;}
-.wizardFooter {padding:0.8em 0.4em 0.8em 0;}
-.wizardFooter .status {padding:0 0.4em; margin-left:1em;}
-.wizard .button {padding:0.1em 0.2em;}
+.wizard { padding:0.1em 2em 0; }
+.wizard__title    { font-size:2em; }
+.wizard__subtitle { font-size:1.2em; }
+.wizard__title, .wizard__subtitle { font-weight:bold; background:none; padding:0; margin:0.4em 0 0.2em; }
+.wizardStep { padding:1em; }
+.wizardFooter { padding: 0.8em 0; }
+.wizardFooter .status { padding: 0.3em 1em; }
+.wizardFooter .button { margin:0.5em 0 0; font-size:1.2em; padding:0.2em 0.5em; }
 
-#messageArea {position:fixed; top:2em; right:0; margin:0.5em; padding:0.5em; z-index:2000; _position:absolute;}
-.messageToolbar {display:block; text-align:right; padding:0.2em;}
-#messageArea a {text-decoration:underline;}
+#messageArea { position:fixed; top:2em; right:0; margin:0.5em; padding:0.7em 1em; z-index:2000; }
+.messageToolbar { text-align:right; padding:0.2em 0; }
+.messageToolbar__button { text-decoration:underline; }
+.messageToolbar__icon { height: 1em; width: 1em; } /* width for IE */
+.messageArea__text a { text-decoration:underline; }
+
+.popup {position:absolute; z-index:300; font-size:.9em; padding:0.3em 0; list-style:none; margin:0;}
+.popup .popupMessage, .popup li.disabled, .popup li a { padding: 0.3em 0.7em; }
+.popup li a {display:block; font-weight:normal; cursor:pointer;}
+.popup hr {display:block; height:1px; width:auto; padding:0; margin:0.2em 0;}
+.listBreak {font-size:1px; line-height:1px;}
+.listBreak div {margin:2px 0;}
 
 .tiddlerPopupButton {padding:0.2em;}
 .popupTiddler {position: absolute; z-index:300; padding:1em; margin:0;}
-
-.popup {position:absolute; z-index:300; font-size:.9em; padding:0; list-style:none; margin:0;}
-.popup .popupMessage {padding:0.4em;}
-.popup hr {display:block; height:1px; width:auto; padding:0; margin:0.2em 0;}
-.popup li.disabled {padding:0.4em;}
-.popup li a {display:block; padding:0.4em; font-weight:normal; cursor:pointer;}
-.listBreak {font-size:1px; line-height:1px;}
-.listBreak div {margin:2px 0;}
 
 .tabset {padding:1em 0 0 0.5em;}
 .tab {margin:0 0 0 0.25em; padding:2px;}
@@ -433,33 +456,37 @@ a.tiddlyLinkNonExisting.shadow {font-weight:bold;}
 .tagged {margin:0.5em; float:right;}
 .tagging, .tagged {font-size:0.9em; padding:0.25em;}
 .tagging ul, .tagged ul {list-style:none; margin:0.25em; padding:0;}
+.tagged li, .tagging li { margin: 0.3em 0; }
 .tagClear {clear:both;}
 
 .footer {font-size:.9em;}
 .footer li {display:inline;}
 
-.annotation {padding:0.5em; margin:0.5em;}
+.annotation { padding: 0.5em 0.8em; margin: 0.5em 1px; }
 
-* html .viewer pre {width:99%; padding:0 0 1em 0;}
 .viewer {line-height:1.4em; padding-top:0.5em;}
 .viewer .button {margin:0 0.25em; padding:0 0.25em;}
 .viewer blockquote {line-height:1.5em; padding-left:0.8em;margin-left:2.5em;}
 .viewer ul, .viewer ol {margin-left:0.5em; padding-left:1.5em;}
 
-.viewer table, table.twtable {border-collapse:collapse; margin:0.8em 1.0em;}
-.viewer th, .viewer td, .viewer tr,.viewer caption,.twtable th, .twtable td, .twtable tr,.twtable caption {padding:3px;}
-table.listView {font-size:0.85em; margin:0.8em 1.0em;}
-table.listView th, table.listView td, table.listView tr {padding:0 3px 0 3px;}
+.viewer table, table.twtable { border-collapse: collapse; margin: 0.8em 0; }
+.viewer th, .viewer td, .viewer tr, .viewer caption, .twtable th, .twtable td, .twtable tr, .twtable caption { padding: 0.2em 0.4em; }
+.twtable caption { font-size: 0.9em; }
+table.listView { margin: 0.8em 1.0em; }
+table.listView th, table.listView td, table.listView tr { text-align: left; }
+.listView &gt; thead { position: sticky; top: 0; }
 
-.viewer pre {padding:0.5em; margin-left:0.5em; font-size:1.2em; line-height:1.4em; overflow:auto;}
-.viewer code {font-size:1.2em; line-height:1.4em;}
+* html .viewer pre {width:99%; padding:0 0 1em 0;}
+.viewer pre {padding:0.5em; overflow:auto;}
+pre, code { font-family: monospace, monospace; font-size: 1em; }
+.viewer pre, .viewer code { line-height: 1.4em; }
 
-.editor {font-size:1.1em;}
-.editor input, .editor textarea {display:block; width:100%; font:inherit;}
+.editor {font-size:1.1em; line-height:1.4em;}
+.editor input, .editor textarea {display:block; width:100%; box-sizing: border-box; font:inherit;}
 .editorFooter {padding:0.25em 0; font-size:.9em;}
 .editorFooter .button {padding-top:0; padding-bottom:0;}
 
-.fieldsetFix {border:0; padding:0; margin:1px 0px;}
+.fieldsetFix {border:0; padding:0; margin:1px 0;}
 
 .zoomer {font-size:1.1em; position:absolute; overflow:hidden;}
 .zoomer div {padding:1em;}
@@ -472,7 +499,7 @@ table.listView th, table.listView td, table.listView tr {padding:0 3px 0 3px;}
 #backstageButton {display:none; position:absolute; z-index:175; top:0; right:0;}
 #backstageButton a {padding:0.1em 0.4em; margin:0.1em;}
 #backstage {position:relative; width:100%; z-index:50;}
-#backstagePanel {display:none; z-index:100; position:absolute; width:90%; margin-left:3em; padding:1em;}
+#backstagePanel { display:none; z-index:100; position:absolute; width:90%; margin-left:3em; }
 .backstagePanelFooter {padding-top:0.2em; float:right;}
 .backstagePanelFooter a {padding:0.2em 0.4em;}
 #backstageCloak {display:none; z-index:20; position:absolute; width:100%; height:100px;}
@@ -500,9 +527,8 @@ body {font-size:0.8em;}
 <div title="StyleSheetPrint">
 <pre>/*{{{*/
 @media print {
-#mainMenu, #sidebar, #messageArea, .toolbar, #backstageButton, #backstageArea {display: none !important;}
-#displayArea {margin: 1em 1em 0em;}
-noscript {display:none;} /* Fixes a feature in Firefox 1.5.0.2 where print preview displays the noscript content */
+  #mainMenu, #sidebar, #messageArea, .toolbar, #backstageButton, #backstageArea { display: none !important; }
+  #displayArea { margin: 1em 1em 0em; }
 }
 /*}}}*/
 </pre>
