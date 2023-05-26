@@ -74,7 +74,7 @@ jobs:
           git add *
       - name: summarize what's built and what's updated
         run: |
-          cat build_summary.txt
+          cat TiddlyWiki/build_summary.txt
           git status
       - name: commit and push result
         run: |
