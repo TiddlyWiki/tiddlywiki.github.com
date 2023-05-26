@@ -34,10 +34,10 @@ jobs:
         run: |
           cd TiddlyWiki
           npm run build-site
-          echo "built site parts:" > build_summary.txt
-          ls ./build/cooked/* > build_summary.txt
+          echo "built site parts:" >> build_summary.txt
+          ls ./build/cooked/* >> build_summary.txt
           if [ ! -f ./build/cooked/*/index.xml ]; then
-            echo "warning: index.xml was not created" > build_summary.txt
+            echo "warning: index.xml was not created" >> build_summary.txt
           fi
           # generating index.html may fail (on Ubuntu, unlike on Windows), so use wildcards
           mv ./build/cooked/*/* ../
@@ -47,8 +47,8 @@ jobs:
         run: |
           cd TiddlyWiki
           npm run build-core
-          echo "built core:" > build_summary.txt
-          ls ./build/cooked/* > build_summary.txt
+          echo "built core:" >> build_summary.txt
+          ls ./build/cooked/* >> build_summary.txt
           cp ./build/cooked/*/empty.html ../
           cp ./build/cooked/*/empty.html ../upgrade/index.html
           cd ..
@@ -57,8 +57,8 @@ jobs:
         run: |
           cd TiddlyWiki
           npm run build-test
-          echo "built test:" > build_summary.txt
-          ls ./build/cooked/* > build_summary.txt
+          echo "built test:" >> build_summary.txt
+          ls ./build/cooked/* >> build_summary.txt
           mv ./build/cooked/*/test.html ../tests.html
           cd ..
           git add tests.html
@@ -66,8 +66,8 @@ jobs:
         run: |
           cd TiddlyWiki
           npm run build-external-core
-          echo "built test:" > build_summary.txt
-          ls ./build/cooked/* > build_summary.txt
+          echo "built test:" >> build_summary.txt
+          ls ./build/cooked/* >> build_summary.txt
           #  tiddlywiki_externaljs.html  jquery.js  jQuery.twStylesheet.js  twcore.js
           mv ./build/cooked/*/* ../
           cd ..
