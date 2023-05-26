@@ -84,4 +84,5 @@ jobs:
           version=$(node -pe 'JSON.parse(process.argv[1]).version' "$package")
           cd ..
           # git commit -m "update site to v$version (index.html, index.xml, empty.html, upgrade/index.html, test.html, ___)"
-          # git push
+          git commit -m "update site to v$version"
+          git push
