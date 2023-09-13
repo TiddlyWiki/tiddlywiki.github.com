@@ -3791,7 +3791,7 @@ function bar() {
 }}}
 {{annotation{While CSS only provides syntax for block comments, the same principle can be applied to [[StyleSheets]].}}}
 !Extending Core Functionality
-Instead of ''overwriting'' core functions, [[hijacking|DevHijacking]] should be used whenever possible to add the desired functionality either before or after invoking the hijacked code (via the {{{apply(this,arguments);}}} method). This allows other plugins relying on these functions to continue to operate.
+Instead of ''overwriting'' [[core functions|Functions]], [[hijacking|DevHijacking]] should be used whenever possible to add the desired functionality either before or after invoking the hijacked code (via the {{{apply(this,arguments);}}} method). This allows other plugins relying on these functions to continue to operate.
 
 However, hijacking the function is not always possible, given the nature of the specific core function or the desired changes. In that case, it is important to clearly note in the respective plugin's documentation that installing the plugin may have adverse affects on other plugins installed in the same document.
 ! Declaring Global Functions
@@ -7398,7 +7398,7 @@ Date|date*
 DOM Reference
 DOM
 Fields|field|changecount|core field*|created field|modifier fields|modifier|modified field|title fields|title|standard fields|tiddler text
-Functions|function*
+Functions|function|functions
 HTML
 Integer|interger*
 JavaScript|js
@@ -7414,6 +7414,7 @@ Undefined|void|null|none
 Wikifier.class|wikifier*|format*|markup
 
 ~Button
+~Code
 ~Contributors
 ~Dev
 ~DEV
