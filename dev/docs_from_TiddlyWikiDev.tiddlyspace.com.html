@@ -2002,11 +2002,7 @@ This page explains the build process for TiddlyWiki.
 The new build process using...
 * Git / GitHub
 * node.js
-;instructions for building a classic TiddlyWiki
-:» [[build instructions at GitHub repo|https://github.com/TiddlyWiki/tiddlywiki.com/blob/master/README.md]]
-:» [[build instructions by Eric Shulman|http://tiddlywiki.com/dev]]
-;instructions for building TW5
-:» see [[http://five.tiddlywiki.com|http://five.tiddlywiki.com/static/Building%20classic%20TiddlyWiki%20with%20TiddlyWiki5.html]]
+[[Instructions for building|https://github.com/TiddlyWiki/TiddlyWiki/tree/master/build]]
 
 !OLD
 The old build process using...
@@ -2814,11 +2810,13 @@ store.saveTiddler
 !Instructions
 Paste a line-seperated list into a tiddler then &quot;run&quot; the script on the list to get double bracketed list items.</pre>
 </div>
-<div title="Cook" creator="colmbritton" modifier="tobibeer" created="201011301626" modified="201303071417" tags="Build" server.title="Cook" server.page.revision="1134891" server.etag="&quot;tiddlywikidev_public/Cook/1134891:b424a612e941421e4a616a79f2d438cc49f715ab&quot;" server.workspace="bags/tiddlywikidev_public" server.type="tiddlyweb" server.host="http://tiddlywikidev.tiddlyspace.com" server.recipe="tiddlywikidev_public" server.bag="tiddlywikidev_public" server.permissions="read" server.content-type="" server="" _hash="40ab633b9a60124d3cc6edddeeae3520630078df" wikiformat="">
+<div title="Cook" creator="colmbritton" modifier="Yakov Litvin" created="201011301626" modified="202309132024" tags="Build">
 <pre>!Summary
-Cook is the build tool for [[TiddlyWiki]]. It utilizes [[recipes|Recipe]] to stitch together TiddlyWiki HTML files from their constituent chunks.
+Cook is deprecated: up-to-date build tools and their docs can be found at https://github.com/TiddlyWiki/TiddlyWiki/tree/master/build
+
+Cook is the build tool for ~TiddlyWiki. It utilizes [[recipes|Recipe]] to stitch together ~TiddlyWiki HTML files from their constituent chunks.
 !External Resources
-* [[Cook|http://trac.tiddlywiki.org/wiki/Cook]]
+* [[Cook|https://github.com/TiddlyWiki/cooker]]
 !See Also
 * [[Ginsu]]
 * [[Recipes|Recipe]]
@@ -5434,11 +5432,13 @@ You can overwrite it with any contents you desire or change the tiddler [[Defaul
 !Considerations
 A good use for it is to explain what your TiddlyWiki is about, especially when you plan on redistributing it or showcase your own [[plugins|Plugin]] and [[macros|Macro]].</pre>
 </div>
-<div title="Ginsu" creator="colmbritton" modifier="tobibeer" created="201012151232" modified="201303071417" tags="Build" server.title="Ginsu" server.page.revision="1134890" server.etag="&quot;tiddlywikidev_public/Ginsu/1134890:d5248bb53034b287eda187f483644c1b2b79ac9e&quot;" server.workspace="bags/tiddlywikidev_public" server.type="tiddlyweb" server.host="http://tiddlywikidev.tiddlyspace.com" server.recipe="tiddlywikidev_public" server.bag="tiddlywikidev_public" server.permissions="read" server.content-type="" server="" _hash="9b36d0ac907606c23bc1027b1e9885f772189efd" wikiformat="">
+<div title="Ginsu" creator="colmbritton" modifier="Yakov Litvin" created="201012151232" modified="202309132028" tags="Build">
 <pre>!Summary
+Ginsu is deprecated: up-to-date build tools and their docs can be found at https://github.com/TiddlyWiki/TiddlyWiki/tree/master/build
+
 Ginsu splits the tiddlers in a TiddlyWiki HTML out into separate files ready for checking in to Subversion.
 !External Resouces
-* [[Ginsu|http://trac.tiddlywiki.org/wiki/Ginsu]]
+* [[Ginsu|https://github.com/TiddlyWiki/cooker]]
 !!See Also
 * [[Cook]]
 * [[Recipes|Recipe]]
@@ -9896,7 +9896,7 @@ recipe: js/split.recipe
 copy: java/TiddlySaver.jar
 }}}
 !!External Resources
-* [[Recipe Files|http://trac.tiddlywiki.org/wiki/RecipeFiles]]
+* [[Recipe Files|Recipe]]
 !!See Also
 * [[Cook]]
 * [[Ginsu]]
@@ -19230,11 +19230,9 @@ Here's an overview of things in JavaScript that mean some form of //nothing//...
 
 From release 2.5, The TiddlyWiki core uses the [[QUnit|http://docs.jquery.com/QUnit]] framework (gradually transitioning from [[JSSpec|http://jania.pe.kr/aw/moin.cgi/JSSpec]]).
 
-The [[test suite|http://trac.tiddlywiki.org/browser/Trunk/core/test/recipes/tests.html.recipe]] [[Dev:Recipe|recipe]] provides a simple way to get started.
+The [[test suite|https://github.com/TiddlyWiki/TiddlyWikiClassic/blob/master/test/recipes/tests.html.recipe]] [[Dev:Recipe|recipe]] provides a simple way to get started.
 
-Individual tests are located in the [[tests directory|http://trac.tiddlywiki.org/browser/Trunk/core/test/tests/]].
-
-These tests can also be see in action in the @test space</pre>
+Individual tests are located in the [[test/js directory|https://github.com/TiddlyWiki/TiddlyWikiClassic/tree/master/test/js]].</pre>
 </div>
 <div title="Unsaved Changes" creator="tobibeer" modifier="tobibeer" created="201302061400" modified="201302072027" tags="Glossary" server.title="Unsaved Changes" server.page.revision="1067924" server.etag="&quot;tiddlywiki_public/Unsaved%20Changes/1067924:643286b2c4fa2da5e62bd9639668e24e183c3ec2&quot;" server.workspace="bags/tiddlywiki_public" server.type="tiddlyweb" server.host="http://tiddlywikidev.tiddlyspace.com" server.recipe="tiddlywikidev_public" server.bag="tiddlywiki_public" server.permissions="read" server.content-type="" _hash="f6c68d8505e55feaf796407079fd6a933d6a91c3" more="[[saveChanges (macro)]] and [[AutoSave]]">
 <pre>Attempting to close or refresh the page, your browser may display the following warning:
