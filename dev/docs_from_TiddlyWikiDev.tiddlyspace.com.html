@@ -7754,6 +7754,20 @@ TiddlyWiki.org is a community effort, so active participation and contributions 
 <div title="MainMenu" creator="colmbritton" modifier="tobibeer" created="201101241441" modified="201302152022" server.title="MainMenu" server.page.revision="1082693" server.etag="&quot;tiddlywikidev_public/MainMenu/1082693:79d3a3f73d871ba33ee5caa95138ae7098fe6a0f&quot;" server.workspace="bags/tiddlywikidev_public" server.type="tiddlyweb" server.host="http://tiddlywikidev.tiddlyspace.com" server.recipe="tiddlywikidev_public" server.bag="tiddlywikidev_public" server.permissions="read" server.content-type="" _hash="2d642938b376e02c2df160304576dc7fbfa10da3">
 <pre>[[Welcome]] [[TiddlyWiki Core|Dev.Core]] [[Plugin Development|Dev.Plugins]] [[Contribute]]</pre>
 </div>
+<div title="Using GitHub: your first Pull Request" creator="Yakov Litvin" modifier="Yakov Litvin" created="202309121930" modified="202309141033">
+<pre>Pull requests allow anybody to propose a specific change, like this [[update|https://github.com/TiddlyWiki/translations/pull/10/files]] to the German translation.
+
+They are not difficult to do, but making them correctly (both the first one and the second one to the same repository) requires a bit of learning, so here's how you can do your first PR:
+# If you don't have a ~GitHub account, register one.
+# Start by understanding what you are going to propose. It's usually good to propose one change at a time, for instance &quot;update the Dutch translation to version 2.9.4&quot; or &quot;fix a bug that breaks the Dutch translation&quot;. Mixing things usually cause a longer review and slows down the overall process.
+# Fork the repository: open it (example: [[translations|https://github.com/TiddlyWiki/translations]]), find the fork button (somewhere on the top right), and click it. Typically, you won't need to adjust anything on the next screen, so click &quot;Create fork&quot;. Once done, your fork will be opened ([[example|https://github.com/retostauss/translations]]).
+# [[Create a new branch|https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-and-deleting-branches-within-your-repository]] in your fork (forked repository). Give it a name that represents what you are trying to do, like {{{translation-nl-294}}} (update Dutch translation to 2.9.4).
+# Edit the files and commit the changes. These days, you can do it without using git or even downloading anything locally. For instance, [[using GitHub.dev|Using GitHub.dev]].
+# Visit your fork repo again. On the top of it, you'll see a proposition to create a PR; click the &quot;Compare & pull request&quot; button there.
+# Give the PR a meaningful title. Usually, that's what you have come up with in the beginning (see above). Add the necessary context to the main text: explain nonobvious decisions, mention previous discussions, etc., if needed. Click &quot;Create pull request&quot;.
+Congratulations! Your first PR is now online! Be prepared, though: it's normal to make mistakes in the first contribution, so your fellow community members will review it and probably ask to make some corrections or point out some problems that need thinking through before going further. To add more changes, you'll need to visit your fork repo again, open the branch you've created, and edit files and commit changes again. They'll be added to the PR automatically as long as it is open.
+</pre>
+</div>
 <div title="Using GitHub.dev" creator="Yakov Litvin" modifier="Yakov Litvin" created="202309121930" modified="202309131910">
 <pre>{{{GitHub.dev}}} is a neat feature of ~GitHub: basically, you can edit files, rename/move/remove them online in a VS Code-like editor. It also includes the git functionality, so you can preview changes (diff), commit, etc in your browser.
 
