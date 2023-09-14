@@ -119,10 +119,10 @@ Error: #f88
 </pre>
 </div>
 <div title="GettingStarted">
-<pre>To get started with this blank [[TiddlyWiki]], you'll need to modify the following tiddlers:
+<pre>To get started with this blank TiddlyWiki, you'll need to modify the following tiddlers:
 * [[SiteTitle]] &amp; [[SiteSubtitle]]: The title and subtitle of the site, as shown above (after saving, they will also appear in the browser title bar)
 * [[MainMenu]]: The menu (usually on the left)
-* [[DefaultTiddlers]]: Contains the names of the tiddlers that you want to appear when the TiddlyWiki is opened
+* [[DefaultTiddlers]]: Contains the names of the tiddlers that you want to appear when the ~TiddlyWiki is opened
 You'll also need to enter your username for signing your edits: &lt;&lt;option txtUserName&gt;&gt;
 </pre>
 </div>
@@ -681,9 +681,6 @@ Please [[let us know|https://groups.google.com/group/TiddlyWikiClassic]] of any 
 <div created="20110221141400000" creator="matt" modified="20110221141400000" modifier="matt" title="CamelCase" type="text/x-tiddlywiki">
 <pre>CamelCase (camel case or camel-case)—also known as medial capitals—is the practice of writing compound words or phrases in which the elements are joined without spaces.</pre>
 </div>
-<div created="20110211110600000" creator="psd" modified="20110211131000000" modifier="blaine" tags="browsers" title="Camino" type="text/x-tiddlywiki">
-<pre>The Mozilla-based [[Camino browser|http://www.caminobrowser.org/]] on Macintosh OS X works well with TiddlyWiki, including the ability to SaveChanges.</pre>
-</div>
 <div created="20110211110600000" creator="psd" modified="20110211131000000" modifier="blaine" tags="commands" title="CancelTiddlerCommand" type="text/x-tiddlywiki">
 <pre>Abandons any pending edits to the current tiddler, and switches it the default view. It is used with the ToolbarMacro like this:
 {{{
@@ -809,7 +806,7 @@ The community has several hubs for different activities:
 * DiscussionForums on Google Groups
 * ~TiddlyWiki code at http://github.com/TiddlyWiki/tiddlywiki
 * ~TiddlyWiki issue tracker at https://github.com/TiddlyWiki/tiddlywiki/issues
-* ~TiddlyWiki development resources at https://classic.tiddlywiki.com/dev/
+* [[TiddlyWiki development resources|DeveloperDocumentation]]
 The community welcomes [[contributions|Contribute]]
 </pre>
 </div>
@@ -1179,10 +1176,12 @@ Note you can also put [[filters|Filters]] into your DefaultTiddlers tiddler. For
 &lt;&lt;toolbar deleteTiddler&gt;&gt;
 }}}</pre>
 </div>
-<div created="20110211125900000" creator="blaine" modified="20201102203500000" modifier="Yakov Litvin" tags="community help" title="DeveloperDocumentation" type="text/x-tiddlywiki">
-<pre>TiddlyWiki developer documentation was built up at tiddlywikidev [[TiddlySpace|HostedOptions]] and now is backed up [[here|./dev/docs_from_TiddlyWikiDev.tiddlyspace.com.html]].
+<div created="20110211125900000" creator="blaine" modified="20230907203500000" modifier="Yakov Litvin" tags="community help" title="DeveloperDocumentation" type="text/x-tiddlywiki">
+<pre>~TiddlyWiki developer documentation is now available [[here|./dev/docs_from_TiddlyWikiDev.tiddlyspace.com.html]]. It was created by the community at the tiddlywikidev [[TiddlySpace|HostedOptions]], and will get occasional updates when needed.
 
 Michael Mahemoff has written a very helpful outline of the architecture of ~TiddlyWiki: [[Part 1|http://softwareas.com/tiddlywiki-internals-1-of-3-architectural-concepts]], [[Part 2|http://softwareas.com/tiddlywiki-internals-2-of-3-list-of-javascript-files]] and [[Part 3|http://softwareas.com/tiddlywiki-internals-3-of-3-key-javascript-classes-and-files]].
+
+Up-to-date docs regarding building the core can be found [[in the TW repository|https://github.com/TiddlyWiki/TiddlyWikiClassic/blob/master/build/README.md]].
 </pre>
 </div>
 <div created="20110211125900000" creator="blaine" modified="20111020135100000" modifier="jermolene" tags="community help" title="DiscussionForums" type="text/x-tiddlywiki">
@@ -1552,7 +1551,7 @@ config.views.wikified.toolbarEdit.text = &quot;Edit away, it won't get saved&quo
 <div created="20110211110600000" creator="psd" modified="20110211131000000" modifier="blaine" title="Feedback" type="text/x-tiddlywiki">
 <pre>If you've any comments, corrections or observations about TiddlyWiki, the best way to get our attention is to post to the [[Community]] groups -- or write a blog entry.</pre>
 </div>
-<div created="20230412141700000" creator="Yakov Litvin" modified="20230412141700000" modifier="Yakov Litvin" title="Filters" type="text/x-tiddlywiki">
+<div created="20230412141700000" creator="Yakov Litvin" modified="20230726114400000" modifier="Yakov Litvin" title="Filters" type="text/x-tiddlywiki">
 <pre>Filters are expressions describing how to collect a number of tiddlers. This example describes &quot;all tiddlers tagged {{{notes}}} sorted by their {{{modified}}} date:
 {{{
 [tag[notes]] [sort[modified]]
@@ -1568,7 +1567,13 @@ Here are the filters available by default:
 |{{{[tag[tag title]]}}}	|add tiddlers tagged with {{{tag title}}}|
 |{{{[field[value]]}}}	|add tiddlers that have the specified [[field|Fields]] with the specified value: like, {{{[creator[ericshulman]]}}}|
 |{{{[limit[number]]}}}	|keep only the first {{{number}}} of tiddlers, like {{{[tag[notes]] [limit[10]]}}}|
-|{{{[sort[fieldAnd]]}}}	|sort tiddlers by the specified field: ascending by default (if {{{fieldAnd}}} is just field name); if {{{fieldAnd}}} is {{{-fieldName}}}, descending; you may also use {{{+fieldName}}} for ascending|</pre>
+|{{{[sort[fieldAnd]]}}}	|sort tiddlers by the specified field: ascending by default (if {{{fieldAnd}}} is just field name); if {{{fieldAnd}}} is {{{-fieldName}}}, descending; you may also use {{{+fieldName}}} for ascending|
+
+Vairous plugins introduce additional filters, for instance you can check
+* [[ExtraFiltersPlugin|https://yakovl.github.io/TiddlyWiki_ExtraFilters]],
+* [[MatchTagsPlugin|https://tiddlytools.com/Classic/#MatchTagsPlugin]],
+* [[GetPlugin|https://github.com/tobibeer/TiddlyWikiPlugins/blob/master/plugins/GetPlugin.js]] ([[docs|http://web.archive.org/web/20140222203941/http://get.tiddlyspace.com/#GettingStarted]]),
+* [[some filters|http://web.archive.org/web/20140713204307/http://filters.tiddlyspace.com/#NumberSortFilterPlugin%20RandomSortFilter%20StoryFiltersPlugin%20ExtraFiltersPlugin]] by Jon Robson.</pre>
 </div>
 <div created="20110211110600000" creator="psd" modified="20130426084100000" modifier="jermolene" tags="browsers issues" title="Firefox" type="text/x-tiddlywiki">
 <pre>To use TiddlyWiki with recent versions of Mozilla Firefox you'll need to install the TiddlyFox extension. It enables TiddlyWiki documents loaded from a {{{file:///}}} URI to save changes to themselves.
@@ -1645,12 +1650,19 @@ Display as:
 !!!!!Heading Level 5
 !!!!!!Heading Level 6</pre>
 </div>
-<div created="20110211110600000" creator="psd" modified="20130623222700000" modifier="ericshulman" tags="gettingstarted welcome" title="HelloThere" type="text/x-tiddlywiki">
-<pre>Welcome to TiddlyWiki, a reusable non-linear personal web notebook.  It's a unique [[wiki|WikiWikiWeb]] that people [[love using|Raves]] to keep ideas and information organised. It was originally created by JeremyRuston and is now a thriving [[open source|OpenSourceLicense]] project with a busy [[Community]] of independent developers.
+<div created="20110211110600000" creator="psd" modified="20230717175500000" modifier="Yakov Litvin" tags="gettingstarted welcome" title="HelloThere" type="text/x-tiddlywiki">
+<pre>Welcome to ~TiddlyWiki, a reusable non-linear personal web notebook.  It's a unique [[wiki|WikiWikiWeb]] that people [[love using|Raves]] to keep ideas and information organized. It was originally created by [[Jeremy Ruston|JeremyRuston]] and is now a thriving open source project with a busy [[Community]] of independent developers.
 
-TiddlyWiki is written in HTML, CSS and JavaScript to run on any reasonably modern [[browser|Browsers]] without needing any ServerSide logic. It allows anyone to create personal SelfContained hypertext documents that can be published to a web server, sent by email, stored in a Dropbox or kept on a USB thumb drive to make a WikiOnAStick. Because it doesn't need to be installed and configured it makes a great GuerillaWiki.
+What's great about ~TiddlyWiki?
+* It's cross-platform, works both online and offline, and is easy to setup (you can download and go, although more convenient saving requires an additional [[saver|Setting up saving]]);
+* it's free, [[open source|OpenSourceLicense]], and fully customizable via plugins, themes, etc;
+* it's a single HTML file, so it's easy to backup, sync, version control, publish, or migrate;
+* various built-in features like tags and fields, lists and filters, search and references, etc.
+With ~TiddlyWiki, you both own your data and can do whatever you want with its representation and behavior.
 
-This is revision &lt;&lt;version&gt;&gt; of TiddlyWiki Classic, and is published under an OpenSourceLicense.  Incremental updates will occur every few months, depending upon the complexity of the changes being made.  A comprehensive re-write of TiddlyWiki, called TiddlyWiki5, is now under active development. It is available for testing here: http://five.tiddlywiki.com</pre>
+~TiddlyWiki is written in HTML, CSS, and ~JavaScript to work on any modern browser. It allows anyone to create personal SelfContained hypertext documents that can be published to a web server, sent by email, stored in a Dropbox, or kept on a USB thumb drive to make a WikiOnAStick. Because it doesn't need to be installed and configured, it makes a great GuerillaWiki.
+
+This is revision &lt;&lt;version&gt;&gt; of ~TiddlyWiki Classic.  Incremental updates will occur every few months, depending upon the complexity of the changes being made.  A comprehensive re-write of ~TiddlyWiki, called &quot;TiddlyWiki5&quot;, is available at https://tiddlywiki.com (backward-incompatible with ~TiddlyWiki Classic).</pre>
 </div>
 <div created="20110211110600000" creator="psd" modified="20111103165700000" modifier="jermolene" tags="community gettingstarted help" title="Help and Support" type="text/x-tiddlywiki">
 <pre>TiddlyWiki is an [[OpenSourceLicense]] product, with most help and support being provided by the [[Community]]. The best way to get help with a specific problem is the TiddlyWiki DiscussionForums (it's worth searching the group archives to see if anyone else has already solved the same problem).
@@ -2668,7 +2680,7 @@ It's important to save changes using ~TiddlyWiki's built in saving functionality
 It's worthwhile configuring your backup settings. You can edit the AdvancedOptions to decide when backups are made and where they're saved.
 
 If you're still experiencing problems, the following links will help: 
-* General guidance on [[Firefox]], InternetExplorer, [[Opera]], [[Camino]] or [[Safari]]
+* General guidance on [[Firefox]], InternetExplorer, [[Opera]], or [[Safari]]
 * If you're using InternetExplorer on Windows you might run into XP ServicePack2Problems or VistaIssues
 </pre>
 </div>
@@ -2841,15 +2853,16 @@ You can edit it to include anything else you want.</pre>
 </div>
 <div created="20110211112100000" creator="psd" modified="20221202163600000" modifier="Yakov Litvin" tags="systemConfig" title="SimpleSearchPlugin" type="text/x-tiddlywiki">
 <pre>/***
-|''Name''|SimpleSearchPlugin|
-|''Description''|displays search results as a simple list of matching tiddlers|
-|''Authors''|FND, Yakov Litvin|
-|''Version''|0.4.2|
-|''Status''|stable|
-|''Source''|https://github.com/TiddlyWiki/TiddlyWiki/blob/master/content/SimpleSearchPlugin.tid|
-|''Original Source''|http://devpad.tiddlyspot.com/#SimpleSearchPlugin|
-|''License''|[[Creative Commons Attribution-ShareAlike 3.0 License|http://creativecommons.org/licenses/by-sa/3.0/]]|
-|''Keywords''|search|
+|Name            |SimpleSearchPlugin|
+|Description     |displays search results as a simple list of matching tiddlers|
+|Author          |Yakov Litvin|
+|Original Authors|FND|
+|Version         |0.4.2|
+|Status          |stable|
+|Source          |https://github.com/YakovL/TiddlyWiki_Extensions/blob/master/FND/SimpleSearchPlugin.js|
+|Original Source |http://devpad.tiddlyspot.com/#SimpleSearchPlugin|
+|License         |[[Creative Commons Attribution-ShareAlike 3.0 License|http://creativecommons.org/licenses/by-sa/3.0/]]|
+|Keywords        |search|
 !Revision History
 !!v0.2.0 (2008-08-18)
 * initial release
@@ -2858,7 +2871,7 @@ You can edit it to include anything else you want.</pre>
 * sorting by relevance (title matches before content matches)
 !!v0.4.0 (2008-08-26)
 * added tag matching
-!!v0.4.2 (2022-12-02)
+!!v0.4.2 (2022-12-02, forked by Yakov Litvin)
 * added recalculating styles on ColorPalette change (including dark mode)
 !To Do
 * tag matching optional
@@ -3603,13 +3616,9 @@ opera:config#UserPrefs|AllowFileXMLHttpRequest
 </pre>
 </div>
 <div created="20120320104200000" creator="jermolene" modified="20120320104200000" modifier="jermolene" title="TiddlyWiki5" type="text/x-tiddlywiki">
-<pre>TiddlyWiki5 is a complete rewrite of TiddlyWiki to take advantage of HTML5 and node.js. It is under development on GitHub:
+<pre>&quot;~TiddlyWiki5&quot; is a complete rewrite of ~TiddlyWiki to take advantage of ~HTML5 and node.js. It was completed late 2013 and is maintained on ~GitHub at https://github.com/Jermolene/TiddlyWiki5
 
-https://github.com/Jermolene/TiddlyWiki5
-
-There is also an online demo you can play with:
-
-http://tiddlywiki.com/tiddlywiki5
+You can find more details at https://tiddlywiki.com
 </pre>
 </div>
 <div created="20110211110700000" creator="psd" modified="20111103182300000" modifier="jermolene" tags="community history" title="TiddlyWikiAdaptations" type="text/x-tiddlywiki">
@@ -3710,12 +3719,15 @@ The shadow tiddler ToolbarCommands allows these commands to customised and reord
 Translations are packaged as plugins which are stored at https://github.com/TiddlyWiki/translations
 </pre>
 </div>
-<div created="20110211125900000" creator="blaine" modified="20111020135100000" modifier="jermolene" tags="community help" title="TutorialsAndGuides" type="text/x-tiddlywiki">
+<div created="20110211125900000" creator="blaine" modified="20230824121400000" modifier="Yakov Litvin" tags="community help" title="TutorialsAndGuides" type="text/x-tiddlywiki">
 <pre>The ~TiddlyWiki community have created several tutorials and guides. Here are some of the most popular ones:
 * Dave Gifford's [[TiddlyWiki for the Rest of Us|http://www.giffmex.org/twfortherestofus.html]]
-* Morris Gray's [[TW Help - TiddlyWiki help file for beginners|http://tiddlyspot.com/twhelp/]]
+* Morris Gray's [[TW Help - TiddlyWiki help file for beginners|http://twhelp.tiddlyspot.com]]
 * Julie Starr's [[Tiddler Toddler|http://tiddlertoddler.tiddlyspot.com/]], documenting the learning curve from a beginner's perspective
-* Screencasts from [[JimVentola|http://faculty.massasoit.mass.edu/jventola/videocasts/tidhelp2/tidhelp2.html]] and [[Phil Whitehouse|http://www.youtube.com/watch?v=ezNScBd7_h4]]
+* Screencasts from [[Phil Whitehouse|http://youtu.be/ezNScBd7_h4]] and [[Jim Ventola|https://web.archive.org/web/20120712052002/http://faculty.massasoit.mass.edu/jventola/videocasts/tidhelp2/tidhelp2.html]]
+
+And also localized ones:
+* [[Dutch usermanual|http://www.ton-van-rooijen.nl/TW/TWhandleiding.html]] by Ton van Rooijen
 </pre>
 </div>
 <div created="20110211110700000" creator="psd" modified="20110211131000000" modifier="blaine" title="UnaMesa" type="text/x-tiddlywiki">
@@ -9654,9 +9666,7 @@ function refreshElements(root, changeList)
 
 function applyHtmlMacros(root, tiddler)
 {
-	var e = root.firstChild;
-	while(e) {
-		var nextChild = e.nextSibling;
+	for(var e = root.firstChild; !!e; e = e.nextSibling) {
 		if(e.getAttribute) {
 			var macro = e.getAttribute("macro");
 			if(macro) {
@@ -9670,9 +9680,7 @@ function applyHtmlMacros(root, tiddler)
 				invokeMacro(e, macro, params, null, tiddler);
 			}
 		}
-		if(e.hasChildNodes())
-			applyHtmlMacros(e, tiddler);
-		e = nextChild;
+		if(e.hasChildNodes()) applyHtmlMacros(e, tiddler);
 	}
 }
 
@@ -13266,11 +13274,14 @@ config.macros.br.handler = function(place)
 	createTiddlyElement(place, "br");
 };
 
-// Find an entry in an array. Returns the array index or null
+// Find an item in an array. If a predicate is provided, use the native Array.find (return the item);
+// otherwise (for backwards compatibility) treat the argument as an item to find (return the index or null)
 // @Deprecated: Use indexOf instead
-Array.prototype.find = function(item)
+Array.prototype.orig_find = Array.prototype.find;
+Array.prototype.find = function(itemOrPredicate)
 {
-	var i = this.indexOf(item);
+	if(itemOrPredicate instanceof Function) return Array.prototype.orig_find.apply(this, arguments);
+	var i = this.indexOf(itemOrPredicate);
 	return i == -1 ? null : i;
 };
 
