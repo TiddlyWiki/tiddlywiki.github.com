@@ -14845,11 +14845,11 @@ config.macros.tabs.handler = function(place, macroName, params) {
 };
 
 // disable ControlView for XHRs by default
-$.ajaxSetup({
-	beforeSend: function(xhr) {
-		xhr.setRequestHeader(&quot;X-ControlView&quot;, &quot;false&quot;);
-	}
-});
+//$.ajaxSetup({
+//	beforeSend: function(xhr) {
+//		xhr.setRequestHeader(&quot;X-ControlView&quot;, &quot;false&quot;);
+//	}
+//});
 // TiddlyWeb adaptor currently still uses httpReq, which needs extra magic -- XXX: obsolete this!
 var _httpReq = httpReq;
 httpReq = function(type, url, callback, params, headers, data, contentType,
