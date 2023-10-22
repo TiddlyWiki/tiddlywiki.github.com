@@ -25776,6 +25776,7 @@ Wikifier.prototype.subWikify = function(output, terminator)
 
 Wikifier.prototype.subWikifyUnterm = function(output)
 {
+	if(!this.formatter) return
 	var oldOutput = this.output;
 	this.output = output;
 	this.formatter.formatterRegExp.lastIndex = this.nextMatch;
@@ -25806,6 +25807,7 @@ Wikifier.prototype.subWikifyUnterm = function(output)
 
 Wikifier.prototype.subWikifyTerm = function(output, terminatorRegExp)
 {
+	if(!this.formatter) return
 	var oldOutput = this.output;
 	this.output = output;
 	terminatorRegExp.lastIndex = this.nextMatch;
