@@ -6199,9 +6199,9 @@ Source: http://multicolumn.tiddlyspot.com/#StyleSheet%20MaloStyleSheet%20%5B%5BT
 <pre>Edit the EditTemplate tiddler.</pre>
 </div>
 <div title="How do I change the colours and the fonts?" creator="vivekkodira" modifier="tobibeer" created="201103200536" modified="201302041315" server.title="How do I change the colours and the fonts?" server.page.revision="1059115" server.etag="&quot;tiddlywiki_public/How%20do%20I%20change%20the%20colours%20and%20the%20fonts%3F/1059115:b77d6a7a93af4b53991aac3584f17e5b7e55ef6a&quot;" server.workspace="bags/tiddlywiki_public" server.type="tiddlyweb" server.host="http://tiddlywikidev.tiddlyspace.com" server.recipe="tiddlywikidev_public" server.bag="tiddlywiki_public" server.permissions="read" server.content-type="" _hash="0337e77358afad25ae41af3cb9b4de6a3ab9c851">
-<pre>Use the StyleSheet tiddler.
+<pre>Use the StyleSheet and/or the ColorPalette tiddler. For editing ColorPalette, https://tiddlytools.com/Classic/#ColorPalette may be useful.
 
-Check out http://tiddlythemes.com for a list of themes.
+Check out https://yakovl.github.io/TiddlyThemes/ for a list of existing themes.
 </pre>
 </div>
 <div title="How do I change the date format for a new journal entry?" creator="vivekkodira" modifier="tobibeer" created="201103200529" modified="201308221425" tags="[[Date Formats]] FAQ" server.title="How do I change the date format for a new journal entry?" server.page.revision="1357910" server.etag="&quot;tiddlywiki_public/How%20do%20I%20change%20the%20date%20format%20for%20a%20new%20journal%20entry%3F/1357910:3215615aeaec8364f4af0f849a3f621eddd6e034&quot;" server.workspace="bags/tiddlywiki_public" server.type="tiddlyweb" server.host="http://tiddlywikidev.tiddlyspace.com" server.recipe="tiddlywikidev_public" server.bag="tiddlywiki_public" server.permissions="read" server.content-type="" _hash="45d1cae1747d69e0f6598c884ac38093345d4cf2">
@@ -6221,9 +6221,15 @@ The first parameter defines the [[date format|DateFormats]].
 : {{{config.macros.timeline.dateFormat = &quot;MMM YYYY&quot;;}}}</pre>
 </div>
 <div title="How do I change the layout of my TiddlyWiki?" creator="vivekkodira" modifier="vivekkodira" created="201103200544" modified="201103200544" server.title="How do I change the layout of my TiddlyWiki?" server.page.revision="220192" server.etag="&quot;tiddlywiki_public/How%20do%20I%20change%20the%20layout%20of%20my%20TiddlyWiki%3F/220192:542515051da2d38c86922281d247aafa3f576a16&quot;" server.workspace="bags/tiddlywiki_public" server.type="tiddlyweb" server.host="http://tiddlywikidev.tiddlyspace.com" server.recipe="tiddlywikidev_public" server.bag="tiddlywiki_public" server.permissions="read" server.content-type="" _hash="c1f362e6f8ee5640a28f099da5431dfb8172e6d4">
-<pre>Edit your PageTemplate tiddler. Also see http://tiddlythemes.com/
+<pre>When a custom theme is not applied, the layout is defined by shadow tiddlers that you can edit:
+* PageTemplate defines the overall layout (along with styles that you can adjust in StyleSheet);
+* ViewTemplate defines the layout of a single tiddler in the view mode;
+* EditTemplate does the same for the edit mode.
 
-(to be expanded)
+Themes allow to pack all such adjustments into a single tiddler; you can find some examples at https://yakovl.github.io/TiddlyThemes/
+
+{{invite-to-contribute{
+TODO: explain some examples of tweaking here}}}
 </pre>
 </div>
 <div title="How do I have a different tiddler toolbar for web users?" creator="vivekkodira" modifier="tobibeer" created="201103200545" modified="201301292017" server.title="How do I have a different tiddler toolbar for web users?" server.page.revision="1049726" server.etag="&quot;tiddlywiki_public/How%20do%20I%20have%20a%20different%20tiddler%20toolbar%20for%20web%20users%3F/1049726:1ffa5faf04a7b2f1a985c24af33b4c73d7e61b88&quot;" server.workspace="bags/tiddlywiki_public" server.type="tiddlyweb" server.host="http://tiddlywikidev.tiddlyspace.com" server.recipe="tiddlywikidev_public" server.bag="tiddlywiki_public" server.permissions="read" server.content-type="" _hash="28601b39974d2f6983156ba86bc9e2bc57e6f38d">
@@ -11675,6 +11681,12 @@ table.twtable {
 	border:none;
 }
 
+.invite-to-contribute {
+	padding: 0.6em 1em;
+	background: #baf8a6;
+	border-radius: 3px;
+}
+
 #sidebarTabs .tabsetWrapper .tabset .tabSelected {
 	border-color: [[ColorPalette::PrimaryLight]];
 }
@@ -11698,8 +11710,7 @@ table.twtable {
 }
 
 #messageArea .button{
-	
-color:[[ColorPalette::Background]];
+	color:[[ColorPalette::Background]];
 	background:transparent;
 	text-decoration:none;
 }
@@ -13549,7 +13560,7 @@ if (!version.extensions.ThemedTiddlerPlugin) {
 <pre>There are numerous ways to get TiddlyWiki to display the way you want it to.
 !&quot;&quot;&quot;Themes Repository&quot;&quot;&quot;
 A few themes have been listed over time in the themes repository which provide empty [[TiddlyWikis|TiddlyWiki]] for you to start with...
-http://themes.tiddlywiki.com
+https://yakovl.github.io/TiddlyThemes/
 !&quot;&quot;&quot;How Themes Work&quot;&quot;&quot;
 A TiddlyWiki theme basically is a set of [[shadow tiddlers|ShadowTiddler]] and [[style sheets|StyleSheets]], predefined tiddlers which may be bundled to a theme tiddler.</pre>
 </div>
