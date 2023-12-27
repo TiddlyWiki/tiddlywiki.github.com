@@ -3,7 +3,7 @@
 <head>
 <script id="versionArea" type="text/javascript">
 //<![CDATA[
-var version = {title: "TiddlyWiki", major: 2, minor: 9, revision: 4, date: new Date("May 11, 2023"), extensions: {}};
+var version = {title: "TiddlyWiki", major: 2, minor: 10, revision: 0, date: new Date("December 26, 2023"), extensions: {}};
 
 //]]>
 </script>
@@ -119,10 +119,10 @@ Error: #f88
 </pre>
 </div>
 <div title="GettingStarted">
-<pre>To get started with this blank [[TiddlyWiki]], you'll need to modify the following tiddlers:
+<pre>To get started with this blank TiddlyWiki, you'll need to modify the following tiddlers:
 * [[SiteTitle]] &amp; [[SiteSubtitle]]: The title and subtitle of the site, as shown above (after saving, they will also appear in the browser title bar)
 * [[MainMenu]]: The menu (usually on the left)
-* [[DefaultTiddlers]]: Contains the names of the tiddlers that you want to appear when the TiddlyWiki is opened
+* [[DefaultTiddlers]]: Contains the names of the tiddlers that you want to appear when the ~TiddlyWiki is opened
 You'll also need to enter your username for signing your edits: &lt;&lt;option txtUserName&gt;&gt;
 </pre>
 </div>
@@ -203,14 +203,14 @@ h2,h3 {border-bottom:1px solid [[ColorPalette::TertiaryLight]];}
 .headerForeground a {font-weight:normal; color:[[ColorPalette::PrimaryPale]];}
 
 .tabSelected {
-	color:[[ColorPalette::PrimaryDark]];
-	background:[[ColorPalette::TertiaryPale]];
+	color:[[ColorPalette::Foreground]];
+	background:[[ColorPalette::Background]];
 	border-left:1px solid [[ColorPalette::TertiaryLight]];
 	border-top:1px solid [[ColorPalette::TertiaryLight]];
 	border-right:1px solid [[ColorPalette::TertiaryLight]];
 }
 .tabUnselected {color:[[ColorPalette::Background]]; background:[[ColorPalette::TertiaryMid]];}
-.tabContents {color:[[ColorPalette::PrimaryDark]]; background:[[ColorPalette::TertiaryPale]]; border:1px solid [[ColorPalette::TertiaryLight]];}
+.tabContents {border:1px solid [[ColorPalette::TertiaryLight]];}
 .tabContents .button {border:0;}
 
 #sidebar {}
@@ -227,6 +227,7 @@ h2,h3 {border-bottom:1px solid [[ColorPalette::TertiaryLight]];}
 .wizardStep.wizardStepDone {background:[[ColorPalette::TertiaryLight]];}
 .wizardFooter {background:[[ColorPalette::PrimaryPale]];}
 .wizardFooter .status {background:[[ColorPalette::PrimaryDark]]; color:[[ColorPalette::Background]];}
+.wizardFooter .status a { color: [[ColorPalette::PrimaryPale]]; }
 .wizard .button {
 	color:[[ColorPalette::Foreground]]; background:[[ColorPalette::SecondaryLight]]; border: 1px solid;
 	border-color:[[ColorPalette::SecondaryPale]] [[ColorPalette::SecondaryDark]] [[ColorPalette::SecondaryDark]] [[ColorPalette::SecondaryPale]];
@@ -249,8 +250,8 @@ h2,h3 {border-bottom:1px solid [[ColorPalette::TertiaryLight]];}
 .messageToolbar__button { color:[[ColorPalette::PrimaryMid]]; background:[[ColorPalette::SecondaryPale]]; border:none; }
 .messageToolbar__button_withIcon { background:inherit; }
 .messageToolbar__button_withIcon:active { background:inherit; border:none; }
-.messageToolbar__icon { fill:[[ColorPalette::TertiaryDark]]; }
-.messageToolbar__icon:hover { fill:[[ColorPalette::Foreground]]; }
+.tw-icon line { stroke: [[ColorPalette::TertiaryDark]]; }
+.messageToolbar__button:hover .tw-icon line { stroke: [[ColorPalette::Foreground]]; }
 
 .popup {
 	background: [[ColorPalette::Background]];
@@ -407,13 +408,15 @@ a.tiddlyLinkNonExisting.shadow {font-weight:bold;}
 .wizard__title, .wizard__subtitle { font-weight:bold; background:none; padding:0; margin:0.4em 0 0.2em; }
 .wizardStep { padding:1em; }
 .wizardFooter { padding: 0.8em 0; }
-.wizardFooter .status { padding: 0.3em 1em; }
+.wizardFooter .status { display: inline-block; line-height: 1.5; padding: 0.3em 1em; }
 .wizardFooter .button { margin:0.5em 0 0; font-size:1.2em; padding:0.2em 0.5em; }
 
 #messageArea { position:fixed; top:2em; right:0; margin:0.5em; padding:0.7em 1em; z-index:2000; }
 .messageToolbar { text-align:right; padding:0.2em 0; }
 .messageToolbar__button { text-decoration:underline; }
-.messageToolbar__icon { height: 1em; width: 1em; } /* width for IE */
+.messageToolbar__button_withIcon { display: inline-block; }
+.tw-icon { height: 1em; width: 1em; } /* width for IE */
+.tw-icon line { stroke-width: 1; stroke-linecap: round; }
 .messageArea__text a { text-decoration:underline; }
 
 .popup {position:absolute; z-index:300; font-size:.9em; padding:0.3em 0; list-style:none; margin:0;}
@@ -427,7 +430,7 @@ a.tiddlyLinkNonExisting.shadow {font-weight:bold;}
 .popupTiddler {position: absolute; z-index:300; padding:1em; margin:0;}
 
 .tabset {padding:1em 0 0 0.5em;}
-.tab {margin:0 0 0 0.25em; padding:2px;}
+.tab {display: inline-block; position: relative; bottom: -0.7px; margin: 0 0.25em 0 0; padding:0.2em;}
 .tabContents {padding:0.5em;}
 .tabContents ul, .tabContents ol {margin:0; padding:0;}
 .txtMainTab .tabContents li {list-style:none;}
@@ -440,14 +443,13 @@ a.tiddlyLinkNonExisting.shadow {font-weight:bold;}
 
 .toolbar {text-align:right; font-size:.9em;}
 
-.tiddler {padding:1em 1em 0;}
+.tiddler { padding: 1em; }
 
-.missing .viewer,.missing .title {font-style:italic;}
+.title { font-size: 1.6em; font-weight: bold; }
+.subtitle { font-size: 1.1em; }
 
-.title {font-size:1.6em; font-weight:bold;}
-
-.missing .subtitle {display:none;}
-.subtitle {font-size:1.1em;}
+.missing .viewer, .missing .title { font-style: italic; }
+.missing .subtitle { display: none; }
 
 .tiddler .button {padding:0.2em 0.4em;}
 
@@ -497,7 +499,7 @@ pre, code { font-family: monospace, monospace; font-size: 1em; }
 #backstageToolbar {position:relative;}
 #backstageArea a {font-weight:bold; margin-left:0.5em; padding:0.3em 0.5em;}
 #backstageButton {display:none; position:absolute; z-index:175; top:0; right:0;}
-#backstageButton a {padding:0.1em 0.4em; margin:0.1em;}
+#backstageButton a {padding: 0.3em 0.5em; display: inline-block;}
 #backstage {position:relative; width:100%; z-index:50;}
 #backstagePanel { display:none; z-index:100; position:absolute; width:90%; margin-left:3em; }
 .backstagePanelFooter {padding-top:0.2em; float:right;}
@@ -574,6 +576,9 @@ body {font-size:0.8em;}
 //--
 
 window.tw = {
+	assets: {
+		icons: {}
+	},
 	io: {},
 	textUtils: {}
 };
@@ -1198,10 +1203,12 @@ merge(config.macros.importTiddlers, {
 merge(config.macros.upgrade, {
 	wizardTitle: "Upgrade TiddlyWiki core code",
 	step1Title: "Update or repair this TiddlyWiki to the latest release",
-	step1Html: "You are about to upgrade to the latest release of the TiddlyWiki core code " +
-		"(from <a href='%0' class='externalLink' target='_blank'>%1</a>). Your content will be preserved across the upgrade.<br><br>" +
-		"Note that core upgrades have been known to interfere with older plugins. If you run into problems with upgrading, " +
-		"see <a href='http://www.tiddlywiki.org/wiki/CoreUpgrades' class='externalLink' target='_blank'>http://www.tiddlywiki.org/wiki/CoreUpgrades</a>",
+	step1Html: "You are about to upgrade TiddlyWiki core to the latest release " +
+		"(from <a href='%0' class='externalLink' target='_blank'>%1</a>). " +
+		"Your content will be preserved across the upgrade.<br><br>" +
+		"Note that core upgrades have been known to interfere with older plugins. " +
+		"If you run into problems with upgrading, read how to handle them " +
+		"<a href='%2' class='externalLink' target='_blank'>here</a>.",
 	errorCantUpgrade: "Unable to upgrade this TiddlyWiki. You can only perform upgrades on TiddlyWiki files stored locally",
 	errorNotSaved: "You must save changes before you can perform an upgrade",
 	step2Title: "Confirm the upgrade details",
@@ -1214,6 +1221,11 @@ merge(config.macros.upgrade, {
 	statusPreparingBackup: "Preparing backup",
 	statusSavingBackup: "Saving backup file",
 	errorSavingBackup: "There was a problem saving the backup file",
+	errorVerifyingBackup: "Failed to verify the backup was saved. " +
+		"This is either because it wasn't saved to the moment of the check or " +
+		"loading file doesn't work with your saver (and it is needed for " +
+		"the next step of upgrading). To upgrade your TiddlyWiki, you can use " +
+		"other methods listed at <a href='%0' class='externalLink' target='_blank'>%0</a>",
 	statusLoadingCore: "Loading core code",
 	errorLoadingCore: "Error loading the core code",
 	errorCoreFormat: "Error with the new core code",
@@ -1375,8 +1387,7 @@ window.isLocal = function()
 	return (document.location.protocol == "file:");
 };
 
-// Whether to use the JavaSaver applet
-var useJavaSaver = window.isLocal() && (config.browser.isSafari || config.browser.isOpera);
+var useJavaSaver = false;
 
 // Allow preemption code a chance to tweak config and useJavaSaver [Preemption]
 if (window.tweakConfig) window.tweakConfig();
@@ -3195,7 +3206,7 @@ config.macros.newJournal.handler = function(place, macroName, params, wikifier, 
 config.macros.search.handler = function(place, macroName, params, wikifier, paramString, tiddler)
 {
 	params = paramString.parseParams("anon", null, false, false, false);
-	createTiddlyButton(place, this.label, this.prompt, this.onClick, "searchButton");
+	createTiddlyButton(place, this.label, this.prompt, this.onClick, "button searchButton");
 	var attributes = {
 		size: this.sizeTextbox,
 		accessKey: getParam(params, "accesskey", this.accessKey),
@@ -4962,7 +4973,15 @@ Story.prototype.setTiddlerField = function(title, tag, mode, field)
 {
 	var editor = this.getTiddlerField(title, field);
 	var tags = editor.value.readBracketedList();
-	tags.setItem(tag, mode);
+
+	var i = tags.indexOf(tag);
+	if(mode == 0) mode = (i == -1) ? +1 : -1;
+	if(mode == +1) {
+		if(i == -1) tags.push(tag);
+	} else if(mode == -1) {
+		if(i != -1) tags.splice(i, 1);
+	}
+
 	editor.value = String.encodeTiddlyLinkList(tags);
 };
 
@@ -5804,6 +5823,8 @@ config.macros.importTiddlers.onGetTiddler = function(context, wizard)
 //-- Upgrade macro
 //--
 
+config.macros.upgrade.docsUrl = 'https://classic.tiddlywiki.com/#HowToUpgrade';
+
 config.macros.upgrade.getSourceURL = function()
 {
 	return config.options.txtUpgradeCoreURI || config.macros.upgrade.source;
@@ -5824,7 +5845,7 @@ config.macros.upgrade.handler = function(place)
 {
 	var w = new Wizard();
 	w.createWizard(place, this.wizardTitle);
-	w.addStep(this.step1Title, this.step1Html.format([this.getSourceURL(), this.getSourceURL()]));
+	w.addStep(this.step1Title, this.step1Html.format([this.getSourceURL(), this.getSourceURL(), this.docsUrl]));
 	w.setButtons([{
 		caption: this.upgradeLabel,
 		tooltip: this.upgradePrompt,
@@ -5851,21 +5872,31 @@ config.macros.upgrade.onClickUpgrade = function(e)
 	var original = loadOriginal(localPath);
 
 	w.setButtons([], me.statusSavingBackup);
-	var backupSuccess = copyFile(backupPath, localPath) || saveFile(backupPath, original);
-	if(!backupSuccess) {
+	var backupSuccessOrPending = copyFile(backupPath, localPath) || saveFile(backupPath, original);
+	if(!backupSuccessOrPending) {
 		w.setButtons([], me.errorSavingBackup);
 		alert(me.errorSavingBackup);
 		return false;
 	}
-	w.setValue("backupPath", backupPath);
 
-	w.setButtons([], me.statusLoadingCore);
-	var sourceURL = me.getSourceURL();
-	me.loadLatestCore(function(data, textStatus, jqXHR) {
-		me.onLoadCore(true, w, jqXHR.responseText, sourceURL, jqXHR);
-	}, function(jqXHR, textStatus, errorThrown) {
-		me.onLoadCore(false, w, null, sourceURL, jqXHR);
+	// make sure both the backup is saved and tw.io.loadFile works before proceeding
+	tw.io.loadFile(backupPath, function(backupContent) {
+		if(!backupContent) {
+			w.setButtons([], me.errorVerifyingBackup.format([me.docsUrl]));
+			return;
+		}
+
+		w.setValue("backupPath", backupPath);
+
+		w.setButtons([], me.statusLoadingCore);
+		var sourceURL = me.getSourceURL();
+		me.loadLatestCore(function(data, textStatus, jqXHR) {
+			me.onLoadCore(true, w, jqXHR.responseText, sourceURL, jqXHR);
+		}, function(jqXHR, textStatus, errorThrown) {
+			me.onLoadCore(false, w, null, sourceURL, jqXHR);
+		});
 	});
+
 	return false;
 };
 
@@ -6020,7 +6051,9 @@ config.macros.plugins.refresh = function(listWrapper, paramString)
 		if(e.checked) selectedRows.push(e.getAttribute("rowName"));
 	});
 	jQuery(listWrapper).empty();
+
 	var plugins = installedPlugins.slice(0);
+	// not all plugins are installed, gather info about those, too
 	var i, tiddler, p;
 	var configTiddlers = store.getTaggedTiddlers("systemConfig");
 	for(i = 0; i < configTiddlers.length; i++) {
@@ -6030,11 +6063,15 @@ config.macros.plugins.refresh = function(listWrapper, paramString)
 		p = getPluginInfo(tiddler);
 		p.executed = false;
 		p.log.splice(0, 0, this.skippedText);
+		plugins.push(p);
+	}
+
+	for(i = 0; i < plugins.length; i++) {
+		p = plugins[i];
 		p.size = p.tiddler.text ? p.tiddler.text.length : 0;
 		p.forced = p.tiddler.isTagged("systemConfigForce");
 		p.disabled = p.tiddler.isTagged("systemConfigDisable");
-		p.Selected = selectedRows.indexOf(p.title) != -1;
-		plugins.push(p);
+		p.Selected = selectedRows.indexOf(plugins[i].title) != -1;
 	}
 
 	if(plugins.length == 0) {
@@ -6101,10 +6138,7 @@ function getMessageDiv()
 		var btn = createTiddlyButton(toolbar, '', config.messages.messageClose.tooltip, clearMessage,
 			"button messageToolbar__button");
 
-		btn.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10" class="messageToolbar__icon">' +
-		'	<rect width="1" height="13.1" x="4.5" y="-1.6" transform="rotate(-45 5 5)"/>' +
-		'	<rect width="1" height="13.1" x="4.5" y="-1.6" transform="rotate(+45 5 5)"/>' +
-		'</svg>';
+		btn.innerHTML = tw.assets.icons.closeSvg;
 		// inline SVG is unsupported in old FireFox
 		if(window.HTMLUnknownElement && btn.firstChild instanceof window.HTMLUnknownElement) {
 			btn.innerHTML = config.messages.messageClose.text;
@@ -6220,9 +6254,7 @@ function refreshElements(root, changeList)
 		if(e.getAttribute && (e.tagName ? e.tagName != "IFRAME" : true))
 			type = e.getAttribute("refresh");
 		var refresher = config.refreshers[type];
-		var refreshed = false;
-		if(refresher != undefined)
-			refreshed = refresher(e, changeList);
+		var refreshed = refresher ? refresher(e, changeList) : false;
 		if(e.hasChildNodes() && !refreshed)
 			refreshElements(e, changeList);
 	}
@@ -6230,8 +6262,8 @@ function refreshElements(root, changeList)
 
 function applyHtmlMacros(root, tiddler)
 {
-	var e = root.firstChild;
-	while(e) {
+	for(var e = root.firstChild; !!e; e = nextChild) {
+		// macros can manipulate DOM, so we remember nextChild before invokeMacro
 		var nextChild = e.nextSibling;
 		if(e.getAttribute) {
 			var macro = e.getAttribute("macro");
@@ -6246,9 +6278,7 @@ function applyHtmlMacros(root, tiddler)
 				invokeMacro(e, macro, params, null, tiddler);
 			}
 		}
-		if(e.hasChildNodes())
-			applyHtmlMacros(e, tiddler);
-		e = nextChild;
+		if(e.hasChildNodes()) applyHtmlMacros(e, tiddler);
 	}
 }
 
@@ -6657,10 +6687,8 @@ function confirmExit()
 // Give the user a chance to save changes before exitting
 function checkUnsavedChanges()
 {
-	if(store && store.isDirty && store.isDirty() && window.hadConfirmExit === false) {
-		if(confirm(config.messages.unsavedChangesWarning))
-			saveChanges();
-	}
+	if(!(store && store.isDirty && store.isDirty()) || window.hadConfirmExit !== false) return;
+	if(confirm(config.messages.unsavedChangesWarning)) saveChanges();
 }
 
 function updateLanguageAttribute(s)
@@ -6781,7 +6809,53 @@ function recreateOriginal()
 	return content;
 }
 
+// Save tiddlywiki (but not backup or anything else)
+tw.io.knownSaveMainFailures = {
+	failedToLoadOriginal: 1,
+	invalidFile: 2
+};
+
 // Save this tiddlywiki with the pending changes
+tw.io.saveMainAndReport = function(callback)
+{
+	var originalPath = document.location.toString();
+	var localPath = getLocalPath(originalPath);
+	var onLoadOriginal = function(original) {
+		if(original == null) {
+			alert(msg.cantSaveError);
+			if(store.tiddlerExists(msg.saveInstructions))
+				story.displayTiddler(null, msg.saveInstructions);
+
+			return callback(false, {
+				reason: tw.io.knownSaveMainFailures.failedToLoadOriginal
+			});
+		}
+
+		var posDiv = locateStoreArea(original);
+		if(!posDiv) {
+			alert(msg.invalidFileError.format([localPath]));
+
+			return callback(false, {
+				reason: tw.io.knownSaveMainFailures.invalidFile
+			});
+		}
+
+		config.saveByDownload = false;
+		config.saveByManualDownload = false;
+		// chkPreventAsyncSaving is checked inside saveMain
+		saveMain(localPath, original, posDiv, callback);
+	};
+
+	if(!config.options.chkPreventAsyncSaving) {
+		loadOriginal(localPath, onLoadOriginal);
+	} else {
+		// useful when loadOriginal is overwritten without support of callback
+		// or when an extension relies saveChanges being a sync function
+		var original = loadOriginal(localPath);
+		onLoadOriginal(original);
+	}
+};
+
 function saveChanges(onlyIfDirty, tiddlers)
 {
 	if(onlyIfDirty && !store.isDirty()) return;
@@ -6796,26 +6870,7 @@ function saveChanges(onlyIfDirty, tiddlers)
 		return;
 	}
 
-	var originalPath = document.location.toString();
-	var localPath = getLocalPath(originalPath);
-	var onLoadOriginal = function(original) {
-		if(original == null) {
-			alert(msg.cantSaveError);
-			if(store.tiddlerExists(msg.saveInstructions))
-				story.displayTiddler(null, msg.saveInstructions);
-			return;
-		}
-
-		var posDiv = locateStoreArea(original);
-		if(!posDiv) {
-			alert(msg.invalidFileError.format([localPath]));
-			return;
-		}
-
-		config.saveByDownload = false;
-		config.saveByManualDownload = false;
-		saveMain(localPath, original, posDiv);
-
+	tw.io.saveMainAndReport(function postSave() {
 		var co = config.options;
 		if (!config.saveByDownload && !config.saveByManualDownload) {
 			if(co.chkSaveBackups) saveBackup(localPath, original);
@@ -6825,28 +6880,31 @@ function saveChanges(onlyIfDirty, tiddlers)
 
 		if(co.chkDisplayInstrumentation)
 			displayMessage("saveChanges " + (new Date() - t0) + " ms");
-	};
-
-	if(!config.options.chkPreventAsyncSaving) {
-		loadOriginal(localPath, onLoadOriginal);
-	} else {
-		// useful when loadOriginal is overwritten without support of callback
-		// or when an extension relies saveChanges being a sync function
-		var original = loadOriginal(localPath);
-		onLoadOriginal(original);
-	}
+	});
 }
 
-function saveMain(localPath, original, posDiv)
+function saveMain(localPath, original, posDiv, callback)
 {
+	var reportStatusAndHandle = function(successOrPending, localPath, revised) {
+		if(successOrPending) {
+			tw.io.onSaveMainSuccess(config.saveByDownload ?
+				getDataURI(revised) : "file://" + localPath,
+				revised, original);
+		} else {
+			tw.io.onSaveMainFail();
+		}
+	};
 	try {
 		var revised = updateOriginal(original, posDiv, localPath);
-		var saved = saveFile(localPath, revised);
-		if(!saved) {
-			tw.io.onSaveMainFail();
-		} else {
-			tw.io.onSaveMainSuccess(config.saveByDownload ? getDataURI(revised) : "file://" + localPath, revised, original);
-		}
+
+		if(!callback || config.options.chkPreventAsyncSaving) {
+			var savedOrPending = tw.io.saveFile(localPath, revised);
+			reportStatusAndHandle(savedOrPending, localPath, revised);
+			if(callback) callback(savedOrPending);
+		} else tw.io.saveFile(localPath, revised, function(success, details) {
+			reportStatusAndHandle(success, localPath, revised);
+			callback(success, details);
+		});
 	} catch (ex) {
 		tw.io.onSaveMainFail(ex);
 	}
@@ -7033,6 +7091,32 @@ window.saveFile = window.saveFile || function(fileUrl, content)
 	return r;
 };
 
+// A placeholder method that can be overwritten/decorated by savers.
+// In such a case, it's required to call callback on both success and fail.
+// See details about the callback in tw.io.saveFile.
+tw.io.asyncSaveFile = tw.io.asyncSaveFile || function(fileUrl, content, callback)
+{
+	callback(false, { reason: 'Async saving is not implemented' });
+};
+
+// The general save method to use
+// ==============================
+// If callback is set, tries to save in an async fashion and do callback(success: boolean, details: object)
+// ⚠️ Some savers within window.saveFile, like download saving or Timimi don't care about the callback,
+// so it can be called before actual saving is done (or even give false positives).
+tw.io.saveFile = function(fileUrl, content, callback)
+{
+	if(!callback) return saveFile(fileUrl, content);
+
+	tw.io.asyncSaveFile(fileUrl, content, function(success, details) {
+		if(success) callback(success, details);
+		else {
+			result = saveFile(fileUrl, content);
+			callback(result, {});
+		}
+	});
+};
+
 // Load a file from filesystem [Preemption]
 window.loadFile = window.loadFile || function(fileUrl)
 {
@@ -7066,7 +7150,9 @@ tw.io.xhrLoadFile = function(filePath, callback)
 	}
 };
 
-// if callback is set, tries to load in an async fashion and do callback(result, details)
+// The general load method to use
+// ==============================
+// If callback is set, tries to load in an async fashion and do callback(result, details)
 tw.io.loadFile = function(fileUrl, callback)
 {
 	if(!callback) return loadFile(fileUrl);
@@ -7092,10 +7178,8 @@ function ieCreatePath(path)
 
 	// Remove the filename, if present. Use trailing slash (i.e. "foo\bar\") if no filename.
 	var pos = path.lastIndexOf("\\");
-	if(pos == -1)
-		pos = path.lastIndexOf("/");
-	if(pos != -1)
-		path = path.substring(0, pos + 1);
+	if(pos == -1) pos = path.lastIndexOf("/");
+	if(pos != -1) path = path.substring(0, pos + 1);
 
 	// Walk up the path until we find a folder that exists
 	var scan = [path];
@@ -7206,102 +7290,6 @@ function mozillaLoadFile(filePath)
 	}
 }
 
-function javaUrlToFilename(url)
-{
-	var f = "//localhost";
-	if(url.indexOf(f) == 0)
-		return url.substring(f.length);
-	var i = url.indexOf(":");
-	return i > 0 ? url.substring(i - 1) : url;
-}
-
-/*
- * in between when the applet has been started
- * and the user has given permission to run the applet
- * we get an applet object, but it doesn't have the methods
- * we expect yet.
- */
-var LOG_TIDDLYSAVER = true;
-function logTiddlySaverException(msg, ex)
-{
-	var applet = document.applets['TiddlySaver'];
-	console.log(msg + ": " + ex);
-	if (LOG_TIDDLYSAVER && applet) {
-		try {
-			console.log(msg + ": " + applet.getLastErrorMsg());
-			console.log(msg + ": " + applet.getLastErrorStackTrace());
-		} catch (ex) {}
-	}
-}
-
-function javaDebugInformation()
-{
-	var applet = document.applets['TiddlySaver'];
-	var what = [
-		["Java Version", applet.getJavaVersion],
-		["Last Exception", applet.getLastErrorMsg], // #156
-		["Last Exception Stack Trace", applet.getLastErrorStackTrace],
-		["System Properties", applet.getSystemProperties] ];
-
-	function formatItem (description, method) {
-		try {
-			 result = String(method.call(applet));
-		} catch (ex) {
-			 result = String(ex);
-		}
-		return description + ": " + result;
-	}
-
-	return jQuery.map(what, function (item) { return formatItem.apply(this, item) })
-		.join('\n\n');
-}
-
-function javaSaveFile(filePath, content)
-{
-	if(!filePath) return null;
-	var applet = document.applets['TiddlySaver'];
-	if(applet) {
-		try {
-			return applet.saveFile(javaUrlToFilename(filePath), "UTF-8", content);
-		} catch(ex) {
-			logTiddlySaverException("javaSaveFile", ex);
-		}
-	}
-	try {
-		var s = new java.io.PrintStream(new java.io.FileOutputStream(javaUrlToFilename(filePath)));
-		s.print(content);
-		s.close();
-	} catch(ex2) {
-		return null;
-	}
-	return true;
-}
-
-function javaLoadFile(filePath)
-{
-	if(!filePath) return null;
-	var applet = document.applets['TiddlySaver'];
-	if(applet) {
-		try {
-			var value = applet.loadFile(javaUrlToFilename(filePath), "UTF-8");
-			return !value ? null : String(value);
-		} catch(ex) {
-			logTiddlySaverException("javaLoadFile", ex);
-		}
-	}
-	var content = [];
-	try {
-		var r = new java.io.BufferedReader(new java.io.FileReader(javaUrlToFilename(filePath)));
-		var line;
-		while((line = r.readLine()) != null)
-			content.push(String(line));
-		r.close();
-	} catch(ex2) {
-		return null;
-	}
-	return content.join("\n");
-}
-
 function HTML5DownloadSaveFile(filePath, content)
 {
 	var link = document.createElement("a");
@@ -7338,12 +7326,13 @@ function manualSaveFile(filePath, content)
 // construct data URI (using base64 encoding to preserve multi-byte encodings)
 function getDataURI(data)
 {
-	if (config.browser.isIE)
-		return "data:text/html," + encodeURIComponent(data);
-	else
+	return config.browser.isIE ?
+		"data:text/html," + encodeURIComponent(data) :
+
 		// manualConvertUnicodeToUTF8 was moved here from convertUnicodeToFileFormat
-		// in 2.9.1 it was used only for FireFox but happened to fix download saving non-ASCII in Chrome & Safari as well
-		return "data:text/html;base64," + encodeBase64(manualConvertUnicodeToUTF8(data));
+		// In 2.9.1, it was used only for FireFox but happened to fix
+		// download saving non-ASCII in Chrome & Safari as well (see 949aff6)
+		"data:text/html;base64," + encodeBase64(manualConvertUnicodeToUTF8(data));
 }
 
 function encodeBase64(data)
@@ -7778,7 +7767,8 @@ function localAjax(args)
 		return true;
 	} catch (ex) { ; }
 
-	try { // local file I/O (IE, FF with TiddlyFox, Chrome/Safari with TiddlySaver, etc.)
+	// local file I/O (IE, FF with security.fileuri.strict_origin_policy:false, etc.)
+	try {
 		var data = loadFile(getLocalPath(args.url));
 		if (data) success(data);
 		else failure("loadFile");
@@ -7863,7 +7853,8 @@ function formatVersion(v)
 	v = v || version;
 	return v.major + "." + v.minor + "." + v.revision +
 		(v.alpha ? " (alpha " + v.alpha + ")" : "") +
-		(v.beta ? " (beta " + v.beta + ")" : "");
+		(v.beta ? " (beta " + v.beta + ")" : "") +
+		(v.nightly ? " (nightly " + v.nightly + ")" : "");
 }
 
 function compareVersions(v1, v2)
@@ -8547,7 +8538,7 @@ Wizard.prototype.setButtons = function(buttonInfo, status)
 		insertSpacer(this.footElem);
 	}
 	if(typeof status == "string") {
-		createTiddlyElement(this.footElem, "span", null, "status", status);
+		createTiddlyElement(this.footElem, "span", null, "status").innerHTML = status;
 	}
 };
 
@@ -8824,18 +8815,6 @@ ListView.columnTypes.TiddlerLink = {
 //-- Augmented methods for the JavaScript Array() object
 //--
 
-// For IE up to 8 (https://caniuse.com/?search=indexOf)
-if(!Array.indexOf) {
-	Array.prototype.indexOf = function(item, from)
-	{
-		if(!from) from = 0;
-		for(var i = from; i < this.length; i++) {
-			if(this[i] === item) return i;
-		}
-		return -1;
-	};
-}
-
 // Find an entry in a given field of the members of an array
 Array.prototype.findByField = function(field, value)
 {
@@ -8849,21 +8828,6 @@ Array.prototype.findByField = function(field, value)
 Array.prototype.contains = function(item)
 {
 	return this.indexOf(item) != -1;
-};
-
-// Adds, removes or toggles a particular value within an array
-//  value - value to add
-//  mode - +1 to add value, -1 to remove value, 0 to toggle it
-Array.prototype.setItem = function(value, mode)
-{
-	var p = this.indexOf(value);
-	if(mode == 0)
-		mode = (p == -1) ? +1 : -1;
-	if(mode == +1) {
-		if(p == -1) this.push(value);
-	} else if(mode == -1) {
-		if(p != -1) this.splice(p, 1);
-	}
 };
 
 // Return whether one of a list of values exists in an array
@@ -8900,19 +8864,6 @@ Array.prototype.remove = function(item)
 	var p = this.indexOf(item);
 	if(p != -1) this.splice(p, 1);
 };
-
-// For IE up to 8 (https://caniuse.com/?search=indexOf)
-if(!Array.prototype.map) {
-	Array.prototype.map = function(fn, thisObj)
-	{
-		var scope = thisObj || window;
-		var i, j, a = [];
-		for(i = 0, j = this.length; i < j; ++i) {
-			a.push(fn.call(scope, this[i], i, this));
-		}
-		return a;
-	};
-}
 
 //--
 //-- Augmented methods for the JavaScript String() object
@@ -9360,6 +9311,12 @@ RGB.prototype.toString = function()
 //--
 //-- DOM utilities - many derived from www.quirksmode.org
 //--
+
+tw.assets.icons.closeSvg =
+	'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10" class="tw-icon">' +
+	'	<line x1="1" y1="1" x2="9" y2="9" rx="1" ry="1"/>' +
+	'	<line x1="9" y1="1" x2="1" y2="9" rx="1" ry="1"/>' +
+	'</svg>';
 
 function drawGradient(place, horiz, loColors, hiColors)
 {
@@ -9842,13 +9799,56 @@ config.macros.br.handler = function(place)
 	createTiddlyElement(place, "br");
 };
 
-// Find an entry in an array. Returns the array index or null
+// Find an item in an array. If a predicate is provided, use the native Array.find (return the item);
+// otherwise (for backwards compatibility) treat the argument as an item to find (return the index or null)
 // @Deprecated: Use indexOf instead
-Array.prototype.find = function(item)
+Array.prototype.orig_find = Array.prototype.find;
+Array.prototype.find = function(itemOrPredicate)
 {
-	var i = this.indexOf(item);
+	if(itemOrPredicate instanceof Function) return Array.prototype.orig_find.apply(this, arguments);
+	var i = this.indexOf(itemOrPredicate);
 	return i == -1 ? null : i;
 };
+
+// Adds, removes or toggles a particular value within an array
+//  value - value to add
+//  mode - +1 to add value, -1 to remove value, 0 to toggle it
+// @Deprecated: No direct substitution
+Array.prototype.setItem = function(value, mode)
+{
+	var i = this.indexOf(value);
+	if(mode == 0) mode = (i == -1) ? +1 : -1;
+	if(mode == +1) {
+		if(i == -1) this.push(value);
+	} else if(mode == -1) {
+		if(i != -1) this.splice(i, 1);
+	}
+};
+
+// For IE up to 8 (https://caniuse.com/?search=indexOf)
+if(!Array.prototype.map) {
+	Array.prototype.map = function(fn, thisObj)
+	{
+		var scope = thisObj || window;
+		var i, j, a = [];
+		for(i = 0, j = this.length; i < j; ++i) {
+			a.push(fn.call(scope, this[i], i, this));
+		}
+		return a;
+	};
+}
+
+// For IE up to 8 (https://caniuse.com/?search=indexOf)
+if(!Array.prototype.indexOf) {
+	Array.prototype.indexOf = function(item, from)
+	{
+		if(!from) from = 0;
+		for(var i = from; i < this.length; i++) {
+			if(this[i] === item) return i;
+		}
+		return -1;
+	};
+}
 
 // Load a tiddler from an HTML DIV. The caller should make sure to later call Tiddler.changed()
 // @Deprecated: Use store.getLoader().internalizeTiddler instead
@@ -9858,7 +9858,7 @@ Tiddler.prototype.loadFromDiv = function(divRef, title)
 };
 
 // Format the text for storage in an HTML DIV
-// @Deprecated Use store.getSaver().externalizeTiddler instead.
+// @Deprecated: Use store.getSaver().externalizeTiddler instead.
 Tiddler.prototype.saveToDiv = function()
 {
 	return store.getSaver().externalizeTiddler(store, this);
@@ -9886,6 +9886,19 @@ function displayTiddlers(srcElement, titles, template, unused1, unused2, animate
 function displayTiddler(srcElement, title, template, unused1, unused2, animate, unused3)
 {
 	story.displayTiddler(srcElement, title, template, animate);
+}
+
+// @Deprecated: Java IO is no longer supported;
+// these "empty" versions are only left for the tiny chance of backwards
+// compatibility issues and will be removed completely in the future
+function javaSaveFile(filePath, content)
+{
+	return null;
+}
+
+function javaLoadFile(filePath)
+{
+	return null;
 }
 
 // @Deprecated: Use functions on right hand side directly instead

@@ -3,7 +3,7 @@
 <head>
 <script id="versionArea" type="text/javascript">
 //<![CDATA[
-var version = {title: "TiddlyWiki", major: 2, minor: 9, revision: 4, date: new Date("May 11, 2023"), extensions: {}};
+var version = {title: "TiddlyWiki", major: 2, minor: 10, revision: 0, date: new Date("December 26, 2023"), extensions: {}};
 
 //]]>
 </script>
@@ -203,14 +203,14 @@ h2,h3 {border-bottom:1px solid [[ColorPalette::TertiaryLight]];}
 .headerForeground a {font-weight:normal; color:[[ColorPalette::PrimaryPale]];}
 
 .tabSelected {
-	color:[[ColorPalette::PrimaryDark]];
-	background:[[ColorPalette::TertiaryPale]];
+	color:[[ColorPalette::Foreground]];
+	background:[[ColorPalette::Background]];
 	border-left:1px solid [[ColorPalette::TertiaryLight]];
 	border-top:1px solid [[ColorPalette::TertiaryLight]];
 	border-right:1px solid [[ColorPalette::TertiaryLight]];
 }
 .tabUnselected {color:[[ColorPalette::Background]]; background:[[ColorPalette::TertiaryMid]];}
-.tabContents {color:[[ColorPalette::PrimaryDark]]; background:[[ColorPalette::TertiaryPale]]; border:1px solid [[ColorPalette::TertiaryLight]];}
+.tabContents {border:1px solid [[ColorPalette::TertiaryLight]];}
 .tabContents .button {border:0;}
 
 #sidebar {}
@@ -227,6 +227,7 @@ h2,h3 {border-bottom:1px solid [[ColorPalette::TertiaryLight]];}
 .wizardStep.wizardStepDone {background:[[ColorPalette::TertiaryLight]];}
 .wizardFooter {background:[[ColorPalette::PrimaryPale]];}
 .wizardFooter .status {background:[[ColorPalette::PrimaryDark]]; color:[[ColorPalette::Background]];}
+.wizardFooter .status a { color: [[ColorPalette::PrimaryPale]]; }
 .wizard .button {
 	color:[[ColorPalette::Foreground]]; background:[[ColorPalette::SecondaryLight]]; border: 1px solid;
 	border-color:[[ColorPalette::SecondaryPale]] [[ColorPalette::SecondaryDark]] [[ColorPalette::SecondaryDark]] [[ColorPalette::SecondaryPale]];
@@ -249,8 +250,8 @@ h2,h3 {border-bottom:1px solid [[ColorPalette::TertiaryLight]];}
 .messageToolbar__button { color:[[ColorPalette::PrimaryMid]]; background:[[ColorPalette::SecondaryPale]]; border:none; }
 .messageToolbar__button_withIcon { background:inherit; }
 .messageToolbar__button_withIcon:active { background:inherit; border:none; }
-.messageToolbar__icon { fill:[[ColorPalette::TertiaryDark]]; }
-.messageToolbar__icon:hover { fill:[[ColorPalette::Foreground]]; }
+.tw-icon line { stroke: [[ColorPalette::TertiaryDark]]; }
+.messageToolbar__button:hover .tw-icon line { stroke: [[ColorPalette::Foreground]]; }
 
 .popup {
 	background: [[ColorPalette::Background]];
@@ -407,13 +408,15 @@ a.tiddlyLinkNonExisting.shadow {font-weight:bold;}
 .wizard__title, .wizard__subtitle { font-weight:bold; background:none; padding:0; margin:0.4em 0 0.2em; }
 .wizardStep { padding:1em; }
 .wizardFooter { padding: 0.8em 0; }
-.wizardFooter .status { padding: 0.3em 1em; }
+.wizardFooter .status { display: inline-block; line-height: 1.5; padding: 0.3em 1em; }
 .wizardFooter .button { margin:0.5em 0 0; font-size:1.2em; padding:0.2em 0.5em; }
 
 #messageArea { position:fixed; top:2em; right:0; margin:0.5em; padding:0.7em 1em; z-index:2000; }
 .messageToolbar { text-align:right; padding:0.2em 0; }
 .messageToolbar__button { text-decoration:underline; }
-.messageToolbar__icon { height: 1em; width: 1em; } /* width for IE */
+.messageToolbar__button_withIcon { display: inline-block; }
+.tw-icon { height: 1em; width: 1em; } /* width for IE */
+.tw-icon line { stroke-width: 1; stroke-linecap: round; }
 .messageArea__text a { text-decoration:underline; }
 
 .popup {position:absolute; z-index:300; font-size:.9em; padding:0.3em 0; list-style:none; margin:0;}
@@ -427,7 +430,7 @@ a.tiddlyLinkNonExisting.shadow {font-weight:bold;}
 .popupTiddler {position: absolute; z-index:300; padding:1em; margin:0;}
 
 .tabset {padding:1em 0 0 0.5em;}
-.tab {margin:0 0 0 0.25em; padding:2px;}
+.tab {display: inline-block; position: relative; bottom: -0.7px; margin: 0 0.25em 0 0; padding:0.2em;}
 .tabContents {padding:0.5em;}
 .tabContents ul, .tabContents ol {margin:0; padding:0;}
 .txtMainTab .tabContents li {list-style:none;}
@@ -440,14 +443,13 @@ a.tiddlyLinkNonExisting.shadow {font-weight:bold;}
 
 .toolbar {text-align:right; font-size:.9em;}
 
-.tiddler {padding:1em 1em 0;}
+.tiddler { padding: 1em; }
 
-.missing .viewer,.missing .title {font-style:italic;}
+.title { font-size: 1.6em; font-weight: bold; }
+.subtitle { font-size: 1.1em; }
 
-.title {font-size:1.6em; font-weight:bold;}
-
-.missing .subtitle {display:none;}
-.subtitle {font-size:1.1em;}
+.missing .viewer, .missing .title { font-style: italic; }
+.missing .subtitle { display: none; }
 
 .tiddler .button {padding:0.2em 0.4em;}
 
@@ -497,7 +499,7 @@ pre, code { font-family: monospace, monospace; font-size: 1em; }
 #backstageToolbar {position:relative;}
 #backstageArea a {font-weight:bold; margin-left:0.5em; padding:0.3em 0.5em;}
 #backstageButton {display:none; position:absolute; z-index:175; top:0; right:0;}
-#backstageButton a {padding:0.1em 0.4em; margin:0.1em;}
+#backstageButton a {padding: 0.3em 0.5em; display: inline-block;}
 #backstage {position:relative; width:100%; z-index:50;}
 #backstagePanel { display:none; z-index:100; position:absolute; width:90%; margin-left:3em; }
 .backstagePanelFooter {padding-top:0.2em; float:right;}
@@ -557,11 +559,9 @@ body {font-size:0.8em;}
 <div created="20110211110600000" creator="psd" modified="20200809132200000" modifier="mkerrigan" tags="help" title="Advanced download options" type="text/x-tiddlywiki">
 <pre>When you click on the [[download|Download]] button it will download an empty ~TiddlyWiki file. This is version &lt;&lt;version&gt;&gt; of ~TiddlyWiki.
 
-Advanced users may find these download options helpful (right click the link and select &quot;Save as&quot; to download):
-* [[A copy of this website|#]] (~TiddlyWiki.com) minus images.
-* [[A zip archive|./empty.zip]] containing an empty ~TiddlyWiki file plus a TiddlySaver file.
-* [[The TiddlySaver.jar file|./TiddlySaver.jar]] on its own.
-Finally, these links may be useful:
+If you want to download a copy of this website (without images), right click [[this link|#]] and select &quot;Save as&quot; to download.
+
+These links may be useful:
 * [[Setting up saving]]
 * Older ~TiddlyWiki versions in the [[archive|./archive/]]
 </pre>
@@ -663,15 +663,16 @@ Community member ~BidiX created an adaptation of the ~TiddlyWiki user interface 
 |''Description:''|Bob ~McElrath's Plugins|
 |''Author:''|~BobMcElrath|</pre>
 </div>
-<div created="20110211110600000" creator="psd" modified="20130426084600000" modifier="jermolene" tags="features" title="Browsers" type="text/x-tiddlywiki">
-<pre>Here is a table of web browsers that work with ~TiddlyWiki:
+<div created="20110211110600000" creator="psd" modified="20230426084600000" modifier="Yakov Litvin" tags="features" title="Browsers" type="text/x-tiddlywiki">
+<pre>~TiddlyWiki works in any browser; however, the ability of saving (TW itself and other files) and loading (other files) are nuanced.
 
-|!Browser |!Version |!Allows changes to be saved locally?|
-|InternetExplorer |6.0+ |Yes |
-|[[Firefox]] |1.0+ |Yes, with the TiddlyFox extension |
-|[[Safari]] |1.0+ |Yes, using TiddlySaver plugin|
-|[[Opera]] |? |Yes, using TiddlySaver plugin|
-|[[Chrome]] |All |Yes, using TiddlySaver plugin|
+Firefox has the best support of saving via browser extensions: TiddlyFox and its successor Timimi make it almost limitless; for extended loading capabilities, you can set {{{security.fileuri.strict_origin_policy}}} setting to {{{false}}}. The ancient versions of Firefox (3.x) can save TW without any manual interaction or extensions or other savers.
+
+Internet Explorer supports saving without manual interaction or other savers thanks to Active X. There's also an [[.hta trick for windows|https://github.com/TiddlyWiki/TiddlyWikiClassic/issues/275]] that's not fully supported out of box.
+
+[[Chrome]], [[Opera]], and other Cromium-based browsers may support {{{--allow-file-access-from-files}}} option for loading files; however, it's presumably more insecure than the option for Firefox mentioned above as it probably allows to load files even to sites from the Internet, so use it only if you know what you're doing.
+
+See also [[TiddlyWiki Browser Compatibility]].
 
 See also the [[TiddlyWiki apps available for smartphones|MobileDevices]].
 
@@ -695,9 +696,10 @@ TiddlyWiki uses Unicode ~UTF-8 encoding and won't load properly if your host is 
 If this is the case, it should be reasonably easy to sort out. We recommend that you contact your server host and ask them to serve it in ~UTF-8 mode. If you are more technically hands-on, you may be able to [[solve the issue yourself|http://www.w3.org/International/questions/qa-htaccess-charset]].
 </pre>
 </div>
-<div created="20110211110600000" creator="psd" modified="20110211131000000" modifier="blaine" tags="browsers issues" title="Chrome" type="text/x-tiddlywiki">
-<pre>~TiddlyWiki works well in Google Chrome and Chromium using [[TiddlySaver]].
-However, due to Chrome's [[lack of Java support on Mac OS and Linux|http://groups.google.com/group/tiddlywiki/browse_thread/thread/1f0e299198573e89]], it currently cannot save on those platforms.</pre>
+<div created="20110211110600000" creator="psd" modified="20231026100300000" modifier="Yakov Litvin" tags="browsers" title="Chrome" type="text/x-tiddlywiki">
+<pre>See [[Setting up saving]], including savetiddlers, file-backups, Serverside applications, and Hosted Options. If you're interested in using Timimi in Chrome, [[ask the community|https://groups.google.com/g/TiddlyWikiClassic]] (it's possible, but requires some additional steps for now).
+
+For advanced loading options (loading external files), see [[TiddlyWiki Browser Compatibility]].</pre>
 </div>
 <div created="20110211143900000" creator="colmbritton" modified="20110211144600000" modifier="colmbritton" tags="macro" title="closeAll macro" type="text/x-tiddlywiki">
 <pre>To close all open tiddlers:
@@ -1512,15 +1514,15 @@ pluginInfo.log.push(&quot;This is a test message from &quot; + tiddler.title);
 <pre>See Dave Gifford's incredibly detailed catalogue of TiddlyWiki being used in the wild in his [[TiddlyWikiShowcase|http://giffmex.tiddlyspot.com/]].
 
 Other notable or interesting examples:
-* Getting Things Done - [[MonkeyPirateTiddlyWiki|http://mptw.tiddlyspot.com/]],  [[mGSD|http://mgsd.tiddlyspot.com/#mGSD]],[[D-Cubed|http://www.dcubed.ca/]], [[TeamTasks|http://www.hawksworx.com/playground/TeamTasks/]], [[TiddlyPackingList|http://tiddlypacking.tiddlyspace.com/]], [[tbGTD|http://tbgtd.tiddlyspot.com/]]
+* Getting Things Done - [[MonkeyPirateTiddlyWiki|http://mptw.tiddlyspot.com/]],  [[mGSD|http://mgsd.tiddlyspot.com/#mGSD]],[[D-Cubed|http://www.dcubed.ca/]], [[TeamTasks|http://www.hawksworx.com/playground/TeamTasks/]], [[TiddlyPackingList|http://web.archive.org/web/20161108230815/http://tiddlypacking.tiddlyspace.com/]], [[tbGTD|http://tbgtd.tiddlyspot.com/]]
 * [[Open Notebook Science|http://pineda-krch.com/2008/10/31/starting-an-open-notebook-science-project/]] - [[Garrett Lisi's|http://www.telegraph.co.uk/earth/main.jhtml?CMP=ILC-mostviewedbox&amp;xml=/earth/2007/11/14/scisurf114.xml]] [[Deferential Geometry|http://deferentialgeometry.org/]], ([[video|http://broadcast.oreilly.com/2008/09/lisi-on-a-wiki.html]])
 * Novels and creative writing - [[TiddlyWikiWrite|http://www.ljcohen.net/resources-wiki.html]], [[Gimcrack'd|http://gimcrackd.com/]], [[Singularity!|http://www.antipope.org/charlie/blog-static/fiction/accelerando/toughguide.html]], [[Liberty Hall Writers Wiki|http://wiki.libertyhallwriters.org/doku.php?id=tiddlywiki]], [[Bibliotheca Caelestis. Tiddlywikiroman|http://bc.etkbooks.com/opac/]] from Hartmut Abendschein, [[Die, Vampire! Die!|http://www.davidvanwert.com/wiki/dievampiredie.html]] from David Van Wert, [[Rose|http://www.emacswiki.org/alex/rose.html]] from Alex Schroeder
 * Education - [[South Australia|https://secure.ait.org/wiki/background.htm]], [[maths in Massachusetts|http://luceatlux.net/mcasmath10/]], [[The NoteStorm Christian database|http://giffmex.org/nsdb.html]]
-* Factbooks - [[Web campaigning in the US|http://mitpress.mit.edu/books/0262062585/WebCampaigningDigitalSupplement.html]], [[Bolivian politics|http://www.centellas.org/politics/politiddly.html]], [[Prince2 project management|http://www.microupdate.co.uk/tiddlywikis/princeII.htm]], [[Python Grimoire|http://the.taoofmac.com/space/Python/Grimoire]], [[Marc Bolan and T-Rex|http://videodrama.tiddlyspot.com/]]
+* Factbooks - [[Volvo P120|http://www.tinyurl.com/volvo122s]] (in Spanish), [[Web campaigning in the US|http://mitpress.mit.edu/books/0262062585/WebCampaigningDigitalSupplement.html]], [[Bolivian politics|http://www.centellas.org/politics/politiddly.html]], [[Prince2 project management|http://www.microupdate.co.uk/tiddlywikis/princeII.htm]], [[Python Grimoire|http://the.taoofmac.com/space/Python/Grimoire]], [[Marc Bolan and T-Rex|http://videodrama.tiddlyspot.com/]]
 * Teaching - [[An Introduction to Chain Indexing|http://informationr.net/tdw/publ/chain_indexing/chain_indexing.html]], [[Reasoning Well|http://reasoningwell.tiddlyspot.com/]]
 * Role Playing Games - [[Making kickass campaign sites with TiddlyWiki|http://www.encounteraday.com/2009/05/20/making-kickass-campaign-sites-with-mptw/]]
 * Medicine - [[TiddlyManuals|http://tiddlymanuals.tiddlyspace.com/]], [[AMBIT|http://ambit.tiddlyspace.com/]]
-* Law - [[TiddLegal|http://tiddlegal.tiddlyspot.com/]], [[Courtrules|http://www.michlaw.net/courtrules.html]]
+* Law - [[TiddLegal|http://tiddlegal.tiddlyspot.com/]], [[Courtrules|https://web.archive.org/web/20130629062942/http://www.michlaw.net:80/courtrules.html]]
 * Activism - [[Climate Change 2.0|http://www.climate-change-two.net/]], [[TiddlyWiki for Left Wing Journalists and Researchers|http://leftclickblog.blogspot.com/2008/02/tiddlywiki-for-left-journoes-and.html]]
 * Homepage/Portfolio - [[Digimask|http://digimask.com/]], [[American Cryptogram Association|http://msig.med.utah.edu/RunningUtes/cryptogram/aca.html]], [[Nykyri.net|http://www.nykyri.net/]]
 * Blog - [[UdiGrudi|http://udigrudi.net/]], [[LumpyMilk|http://lumpymilk.tiddlyspot.com/]], [[Veminra|http://veminra.tiddlyspace.com/]]
@@ -1744,12 +1746,12 @@ Many people use [[DropBox|http://dropbox.com]] to synchronise their TiddlyWiki d
 [[TiddlyCouch|http://bijl.iriscouch.com/bijl-ctw/_design/tiddlycouch/_list/tiddlywiki/tiddlers]] is an experimental integration of TiddlyWiki with CouchDB.
 </pre>
 </div>
-<div created="20110211110600000" creator="psd" modified="20230525121200000" modifier="Yakov Litvin" tags="instructions" title="HowToUpgrade" type="text/x-tiddlywiki">
+<div created="20110211110600000" creator="psd" modified="20231222174900000" modifier="Yakov Litvin" tags="instructions" title="HowToUpgrade" type="text/x-tiddlywiki">
 <pre>To check if a new ~TiddlyWiki version is available or to upgrade to the new version, one can use the &quot;upgrade&quot; wizard in the backstage (or from the {{{&lt;&lt;upgrade&gt;&gt;}}} macro).
 
-⚠️ Currently, the upgrading mechanism works only with some savers, while with others it may result in an empty TW. To avoid problems and upgrade easily, it is recommended to
+⚠️ The upgrading mechanism only works with some savers; with others, upgrading //from// a TW below 2.10.0 may result in an empty TW. To avoid problems and upgrade easily, it is recommended to
 # always create a backup before upgrading, and
-# install the [[SimplifiedUpgradingPlugin|https://github.com/YakovL/TiddlyWiki_SimplifiedUpgradingPlugin/blob/master/SimplifiedUpgradingPlugin.js]] (and then use the upgrade wizard as usual) – it helps at least with Timimi and ~MainTiddlyServer.
+# install the [[SimplifiedUpgradingPlugin|https://github.com/YakovL/TiddlyWiki_SimplifiedUpgradingPlugin/blob/master/SimplifiedUpgradingPlugin.js]] (and then use the upgrade wizard as usual) – it helps at least with Timimi, ~MainTiddlyServer, and Tiddloid.
 If ~SimplifiedUpgradingPlugin doesn't work for you, please
 * provide feedback (either on Github or in the [[community discussions|DiscussionForums]]): it will help make sure it works in the future and, ultimately, will be used to make ~TiddlyWiki upgrade correctly without any plugin;
 * use the import fallback described below.
@@ -1760,7 +1762,10 @@ This method of upgrading is known  to be 100% reliable and works even with old ~
 * open it, open backstage, and click &quot;import&quot;,
 * import your non-upgraded TW and save,
 * use this TW as an upgraded one (and keep your old one as a backup).
-You may also want to check out [[this older, more detailed instruction|HowToUpgradeOlderTiddlyWikis]].</pre>
+You may also want to check out [[this older, more detailed instruction|HowToUpgradeOlderTiddlyWikis]].
+
+!!!Old plugins
+While new ~TiddlyWiki versions are created with backwards compatibility in mind, some old plugins may have become incompatible with them (or with certain savers). If you encounter any problems, you can get help from the [[community|DiscussionForums]] or create an issue [[on Github|https://github.com/TiddlyWiki/tiddlywiki/issues]].</pre>
 </div>
 <div created="20110211110600000" creator="psd" modified="20110211131000000" modifier="blaine" tags="instructions" title="HowToUpgradeOlderTiddlyWikis" type="text/x-tiddlywiki">
 <pre>The steps you need to take depend on which version of TiddlyWiki you are upgrading from. From version 2.4.0 onwards, you can upgrade to the latest version using the 'Upgrade' tab in the BackstageArea, as described in HowToUpgrade. If you're using an earlier version of TiddlyWiki, you'll need to follow these instructions instead:
@@ -2316,8 +2321,8 @@ Displays as:
 <pre>TiddlyWiki is published under a BSD OpenSourceLicense that gives you the freedom to use it pretty much however you want, including for commercial purposes, as long as you keep the copyright notice. (You can see the full license text by doing a 'view source' in your browser).
 </pre>
 </div>
-<div created="20110211110600000" creator="psd" modified="20111103180200000" modifier="jermolene" tags="browsers" title="Opera" type="text/x-tiddlywiki">
-<pre>~TiddlyWiki works with all recent versions of Opera, and can save changes using the TiddlySaver Java applet. If you're experiencing problems, make sure you've followed the appropriate [[downloading guidelines|Downloading]].</pre>
+<div created="20110211110600000" creator="psd" modified="20231026101000000" modifier="Yakov Litvin" tags="browsers" title="Opera" type="text/x-tiddlywiki">
+<pre>Contemporary Opera works mostly the same as [[Chrome]]</pre>
 </div>
 <div created="20110221142100000" creator="colmbritton" modified="20111103182200000" modifier="jermolene" tags="macro" title="options macro" type="text/x-tiddlywiki">
 <pre>The options macro, used predominately in the backstage, allows the user to set a number of cookie based options that affect the enabled features of the Tiddlywiki.  These settings can be trivial, such as do you want animations enabled, or can be used for more complex things, such as enable regular expressions searches.
@@ -2766,45 +2771,32 @@ Alternatively, you can rename the file to {{{*.hta}}} which has the added bonus 
 This is all a bit frustrating. An easy alternative is to use [[Firefox]], which seems to do the trick on all platforms.
 </pre>
 </div>
-<div created="20191013001900000" creator="Yakov Litvin" modified="20230313095000000" modifier="Yakov Litvin" tags="gettingstarted" title="Setting up saving" type="text/x-tiddlywiki">
-<pre>Since version 2.8.1, ~TiddlyWiki has a fallback saver. If no saver method is configured, pressing [[SaveChanges]] will display a download dialog. The browser may prompt for the location to save the file. Select the existing version of the file to replace it. This method works on most major browsers, but does not provide an ideal user experience as it requires manual intervention for each save. Below are various tools that remove this routine from saving.
+<div created="20191013001900000" creator="Yakov Litvin" modified="20231201095000000" modifier="Yakov Litvin" tags="gettingstarted" title="Setting up saving" type="text/x-tiddlywiki">
+<pre>Since version 2.8.1, ~TiddlyWiki has a fallback saver. If no saver method is configured, pressing &quot;save changes&quot; will display a download dialog. The browser may prompt for the location to save the file. Select the existing version of the file to replace it. This method works on most major browsers, but does not provide an ideal user experience as it requires manual intervention for each save. Below are various tools that remove this routine from saving.
 !Browser Plugins
-Plugins are simple to install and provide smooth user experience, but they are also platform- and browser-specific to some extent.
-* [[Timimi|https://ibnishak.github.io/Timimi/#Installing Timimi]]
-&gt; Extension by Riz for Firefox that saves standalone ~TiddlyWiki files. It has the advantage of enabling automatic saving from any folder (requires to also install a platform-specific app, uses native messaging ~APIs).
-* [[savetiddlers|https://github.com/buggyj/savetiddlers]]
-&gt; Extension by buggyj for Firefox/Chrome and some Chromium-based browsers such as Opera. Requires the ~TiddlyWiki file to be in a subfolder within the Downloads folder.
-* [[file-backups|https://github.com/pmario/file-backups]]
-&gt; Extension by pmario for Firefox and should work in any browser that supports web-extensions. Requires the ~TiddlyWiki file to be in the Downloads folder. The [[internal backup mechanism|SaveBackups]] must be off.
+Plugins are simple to install and provide smooth user experience, but they are also platform- and browser-specific to some extent. Mobile browsers don't support them.
+|extension|author|supported browsers|comments|
+|[[Timimi|https://ibnishak.github.io/Timimi/#Installing Timimi]]|Riz|Firefox|Saves ~TiddlyWiki in any folder, other files (backups, snapshots, etc). Requires to install a platform-specific co-app (uses native messaging ~APIs).|
+|[[savetiddlers|https://github.com/buggyj/savetiddlers]]|buggyj|Firefox, Chrome, and some Chromium-based browsers like Opera|Requires the ~TiddlyWiki file to be in a subfolder within the Downloads folder.|
+|[[file-backups|https://github.com/pmario/file-backups]]|pmario|Firefox; presumably any browser supporting web-extensions|Requires the ~TiddlyWiki file to be in the Downloads folder. The [[internal backup mechanism|SaveBackups]] must be off.|
 !Standalone applications
-Desktop applications provide automatic saving and are not browser dependent. The disadvantage is they don't offer tabs for browsing and require your ~TiddlyWiki file to be a inside a specific folder.
-* [[TiddlyDesktop|https://github.com/Jermolene/TiddlyDesktop]]
-&gt; Application by Jeremy Ruston for macOS, Windows, and Linux. Based on [[NW.js|https://nwjs.io/]].
-* [[nwTWcSaver|https://github.com/nwOkido/nwTWcSaver]]
-&gt; Minimalistic approach by nwOkido using bare NW.js and a saver plugin.
+Desktop applications provide automatic saving and are not browser dependent. The disadvantage is they don't offer tabs for browsing and require your ~TiddlyWiki file to be a inside a specific folder. Current ones are based on [[NW.js|https://nwjs.io/]], which means they run at least on macOS, Windows, and Linux.
+|[[TiddlyDesktop|https://github.com/Jermolene/TiddlyDesktop]]|An app by Jeremy Ruston.|
+|[[nwTWcSaver|https://github.com/nwOkido/nwTWcSaver]]|Minimalistic approach by Okido. Requires adding a saver plugin into TW.|
 !Serverside applications
 These methods for automatic saving are somewhat advanced, but allow for placing ~TiddlyWiki on a server (local or remote) and generally work with any browser.
-* [[MainTiddlyServer|https://yakovl.github.io/MainTiddlyServer/]]
-&gt; PHP server by Yakov Litvin suitable for both local and remote usage.
-* [[tiddly-node-saver|https://github.com/fallwest/tiddly-node-saver]]
-&gt; node.js server by James Westfall for local usage with enhanced load/save file capabilities
-* [[TiddlyWeb|http://tiddlyweb.com/]]
-&gt; Python server by ~UnaMesa, Osmosoft and Peermore Ltd. with advanced model with multiple users, access control etc.
+|server|language|author|comment|
+|[[MainTiddlyServer|https://yakovl.github.io/MainTiddlyServer/]]    |PHP    |Yakov Litvin  |suitable for both local and remote usage|
+|[[tiddly-node-saver|https://github.com/fallwest/tiddly-node-saver]]|node.js|James Westfall|for local usage, with enhanced load/save file capabilities|
+|[[TiddlyWeb|http://tiddlyweb.com/]]                                |Python |~UnaMesa, Osmosoft and, Peermore Ltd.|advanced model with multiple users, access control etc|
 !Mobile
 All of solutions above should work in most desktop ~OSs like Windows, Mac or other Unix family OS (Linux, Ubuntu, etc). While some may work on mobile devices, applications written for the respective platform are usually simpler to setup and have better performance.
-
-Android
-* Tiddloid [[released on GitHub|https://github.com/donmor/Tiddloid/releases]]
-&gt; presumably the best open source solution for the moment
-* Quinoid [[released on GitHub|https://github.com/Marxsal/Quinoid01/releases]]
-&gt; a less mature open source app
-* [[AndTidWiki|https://play.google.com/store/apps/details?id=de.mgsimon.android.andtidwiki]]
-&gt; a closed source app (the first to support TW on Android)
-* [[MainTiddlyServer|https://yakovl.github.io/MainTiddlyServer/]]
-&gt; Along with [[AWebServer|https://play.google.com/store/apps/details?id=com.sylkat.apache]].
-iOS
-* [[Quine|https://appadvice.com/app/quine/1228682923]]
-&gt; Paid app by Chris Hunt allowing users to open, edit, and save ~TiddlyWiki files. Works with local storage, Dropbox, and iCloud. Requires iOS 12+.
+|platform|app| download links |comment|
+|Android|Tiddloid| {{icon{[img[Tiddloid in GitHub releases|https://cdn.simpleicons.org/github][https://github.com/donmor/Tiddloid/releases]] [img[Tiddloid on F-Droid|https://cdn.simpleicons.org/fdroid/black][https://f-droid.org/en/packages/top.donmor.tiddloid/]]}}} |presumably the best [[open source|https://github.com/donmor/Tiddloid/]] solution for the moment|
+|~|Quinoid| {{icon{[img[Quinoid in GitHub releases|https://cdn.simpleicons.org/github][https://github.com/Marxsal/Quinoid01/releases]]}}} |a less mature [[open source|https://github.com/Marxsal/Quinoid01]] app|
+|~|~AndTidWiki| {{icon{[img[AndTidWiki on Google Play|https://cdn.simpleicons.org/googleplay][https://play.google.com/store/apps/details?id=de.mgsimon.android.andtidwiki]]}}} |a closed source app (the first to support TW on Android)|
+|~|[[MainTiddlyServer|https://yakovl.github.io/MainTiddlyServer/]] + ~AWebServer| {{icon{[img[AWebServer on Google Play|https://cdn.simpleicons.org/googleplay][https://play.google.com/store/apps/details?id=com.sylkat.apache]]}}} |MTS works with some PHP servers on Android; the best server option may change with time|
+|iOS|Quine| {{icon{[img[Quine on AppStore|https://cdn.simpleicons.org/appstore/black][https://apps.apple.com/us/app/quine/id1450128957]]}}} |a paid closed source app by Chris Hunt, works with local storage, Dropbox, and iCloud. Requires iOS 12+.|
 !Hosted Options
 Also, you can store your TW(s) on a server:
 * [[TiddlySpot|http://tiddlyspot.com/]], a free hosting for ~TiddlyWiki
@@ -3054,20 +3046,33 @@ However you can edit it to display anything that you choose.</pre>
 <pre>https://classic.tiddlywiki.com/
 </pre>
 </div>
-<div created="20110211143900000" creator="colmbritton" modified="20110211144600000" modifier="colmbritton" tags="macro" title="slider macro" type="text/x-tiddlywiki">
-<pre>The slider macro allows embedding tiddlers within another tiddler, with the option to toggle the visibility of the [[transclusion|transcluded]] content:
+<div created="20110211143900000" creator="colmbritton" modified="20231013224900000" modifier="mkerrigan" tags="macro" title="slider macro" type="text/x-tiddlywiki">
+<pre>The slider macro provides a button to toggle the visibility of entire tiddlers, slices, or sections of text by using [[transclusion|Transclusion]]. &lt;&lt;slider &quot;&quot; [[slider macro##hidden]] &quot;Example&quot; &quot;click me to learn more&quot;&gt;&gt;
+!Usage
 {{{
-&lt;&lt;slider cookie tiddler label tooltip&gt;&gt;
+&lt;&lt;slider chkUniqueCookieName tiddler label tooltip&gt;&gt;
 }}}
-* {{{cookie}}}: variable to save the state of the slider (e.g. {{{chkFooSlider}}})
-* {{{tiddler}}}: name of the tiddler to include in the slider
-* {{{label}}}: title text of the slider
-* {{{tooltip}}}: tooltip text of the slider
-
-For example: 
+|{{{cookie}}} |unique cookie name starting with {{{chk}}} to track the toggle state; the state is reapplied when the tiddler is reopened. Omit this (use {{{&quot;&quot;}}} instead of a name) to make the slider not remember its state.|
+|{{{tiddler}}}|a reference to a tiddler-title, section or slice to be content of the slider (see [[tiddler macro]])|
+|{{{label}}}  |title text of the slider|
+|{{{tooltip}}}|tooltip text of the slider|
+!Examples and tricks
+The slider macro is used to toggle the visibility of the ~OptionsPanel in [[SideBarOptions|SideBarOptions shadows]].
 {{{
-&lt;&lt;slider chkTestSlider [[OptionsPanel]] &quot;Options&quot; &quot;Open advanced options&quot;&gt;&gt;
-}}}</pre>
+&lt;&lt;slider chkSliderOptionsPanel OptionsPanel &quot;options »&quot; &quot;Change TiddlyWiki advanced options&quot;&gt;&gt;
+}}}
+You can also use a slider to toggle the visibility of [[hidden text|Basic Formatting]].
+{{{
+&lt;&lt;slider chkHiddenText [[slider macro##hidden]] &quot;hidden title&quot; &quot;Click to show hidden text...&quot;&gt;&gt;
+}}}
+&lt;&lt;slider chkHiddenText [[slider macro##hidden]] &quot;hidden title&quot; &quot;Click to show hidden text...&quot;&gt;&gt;
+
+See also the [[NestedSliderPlugin|https://tiddlytools.com/Classic/#NestedSlidersPluginInfo]] adding an extra wikitext syntax to write slider panels.
+/%
+!hidden
+You've just opened a slider! Click again to close
+!end%/
+</pre>
 </div>
 <div created="20110211110700000" creator="psd" modified="20110221142900000" modifier="colmbritton" tags="features" title="SpecialTags" type="text/x-tiddlywiki">
 <pre>TiddlyWiki defines a small number of SpecialTags that are used to indicate that tiddlers should be treated differently in some way:
@@ -3713,8 +3718,8 @@ The shadow tiddler ToolbarCommands allows these commands to customised and reord
 
 </pre>
 </div>
-<div created="20110211110700000" creator="psd" modified="20130118141000000" modifier="mkerrigan" tags="features translations" title="Translations" type="text/x-tiddlywiki">
-<pre>~TiddlyWiki is available in 17 other languages languages.
+<div created="20110211110700000" creator="psd" modified="20230915111500000" modifier="Yakov Litvin" tags="features translations" title="Translations" type="text/x-tiddlywiki">
+<pre>~TiddlyWiki is available in around 20 languages.
 
 Translations are packaged as plugins which are stored at https://github.com/TiddlyWiki/translations
 </pre>
@@ -3845,8 +3850,57 @@ Under Vista, TiddlyWiki will not save changes correctly if you are viewing the T
 <pre>|''URL:''|http://visualtw.ouvaton.org/VisualTW.html|
 |''Author:''|Pascal|</pre>
 </div>
-<div created="20120916031100000" creator="ericshulman" modified="20230525121900000" modifier="Yakov Litvin" tags="gettingstarted welcome" title="WhatsNew" type="text/x-tiddlywiki">
-<pre>The [[release 2.9.4|https://github.com/TiddlyWiki/TiddlyWiki/releases/edit/v2.9.4]] continues modernizing ~TiddlyWiki appearence and its infrastructure. Here's the summary of changes:
+<div created="20120916031100000" creator="ericshulman" modified="20231226150200000" modifier="Yakov Litvin" tags="gettingstarted welcome" title="WhatsNew" type="text/x-tiddlywiki">
+<pre>The [[release 2.10.0|https://github.com/TiddlyWiki/TiddlyWiki/releases/edit/v2.10.0]] supports fully async saving, makes upgrading safe, adds reusable icon(s), improves UI (tabs and more), and fixes some issues. Also, there are new docs to help contributing. Here's the summary of changes:
+
+Behavior improvements:
+* Upgrading wizard is now more instructive and prevents losing content when trying to upgrade with some savers;
+* {{{&lt;&lt;version&gt;&gt;}}} now also shows the number of a &quot;nightly&quot; build.
+
+UI updates (see [[visual summary|https://github.com/TiddlyWiki/TiddlyWikiClassic/pull/294#issuecomment-1868458899]] below the changelog):
+* Tabs now use common background (instead of gray), don't &quot;sink&quot; into the content and are not broken into 2 lines;
+* Remove an excessive link in GettingStarted;
+* Search button now looks the same as other buttons in the sidebar;
+* Nice toggle backstage button's padding;
+* Wizard status now supports html (links) and looks nicely when multiline;
+* Added bottom padding to tiddlers.
+
+Fixes:
+* Make {{{Array.prototype.find}}} fall back to the native implementation if a predicate is provided;
+* {{{Story.prototype.setTiddlerField}}} failed for tags (affected ~IntelliTaggerPlugin);
+* Checkboxes in the Disabled column of {{{&lt;&lt;plugins&gt;&gt;}}} should show correct state;
+* Don't overwrite {{{Array.prototype.indexOf}}} if it's defined.
+
+Hackability:
+* ''Introduces fully async saving'' (disabled by default: unset {{{chkPreventAsyncSaving}}} to enable):
+** new general method {{{tw.io.saveFile}}} (use it over the global {{{saveFile}}}), similar to {{{tw.io.loadFile}}};
+** {{{saveMain}}} now supports {{{callback}}} (tries async saving if it is passed and {{{chkPreventAsyncSaving}}} is unset);
+** new method {{{tw.io.saveMainAndReport}}} separates the whole &quot;load original, update, and save&quot; thing, so may be a better target of decorating/overriding than {{{saveChanges}}} in some plugins/savers.
+* Icons (the close icon) are now stored in {{{tw.assets.icons}}} and are reusable.
+Deprecated: {{{Array}}}'s {{{.setItem}}}, Java IO (only {{{javaSaveFile}}} and {{{javaLoadFile}}} are left, returning {{{null}}}).
+
+Infrastructure:
+* updates of some autotests, removed legacy reporter;
+* fix: freeze ~TW5 version used for building (versions 5.2.2 and above break things) in package.json.
+
+[[Lingo updates|https://github.com/TiddlyWiki/translations/blob/master/Core%20lingo%20history.md]] (for translations)
+
+Docs updates include repairing links in [[Examples]] and TutorialsAndGuides and adding the Volvo page and Dutch usermanual there, more compact and accurate [[Setting up saving]] and related tiddlers ([[Advanced download options]], details for some browsers), up-to-date instructions for updating (both inside TW and in HowToUpgrade here), rewrite of [[slider macro]], mentions of plugins introducing additional [[filters|Filters]], updates of HelloThere and TiddlyWiki5, and updates of DarkModePlugin (prevent unwanted exit confirmations) and SimpleSearchPlugin.
+
+Dev docs updates include several new articles about [[using git and GitHub|./dev/docs_from_TiddlyWikiDev.tiddlyspace.com.html#%5B%5BUsing%20git%20and%20GitHub%5D%5D]] and contributing, new 'Releasing and updating the site' section in the [[build readme|https://github.com/TiddlyWiki/TiddlyWikiClassic/blob/master/build/README.md]], clean up of DeveloperDocumentation, updating links, and also various updates of the [[dev space|./dev/docs_from_TiddlyWikiDev.tiddlyspace.com.html]] for its further editing.
+
+Acknowledgements for contributions: to Okido, Mark.
+
+The full changelog is available [[on github|https://github.com/TiddlyWiki/TiddlyWikiClassic/pull/294#issuecomment-1868458899]].
+
+&lt;&lt;slider &quot;&quot; [[WhatsNew##2.9.4]] &quot;Release 2.9.4&quot;&gt;&gt;
+&lt;&lt;slider &quot;&quot; [[WhatsNew##2.9.3]] &quot;Release 2.9.3&quot;&gt;&gt;
+
+!!!Upgrading
+See the updated HowToUpgrade instructions.
+/%
+!2.9.4
+The [[release 2.9.4|https://github.com/TiddlyWiki/TiddlyWiki/releases/edit/v2.9.4]] continues modernizing ~TiddlyWiki appearence and its infrastructure. Here's the summary of changes:
 
 Behavior improvements:
 * introduce async loading into saving (disabled by default: unset {{{chkPreventAsyncSaving}}} to enable)
@@ -3881,11 +3935,6 @@ Docs updates include added [[Filters]] description, DarkModePlugin, adjustments 
 
 The full changelog is available [[on github|https://github.com/TiddlyWiki/TiddlyWikiClassic/pull/284#issuecomment-1540492980]].
 
-&lt;&lt;slider &quot;&quot; [[WhatsNew##2.9.3]] &quot;Release 2.9.3&quot;&gt;&gt;
-
-!!!Upgrading
-See the updated HowToUpgrade instructions.
-/%
 !2.9.3
 The [[release 2.9.3|https://github.com/TiddlyWiki/TiddlyWiki/releases/edit/v2.9.3]] starts the process of modernizing ~TiddlyWiki appearence and its infrastructure. Here's the summary of changes:
 
@@ -4010,6 +4059,9 @@ Shadow Tiddlers Documentation | TiddlyWiki.com
 //--
 
 window.tw = {
+	assets: {
+		icons: {}
+	},
 	io: {},
 	textUtils: {}
 };
@@ -4634,10 +4686,12 @@ merge(config.macros.importTiddlers, {
 merge(config.macros.upgrade, {
 	wizardTitle: "Upgrade TiddlyWiki core code",
 	step1Title: "Update or repair this TiddlyWiki to the latest release",
-	step1Html: "You are about to upgrade to the latest release of the TiddlyWiki core code " +
-		"(from <a href='%0' class='externalLink' target='_blank'>%1</a>). Your content will be preserved across the upgrade.<br><br>" +
-		"Note that core upgrades have been known to interfere with older plugins. If you run into problems with upgrading, " +
-		"see <a href='http://www.tiddlywiki.org/wiki/CoreUpgrades' class='externalLink' target='_blank'>http://www.tiddlywiki.org/wiki/CoreUpgrades</a>",
+	step1Html: "You are about to upgrade TiddlyWiki core to the latest release " +
+		"(from <a href='%0' class='externalLink' target='_blank'>%1</a>). " +
+		"Your content will be preserved across the upgrade.<br><br>" +
+		"Note that core upgrades have been known to interfere with older plugins. " +
+		"If you run into problems with upgrading, read how to handle them " +
+		"<a href='%2' class='externalLink' target='_blank'>here</a>.",
 	errorCantUpgrade: "Unable to upgrade this TiddlyWiki. You can only perform upgrades on TiddlyWiki files stored locally",
 	errorNotSaved: "You must save changes before you can perform an upgrade",
 	step2Title: "Confirm the upgrade details",
@@ -4650,6 +4704,11 @@ merge(config.macros.upgrade, {
 	statusPreparingBackup: "Preparing backup",
 	statusSavingBackup: "Saving backup file",
 	errorSavingBackup: "There was a problem saving the backup file",
+	errorVerifyingBackup: "Failed to verify the backup was saved. " +
+		"This is either because it wasn't saved to the moment of the check or " +
+		"loading file doesn't work with your saver (and it is needed for " +
+		"the next step of upgrading). To upgrade your TiddlyWiki, you can use " +
+		"other methods listed at <a href='%0' class='externalLink' target='_blank'>%0</a>",
 	statusLoadingCore: "Loading core code",
 	errorLoadingCore: "Error loading the core code",
 	errorCoreFormat: "Error with the new core code",
@@ -4811,8 +4870,7 @@ window.isLocal = function()
 	return (document.location.protocol == "file:");
 };
 
-// Whether to use the JavaSaver applet
-var useJavaSaver = window.isLocal() && (config.browser.isSafari || config.browser.isOpera);
+var useJavaSaver = false;
 
 // Allow preemption code a chance to tweak config and useJavaSaver [Preemption]
 if (window.tweakConfig) window.tweakConfig();
@@ -6631,7 +6689,7 @@ config.macros.newJournal.handler = function(place, macroName, params, wikifier, 
 config.macros.search.handler = function(place, macroName, params, wikifier, paramString, tiddler)
 {
 	params = paramString.parseParams("anon", null, false, false, false);
-	createTiddlyButton(place, this.label, this.prompt, this.onClick, "searchButton");
+	createTiddlyButton(place, this.label, this.prompt, this.onClick, "button searchButton");
 	var attributes = {
 		size: this.sizeTextbox,
 		accessKey: getParam(params, "accesskey", this.accessKey),
@@ -8398,7 +8456,15 @@ Story.prototype.setTiddlerField = function(title, tag, mode, field)
 {
 	var editor = this.getTiddlerField(title, field);
 	var tags = editor.value.readBracketedList();
-	tags.setItem(tag, mode);
+
+	var i = tags.indexOf(tag);
+	if(mode == 0) mode = (i == -1) ? +1 : -1;
+	if(mode == +1) {
+		if(i == -1) tags.push(tag);
+	} else if(mode == -1) {
+		if(i != -1) tags.splice(i, 1);
+	}
+
 	editor.value = String.encodeTiddlyLinkList(tags);
 };
 
@@ -9240,6 +9306,8 @@ config.macros.importTiddlers.onGetTiddler = function(context, wizard)
 //-- Upgrade macro
 //--
 
+config.macros.upgrade.docsUrl = 'https://classic.tiddlywiki.com/#HowToUpgrade';
+
 config.macros.upgrade.getSourceURL = function()
 {
 	return config.options.txtUpgradeCoreURI || config.macros.upgrade.source;
@@ -9260,7 +9328,7 @@ config.macros.upgrade.handler = function(place)
 {
 	var w = new Wizard();
 	w.createWizard(place, this.wizardTitle);
-	w.addStep(this.step1Title, this.step1Html.format([this.getSourceURL(), this.getSourceURL()]));
+	w.addStep(this.step1Title, this.step1Html.format([this.getSourceURL(), this.getSourceURL(), this.docsUrl]));
 	w.setButtons([{
 		caption: this.upgradeLabel,
 		tooltip: this.upgradePrompt,
@@ -9287,21 +9355,31 @@ config.macros.upgrade.onClickUpgrade = function(e)
 	var original = loadOriginal(localPath);
 
 	w.setButtons([], me.statusSavingBackup);
-	var backupSuccess = copyFile(backupPath, localPath) || saveFile(backupPath, original);
-	if(!backupSuccess) {
+	var backupSuccessOrPending = copyFile(backupPath, localPath) || saveFile(backupPath, original);
+	if(!backupSuccessOrPending) {
 		w.setButtons([], me.errorSavingBackup);
 		alert(me.errorSavingBackup);
 		return false;
 	}
-	w.setValue("backupPath", backupPath);
 
-	w.setButtons([], me.statusLoadingCore);
-	var sourceURL = me.getSourceURL();
-	me.loadLatestCore(function(data, textStatus, jqXHR) {
-		me.onLoadCore(true, w, jqXHR.responseText, sourceURL, jqXHR);
-	}, function(jqXHR, textStatus, errorThrown) {
-		me.onLoadCore(false, w, null, sourceURL, jqXHR);
+	// make sure both the backup is saved and tw.io.loadFile works before proceeding
+	tw.io.loadFile(backupPath, function(backupContent) {
+		if(!backupContent) {
+			w.setButtons([], me.errorVerifyingBackup.format([me.docsUrl]));
+			return;
+		}
+
+		w.setValue("backupPath", backupPath);
+
+		w.setButtons([], me.statusLoadingCore);
+		var sourceURL = me.getSourceURL();
+		me.loadLatestCore(function(data, textStatus, jqXHR) {
+			me.onLoadCore(true, w, jqXHR.responseText, sourceURL, jqXHR);
+		}, function(jqXHR, textStatus, errorThrown) {
+			me.onLoadCore(false, w, null, sourceURL, jqXHR);
+		});
 	});
+
 	return false;
 };
 
@@ -9456,7 +9534,9 @@ config.macros.plugins.refresh = function(listWrapper, paramString)
 		if(e.checked) selectedRows.push(e.getAttribute("rowName"));
 	});
 	jQuery(listWrapper).empty();
+
 	var plugins = installedPlugins.slice(0);
+	// not all plugins are installed, gather info about those, too
 	var i, tiddler, p;
 	var configTiddlers = store.getTaggedTiddlers("systemConfig");
 	for(i = 0; i < configTiddlers.length; i++) {
@@ -9466,11 +9546,15 @@ config.macros.plugins.refresh = function(listWrapper, paramString)
 		p = getPluginInfo(tiddler);
 		p.executed = false;
 		p.log.splice(0, 0, this.skippedText);
+		plugins.push(p);
+	}
+
+	for(i = 0; i < plugins.length; i++) {
+		p = plugins[i];
 		p.size = p.tiddler.text ? p.tiddler.text.length : 0;
 		p.forced = p.tiddler.isTagged("systemConfigForce");
 		p.disabled = p.tiddler.isTagged("systemConfigDisable");
-		p.Selected = selectedRows.indexOf(p.title) != -1;
-		plugins.push(p);
+		p.Selected = selectedRows.indexOf(plugins[i].title) != -1;
 	}
 
 	if(plugins.length == 0) {
@@ -9537,10 +9621,7 @@ function getMessageDiv()
 		var btn = createTiddlyButton(toolbar, '', config.messages.messageClose.tooltip, clearMessage,
 			"button messageToolbar__button");
 
-		btn.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10" class="messageToolbar__icon">' +
-		'	<rect width="1" height="13.1" x="4.5" y="-1.6" transform="rotate(-45 5 5)"/>' +
-		'	<rect width="1" height="13.1" x="4.5" y="-1.6" transform="rotate(+45 5 5)"/>' +
-		'</svg>';
+		btn.innerHTML = tw.assets.icons.closeSvg;
 		// inline SVG is unsupported in old FireFox
 		if(window.HTMLUnknownElement && btn.firstChild instanceof window.HTMLUnknownElement) {
 			btn.innerHTML = config.messages.messageClose.text;
@@ -9656,9 +9737,7 @@ function refreshElements(root, changeList)
 		if(e.getAttribute && (e.tagName ? e.tagName != "IFRAME" : true))
 			type = e.getAttribute("refresh");
 		var refresher = config.refreshers[type];
-		var refreshed = false;
-		if(refresher != undefined)
-			refreshed = refresher(e, changeList);
+		var refreshed = refresher ? refresher(e, changeList) : false;
 		if(e.hasChildNodes() && !refreshed)
 			refreshElements(e, changeList);
 	}
@@ -9666,7 +9745,9 @@ function refreshElements(root, changeList)
 
 function applyHtmlMacros(root, tiddler)
 {
-	for(var e = root.firstChild; !!e; e = e.nextSibling) {
+	for(var e = root.firstChild; !!e; e = nextChild) {
+		// macros can manipulate DOM, so we remember nextChild before invokeMacro
+		var nextChild = e.nextSibling;
 		if(e.getAttribute) {
 			var macro = e.getAttribute("macro");
 			if(macro) {
@@ -10089,10 +10170,8 @@ function confirmExit()
 // Give the user a chance to save changes before exitting
 function checkUnsavedChanges()
 {
-	if(store && store.isDirty && store.isDirty() && window.hadConfirmExit === false) {
-		if(confirm(config.messages.unsavedChangesWarning))
-			saveChanges();
-	}
+	if(!(store && store.isDirty && store.isDirty()) || window.hadConfirmExit !== false) return;
+	if(confirm(config.messages.unsavedChangesWarning)) saveChanges();
 }
 
 function updateLanguageAttribute(s)
@@ -10213,7 +10292,53 @@ function recreateOriginal()
 	return content;
 }
 
+// Save tiddlywiki (but not backup or anything else)
+tw.io.knownSaveMainFailures = {
+	failedToLoadOriginal: 1,
+	invalidFile: 2
+};
+
 // Save this tiddlywiki with the pending changes
+tw.io.saveMainAndReport = function(callback)
+{
+	var originalPath = document.location.toString();
+	var localPath = getLocalPath(originalPath);
+	var onLoadOriginal = function(original) {
+		if(original == null) {
+			alert(msg.cantSaveError);
+			if(store.tiddlerExists(msg.saveInstructions))
+				story.displayTiddler(null, msg.saveInstructions);
+
+			return callback(false, {
+				reason: tw.io.knownSaveMainFailures.failedToLoadOriginal
+			});
+		}
+
+		var posDiv = locateStoreArea(original);
+		if(!posDiv) {
+			alert(msg.invalidFileError.format([localPath]));
+
+			return callback(false, {
+				reason: tw.io.knownSaveMainFailures.invalidFile
+			});
+		}
+
+		config.saveByDownload = false;
+		config.saveByManualDownload = false;
+		// chkPreventAsyncSaving is checked inside saveMain
+		saveMain(localPath, original, posDiv, callback);
+	};
+
+	if(!config.options.chkPreventAsyncSaving) {
+		loadOriginal(localPath, onLoadOriginal);
+	} else {
+		// useful when loadOriginal is overwritten without support of callback
+		// or when an extension relies saveChanges being a sync function
+		var original = loadOriginal(localPath);
+		onLoadOriginal(original);
+	}
+};
+
 function saveChanges(onlyIfDirty, tiddlers)
 {
 	if(onlyIfDirty && !store.isDirty()) return;
@@ -10228,26 +10353,7 @@ function saveChanges(onlyIfDirty, tiddlers)
 		return;
 	}
 
-	var originalPath = document.location.toString();
-	var localPath = getLocalPath(originalPath);
-	var onLoadOriginal = function(original) {
-		if(original == null) {
-			alert(msg.cantSaveError);
-			if(store.tiddlerExists(msg.saveInstructions))
-				story.displayTiddler(null, msg.saveInstructions);
-			return;
-		}
-
-		var posDiv = locateStoreArea(original);
-		if(!posDiv) {
-			alert(msg.invalidFileError.format([localPath]));
-			return;
-		}
-
-		config.saveByDownload = false;
-		config.saveByManualDownload = false;
-		saveMain(localPath, original, posDiv);
-
+	tw.io.saveMainAndReport(function postSave() {
 		var co = config.options;
 		if (!config.saveByDownload && !config.saveByManualDownload) {
 			if(co.chkSaveBackups) saveBackup(localPath, original);
@@ -10257,28 +10363,31 @@ function saveChanges(onlyIfDirty, tiddlers)
 
 		if(co.chkDisplayInstrumentation)
 			displayMessage("saveChanges " + (new Date() - t0) + " ms");
-	};
-
-	if(!config.options.chkPreventAsyncSaving) {
-		loadOriginal(localPath, onLoadOriginal);
-	} else {
-		// useful when loadOriginal is overwritten without support of callback
-		// or when an extension relies saveChanges being a sync function
-		var original = loadOriginal(localPath);
-		onLoadOriginal(original);
-	}
+	});
 }
 
-function saveMain(localPath, original, posDiv)
+function saveMain(localPath, original, posDiv, callback)
 {
+	var reportStatusAndHandle = function(successOrPending, localPath, revised) {
+		if(successOrPending) {
+			tw.io.onSaveMainSuccess(config.saveByDownload ?
+				getDataURI(revised) : "file://" + localPath,
+				revised, original);
+		} else {
+			tw.io.onSaveMainFail();
+		}
+	};
 	try {
 		var revised = updateOriginal(original, posDiv, localPath);
-		var saved = saveFile(localPath, revised);
-		if(!saved) {
-			tw.io.onSaveMainFail();
-		} else {
-			tw.io.onSaveMainSuccess(config.saveByDownload ? getDataURI(revised) : "file://" + localPath, revised, original);
-		}
+
+		if(!callback || config.options.chkPreventAsyncSaving) {
+			var savedOrPending = tw.io.saveFile(localPath, revised);
+			reportStatusAndHandle(savedOrPending, localPath, revised);
+			if(callback) callback(savedOrPending);
+		} else tw.io.saveFile(localPath, revised, function(success, details) {
+			reportStatusAndHandle(success, localPath, revised);
+			callback(success, details);
+		});
 	} catch (ex) {
 		tw.io.onSaveMainFail(ex);
 	}
@@ -10465,6 +10574,32 @@ window.saveFile = window.saveFile || function(fileUrl, content)
 	return r;
 };
 
+// A placeholder method that can be overwritten/decorated by savers.
+// In such a case, it's required to call callback on both success and fail.
+// See details about the callback in tw.io.saveFile.
+tw.io.asyncSaveFile = tw.io.asyncSaveFile || function(fileUrl, content, callback)
+{
+	callback(false, { reason: 'Async saving is not implemented' });
+};
+
+// The general save method to use
+// ==============================
+// If callback is set, tries to save in an async fashion and do callback(success: boolean, details: object)
+// ⚠️ Some savers within window.saveFile, like download saving or Timimi don't care about the callback,
+// so it can be called before actual saving is done (or even give false positives).
+tw.io.saveFile = function(fileUrl, content, callback)
+{
+	if(!callback) return saveFile(fileUrl, content);
+
+	tw.io.asyncSaveFile(fileUrl, content, function(success, details) {
+		if(success) callback(success, details);
+		else {
+			result = saveFile(fileUrl, content);
+			callback(result, {});
+		}
+	});
+};
+
 // Load a file from filesystem [Preemption]
 window.loadFile = window.loadFile || function(fileUrl)
 {
@@ -10498,7 +10633,9 @@ tw.io.xhrLoadFile = function(filePath, callback)
 	}
 };
 
-// if callback is set, tries to load in an async fashion and do callback(result, details)
+// The general load method to use
+// ==============================
+// If callback is set, tries to load in an async fashion and do callback(result, details)
 tw.io.loadFile = function(fileUrl, callback)
 {
 	if(!callback) return loadFile(fileUrl);
@@ -10524,10 +10661,8 @@ function ieCreatePath(path)
 
 	// Remove the filename, if present. Use trailing slash (i.e. "foo\bar\") if no filename.
 	var pos = path.lastIndexOf("\\");
-	if(pos == -1)
-		pos = path.lastIndexOf("/");
-	if(pos != -1)
-		path = path.substring(0, pos + 1);
+	if(pos == -1) pos = path.lastIndexOf("/");
+	if(pos != -1) path = path.substring(0, pos + 1);
 
 	// Walk up the path until we find a folder that exists
 	var scan = [path];
@@ -10638,102 +10773,6 @@ function mozillaLoadFile(filePath)
 	}
 }
 
-function javaUrlToFilename(url)
-{
-	var f = "//localhost";
-	if(url.indexOf(f) == 0)
-		return url.substring(f.length);
-	var i = url.indexOf(":");
-	return i > 0 ? url.substring(i - 1) : url;
-}
-
-/*
- * in between when the applet has been started
- * and the user has given permission to run the applet
- * we get an applet object, but it doesn't have the methods
- * we expect yet.
- */
-var LOG_TIDDLYSAVER = true;
-function logTiddlySaverException(msg, ex)
-{
-	var applet = document.applets['TiddlySaver'];
-	console.log(msg + ": " + ex);
-	if (LOG_TIDDLYSAVER && applet) {
-		try {
-			console.log(msg + ": " + applet.getLastErrorMsg());
-			console.log(msg + ": " + applet.getLastErrorStackTrace());
-		} catch (ex) {}
-	}
-}
-
-function javaDebugInformation()
-{
-	var applet = document.applets['TiddlySaver'];
-	var what = [
-		["Java Version", applet.getJavaVersion],
-		["Last Exception", applet.getLastErrorMsg], // #156
-		["Last Exception Stack Trace", applet.getLastErrorStackTrace],
-		["System Properties", applet.getSystemProperties] ];
-
-	function formatItem (description, method) {
-		try {
-			 result = String(method.call(applet));
-		} catch (ex) {
-			 result = String(ex);
-		}
-		return description + ": " + result;
-	}
-
-	return jQuery.map(what, function (item) { return formatItem.apply(this, item) })
-		.join('\n\n');
-}
-
-function javaSaveFile(filePath, content)
-{
-	if(!filePath) return null;
-	var applet = document.applets['TiddlySaver'];
-	if(applet) {
-		try {
-			return applet.saveFile(javaUrlToFilename(filePath), "UTF-8", content);
-		} catch(ex) {
-			logTiddlySaverException("javaSaveFile", ex);
-		}
-	}
-	try {
-		var s = new java.io.PrintStream(new java.io.FileOutputStream(javaUrlToFilename(filePath)));
-		s.print(content);
-		s.close();
-	} catch(ex2) {
-		return null;
-	}
-	return true;
-}
-
-function javaLoadFile(filePath)
-{
-	if(!filePath) return null;
-	var applet = document.applets['TiddlySaver'];
-	if(applet) {
-		try {
-			var value = applet.loadFile(javaUrlToFilename(filePath), "UTF-8");
-			return !value ? null : String(value);
-		} catch(ex) {
-			logTiddlySaverException("javaLoadFile", ex);
-		}
-	}
-	var content = [];
-	try {
-		var r = new java.io.BufferedReader(new java.io.FileReader(javaUrlToFilename(filePath)));
-		var line;
-		while((line = r.readLine()) != null)
-			content.push(String(line));
-		r.close();
-	} catch(ex2) {
-		return null;
-	}
-	return content.join("\n");
-}
-
 function HTML5DownloadSaveFile(filePath, content)
 {
 	var link = document.createElement("a");
@@ -10770,12 +10809,13 @@ function manualSaveFile(filePath, content)
 // construct data URI (using base64 encoding to preserve multi-byte encodings)
 function getDataURI(data)
 {
-	if (config.browser.isIE)
-		return "data:text/html," + encodeURIComponent(data);
-	else
+	return config.browser.isIE ?
+		"data:text/html," + encodeURIComponent(data) :
+
 		// manualConvertUnicodeToUTF8 was moved here from convertUnicodeToFileFormat
-		// in 2.9.1 it was used only for FireFox but happened to fix download saving non-ASCII in Chrome & Safari as well
-		return "data:text/html;base64," + encodeBase64(manualConvertUnicodeToUTF8(data));
+		// In 2.9.1, it was used only for FireFox but happened to fix
+		// download saving non-ASCII in Chrome & Safari as well (see 949aff6)
+		"data:text/html;base64," + encodeBase64(manualConvertUnicodeToUTF8(data));
 }
 
 function encodeBase64(data)
@@ -11210,7 +11250,8 @@ function localAjax(args)
 		return true;
 	} catch (ex) { ; }
 
-	try { // local file I/O (IE, FF with TiddlyFox, Chrome/Safari with TiddlySaver, etc.)
+	// local file I/O (IE, FF with security.fileuri.strict_origin_policy:false, etc.)
+	try {
 		var data = loadFile(getLocalPath(args.url));
 		if (data) success(data);
 		else failure("loadFile");
@@ -11295,7 +11336,8 @@ function formatVersion(v)
 	v = v || version;
 	return v.major + "." + v.minor + "." + v.revision +
 		(v.alpha ? " (alpha " + v.alpha + ")" : "") +
-		(v.beta ? " (beta " + v.beta + ")" : "");
+		(v.beta ? " (beta " + v.beta + ")" : "") +
+		(v.nightly ? " (nightly " + v.nightly + ")" : "");
 }
 
 function compareVersions(v1, v2)
@@ -11979,7 +12021,7 @@ Wizard.prototype.setButtons = function(buttonInfo, status)
 		insertSpacer(this.footElem);
 	}
 	if(typeof status == "string") {
-		createTiddlyElement(this.footElem, "span", null, "status", status);
+		createTiddlyElement(this.footElem, "span", null, "status").innerHTML = status;
 	}
 };
 
@@ -12256,18 +12298,6 @@ ListView.columnTypes.TiddlerLink = {
 //-- Augmented methods for the JavaScript Array() object
 //--
 
-// For IE up to 8 (https://caniuse.com/?search=indexOf)
-if(!Array.indexOf) {
-	Array.prototype.indexOf = function(item, from)
-	{
-		if(!from) from = 0;
-		for(var i = from; i < this.length; i++) {
-			if(this[i] === item) return i;
-		}
-		return -1;
-	};
-}
-
 // Find an entry in a given field of the members of an array
 Array.prototype.findByField = function(field, value)
 {
@@ -12281,21 +12311,6 @@ Array.prototype.findByField = function(field, value)
 Array.prototype.contains = function(item)
 {
 	return this.indexOf(item) != -1;
-};
-
-// Adds, removes or toggles a particular value within an array
-//  value - value to add
-//  mode - +1 to add value, -1 to remove value, 0 to toggle it
-Array.prototype.setItem = function(value, mode)
-{
-	var p = this.indexOf(value);
-	if(mode == 0)
-		mode = (p == -1) ? +1 : -1;
-	if(mode == +1) {
-		if(p == -1) this.push(value);
-	} else if(mode == -1) {
-		if(p != -1) this.splice(p, 1);
-	}
 };
 
 // Return whether one of a list of values exists in an array
@@ -12332,19 +12347,6 @@ Array.prototype.remove = function(item)
 	var p = this.indexOf(item);
 	if(p != -1) this.splice(p, 1);
 };
-
-// For IE up to 8 (https://caniuse.com/?search=indexOf)
-if(!Array.prototype.map) {
-	Array.prototype.map = function(fn, thisObj)
-	{
-		var scope = thisObj || window;
-		var i, j, a = [];
-		for(i = 0, j = this.length; i < j; ++i) {
-			a.push(fn.call(scope, this[i], i, this));
-		}
-		return a;
-	};
-}
 
 //--
 //-- Augmented methods for the JavaScript String() object
@@ -12792,6 +12794,12 @@ RGB.prototype.toString = function()
 //--
 //-- DOM utilities - many derived from www.quirksmode.org
 //--
+
+tw.assets.icons.closeSvg =
+	'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10" class="tw-icon">' +
+	'	<line x1="1" y1="1" x2="9" y2="9" rx="1" ry="1"/>' +
+	'	<line x1="9" y1="1" x2="1" y2="9" rx="1" ry="1"/>' +
+	'</svg>';
 
 function drawGradient(place, horiz, loColors, hiColors)
 {
@@ -13285,6 +13293,46 @@ Array.prototype.find = function(itemOrPredicate)
 	return i == -1 ? null : i;
 };
 
+// Adds, removes or toggles a particular value within an array
+//  value - value to add
+//  mode - +1 to add value, -1 to remove value, 0 to toggle it
+// @Deprecated: No direct substitution
+Array.prototype.setItem = function(value, mode)
+{
+	var i = this.indexOf(value);
+	if(mode == 0) mode = (i == -1) ? +1 : -1;
+	if(mode == +1) {
+		if(i == -1) this.push(value);
+	} else if(mode == -1) {
+		if(i != -1) this.splice(i, 1);
+	}
+};
+
+// For IE up to 8 (https://caniuse.com/?search=indexOf)
+if(!Array.prototype.map) {
+	Array.prototype.map = function(fn, thisObj)
+	{
+		var scope = thisObj || window;
+		var i, j, a = [];
+		for(i = 0, j = this.length; i < j; ++i) {
+			a.push(fn.call(scope, this[i], i, this));
+		}
+		return a;
+	};
+}
+
+// For IE up to 8 (https://caniuse.com/?search=indexOf)
+if(!Array.prototype.indexOf) {
+	Array.prototype.indexOf = function(item, from)
+	{
+		if(!from) from = 0;
+		for(var i = from; i < this.length; i++) {
+			if(this[i] === item) return i;
+		}
+		return -1;
+	};
+}
+
 // Load a tiddler from an HTML DIV. The caller should make sure to later call Tiddler.changed()
 // @Deprecated: Use store.getLoader().internalizeTiddler instead
 Tiddler.prototype.loadFromDiv = function(divRef, title)
@@ -13293,7 +13341,7 @@ Tiddler.prototype.loadFromDiv = function(divRef, title)
 };
 
 // Format the text for storage in an HTML DIV
-// @Deprecated Use store.getSaver().externalizeTiddler instead.
+// @Deprecated: Use store.getSaver().externalizeTiddler instead.
 Tiddler.prototype.saveToDiv = function()
 {
 	return store.getSaver().externalizeTiddler(store, this);
@@ -13321,6 +13369,19 @@ function displayTiddlers(srcElement, titles, template, unused1, unused2, animate
 function displayTiddler(srcElement, title, template, unused1, unused2, animate, unused3)
 {
 	story.displayTiddler(srcElement, title, template, animate);
+}
+
+// @Deprecated: Java IO is no longer supported;
+// these "empty" versions are only left for the tiny chance of backwards
+// compatibility issues and will be removed completely in the future
+function javaSaveFile(filePath, content)
+{
+	return null;
+}
+
+function javaLoadFile(filePath)
+{
+	return null;
 }
 
 // @Deprecated: Use functions on right hand side directly instead

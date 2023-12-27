@@ -3,7 +3,7 @@
 <head>
 <script id="versionArea" type="text/javascript">
 //<![CDATA[
-var version = {title: "TiddlyWiki", major: 2, minor: 9, revision: 4, date: new Date("May 11, 2023"), extensions: {}};
+var version = {title: "TiddlyWiki", major: 2, minor: 10, revision: 0, date: new Date("December 26, 2023"), extensions: {}};
 
 //]]>
 </script>
@@ -119,10 +119,10 @@ Error: #f88
 </pre>
 </div>
 <div title="GettingStarted">
-<pre>To get started with this blank [[TiddlyWiki]], you'll need to modify the following tiddlers:
+<pre>To get started with this blank TiddlyWiki, you'll need to modify the following tiddlers:
 * [[SiteTitle]] &amp; [[SiteSubtitle]]: The title and subtitle of the site, as shown above (after saving, they will also appear in the browser title bar)
 * [[MainMenu]]: The menu (usually on the left)
-* [[DefaultTiddlers]]: Contains the names of the tiddlers that you want to appear when the TiddlyWiki is opened
+* [[DefaultTiddlers]]: Contains the names of the tiddlers that you want to appear when the ~TiddlyWiki is opened
 You'll also need to enter your username for signing your edits: &lt;&lt;option txtUserName&gt;&gt;
 </pre>
 </div>
@@ -203,14 +203,14 @@ h2,h3 {border-bottom:1px solid [[ColorPalette::TertiaryLight]];}
 .headerForeground a {font-weight:normal; color:[[ColorPalette::PrimaryPale]];}
 
 .tabSelected {
-	color:[[ColorPalette::PrimaryDark]];
-	background:[[ColorPalette::TertiaryPale]];
+	color:[[ColorPalette::Foreground]];
+	background:[[ColorPalette::Background]];
 	border-left:1px solid [[ColorPalette::TertiaryLight]];
 	border-top:1px solid [[ColorPalette::TertiaryLight]];
 	border-right:1px solid [[ColorPalette::TertiaryLight]];
 }
 .tabUnselected {color:[[ColorPalette::Background]]; background:[[ColorPalette::TertiaryMid]];}
-.tabContents {color:[[ColorPalette::PrimaryDark]]; background:[[ColorPalette::TertiaryPale]]; border:1px solid [[ColorPalette::TertiaryLight]];}
+.tabContents {border:1px solid [[ColorPalette::TertiaryLight]];}
 .tabContents .button {border:0;}
 
 #sidebar {}
@@ -227,6 +227,7 @@ h2,h3 {border-bottom:1px solid [[ColorPalette::TertiaryLight]];}
 .wizardStep.wizardStepDone {background:[[ColorPalette::TertiaryLight]];}
 .wizardFooter {background:[[ColorPalette::PrimaryPale]];}
 .wizardFooter .status {background:[[ColorPalette::PrimaryDark]]; color:[[ColorPalette::Background]];}
+.wizardFooter .status a { color: [[ColorPalette::PrimaryPale]]; }
 .wizard .button {
 	color:[[ColorPalette::Foreground]]; background:[[ColorPalette::SecondaryLight]]; border: 1px solid;
 	border-color:[[ColorPalette::SecondaryPale]] [[ColorPalette::SecondaryDark]] [[ColorPalette::SecondaryDark]] [[ColorPalette::SecondaryPale]];
@@ -249,8 +250,8 @@ h2,h3 {border-bottom:1px solid [[ColorPalette::TertiaryLight]];}
 .messageToolbar__button { color:[[ColorPalette::PrimaryMid]]; background:[[ColorPalette::SecondaryPale]]; border:none; }
 .messageToolbar__button_withIcon { background:inherit; }
 .messageToolbar__button_withIcon:active { background:inherit; border:none; }
-.messageToolbar__icon { fill:[[ColorPalette::TertiaryDark]]; }
-.messageToolbar__icon:hover { fill:[[ColorPalette::Foreground]]; }
+.tw-icon line { stroke: [[ColorPalette::TertiaryDark]]; }
+.messageToolbar__button:hover .tw-icon line { stroke: [[ColorPalette::Foreground]]; }
 
 .popup {
 	background: [[ColorPalette::Background]];
@@ -407,13 +408,15 @@ a.tiddlyLinkNonExisting.shadow {font-weight:bold;}
 .wizard__title, .wizard__subtitle { font-weight:bold; background:none; padding:0; margin:0.4em 0 0.2em; }
 .wizardStep { padding:1em; }
 .wizardFooter { padding: 0.8em 0; }
-.wizardFooter .status { padding: 0.3em 1em; }
+.wizardFooter .status { display: inline-block; line-height: 1.5; padding: 0.3em 1em; }
 .wizardFooter .button { margin:0.5em 0 0; font-size:1.2em; padding:0.2em 0.5em; }
 
 #messageArea { position:fixed; top:2em; right:0; margin:0.5em; padding:0.7em 1em; z-index:2000; }
 .messageToolbar { text-align:right; padding:0.2em 0; }
 .messageToolbar__button { text-decoration:underline; }
-.messageToolbar__icon { height: 1em; width: 1em; } /* width for IE */
+.messageToolbar__button_withIcon { display: inline-block; }
+.tw-icon { height: 1em; width: 1em; } /* width for IE */
+.tw-icon line { stroke-width: 1; stroke-linecap: round; }
 .messageArea__text a { text-decoration:underline; }
 
 .popup {position:absolute; z-index:300; font-size:.9em; padding:0.3em 0; list-style:none; margin:0;}
@@ -427,7 +430,7 @@ a.tiddlyLinkNonExisting.shadow {font-weight:bold;}
 .popupTiddler {position: absolute; z-index:300; padding:1em; margin:0;}
 
 .tabset {padding:1em 0 0 0.5em;}
-.tab {margin:0 0 0 0.25em; padding:2px;}
+.tab {display: inline-block; position: relative; bottom: -0.7px; margin: 0 0.25em 0 0; padding:0.2em;}
 .tabContents {padding:0.5em;}
 .tabContents ul, .tabContents ol {margin:0; padding:0;}
 .txtMainTab .tabContents li {list-style:none;}
@@ -440,14 +443,13 @@ a.tiddlyLinkNonExisting.shadow {font-weight:bold;}
 
 .toolbar {text-align:right; font-size:.9em;}
 
-.tiddler {padding:1em 1em 0;}
+.tiddler { padding: 1em; }
 
-.missing .viewer,.missing .title {font-style:italic;}
+.title { font-size: 1.6em; font-weight: bold; }
+.subtitle { font-size: 1.1em; }
 
-.title {font-size:1.6em; font-weight:bold;}
-
-.missing .subtitle {display:none;}
-.subtitle {font-size:1.1em;}
+.missing .viewer, .missing .title { font-style: italic; }
+.missing .subtitle { display: none; }
 
 .tiddler .button {padding:0.2em 0.4em;}
 
@@ -497,7 +499,7 @@ pre, code { font-family: monospace, monospace; font-size: 1em; }
 #backstageToolbar {position:relative;}
 #backstageArea a {font-weight:bold; margin-left:0.5em; padding:0.3em 0.5em;}
 #backstageButton {display:none; position:absolute; z-index:175; top:0; right:0;}
-#backstageButton a {padding:0.1em 0.4em; margin:0.1em;}
+#backstageButton a {padding: 0.3em 0.5em; display: inline-block;}
 #backstage {position:relative; width:100%; z-index:50;}
 #backstagePanel { display:none; z-index:100; position:absolute; width:90%; margin-left:3em; }
 .backstagePanelFooter {padding-top:0.2em; float:right;}
@@ -564,12 +566,7 @@ body {font-size:0.8em;}
 
 //]]>
 </script>
-<script type="text/javascript">
-//<![CDATA[
-if(useJavaSaver)
-	document.write("<applet style='position:absolute;left:-1px' name='TiddlySaver' code='TiddlySaver.class' archive='TiddlySaver.jar' width='1' height='1'></applet>");
-//]]>
-</script>
+<!-- TiddlySaver is removed in this version -->
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="jQuery.twStylesheet.js"></script>
 <script type="text/javascript" src="twcore.js"></script>
