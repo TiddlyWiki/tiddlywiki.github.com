@@ -17,13 +17,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       # todo:
-      # - fix: building also adds TiddlyWiki as ??, presumably by `git add *`` at the "build index.html ..." step
-      #  . this breaks updating GitHub Pages: step "Checkout" ("Fetching submodules") fails on
-      #    /usr/bin/git submodule sync --recursive
-      #    /usr/bin/git -c protocol.version=2 submodule update --init --force --depth=1 --recursive
-      #    with
-      #    Error: fatal: No url found for submodule path 'TiddlyWiki' in .gitmodules
-      #    Error: The process '/usr/bin/git' failed with exit code 128
       # - try to restore generation of RSS on Ubuntu (why phantomjs fails now? different node.js version? [can test on Contabo]
       #   try to fix.. or use Puppeteer instead.. or without headless browser at all)
       # * construct commit message based on what was really updated
@@ -50,7 +43,7 @@ jobs:
           # generating index.html may fail (on Ubuntu, unlike on Windows), so use wildcards
           mv ./build/cooked/*/* ../
           cd ..
-          git add *
+          git add *.*
       - name: build empty TW, copy resulting file as empty.html, upgrade/index.html, stage them
         run: |
           cd TiddlyWiki
