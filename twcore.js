@@ -63,6 +63,7 @@ config.messages = {
 config.options = {
 	chkAnimate: true,
 	chkAutoSave: false,
+	chkBackstage: false,
 	chkCaseSensitiveSearch: false,
 	chkConfirmDelete: true,
 	chkDisplayInstrumentation: false,
@@ -77,6 +78,7 @@ config.options = {
 	chkRemoveExtraMarkers: false, // #162
 	chkSaveBackups: true,
 	chkSaveEmptyTemplate: false,
+	chkSliderOptionsPanel: false,
 	chkToggleLinks: false,
 	chkUsePreForStorage: true, // Whether to use <pre> format for storage
 	txtBackupFolder: "",
@@ -85,7 +87,8 @@ config.options = {
 	txtMainTab: "tabTimeline",
 	txtMaxEditRows: "30",
 	txtMoreTab: "moreTabAll",
-	txtTheme: ""
+	txtTheme: "",
+	txtUpgradeCoreURI: ""
 };
 config.optionsDesc = {};
 
@@ -296,7 +299,7 @@ merge(config.tasks, {
 	importTask: { text: "import", tooltip: "Import tiddlers and plugins " +
 		"from other TiddlyWiki files and servers", content: '<<importTiddlers>>' },
 	tweak: { text: "tweak", tooltip: "Tweak the appearance and behaviour of TiddlyWiki", content: '<<options>>' },
-	upgrade: { text: "upgrade", tooltip: "Upgrade TiddlyWiki core code", content: '<<upgrade>>' },
+	upgrade: { text: "upgrade", tooltip: "Upgrade TiddlyWiki core", content: '<<upgrade>>' },
 	plugins: { text: "plugins", tooltip: "Manage installed plugins", content: '<<plugins>>' }
 });
 
@@ -641,8 +644,8 @@ merge(config.macros.importTiddlers, {
 });
 
 merge(config.macros.upgrade, {
-	wizardTitle: "Upgrade TiddlyWiki core code",
-	step1Title: "Update or repair this TiddlyWiki to the latest release",
+	wizardTitle: "Upgrade TiddlyWiki",
+	step1Title: "Update or repair TiddlyWiki core to the latest release",
 	step1Html: "You are about to upgrade TiddlyWiki core to the latest release " +
 		"(from <a href='%0' class='externalLink' target='_blank'>%1</a>). " +
 		"Your content will be preserved across the upgrade.<br><br>" +
@@ -2806,6 +2809,9 @@ config.macros.toolbar.createCommand = function(place, commandName, tiddler, clas
 		tiddler: tiddler.title
 	});
 	if(className) jQuery(btn).addClass(className);
+	if(commandName === 'permalink') {
+		jQuery(btn).attr('href', config.commands.permalink.getUrl(tiddler.title));
+	}
 };
 
 config.macros.toolbar.isCommandEnabled = function(command, tiddler)
@@ -2992,6 +2998,10 @@ config.commands.deleteTiddler.handler = function(event, src, title)
 	return false;
 };
 
+config.commands.permalink.getUrl = function(title) {
+	var hash = story.getPermaViewHash([title]);
+	return window.location.href.replace(/#.*/, hash);
+};
 config.commands.permalink.handler = function(event, src, title)
 {
 	var hash = story.getPermaViewHash([title]);
@@ -4971,7 +4981,7 @@ config.macros.importTiddlers.onBrowseChange = function(e)
 			file = this.files[0].fileName; // REQUIRES PRIVILEGES.. NULL otherwise
 		} catch (ex) {
 			// non-priv fallback: combine filename with path to current document
-			var path = getLocalPath(document.location.href);
+			var path = tw.io.getOriginalLocalPath();
 			var slashpos = path.lastIndexOf('/');
 			if (slashpos == -1) slashpos = path.lastIndexOf('\\');
 			if (slashpos != -1) path = path.substr(0, slashpos + 1); // remove filename, leave trailing slash
@@ -5285,7 +5295,11 @@ config.macros.upgrade.handler = function(place)
 {
 	var w = new Wizard();
 	w.createWizard(place, this.wizardTitle);
-	w.addStep(this.step1Title, this.step1Html.format([this.getSourceURL(), this.getSourceURL(), this.docsUrl]));
+	w.addStep(this.step1Title, this.step1Html.format([
+		this.getSourceURL(),
+		this.getSourceURL().replace(/^https:\/\//, ''),
+		this.docsUrl
+	]));
 	w.setButtons([{
 		caption: this.upgradeLabel,
 		tooltip: this.upgradePrompt,
@@ -5307,7 +5321,7 @@ config.macros.upgrade.onClickUpgrade = function(e)
 	}
 
 	w.setButtons([], me.statusPreparingBackup);
-	var localPath = getLocalPath(document.location.toString());
+	var localPath = tw.io.getOriginalLocalPath();
 	var backupPath = getBackupPath(localPath, me.backupExtension);
 	var original = loadOriginal(localPath);
 
@@ -5366,7 +5380,7 @@ config.macros.upgrade.onLoadCore = function(status, w, responseText, url, xhr)
 config.macros.upgrade.onStartUpgrade = function(wizard, newCoreHtml)
 {
 	wizard.setButtons([], config.macros.upgrade.statusSavingCore);
-	var localPath = getLocalPath(document.location.toString());
+	var localPath = tw.io.getOriginalLocalPath();
 	saveFile(localPath, newCoreHtml);
 
 	wizard.setButtons([], config.macros.upgrade.statusReloadingCore);
@@ -5799,6 +5813,23 @@ function refreshAll()
 //-- Option handling
 //--
 
+tw.options = {
+	defaults: {},
+	define: function(name, defaultValue, description) {
+		this.defaults[name] = defaultValue;
+		if(config.options[name] === undefined) config.options[name] = defaultValue;
+		if(description) config.optionsDesc[name] = description;
+	},
+	hasDefaultValue: function(name) {
+		return config.options[name] == this.defaults[name] ||
+		       config.options[name] === undefined;
+	}
+};
+
+for(var name in config.options) {
+	tw.options.define(name, config.options[name], config.optionsDesc[name]);
+}
+
 config.optionHandlers = {
 	'txt': {
 		get: function(name) { return encodeCookie(config.options[name].toString()) },
@@ -5908,6 +5939,7 @@ function saveCookie(name)
 {
 	var key, cookies = {};
 	for(key in config.options) {
+		if(tw.options.hasDefaultValue(key)) continue;
 		var value = getOption(key);
 		value = value == null ? 'false' : value;
 		cookies[key] = value;
@@ -6249,6 +6281,12 @@ function recreateOriginal()
 	return content;
 }
 
+// reconstruct the local path to TW itself
+tw.io.getOriginalLocalPath = function()
+{
+	return getLocalPath(document.location.toString());
+};
+
 // Save tiddlywiki (but not backup or anything else)
 tw.io.knownSaveMainFailures = {
 	failedToLoadOriginal: 1,
@@ -6258,8 +6296,7 @@ tw.io.knownSaveMainFailures = {
 // Save this tiddlywiki with the pending changes
 tw.io.saveMainAndReport = function(callback)
 {
-	var originalPath = document.location.toString();
-	var localPath = getLocalPath(originalPath);
+	var localPath = tw.io.getOriginalLocalPath();
 	var onLoadOriginal = function(original) {
 		if(original == null) {
 			alert(msg.cantSaveError);
@@ -6310,11 +6347,12 @@ function saveChanges(onlyIfDirty, tiddlers)
 		return;
 	}
 
-	tw.io.saveMainAndReport(function postSave() {
+	tw.io.saveMainAndReport(function postSave(savedOrPending, details) {
 		var co = config.options;
-		if (!config.saveByDownload && !config.saveByManualDownload) {
-			if(co.chkSaveBackups) saveBackup(localPath, original);
-			if(co.chkSaveEmptyTemplate) saveEmpty(localPath, original, posDiv);
+		if (!config.saveByDownload && !config.saveByManualDownload && details && details.original) {
+			var localPath = tw.io.getOriginalLocalPath();
+			if(co.chkSaveBackups) saveBackup(localPath, details.original);
+			if(co.chkSaveEmptyTemplate) saveEmpty(localPath, details.original);
 			if(co.chkGenerateAnRssFeed) saveRss(localPath);
 		}
 
@@ -6340,13 +6378,17 @@ function saveMain(localPath, original, posDiv, callback)
 		if(!callback || config.options.chkPreventAsyncSaving) {
 			var savedOrPending = tw.io.saveFile(localPath, revised);
 			reportStatusAndHandle(savedOrPending, localPath, revised);
-			if(callback) callback(savedOrPending);
+			if(callback) callback(savedOrPending, {
+				original: original
+			});
 		} else tw.io.saveFile(localPath, revised, function(success, details) {
 			reportStatusAndHandle(success, localPath, revised);
+			details.original = original;
 			callback(success, details);
 		});
 	} catch (ex) {
 		tw.io.onSaveMainFail(ex);
+		if(callback) callback(false, { original: original });
 	}
 }
 
@@ -6380,6 +6422,12 @@ function saveBackup(localPath, original)
 
 function saveEmpty(localPath, original, posDiv)
 {
+	posDiv = posDiv || locateStoreArea(original);
+	if(!posDiv) {
+		alert(config.messages.emptyFailed);
+		return;
+	}
+
 	var emptyPath, slashPosition;
 	if((slashPosition = localPath.lastIndexOf("/")) != -1)
 		emptyPath = localPath.substr(0, slashPosition) + "/";
