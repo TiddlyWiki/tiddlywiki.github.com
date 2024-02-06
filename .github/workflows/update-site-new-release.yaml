@@ -72,7 +72,7 @@ jobs:
           #  tiddlywiki_externaljs.html  jquery.js  jQuery.twStylesheet.js  twcore.js
           mv ./build/cooked/*/* ../
           cd ..
-          git add *
+          git add *.*
       - name: summarize what's built and what's updated
         run: |
           cat TiddlyWiki/build_summary.txt
