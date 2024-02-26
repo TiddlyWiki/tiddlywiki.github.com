@@ -42,13 +42,13 @@ DAMAGE.
 " />
 <!--PRE-HEAD-START-->
 <!--{{{-->
-<link rel="shortcut icon" href="images/favicon.ico" />
-<link href="/index.xml" rel="alternate"
-	type="application/rss+xml" title="tiddlywiki.com's RSS feed" />
+<link rel='alternate' type='application/rss+xml' title='RSS' href='index.xml' />
 <!--}}}-->
 
 <!--PRE-HEAD-END-->
-<title> TiddlyWiki - a reusable non-linear personal web notebook </title>
+<title>
+
+</title>
 <style id="styleArea" type="text/css">
 #saveTest, #messageArea, #copyright, #storeArea, #shadowArea {
 	display: none;
@@ -288,7 +288,7 @@ h2,h3 {border-bottom:1px solid [[ColorPalette::TertiaryLight]];}
 .selected .toolbar a {color:[[ColorPalette::TertiaryMid]];}
 .selected .toolbar a:hover {color:[[ColorPalette::Foreground]];}
 
-.tagging, .tagged { border: 2px solid [[ColorPalette::TertiaryPale]]; }
+.tagging, .tagged { background: [[ColorPalette::Background]]; border: 2px solid [[ColorPalette::TertiaryPale]]; }
 .selected .tagging, .selected .tagged { border: 2px solid [[ColorPalette::TertiaryLight]]; }
 .tagging .listTitle, .tagged .listTitle {color:[[ColorPalette::PrimaryDark]];}
 .tagging .button, .tagged .button { border:none; }
@@ -558,7 +558,7 @@ body {font-size:0.8em;}
 <!--POST-SHADOWAREA-->
 <div id="storeArea">
 <div created="20110211110600000" creator="psd" modified="20110211130600000" modifier="blaine" tags="systemServer" title="AbegoSoftwareServer" type="text/x-tiddlywiki">
-<pre>|''URL:''|http://tiddlywiki.abego-software.de/|
+<pre>|''URL:''|https://tiddlywiki.abego-software.de|
 |''Description:''|UdoBorkowski's Extensions for TiddlyWiki|
 |''Author:''|UdoBorkowski|</pre>
 </div>
@@ -657,7 +657,7 @@ It appears as a link in the topright corner of the page. Clicking it reveals the
 </pre>
 </div>
 <div created="20110211110600000" creator="psd" modified="20200526142400000" modifier="mkerrigan" tags="systemServer" title="BidiXTWServer" type="text/x-tiddlywiki">
-<pre>|''URL:''|[[http://tiddlywiki.bidix.info/|https://web.archive.org/web/20130801155706/http://tiddlywiki.bidix.info/]]|
+<pre>|''URL:''|https://web.archive.org/web/20130801155706/http://tiddlywiki.bidix.info/|
 |''Description:''|Repository for ~BidiX's TiddlyWiki Extensions|
 |''Author:''|~BidiX|
 
@@ -665,7 +665,7 @@ Community member ~BidiX created an adaptation of the ~TiddlyWiki user interface 
 </pre>
 </div>
 <div created="20110211110600000" creator="psd" modified="20110216120600000" modifier="colmbritton" tags="systemServer" title="BobsPluginsServer" type="text/x-tiddlywiki">
-<pre>|''URL:''|http://bob.mcelrath.org/plugins.html|
+<pre>|''URL:''|http://bob.mcelrath.org/plugins.html#tag:systemConfig|
 |''Description:''|Bob ~McElrath's Plugins|
 |''Author:''|~BobMcElrath|</pre>
 </div>
@@ -879,17 +879,18 @@ Some random text
 }}}
 </pre>
 </div>
-<div created="20110211110600000" creator="psd" modified="20111103173300000" modifier="jermolene" title="Customisation" type="text/x-tiddlywiki">
+<div created="20110211110600000" creator="psd" modified="20240222111100000" modifier="Yakov Litvin" title="Customisation" type="text/x-tiddlywiki">
 <pre>You can customise the appearance and behaviour of TiddlyWiki to almost any degree you want:
 * Install [[Plugins]] to extend the core functionality
-* Use the ColorPalette to change the basic colour scheme
-* Use built in [[Formatting|Basic Formatting]] techniques
-* Create a CustomStyleSheet for finer grained control over the appearance
-* Customise the PageTemplate, ViewTemplate or EditTemplate to change the composition of the page and the layout of individual tiddlers
-* Further SpecialTiddlers
+** Including [[translations|https://github.com/TiddlyWiki/translations]]
 * Use off-the-shelf themes from [[TiddlyThemes|http://tiddlythemes.com/]]
-* Visit the [[Configuration]] summary to see all the special configuration tiddlers
-* Use TiddlyBookmarklets for low level hacking of TiddlyWiki documents
+* Another extension type is transclusions, like those in the &quot;transclusions&quot; tab [[in TiddlyTools|https://tiddlytools.com/Classic/#CatalogTabs]]
+* Use the ColorPalette to change the basic colour scheme
+* Create a CustomStyleSheet to customize styles further
+* Change the page composition and the individual tiddlers layout in PageTemplate, ViewTemplate, or EditTemplate
+* See also other SpecialTiddlers and the [[Configuration]] summary
+* Use TiddlyBookmarklets to interact with ~TiddlyWikis that you open (including those you don't own). This is an advanced technique that may require some hacking
+Also, it's useful to know built-in [[Formatting|Basic Formatting]] techniques
 </pre>
 </div>
 <div created="20110211110600000" creator="psd" modified="20110211131000000" modifier="blaine" tags="features" title="CustomMarkup" type="text/x-tiddlywiki">
@@ -1616,8 +1617,8 @@ Note that you must set the tiddler SiteUrl to be the URL where your TiddlyWiki w
 * [[Save changes|SaveChanges]]
 * [[Search]] for content
 * Use [[tagging|Tags]] to organise your tiddlers
-* [[Customise|Customisation]] TiddlyWiki's appearance and behaviour
-* Use apps to run TiddlyWiki on a [[MobileDevice|MobileDevices]]
+* [[Customise|Customisation]] ~TiddlyWiki's appearance and behaviour
+* Use apps to run ~TiddlyWiki on a [[MobileDevice|MobileDevices]]
 See the full [[Reference Guide|Reference]]</pre>
 </div>
 <div created="20110216154000000" creator="colmbritton" modified="20110216154000000" modifier="colmbritton" tags="shadow" title="GettingStarted shadows" type="text/x-tiddlywiki">
@@ -1881,13 +1882,12 @@ To start a new line with &quot;cleared&quot; float like this, put the code below
 }}}
 </pre>
 </div>
-<div created="20110301151400000" creator="psd" modified="20111020135100000" modifier="jermolene" title="Importing Tiddlers" type="text/x-tiddlywiki">
-<pre>To import tiddlers from another ~TiddlyWiki file, or from an external website, follow these instructions.
-# If the tiddler is on an external site, first copy the URL of the site which includes the tiddler you'd like to download into your clipboard (eg http://tiddlytools.github.io)
-# Open your local ~TiddlyWiki file from your computer.
-# Click on the 'Backstage' link that you can see at the very top right hand side of the page.
-# In the menu, click on 'Import'. You will then see a window that looks like this - and you can follow the guidance from there. Note that you may need to grant authorisation to your ~TiddlyWiki file to import tiddlers - this is fine and expected.
-&lt;&lt;importTiddlers&gt;&gt;
+<div created="20110301151400000" creator="psd" modified="20211020135100000" modifier="Yakov Litvin" title="Importing Tiddlers" type="text/x-tiddlywiki">
+<pre>You can import tiddlers from another ~TiddlyWiki file, or from an external website this way:
+# If the tiddler is on an external site, first copy the URL of that site (like https://tiddlytools.com/Classic/);
+# In your ~TiddlyWiki, click on the 'Backstage' button at the top right of the page;
+# In the menu, click on 'Import' and follow the guidance from there. Note that you may need to grant authorisation to your ~TiddlyWiki file to import tiddlers – this is fine and expected.
+Alternatively, you can use {{{&lt;&lt;importTiddlers&gt;&gt;}}} macro to show the import wizard outside the backstage.
 </pre>
 </div>
 <div created="20200213003900000" creator="mkerrigan" modified="20200429204700000" modifier="Yakov Litvin" tags="" title="Improving documentation via GitHub" type="text/x-tiddlywiki">
@@ -1916,10 +1916,14 @@ One of the core developers will review your pull request and merge it so it will
 <div created="20110211110600000" creator="psd" modified="20110211131000000" modifier="blaine" tags="features" title="IncrementalSearch" type="text/x-tiddlywiki">
 <pre>When you type more than three characters in the search box at the upper right, any matching tiddlers are automatically displayed with the text highlighted. There's a couple of minor issues: the highlights don't get removed when you clear the search, and occasionally, on some browsers, keystrokes get missed if you type quickly so you may need to click the 'search' button to manually trigger the search.</pre>
 </div>
-<div created="20110211110600000" creator="psd" modified="20110211131000000" modifier="blaine" tags="features" title="InstallingPlugins" type="text/x-tiddlywiki">
-<pre>[[Plugins]] are just tiddlers containing ~JavaScript code that is tagged with &lt;&lt;tag systemConfig&gt;&gt;. TiddlyWiki executes any [[Plugins]] as it loads; they can add [[Macros]] or otherwise extend and enhance the base code.
+<div created="20110211110600000" creator="psd" modified="20240222113700000" modifier="Yakov Litvin" tags="features" title="InstallingPlugins" type="text/x-tiddlywiki">
+<pre>[[Plugins]] are just tiddlers containing ~JavaScript code and tagged with &lt;&lt;tag systemConfig&gt;&gt;. ~TiddlyWiki executes any plugin as it loads (unless it is tagged with {{{systemConfigDisable}}}).
 
-The recommended way to install a plugin into your own copy of TiddlyWiki is to use ImportTiddlers (there are instructions for ManuallyInstallIngPlugins when required).</pre>
+Typical ways to install a plugin are:
+* importing (see the &quot;import&quot; panel in backstage of your TW);
+* copying (the title, the text, and adding the {{{systemConfig}}} tag; see also ManuallyInstallIngPlugins);
+* using [[ExtensionsExplorerPlugin|https://github.com/YakovL/TiddlyWiki_ExtensionsExplorerPlugin]] (it also can check for updates when you open your ~TiddlyWiki).
+Usually, these methods require reloading after the plugin is added and the ~TiddlyWiki is saved.</pre>
 </div>
 <div created="20110211110600000" creator="psd" modified="20111020135100000" modifier="jermolene" tags="features options" title="InterfaceOptions" type="text/x-tiddlywiki">
 <pre>InterfaceOptions are displayed when you click the 'options' button on the right in your TiddlyWiki file. They are saved in a cookie on your browser, making them sticky between visits:
@@ -2232,12 +2236,12 @@ The plugin should now be available for use.</pre>
 |''Author:''|MartinBudden |
 </pre>
 </div>
-<div created="20111114122100000" creator="jermolene" modified="20111114122800000" modifier="jermolene" tags="niche" title="Mathematics" type="text/x-tiddlywiki">
-<pre>There are several ways to incorporate mathematical formulae into TiddlyWiki, both of which let you to type ordinary LaTeX into a tiddler:
-1. Use the [[jsMath|http://www.math.union.edu/~dpvc/jsMath/]] library via Bob McElrath's [[TiddlyJsMath|http://bob.mcelrath.org/tiddlyjsmath.html]] plugin
-2. Use the [[MathJax|http://www.mathjax.org/]] library via [[PluginMathJax|http://math-template.tiddlyspace.com/#%5B%5BPluginMathJax%20v1.3%5D%5D]]
+<div created="20111114122100000" creator="jermolene" modified="20240222134800000" modifier="Yakov Litvin" tags="niche" title="Mathematics" type="text/x-tiddlywiki">
+<pre>There are several ways to incorporate mathematical formulae into ~TiddlyWiki and use ~LaTeX in tiddlers:
+# The latest solution is [[TwFormulaPlugin|https://yakovlitvin.pro/TW/pre-releases/TwFormulaPlugin/]], allowing to use ~KaTeX and other libraries like ~MathJax, jqMath, and ~MathQuill.
+# It's worth mentioning some of its predecessors: [[PluginMathJax|http://math-template.tiddlyspace.com/#%5B%5BPluginMathJax%20v1.3%5D%5D]], [[TiddlyJsMath|http://bob.mcelrath.org/tiddlyjsmath.html]], and [[MathSVGPlugin|https://web.archive.org/web/20130707161357/http://www.math.ist.utl.pt/~psoares/mathsvg.html]]; but it's unlikely that you'll need them.
 
-An alternative is to use a service like [[CodeCogs|http://www.codecogs.com/latex/eqneditor.php]] that enables you to generate images of equations from LaTeX source that can be manually inserted into TiddlyWiki. Some examples of this technique are http://twmath.tiddlyspot.com/ and http://twequation.tiddlyspot.com/
+An alternative is to use a service like [[CodeCogs|http://www.codecogs.com/latex/eqneditor.php]] that enables you to generate images of equations from ~LaTeX source that can be manually inserted into ~TiddlyWiki. Some examples of this technique are https://twmath.tiddlyspot.com and https://twequation.tiddlyspot.com
 </pre>
 </div>
 <div created="20110211110600000" creator="psd" modified="20111126132200000" modifier="jermolene" tags="concepts" title="MicroContent" type="text/x-tiddlywiki">
@@ -2266,7 +2270,7 @@ Note that these applications are produced by independent third parties, and are 
 </pre>
 </div>
 <div created="20110211110600000" creator="psd" modified="20110211131000000" modifier="blaine" tags="systemServer" title="MonkeyPirateTWServer" type="text/x-tiddlywiki">
-<pre>|''URL:''|http://mptw.tiddlyspot.com/|
+<pre>|''URL:''|https://mptw.tiddlyspot.com|
 |''Description:''|a tiddlywiki distribution and plugins|
 |''Author:''|SimonBaird|</pre>
 </div>
@@ -2403,7 +2407,7 @@ title:{{window.title}}
 The ParameterParser will cope with either the name or the value being omitted, and will substitute a specified default. This is how the StartupParameters work; the default parameter name is specified as 'open'.</pre>
 </div>
 <div created="20110211110600000" creator="psd" modified="20110216120700000" modifier="colmbritton" tags="systemServer" title="PeachTWServer" type="text/x-tiddlywiki">
-<pre>|''URL:''|http://bradleymeck.tiddlyspot.com/|
+<pre>|''URL:''|https://bradleymeck.tiddlyspot.com|
 |''Description:''|Resources that are Ripe for the Picking|
 |''Author:''|~BradleyMeck|</pre>
 </div>
@@ -2546,18 +2550,21 @@ div {color: #ff0000;}
 &lt;&lt;plugins&gt;&gt;
 }}}</pre>
 </div>
-<div created="20110211110600000" creator="psd" modified="20111103182500000" modifier="jermolene" tags="community concepts gettingstarted" title="Plugins" type="text/x-tiddlywiki">
-<pre>~TiddlyWiki can be extended by [[installing plugins|InstallingPlugins]] that implement a wide variety of features (including [[Macros]], [[themes|http://tiddlythemes.com/]] or tweaks).
+<div created="20110211110600000" creator="psd" modified="20240222114500000" modifier="Yakov Litvin" tags="community concepts gettingstarted" title="Plugins" type="text/x-tiddlywiki">
+<pre>~TiddlyWiki can be extended by [[installing plugins|InstallingPlugins]] (and [[other extensions|Customisation]]) that implement a wide variety of features (like adding [[better search|Search]], [[formulas support|Mathematics]], additional [[Macros]], etc).
 
-Community member Dave Gifford oversees an extensive catalogue of available plugins at [[TiddlyVault|http://tiddlyvault.tiddlyspot.com/]], and Eric Shulman maintains his own impressive collection of plugins at [[TiddlyTools|http://tiddlytools.github.io]]. More recently, Saq Imtiaz has built a service which lists plugins from all around the web in a single place, at [[plugins.tiddlywiki.org|http://plugins.tiddlywiki.org/]]
+There are several catalogues of plugins and other extensions, for instance:
+* [[TiddlyVault|https://tiddlyvault.tiddlyspot.com/]] by Dave Gifford,
+* [[TiddlyTools|https://tiddlytools.com/Classic/]] (contains mostly extensions by Eric Shulman, but there are lots of them),
+* servers of some other authors are tagged [[systemServer]] here (but it's not a comprehensive list),
+* [[Customize Space Archive|https://yakovlitvin.pro/TW/TS_backups/customize.tiddlyspace.com%20(24.02.2016).html]] (a comprehensive catalogue of its time).
+As many of them were not maintained for a while, some links got broken, so sometimes you'll need to use [[Web Archive|https://archive.org/web]] to get an extension.
 
-When you've chosen the plugin you'd like to import, follow the directions in ImportTiddlers (just make sure to tag the plugin {{{systemConfig}}}).
-
-See http://tiddlywikidev.tiddlyspace.com/ for information on writing plugins for TiddlyWiki.
+For information on writing plugins, see DeveloperDocumentation.
 </pre>
 </div>
 <div created="20110211110600000" creator="psd" modified="20110216120800000" modifier="colmbritton" tags="systemServer" title="PrinceTiddlyWikiExtensionsServer" type="text/x-tiddlywiki">
-<pre>|''URL:''|http://ptw.sourceforge.net/ptwe.html|
+<pre>|''URL:''|https://ptw.sourceforge.net/ptwe.html|
 |''Description:''|~BramChen's Extensions for TiddlyWiki|
 |''Author:''|~BramChen|</pre>
 </div>
@@ -2734,10 +2741,9 @@ TiddlyWiki now displays a warning if it thinks that it has been saved wrongly.
 <pre>The default version of ~TiddlyWiki includes basic search functionality. When a search term is entered, all tiddlers that contain this term are opened, with the search term highlighted wherever it appears.
 
 However, using the [[plugin architecture|Plugins]] of ~TiddlyWiki, the [[community|Help and Support]] has written a number of search plugins which can be installed on your local ~TiddlyWiki files easily. The most popular search plugins are:
-* Eric Shulman's ~SearchOptionsPlugin - a highly configurable plugin that produces a list of tiddler titles with options for advanced searches. Available at http://tiddlytools.github.io/#SearchOptionsPlugin
-* Udo Borkowski's ~YourSearchPlugin - opens the search results in a large iFrame in the same style as Google (result, then synopsis). Available at http://tiddlywiki.abego-software.de/
-* Frederik Dohr's ~SimpleSearchPlugin (which this site is using) - copy and paste the code on [[this page|http://svn.tiddlywiki.org/Trunk/contributors/FND/plugins/SimpleSearchPlugin.js]] into a new tiddler, tag the tiddler with systemConfig, and save / re-open your ~TiddlyWiki.
-
+* Frederik Dohr's SimpleSearchPlugin (which this site is using) – shows the search results as a simple list of tiddlers instead of opening them;
+* Udo Borkowski's [[YourSearchPlugin|https://tiddlywiki.abego-software.de/#YourSearchPlugin]] – opens the search results in a dropdown showing the context of the search term match, adds search filters, results ranking, and much more;
+* Eric Shulman's [[SearchOptionsPlugin|https://tiddlytools.com/Classic/#SearchOptionsPlugin]] – a highly configurable plugin that produces a list of tiddler titles with options for advanced searches.
 </pre>
 </div>
 <div created="20110211143900000" creator="colmbritton" modified="20110211144600000" modifier="colmbritton" tags="macro" title="search macro" type="text/x-tiddlywiki">
@@ -2777,8 +2783,10 @@ Alternatively, you can rename the file to {{{*.hta}}} which has the added bonus 
 This is all a bit frustrating. An easy alternative is to use [[Firefox]], which seems to do the trick on all platforms.
 </pre>
 </div>
-<div created="20191013001900000" creator="Yakov Litvin" modified="20231201095000000" modifier="Yakov Litvin" tags="gettingstarted" title="Setting up saving" type="text/x-tiddlywiki">
+<div created="20191013001900000" creator="Yakov Litvin" modified="20240220195500000" modifier="Yakov Litvin" tags="gettingstarted" title="Setting up saving" type="text/x-tiddlywiki">
 <pre>Since version 2.8.1, ~TiddlyWiki has a fallback saver. If no saver method is configured, pressing &quot;save changes&quot; will display a download dialog. The browser may prompt for the location to save the file. Select the existing version of the file to replace it. This method works on most major browsers, but does not provide an ideal user experience as it requires manual intervention for each save. Below are various tools that remove this routine from saving.
+!Another native saver
+[[ContinuousSavingPlugin|https://github.com/YakovL/TiddlyWiki_ContinuousSavingPlugin/]] allows to reduce the manual steps of saving to just one file picking per session. However, it has a limited browser support (currently, desktop Chrome, Chromium-based browsers, and Edge; see more details in the plugin repository). Presumably, it will be included in the future versions of TW.
 !Browser Plugins
 Plugins are simple to install and provide smooth user experience, but they are also platform- and browser-specific to some extent. Mobile browsers don't support them.
 |extension|author|supported browsers|comments|
@@ -3566,13 +3574,14 @@ The slices defined in that example are:
 <div created="20110216115300000" creator="colmbritton" modified="20110216115300000" modifier="colmbritton" title="tiddlerToTransclude" type="text/x-tiddlywiki">
 <pre>This text has been transcluded from another tidder.</pre>
 </div>
-<div created="20110211110700000" creator="psd" modified="20111020135100000" modifier="jermolene" tags="community help" title="TiddlyBookmarklets" type="text/x-tiddlywiki">
+<div created="20110211110700000" creator="psd" modified="20211020135100000" modifier="Yakov Litvin" tags="community help" title="TiddlyBookmarklets" type="text/x-tiddlywiki">
 <pre>[[Bookmarklets|http://en.wikipedia.org/wiki/Bookmarklet]] can be useful for TiddlyWiki hackers. They are browser bookmarks that contain embedded ~JavaScript that can reach into the currently loaded TiddlyWiki page to manipulate them and extract data.
 
 Drag these links to your bookmark/favourites bar, or right click on them and choose &quot;add to bookmarks&quot; or &quot;add to favourites&quot;:
 * [[Scrub shadow tiddlers|javascript:(function(){if(window.version&amp;&amp;window.version.title=='TiddlyWiki'){for(var s in config.shadowTiddlers){store.removeTiddler(s);}refreshDisplay();}})()]] - deletes any overridden shadow tiddlers, reverting them to their default values. Handy when you’ve gone mad with PageTemplate customisations and your ~TiddlyWiki document won’t display properly
 * [[Scrub tiddler fields|javascript:(function(){if(window.version&amp;&amp;window.version.title=='TiddlyWiki'){store.forEachTiddler(function(title,tiddler){tiddler.fields={};});refreshDisplay();}})()]] - all the extended fields from a ~TiddlyWiki document, including that pesky “changecount” field
 * [[Rescue raw TiddlyWiki content|javascript:(function(){if(window.version&amp;&amp;window.version.title=='TiddlyWiki'){var w=window.open();w.document.open();w.document.write('&lt;html&gt;&lt;body&gt;&lt;pre&gt;');w.document.write(store.allTiddlersAsHtml().htmlEncode());w.document.write('&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;');w.document.close();}})()]] - opens a new window containing the raw content of a ~TiddlyWiki.  Handy when you’ve inadvertently been editing an online version of TiddlyWiki that isn’t letting you save changes in the usual way
+* See also [[Bookmarklets on TiddlyTools|https://tiddlytools.com/Classic/#InstantBookmarklets]]
 
 If you're creating your own bookmarklets, this [[editor|http://subsimple.com/bookmarklets/jsbuilder.htm]] and these [[tips|http://subsimple.com/bookmarklets/tips.asp]] are useful resources.
 </pre>
@@ -3590,20 +3599,19 @@ https://addons.mozilla.org/en-US/firefox/addon/tiddlyfox/
 
 </pre>
 </div>
-<div created="20110211110700000" creator="psd" modified="20111103164500000" modifier="jermolene" tags="features" title="TiddlySaver" type="text/x-tiddlywiki">
-<pre>The ~TiddlySaver Java applet allows ~TiddlyWiki to save changes in a local version (from a file:// URL) of Safari, Opera and other browsers. It is a small file named [[&quot;TiddlySaver.jar&quot;|TiddlySaver.jar]] that must be placed in the same directory as your ~TiddlyWiki file. As of August 2008, when an empty ~TiddlyWiki file is downloaded using either Safari or Opera, it is bundled with a copy of the ~TiddlySaver.jar file in a zip file - both files must be in the same directory ''whenever the ~TiddlyWiki file is opened'' in order to work.
+<div created="20110211110700000" creator="psd" modified="20240222132200000" modifier="Yakov Litvin" tags="features" title="TiddlySaver" type="text/x-tiddlywiki">
+<pre>The ~TiddlySaver Java applet allowed ~TiddlyWiki to save changes locally (from a file:// URL) in most of the browsers. As Java applets support deminished and maintaining the applet and its signing got more and more difficult, it was decided to put it aside (see [[Setting up saving]] for the recommended savers).
 
-[[&quot;TiddlySaver.jar&quot;|TiddlySaver.jar]]  is signed by [[UnaMesa Association|UnaMesa]]. The [[UnaMesa Association|UnaMesa]] certificate is signed by the ''Thawte Code Signing CA'' intermediate certificate which is chained to the ''Thawte Premium Server CA'' root certificate. You need to trust this certificate Chain to be able to use the applet.
-
-Note that there is currently [[a bug|http://trac.tiddlywiki.org/ticket/172]] that prevents ~TiddlySaver from working if you have specified a backup directory in AdvancedOptions and the directory doesn't exist.
+!!!Historical details
+~TiddlySaver.jar was signed by [[UnaMesa Association|UnaMesa]]. The ~UnaMesa Association certificate was signed by the ''Thawte Code Signing CA'' intermediate certificate which was chained to the ''Thawte Premium Server CA'' root certificate. One needed to trust this certificate Chain to be able to use the applet.
 
 Thanks to Andrew Gregory for the original TiddlySaver code, and ~BidiX for arranging all the certificate magic.</pre>
 </div>
 <div created="20110211110700000" creator="psd" modified="20110211131000000" modifier="blaine" tags="systemServer" title="TiddlyStylesServer" type="text/x-tiddlywiki">
-<pre>|''URL:''|http://tiddlystyles.com/|</pre>
+<pre>|''URL:''|https://web.archive.org/web/20140127010925/http://tiddlystyles.com:80/|</pre>
 </div>
 <div created="20110211110700000" creator="psd" modified="20110211131000000" modifier="blaine" tags="systemServer" title="TiddlyToolsServer" type="text/x-tiddlywiki">
-<pre>|''URL:''|http://tiddlytools.github.io|
+<pre>|''URL:''|https://tiddlytools.com/Classic/|
 |''Description:''|Small Tools for Big Ideas!|
 |''Author:''|EricShulman|</pre>
 </div>
@@ -3615,12 +3623,15 @@ Unlike most wikis, TiddlyWiki isn't about group collaboration; it is a wiki in t
 ~TiddlyWiki was originally created by JeremyRuston and is now a thriving [[open source|OpenSourceLicense]] project with a busy [[Community]] of independent developers.
 </pre>
 </div>
-<div created="20111004124700000" creator="jon" modified="20130426084300000" modifier="jermolene" tags="browsers issues" title="TiddlyWiki Browser Compatibility" type="text/x-tiddlywiki">
-<pre>!!!Known Problems with Upgrading TiddlyWiki
-* Versions of TiddlyWiki before and including 2.6.3 are known to have an issue with the upgrade function. To upgrade these versions you will need to [[download|Downloading]] the latest version of an empty TiddlyWiki and import your content into it using the [[import function|Import Tiddlers]] in the backstage.
-!!!Known Problems with Importing in TiddlyWiki
-* It is not possible to import from TiddlyWiki's on servers which are not [[CORS|http://en.wikipedia.org/wiki/Cross-Origin_Resource_Sharing]] enabled.  Although many popular sites, such as [[TiddlyTools|http://tiddlytools.github.io/]], are currently CORS enabled, some are not. Fortunately this is fixable - webmasters can enable CORS on their sites by following the instructions [[here|http://enable-cors.org]] and if a website is not CORS enabled you can e-mail the owner to tell them the problem.
-* Some browsers will only allow you to import from other TiddlyWikis in the same directory as your TiddlyWiki. If you use Chrome you can enable this by modifying the Chrome shortcut to include the following parameter
+<div created="20111004124700000" creator="jon" modified="20230426084300000" modifier="Yakov Litvin" tags="browsers issues" title="TiddlyWiki Browser Compatibility" type="text/x-tiddlywiki">
+<pre>~TiddlyWiki relies on loading and saving files in some of its functionality, but as loading and saving files got more and more restricted for security reasons, such functionality may work differently with different browsers and savers.
+
+!!!Upgrading
+See HowToUpgrade. Starting from TW 2.10.0, TW itself helps you with upgrading, providing instructions if something doesn't work and making sure your data is safe.
+
+!!!Known Problems with Importing in ~TiddlyWiki
+* It is not possible to import from ~TiddlyWiki's on servers which are not [[CORS|http://en.wikipedia.org/wiki/Cross-Origin_Resource_Sharing]] enabled.  Although many popular sites, such as [[TiddlyTools|https://tiddlytools.com/Classic/]], are currently CORS enabled, some are not. Fortunately this is fixable - webmasters can enable CORS on their sites by following the instructions [[here|http://enable-cors.org]] and if a website is not CORS enabled you can e-mail the owner to tell them the problem.
+* Some browsers will only allow you to import from other TiddlyWikis in the same directory as your ~TiddlyWiki. If you use Chrome you can enable this by modifying the Chrome shortcut to include the following parameter
 {{{
 --allow-file-access-from-files
 }}}
@@ -3858,7 +3869,7 @@ By default it contains the following markup:
 Under Vista, TiddlyWiki will not save changes correctly if you are viewing the TiddlyWiki file in Vista's file preview pane.</pre>
 </div>
 <div created="20110211110700000" creator="psd" modified="20110211131000000" modifier="blaine" tags="systemServer" title="VisualTWServer" type="text/x-tiddlywiki">
-<pre>|''URL:''|http://visualtw.ouvaton.org/VisualTW.html|
+<pre>|''URL:''|https://yakovl.github.io/VisualTW2/VisualTW2.html|
 |''Author:''|Pascal|</pre>
 </div>
 <div created="20120916031100000" creator="ericshulman" modified="20240131115500000" modifier="Yakov Litvin" tags="gettingstarted welcome" title="WhatsNew" type="text/x-tiddlywiki">
@@ -7091,7 +7102,7 @@ config.commands.deleteTiddler.handler = function(event, src, title)
 
 config.commands.permalink.getUrl = function(title) {
 	var hash = story.getPermaViewHash([title]);
-	return window.location.href.replace(/#.*/, hash);
+	return window.location.href.replace(/#.*/, '') + hash;
 };
 config.commands.permalink.handler = function(event, src, title)
 {
