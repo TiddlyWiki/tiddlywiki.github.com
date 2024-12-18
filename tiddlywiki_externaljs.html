@@ -3,7 +3,7 @@
 <head>
 <script id="versionArea" type="text/javascript">
 //<![CDATA[
-var version = {title: "TiddlyWiki", major: 2, minor: 10, revision: 1, date: new Date("February 5, 2024"), extensions: {}};
+var version = {title: "TiddlyWiki", major: 2, minor: 10, revision: 2, date: new Date("December 15, 2024"), extensions: {}};
 
 //]]>
 </script>
@@ -127,7 +127,7 @@ Error: #f88
 ** It will be shown in the Timeline (usually on the right), but you may want to link it in the MainMenu (usually on the left)
 ** and/or make it open when the ~TiddlyWiki is opened by editing the list of [[DefaultTiddlers]] (separate links with spaces or linebreaks)
 * Save your ~TiddlyWiki
-** Although &quot;download saving&quot; works in any browser, it's not that convenient, so you'll probably want to use [[a dedicated saver|https://classic.tiddlywiki.com/#%5B%5BSetting up saving%5D%5D]]
+** Although &quot;download saving&quot; works in any browser, it may be not that convenient, so you'll probably want to use [[a dedicated saver|https://classic.tiddlywiki.com/#%5B%5BSetting up saving%5D%5D]]
 </pre>
 </div>
 <div title="ImportTiddlers">
@@ -231,7 +231,6 @@ h2,h3 {border-bottom:1px solid [[ColorPalette::TertiaryLight]];}
 .wizard__subtitle { color:[[ColorPalette::Foreground]]; border:none; }
 .wizardStep { background:[[ColorPalette::Background]]; color:[[ColorPalette::Foreground]]; }
 .wizardStep.wizardStepDone {background:[[ColorPalette::TertiaryLight]];}
-.wizardFooter {background:[[ColorPalette::PrimaryPale]];}
 .wizardFooter .status {background:[[ColorPalette::PrimaryDark]]; color:[[ColorPalette::Background]];}
 .wizardFooter .status a { color: [[ColorPalette::PrimaryPale]]; }
 .wizard .button {
@@ -288,7 +287,7 @@ h2,h3 {border-bottom:1px solid [[ColorPalette::TertiaryLight]];}
 .selected .toolbar a {color:[[ColorPalette::TertiaryMid]];}
 .selected .toolbar a:hover {color:[[ColorPalette::Foreground]];}
 
-.tagging, .tagged { border: 2px solid [[ColorPalette::TertiaryPale]]; }
+.tagging, .tagged { background: [[ColorPalette::Background]]; border: 2px solid [[ColorPalette::TertiaryPale]]; }
 .selected .tagging, .selected .tagged { border: 2px solid [[ColorPalette::TertiaryLight]]; }
 .tagging .listTitle, .tagged .listTitle {color:[[ColorPalette::PrimaryDark]];}
 .tagging .button, .tagged .button { border:none; }
@@ -310,6 +309,7 @@ h2,h3 {border-bottom:1px solid [[ColorPalette::TertiaryLight]];}
 .viewer .button {border:1px solid [[ColorPalette::SecondaryMid]];}
 .viewer blockquote {border-left:3px solid [[ColorPalette::TertiaryDark]];}
 
+.twtable { background: [[ColorPalette::Background]]; }
 .viewer th, .viewer thead td, .twtable th, .twtable thead td { background: [[ColorPalette::SecondaryMid]]; color: [[ColorPalette::Background]]; }
 .viewer td, .viewer tr, .twtable td, .twtable tr { border: 1px solid [[ColorPalette::TertiaryLight]]; }
 .twtable caption { color: [[ColorPalette::TertiaryMid]]; }
@@ -407,6 +407,8 @@ a.tiddlyLinkNonExisting.shadow {font-weight:bold;}
 #sidebarOptions .sliderPanel a {font-weight:bold; display:inline; padding:0;}
 #sidebarOptions .sliderPanel input {margin:0 0 0.3em 0;}
 #sidebarTabs .tabContents {width:15em; overflow:hidden;}
+#sidebarTabs li:not(:last-child) { margin-bottom: 0.3em; }
+#sidebarTabs ul:not(:last-child) { margin-bottom: 0.5em; }
 
 .wizard { padding:0.1em 2em 0; }
 .wizard__title    { font-size:2em; }
@@ -423,6 +425,7 @@ a.tiddlyLinkNonExisting.shadow {font-weight:bold;}
 .messageToolbar__button_withIcon { display: inline-block; }
 .tw-icon { height: 1em; width: 1em; } /* width for IE */
 .tw-icon line { stroke-width: 1; stroke-linecap: round; }
+.messageArea__text:not(:last-child) { margin-bottom: 0.3em; }
 .messageArea__text a { text-decoration:underline; }
 
 .popup {position:absolute; z-index:300; font-size:.9em; padding:0.3em 0; list-style:none; margin:0;}
@@ -490,7 +493,7 @@ pre, code { font-family: monospace, monospace; font-size: 1em; }
 .viewer pre, .viewer code { line-height: 1.4em; }
 
 .editor {font-size:1.1em; line-height:1.4em;}
-.editor input, .editor textarea {display:block; width:100%; box-sizing: border-box; font:inherit;}
+.editor input, .editor textarea { display: block; width: 100%; box-sizing: border-box; font: inherit; padding: 0.1em 0.4em; }
 .editorFooter {padding:0.25em 0; font-size:.9em;}
 .editorFooter .button {padding-top:0; padding-bottom:0;}
 
